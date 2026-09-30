@@ -6,28 +6,28 @@
   4. Salvează fișierul și fă Commit changes în GitHub.
 */
 const products = [
-
-    {
-  id: 1,
-  nume: "Invitație botez – Flori roz",
-  categorie: "Botez",
-  pret: 9,
-     poze: [
-    "images/products/amalia.jpg",
-    "images/products/amalia1.jpg"
-  ]
+  {
+    id: 1,
+    nume: "Invitație botez – Flori roz",
+    categorie: "Botez",
+    pret: 9,
+    poze: [
+      "images/products/amalia.jpg",
+      "images/products/amalia1.jpg"
+    ]
   },
   {
     id: 2,
-  nume: "Invitație botez-Urs",
-  categorie: "Botez",
-  pret: 6.5,
-  poze: [
-    "images/products/urs.jpg",
-    "images/products/urs1.jpg",
-    "images/products/urs2.jpg"
-  ]
-},
+    nume: "Invitație botez-Urs",
+    categorie: "Botez",
+    pret: 6.5,
+    poze: [
+      "images/products/urs.jpg",
+      "images/products/urs1.jpg",
+      "images/products/urs2.jpg"
+    ]
+  }
+];
   {
     id: 3,
     nume: "Exemplu — Cană personalizată",
