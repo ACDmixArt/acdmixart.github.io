@@ -67,34 +67,35 @@ function renderFilters(){
 }
 
 function renderProducts(){
-  const list = activeCategory === "Toate" ? products : products.filter(p => p.categorie === activeCategory);
-  grid.innerHTML = list.map(p => `
-    <article class="product-card">
-      <div class="product-photo">
-        <img src="${p.poza}" alt="${p.nume}" onerror="this.style.display='none';this.parentElement.innerHTML='<span>Adaugă fotografia<br>în ${p.poza}</span>'">
-      </div>
-      <div class="product-info">
-        <div class="product-category">${p.categorie}</div>
-        <div class="product-name">${p.nume}</div>
-        <div class="product-price">${money(p.pret)}</div>
-        <div class="product-actions">
-          <button class="add-cart" onclick="addToCart(${p.id})">Adaugă în coș</button>
-          <button class="fav" onclick="this.classList.toggle('active')">♡</button>
+  const list = activeCategory === "Toate"
+    ? products
+    : products.filter(p => p.categorie === activeCategory);
+
+  grid.innerHTML = list.map(p => {
+    const imagini = p.poze || [p.poza];
+
+    return `
+      <article class="product-card">
+        <div class="product-photo">
+          <img src="${imagini[0]}" alt="${p.nume}" data-product-id="${p.id}">
         </div>
-      </div>
-    </article>
-  `).join("");
-}
 
-function addToCart(id){
-  const p = products.find(x => x.id === id);
-  const existing = cart.find(x => x.id === id);
-  if(existing) existing.qty++;
-  else cart.push({...p, qty:1});
-  renderCart();
-  openCart();
-}
+        <div class="product-info">
+          <div class="product-category">${p.categorie}</div>
+          <div class="product-name">${p.nume}</div>
+          <div class="product-price">${money(p.pret)}</div>
 
+          <div class="product-actions">
+            <button class="add-cart" onclick="addToCart(${p.id})">
+              Adaugă în coș
+            </button>
+            <button class="fav" onclick="this.classList.toggle('active')">♡</button>
+          </div>
+        </div>
+      </article>
+    `;
+  }).join("");
+}
 function renderCart(){
   cartCount.textContent = cart.reduce((s,p)=>s+p.qty,0);
   cartItems.innerHTML = cart.length ? cart.map(p => `
@@ -165,5 +166,54 @@ document.addEventListener("click", function(e) {
         lightbox.remove();
       }
     };
+ // Galerie poze produs
+document.addEventListener("click", function(e) {
+  const img = e.target.closest(".product-photo img");
+  if (!img) return;
+
+  const produs = products.find(p => p.id == img.dataset.productId);
+  if (!produs) return;
+
+  const imagini = produs.poze || [produs.poza];
+  let index = 0;
+
+  const lightbox = document.createElement("div");
+  lightbox.className = "image-lightbox";
+
+  lightbox.innerHTML = `
+    <button class="lightbox-close">×</button>
+    <button class="lightbox-prev">‹</button>
+    <img class="lightbox-image" src="${imagini[index]}" alt="${produs.nume}">
+    <button class="lightbox-next">›</button>
+  `;
+
+  document.body.appendChild(lightbox);
+
+  const imagineMare = lightbox.querySelector(".lightbox-image");
+
+  function afiseazaImagine() {
+    imagineMare.src = imagini[index];
   }
+
+  lightbox.querySelector(".lightbox-prev").onclick = function(e) {
+    e.stopPropagation();
+    index = (index - 1 + imagini.length) % imagini.length;
+    afiseazaImagine();
+  };
+
+  lightbox.querySelector(".lightbox-next").onclick = function(e) {
+    e.stopPropagation();
+    index = (index + 1) % imagini.length;
+    afiseazaImagine();
+  };
+
+  lightbox.querySelector(".lightbox-close").onclick = function() {
+    lightbox.remove();
+  };
+
+  lightbox.onclick = function(e) {
+    if (e.target === lightbox) {
+      lightbox.remove();
+    }
+  };
 });
