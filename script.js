@@ -15,12 +15,12 @@ const products = [
   poza: "images/products/amalia.jpg"
 },
   {
-    id: 2,
-    nume: "Exemplu — Topper 3D",
-    categorie: "Botez",
-    pret: 25,
-    poza: "images/products/topper-botez.jpg"
-  },
+  id: 1,
+  nume: "Invitație urs",
+  categorie: "Botez",
+  pret: 6.5,
+  poza: "images/products/urs.jpg"
+},
   {
     id: 3,
     nume: "Exemplu — Cană personalizată",
