@@ -15,11 +15,14 @@ const products = [
   poza: "images/products/amalia.jpg"
 },
   {
-  id: 1,
+  id: 2,
   nume: "Invitație urs",
   categorie: "Botez",
   pret: 6.5,
-  poza: "images/products/urs.jpg"
+  poza: "images/products/urs.jpg",
+  "images/products/urs1.jpg",
+  "images/products/urs2.jpg"
+]
 },
   {
     id: 3,
