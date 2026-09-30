@@ -148,26 +148,7 @@ renderFilters();
 renderProducts();
 populateForm();
 renderCart();
-// Deschidere mare pentru pozele produselor
-document.addEventListener("click", function(e) {
-  if (e.target.closest(".product-photo img")) {
-    const img = e.target.closest(".product-photo img");
 
-    const lightbox = document.createElement("div");
-    lightbox.className = "image-lightbox";
-
-    lightbox.innerHTML = `
-      <button class="lightbox-close">×</button>
-      <img src="${img.src}" alt="${img.alt}">
-    `;
-
-    document.body.appendChild(lightbox);
-
-    lightbox.onclick = function(e) {
-      if (e.target === lightbox || e.target.classList.contains("lightbox-close")) {
-        lightbox.remove();
-      }
-    };
  // Galerie poze produs
 document.addEventListener("click", function(e) {
   const img = e.target.closest(".product-photo img");
