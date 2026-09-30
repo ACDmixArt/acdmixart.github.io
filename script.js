@@ -15,7 +15,7 @@ const products = [
   poze: [
   "images/products/amalia.jpg",
   "images/products/amalia1.jpg"
-]
+],
  {
   id: 2,
   nume: "Invitație botez-Urs",
