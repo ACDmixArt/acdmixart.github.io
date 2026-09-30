@@ -12,7 +12,7 @@ const products = [
   nume: "Invitație botez – Flori roz",
   categorie: "Botez",
   pret: 9,
-   poze: [
+     poze: [
     "images/products/amalia.jpg",
     "images/products/amalia1.jpg"
   ]
