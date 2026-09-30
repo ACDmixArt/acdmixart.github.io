@@ -1,13 +1,26 @@
-:root{
-  --burgundy:#7d2345;
-  --burgundy-dark:#5d1732;
-  --cream:#fffaf5;
-  --paper:#f5eee8;
-  --gold:#c9a45a;
-  --ink:#30252a;
-  --muted:#756b70;
-  --white:#fff;
-  --radius:18px;
+:root {
+  --burgundy: #A8B5A0;
+  --burgundy-dark: #66745F;
+  --cream: #FAF7F2;
+  --paper: #FFFFFF;
+  --gold: #D8A6AD;
+  --ink: #4E4945;
+  --muted: #8A8580;
+  --white: #FFFFFF;
+  --radius: 18px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap');
+
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -78,4 +91,23 @@ footer{padding:35px;text-align:center;color:var(--muted);font-size:12px;border-t
   .site-header{padding:0 4%}.hero,.catalog-section,.personalize-section,.about-section{padding-left:5%;padding-right:5%}
   .products-grid{grid-template-columns:1fr}.order-form{grid-template-columns:1fr}
   .order-form label:last-of-type,.order-form .button{grid-column:auto}
+}
+/* Ajustări ACDmixArt */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.logo,
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+.hero-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
 }
