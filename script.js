@@ -145,9 +145,9 @@ const products = [
   },
     {
     id: 14,
-    nume: "Invitație botez cu plic special",
+    nume: "Invitație botez-Floral",
     categorie: "Botez",
-    pret: 9,
+    pret: 5,
     poze: [
       "images/products/funda.jpg",
       "images/products/funda1.jpg"
