@@ -378,6 +378,16 @@ const products = [
     "images/products/motisor.jpg"
   ]
 },
+  {
+  id: 36,
+  nume: "Invitatie botez-Gemeni",
+  categorie: "Botez",
+  pret: 3.5,
+  poze: [
+    "images/products/gemeni.jpg",
+    "images/products/gemeni1.jpg"
+  ]
+},
 ];
 
 
