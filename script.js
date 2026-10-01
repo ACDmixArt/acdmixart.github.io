@@ -244,6 +244,19 @@ const products = [
     "images/products/stitch2.jpg"
   ]
 },
+  {
+  id: 23,
+  nume: "Invitatie botez-Mickey Mouse",
+  categorie: "Botez",
+  pret: 3.5,
+  poze: [
+    "images/products/mihai.jpg",
+    "images/products/mihai1.jpg",
+    "images/products/mihai2.jpg",
+    "images/products/mihai3.jpg",
+    "images/products/mihai4.jpg"
+  ]
+},
 ];
 
 
