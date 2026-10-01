@@ -75,6 +75,7 @@ function categories() {
     "Nunta-Botez",
     "Marturii",
     "Cani",
+    "Pahare",
     "Toppere",
     "Carti",
     "Party",
