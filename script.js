@@ -464,6 +464,22 @@ const products = [
       "images/products/setmot8.jpg"
     ]
   },
+    {
+    id: 44,
+    nume: "Set moț – Micul Marinar",
+    categorie: "Set Mot",
+    pret: 230,
+    poze: [
+      "images/products/set.jpg",
+      "images/products/set1.jpg",
+      "images/products/set2.jpg",
+      "images/products/set3.jpg",
+      "images/products/set4.jpg",
+      "images/products/set5.jpg",
+      "images/products/set6.jpg",
+      "images/products/set7.jpg"
+    ]
+  },
 ];
 
 
