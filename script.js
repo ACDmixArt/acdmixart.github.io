@@ -63,6 +63,17 @@ const products = [
       "images/products/diorfata2.jpg"
     ]
   }
+  {
+    id: 6,
+    nume: "Invitație botez-Jungla",
+    categorie: "Botez",
+    pret: 4.5,
+    poze: [
+      "images/products/jungla.jpg",
+      "images/products/jungla1.jpg",
+      "images/products/jungla2.jpg"
+    ]
+  }
 ];
 
 const filtre = document.querySelector(".filters");
