@@ -76,6 +76,7 @@ function categories() {
     "Marturii",
     "Cani",
     "Pahare",
+    "Plicuri pentru dar",
     "Toppere",
     "Carti",
     "Party",
