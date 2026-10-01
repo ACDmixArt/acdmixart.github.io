@@ -268,6 +268,17 @@ const products = [
     "images/products/minnie5.jpg"
   ]
 },
+  {
+  id: 25,
+  nume: "Invitatie botez-Jungla2",
+  categorie: "Botez",
+  pret: 3.5,
+  poze: [
+    "images/products/safari.jpg",
+    "images/products/safari1.jpg",
+    "images/products/safari2.jpg"
+  ]
+},
 ];
 
 
