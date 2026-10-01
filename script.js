@@ -233,6 +233,17 @@ const products = [
     "images/products/balerinaplic3.jpg"
   ]
 },
+  {
+  id: 22,
+  nume: "Invitatie botez-Stitch and Angel",
+  categorie: "Botez",
+  pret: 3.5,
+  poze: [
+    "images/products/stitch.jpg",
+    "images/products/stitch1.jpg",
+    "images/products/stitch2.jpg"
+  ]
+},
 ];
 
 
