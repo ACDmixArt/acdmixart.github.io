@@ -310,6 +310,17 @@ const products = [
     "images/products/matei.jpg"
   ]
 },
+  {
+  id: 29,
+  nume: "Invitatie Timon and Pumbaa",
+  categorie: "Botez",
+  pret: 5,
+  poze: [
+    "images/products/adonis.jpg",
+    "images/products/adonis1.jpg",
+    "images/products/adonis2.jpg"
+  ]
+},
 ];
 
 
