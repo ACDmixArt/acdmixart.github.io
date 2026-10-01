@@ -417,6 +417,15 @@ const products = [
     "images/products/animale1.jpg"
   ]
 },
+  {
+  id: 40,
+  nume: "Invitatie botez-Leu",
+  categorie: "Botez",
+  pret: 4,
+  poze: [
+    "images/products/leu.jpg"
+  ]
+},
 ];
 
 
