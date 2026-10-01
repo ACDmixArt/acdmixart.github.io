@@ -30,13 +30,14 @@ const products = [
     ]
   },
 
-  {
-    id: 3,
-    nume: "Exemplu — Cană personalizată",
-    categorie: "Cani",
-    pret: 35,
+    {
+    id: 5,
+    nume: "Invitație botez Minnie1",
+    categorie: "Botez",
+    pret: 6.5,
     poze: [
-      "images/products/cana.jpg"
+      "images/products/ioana.jpg",
+      "images/products/ioana1.jpg"
     ]
   },
 
