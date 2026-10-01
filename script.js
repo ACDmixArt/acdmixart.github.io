@@ -91,7 +91,7 @@ let cart = [];
 ========================= */
 
 function categories() {
-  return [
+return [
     "Toate",
     "Botez",
     "Nunta",
