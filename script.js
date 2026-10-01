@@ -13,8 +13,7 @@ const products = [
       "images/products/amalia1.jpg"
     ]
   },
-
-  {
+ {
     id: 2,
     nume: "Invitație botez-Urs",
     categorie: "Botez",
@@ -25,7 +24,6 @@ const products = [
       "images/products/urs2.jpg"
     ]
   },
-
   {
     id: 3,
     nume: "Invitație botez Minnie1",
@@ -36,7 +34,6 @@ const products = [
       "images/products/ioana1.jpg"
     ]
   },
-
   {
     id: 4,
     nume: "Invitație botez-Dior",
@@ -48,7 +45,6 @@ const products = [
       "images/products/dior2.jpg"
     ]
   },
-
   {
     id: 5,
     nume: "Invitație botez-Dior",
@@ -72,7 +68,6 @@ const products = [
       "images/products/jungla2.jpg"
     ]
   },
-
   {
     id: 7,
     nume: "Invitație botez-Ingeras",
@@ -83,7 +78,6 @@ const products = [
       "images/products/ingeras1.jpg"
     ]
   },
-
   {
     id: 8,
     nume: "Invitație botez-Balon",
