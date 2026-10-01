@@ -279,6 +279,17 @@ const products = [
     "images/products/safari2.jpg"
   ]
 },
+  {
+  id: 26,
+  nume: "Invitatie botez-Castel",
+  categorie: "Botez",
+  pret: 3.5,
+  poze: [
+    "images/products/printesa.jpg",
+    "images/products/printesa1.jpg",
+    "images/products/printesa2.jpg"
+  ]
+},
 ];
 
 
