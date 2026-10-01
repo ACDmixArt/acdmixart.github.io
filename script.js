@@ -353,7 +353,7 @@ const products = [
   id: 33,
   nume: "Invitatie botez-Curcubeu + plic pentru dar",
   categorie: "Botez",
-  pret: 6,5,
+  pret: 6.5,
   poze: [
     "images/products/curcubeu.jpg",
     "images/products/curcubeu1.jpg"
