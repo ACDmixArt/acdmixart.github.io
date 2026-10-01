@@ -836,24 +836,29 @@ function openSetMotCustomizer(productId) {
   "
 >
 
-      <label style="display:block;margin-top:15px;font-weight:600;">
-        Tematică
-     <label style="display:block;margin-top:15px;font-weight:600;">
-  Tematică dorită
-</label>
+     <select class="setmot-theme-select">
+  <option value="Căsuța cu ciupercuțe">
+    Căsuța cu ciupercuțe
+  </option>
+  <option value="Alta">
+    Altă tematică
+  </option>
+</select>
 
 <input
   type="text"
-  class="setmot-theme"
-  placeholder="Ex: ursuleț, Minnie, safari..."
+  class="setmot-theme-other"
+  placeholder="Scrie tematica dorită"
   style="
     width:100%;
     padding:12px;
-    margin-top:6px;
+    margin-top:8px;
     box-sizing:border-box;
     border:1px solid #ccc;
     border-radius:8px;
+    display:none;
   "
+>
 >
 
       <label style="
@@ -921,8 +926,11 @@ function openSetMotCustomizer(productId) {
   document.body.appendChild(modal);
 
   const frame = modal.querySelector(".setmot-frame");
-  const price = modal.querySelector(".setmot-price");
-  const caricatura = modal.querySelector(".setmot-caricatura");
+const price = modal.querySelector(".setmot-price");
+const caricatura = modal.querySelector(".setmot-caricatura");
+
+const themeSelect = modal.querySelector(".setmot-theme-select");
+const themeOther = modal.querySelector(".setmot-theme-other");
 
   const updatePrice = () => {
     price.textContent = money(
