@@ -32,26 +32,6 @@ const products = [
 
   {
     id: 3,
-    nume: "Exemplu — Cană personalizată",
-    categorie: "Cani",
-    pret: 35,
-    poze: [
-      "images/products/cana.jpg"
-    ]
-  },
-
-  {
-    id: 4,
-    nume: "Exemplu — Magnet personalizat",
-    categorie: "Marturii",
-    pret: 4,
-    poze: [
-      "images/products/magnet.jpg"
-    ]
-  },
-
-  {
-    id: 5,
     nume: "Invitație botez Minnie1",
     categorie: "Botez",
     pret: 6.5,
@@ -62,7 +42,7 @@ const products = [
   },
 
   {
-    id: 6,
+    id: 4,
     nume: "Invitație botez-Dior",
     categorie: "Botez",
     pret: 7,
