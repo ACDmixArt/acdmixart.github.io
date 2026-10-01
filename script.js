@@ -982,9 +982,13 @@ modal.addEventListener("click", function(event) {
         return;
       }
 
-     const dateInput = modal.querySelector(".setmot-date");
-const date = dateInput ? dateInput.value : "";
+     const date = "";
 
+let theme = themeSelect.value;
+
+if (themeSelect.value === "Alta") {
+  theme = themeOther.value.trim();
+}
 let theme = themeSelect ? themeSelect.value : "";
 
 if (themeSelect && themeSelect.value === "Alta") {
