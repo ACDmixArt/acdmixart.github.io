@@ -321,6 +321,15 @@ const products = [
     "images/products/adonis2.jpg"
   ]
 },
+  {
+  id: 30,
+  nume: "Invitatie botez- Happybaby",
+  categorie: "Botez",
+  pret: 3.5,
+  poze: [
+    "images/products/roz.jpg"
+  ]
+},
 ];
 
 
