@@ -784,21 +784,42 @@ function openSetMotCustomizer(productId) {
       >
 
       <label style="display:block;margin-top:15px;font-weight:600;">
-        Data evenimentului
-      </label>
+  Tematică dorită
+</label>
 
-      <input
-        type="date"
-        class="setmot-date"
-        style="
-          width:100%;
-          padding:12px;
-          margin-top:6px;
-          box-sizing:border-box;
-          border:1px solid #ccc;
-          border-radius:8px;
-        "
-      >
+<select
+  class="setmot-theme-select"
+  style="
+    width:100%;
+    padding:12px;
+    margin-top:6px;
+    box-sizing:border-box;
+    border:1px solid #ccc;
+    border-radius:8px;
+  "
+>
+  <option value="Căsuța cu ciupercuțe">
+    Căsuța cu ciupercuțe
+  </option>
+  <option value="Alta">
+    Altă tematică
+  </option>
+</select>
+
+<input
+  type="text"
+  class="setmot-theme-other"
+  placeholder="Scrie tematica dorită"
+  style="
+    width:100%;
+    padding:12px;
+    margin-top:8px;
+    box-sizing:border-box;
+    border:1px solid #ccc;
+    border-radius:8px;
+    display:none;
+  "
+>
 
       <label style="display:block;margin-top:15px;font-weight:600;">
         Tematică
