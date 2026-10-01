@@ -52,6 +52,17 @@ const products = [
       "images/products/dior2.jpg"
     ]
   }
+    {
+    id: 5,
+    nume: "Invitație botez-Dior",
+    categorie: "Botez",
+    pret: 7,
+    poze: [
+      "images/products/diorfata.jpg",
+      "images/products/diorfata1.jpg",
+      "images/products/diorfata2.jpg"
+    ]
+  }
 ];
 
 const filtre = document.querySelector(".filters");
