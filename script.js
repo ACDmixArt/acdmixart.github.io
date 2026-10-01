@@ -964,53 +964,34 @@ modal.addEventListener("click", function(event) {
   }
 });
 
-  modal
-    .querySelector(".setmot-add")
-    .addEventListener("click", function() {
+ const date = "";
 
-           const name = modal
-        .querySelector(".setmot-name")
-        .value
-        .trim();
+let theme = themeSelect ? themeSelect.value : "";
 
-      const error = modal.querySelector(".setmot-error");
+if (themeSelect && themeSelect.value === "Alta") {
+  theme = themeOther ? themeOther.value.trim() : "";
+}
 
-      if (!name) {
-        error.textContent =
-          "Te rog să completezi numele copilului.";
-        error.style.display = "block";
-        return;
-      }
+if (!theme) {
+  error.textContent =
+    "Te rog să alegi sau să scrii tematica dorită.";
+  error.style.display = "block";
+  return;
+}
 
-            const date = "";
-
-      let theme = themeSelect ? themeSelect.value : "";
-
-      if (themeSelect && themeSelect.value === "Alta") {
-        theme = themeOther ? themeOther.value.trim() : "";
-      }
-
-      if (!theme) {
-        error.textContent =
-          "Te rog să alegi sau să scrii tematica dorită.";
-        error.style.display = "block";
-        return;
-      }
-
-      cart.push({
-        ...product,
-        pret:
-          product.pret +
-          (frame.checked ? 60 : 0) +
-          (caricatura.checked ? 30 : 0),
-        personalizare: {
-          numeCopil: name,
-          tematica: theme,
-          ramaFoto: frame.checked,
-          caricatura: caricatura.checked
-        }
-      });
-
+cart.push({
+  ...product,
+  pret:
+    product.pret +
+    (frame.checked ? 60 : 0) +
+    (caricatura.checked ? 30 : 0),
+  personalizare: {
+    numeCopil: name,
+    tematica: theme,
+    ramaFoto: frame.checked,
+    caricatura: caricatura.checked
+  }
+});
       modal.remove();
 
       renderCart();
