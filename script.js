@@ -598,7 +598,7 @@ function renderProducts() {
 
             <div class="product-actions">
 
-  ${product.id === 43
+  ${product.categorie === "Set Mot"
     ? `
       <button
         class="add-cart"
