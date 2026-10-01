@@ -598,19 +598,33 @@ function renderProducts() {
 
             <div class="product-actions">
 
-              <button
-                class="add-cart"
-                onclick="addToCart(${product.id})"
-              >
-                Adaugă în coș
-              </button>
+  ${product.id === 43
+    ? `
+      <button
+        class="add-cart"
+        onclick="openSetMotCustomizer(${product.id})"
+      >
+        Personalizează
+      </button>
+    `
+    : `
+      <button
+        class="add-cart"
+        onclick="addToCart(${product.id})"
+      >
+        Adaugă în coș
+      </button>
+    `
+  }
 
-              <button
-                class="fav"
-                onclick="this.classList.toggle('active')"
-              >
-                ♡
-              </button>
+  <button
+    class="fav"
+    onclick="this.classList.toggle('active')"
+  >
+    ♡
+  </button>
+
+</div>
 
             </div>
 
