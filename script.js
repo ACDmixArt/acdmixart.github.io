@@ -164,6 +164,17 @@ const products = [
       "images/products/invitatie2.jpg"
     ]
   },
+  {
+  id: 16,
+  nume: "Invitatie botez- Fluturas",
+  categorie: "Botez",
+  pret: 3.5,
+  poze: [
+    "images/products/fluture.jpg",
+    "images/products/fluture1.jpg",
+    "images/products/fluture2.jpg"
+  ]
+},
 ];
 
 
