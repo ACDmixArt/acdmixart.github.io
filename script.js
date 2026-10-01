@@ -407,6 +407,16 @@ const products = [
     "images/products/ursfata1.jpg"
   ]
 },
+  {
+  id: 39,
+  nume: "Invitatie botez-Safari",
+  categorie: "Botez",
+  pret: 4,
+  poze: [
+    "images/products/animale.jpg",
+    "images/products/animale1.jpg"
+  ]
+},
 ];
 
 
