@@ -397,6 +397,16 @@ const products = [
     "images/products/boss1.jpg"
   ]
 },
+  {
+  id: 38,
+  nume: "Invitatie botez-Ursulet",
+  categorie: "Botez",
+  pret: 3.5,
+  poze: [
+    "images/products/ursfata.jpg",
+    "images/products/ursfata1.jpg"
+  ]
+},
 ];
 
 
