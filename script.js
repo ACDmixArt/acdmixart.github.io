@@ -436,7 +436,7 @@ const products = [
     "images/products/mici1.jpg"
   ]
 },
-  {
+    {
   id: 42,
   nume: "Invitatie botez-Lebada1",
   categorie: "Botez",
@@ -447,6 +447,23 @@ const products = [
     "images/products/leb2.jpg"
   ]
 },
+  {
+    id: 43,
+    nume: "Set moț – Căsuța cu ciupercuțe",
+    categorie: "Set Mot",
+    pret: 230,
+    poze: [
+      "images/products/setmot.jpg",
+      "images/products/setmot1.jpg",
+      "images/products/setmot2.jpg",
+      "images/products/setmot3.jpg",
+      "images/products/setmot4.jpg",
+      "images/products/setmot5.jpg",
+      "images/products/setmot6.jpg",
+      "images/products/setmot7.jpg",
+      "images/products/setmot8.jpg"
+    ]
+  },
 ];
 
 
