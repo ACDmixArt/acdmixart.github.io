@@ -160,38 +160,33 @@ h1, h2, h3 {
 
 
 .filter-btn {
-  appearance: none;
-  border: 1px solid #66745F;
-  background: #66745F;
-  color: #FFFFFF;
-  padding: 11px 21px;
-  border-radius: 999px;
+  border: none;
+  background: #E8EDE4;
+  color: #66745F;
+  padding: 9px 18px;
+  border-radius: 30px;
   font-family: "DM Sans", sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.2px;
   cursor: pointer;
   transition: all 0.25s ease;
-  box-shadow: 0 3px 8px rgba(102, 116, 95, 0.15);
+  box-shadow: none;
 }
 
 .filter-btn:hover {
-  background: #7D8D73;
-  border-color: #7D8D73;
-  color: #FFFFFF;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(102, 116, 95, 0.22);
+  background: #D6DFD0;
+  color: #4F5D49;
+  transform: translateY(-1px);
 }
 
 .filter-btn.active {
-  background: #4F5D49;
+  background: #66745F;
   color: #FFFFFF;
-  border-color: #4F5D49;
-  box-shadow: 0 5px 15px rgba(79, 93, 73, 0.25);
+  box-shadow: 0 3px 10px rgba(102, 116, 95, 0.18);
 }
 
 .filter-btn:active {
-  transform: translateY(0);
+  transform: scale(0.98);
 }
 
 
