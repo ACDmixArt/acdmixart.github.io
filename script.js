@@ -133,7 +133,7 @@ const products = [
       "images/products/teo3.jpg"
     ]
   },
-    {
+  {
     id: 13,
     nume: "Invitație botez-Balerina",
     categorie: "Botez",
@@ -143,7 +143,7 @@ const products = [
       "images/products/balerina1.jpg"
     ]
   },
-    {
+  {
     id: 14,
     nume: "Invitație botez-Floral",
     categorie: "Botez",
@@ -153,7 +153,7 @@ const products = [
       "images/products/funda1.jpg"
     ]
   },
-    {
+  {
     id: 15,
     nume: "Invitație botez-Oglinda",
     categorie: "Botez",
@@ -165,288 +165,305 @@ const products = [
     ]
   },
   {
-  id: 16,
-  nume: "Invitatie botez- Fluturas",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/fluture.jpg",
-    "images/products/fluture1.jpg",
-    "images/products/fluture2.jpg"
-  ]
-},
+    id: 16,
+    nume: "Invitatie botez- Fluturas",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/fluture.jpg",
+      "images/products/fluture1.jpg",
+      "images/products/fluture2.jpg"
+    ]
+  },
   {
-  id: 17,
-  nume: "Invitatie botez-UrsX",
-  categorie: "Botez",
-  pret: 8,
-  poze: [
-    "images/products/zian.jpg",
-    "images/products/zian1.jpg",
-    "images/products/zian2.jpg",
-    "images/products/zian3.jpg"
-  ]
-},
+    id: 17,
+    nume: "Invitatie botez-UrsX",
+    categorie: "Botez",
+    pret: 8,
+    poze: [
+      "images/products/zian.jpg",
+      "images/products/zian1.jpg",
+      "images/products/zian2.jpg",
+      "images/products/zian3.jpg"
+    ]
+  },
   {
-  id: 18,
-  nume: "Invitatie botez- Urs verde",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/ursverde.jpg",
-    "images/products/ursverde1.jpg",
-    "images/products/ursverde2.jpg"
-  ]
-},
+    id: 18,
+    nume: "Invitatie botez- Urs verde",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/ursverde.jpg",
+      "images/products/ursverde1.jpg",
+      "images/products/ursverde2.jpg"
+    ]
+  },
   {
-  id: 19,
-  nume: "Invitatie botez-pergament",
-  categorie: "Botez",
-  pret: 7.5,
-  poze: [
-    "images/products/calc.jpg",
-    "images/products/calc1.jpg",
-    "images/products/calc2.jpg"
-  ]
-},
+    id: 19,
+    nume: "Invitatie botez-pergament",
+    categorie: "Botez",
+    pret: 7.5,
+    poze: [
+      "images/products/calc.jpg",
+      "images/products/calc1.jpg",
+      "images/products/calc2.jpg"
+    ]
+  },
   {
-  id: 20,
-  nume: "Invitatie botez + plic pentru dar",
-  categorie: "Botez",
-  pret: 6,
-  poze: [
-    "images/products/invitatieverde.jpg",
-    "images/products/invitatieverde1.jpg",
-    "images/products/invitatieverde2.jpg",
-    "images/products/invitatieverde3.jpg"
-  ]
-},
+    id: 20,
+    nume: "Invitatie botez + plic pentru dar",
+    categorie: "Botez",
+    pret: 6,
+    poze: [
+      "images/products/invitatieverde.jpg",
+      "images/products/invitatieverde1.jpg",
+      "images/products/invitatieverde2.jpg",
+      "images/products/invitatieverde3.jpg"
+    ]
+  },
   {
-  id: 21,
-  nume: "Invitatie botez- Balerina2",
-  categorie: "Botez",
-  pret: 6.5,
-  poze: [
-    "images/products/balerinaplic.jpg",
-    "images/products/balerinaplic1.jpg",
-    "images/products/balerinaplic2.jpg",
-    "images/products/balerinaplic3.jpg"
-  ]
-},
+    id: 21,
+    nume: "Invitatie botez- Balerina2",
+    categorie: "Botez",
+    pret: 6.5,
+    poze: [
+      "images/products/balerinaplic.jpg",
+      "images/products/balerinaplic1.jpg",
+      "images/products/balerinaplic2.jpg",
+      "images/products/balerinaplic3.jpg"
+    ]
+  },
   {
-  id: 22,
-  nume: "Invitatie botez-Stitch and Angel",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/stitch.jpg",
-    "images/products/stitch1.jpg",
-    "images/products/stitch2.jpg"
-  ]
-},
+    id: 22,
+    nume: "Invitatie botez-Stitch and Angel",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/stitch.jpg",
+      "images/products/stitch1.jpg",
+      "images/products/stitch2.jpg"
+    ]
+  },
   {
-  id: 23,
-  nume: "Invitatie botez-Mickey Mouse",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/mihai.jpg",
-    "images/products/mihai1.jpg",
-    "images/products/mihai2.jpg",
-    "images/products/mihai3.jpg",
-    "images/products/mihai4.jpg"
-  ]
-},
+    id: 23,
+    nume: "Invitatie botez-Mickey Mouse",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/mihai.jpg",
+      "images/products/mihai1.jpg",
+      "images/products/mihai2.jpg",
+      "images/products/mihai3.jpg",
+      "images/products/mihai4.jpg"
+    ]
+  },
   {
-  id: 24,
-  nume: "Invitatie botez-Minnie3",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/minnie3.jpg",
-    "images/products/minnie4.jpg",
-    "images/products/minnie5.jpg"
-  ]
-},
+    id: 24,
+    nume: "Invitatie botez-Minnie3",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/minnie3.jpg",
+      "images/products/minnie4.jpg",
+      "images/products/minnie5.jpg"
+    ]
+  },
   {
-  id: 25,
-  nume: "Invitatie botez-Jungla2",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/safari.jpg",
-    "images/products/safari1.jpg",
-    "images/products/safari2.jpg"
-  ]
-},
+    id: 25,
+    nume: "Invitatie botez-Jungla2",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/safari.jpg",
+      "images/products/safari1.jpg",
+      "images/products/safari2.jpg"
+    ]
+  },
   {
-  id: 26,
-  nume: "Invitatie botez-Castel",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/printesa.jpg",
-    "images/products/printesa1.jpg",
-    "images/products/printesa2.jpg"
-  ]
-},
- {
-  id: 27,
-  nume: "Invitatie botez-Floral",
-  categorie: "Botez",
-  pret: 5,
-  poze: [
-    "images/products/funda.jpg",
-    "images/products/funda1.jpg"
-  ]
-}, 
+    id: 26,
+    nume: "Invitatie botez-Castel",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/printesa.jpg",
+      "images/products/printesa1.jpg",
+      "images/products/printesa2.jpg"
+    ]
+  },
   {
-  id: 28,
-  nume: "Invitatie botez- Babyblue",
-  categorie: "Botez",
-  pret: 6.5,
-  poze: [
-    "images/products/matei1.jpg",
-    "images/products/matei.jpg"
-  ]
-},
+    id: 27,
+    nume: "Invitatie botez-Floral",
+    categorie: "Botez",
+    pret: 5,
+    poze: [
+      "images/products/funda.jpg",
+      "images/products/funda1.jpg"
+    ]
+  },
   {
-  id: 29,
-  nume: "Invitatie Timon and Pumbaa",
-  categorie: "Botez",
-  pret: 5,
-  poze: [
-    "images/products/adonis.jpg",
-    "images/products/adonis1.jpg",
-    "images/products/adonis2.jpg"
-  ]
-},
+    id: 28,
+    nume: "Invitatie botez- Babyblue",
+    categorie: "Botez",
+    pret: 6.5,
+    poze: [
+      "images/products/matei1.jpg",
+      "images/products/matei.jpg"
+    ]
+  },
   {
-  id: 30,
-  nume: "Invitatie botez- Happybaby",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/roz.jpg"
-  ]
-},
+    id: 29,
+    nume: "Invitatie Timon and Pumbaa",
+    categorie: "Botez",
+    pret: 5,
+    poze: [
+      "images/products/adonis.jpg",
+      "images/products/adonis1.jpg",
+      "images/products/adonis2.jpg"
+    ]
+  },
   {
-  id: 31,
-  nume: "Invitatie botez-Butterfly",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/butterfly.jpg"
-  ]
-},
+    id: 30,
+    nume: "Invitatie botez- Happybaby",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/roz.jpg"
+    ]
+  },
+    {
+    id: 31,
+    nume: "Invitatie botez-Butterfly",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/butterfly.jpg"
+    ]
+  },
   {
-  id: 32,
-  nume: "Invitatie botez-Lebada",
-  categorie: "Botez",
-  pret: 7,
-  poze: [
-    "images/products/lebada.jpg",
-    "images/products/lebada1.jpg"
-  ]
-},
+    id: 32,
+    nume: "Invitatie botez-Lebada",
+    categorie: "Botez",
+    pret: 7,
+    poze: [
+      "images/products/lebada.jpg",
+      "images/products/lebada1.jpg"
+    ]
+  },
   {
-  id: 33,
-  nume: "Invitatie botez-Curcubeu + plic pentru dar",
-  categorie: "Botez",
-  pret: 6.5,
-  poze: [
-    "images/products/curcubeu.jpg",
-    "images/products/curcubeu1.jpg"
-  ]
-},
+    id: 33,
+    nume: "Invitatie botez-Curcubeu + plic pentru dar",
+    categorie: "Botez",
+    pret: 6.5,
+    poze: [
+      "images/products/curcubeu.jpg",
+      "images/products/curcubeu1.jpg"
+    ]
+  },
   {
-  id: 34,
-  nume: "Invitatie botez-Elefant",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/elefant.jpg"
-  ]
-},
+    id: 34,
+    nume: "Invitatie botez-Elefant",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/elefant.jpg"
+    ]
+  },
   {
-  id: 35,
-  nume: "Invitatie mot cu plic",
-  categorie: "Botez",
-  pret: 4,
-  poze: [
-    "images/products/motisor.jpg"
-  ]
-},
+    id: 35,
+    nume: "Invitatie mot cu plic",
+    categorie: "Botez",
+    pret: 4,
+    poze: [
+      "images/products/motisor.jpg"
+    ]
+  },
   {
-  id: 36,
-  nume: "Invitatie botez-Gemeni",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/gemeni.jpg",
-    "images/products/gemeni1.jpg"
-  ]
-},
+    id: 36,
+    nume: "Invitatie botez-Gemeni",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/gemeni.jpg",
+      "images/products/gemeni1.jpg"
+    ]
+  },
   {
-  id: 37,
-  nume: "Invitatie botez-Baby Boss",
-  categorie: "Botez",
-  pret: 4,
-  poze: [
-    "images/products/boss.jpg",
-    "images/products/boss1.jpg"
-  ]
-},
+    id: 37,
+    nume: "Invitatie botez-Baby Boss",
+    categorie: "Botez",
+    pret: 4,
+    poze: [
+      "images/products/boss.jpg",
+      "images/products/boss1.jpg"
+    ]
+  },
   {
-  id: 38,
-  nume: "Invitatie botez-Ursulet",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/ursfata.jpg",
-    "images/products/ursfata1.jpg"
-  ]
-},
+    id: 38,
+    nume: "Invitatie botez-Ursulet",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/ursfata.jpg",
+      "images/products/ursfata1.jpg"
+    ]
+  },
   {
-  id: 39,
-  nume: "Invitatie botez-Safari",
-  categorie: "Botez",
-  pret: 4,
-  poze: [
-    "images/products/animale.jpg",
-    "images/products/animale1.jpg"
-  ]
-},
+    id: 39,
+    nume: "Invitatie botez-Safari",
+    categorie: "Botez",
+    pret: 4,
+    poze: [
+      "images/products/animale.jpg",
+      "images/products/animale1.jpg"
+    ]
+  },
   {
-  id: 40,
-  nume: "Invitatie botez-Leu",
-  categorie: "Botez",
-  pret: 4,
-  poze: [
-    "images/products/leu.jpg"
-  ]
-},
+    id: 40,
+    nume: "Invitatie botez-Leu",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/leu.jpg"
+    ]
+  },
   {
-  id: 41,
-  nume: "Invitatie botez-Mickey",
-  categorie: "Botez",
-  pret: 4,
-  poze: [
-    "images/products/mici.jpg",
-    "images/products/mici1.jpg"
-  ]
-},
+    id: 41,
+    nume: "Invitatie botez-Mickey",
+    categorie: "Botez",
+    pret: 4,
+    poze: [
+      "images/products/mici.jpg",
+      "images/products/mici1.jpg"
+    ]
+  },
   {
-  id: 42,
-  nume: "Invitatie botez-Lebada1",
-  categorie: "Botez",
-  pret: 7,
-  poze: [
-    "images/products/leb.jpg",
-    "images/products/leb1.jpg",
-    "images/products/leb2.jpg"
-  ]
-},
+    id: 42,
+    nume: "Invitatie botez-Lebada1",
+    categorie: "Botez",
+    pret: 7,
+    poze: [
+      "images/products/leb.jpg",
+      "images/products/leb1.jpg",
+      "images/products/leb2.jpg"
+    ]
+  },
+  {
+    id: 43,
+    nume: "Set moț – Căsuța cu ciupercuțe",
+    categorie: "Set Mot",
+    pret: 230,
+    poze: [
+      "images/products/setmot.jpg",
+      "images/products/setmot1.jpg",
+      "images/products/setmot2.jpg",
+      "images/products/setmot3.jpg",
+      "images/products/setmot4.jpg",
+      "images/products/setmot5.jpg",
+      "images/products/setmot6.jpg",
+      "images/products/setmot7.jpg",
+      "images/products/setmot8.jpg"
+    ]
+  }
 ];
 
 
@@ -583,9 +600,9 @@ function renderProducts() {
 
               <button
                 class="add-cart"
-                onclick="addToCart(${product.id})"
+                onclick="${product.categorie === 'Set Mot' ? `openSetMotCustomizer(${product.id})` : `addToCart(${product.id})`}"
               >
-                Adaugă în coș
+                ${product.categorie === "Set Mot" ? "Personalizează" : "Adaugă în coș"}
               </button>
 
               <button
@@ -603,6 +620,150 @@ function renderProducts() {
       `;
     })
     .join("");
+}
+
+
+/* =========================
+   PERSONALIZARE SET MOT
+========================= */
+
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    "\"": "&quot;",
+    "'": "&#39;"
+  })[char]);
+}
+
+function openSetMotCustomizer(productId) {
+  const product = products.find(item => item.id === productId);
+  if (!product || product.categorie !== "Set Mot") return;
+
+  document.querySelector(".setmot-modal")?.remove();
+
+  const modal = document.createElement("div");
+  modal.className = "setmot-modal";
+  modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:10000;display:flex;align-items:center;justify-content:center;padding:16px;";
+
+  modal.innerHTML = `
+    <section role="dialog" aria-modal="true" aria-label="Personalizează setul de moț" style="background:#fff;color:#222;width:min(100%,460px);max-height:90vh;overflow:auto;border-radius:16px;padding:22px;box-shadow:0 12px 40px rgba(0,0,0,.25);">
+
+      <button type="button" class="setmot-close" aria-label="Închide" style="float:right;border:0;background:transparent;font-size:28px;cursor:pointer;">×</button>
+
+      <h2 style="margin:0 30px 8px 0;">Personalizează setul de moț</h2>
+
+      <p style="margin:0 0 16px;">Setul include tăviță, foarfecă, cutiuță, perie/pieptene și oglindă.</p>
+
+      <label style="display:block;margin:12px 0 5px;">Numele copilului *</label>
+
+      <input class="setmot-name" type="text" maxlength="60" placeholder="Numele copilului" required style="box-sizing:border-box;width:100%;padding:11px;border:1px solid #ccc;border-radius:8px;">
+
+      <label style="display:block;margin:12px 0 5px;">Data evenimentului</label>
+
+      <input class="setmot-date" type="date" style="box-sizing:border-box;width:100%;padding:11px;border:1px solid #ccc;border-radius:8px;">
+
+      <label style="display:block;margin:12px 0 5px;">Tematică</label>
+
+      <select class="setmot-theme" style="box-sizing:border-box;width:100%;padding:11px;border:1px solid #ccc;border-radius:8px;">
+        <option value="Căsuța cu ciupercuțe">Modelul prezentat – Căsuța cu ciupercuțe</option>
+        <option value="Altă tematică">Doresc altă tematică (voi preciza în comandă)</option>
+      </select>
+
+      <label style="display:flex;align-items:center;gap:9px;margin:16px 0;">
+        <input class="setmot-frame" type="checkbox">
+        Adaugă ramă foto (+60 lei)
+      </label>
+
+      <div class="setmot-price" style="font-size:20px;font-weight:700;margin:14px 0;">230,00 lei</div>
+
+      <p class="setmot-error" role="alert" style="color:#b00020;display:none;margin:8px 0;"></p>
+
+      <button type="button" class="setmot-add" style="width:100%;padding:13px;border:0;border-radius:9px;background:#a94f79;color:white;font-weight:700;cursor:pointer;">
+        Adaugă în coș
+      </button>
+
+    </section>
+  `;
+
+  document.body.appendChild(modal);
+
+  const frame = modal.querySelector(".setmot-frame");
+  const price = modal.querySelector(".setmot-price");
+
+  const updatePrice = () => {
+    price.textContent = money(product.pret + (frame.checked ? 60 : 0));
+  };
+
+  frame.addEventListener("change", updatePrice);
+
+  modal.querySelector(".setmot-close").addEventListener("click", () => modal.remove());
+
+  modal.addEventListener("click", event => {
+    if (event.target === modal) modal.remove();
+  });
+
+  modal.querySelector(".setmot-add").addEventListener("click", () => {
+    const name = modal.querySelector(".setmot-name").value.trim();
+    const error = modal.querySelector(".setmot-error");
+
+    if (!name) {
+      error.textContent = "Te rog să completezi numele copilului.";
+      error.style.display = "block";
+      return;
+    }
+
+    const date = modal.querySelector(".setmot-date").value;
+    const theme = modal.querySelector(".setmot-theme").value;
+
+    cart.push({
+      ...product,
+      pret: product.pret + (frame.checked ? 60 : 0),
+      personalizare: {
+        numeCopil: name,
+        dataEveniment: date,
+        tematica: theme,
+        ramaFoto: frame.checked
+      }
+    });
+
+    modal.remove();
+    renderCart();
+    openCart();
+  });
+}
+      <div class="setmot-price" style="font-size:20px;font-weight:700;margin:14px 0;">230,00 lei</div>
+      <p class="setmot-error" role="alert" style="color:#b00020;display:none;margin:8px 0;"></p>
+      <button type="button" class="setmot-add" style="width:100%;padding:13px;border:0;border-radius:9px;background:#a94f79;color:white;font-weight:700;cursor:pointer;">Adaugă în coș</button>
+    </section>`;
+  document.body.appendChild(modal);
+
+  const frame = modal.querySelector(".setmot-frame");
+  const price = modal.querySelector(".setmot-price");
+  const updatePrice = () => { price.textContent = money(product.pret + (frame.checked ? 60 : 0)); };
+  frame.addEventListener("change", updatePrice);
+  modal.querySelector(".setmot-close").addEventListener("click", () => modal.remove());
+  modal.addEventListener("click", event => { if (event.target === modal) modal.remove(); });
+  modal.querySelector(".setmot-add").addEventListener("click", () => {
+    const name = modal.querySelector(".setmot-name").value.trim();
+    const error = modal.querySelector(".setmot-error");
+    if (!name) {
+      error.textContent = "Te rog să completezi numele copilului.";
+      error.style.display = "block";
+      return;
+    }
+    const date = modal.querySelector(".setmot-date").value;
+    const theme = modal.querySelector(".setmot-theme").value;
+    cart.push({
+      ...product,
+      pret: product.pret + (frame.checked ? 60 : 0),
+      personalizare: { numeCopil: name, dataEveniment: date, tematica: theme, ramaFoto: frame.checked }
+    });
+    modal.remove();
+    renderCart();
+    openCart();
+  });
 }
 
 
@@ -655,6 +816,14 @@ function renderCart() {
 
           <div>
             <strong>${product.nume}</strong>
+            ${product.personalizare ? `
+              <div style="font-size:12px;line-height:1.5;margin:6px 0;">
+                Nume: ${escapeHtml(product.personalizare.numeCopil)}<br>
+                Data: ${escapeHtml(product.personalizare.dataEveniment || "Nespecificată")}<br>
+                Tematică: ${escapeHtml(product.personalizare.tematica)}<br>
+                Ramă foto: ${product.personalizare.ramaFoto ? "Da" : "Nu"}
+              </div>
+            ` : ""}
             <span>${money(product.pret)}</span>
           </div>
 
