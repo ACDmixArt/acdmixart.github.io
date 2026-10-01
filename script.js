@@ -802,26 +802,23 @@ function openSetMotCustomizer(productId) {
 
       <label style="display:block;margin-top:15px;font-weight:600;">
         Tematică
-      </label>
+     <label style="display:block;margin-top:15px;font-weight:600;">
+  Tematică dorită
+</label>
 
-      <select
-        class="setmot-theme"
-        style="
-          width:100%;
-          padding:12px;
-          margin-top:6px;
-          box-sizing:border-box;
-          border:1px solid #ccc;
-          border-radius:8px;
-        "
-      >
-        <option value="Căsuța cu ciupercuțe">
-          Căsuța cu ciupercuțe
-        </option>
-        <option value="Altă tematică">
-          Altă tematică
-        </option>
-      </select>
+<input
+  type="text"
+  class="setmot-theme"
+  placeholder="Ex: ursuleț, Minnie, safari..."
+  style="
+    width:100%;
+    padding:12px;
+    margin-top:6px;
+    box-sizing:border-box;
+    border:1px solid #ccc;
+    border-radius:8px;
+  "
+>
 
       <label style="
         display:flex;
