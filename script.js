@@ -153,6 +153,17 @@ const products = [
       "images/products/funda1.jpg"
     ]
   },
+    {
+    id: 15,
+    nume: "Invitație botez-Oglinda",
+    categorie: "Botez",
+    pret: 10,
+    poze: [
+      "images/products/invitatie.jpg",
+      "images/products/invitatie1.jpg",
+      "images/products/invitatie2.jpg"
+    ]
+  },
 ];
 
 
