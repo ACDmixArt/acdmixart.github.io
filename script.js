@@ -122,6 +122,18 @@ const products = [
       "images/products/minnie2.jpg"
     ]
   },
+     {
+    id: 12,
+    nume: "Invitație mot Cocomelon",
+    categorie: "Botez",
+    pret: 5.5,
+    images: [
+      "images/products/teo.jpg",
+      "images/products/teo1.jpg",
+      "images/products/teo2.jpg",
+      "images/products/teo3.jpg"
+    ]
+  },     
 ];
 
 
