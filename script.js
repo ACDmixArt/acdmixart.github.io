@@ -933,14 +933,8 @@ function openSetMotCustomizer(productId) {
     );
   };
 
-  frame.addEventListener("change", updatePrice);
+   frame.addEventListener("change", updatePrice);
   caricatura.addEventListener("change", updatePrice);
-  
-  frame.addEventListener("change", function() {
-    price.textContent = money(
-      product.pret + (frame.checked ? 60 : 0)
-    );
-  });
 
   modal
     .querySelector(".setmot-close")
