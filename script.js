@@ -221,6 +221,18 @@ const products = [
     "images/products/invitatieverde3.jpg"
   ]
 },
+  {
+  id: 21,
+  nume: "Invitatie botez- Balerina2",
+  categorie: "Botez",
+  pret: 6.5,
+  poze: [
+    "images/products/balerinaplic.jpg",
+    "images/products/balerinaplic1.jpg",
+    "images/products/balerinaplic2.jpg",
+    "images/products/balerinaplic3.jpg"
+  ]
+},
 ];
 
 
