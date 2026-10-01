@@ -991,12 +991,13 @@ cart.push({
     ramaFoto: frame.checked,
     caricatura: caricatura.checked
   }
-});
-      modal.remove();
+};
+     modal.remove();
 
-      renderCart();
-      openCart();
-    });
+renderCart();
+openCart();
+});
+}
 
 /* =========================
    DESCHIDERE COS
