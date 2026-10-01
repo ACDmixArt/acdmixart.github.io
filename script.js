@@ -968,7 +968,7 @@ modal.addEventListener("click", function(event) {
     .querySelector(".setmot-add")
     .addEventListener("click", function() {
 
-      const name = modal
+           const name = modal
         .querySelector(".setmot-name")
         .value
         .trim();
@@ -982,34 +982,30 @@ modal.addEventListener("click", function(event) {
         return;
       }
 
-     const date = "";
+      let theme = themeSelect ? themeSelect.value : "";
 
-let theme = themeSelect.value;
+      if (themeSelect && themeSelect.value === "Alta") {
+        theme = themeOther ? themeOther.value.trim() : "";
+      }
 
-if (themeSelect.value === "Alta") {
-  theme = themeOther.value.trim();
-}
-let theme = themeSelect ? themeSelect.value : "";
-
-if (themeSelect && themeSelect.value === "Alta") {
-  theme = themeOther ? themeOther.value.trim() : "";
-}
-
-  if (!theme) {
-    error.textContent = "Te rog să scrii tematica dorită.";
-    error.style.display = "block";
-    return;
-  }
-}
+      if (!theme) {
+        error.textContent =
+          "Te rog să alegi sau să scrii tematica dorită.";
+        error.style.display = "block";
+        return;
+      }
 
       cart.push({
         ...product,
-        pret: product.pret + (frame.checked ? 60 : 0),
+        pret:
+          product.pret +
+          (frame.checked ? 60 : 0) +
+          (caricatura.checked ? 30 : 0),
         personalizare: {
           numeCopil: name,
-          dataEveniment: date,
           tematica: theme,
-          ramaFoto: frame.checked
+          ramaFoto: frame.checked,
+          caricatura: caricatura.checked
         }
       });
 
@@ -1018,7 +1014,6 @@ if (themeSelect && themeSelect.value === "Alta") {
       renderCart();
       openCart();
     });
-}
 
 /* =========================
    DESCHIDERE COS
