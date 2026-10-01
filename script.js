@@ -448,3 +448,75 @@ document.addEventListener("click", function(event) {
 renderCategories();
 renderProducts();
 renderCart();
+/* =========================
+   CATEGORII - DESIGN PREMIUM
+========================= */
+
+.filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 30px auto 40px;
+  padding: 8px;
+}
+
+.filter-btn {
+  appearance: none;
+  border: 1px solid #D8A6AD;
+  background: #FAF7F2;
+  color: #66745F;
+  padding: 10px 19px;
+  border-radius: 999px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+  background: #D8A6AD;
+  color: #FFFFFF;
+  border-color: #D8A6AD;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(216, 166, 173, 0.22);
+}
+
+.filter-btn.active {
+  background: #66745F;
+  color: #FFFFFF;
+  border-color: #66745F;
+  box-shadow: 0 5px 15px rgba(102, 116, 95, 0.20);
+}
+
+.filter-btn:active {
+  transform: translateY(0);
+}
+
+
+/* Pe telefon */
+@media (max-width: 700px) {
+
+  .filters {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 8px 4px 14px;
+    margin-bottom: 25px;
+    scrollbar-width: none;
+  }
+
+  .filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 9px 16px;
+    font-size: 13px;
+  }
+}
