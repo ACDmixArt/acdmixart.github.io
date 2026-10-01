@@ -965,14 +965,14 @@ function openSetMotCustomizer(productId) {
         return;
       }
 
-      const date = modal
-        .querySelector(".setmot-date")
-        .value;
+     const dateInput = modal.querySelector(".setmot-date");
+const date = dateInput ? dateInput.value : "";
 
-     let theme = themeSelect.value;
+let theme = themeSelect ? themeSelect.value : "";
 
-if (themeSelect.value === "Alta") {
-  theme = themeOther.value.trim();
+if (themeSelect && themeSelect.value === "Alta") {
+  theme = themeOther ? themeOther.value.trim() : "";
+}
 
   if (!theme) {
     error.textContent = "Te rog să scrii tematica dorită.";
