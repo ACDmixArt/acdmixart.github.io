@@ -982,6 +982,8 @@ modal.addEventListener("click", function(event) {
         return;
       }
 
+            const date = "";
+
       let theme = themeSelect ? themeSelect.value : "";
 
       if (themeSelect && themeSelect.value === "Alta") {
