@@ -369,6 +369,15 @@ const products = [
     "images/products/elefant.jpg"
   ]
 },
+  {
+  id: 35,
+  nume: "Invitatie mot cu plic",
+  categorie: "Botez",
+  pret: 4,
+  poze: [
+    "images/products/motisor.jpg"
+  ]
+},
 ];
 
 
