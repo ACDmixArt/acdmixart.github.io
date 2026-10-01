@@ -349,6 +349,17 @@ const products = [
     "images/products/lebada1.jpg"
   ]
 },
+  {
+  id: 33,
+  nume: "Invitatie botez-Curcubeu + plic pentru dar",
+  categorie: "Botez",
+  pret: 4,
+  pretPlic: 2,
+  poze: [
+    "images/products/curcubeu.jpg",
+    "images/products/curcubeu1.jpg"
+  ]
+},
 ];
 
 
