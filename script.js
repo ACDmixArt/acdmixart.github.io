@@ -471,7 +471,6 @@ const products = [
     pret: 230,
     poze: [
       "images/products/set.jpg",
-      "images/products/set1.jpg",
       "images/products/set2.jpg",
       "images/products/set3.jpg",
       "images/products/set4.jpg",
@@ -970,9 +969,17 @@ function openSetMotCustomizer(productId) {
         .querySelector(".setmot-date")
         .value;
 
-      const theme = modal
-        .querySelector(".setmot-theme")
-        .value;
+     let theme = themeSelect.value;
+
+if (themeSelect.value === "Alta") {
+  theme = themeOther.value.trim();
+
+  if (!theme) {
+    error.textContent = "Te rog să scrii tematica dorită.";
+    error.style.display = "block";
+    return;
+  }
+}
 
       cart.push({
         ...product,
