@@ -360,6 +360,15 @@ const products = [
     "images/products/curcubeu1.jpg"
   ]
 },
+  {
+  id: 34,
+  nume: "Invitatie botez-Elefant",
+  categorie: "Botez",
+  pret: 3.5,
+  poze: [
+    "images/products/elefant.jpg"
+  ]
+},
 ];
 
 
