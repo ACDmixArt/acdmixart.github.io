@@ -187,6 +187,17 @@ const products = [
     "images/products/zian3.jpg"
   ]
 },
+  {
+  id: 18,
+  nume: "Invitatie botez- Urs verde",
+  categorie: "Botez",
+  pret: 3.5,
+  poze: [
+    "images/products/ursverde.jpg",
+    "images/products/ursverde1.jpg",
+    "images/products/ursverde2.jpg"
+  ]
+},
 ];
 
 
