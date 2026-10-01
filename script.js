@@ -706,6 +706,241 @@ function renderCart() {
   cartTotal.textContent = money(total);
 }
 
+/* =========================
+   PERSONALIZARE SET MOT
+========================= */
+
+function openSetMotCustomizer(productId) {
+  const product = products.find(
+    product => product.id === productId
+  );
+
+  if (!product) return;
+
+  const modal = document.createElement("div");
+
+  modal.style.position = "fixed";
+  modal.style.inset = "0";
+  modal.style.background = "rgba(0,0,0,0.65)";
+  modal.style.display = "flex";
+  modal.style.alignItems = "center";
+  modal.style.justifyContent = "center";
+  modal.style.zIndex = "9999";
+  modal.style.padding = "20px";
+
+  modal.innerHTML = `
+    <div style="
+      background:white;
+      width:100%;
+      max-width:500px;
+      max-height:90vh;
+      overflow:auto;
+      border-radius:16px;
+      padding:25px;
+      box-sizing:border-box;
+      position:relative;
+    ">
+
+      <button
+        type="button"
+        class="setmot-close"
+        style="
+          position:absolute;
+          top:10px;
+          right:15px;
+          border:0;
+          background:none;
+          font-size:30px;
+          cursor:pointer;
+        "
+      >
+        ×
+      </button>
+
+      <h2 style="margin-top:0;">
+        Personalizează setul de moț
+      </h2>
+
+      <p>
+        Completează detaliile pentru personalizare.
+      </p>
+
+      <label style="display:block;margin-top:15px;font-weight:600;">
+        Numele copilului *
+      </label>
+
+      <input
+        type="text"
+        class="setmot-name"
+        placeholder="Ex: Ava"
+        style="
+          width:100%;
+          padding:12px;
+          margin-top:6px;
+          box-sizing:border-box;
+          border:1px solid #ccc;
+          border-radius:8px;
+        "
+      >
+
+      <label style="display:block;margin-top:15px;font-weight:600;">
+        Data evenimentului
+      </label>
+
+      <input
+        type="date"
+        class="setmot-date"
+        style="
+          width:100%;
+          padding:12px;
+          margin-top:6px;
+          box-sizing:border-box;
+          border:1px solid #ccc;
+          border-radius:8px;
+        "
+      >
+
+      <label style="display:block;margin-top:15px;font-weight:600;">
+        Tematică
+      </label>
+
+      <select
+        class="setmot-theme"
+        style="
+          width:100%;
+          padding:12px;
+          margin-top:6px;
+          box-sizing:border-box;
+          border:1px solid #ccc;
+          border-radius:8px;
+        "
+      >
+        <option value="Căsuța cu ciupercuțe">
+          Căsuța cu ciupercuțe
+        </option>
+        <option value="Altă tematică">
+          Altă tematică
+        </option>
+      </select>
+
+      <label style="
+        display:flex;
+        align-items:center;
+        gap:8px;
+        margin-top:18px;
+        font-weight:600;
+      ">
+        <input type="checkbox" class="setmot-frame">
+        Adaugă ramă foto (+60 lei)
+      </label>
+
+      <div
+        class="setmot-price"
+        style="
+          font-size:21px;
+          font-weight:700;
+          margin:18px 0;
+        "
+      >
+        230,00 lei
+      </div>
+
+      <p
+        class="setmot-error"
+        style="
+          color:#b00020;
+          display:none;
+          margin:8px 0;
+        "
+      ></p>
+
+      <button
+        type="button"
+        class="setmot-add"
+        style="
+          width:100%;
+          padding:14px;
+          border:0;
+          border-radius:9px;
+          background:#a94f79;
+          color:white;
+          font-weight:700;
+          cursor:pointer;
+          font-size:16px;
+        "
+      >
+        Adaugă în coș
+      </button>
+
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  const frame = modal.querySelector(".setmot-frame");
+  const price = modal.querySelector(".setmot-price");
+
+  frame.addEventListener("change", function() {
+    price.textContent = money(
+      product.pret + (frame.checked ? 60 : 0)
+    );
+  });
+
+  modal
+    .querySelector(".setmot-close")
+    .addEventListener("click", function() {
+      modal.remove();
+    });
+
+  modal.addEventListener("click", function(event) {
+    if (event.target === modal) {
+      modal.remove();
+    }
+  });
+
+  modal
+    .querySelector(".setmot-add")
+    .addEventListener("click", function() {
+
+      const name = modal
+        .querySelector(".setmot-name")
+        .value
+        .trim();
+
+      const error = modal.querySelector(".setmot-error");
+
+      if (!name) {
+        error.textContent =
+          "Te rog să completezi numele copilului.";
+        error.style.display = "block";
+        return;
+      }
+
+      const date = modal
+        .querySelector(".setmot-date")
+        .value;
+
+      const theme = modal
+        .querySelector(".setmot-theme")
+        .value;
+
+      cart.push({
+        ...product,
+        pret: product.pret + (frame.checked ? 60 : 0),
+        personalizare: {
+          numeCopil: name,
+          dataEveniment: date,
+          tematica: theme,
+          ramaFoto: frame.checked
+        }
+      });
+
+      modal.remove();
+
+      renderCart();
+      openCart();
+    });
+}
 
 /* =========================
    DESCHIDERE COS
