@@ -893,6 +893,7 @@ function openSetMotCustomizer(productId) {
 
   const frame = modal.querySelector(".setmot-frame");
   const price = modal.querySelector(".setmot-price");
+  const caricatura = modal.querySelector(".setmot-caricatura");
 
   frame.addEventListener("change", function() {
     price.textContent = money(
