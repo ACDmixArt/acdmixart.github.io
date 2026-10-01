@@ -1,9 +1,5 @@
 /*
-  CUM ADAUGI PRODUSE:
-  1. Pune fotografiile în images/products/
-  2. Copiază un produs de mai jos.
-  3. Schimbă id, nume, categorie, pret și poze.
-  4. Salvează fișierul și fă Commit changes în GitHub.
+  ACDmixArt - produse, categorii, cos si galerie
 */
 
 const products = [
@@ -51,8 +47,9 @@ const products = [
       "images/products/dior1.jpg",
       "images/products/dior2.jpg"
     ]
-  }
-    {
+  },
+
+  {
     id: 5,
     nume: "Invitație botez-Dior",
     categorie: "Botez",
@@ -62,7 +59,8 @@ const products = [
       "images/products/diorfata1.jpg",
       "images/products/diorfata2.jpg"
     ]
-  }
+  },
+
   {
     id: 6,
     nume: "Invitație botez-Jungla",
@@ -73,30 +71,37 @@ const products = [
       "images/products/jungla1.jpg",
       "images/products/jungla2.jpg"
     ]
+  },
+
+  {
+    id: 7,
+    nume: "Invitație botez-Ingeras",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/ingeras.jpg",
+      "images/products/ingeras1.jpg"
+    ]
+  },
+
+  {
+    id: 8,
+    nume: "Invitație botez-Balon",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/balon.jpg",
+      "images/products/balon1.jpg",
+      "images/products/balon2.jpg",
+      "images/products/balon3.jpg"
+    ]
   }
-{
-  id: 7,
-  nume: "Invitație botez-Ingeras",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/ingeras.jpg",
-    "images/products/ingeras1.jpg"
-  ]
-}
-{
-  id: 8,
-  nume: "Invitație botez-Balon",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/balon.jpg",
-    "images/products/balon1.jpg",
-    "images/products/balon2.jpg",
-    "images/products/balon3.jpg"
-  ]
-}
 ];
+
+
+/* =========================
+   ELEMENTE
+========================= */
 
 const filtre = document.querySelector(".filters");
 const grila = document.querySelector(".products-grid");
@@ -115,7 +120,7 @@ let cart = [];
 ========================= */
 
 function categories() {
-return [
+  return [
     "Toate",
     "Botez",
     "Nunta",
@@ -133,7 +138,7 @@ return [
 
 
 /* =========================
-   BANI
+   PRET
 ========================= */
 
 function money(value) {
@@ -352,7 +357,7 @@ function closeCart() {
 
 
 /* =========================
-   BUTON COS
+   BUTOANE COS
 ========================= */
 
 document.addEventListener("click", function(event) {
@@ -384,7 +389,7 @@ if (overlay) {
 
 
 /* =========================
-   GALERIE POZE PRODUS
+   GALERIE POZE
 ========================= */
 
 document.addEventListener("click", function(event) {
@@ -437,11 +442,9 @@ document.addEventListener("click", function(event) {
   const imagineMare =
     lightbox.querySelector(".lightbox-image");
 
-
   function afiseazaImagine() {
     imagineMare.src = imagini[index];
   }
-
 
   const butonPrev =
     lightbox.querySelector(".lightbox-prev");
@@ -451,7 +454,6 @@ document.addEventListener("click", function(event) {
 
   const butonClose =
     lightbox.querySelector(".lightbox-close");
-
 
   butonPrev.onclick = function(event) {
     event.stopPropagation();
@@ -463,7 +465,6 @@ document.addEventListener("click", function(event) {
     afiseazaImagine();
   };
 
-
   butonNext.onclick = function(event) {
     event.stopPropagation();
 
@@ -474,11 +475,9 @@ document.addEventListener("click", function(event) {
     afiseazaImagine();
   };
 
-
   butonClose.onclick = function() {
     lightbox.remove();
   };
-
 
   lightbox.onclick = function(event) {
     if (event.target === lightbox) {
