@@ -111,6 +111,17 @@ const products = [
       "images/products/carusel2.jpg"
     ]
   },
+      {
+    id: 11,
+    nume: "Invitație botez-Minnie2",
+    categorie: "Botez",
+    pret: 3.5,
+    images: [
+      "images/products/minnie.jpg",
+      "images/products/minnie1.jpg",
+      "images/products/minnie2.jpg"
+    ]
+  },
 ];
 
 
