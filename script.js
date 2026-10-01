@@ -132,7 +132,7 @@ const products = [
       "images/products/teo2.jpg",
       "images/products/teo3.jpg"
     ]
-  }
+  },
     {
     id: 13,
     nume: "Invitație botez-Balerina",
@@ -141,6 +141,16 @@ const products = [
     poze: [
       "images/products/balerina.jpg",
       "images/products/balerina1.jpg"
+    ]
+  },
+    {
+    id: 14,
+    nume: "Invitație botez cu plic special",
+    categorie: "Botez",
+    pret: 9,
+    poze: [
+      "images/products/funda.jpg",
+      "images/products/funda1.jpg"
     ]
   },
 ];
