@@ -462,12 +462,13 @@ renderCart();
   padding: 8px;
 }
 
+
 .filter-btn {
   appearance: none;
-  border: 1px solid #D8A6AD;
-  background: #FAF7F2;
-  color: #66745F;
-  padding: 10px 19px;
+  border: 1px solid #66745F;
+  background: #66745F;
+  color: #FFFFFF;
+  padding: 11px 21px;
   border-radius: 999px;
   font-family: "DM Sans", sans-serif;
   font-size: 14px;
@@ -475,21 +476,22 @@ renderCart();
   letter-spacing: 0.2px;
   cursor: pointer;
   transition: all 0.25s ease;
+  box-shadow: 0 3px 8px rgba(102, 116, 95, 0.15);
 }
 
 .filter-btn:hover {
-  background: #D8A6AD;
+  background: #7D8D73;
+  border-color: #7D8D73;
   color: #FFFFFF;
-  border-color: #D8A6AD;
   transform: translateY(-2px);
-  box-shadow: 0 5px 14px rgba(216, 166, 173, 0.22);
+  box-shadow: 0 6px 14px rgba(102, 116, 95, 0.22);
 }
 
 .filter-btn.active {
-  background: #66745F;
+  background: #4F5D49;
   color: #FFFFFF;
-  border-color: #66745F;
-  box-shadow: 0 5px 15px rgba(102, 116, 95, 0.20);
+  border-color: #4F5D49;
+  box-shadow: 0 5px 15px rgba(79, 93, 73, 0.25);
 }
 
 .filter-btn:active {
