@@ -426,6 +426,16 @@ const products = [
     "images/products/leu.jpg"
   ]
 },
+  {
+  id: 41,
+  nume: "Invitatie botez-Mickey",
+  categorie: "Botez",
+  pret: 4,
+  poze: [
+    "images/products/mici.jpg",
+    "images/products/mici1.jpg"
+  ]
+},
 ];
 
 
