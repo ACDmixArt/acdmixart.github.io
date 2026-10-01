@@ -932,28 +932,37 @@ const caricatura = modal.querySelector(".setmot-caricatura");
 const themeSelect = modal.querySelector(".setmot-theme-select");
 const themeOther = modal.querySelector(".setmot-theme-other");
 
-  const updatePrice = () => {
-    price.textContent = money(
-      product.pret +
-      (frame.checked ? 60 : 0) +
-      (caricatura.checked ? 30 : 0)
-    );
-  };
+themeSelect.addEventListener("change", function() {
+  if (themeSelect.value === "Alta") {
+    themeOther.style.display = "block";
+  } else {
+    themeOther.style.display = "none";
+    themeOther.value = "";
+  }
+});
 
-   frame.addEventListener("change", updatePrice);
-  caricatura.addEventListener("change", updatePrice);
+const updatePrice = () => {
+  price.textContent = money(
+    product.pret +
+    (frame.checked ? 60 : 0) +
+    (caricatura.checked ? 30 : 0)
+  );
+};
 
-  modal
-    .querySelector(".setmot-close")
-    .addEventListener("click", function() {
-      modal.remove();
-    });
+frame.addEventListener("change", updatePrice);
+caricatura.addEventListener("change", updatePrice);
 
-  modal.addEventListener("click", function(event) {
-    if (event.target === modal) {
-      modal.remove();
-    }
+modal
+  .querySelector(".setmot-close")
+  .addEventListener("click", function() {
+    modal.remove();
   });
+
+modal.addEventListener("click", function(event) {
+  if (event.target === modal) {
+    modal.remove();
+  }
+});
 
   modal
     .querySelector(".setmot-add")
