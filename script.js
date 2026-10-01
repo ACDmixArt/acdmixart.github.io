@@ -387,6 +387,16 @@ const products = [
     "images/products/gemeni1.jpg"
   ]
 },
+  {
+  id: 37,
+  nume: "Invitatie botez-Baby Boss",
+  categorie: "Botez",
+  pret: 4,
+  poze: [
+    "images/products/boss.jpg",
+    "images/products/boss1.jpg"
+  ]
+},
 ];
 
 
