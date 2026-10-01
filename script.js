@@ -198,6 +198,17 @@ const products = [
     "images/products/ursverde2.jpg"
   ]
 },
+  {
+  id: 19,
+  nume: "Invitatie botez-pergament",
+  categorie: "Botez",
+  pret: 7.5,
+  poze: [
+    "images/products/calc.jpg",
+    "images/products/calc1.jpg",
+    "images/products/calc2.jpg"
+  ]
+},
 ];
 
 
