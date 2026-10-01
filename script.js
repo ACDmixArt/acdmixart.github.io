@@ -257,6 +257,17 @@ const products = [
     "images/products/mihai4.jpg"
   ]
 },
+  {
+  id: 24,
+  nume: "Invitatie botez-Minnie3",
+  categorie: "Botez",
+  pret: 3.5,
+  poze: [
+    "images/products/minnie3.jpg",
+    "images/products/minnie4.jpg",
+    "images/products/minnie5.jpg"
+  ]
+},
 ];
 
 
