@@ -84,6 +84,18 @@ const products = [
     "images/products/ingeras1.jpg"
   ]
 }
+{
+  id: 8,
+  nume: "Invitație botez-Balon",
+  categorie: "Botez",
+  pret: 3.5,
+  poze: [
+    "images/products/balon.jpg",
+    "images/products/balon1.jpg",
+    "images/products/balon2.jpg",
+    "images/products/balon3.jpg"
+  ]
+}
 ];
 
 const filtre = document.querySelector(".filters");
