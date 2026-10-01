@@ -339,6 +339,16 @@ const products = [
     "images/products/butterfly.jpg"
   ]
 },
+  {
+  id: 32,
+  nume: "Invitatie botez-Lebada",
+  categorie: "Botez",
+  pret: 7,
+  poze: [
+    "images/products/lebada.jpg",
+    "images/products/lebada1.jpg"
+  ]
+},
 ];
 
 
