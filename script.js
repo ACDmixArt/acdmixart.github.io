@@ -13,7 +13,7 @@ const products = [
       "images/products/amalia1.jpg"
     ]
   },
- {
+  {
     id: 2,
     nume: "Invitație botez-Urs",
     categorie: "Botez",
@@ -56,7 +56,6 @@ const products = [
       "images/products/diorfata2.jpg"
     ]
   },
-
   {
     id: 6,
     nume: "Invitație botez-Jungla",
@@ -89,51 +88,51 @@ const products = [
       "images/products/balon2.jpg",
       "images/products/balon3.jpg"
     ]
-  }
-    {
+  },
+  {
     id: 9,
     nume: "Invitație botez-Zana",
     categorie: "Botez",
     pret: 3.5,
-    images: [
+    poze: [
       "images/products/zana.jpg",
       "images/products/zana1.jpg"
     ]
-  }
+  },
   {
     id: 10,
     nume: "Invitație botez-Carusel",
     categorie: "Botez",
     pret: 8,
-    images: [
+    poze: [
       "images/products/carusel.jpg",
       "images/products/carusel1.jpg",
       "images/products/carusel2.jpg"
     ]
   },
-      {
+  {
     id: 11,
     nume: "Invitație botez-Minnie2",
     categorie: "Botez",
     pret: 3.5,
-    images: [
+    poze: [
       "images/products/minnie.jpg",
       "images/products/minnie1.jpg",
       "images/products/minnie2.jpg"
     ]
   },
-     {
+  {
     id: 12,
     nume: "Invitație mot Cocomelon",
     categorie: "Botez",
     pret: 5.5,
-    images: [
+    poze: [
       "images/products/teo.jpg",
       "images/products/teo1.jpg",
       "images/products/teo2.jpg",
       "images/products/teo3.jpg"
     ]
-  },     
+  }
 ];
 
 
