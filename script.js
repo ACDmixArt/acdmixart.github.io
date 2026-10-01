@@ -31,7 +31,7 @@ const products = [
   },
 
     {
-    id: 5,
+    id: 3,
     nume: "Invitație botez Minnie1",
     categorie: "Botez",
     pret: 6.5,
@@ -41,15 +41,17 @@ const products = [
     ]
   },
 
-  {
+    {
     id: 4,
-    nume: "Exemplu — Magnet personalizat",
-    categorie: "Marturii",
-    pret: 4,
+    nume: "Invitație botez-Dior",
+    categorie: "Botez",
+    pret: 7,
     poze: [
-      "images/products/magnet.jpg"
+      "images/products/dior.jpg",
+      "images/products/dior1.jpg",
+      "images/products/dior2.jpg"
     ]
-  }
+  },
 ];
 
 const filtre = document.querySelector(".filters");
