@@ -90,6 +90,27 @@ const products = [
       "images/products/balon3.jpg"
     ]
   }
+    {
+    id: 9,
+    nume: "Invitație botez-Zana",
+    categorie: "Botez",
+    pret: 3.5,
+    images: [
+      "images/products/zana.jpg",
+      "images/products/zana1.jpg"
+    ]
+  }
+  {
+    id: 10,
+    nume: "Invitație botez-Carusel",
+    categorie: "Botez",
+    pret: 8,
+    images: [
+      "images/products/carusel.jpg",
+      "images/products/carusel1.jpg",
+      "images/products/carusel2.jpg"
+    ]
+  },
 ];
 
 
