@@ -133,6 +133,16 @@ const products = [
       "images/products/teo3.jpg"
     ]
   }
+    {
+    id: 13,
+    nume: "Invitație botez-Balerina",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/balerina.jpg",
+      "images/products/balerina1.jpg"
+    ]
+  },
 ];
 
 
