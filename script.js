@@ -209,6 +209,18 @@ const products = [
     "images/products/calc2.jpg"
   ]
 },
+  {
+  id: 20,
+  nume: "Invitatie botez + plic pentru dar",
+  categorie: "Botez",
+  pret: 6,
+  poze: [
+    "images/products/invitatieverde.jpg",
+    "images/products/invitatieverde1.jpg",
+    "images/products/invitatieverde2.jpg",
+    "images/products/invitatieverde3.jpg"
+  ]
+},
 ];
 
 
