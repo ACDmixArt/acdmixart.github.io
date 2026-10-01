@@ -290,6 +290,16 @@ const products = [
     "images/products/printesa2.jpg"
   ]
 },
+ {
+  id: 27,
+  nume: "Invitatie botez-Floral",
+  categorie: "Botez",
+  pret: 5,
+  poze: [
+    "images/products/funda.jpg",
+    "images/products/funda1.jpg"
+  ]
+}, 
 ];
 
 
