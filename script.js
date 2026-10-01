@@ -300,6 +300,16 @@ const products = [
     "images/products/funda1.jpg"
   ]
 }, 
+  {
+  id: 28,
+  nume: "Invitatie botez- Babyblue",
+  categorie: "Botez",
+  pret: 6.5,
+  poze: [
+    "images/products/matei1.jpg",
+    "images/products/matei.jpg"
+  ]
+},
 ];
 
 
