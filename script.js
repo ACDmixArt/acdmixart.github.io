@@ -330,6 +330,15 @@ const products = [
     "images/products/roz.jpg"
   ]
 },
+  {
+  id: 31,
+  nume: "Invitatie botez-Butterfly",
+  categorie: "Botez",
+  pret: 3.5,
+  poze: [
+    "images/products/butterfly.jpg"
+  ]
+},
 ];
 
 
