@@ -464,21 +464,6 @@ const products = [
       "images/products/setmot8.jpg"
     ]
   },
-    {
-    id: 44,
-    nume: "Set moț – Micul Marinar",
-    categorie: "Set Mot",
-    pret: 230,
-    poze: [
-      "images/products/set.jpg",
-      "images/products/set2.jpg",
-      "images/products/set3.jpg",
-      "images/products/set4.jpg",
-      "images/products/set5.jpg",
-      "images/products/set6.jpg",
-      "images/products/set7.jpg"
-    ]
-  },
 ];
 
 
@@ -799,67 +784,44 @@ function openSetMotCustomizer(productId) {
       >
 
       <label style="display:block;margin-top:15px;font-weight:600;">
-  Tematică dorită
-</label>
+        Data evenimentului
+      </label>
 
-<select
-  class="setmot-theme-select"
-  style="
-    width:100%;
-    padding:12px;
-    margin-top:6px;
-    box-sizing:border-box;
-    border:1px solid #ccc;
-    border-radius:8px;
-  "
->
-  <option value="Căsuța cu ciupercuțe">
-    Căsuța cu ciupercuțe
-  </option>
-  <option value="Alta">
-    Altă tematică
-  </option>
-</select>
+      <input
+        type="date"
+        class="setmot-date"
+        style="
+          width:100%;
+          padding:12px;
+          margin-top:6px;
+          box-sizing:border-box;
+          border:1px solid #ccc;
+          border-radius:8px;
+        "
+      >
 
-<input
-  type="text"
-  class="setmot-theme-other"
-  placeholder="Scrie tematica dorită"
-  style="
-    width:100%;
-    padding:12px;
-    margin-top:8px;
-    box-sizing:border-box;
-    border:1px solid #ccc;
-    border-radius:8px;
-    display:none;
-  "
->
+      <label style="display:block;margin-top:15px;font-weight:600;">
+        Tematică
+      </label>
 
-     <select class="setmot-theme-select">
-  <option value="Căsuța cu ciupercuțe">
-    Căsuța cu ciupercuțe
-  </option>
-  <option value="Alta">
-    Altă tematică
-  </option>
-</select>
-
-<input
-  type="text"
-  class="setmot-theme-other"
-  placeholder="Scrie tematica dorită"
-  style="
-    width:100%;
-    padding:12px;
-    margin-top:8px;
-    box-sizing:border-box;
-    border:1px solid #ccc;
-    border-radius:8px;
-    display:none;
-  "
->
->
+      <select
+        class="setmot-theme"
+        style="
+          width:100%;
+          padding:12px;
+          margin-top:6px;
+          box-sizing:border-box;
+          border:1px solid #ccc;
+          border-radius:8px;
+        "
+      >
+        <option value="Căsuța cu ciupercuțe">
+          Căsuța cu ciupercuțe
+        </option>
+        <option value="Altă tematică">
+          Altă tematică
+        </option>
+      </select>
 
       <label style="
         display:flex;
@@ -871,16 +833,6 @@ function openSetMotCustomizer(productId) {
         <input type="checkbox" class="setmot-frame">
         Adaugă ramă foto (+60 lei)
       </label>
-<label style="
-  display:flex;
-  align-items:center;
-  gap:8px;
-  margin-top:12px;
-  font-weight:600;
-">
-  <input type="checkbox" class="setmot-caricatura">
-  Adaugă caricatură (+30 lei)
-</label>
 
       <div
         class="setmot-price"
@@ -926,77 +878,68 @@ function openSetMotCustomizer(productId) {
   document.body.appendChild(modal);
 
   const frame = modal.querySelector(".setmot-frame");
-const price = modal.querySelector(".setmot-price");
-const caricatura = modal.querySelector(".setmot-caricatura");
+  const price = modal.querySelector(".setmot-price");
 
-const themeSelect = modal.querySelector(".setmot-theme-select");
-const themeOther = modal.querySelector(".setmot-theme-other");
-
-themeSelect.addEventListener("change", function() {
-  if (themeSelect.value === "Alta") {
-    themeOther.style.display = "block";
-  } else {
-    themeOther.style.display = "none";
-    themeOther.value = "";
-  }
-});
-
-const updatePrice = () => {
-  price.textContent = money(
-    product.pret +
-    (frame.checked ? 60 : 0) +
-    (caricatura.checked ? 30 : 0)
-  );
-};
-
-frame.addEventListener("change", updatePrice);
-caricatura.addEventListener("change", updatePrice);
-
-modal
-  .querySelector(".setmot-close")
-  .addEventListener("click", function() {
-    modal.remove();
+  frame.addEventListener("change", function() {
+    price.textContent = money(
+      product.pret + (frame.checked ? 60 : 0)
+    );
   });
 
-modal.addEventListener("click", function(event) {
-  if (event.target === modal) {
-    modal.remove();
-  }
-});
+  modal
+    .querySelector(".setmot-close")
+    .addEventListener("click", function() {
+      modal.remove();
+    });
 
- const date = "";
+  modal.addEventListener("click", function(event) {
+    if (event.target === modal) {
+      modal.remove();
+    }
+  });
 
-let theme = themeSelect ? themeSelect.value : "";
+  modal
+    .querySelector(".setmot-add")
+    .addEventListener("click", function() {
 
-if (themeSelect && themeSelect.value === "Alta") {
-  theme = themeOther ? themeOther.value.trim() : "";
-}
+      const name = modal
+        .querySelector(".setmot-name")
+        .value
+        .trim();
 
-if (!theme) {
-  error.textContent =
-    "Te rog să alegi sau să scrii tematica dorită.";
-  error.style.display = "block";
-  return;
-}
+      const error = modal.querySelector(".setmot-error");
 
-cart.push({
-  ...product,
-  pret:
-    product.pret +
-    (frame.checked ? 60 : 0) +
-    (caricatura.checked ? 30 : 0),
-  personalizare: {
-    numeCopil: name,
-    tematica: theme,
-    ramaFoto: frame.checked,
-    caricatura: caricatura.checked
-  }
-};
-     modal.remove();
+      if (!name) {
+        error.textContent =
+          "Te rog să completezi numele copilului.";
+        error.style.display = "block";
+        return;
+      }
 
-renderCart();
-openCart();
-});
+      const date = modal
+        .querySelector(".setmot-date")
+        .value;
+
+      const theme = modal
+        .querySelector(".setmot-theme")
+        .value;
+
+      cart.push({
+        ...product,
+        pret: product.pret + (frame.checked ? 60 : 0),
+        personalizare: {
+          numeCopil: name,
+          dataEveniment: date,
+          tematica: theme,
+          ramaFoto: frame.checked
+        }
+      });
+
+      modal.remove();
+
+      renderCart();
+      openCart();
+    });
 }
 
 /* =========================
