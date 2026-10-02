@@ -1151,3 +1151,7 @@ document.addEventListener("click", function(event) {
 renderCategories();
 renderProducts();
 renderCart();
+window.addToCart = addToCart;
+window.removeFromCart = removeFromCart;
+window.setCategory = setCategory;
+window.openSetMotCustomizer = openSetMotCustomizer;
