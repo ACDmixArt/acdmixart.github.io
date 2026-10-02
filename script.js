@@ -706,6 +706,31 @@ function renderCart() {
   cartTotal.textContent = money(total);
 }
 
+const cartWhatsapp = document.getElementById("cartWhatsapp");
+
+if (cartWhatsapp) {
+  cartWhatsapp.addEventListener("click", () => {
+    if (!cart.length) {
+      alert("Coșul este gol!");
+      return;
+    }
+
+    const produse = cart.map(product =>
+      `- ${product.nume} — ${product.pret} lei`
+    ).join("\n");
+
+    const total = cart.reduce(
+      (sum, product) => sum + Number(product.pret),
+      0
+    );
+
+    const mesaj = `Bună! Doresc să comand:\n\n${produse}\n\nTotal: ${total} lei`;
+    const url = `https://wa.me/40742059730?text=${encodeURIComponent(mesaj)}`;
+
+    window.open(url, "_blank");
+  });
+}
+
 
 /* =========================
    PERSONALIZARE SET MOT
