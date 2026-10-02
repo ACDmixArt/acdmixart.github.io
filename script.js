@@ -573,7 +573,6 @@ function renderProducts() {
 
       return `
         <article class="product-card">
-
           <div class="product-photo">
             <img
               src="${imagini[0]}"
@@ -583,129 +582,32 @@ function renderProducts() {
           </div>
 
           <div class="product-info">
+            <h3>${product.nume}</h3>
+            <p class="product-price">${money(product.pret)}</p>
 
-            
-function addToCart(productId, quantity = 1) {
-  const product = products.find(p => p.id === productId);
-  quantity = Number(quantity);
+            <label for="qty-${product.id}">Cantitate:</label>
+            <input
+              type="number"
+              id="qty-${product.id}"
+              min="1"
+              step="1"
+              value="1"
+            >
 
-  if (!product) return;
-
-  if (!Number.isInteger(quantity) || quantity < 1) {
-    alert("Introdu un număr valid de bucăți.");
-    return;
-  }
-
-  cart.push({ ...product, quantity });
-
-  renderCart();
-  openCart();
-}
-
-
-            </div>
-
+            ${
+              product.categorie === "Set Mot"
+                ? `<button onclick="openSetMotCustomizer(${product.id}, document.getElementById('qty-${product.id}').value)">
+                    Personalizează
+                  </button>`
+                : `<button onclick="addToCart(${product.id}, document.getElementById('qty-${product.id}').value)">
+                    Adaugă în coș
+                  </button>`
+            }
           </div>
-
         </article>
       `;
     })
     .join("");
-}
-
-
-/* =========================
-   COS
-========================= */
-
-function addToCart(productId) {
-  const product = products.find(
-    product => product.id === productId
-  );
-
-  if (!product) return;
-
-  cart.push(product);
-
-  renderCart();
-  openCart();
-}
-
-
-function removeFromCart(index) {
-  cart.splice(index, 1);
-  renderCart();
-}
-
-
-function renderCart() {
-  if (cartCount) {
-    cartCount.textContent = cart.length;
-  }
-
-  if (!cartItems || !cartTotal) return;
-
-  if (cart.length === 0) {
-    cartItems.innerHTML = `
-      <p class="empty-cart">
-        Coșul este gol.
-      </p>
-    `;
-
-    cartTotal.textContent = "0,00 lei";
-    return;
-  }
-
-  cartItems.innerHTML = cart
-    .map(
-      (product, index) => `
-        <div class="cart-item">
-
-          <div>
-            <strong>${product.nume}</strong>
-            <span>${money(product.pret)}</span>
-          </div>
-
-          <button onclick="removeFromCart(${index})">
-            ×
-          </button>
-
-        </div>
-      `
-    )
-    .join("");
-
-  const total = cart.reduce(
-    (sum, product) => sum + product.pret,
-    0
-  );
-
-  cartTotal.textContent = money(total);
-}
-
-const cartWhatsapp = document.getElementById("cartWhatsapp");
-
-if (cartWhatsapp) {
-  cartWhatsapp.addEventListener("click", () => {
-    if (!cart.length) {
-      alert("Coșul este gol!");
-      return;
-    }
-
-    const produse = cart.map(product =>
-      `- ${product.nume} — ${product.pret} lei`
-    ).join("\n");
-
-    const total = cart.reduce(
-      (sum, product) => sum + Number(product.pret),
-      0
-    );
-
-    const mesaj = `Bună! Doresc să comand:\n\n${produse}\n\nTotal: ${total} lei`;
-    const url = `https://wa.me/40742059730?text=${encodeURIComponent(mesaj)}`;
-
-    window.open(url, "_blank");
-  });
 }
 
 
