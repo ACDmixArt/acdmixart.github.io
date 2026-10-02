@@ -1130,6 +1130,112 @@ document.addEventListener("click", function(event) {
 
 });
 
+/* =========================
+   FORMULAR PERSONALIZARE + WHATSAPP
+========================= */
+
+const orderForm = document.getElementById("orderForm");
+const formCategory = document.getElementById("formCategory");
+const formProduct = document.getElementById("formProduct");
+const whatsappNumber = "40742059730";
+
+if (orderForm && formCategory && formProduct) {
+
+  // Preia toate categoriile existente, cu excepția "Toate"
+  const availableCategories = categories().filter(
+    category => category !== "Toate"
+  );
+
+  formCategory.innerHTML = '<option value="">Alege categoria</option>';
+
+  availableCategories.forEach(category => {
+    const option = document.createElement("option");
+    option.value = category;
+    option.textContent = category;
+    formCategory.appendChild(option);
+  });
+
+  // Încarcă produsele din categoria selectată
+  function updateFormProducts() {
+    const selectedCategory = formCategory.value;
+
+    formProduct.innerHTML = "";
+
+    const filteredProducts = products.filter(
+      product => product.categorie === selectedCategory
+    );
+
+    if (!selectedCategory) {
+      formProduct.innerHTML =
+        '<option value="">Alege mai întâi categoria</option>';
+      return;
+    }
+
+    if (filteredProducts.length === 0) {
+      formProduct.innerHTML =
+        '<option value="">Momentan nu există produse în această categorie</option>';
+      return;
+    }
+
+    formProduct.innerHTML =
+      '<option value="">Alege modelul / produsul</option>';
+
+    filteredProducts.forEach(product => {
+      const option = document.createElement("option");
+      option.value = product.id;
+      option.textContent = product.nume;
+      formProduct.appendChild(option);
+    });
+  }
+
+  formCategory.addEventListener("change", updateFormProducts);
+
+  // Trimite cererea pe WhatsApp
+  orderForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const selectedProduct = products.find(
+      product => String(product.id) === formProduct.value
+    );
+
+    const quantity = Number(
+      document.getElementById("formQuantity").value
+    );
+    const colors = document.getElementById("formColors").value.trim();
+    const eventDate = document.getElementById("formDate").value;
+    const details = document.getElementById("formDetails").value.trim();
+
+    if (!formCategory.value) {
+      alert("Te rog să alegi o categorie.");
+      return;
+    }
+
+    if (!selectedProduct) {
+      alert("Te rog să alegi un model sau un produs disponibil.");
+      return;
+    }
+
+    if (!Number.isInteger(quantity) || quantity < 1) {
+      alert("Te rog să introduci o cantitate validă.");
+      return;
+    }
+
+    let message = "Bună! Doresc o comandă personalizată ACDmixArt.\n\n";
+    message += `Categorie: ${selectedProduct.categorie}\n`;
+    message += `Model / produs: ${selectedProduct.nume}\n`;
+    message += `Cantitate: ${quantity}\n`;
+
+    if (colors) message += `Nuanțe / culori: ${colors}\n`;
+    if (eventDate) message += `Data evenimentului: ${eventDate}\n`;
+    if (details) message += `Nume și detalii: ${details}\n`;
+
+    const whatsappUrl =
+      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappUrl, "_blank");
+  });
+}
+
 
 /* =========================
    INITIALIZARE
