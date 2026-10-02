@@ -1012,8 +1012,7 @@ document.addEventListener("click", function(event) {
     openCart();
   }
 
-  const closeButton =
-    event.target.closest(".cart-close");
+  const closeButton = event.target.closest("#closeCart");
 
   if (closeButton) {
     closeCart();
