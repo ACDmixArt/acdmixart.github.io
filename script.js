@@ -706,6 +706,7 @@ function renderCart() {
   cartTotal.textContent = money(total);
 }
 
+
 /* =========================
    PERSONALIZARE SET MOT
 ========================= */
@@ -753,31 +754,26 @@ function openSetMotCustomizer(productId) {
           font-size:30px;
           cursor:pointer;
         "
-      >
-        ×
-      </button>
+      >×</button>
 
       <h2 style="margin-top:0;">
         Personalizează setul de moț
       </h2>
 
-      <p>
-        Completează detaliile pentru personalizare.
-      </p>
+      <p>Completează detaliile pentru personalizare.</p>
 
-      <label style="display:block;margin-top:15px;font-weight:600;">
+      <label style="
+        display:block;
+        margin-top:15px;
+        font-weight:600;
+      ">
         Numele copilului *
-      </label>
-
-           <label style="display:block;margin-top:15px;font-weight:600;">
-        Tematică
       </label>
 
       <input
         type="text"
-        class="setmot-theme"
-        list="setmot-theme-options"
-        placeholder="Căsuța cu ciupercuțe sau altă tematică"
+        class="setmot-name"
+        placeholder="Introdu numele copilului"
         style="
           width:100%;
           padding:12px;
@@ -788,9 +784,14 @@ function openSetMotCustomizer(productId) {
         "
       >
 
-      <datalist id="setmot-theme-options">
-        <option value="Căsuța cu ciupercuțe"></option>
-      </datalist>
+      <label style="
+        display:block;
+        margin-top:15px;
+        font-weight:600;
+      ">
+        Tematică *
+      </label>
+
       <select
         class="setmot-theme"
         style="
@@ -825,29 +826,6 @@ function openSetMotCustomizer(productId) {
         "
       >
 
-      <label style="display:block;margin-top:15px;font-weight:600;">
-        Tematică
-      </label>
-
-      <select
-        class="setmot-theme"
-        style="
-          width:100%;
-          padding:12px;
-          margin-top:6px;
-          box-sizing:border-box;
-          border:1px solid #ccc;
-          border-radius:8px;
-        "
-      >
-        <option value="Căsuța cu ciupercuțe">
-          Căsuța cu ciupercuțe
-        </option>
-        <option value="Altă tematică">
-          Altă tematică
-        </option>
-      </select>
-
       <label style="
         display:flex;
         align-items:center;
@@ -866,9 +844,7 @@ function openSetMotCustomizer(productId) {
           font-weight:700;
           margin:18px 0;
         "
-      >
-        230,00 lei
-      </div>
+      ></div>
 
       <p
         class="setmot-error"
@@ -902,25 +878,40 @@ function openSetMotCustomizer(productId) {
 
   document.body.appendChild(modal);
 
-    const themeSelect = modal.querySelector(".setmot-theme");
+  const frame = modal.querySelector(".setmot-frame");
+  const price = modal.querySelector(".setmot-price");
+  const themeSelect = modal.querySelector(".setmot-theme");
   const themeOther = modal.querySelector(".setmot-theme-other");
+  const nameInput = modal.querySelector(".setmot-name");
+  const error = modal.querySelector(".setmot-error");
+  const addButton = modal.querySelector(".setmot-add");
 
+  // Actualizare preț
+  function updatePrice() {
+    price.textContent = money(
+      product.pret + (frame.checked ? 60 : 0)
+    );
+  }
+
+  updatePrice();
+
+  frame.addEventListener("change", updatePrice);
+
+  // Tematică personalizată
   themeSelect.addEventListener("change", function() {
     if (themeSelect.value === "Altă tematică") {
       themeOther.style.display = "block";
+      themeOther.focus();
     } else {
       themeOther.style.display = "none";
       themeOther.value = "";
     }
-  });
-  frame.addEventListener("change", function() {
-    price.textContent = money(
-      product.pret + (frame.checked ? 60 : 0)
-    );
+
+    error.style.display = "none";
   });
 
-  modal
-    .querySelector(".setmot-close")
+  // Închidere fereastră
+  modal.querySelector(".setmot-close")
     .addEventListener("click", function() {
       modal.remove();
     });
@@ -931,56 +922,52 @@ function openSetMotCustomizer(productId) {
     }
   });
 
-  modal
-    .querySelector(".setmot-add")
-    .addEventListener("click", function() {
+  // Adăugare în coș
+  addButton.addEventListener("click", function() {
+    const name = nameInput.value.trim();
+    let theme = themeSelect.value;
 
-      const name = modal
-        .querySelector(".setmot-name")
-        .value
-        .trim();
+    error.style.display = "none";
 
-      const error = modal.querySelector(".setmot-error");
+    if (!name) {
+      error.textContent =
+        "Te rog să completezi numele copilului.";
+      error.style.display = "block";
+      nameInput.focus();
+      return;
+    }
 
-      if (!name) {
-        error.textContent =
-          "Te rog să completezi numele copilului.";
-        error.style.display = "block";
-        return;
+    if (theme === "Altă tematică") {
+      theme = themeOther.value.trim();
+    }
+
+    if (!theme) {
+      error.textContent =
+        "Te rog să alegi sau să scrii tematica dorită.";
+      error.style.display = "block";
+      themeOther.focus();
+      return;
+    }
+
+    const frameAdded = frame.checked;
+
+    cart.push({
+      ...product,
+      pret: product.pret + (frameAdded ? 60 : 0),
+      personalizare: {
+        numeCopil: name,
+        tematica: theme,
+        ramaFoto: frameAdded
       }
-
-      const date = modal
-        .querySelector(".setmot-date")
-        .value;
-
-           let theme = modal
-        .querySelector(".setmot-theme")
-        .value;
-
-      if (theme === "Altă tematică") {
-        theme = modal
-          .querySelector(".setmot-theme-other")
-          .value
-          .trim();
-      }
-
-      cart.push({
-        ...product,
-        pret: product.pret + (frame.checked ? 60 : 0),
-        personalizare: {
-          numeCopil: name,
-          dataEveniment: date,
-          tematica: theme,
-          ramaFoto: frame.checked
-        }
-      });
-
-      modal.remove();
-
-      renderCart();
-      openCart();
     });
+
+    modal.remove();
+
+    renderCart();
+    openCart();
+  });
 }
+
 
 /* =========================
    DESCHIDERE COS
