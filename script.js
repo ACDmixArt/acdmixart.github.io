@@ -877,6 +877,106 @@ cart.push({
 
 
 /* =========================
+   FUNCTII COS
+========================= */
+
+function addToCart(productId, quantity = 1) {
+  const product = products.find(p => p.id === productId);
+  quantity = Number(quantity);
+
+  if (!product) return;
+
+  if (!Number.isInteger(quantity) || quantity < 1) {
+    alert("Introdu un număr valid de bucăți.");
+    return;
+  }
+
+  cart.push({ ...product, quantity });
+  renderCart();
+  openCart();
+}
+
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  renderCart();
+}
+
+function changeCartQuantity(index, quantity) {
+  quantity = Number(quantity);
+
+  if (!Number.isInteger(quantity) || quantity < 1) {
+    alert("Introdu un număr valid de bucăți.");
+    renderCart();
+    return;
+  }
+
+  if (!cart[index]) return;
+
+  cart[index].quantity = quantity;
+  renderCart();
+}
+
+function renderCart() {
+  if (cartCount) {
+    cartCount.textContent = cart.reduce(
+      (sum, product) => sum + (product.quantity || 1),
+      0
+    );
+  }
+
+  if (!cartItems || !cartTotal) return;
+
+  if (cart.length === 0) {
+    cartItems.innerHTML = `
+      <p class="empty-cart">Coșul este gol.</p>
+    `;
+    cartTotal.textContent = "0,00 lei";
+    return;
+  }
+
+  cartItems.innerHTML = cart.map((product, index) => `
+    <div class="cart-item">
+      <div>
+        <strong>${product.nume}</strong>
+        <span>
+          ${money(product.pret)} / buc.
+        </span>
+        ${
+          product.personalizare
+            ? `<p> Nume: ${product.personalizare.numeCopil}
+                <br>Tematică: ${product.personalizare.tematica}
+                <br>Ramă foto: ${product.personalizare.ramaFoto ? "Da" : "Nu"}
+              </p>`
+            : ""
+        }
+        <label for="cart-qty-${index}">Cantitate:</label>
+        <input
+          type="number"
+          id="cart-qty-${index}"
+          min="1"
+          step="1"
+          value="${product.quantity || 1}"
+          onchange="changeCartQuantity(${index}, this.value)"
+        >
+        <p>
+          Subtotal: ${money(product.pret * (product.quantity || 1))}
+        </p>
+      </div>
+
+      <button onclick="removeFromCart(${index})">×</button>
+    </div>
+  `).join("");
+
+  const total = cart.reduce(
+    (sum, product) =>
+      sum + product.pret * (product.quantity || 1),
+    0
+  );
+
+  cartTotal.textContent = money(total);
+}
+
+/* =========================
    DESCHIDERE COS
 ========================= */
 
