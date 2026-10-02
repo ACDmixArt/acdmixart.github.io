@@ -769,10 +769,15 @@ function openSetMotCustomizer(productId) {
         Numele copilului *
       </label>
 
+           <label style="display:block;margin-top:15px;font-weight:600;">
+        Tematică
+      </label>
+
       <input
         type="text"
-        class="setmot-name"
-        placeholder="Ex: Ava"
+        class="setmot-theme"
+        list="setmot-theme-options"
+        placeholder="Căsuța cu ciupercuțe sau altă tematică"
         style="
           width:100%;
           padding:12px;
@@ -783,10 +788,9 @@ function openSetMotCustomizer(productId) {
         "
       >
 
-            <label style="display:block;margin-top:15px;font-weight:600;">
-        Tematică
-      </label>
-
+      <datalist id="setmot-theme-options">
+        <option value="Căsuța cu ciupercuțe"></option>
+      </datalist>
       <select
         class="setmot-theme"
         style="
