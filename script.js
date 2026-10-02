@@ -823,7 +823,7 @@ function openSetMotCustomizer(productId) {
         </option>
       </select>
 
-          <label style="
+      <label style="
         display:flex;
         align-items:center;
         gap:8px;
@@ -833,20 +833,6 @@ function openSetMotCustomizer(productId) {
         <input type="checkbox" class="setmot-frame">
         Adaugă ramă foto (+60 lei)
       </label>
-
-      <label style="
-        display:flex;
-        align-items:center;
-        gap:8px;
-        margin-top:12px;
-        font-weight:600;
-      ">
-        <input type="checkbox" class="setmot-caricatura">
-        Adaugă caricatură (+30 lei)
-      </label>
-
-      <div
-        class="setmot-price"
 
       <div
         class="setmot-price"
@@ -893,7 +879,6 @@ function openSetMotCustomizer(productId) {
 
   const frame = modal.querySelector(".setmot-frame");
   const price = modal.querySelector(".setmot-price");
-  const caricatura = modal.querySelector(".setmot-caricatura");
 
   frame.addEventListener("change", function() {
     price.textContent = money(
