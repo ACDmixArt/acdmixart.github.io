@@ -213,7 +213,7 @@ h1, h2, h3 {
     font-size: 13px;
   }
 }
-```css
+
 /* Butoane personalizare set moț */
 .setmot-add {
   background: var(--burgundy-dark) !important;
@@ -248,4 +248,3 @@ h1, h2, h3 {
 .setmot-close:hover {
   background: var(--cream) !important;
 }
-```
