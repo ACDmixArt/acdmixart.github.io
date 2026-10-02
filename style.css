@@ -213,3 +213,39 @@ h1, h2, h3 {
     font-size: 13px;
   }
 }
+```css
+/* Butoane personalizare set moț */
+.setmot-add {
+  background: var(--burgundy-dark) !important;
+  color: var(--white) !important;
+  border: none !important;
+  border-radius: 30px !important;
+  padding: 14px 22px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 10px rgba(102, 116, 95, 0.18);
+  transition: all 0.25s ease;
+}
+
+.setmot-add:hover {
+  background: var(--burgundy) !important;
+  color: var(--ink) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(102, 116, 95, 0.25);
+}
+
+.setmot-add:active {
+  transform: scale(0.98);
+}
+
+/* Buton închidere */
+.setmot-close {
+  color: var(--ink) !important;
+  border-radius: 50% !important;
+  transition: background 0.2s ease;
+}
+
+.setmot-close:hover {
+  background: var(--cream) !important;
+}
+```
