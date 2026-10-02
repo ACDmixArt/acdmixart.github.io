@@ -1242,6 +1242,14 @@ if (orderForm && formCategory && formProduct) {
     if (!Number.isInteger(quantity) || quantity < 1) {
       alert("Te rog să introduci o cantitate validă.");
       return;
+      const invitationCategories = ["Botez", "Nunta", "Nunta-Botez"];
+ }
+if (
+  invitationCategories.includes(selectedProduct.categorie) &&
+  quantity < 25
+) {
+  alert("Comanda minimă pentru invitații este de 25 de bucăți.");
+  return;
     }
 
     let message = "Bună! Doresc o comandă personalizată ACDmixArt.\n\n";
@@ -1272,3 +1280,4 @@ window.addToCart = addToCart;
 window.removeFromCart = removeFromCart;
 window.setCategory = setCategory;
 window.openSetMotCustomizer = openSetMotCustomizer;
+window.changeCartQuantity = changeCartQuantity;
