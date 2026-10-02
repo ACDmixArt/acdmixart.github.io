@@ -891,20 +891,14 @@ function openSetMotCustomizer(productId) {
 
   document.body.appendChild(modal);
 
- const frame = modal.querySelector(".setmot-frame");
-const price = modal.querySelector(".setmot-price");
-const caricatura = modal.querySelector(".setmot-caricatura");
+  const frame = modal.querySelector(".setmot-frame");
+  const price = modal.querySelector(".setmot-price");
+  const caricatura = modal.querySelector(".setmot-caricatura");
 
-function updatePrice() {
-  price.textContent = money(
-    product.pret +
-    (frame.checked ? 60 : 0) +
-    (caricatura.checked ? 30 : 0)
-  );
-}
-
-frame.addEventListener("change", updatePrice);
-caricatura.addEventListener("change", updatePrice);
+  frame.addEventListener("change", function() {
+    price.textContent = money(
+      product.pret + (frame.checked ? 60 : 0)
+    );
   });
 
   modal
