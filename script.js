@@ -823,7 +823,7 @@ function openSetMotCustomizer(productId) {
         </option>
       </select>
 
-          <label style="
+      <label style="
         display:flex;
         align-items:center;
         gap:8px;
@@ -844,9 +844,6 @@ function openSetMotCustomizer(productId) {
         <input type="checkbox" class="setmot-caricatura">
         Adaugă caricatură (+30 lei)
       </label>
-
-      <div
-        class="setmot-price"
 
       <div
         class="setmot-price"
@@ -888,6 +885,83 @@ function openSetMotCustomizer(productId) {
 
     </div>
   `;
+
+  document.body.appendChild(modal);
+
+  const frame = modal.querySelector(".setmot-frame");
+  const caricatura = modal.querySelector(".setmot-caricatura");
+  const price = modal.querySelector(".setmot-price");
+
+  function updatePrice() {
+    price.textContent = money(
+      product.pret +
+      (frame.checked ? 60 : 0) +
+      (caricatura.checked ? 30 : 0)
+    );
+  }
+
+  frame.addEventListener("change", updatePrice);
+  caricatura.addEventListener("change", updatePrice);
+
+  modal
+    .querySelector(".setmot-close")
+    .addEventListener("click", function() {
+      modal.remove();
+    });
+
+  modal.addEventListener("click", function(event) {
+    if (event.target === modal) {
+      modal.remove();
+    }
+  });
+
+  modal
+    .querySelector(".setmot-add")
+    .addEventListener("click", function() {
+
+      const name = modal
+        .querySelector(".setmot-name")
+        .value
+        .trim();
+
+      const error = modal.querySelector(".setmot-error");
+
+      if (!name) {
+        error.textContent =
+          "Te rog să completezi numele copilului.";
+        error.style.display = "block";
+        return;
+      }
+
+      const date = modal
+        .querySelector(".setmot-date")
+        .value;
+
+      const theme = modal
+        .querySelector(".setmot-theme")
+        .value;
+
+      cart.push({
+        ...product,
+        pret:
+          product.pret +
+          (frame.checked ? 60 : 0) +
+          (caricatura.checked ? 30 : 0),
+        personalizare: {
+          numeCopil: name,
+          dataEveniment: date,
+          tematica: theme,
+          ramaFoto: frame.checked,
+          caricatura: caricatura.checked
+        }
+      });
+
+      modal.remove();
+
+      renderCart();
+      openCart();
+    });
+}
 
   document.body.appendChild(modal);
 
