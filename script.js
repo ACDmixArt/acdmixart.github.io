@@ -584,47 +584,24 @@ function renderProducts() {
 
           <div class="product-info">
 
-            <div class="product-category">
-              ${product.categorie}
-            </div>
+            
+function addToCart(productId, quantity = 1) {
+  const product = products.find(p => p.id === productId);
+  quantity = Number(quantity);
 
-            <div class="product-name">
-              ${product.nume}
-            </div>
+  if (!product) return;
 
-            <div class="product-price">
-              ${money(product.pret)}
-            </div>
-
-            <div class="product-actions">
-
-  ${product.categorie === "Set Mot"
-    ? `
-      <button
-        class="add-cart"
-        onclick="openSetMotCustomizer(${product.id})"
-      >
-        Personalizează
-      </button>
-    `
-    : `
-      <button
-        class="add-cart"
-        onclick="addToCart(${product.id})"
-      >
-        Adaugă în coș
-      </button>
-    `
+  if (!Number.isInteger(quantity) || quantity < 1) {
+    alert("Introdu un număr valid de bucăți.");
+    return;
   }
 
-  <button
-    class="fav"
-    onclick="this.classList.toggle('active')"
-  >
-    ♡
-  </button>
+  cart.push({ ...product, quantity });
 
-</div>
+  renderCart();
+  openCart();
+}
+
 
             </div>
 
@@ -736,7 +713,7 @@ if (cartWhatsapp) {
    PERSONALIZARE SET MOT
 ========================= */
 
-function openSetMotCustomizer(productId) {
+function openSetMotCustomizer(productId, quantity = 1) {
   const product = products.find(
     product => product.id === productId
   );
@@ -976,15 +953,18 @@ function openSetMotCustomizer(productId) {
 
     const frameAdded = frame.checked;
 
-    cart.push({
-      ...product,
-      pret: product.pret + (frameAdded ? 60 : 0),
-      personalizare: {
-        numeCopil: name,
-        tematica: theme,
-        ramaFoto: frameAdded
-      }
-    });
+    
+cart.push({
+  ...product,
+  quantity: quantity,
+  pret: product.pret + (frameAdded ? 60 : 0),
+  personalizare: {
+    numeCopil: name,
+    tematica: theme,
+    ramaFoto: frameAdded
+  }
+});
+
 
     modal.remove();
 
