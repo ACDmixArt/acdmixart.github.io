@@ -783,13 +783,12 @@ function openSetMotCustomizer(productId) {
         "
       >
 
-      <label style="display:block;margin-top:15px;font-weight:600;">
-        Data evenimentului
+            <label style="display:block;margin-top:15px;font-weight:600;">
+        Tematică
       </label>
 
-      <input
-        type="date"
-        class="setmot-date"
+      <select
+        class="setmot-theme"
         style="
           width:100%;
           padding:12px;
@@ -797,6 +796,28 @@ function openSetMotCustomizer(productId) {
           box-sizing:border-box;
           border:1px solid #ccc;
           border-radius:8px;
+        "
+      >
+        <option value="Căsuța cu ciupercuțe">
+          Căsuța cu ciupercuțe
+        </option>
+        <option value="Altă tematică">
+          Altă tematică
+        </option>
+      </select>
+
+      <input
+        type="text"
+        class="setmot-theme-other"
+        placeholder="Scrie tematica dorită"
+        style="
+          width:100%;
+          padding:12px;
+          margin-top:8px;
+          box-sizing:border-box;
+          border:1px solid #ccc;
+          border-radius:8px;
+          display:none;
         "
       >
 
@@ -877,9 +898,17 @@ function openSetMotCustomizer(productId) {
 
   document.body.appendChild(modal);
 
-  const frame = modal.querySelector(".setmot-frame");
-  const price = modal.querySelector(".setmot-price");
+    const themeSelect = modal.querySelector(".setmot-theme");
+  const themeOther = modal.querySelector(".setmot-theme-other");
 
+  themeSelect.addEventListener("change", function() {
+    if (themeSelect.value === "Altă tematică") {
+      themeOther.style.display = "block";
+    } else {
+      themeOther.style.display = "none";
+      themeOther.value = "";
+    }
+  });
   frame.addEventListener("change", function() {
     price.textContent = money(
       product.pret + (frame.checked ? 60 : 0)
@@ -920,9 +949,16 @@ function openSetMotCustomizer(productId) {
         .querySelector(".setmot-date")
         .value;
 
-      const theme = modal
+           let theme = modal
         .querySelector(".setmot-theme")
         .value;
+
+      if (theme === "Altă tematică") {
+        theme = modal
+          .querySelector(".setmot-theme-other")
+          .value
+          .trim();
+      }
 
       cart.push({
         ...product,
