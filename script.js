@@ -473,9 +473,9 @@ const products = [
 
 const filtre = document.querySelector(".filters");
 const grila = document.querySelector(".products-grid");
-const cartCount = document.querySelector(".cart-count");
-const cartItems = document.querySelector(".cart-items");
-const cartTotal = document.querySelector(".cart-total");
+const cartCount = document.getElementById("cartCount");
+const cartItems = document.getElementById("cartItems");
+const cartTotal = document.getElementById("cartTotal");
 const cartPanel = document.querySelector(".cart-panel");
 const overlay = document.querySelector(".overlay");
 
