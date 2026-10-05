@@ -547,7 +547,17 @@ function setCategory(category) {
 /* =========================
    AFISARE PRODUSE
 ========================= */
+function changeProductQuantity(productId, change) {
+  const quantityElement = document.getElementById(`qty-${productId}`);
+  if (!quantityElement) return;
 
+  let quantity = Number(quantityElement.textContent) || 1;
+  quantity += change;
+
+  if (quantity < 1) quantity = 1;
+
+  quantityElement.textContent = quantity;
+}
 function renderProducts() {
   if (!grila) return;
 
@@ -585,21 +595,26 @@ function renderProducts() {
             <h3>${product.nume}</h3>
             <p class="product-price">${money(product.pret)}</p>
 
-            <label for="qty-${product.id}">Cantitate:</label>
-            <input
-              type="number"
-              id="qty-${product.id}"
-              min="1"
-              step="1"
-              value="1"
-            >
+            <div class="product-quantity">
+  <button
+    type="button"
+    onclick="changeProductQuantity(${product.id}, -1)"
+  >−</button>
+
+  <span id="qty-${product.id}">1</span>
+
+  <button
+    type="button"
+    onclick="changeProductQuantity(${product.id}, 1)"
+  >+</button>
+</div>
 
             ${
               product.categorie === "Set Mot"
                 ? `<button onclick="openSetMotCustomizer(${product.id}, document.getElementById('qty-${product.id}').value)">
                     Personalizează
                   </button>`
-                : `<button onclick="addToCart(${product.id}, document.getElementById('qty-${product.id}').value)">
+                : `<button onclick="addToCart(${product.id}, document.getElementById('qty-${product.id}').textContent)">
                     Adaugă în coș
                   </button>`
             }
