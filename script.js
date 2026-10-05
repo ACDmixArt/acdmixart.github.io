@@ -608,8 +608,6 @@ function renderProducts() {
     onclick="changeProductQuantity(${product.id}, 1)"
   >+</button>
 </div>
-
-            ${
              ${
   product.categorie === "Set Mot"
     ? `<button onclick="openSetMotCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">
