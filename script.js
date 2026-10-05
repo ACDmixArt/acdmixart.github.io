@@ -972,9 +972,7 @@ function renderCart() {
   <span>${product.quantity || 1}</span>
 
   <button
-    type="button"
-    onclick="changeCartQuantity(${index}, (productQuantity(${index}) + 1))"
-  >+</button>
+   
 </div>
 function productQuantity(index) {
   return cart[index]?.quantity || 1;
