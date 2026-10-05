@@ -249,44 +249,45 @@ h1, h2, h3 {
   background: var(--cream) !important;
 }
 /* =========================
-   CANTITATE COS - PREMIUM
+   CANTITATE PRODUSE
 ========================= */
 
-.cart-quantity {
-  display: inline-flex;
+.product-quantity {
+  display: flex;
   align-items: center;
-  gap: 0;
-  margin-top: 10px;
+  justify-content: center;
+  width: fit-content;
+  height: 40px;
+  margin: 10px 0 12px;
   border: 1px solid #dfe4dc;
   border-radius: 12px;
   overflow: hidden;
   background: #f8faf7;
 }
 
-.cart-quantity button {
-  width: 36px;
-  height: 36px;
+.product-quantity button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
   border: 0;
   background: transparent;
-  color: var(--burgundy-dark);
+  color: #66745F;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: .2s ease;
 }
 
-.cart-quantity button:hover {
-  background: #e8ede4;
+.product-quantity button:hover {
+  background: #E8EDE4;
 }
 
-.cart-quantity span {
-  min-width: 38px;
-  text-align: center;
+.product-quantity span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 40px;
+  color: #4E4945;
   font-size: 14px;
   font-weight: 600;
-  color: var(--ink);
-}
-
-.cart-quantity button:active {
-  transform: scale(.92);
 }
