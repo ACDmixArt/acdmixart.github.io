@@ -949,14 +949,22 @@ function renderCart() {
               </p>`
             : ""
         }
-        <label for="cart-qty-${index}">Cantitate:</label>
-        <input
-          type="number"
-          id="cart-qty-${index}"
-          min="1"
-          step="1"
-          value="${product.quantity || 1}"
-          onchange="changeCartQuantity(${index}, this.value)"
+        <div class="cart-quantity">
+  <button
+    type="button"
+    onclick="changeCartQuantity(${index}, (productQuantity(${index}) - 1))"
+  >−</button>
+
+  <span>${product.quantity || 1}</span>
+
+  <button
+    type="button"
+    onclick="changeCartQuantity(${index}, (productQuantity(${index}) + 1))"
+  >+</button>
+</div>
+function productQuantity(index) {
+  return cart[index]?.quantity || 1;
+}
         >
         <p>
           Subtotal: ${money(product.pret * (product.quantity || 1))}
