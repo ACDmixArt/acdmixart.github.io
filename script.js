@@ -1299,7 +1299,6 @@ const whatsappNumber = "40742059730";
 
 if (orderForm && formCategory && formProduct) {
 
-  // Categorii disponibile în catalog
   const availableCategories = [
     ...new Set(
       products
@@ -1308,7 +1307,6 @@ if (orderForm && formCategory && formProduct) {
     )
   ];
 
-  // Populează categoriile
   formCategory.innerHTML =
     '<option value="">Alege categoria</option>';
 
@@ -1321,8 +1319,8 @@ if (orderForm && formCategory && formProduct) {
     formCategory.appendChild(option);
   });
 
-  // Populează modelele în funcție de categorie
   function updateFormProducts() {
+
     const selectedCategory = formCategory.value;
 
     formProduct.innerHTML =
@@ -1333,12 +1331,14 @@ if (orderForm && formCategory && formProduct) {
     );
 
     filteredProducts.forEach(product => {
+
       const option = document.createElement("option");
 
       option.value = product.id;
       option.textContent = product.nume;
 
       formProduct.appendChild(option);
+
     });
   }
 
@@ -1347,7 +1347,6 @@ if (orderForm && formCategory && formProduct) {
     updateFormProducts
   );
 
-  // Trimite cererea pe WhatsApp
   orderForm.addEventListener(
     "submit",
     function (event) {
@@ -1364,33 +1363,43 @@ if (orderForm && formCategory && formProduct) {
       );
 
       const colors =
-        document
-          .getElementById("formColors")
-          .value
-          .trim();
+        document.getElementById("formColors").value.trim();
 
       const eventDate =
         document.getElementById("formDate").value;
 
       const details =
-        document
-          .getElementById("formDetails")
-          .value
-          .trim();
+        document.getElementById("formDetails").value.trim();
 
-      if (!selectedProduct) {
-        alert(
-          "Te rog să alegi un model sau un produs."
-        );
+      if (!formCategory.value) {
+        alert("Te rog să alegi o categorie.");
         return;
       }
 
+      if (!selectedProduct) {
+        alert("Te rog să alegi un model sau un produs.");
+        return;
+      }
+
+      if (!Number.isInteger(quantity) || quantity < 1) {
+        alert("Te rog să introduci o cantitate validă.");
+        return;
+      }
+
+      /* MINIM 25 BUCĂȚI PENTRU INVITAȚII */
+
+      const invitationCategories = [
+        "Botez",
+        "Nunta",
+        "Nunta-Botez"
+      ];
+
       if (
-        !Number.isInteger(quantity) ||
-        quantity < 1
+        invitationCategories.includes(selectedProduct.categorie) &&
+        quantity < 25
       ) {
         alert(
-          "Te rog să introduci o cantitate validă."
+          "Comanda minimă pentru invitații este de 25 de bucăți."
         );
         return;
       }
