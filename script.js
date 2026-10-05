@@ -1174,20 +1174,25 @@ if (orderForm && formCategory && formProduct) {
     category => category !== "Toate"
   );
 
-  formCategory.innerHTML = '<option value="">Alege categoria</option>';
+  formCategory.innerHTML =
+    '<option value="">Alege categoria</option>';
 
   availableCategories.forEach(category => {
     const option = document.createElement("option");
+
     option.value = category;
     option.textContent = category;
+
     formCategory.appendChild(option);
   });
 
   // Încarcă produsele din categoria selectată
   function updateFormProducts() {
+
     const selectedCategory = formCategory.value;
 
-    formProduct.innerHTML = "";
+    formProduct.innerHTML =
+      '<option value="">Alege modelul / produsul</option>';
 
     const filteredProducts = products.filter(
       product => product.categorie === selectedCategory
@@ -1205,74 +1210,132 @@ if (orderForm && formCategory && formProduct) {
       return;
     }
 
-    formProduct.innerHTML =
-      '<option value="">Alege modelul / produsul</option>';
-
     filteredProducts.forEach(product => {
+
       const option = document.createElement("option");
+
       option.value = product.id;
       option.textContent = product.nume;
+
       formProduct.appendChild(option);
+
     });
   }
 
-  formCategory.addEventListener("change", updateFormProducts);
+  formCategory.addEventListener(
+    "change",
+    updateFormProducts
+  );
 
   // Trimite cererea pe WhatsApp
-  orderForm.addEventListener("submit", function(event) {
-    event.preventDefault();
+  orderForm.addEventListener(
+    "submit",
+    function(event) {
 
-    const selectedProduct = products.find(
-      product => String(product.id) === formProduct.value
-    );
+      event.preventDefault();
 
-    const quantity = Number(
-      document.getElementById("formQuantity").value
-    );
-    const colors = document.getElementById("formColors").value.trim();
-    const eventDate = document.getElementById("formDate").value;
-    const details = document.getElementById("formDetails").value.trim();
+      const selectedProduct = products.find(
+        product =>
+          String(product.id) === formProduct.value
+      );
 
-    if (!formCategory.value) {
-      alert("Te rog să alegi o categorie.");
-      return;
+      const quantity = Number(
+        document.getElementById("formQuantity").value
+      );
+
+      const colors =
+        document
+          .getElementById("formColors")
+          .value
+          .trim();
+
+      const eventDate =
+        document.getElementById("formDate").value;
+
+      const details =
+        document
+          .getElementById("formDetails")
+          .value
+          .trim();
+
+      if (!formCategory.value) {
+        alert("Te rog să alegi o categorie.");
+        return;
+      }
+
+      if (!selectedProduct) {
+        alert(
+          "Te rog să alegi un model sau un produs disponibil."
+        );
+        return;
+      }
+
+      if (
+        !Number.isInteger(quantity) ||
+        quantity < 1
+      ) {
+        alert(
+          "Te rog să introduci o cantitate validă."
+        );
+        return;
+      }
+
+      // Comanda minimă pentru invitații
+      const invitationCategories = [
+        "Botez",
+        "Nunta",
+        "Nunta-Botez"
+      ];
+
+      if (
+        invitationCategories.includes(
+          selectedProduct.categorie
+        ) &&
+        quantity < 25
+      ) {
+        alert(
+          "Comanda minimă pentru invitații este de 25 de bucăți."
+        );
+        return;
+      }
+
+      let message =
+        "Bună! Doresc o comandă personalizată ACDmixArt.\n\n";
+
+      message +=
+        `Categorie: ${selectedProduct.categorie}\n`;
+
+      message +=
+        `Model / produs: ${selectedProduct.nume}\n`;
+
+      message +=
+        `Cantitate: ${quantity}\n`;
+
+      if (colors) {
+        message +=
+          `Nuanțe / culori: ${colors}\n`;
+      }
+
+      if (eventDate) {
+        message +=
+          `Data evenimentului: ${eventDate}\n`;
+      }
+
+      if (details) {
+        message +=
+          `Nume și detalii: ${details}\n`;
+      }
+
+      const whatsappUrl =
+        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+      window.open(
+        whatsappUrl,
+        "_blank"
+      );
     }
-
-    if (!selectedProduct) {
-      alert("Te rog să alegi un model sau un produs disponibil.");
-      return;
-    }
-
-    if (!Number.isInteger(quantity) || quantity < 1) {
-      alert("Te rog să introduci o cantitate validă.");
-      return;
-      const invitationCategories = ["Botez", "Nunta", "Nunta-Botez"];
- }
-if (
-  invitationCategories.includes(selectedProduct.categorie) &&
-  quantity < 25
-) {
-  alert("Comanda minimă pentru invitații este de 25 de bucăți.");
-  return;
-    }
-
-    let message = "Bună! Doresc o comandă personalizată ACDmixArt.\n\n";
-    message += `Categorie: ${selectedProduct.categorie}\n`;
-    message += `Model / produs: ${selectedProduct.nume}\n`;
-    message += `Cantitate: ${quantity}\n`;
-
-    if (colors) message += `Nuanțe / culori: ${colors}\n`;
-    if (eventDate) message += `Data evenimentului: ${eventDate}\n`;
-    if (details) message += `Nume și detalii: ${details}\n`;
-
-    const whatsappUrl =
-      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-    window.open(whatsappUrl, "_blank");
-  });
+  );
 }
-
-
 /* =========================
    INITIALIZARE
 ========================= */
@@ -1285,6 +1348,7 @@ window.removeFromCart = removeFromCart;
 window.setCategory = setCategory;
 window.openSetMotCustomizer = openSetMotCustomizer;
 window.changeCartQuantity = changeCartQuantity;
+window.changeProductQuantity = changeProductQuantity;
 /* =========================
    FORMULAR COMANDA PERSONALIZATA
 ========================= */
