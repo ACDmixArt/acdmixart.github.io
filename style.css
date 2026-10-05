@@ -248,3 +248,45 @@ h1, h2, h3 {
 .setmot-close:hover {
   background: var(--cream) !important;
 }
+/* =========================
+   CANTITATE COS - PREMIUM
+========================= */
+
+.cart-quantity {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 10px;
+  border: 1px solid #dfe4dc;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f8faf7;
+}
+
+.cart-quantity button {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: transparent;
+  color: var(--burgundy-dark);
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.cart-quantity button:hover {
+  background: #e8ede4;
+}
+
+.cart-quantity span {
+  min-width: 38px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.cart-quantity button:active {
+  transform: scale(.92);
+}
