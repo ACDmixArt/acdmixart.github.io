@@ -3,176 +3,347 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>ACDmixArt — Invitații, toppere și produse personalizate</title>
-  <meta name="description" content="ACDmixArt — invitații, toppere, cadouri și produse personalizate.">
+
+  <meta
+    name="description"
+    content="ACDmixArt — invitații, toppere, cadouri și produse personalizate."
+  >
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
 <header class="site-header">
-  <a class="logo" href="#">ACDmixArt</a>
+
+  <a class="logo" href="#">
+    ACDmixArt
+  </a>
+
   <nav>
     <a href="#catalog">Catalog</a>
     <a href="#personalizare">Personalizare</a>
     <a href="#despre">Despre noi</a>
   </nav>
-  <button class="cart-button" id="openCart">🛒 Coș <span id="cartCount">0</span></button>
+
+  <button
+    class="cart-button"
+    id="openCart"
+    type="button"
+  >
+    🛒 Coș
+    <span id="cartCount">0</span>
+  </button>
+
 </header>
 
+
 <main>
+
+  <!-- HERO -->
+
   <section class="hero">
+
     <div>
-      <p class="eyebrow">ACDmixArt</p>
-      <h1>Lucruri mici care fac <em>momentele</em> speciale.</h1>
-      <p class="hero-text">Invitații, toppere, cadouri și produse personalizate, realizate cu atenție la fiecare detaliu.</p>
-      <a class="button" href="#catalog">Vezi catalogul</a>
+
+      <p class="eyebrow">
+        ACDmixArt
+      </p>
+
+      <h1>
+        Lucruri mici care fac
+        <em>momentele</em>
+        speciale.
+      </h1>
+
+      <p class="hero-text">
+        Invitații, toppere, cadouri și produse personalizate,
+        realizate cu atenție la fiecare detaliu.
+      </p>
+
+      <a
+        class="button"
+        href="#catalog"
+      >
+        Vezi catalogul
+      </a>
+
     </div>
+
+
     <div class="hero-card">
-      <img src="eu.jpg">
+
+      <img
+        src="eu.jpg"
+        alt="ACDmixArt"
+      >
+
     </div>
+
   </section>
 
-  <section id="catalog" class="catalog-section">
+
+  <!-- CATALOG -->
+
+  <section
+    id="catalog"
+    class="catalog-section"
+  >
+
     <div class="section-heading">
+
       <div>
-        <p class="eyebrow">Catalog</p>
-        <h2>Produsele ACDmixArt</h2>
+
+        <p class="eyebrow">
+          Catalog
+        </p>
+
+        <h2>
+          Produsele ACDmixArt
+        </h2>
+
       </div>
-      <div class="filters" id="filters"></div>
+
+      <div
+        class="filters"
+        id="filters"
+      ></div>
+
     </div>
-    <div class="products-grid" id="productsGrid"></div>
+
+
+    <div
+      class="products-grid"
+      id="productsGrid"
+    ></div>
+
   </section>
 
-  <section id="personalizare" class="personalize-section">
+
+  <!-- PERSONALIZARE -->
+
+  <section
+    id="personalizare"
+    class="personalize-section"
+  >
+
     <div>
-      <p class="eyebrow">Comandă personalizată</p>
-      <h2>Spune-mi ce îți dorești.</h2>
-      <p>Alege produsul, cantitatea și detaliile. Cererea poate fi trimisă apoi pe WhatsApp.</p>
+
+      <p class="eyebrow">
+        Comandă personalizată
+      </p>
+
+      <h2>
+        Spune-mi ce îți dorești.
+      </h2>
+
+      <p>
+        Alege produsul, cantitatea și detaliile.
+        Cererea poate fi trimisă apoi pe WhatsApp.
+      </p>
+
     </div>
-    <form id="orderForm" class="order-form">
-      <label>Categorie
-        <select id="formCategory" required></select>
+
+
+    <form
+      id="orderForm"
+      class="order-form"
+    >
+
+      <label>
+        Categorie
+
+        <select
+          id="formCategory"
+          required
+        >
+
+          <option value="">
+            Alege categoria
+          </option>
+
+        </select>
+
       </label>
-      <label>Model / produs
-        <select id="formProduct" required></select>
+
+
+      <label>
+        Model / produs
+
+        <select
+          id="formProduct"
+          required
+        >
+
+          <option value="">
+            Alege modelul
+          </option>
+
+        </select>
+
       </label>
-      <label>Cantitate
-        <input id="formQuantity" type="number" min="1" value="1" required>
+
+
+      <label>
+        Cantitate
+
+        <input
+          id="formQuantity"
+          type="number"
+          min="1"
+          value="1"
+          required
+        >
+
       </label>
-      <label>Nuanțe / culori
-        <input id="formColors" placeholder="Ex.: crem, burgundy, auriu">
+
+
+      <label>
+        Nuanțe / culori
+
+        <input
+          id="formColors"
+          type="text"
+          placeholder="Ex.: crem, burgundy, auriu"
+        >
+
       </label>
-      <label>Data evenimentului
-        <input id="formDate" type="date">
+
+
+      <label>
+        Data evenimentului
+
+        <input
+          id="formDate"
+          type="date"
+        >
+
       </label>
-      <label>Nume și detalii
-        <textarea id="formDetails" rows="4" placeholder="Nume, text, tematică, alte dorințe..."></textarea>
+
+
+      <label>
+        Nume și detalii
+
+        <textarea
+          id="formDetails"
+          rows="4"
+          placeholder="Nume, text, tematică, alte dorințe..."
+        ></textarea>
+
       </label>
-      <button class="button" type="submit">Trimite cererea pe WhatsApp</button>
+
+
+      <button
+        class="button"
+        type="submit"
+      >
+        Trimite cererea pe WhatsApp
+      </button>
+
     </form>
+
   </section>
 
-  <section id="despre" class="about-section">
-    <p class="eyebrow">Despre ACDmixArt</p>
-    <h2>Personalizat cu drag, de la idee la produs.</h2>
-    <p>Fiecare comandă pornește de la o idee și se transformă într-un produs creat special pentru tine.</p>
+
+  <!-- DESPRE -->
+
+  <section
+    id="despre"
+    class="about-section"
+  >
+
+    <p class="eyebrow">
+      Despre ACDmixArt
+    </p>
+
+    <h2>
+      Personalizat cu drag,
+      de la idee la produs.
+    </h2>
+
+    <p>
+      Fiecare comandă pornește de la o idee
+      și se transformă într-un produs creat
+      special pentru tine.
+    </p>
+
   </section>
+
 </main>
 
-<aside class="cart-panel" id="cartPanel" aria-hidden="true">
-  <div class="cart-top">
-    <h2>Coșul tău</h2>
-    <button id="closeCart" class="close">×</button>
-  </div>
-  <div id="cartItems"></div>
-  <div class="cart-bottom">
-    <strong>Total: <span id="cartTotal">0 lei</span></strong>
-    <button class="button" id="cartWhatsapp">Trimite comanda pe WhatsApp</button>
-  </div>
-</aside>
-<div class="overlay" id="overlay"></div>
 
-<footer>© <span id="year"></span> ACDmixArt</footer>
+<!-- COS -->
+
+<aside
+  class="cart-panel"
+  id="cartPanel"
+  aria-hidden="true"
+>
+
+  <div class="cart-top">
+
+    <h2>
+      Coșul tău
+    </h2>
+
+    <button
+      id="closeCart"
+      class="close"
+      type="button"
+    >
+      ×
+    </button>
+
+  </div>
+
+
+  <div id="cartItems"></div>
+
+
+  <div class="cart-bottom">
+
+    <strong>
+      Total:
+      <span id="cartTotal">
+        0 lei
+      </span>
+    </strong>
+
+    <button
+      class="button"
+      id="cartWhatsapp"
+      type="button"
+    >
+      Trimite comanda pe WhatsApp
+    </button>
+
+  </div>
+
+</aside>
+
+
+<div
+  class="overlay"
+  id="overlay"
+></div>
+
+
+<footer>
+  © <span id="year"></span> ACDmixArt
+</footer>
+
+
 <script src="script.js"></script>
+
 </body>
 </html>
-
-// FORMULAR COMANDĂ PERSONALIZATĂ - ACDmixArt
-const orderForm = document.getElementById("orderForm");
-const formCategory = document.getElementById("formCategory");
-const formProduct = document.getElementById("formProduct");
-
-const whatsappNumber = "40742059730";
-
-// Categorii disponibile în catalog
-const availableCategories = [...new Set(
-  products.map(product => product.categorie).filter(Boolean)
-)];
-
-// Populează categoriile
-formCategory.innerHTML = '<option value="">Alege categoria</option>';
-
-availableCategories.forEach(category => {
-  const option = document.createElement("option");
-  option.value = category;
-  option.textContent = category;
-  formCategory.appendChild(option);
-});
-
-// Populează modelele în funcție de categorie
-function updateFormProducts() {
-  const selectedCategory = formCategory.value;
-
-  formProduct.innerHTML = '<option value="">Alege modelul</option>';
-
-  const filteredProducts = products.filter(
-    product => product.categorie === selectedCategory
-  );
-
-  filteredProducts.forEach(product => {
-    const option = document.createElement("option");
-    option.value = product.id;
-    option.textContent = product.nume;
-    formProduct.appendChild(option);
-  });
-}
-
-formCategory.addEventListener("change", updateFormProducts);
-
-// Trimite cererea pe WhatsApp
-orderForm.addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  const selectedProduct = products.find(
-    product => String(product.id) === formProduct.value
-  );
-
-  const quantity = Number(document.getElementById("formQuantity").value);
-  const colors = document.getElementById("formColors").value.trim();
-  const eventDate = document.getElementById("formDate").value;
-  const details = document.getElementById("formDetails").value.trim();
-
-  if (!selectedProduct) {
-    alert("Te rog să alegi un model sau un produs.");
-    return;
-  }
-
-  if (!Number.isInteger(quantity) || quantity < 1) {
-    alert("Te rog să introduci o cantitate validă.");
-    return;
-  }
-
-  let message = `Bună! Doresc o ofertă pentru o comandă personalizată ACDmixArt.\n\n`;
-  message += `Categorie: ${selectedProduct.categorie}\n`;
-  message += `Model / produs: ${selectedProduct.nume}\n`;
-  message += `Cantitate: ${quantity}\n`;
-
-  if (colors) message += `Nuanțe / culori: ${colors}\n`;
-  if (eventDate) message += `Data evenimentului: ${eventDate}\n`;
-  if (details) message += `Nume și detalii: ${details}\n`;
-
-  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-  window.open(url, "_blank");
-});
