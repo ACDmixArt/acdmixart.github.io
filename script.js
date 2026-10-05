@@ -1287,3 +1287,98 @@ window.removeFromCart = removeFromCart;
 window.setCategory = setCategory;
 window.openSetMotCustomizer = openSetMotCustomizer;
 window.changeCartQuantity = changeCartQuantity;
+/* =========================
+   FORMULAR COMANDA PERSONALIZATA
+========================= */
+
+const orderForm = document.getElementById("orderForm");
+const formCategory = document.getElementById("formCategory");
+const formProduct = document.getElementById("formProduct");
+
+const whatsappNumber = "40742059730";
+
+if (orderForm && formCategory && formProduct) {
+
+  const availableCategories = [...new Set(
+    products.map(product => product.categorie).filter(Boolean)
+  )];
+
+  formCategory.innerHTML =
+    '<option value="">Alege categoria</option>';
+
+  availableCategories.forEach(category => {
+    const option = document.createElement("option");
+    option.value = category;
+    option.textContent = category;
+    formCategory.appendChild(option);
+  });
+
+  function updateFormProducts() {
+    const selectedCategory = formCategory.value;
+
+    formProduct.innerHTML =
+      '<option value="">Alege modelul</option>';
+
+    products
+      .filter(product => product.categorie === selectedCategory)
+      .forEach(product => {
+        const option = document.createElement("option");
+        option.value = product.id;
+        option.textContent = product.nume;
+        formProduct.appendChild(option);
+      });
+  }
+
+  formCategory.addEventListener("change", updateFormProducts);
+
+  orderForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const selectedProduct = products.find(
+      product => String(product.id) === formProduct.value
+    );
+
+    const quantity =
+      Number(document.getElementById("formQuantity").value);
+
+    const colors =
+      document.getElementById("formColors").value.trim();
+
+    const eventDate =
+      document.getElementById("formDate").value;
+
+    const details =
+      document.getElementById("formDetails").value.trim();
+
+    if (!selectedProduct) {
+      alert("Te rog să alegi un model sau un produs.");
+      return;
+    }
+
+    if (!Number.isInteger(quantity) || quantity < 1) {
+      alert("Te rog să introduci o cantitate validă.");
+      return;
+    }
+
+    let message =
+      `Bună! Doresc o ofertă pentru o comandă personalizată ACDmixArt.\n\n`;
+
+    message += `Categorie: ${selectedProduct.categorie}\n`;
+    message += `Model / produs: ${selectedProduct.nume}\n`;
+    message += `Cantitate: ${quantity}\n`;
+
+    if (colors)
+      message += `Nuanțe / culori: ${colors}\n`;
+
+    if (eventDate)
+      message += `Data evenimentului: ${eventDate}\n`;
+
+    if (details)
+      message += `Nume și detalii: ${details}\n`;
+
+    const url =
+      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(url, "_blank");
+  });
+}
