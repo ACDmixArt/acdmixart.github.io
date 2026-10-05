@@ -610,14 +610,15 @@ function renderProducts() {
 </div>
 
             ${
-              product.categorie === "Set Mot"
-                ? `<button onclick="openSetMotCustomizer(${product.id}, document.getElementById('qty-${product.id}').value)">
-                    Personalizează
-                  </button>`
-                : `<button onclick="addToCart(${product.id}, document.getElementById('qty-${product.id}').textContent)">
-                    Adaugă în coș
-                  </button>`
-            }
+             ${
+  product.categorie === "Set Mot"
+    ? `<button onclick="openSetMotCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">
+        Personalizează
+      </button>`
+    : `<button onclick="addToCart(${product.id}, document.getElementById('qty-${product.id}').textContent)">
+        Adaugă în coș
+      </button>`
+}
           </div>
         </article>
       `;
