@@ -445,8 +445,7 @@ const products = [
     "images/products/leb.jpg",
     "images/products/leb1.jpg",
     "images/products/leb2.jpg"
-  ]
-      
+  ]   
   {
     id: 44,
     nume: "Marturie din sapun floare",
@@ -457,7 +456,6 @@ const products = [
       "images/products/marturie-sapun1.jpg",
       "images/products/marturie-sapun2.jpg"
     ]
-
   {
     id: 45,
     nume: "Marturie magnetica Minnie Mouse",
@@ -468,7 +466,7 @@ const products = [
       "images/products/marturie1.jpg",
       "images/products/marturie2.jpg"
     ]
-  
+
   {
     id: 46,
     nume: "Marturie magnetica nunta+botez",
@@ -481,7 +479,6 @@ const products = [
       "images/products/marturieforma3.jpg"
     ]
   },
-
   {
     id: 43,
     nume: "Set moț – Căsuța cu ciupercuțe",
