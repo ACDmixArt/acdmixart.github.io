@@ -454,9 +454,9 @@ const products = [
     categorie: "Marturii",
     pret: 9,
     poze: [
-      "images/products/marturie-sapun.jpg",
-      "images/products/marturie-sapun1.jpg",
-      "images/products/marturie-sapun2.jpg"
+      "images/products/marturie sapun.jpg",
+      "images/products/marturie sapun1.jpg",
+      "images/products/marturie sapun2.jpg"
     ]
   },
   {
