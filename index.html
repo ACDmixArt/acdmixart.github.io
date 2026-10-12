@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -24,346 +25,289 @@
 
 <body>
 
-<header class="site-header">
+  <header class="site-header">
 
-  <a class="logo" href="#">
-    ACDmixArt
-  </a>
+    <a class="logo" href="#">
+      ACDmixArt
+    </a>
 
-  <nav>
-    <a href="#catalog">Catalog</a>
-    <a href="#personalizare">Personalizare</a>
-    <a href="#despre">Despre noi</a>
-  </nav>
+    <nav>
+      <a href="#catalog">Catalog</a>
+      <a href="#personalizare">Personalizare</a>
+      <a href="#despre">Despre noi</a>
+    </nav>
 
-  <button
-    class="cart-button"
-    id="openCart"
-    type="button"
-  >
-    🛒 Coș
-    <span id="cartCount">0</span>
-  </button>
+    <button
+      class="cart-button"
+      id="openCart"
+      type="button"
+    >
+      🛒 Coș
+      <span id="cartCount">0</span>
+    </button>
 
-</header>
+  </header>
 
+  <main>
 
-<main>
+    <!-- HERO -->
 
-  <!-- HERO -->
-
-  <section class="hero">
-
-    <div>
-
-      <p class="eyebrow">
-        ACDmixArt
-      </p>
-
-      <h1>
-        Lucruri mici care fac
-        <em>momentele</em>
-        speciale.
-      </h1>
-
-      <p class="hero-text">
-        Invitații, toppere, cadouri și produse personalizate,
-        realizate cu atenție la fiecare detaliu.
-      </p>
-
-      <a
-        class="button"
-        href="#catalog"
-      >
-        Vezi catalogul
-      </a>
-
-    </div>
-
-
-    <div class="hero-card">
-
-      <img
-        src="eu.jpg"
-        alt="ACDmixArt"
-      >
-
-    </div>
-
-  </section>
-
-
-  <!-- CATALOG -->
-
-  <section
-    id="catalog"
-    class="catalog-section"
-  >
-
-    <div class="section-heading">
+    <section class="hero">
 
       <div>
 
         <p class="eyebrow">
-          Catalog
+          ACDmixArt
         </p>
 
-        <h2>
-          Produsele ACDmixArt
-        </h2>
+        <h1>
+          Lucruri mici care fac
+          <em>momentele</em>
+          speciale.
+        </h1>
+
+        <p class="hero-text">
+          Invitații, toppere, cadouri și produse personalizate,
+          realizate cu atenție la fiecare detaliu.
+        </p>
+
+        <a class="button" href="#catalog">
+          Vezi catalogul
+        </a>
+
+      </div>
+
+      <div class="hero-card">
+
+        <img
+          src="eu.jpg"
+          alt="ACDmixArt"
+        >
+
+      </div>
+
+    </section>
+
+    <!-- CATALOG -->
+
+    <section
+      id="catalog"
+      class="catalog-section"
+    >
+
+      <div class="section-heading">
+
+        <div>
+
+          <p class="eyebrow">
+            Catalog
+          </p>
+
+          <h2>
+            Produsele ACDmixArt
+          </h2>
+
+        </div>
+
+        <div
+          class="filters"
+          id="filters"
+        ></div>
 
       </div>
 
       <div
-        class="filters"
-        id="filters"
+        class="products-grid"
+        id="productsGrid"
       ></div>
 
-    </div>
+    </section>
 
+    <!-- PERSONALIZARE -->
 
-    <div
-      class="products-grid"
-      id="productsGrid"
-    ></div>
+    <section
+      id="personalizare"
+      class="personalize-section"
+    >
 
-  </section>
+      <div>
 
+        <p class="eyebrow">
+          Comandă personalizată
+        </p>
 
-  <!-- PERSONALIZARE -->
+        <h2>
+          Spune-mi ce îți dorești.
+        </h2>
 
-  <section
-    id="personalizare"
-    class="personalize-section"
-  >
+        <p>
+          Alege categoria și produsul, apoi completează
+          detaliile care se potrivesc comenzii tale.
+          Vei putea verifica sumarul înainte de a trimite
+          cererea pe WhatsApp.
+        </p>
 
-    <div>
+      </div>
+
+      <form
+        id="orderForm"
+        class="order-form"
+      >
+
+        <label>
+          Categorie
+
+          <select
+            id="formCategory"
+            required
+          >
+            <option value="">
+              Alege categoria
+            </option>
+          </select>
+        </label>
+
+        <label>
+          Model / produs
+
+          <select
+            id="formProduct"
+            required
+            disabled
+          >
+            <option value="">
+              Alege mai întâi categoria
+            </option>
+          </select>
+        </label>
+
+        <!-- Câmpurile suplimentare vor apărea în funcție de produs -->
+
+        <div
+          id="dynamicFormFields"
+          class="dynamic-form-fields"
+        ></div>
+
+        <!-- Previzualizarea cererii -->
+
+        <div
+          id="orderSummary"
+          class="order-summary"
+          hidden
+        ></div>
+
+        <button
+          class="button"
+          type="submit"
+        >
+          Trimite cererea pe WhatsApp
+        </button>
+
+      </form>
+
+    </section>
+
+    <!-- DESPRE -->
+
+    <section
+      id="despre"
+      class="about-section"
+    >
 
       <p class="eyebrow">
-        Comandă personalizată
+        POVESTEA ACDmixArt
       </p>
 
       <h2>
-        Spune-mi ce îți dorești.
+        Din pasiune pentru detalii,
+        în amintiri personalizate.
       </h2>
 
       <p>
-        Alege produsul, cantitatea și detaliile.
-        Cererea poate fi trimisă apoi pe WhatsApp.
+        Bună! Sunt omul din spatele ACDmixArt. ❤️
+        Din 2023, creez invitații pentru evenimente speciale.
+        Ceea ce a început din pasiunea pentru papetăria
+        de eveniment s-a transformat, pas cu pas,
+        într-o lume întreagă de produse personalizate.
       </p>
+
+      <p>
+        Astăzi, creez invitații, caricaturi, cărți și
+        cărți de activități personalizate, toppere 3D,
+        magneți, căni și multe alte surprize pentru
+        momentele importante din viața voastră.
+      </p>
+
+      <p>
+        Fiecare comandă este o nouă ocazie de a transforma
+        o idee într-un produs unic, realizat cu grijă
+        pentru detalii și mult suflet.
+      </p>
+
+      <p>
+        <strong>Tu vii cu ideea, iar eu îi dau viață!</strong>
+      </p>
+
+    </section>
+
+  </main>
+
+  <!-- COȘ -->
+
+  <aside
+    class="cart-panel"
+    id="cartPanel"
+    aria-hidden="true"
+  >
+
+    <div class="cart-top">
+
+      <h2>
+        Coșul tău
+      </h2>
+
+      <button
+        id="closeCart"
+        class="close"
+        type="button"
+        aria-label="Închide coșul"
+      >
+        ×
+      </button>
 
     </div>
 
+    <div id="cartItems"></div>
 
-    <form
-      id="orderForm"
-      class="order-form"
-    >
+    <div class="cart-bottom">
 
-      <label>
-        Categorie
-
-        <select
-          id="formCategory"
-          required
-        >
-
-          <option value="">
-            Alege categoria
-          </option>
-
-        </select>
-
-      </label>
-
-
-      <label>
-        Model / produs
-
-        <select
-          id="formProduct"
-          required
-        >
-
-          <option value="">
-            Alege modelul
-          </option>
-
-        </select>
-
-      </label>
-
-
-      <label>
-        Cantitate
-
-        <input
-          id="formQuantity"
-          type="number"
-          min="1"
-          value="1"
-          required
-        >
-
-      </label>
-
-
-      <label>
-        Nuanțe / culori
-
-        <input
-          id="formColors"
-          type="text"
-          placeholder="Ex.: crem, burgundy, auriu"
-        >
-
-      </label>
-
-
-      <label>
-        Data evenimentului
-
-        <input
-          id="formDate"
-          type="date"
-        >
-
-      </label>
-
-
-      <label>
-        Nume și detalii
-
-        <textarea
-          id="formDetails"
-          rows="4"
-          placeholder="Nume, text, tematică, alte dorințe..."
-        ></textarea>
-
-      </label>
-
+      <strong>
+        Total:
+        <span id="cartTotal">0 lei</span>
+      </strong>
 
       <button
         class="button"
-        type="submit"
+        id="cartWhatsapp"
+        type="button"
       >
-        Trimite cererea pe WhatsApp
+        Trimite comanda pe WhatsApp
       </button>
 
-    </form>
+    </div>
 
-  </section>
+  </aside>
 
+  <div
+    class="overlay"
+    id="overlay"
+  ></div>
 
- 
-  <!-- DESPRE -->
+  <footer>
+    © <span id="year"></span> ACDmixArt
+  </footer>
 
-  <section
-    id="despre"
-    class="about-section"
-  >
-
-    <p class="eyebrow">
-      POVESTEA ACDmixArt
-    </p>
-
-    <h2>
-      Din pasiune pentru detalii,
-      în amintiri personalizate.
-    </h2>
-
-    <p>
-      Bună! Sunt omul din spatele ACDmixArt. ❤️
-      Din 2023, creez invitații pentru evenimente speciale.
-      Ceea ce a început din pasiunea pentru papetăria
-      de eveniment s-a transformat, pas cu pas,
-      într-o lume întreagă de produse personalizate.
-    </p>
-
-    <p>
-      Astăzi, creez invitații, caricaturi, cărți și
-      cărți de activități personalizate, toppere 3D,
-      magneți, căni și multe alte surprize pentru
-      momentele importante din viața voastră.
-    </p>
-
-    <p>
-      Fiecare comandă este o nouă ocazie de a transforma
-      o idee într-un produs unic, realizat cu grijă
-      pentru detalii și mult suflet.
-    </p>
-
-    <p>
-      <strong>Tu vii cu ideea, iar eu îi dau viață!</strong>
-    </p>
-
-  </section>
-
-</main>
-
-
-<!-- COS -->
-
-<aside
-  class="cart-panel"
-  id="cartPanel"
-  aria-hidden="true"
->
-
-  <div class="cart-top">
-
-    <h2>
-      Coșul tău
-    </h2>
-
-    <button
-      id="closeCart"
-      class="close"
-      type="button"
-    >
-      ×
-    </button>
-
-  </div>
-
-
-  <div id="cartItems"></div>
-
-
-  <div class="cart-bottom">
-
-    <strong>
-      Total:
-      <span id="cartTotal">
-        0 lei
-      </span>
-    </strong>
-
-    <button
-      class="button"
-      id="cartWhatsapp"
-      type="button"
-    >
-      Trimite comanda pe WhatsApp
-    </button>
-
-  </div>
-
-</aside>
-
-
-<div
-  class="overlay"
-  id="overlay"
-></div>
-
-
-<footer>
-  © <span id="year"></span> ACDmixArt
-</footer>
-
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
