@@ -837,8 +837,9 @@ if (cartWhatsapp) {
 }
 
 
+
 /* =========================
-   GALERIE FOTO ACDmixArt
+   GALERIE FOTO ACDmixArt + DETALII PRODUS
 ========================= */
 
 document.addEventListener("click", event => {
@@ -853,7 +854,6 @@ document.addEventListener("click", event => {
   const images = (product.poze || [product.poza]).filter(Boolean);
   if (!images.length) return;
 
-  // Nu deschidem două galerii simultan.
   document.querySelector(".image-lightbox")?.remove();
 
   let index = images.indexOf(img.getAttribute("src"));
@@ -862,7 +862,8 @@ document.addEventListener("click", event => {
   const lightbox = document.createElement("div");
   lightbox.className = "image-lightbox";
   lightbox.setAttribute("role", "dialog");
-  lightbox.setAttribute("aria-label", "Galerie foto produs");
+  lightbox.setAttribute("aria-modal", "true");
+  lightbox.setAttribute("aria-label", `Galerie produs: ${product.nume}`);
 
   lightbox.innerHTML = `
     <div class="lightbox-panel">
@@ -879,6 +880,21 @@ document.addEventListener("click", event => {
       </div>
 
       <div class="lightbox-thumbnails" aria-label="Alege fotografia"></div>
+
+      <section class="lightbox-product-info">
+        <p class="lightbox-category"></p>
+        <h2 class="lightbox-product-name"></h2>
+        <p class="lightbox-product-price"></p>
+        <p class="lightbox-description">
+          Ai un eveniment special? Contactează-ne pentru detalii despre
+          model, personalizare și disponibilitate.
+        </p>
+        <div class="lightbox-actions">
+          <button type="button" class="lightbox-order">Comandă pe WhatsApp</button>
+          <button type="button" class="lightbox-personalize">Personalizează</button>
+          <button type="button" class="lightbox-add-cart">Adaugă în coș</button>
+        </div>
+      </section>
     </div>
   `;
 
@@ -893,18 +909,63 @@ document.addEventListener("click", event => {
   const nextButton = lightbox.querySelector(".lightbox-next");
 
   lightbox.querySelector(".lightbox-title").textContent = product.nume;
+  lightbox.querySelector(".lightbox-category").textContent =
+    product.categorie || "ACDmixArt";
+  lightbox.querySelector(".lightbox-product-name").textContent = product.nume;
+  lightbox.querySelector(".lightbox-product-price").textContent =
+    money(product.pret);
+
+  const personalizeButton = lightbox.querySelector(".lightbox-personalize");
+
+  if (product.categorie !== "Set Mot") {
+    personalizeButton.hidden = true;
+  }
+
+  personalizeButton.addEventListener("click", () => {
+    closeGallery();
+    openSetMotCustomizer(product.id, 1);
+  });
+
+  lightbox.querySelector(".lightbox-add-cart").addEventListener("click", () => {
+    closeGallery();
+
+    if (product.categorie === "Set Mot") {
+      openSetMotCustomizer(product.id, 1);
+    } else {
+      addToCart(product.id, 1);
+    }
+  });
+
+  lightbox.querySelector(".lightbox-order").addEventListener("click", () => {
+    const message =
+      `Bună! Doresc detalii despre produsul: ${product.nume}.\n` +
+      `Categorie: ${product.categorie}\n` +
+      `Preț afișat: ${money(product.pret)}\n` +
+      `Mă interesează detalii despre comandă și personalizare.`;
+
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
+  });
 
   images.forEach((src, i) => {
     const thumb = document.createElement("button");
     thumb.type = "button";
     thumb.className = "lightbox-thumb";
     thumb.setAttribute("aria-label", `Fotografia ${i + 1}`);
-    thumb.innerHTML = `<img alt="" loading="lazy">`;
-    thumb.querySelector("img").src = src;
+
+    const thumbImage = document.createElement("img");
+    thumbImage.alt = "";
+    thumbImage.loading = "lazy";
+    thumbImage.src = src;
+    thumb.appendChild(thumbImage);
+
     thumb.addEventListener("click", e => {
       e.stopPropagation();
       showImage(i);
     });
+
     thumbnails.appendChild(thumb);
   });
 
@@ -919,27 +980,11 @@ document.addEventListener("click", event => {
       thumb.setAttribute("aria-current", i === index ? "true" : "false");
     });
 
-    thumbnails.querySelector(".lightbox-thumb.active")?.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "center"
-    });
-
     previousButton.hidden = images.length < 2;
     nextButton.hidden = images.length < 2;
     thumbnails.hidden = images.length < 2;
     counter.hidden = images.length < 2;
   }
-
-  previousButton.addEventListener("click", e => {
-    e.stopPropagation();
-    showImage(index - 1);
-  });
-
-  nextButton.addEventListener("click", e => {
-    e.stopPropagation();
-    showImage(index + 1);
-  });
 
   function closeGallery() {
     lightbox.remove();
@@ -953,13 +998,24 @@ document.addEventListener("click", event => {
     if (e.key === "ArrowRight") showImage(index + 1);
   }
 
+  previousButton.addEventListener("click", e => {
+    e.stopPropagation();
+    showImage(index - 1);
+  });
+
+  nextButton.addEventListener("click", e => {
+    e.stopPropagation();
+    showImage(index + 1);
+  });
+
   lightbox.querySelector(".lightbox-close").addEventListener("click", closeGallery);
+
   lightbox.addEventListener("click", e => {
     if (e.target === lightbox) closeGallery();
   });
+
   document.addEventListener("keydown", handleKeys);
 
-  // Glisare stânga-dreapta pe telefon.
   let touchStartX = 0;
   let touchStartY = 0;
 
@@ -979,6 +1035,12 @@ document.addEventListener("click", event => {
 
   showImage(index);
 });
+
+
+/* =========================
+   FORMULAR DINAMIC + WHATSAPP
+========================= */
+
 
 
 /* =========================
