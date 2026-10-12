@@ -907,6 +907,76 @@ document.addEventListener("click", event => {
   const thumbnails = lightbox.querySelector(".lightbox-thumbnails");
   const previousButton = lightbox.querySelector(".lightbox-prev");
   const nextButton = lightbox.querySelector(".lightbox-next");
+  ```javascript
+// Buton pentru marirea fotografiei
+const zoomButton = document.createElement("button");
+zoomButton.type = "button";
+zoomButton.className = "lightbox-zoom-open";
+zoomButton.textContent = "⤢ Mărește poza";
+lightbox.querySelector(".lightbox-stage").appendChild(zoomButton);
+
+zoomButton.addEventListener("click", function (e) {
+  e.stopPropagation();
+
+  const overlay = document.createElement("div");
+  overlay.className = "photo-zoom-overlay";
+
+  overlay.innerHTML = `
+    <button type="button" class="photo-zoom-close">×</button>
+    <div class="photo-zoom-tools">
+      <button type="button" class="zoom-minus">−</button>
+      <button type="button" class="zoom-reset">100%</button>
+      <button type="button" class="zoom-plus">+</button>
+    </div>
+    <div class="photo-zoom-viewport">
+      <img class="photo-zoom-image" alt="">
+    </div>
+  `;
+
+  const photo = overlay.querySelector(".photo-zoom-image");
+  const viewport = overlay.querySelector(".photo-zoom-viewport");
+  let zoom = 1;
+
+  photo.src = images[index];
+  photo.alt = product.nume;
+
+  function updateZoom() {
+    photo.style.transform = `scale(${zoom})`;
+    overlay.querySelector(".zoom-reset").textContent =
+      Math.round(zoom * 100) + "%";
+  }
+
+  overlay.querySelector(".zoom-plus").onclick = () => {
+    zoom = Math.min(4, zoom + 0.5);
+    updateZoom();
+  };
+
+  overlay.querySelector(".zoom-minus").onclick = () => {
+    zoom = Math.max(1, zoom - 0.5);
+    updateZoom();
+  };
+
+  overlay.querySelector(".zoom-reset").onclick = () => {
+    zoom = 1;
+    updateZoom();
+  };
+
+  overlay.querySelector(".photo-zoom-close").onclick = () => overlay.remove();
+
+  overlay.onclick = e => {
+    if (e.target === overlay) overlay.remove();
+  };
+
+  viewport.onwheel = e => {
+    e.preventDefault();
+    zoom = Math.max(1, Math.min(4, zoom + (e.deltaY < 0 ? 0.2 : -0.2)));
+    updateZoom();
+  };
+
+  document.body.appendChild(overlay);
+  updateZoom();
+});
+```
 
   lightbox.querySelector(".lightbox-title").textContent = product.nume;
   lightbox.querySelector(".lightbox-category").textContent =
