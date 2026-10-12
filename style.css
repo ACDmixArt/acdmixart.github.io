@@ -704,3 +704,57 @@ button.add-cart:hover,
     width: 68px;
     height: 68px;
   }
+
+/* Galerie adaptată pentru telefon - fără zoom */
+@media (max-width: 600px) {
+  .image-lightbox {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    padding: 5px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .lightbox-panel {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 8px;
+    margin: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .lightbox-top {
+    margin-bottom: 6px;
+  }
+
+  .lightbox-stage {
+    width: 100%;
+    height: 60dvh;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .image-lightbox .lightbox-image {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    touch-action: pan-y;
+  }
+
+  .image-lightbox .lightbox-prev,
+  .image-lightbox .lightbox-next {
+    width: 42px;
+    height: 50px;
+  }
+
+  .lightbox-thumbnails {
+    max-width: 100%;
+    overflow-x: auto;
+  }
