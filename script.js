@@ -907,7 +907,7 @@ document.addEventListener("click", event => {
   const thumbnails = lightbox.querySelector(".lightbox-thumbnails");
   const previousButton = lightbox.querySelector(".lightbox-prev");
   const nextButton = lightbox.querySelector(".lightbox-next");
-  ```javascript
+ 
 // Buton pentru marirea fotografiei
 const zoomButton = document.createElement("button");
 zoomButton.type = "button";
@@ -931,7 +931,7 @@ zoomButton.addEventListener("click", function (e) {
     <div class="photo-zoom-viewport">
       <img class="photo-zoom-image" alt="">
     </div>
-  `;
+ `;
 
   const photo = overlay.querySelector(".photo-zoom-image");
   const viewport = overlay.querySelector(".photo-zoom-viewport");
@@ -976,7 +976,6 @@ zoomButton.addEventListener("click", function (e) {
   document.body.appendChild(overlay);
   updateZoom();
 });
-```
 
   lightbox.querySelector(".lightbox-title").textContent = product.nume;
   lightbox.querySelector(".lightbox-category").textContent =
@@ -1105,11 +1104,6 @@ zoomButton.addEventListener("click", function (e) {
 
   showImage(index);
 });
-
-
-/* =========================
-   FORMULAR DINAMIC + WHATSAPP
-========================= */
 
 
 
