@@ -613,9 +613,11 @@ function renderProducts() {
     ? `<button onclick="openSetMotCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">
         Personalizează
       </button>`
-    : `<button onclick="addToCart(${product.id}, document.getElementById('qty-${product.id}').textContent)">
-        Adaugă în coș
-      </button>`
+   
+: `<button class="add-cart" onclick="addToCart(${product.id}, document.getElementById('qty-${product.id}').textContent)">
+    Adaugă în coș
+  </button>`
+
 }
           </div>
         </article>
