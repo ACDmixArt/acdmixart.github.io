@@ -468,7 +468,7 @@ const products = [
 
 
 /* =========================
-   ELEMENTE
+   ELEMENTE SI STARE
 ========================= */
 
 const filtre = document.querySelector(".filters");
@@ -478,14 +478,10 @@ const cartItems = document.getElementById("cartItems");
 const cartTotal = document.getElementById("cartTotal");
 const cartPanel = document.querySelector(".cart-panel");
 const overlay = document.querySelector(".overlay");
+const whatsappNumber = "40742059730";
 
 let activeCategory = "Toate";
 let cart = [];
-
-
-/* =========================
-   CATEGORII
-========================= */
 
 function categories() {
   return [
@@ -503,39 +499,25 @@ function categories() {
   ];
 }
 
-
-/* =========================
-   PRET
-========================= */
-
 function money(value) {
-  return `${value.toFixed(2).replace(".", ",")} lei`;
+  return `${Number(value).toFixed(2).replace(".", ",")} lei`;
 }
 
-
 /* =========================
-   AFISARE CATEGORII
+   CATEGORII SI PRODUSE
 ========================= */
 
 function renderCategories() {
   if (!filtre) return;
 
-  filtre.innerHTML = categories()
-    .map(category => `
-      <button
-        class="filter-btn ${category === activeCategory ? "active" : ""}"
-        onclick="setCategory('${category}')"
-      >
-        ${category}
-      </button>
-    `)
-    .join("");
+  filtre.innerHTML = categories().map(category => `
+    <button
+      type="button"
+      class="filter-btn ${category === activeCategory ? "active" : ""}"
+      onclick="setCategory('${category}')"
+    >${category}</button>
+  `).join("");
 }
-
-
-/* =========================
-   SCHIMBARE CATEGORIE
-========================= */
 
 function setCategory(category) {
   activeCategory = category;
@@ -543,256 +525,93 @@ function setCategory(category) {
   renderProducts();
 }
 
-
-/* =========================
-   AFISARE PRODUSE
-========================= */
 function changeProductQuantity(productId, change) {
-  const quantityElement = document.getElementById(`qty-${productId}`);
-  if (!quantityElement) return;
-
-  let quantity = Number(quantityElement.textContent) || 1;
-  quantity += change;
-
-  if (quantity < 1) quantity = 1;
-
-  quantityElement.textContent = quantity;
+  const el = document.getElementById(`qty-${productId}`);
+  if (!el) return;
+  const next = Math.max(1, (Number(el.textContent) || 1) + change);
+  el.textContent = next;
 }
+
 function renderProducts() {
   if (!grila) return;
 
-  const list =
-    activeCategory === "Toate"
-      ? products
-      : products.filter(
-          product => product.categorie === activeCategory
-        );
+  const list = activeCategory === "Toate"
+    ? products
+    : products.filter(product => product.categorie === activeCategory);
 
-  if (list.length === 0) {
-    grila.innerHTML = `
-      <div class="empty-products">
-        Nu există produse în această categorie momentan.
-      </div>
-    `;
+  if (!list.length) {
+    grila.innerHTML = `<div class="empty-products">Nu există produse în această categorie momentan.</div>`;
     return;
   }
 
-  grila.innerHTML = list
-    .map(product => {
-      const imagini = product.poze || [product.poza];
+  grila.innerHTML = list.map(product => {
+    const images = product.poze || [product.poza];
+    const firstImage = images[0] || "";
 
-      return `
-        <article class="product-card">
-          <div class="product-photo">
-            <img
-              src="${imagini[0]}"
-              alt="${product.nume}"
-              data-product-id="${product.id}"
-            >
+    return `
+      <article class="product-card">
+        <div class="product-photo">
+          <img
+            src="${firstImage}"
+            alt="${product.nume}"
+            data-product-id="${product.id}"
+            loading="lazy"
+          >
+        </div>
+        <div class="product-info">
+          <h3>${product.nume}</h3>
+          <p class="product-price">${money(product.pret)}</p>
+          <div class="product-quantity">
+            <button type="button" aria-label="Scade cantitatea" onclick="changeProductQuantity(${product.id}, -1)">−</button>
+            <span id="qty-${product.id}">1</span>
+            <button type="button" aria-label="Crește cantitatea" onclick="changeProductQuantity(${product.id}, 1)">+</button>
           </div>
-
-          <div class="product-info">
-            <h3>${product.nume}</h3>
-            <p class="product-price">${money(product.pret)}</p>
-
-            <div class="product-quantity">
-  <button
-    type="button"
-    onclick="changeProductQuantity(${product.id}, -1)"
-  >−</button>
-
-  <span id="qty-${product.id}">1</span>
-
-  <button
-    type="button"
-    onclick="changeProductQuantity(${product.id}, 1)"
-  >+</button>
-</div>
-             ${
-  product.categorie === "Set Mot"
-    ? `<button onclick="openSetMotCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">
-        Personalizează
-      </button>`
-   
-: `<button class="add-cart" onclick="addToCart(${product.id}, document.getElementById('qty-${product.id}').textContent)">
-    Adaugă în coș
-  </button>`
-
+          ${
+            product.categorie === "Set Mot"
+              ? `<button type="button" class="add-cart" onclick="openSetMotCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
+              : `<button type="button" class="add-cart" onclick="addToCart(${product.id}, document.getElementById('qty-${product.id}').textContent)">Adaugă în coș</button>`
+          }
+        </div>
+      </article>
+    `;
+  }).join("");
 }
-          </div>
-        </article>
-      `;
-    })
-    .join("");
-}
-
 
 /* =========================
    PERSONALIZARE SET MOT
 ========================= */
 
 function openSetMotCustomizer(productId, quantity = 1) {
-  const product = products.find(
-    product => product.id === productId
-  );
-
+  const product = products.find(item => item.id === Number(productId));
   if (!product) return;
 
   const modal = document.createElement("div");
-
-  modal.style.position = "fixed";
-  modal.style.inset = "0";
-  modal.style.background = "rgba(0,0,0,0.65)";
-  modal.style.display = "flex";
-  modal.style.alignItems = "center";
-  modal.style.justifyContent = "center";
-  modal.style.zIndex = "9999";
-  modal.style.padding = "20px";
+  modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.65);display:flex;align-items:center;justify-content:center;z-index:9999;padding:20px;";
 
   modal.innerHTML = `
-    <div style="
-      background:white;
-      width:100%;
-      max-width:500px;
-      max-height:90vh;
-      overflow:auto;
-      border-radius:16px;
-      padding:25px;
-      box-sizing:border-box;
-      position:relative;
-    ">
-
-      <button
-        type="button"
-        class="setmot-close"
-        style="
-          position:absolute;
-          top:10px;
-          right:15px;
-          border:0;
-          background:none;
-          font-size:30px;
-          cursor:pointer;
-        "
-      >×</button>
-
-      <h2 style="margin-top:0;">
-        Personalizează setul de moț
-      </h2>
-
+    <div style="background:white;width:100%;max-width:500px;max-height:90vh;overflow:auto;border-radius:16px;padding:25px;box-sizing:border-box;position:relative;">
+      <button type="button" class="setmot-close" aria-label="Închide" style="position:absolute;top:10px;right:15px;border:0;background:none;font-size:30px;cursor:pointer;">×</button>
+      <h2 style="margin-top:0;">Personalizează setul de moț</h2>
       <p>Completează detaliile pentru personalizare.</p>
 
-      <label style="
-        display:block;
-        margin-top:15px;
-        font-weight:600;
-      ">
-        Numele copilului *
-      </label>
+      <label for="setmotName" style="display:block;margin-top:15px;font-weight:600;">Numele copilului *</label>
+      <input id="setmotName" type="text" class="setmot-name" placeholder="Introdu numele copilului" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
 
-      <input
-        type="text"
-        class="setmot-name"
-        placeholder="Introdu numele copilului"
-        style="
-          width:100%;
-          padding:12px;
-          margin-top:6px;
-          box-sizing:border-box;
-          border:1px solid #ccc;
-          border-radius:8px;
-        "
-      >
-
-      <label style="
-        display:block;
-        margin-top:15px;
-        font-weight:600;
-      ">
-        Tematică *
-      </label>
-
-      <select
-        class="setmot-theme"
-        style="
-          width:100%;
-          padding:12px;
-          margin-top:6px;
-          box-sizing:border-box;
-          border:1px solid #ccc;
-          border-radius:8px;
-        "
-      >
-        <option value="Căsuța cu ciupercuțe">
-          Căsuța cu ciupercuțe
-        </option>
-        <option value="Altă tematică">
-          Altă tematică
-        </option>
+      <label for="setmotTheme" style="display:block;margin-top:15px;font-weight:600;">Tematică *</label>
+      <select id="setmotTheme" class="setmot-theme" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+        <option value="Căsuța cu ciupercuțe">Căsuța cu ciupercuțe</option>
+        <option value="Altă tematică">Altă tematică</option>
       </select>
 
-      <input
-        type="text"
-        class="setmot-theme-other"
-        placeholder="Scrie tematica dorită"
-        style="
-          width:100%;
-          padding:12px;
-          margin-top:8px;
-          box-sizing:border-box;
-          border:1px solid #ccc;
-          border-radius:8px;
-          display:none;
-        "
-      >
+      <input type="text" class="setmot-theme-other" placeholder="Scrie tematica dorită" style="width:100%;padding:12px;margin-top:8px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;display:none;">
 
-      <label style="
-        display:flex;
-        align-items:center;
-        gap:8px;
-        margin-top:18px;
-        font-weight:600;
-      ">
-        <input type="checkbox" class="setmot-frame">
-        Adaugă ramă foto (+60 lei)
+      <label style="display:flex;align-items:center;gap:8px;margin-top:18px;font-weight:600;">
+        <input type="checkbox" class="setmot-frame"> Adaugă ramă foto (+60 lei)
       </label>
 
-      <div
-        class="setmot-price"
-        style="
-          font-size:21px;
-          font-weight:700;
-          margin:18px 0;
-        "
-      ></div>
-
-      <p
-        class="setmot-error"
-        style="
-          color:#b00020;
-          display:none;
-          margin:8px 0;
-        "
-      ></p>
-
-      <button
-        type="button"
-        class="setmot-add"
-        style="
-          width:100%;
-          padding:14px;
-          border:0;
-          border-radius:9px;
-          background:#a94f79;
-          color:white;
-          font-weight:700;
-          cursor:pointer;
-          font-size:16px;
-        "
-      >
-        Adaugă în coș
-      </button>
-
+      <p class="setmot-price" style="font-size:21px;font-weight:700;margin:18px 0;"></p>
+      <p class="setmot-error" role="alert" style="color:#b00020;display:none;margin:8px 0;"></p>
+      <button type="button" class="setmot-add add-cart" style="width:100%;padding:14px;border:0;border-radius:9px;background:#66745F;color:white;font-weight:700;cursor:pointer;font-size:16px;">Adaugă în coș</button>
     </div>
   `;
 
@@ -804,110 +623,78 @@ function openSetMotCustomizer(productId, quantity = 1) {
   const themeOther = modal.querySelector(".setmot-theme-other");
   const nameInput = modal.querySelector(".setmot-name");
   const error = modal.querySelector(".setmot-error");
-  const addButton = modal.querySelector(".setmot-add");
 
-  // Actualizare preț
   function updatePrice() {
-    price.textContent = money(
-      product.pret + (frame.checked ? 60 : 0)
-    );
+    price.textContent = money((product.pret + (frame.checked ? 60 : 0)) * Math.max(1, Number(quantity) || 1)) +
+      (Number(quantity) > 1 ? ` (${quantity} buc.)` : "");
   }
-
   updatePrice();
 
   frame.addEventListener("change", updatePrice);
-
-  // Tematică personalizată
-  themeSelect.addEventListener("change", function() {
-    if (themeSelect.value === "Altă tematică") {
-      themeOther.style.display = "block";
-      themeOther.focus();
-    } else {
-      themeOther.style.display = "none";
-      themeOther.value = "";
-    }
-
+  themeSelect.addEventListener("change", () => {
+    const other = themeSelect.value === "Altă tematică";
+    themeOther.style.display = other ? "block" : "none";
+    if (!other) themeOther.value = "";
     error.style.display = "none";
+    if (other) themeOther.focus();
   });
 
-  // Închidere fereastră
-  modal.querySelector(".setmot-close")
-    .addEventListener("click", function() {
-      modal.remove();
-    });
-
-  modal.addEventListener("click", function(event) {
-    if (event.target === modal) {
-      modal.remove();
-    }
+  modal.querySelector(".setmot-close").addEventListener("click", () => modal.remove());
+  modal.addEventListener("click", event => {
+    if (event.target === modal) modal.remove();
   });
 
-  // Adăugare în coș
-  addButton.addEventListener("click", function() {
+  modal.querySelector(".setmot-add").addEventListener("click", () => {
     const name = nameInput.value.trim();
     let theme = themeSelect.value;
 
-    error.style.display = "none";
-
     if (!name) {
-      error.textContent =
-        "Te rog să completezi numele copilului.";
+      error.textContent = "Te rog să completezi numele copilului.";
       error.style.display = "block";
       nameInput.focus();
       return;
     }
-
-    if (theme === "Altă tematică") {
-      theme = themeOther.value.trim();
-    }
-
+    if (theme === "Altă tematică") theme = themeOther.value.trim();
     if (!theme) {
-      error.textContent =
-        "Te rog să alegi sau să scrii tematica dorită.";
+      error.textContent = "Te rog să alegi sau să scrii tematica dorită.";
       error.style.display = "block";
       themeOther.focus();
       return;
     }
 
     const frameAdded = frame.checked;
-
-    
-cart.push({
-  ...product,
-  quantity: quantity,
-  pret: product.pret + (frameAdded ? 60 : 0),
-  personalizare: {
-    numeCopil: name,
-    tematica: theme,
-    ramaFoto: frameAdded
-  }
-});
-
+    cart.push({
+      ...product,
+      quantity: Math.max(1, Number(quantity) || 1),
+      pret: product.pret + (frameAdded ? 60 : 0),
+      personalizare: {
+        numeCopil: name,
+        tematica: theme,
+        ramaFoto: frameAdded
+      }
+    });
 
     modal.remove();
-
     renderCart();
     openCart();
   });
 }
 
-
 /* =========================
-   FUNCTII COS
+   COS
 ========================= */
 
 function addToCart(productId, quantity = 1) {
-  const product = products.find(p => p.id === productId);
-  quantity = Number(quantity);
+  const product = products.find(item => item.id === Number(productId));
+  const qty = Number(quantity);
 
   if (!product) return;
-
-  if (!Number.isInteger(quantity) || quantity < 1) {
+  if (!Number.isInteger(qty) || qty < 1) {
     alert("Introdu un număr valid de bucăți.");
     return;
   }
 
-  cart.push({ ...product, quantity });
+  cart.push({ ...product, quantity: qty });
   renderCart();
   openCart();
 }
@@ -918,424 +705,411 @@ function removeFromCart(index) {
 }
 
 function changeCartQuantity(index, quantity) {
-  quantity = Number(quantity);
-
-  if (!Number.isInteger(quantity) || quantity < 1) {
-    alert("Introdu un număr valid de bucăți.");
+  const qty = Number(quantity);
+  if (!Number.isInteger(qty) || qty < 1) {
+    alert("Cantitatea minimă este 1.");
     renderCart();
     return;
   }
-
   if (!cart[index]) return;
-
-  cart[index].quantity = quantity;
+  cart[index].quantity = qty;
   renderCart();
 }
 
 function renderCart() {
   if (cartCount) {
-    cartCount.textContent = cart.reduce(
-      (sum, product) => sum + (product.quantity || 1),
-      0
-    );
+    cartCount.textContent = cart.reduce((sum, item) => sum + (Number(item.quantity) || 1), 0);
   }
-
   if (!cartItems || !cartTotal) return;
 
-  if (cart.length === 0) {
-    cartItems.innerHTML = `
-      <p class="empty-cart">Coșul este gol.</p>
-    `;
-    cartTotal.textContent = "0,00 lei";
+  if (!cart.length) {
+    cartItems.innerHTML = `<p class="empty-cart">Coșul este gol.</p>`;
+    cartTotal.textContent = money(0);
     return;
   }
 
-  cartItems.innerHTML = cart.map((product, index) => `
+  cartItems.innerHTML = cart.map((item, index) => `
     <div class="cart-item">
       <div>
-        <strong>${product.nume}</strong>
-        <span>
-          ${money(product.pret)} / buc.
-        </span>
+        <strong>${item.nume}</strong>
+        <span>${money(item.pret)} / buc.</span>
         ${
-          product.personalizare
-            ? `<p> Nume: ${product.personalizare.numeCopil}
-                <br>Tematică: ${product.personalizare.tematica}
-                <br>Ramă foto: ${product.personalizare.ramaFoto ? "Da" : "Nu"}
-              </p>`
+          item.personalizare
+            ? `<p>Nume: ${item.personalizare.numeCopil}<br>Tematică: ${item.personalizare.tematica}<br>Ramă foto: ${item.personalizare.ramaFoto ? "Da" : "Nu"}</p>`
             : ""
         }
         <div class="cart-quantity">
-  <button
-    type="button"
-    onclick="changeCartQuantity(${index}, (productQuantity(${index}) - 1))"
-  >−</button>
-
-  <span>${product.quantity || 1}</span>
-
-  <button
-   
-</div>
-function productQuantity(index) {
-  return cart[index]?.quantity || 1;
-}
-        >
-        <p>
-          Subtotal: ${money(product.pret * (product.quantity || 1))}
-        </p>
+          <button type="button" aria-label="Scade cantitatea" onclick="changeCartQuantity(${index}, ${Math.max(1, (Number(item.quantity) || 1) - 1)})">−</button>
+          <span>${item.quantity || 1}</span>
+          <button type="button" aria-label="Crește cantitatea" onclick="changeCartQuantity(${index}, ${(Number(item.quantity) || 1) + 1})">+</button>
+        </div>
+        <p>Subtotal: ${money(item.pret * (item.quantity || 1))}</p>
       </div>
-
-      <button onclick="removeFromCart(${index})">×</button>
+      <button type="button" aria-label="Șterge produsul" onclick="removeFromCart(${index})">×</button>
     </div>
   `).join("");
 
-  const total = cart.reduce(
-    (sum, product) =>
-      sum + product.pret * (product.quantity || 1),
-    0
-  );
-
+  const total = cart.reduce((sum, item) => sum + item.pret * (item.quantity || 1), 0);
   cartTotal.textContent = money(total);
 }
-
-/* =========================
-   DESCHIDERE COS
-========================= */
 
 function openCart() {
   if (cartPanel) {
     cartPanel.classList.add("open");
+    cartPanel.setAttribute("aria-hidden", "false");
   }
-
-  if (overlay) {
-    overlay.classList.add("open");
-  }
+  if (overlay) overlay.classList.add("open");
 }
-
-
-/* =========================
-   INCHIDERE COS
-========================= */
 
 function closeCart() {
   if (cartPanel) {
     cartPanel.classList.remove("open");
+    cartPanel.setAttribute("aria-hidden", "true");
   }
-
-  if (overlay) {
-    overlay.classList.remove("open");
-  }
+  if (overlay) overlay.classList.remove("open");
 }
 
-
-/* =========================
-   BUTOANE COS
-========================= */
-
-document.addEventListener("click", function(event) {
-
-  const cartButton =
-    event.target.closest(".cart-button");
-
-  if (cartButton) {
+document.addEventListener("click", event => {
+  if (event.target.closest(".cart-button") || event.target.closest("#openCart")) {
     openCart();
   }
-
-  const closeButton = event.target.closest("#closeCart");
-
-  if (closeButton) {
-    closeCart();
-  }
-
+  if (event.target.closest("#closeCart")) closeCart();
 });
 
+if (overlay) overlay.addEventListener("click", closeCart);
 
-/* =========================
-   OVERLAY
-========================= */
+/* Trimite coșul pe WhatsApp */
+const cartWhatsapp = document.getElementById("cartWhatsapp");
+if (cartWhatsapp) {
+  cartWhatsapp.addEventListener("click", () => {
+    if (!cart.length) {
+      alert("Coșul este gol.");
+      return;
+    }
 
-if (overlay) {
-  overlay.addEventListener("click", closeCart);
+    let message = "Bună! Doresc să plasez o comandă ACDmixArt:\n\n";
+    cart.forEach((item, index) => {
+      message += `${index + 1}. ${item.nume}\nCantitate: ${item.quantity || 1}\nPreț/buc.: ${money(item.pret)}\nSubtotal: ${money(item.pret * (item.quantity || 1))}\n`;
+      if (item.personalizare) {
+        message += `Numele copilului: ${item.personalizare.numeCopil}\nTematică: ${item.personalizare.tematica}\nRamă foto: ${item.personalizare.ramaFoto ? "Da" : "Nu"}\n`;
+      }
+      message += "\n";
+    });
+    message += `Total: ${cartTotal ? cartTotal.textContent : ""}`;
+
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
+  });
 }
 
-
 /* =========================
-   GALERIE POZE
+   GALERIE FOTO
 ========================= */
 
-document.addEventListener("click", function(event) {
-
-  const img =
-    event.target.closest(".product-photo img");
-
+document.addEventListener("click", event => {
+  const img = event.target.closest(".product-photo img");
   if (!img) return;
 
-  const productId =
-    Number(img.dataset.productId);
-
-  const product =
-    products.find(product => product.id === productId);
-
+  const product = products.find(item => item.id === Number(img.dataset.productId));
   if (!product) return;
 
-  const imagini =
-    product.poze || [product.poza];
-
+  const images = product.poze || [product.poza];
+  if (!images.length) return;
   let index = 0;
 
-  const lightbox =
-    document.createElement("div");
-
+  const lightbox = document.createElement("div");
   lightbox.className = "image-lightbox";
-
   lightbox.innerHTML = `
-    <button class="lightbox-close">
-      ×
-    </button>
-
-    <button class="lightbox-prev">
-      ‹
-    </button>
-
-    <img
-      class="lightbox-image"
-      src="${imagini[index]}"
-      alt="${product.nume}"
-    >
-
-    <button class="lightbox-next">
-      ›
-    </button>
+    <button type="button" class="lightbox-close" aria-label="Închide">×</button>
+    <button type="button" class="lightbox-prev" aria-label="Fotografia precedentă">‹</button>
+    <img class="lightbox-image" src="${images[index]}" alt="${product.nume}">
+    <button type="button" class="lightbox-next" aria-label="Fotografia următoare">›</button>
   `;
-
   document.body.appendChild(lightbox);
 
-  const imagineMare =
-    lightbox.querySelector(".lightbox-image");
-
-  function afiseazaImagine() {
-    imagineMare.src = imagini[index];
-  }
-
-  const butonPrev =
-    lightbox.querySelector(".lightbox-prev");
-
-  const butonNext =
-    lightbox.querySelector(".lightbox-next");
-
-  const butonClose =
-    lightbox.querySelector(".lightbox-close");
-
-  butonPrev.onclick = function(event) {
-    event.stopPropagation();
-
-    index =
-      (index - 1 + imagini.length)
-      % imagini.length;
-
-    afiseazaImagine();
-  };
-
-  butonNext.onclick = function(event) {
-    event.stopPropagation();
-
-    index =
-      (index + 1)
-      % imagini.length;
-
-    afiseazaImagine();
-  };
-
-  butonClose.onclick = function() {
-    lightbox.remove();
-  };
-
-  lightbox.onclick = function(event) {
-    if (event.target === lightbox) {
-      lightbox.remove();
-    }
-  };
-
+  const largeImage = lightbox.querySelector(".lightbox-image");
+  lightbox.querySelector(".lightbox-prev").addEventListener("click", e => {
+    e.stopPropagation();
+    index = (index - 1 + images.length) % images.length;
+    largeImage.src = images[index];
+  });
+  lightbox.querySelector(".lightbox-next").addEventListener("click", e => {
+    e.stopPropagation();
+    index = (index + 1) % images.length;
+    largeImage.src = images[index];
+  });
+  lightbox.querySelector(".lightbox-close").addEventListener("click", () => lightbox.remove());
+  lightbox.addEventListener("click", e => {
+    if (e.target === lightbox) lightbox.remove();
+  });
 });
 
 /* =========================
-   FORMULAR PERSONALIZARE + WHATSAPP
+   FORMULAR DINAMIC + WHATSAPP
 ========================= */
 
 const orderForm = document.getElementById("orderForm");
 const formCategory = document.getElementById("formCategory");
 const formProduct = document.getElementById("formProduct");
-const whatsappNumber = "40742059730";
+const dynamicFormFields = document.getElementById("dynamicFormFields");
+const orderSummary = document.getElementById("orderSummary");
 
-if (orderForm && formCategory && formProduct) {
+function addFormField({ id, label, type = "text", placeholder = "", required = false, options = [], min = null, value = "" }) {
+  const wrapper = document.createElement("label");
+  wrapper.className = "dynamic-field";
+  wrapper.htmlFor = id;
 
-  // Preia toate categoriile existente, cu excepția "Toate"
-  const availableCategories = categories().filter(
-    category => category !== "Toate"
-  );
+  const labelText = document.createElement("span");
+  labelText.textContent = label;
+  wrapper.appendChild(labelText);
 
-  formCategory.innerHTML =
-    '<option value="">Alege categoria</option>';
+  let input;
+  if (type === "select") {
+    input = document.createElement("select");
+    input.innerHTML = `<option value="">Alege o opțiune</option>`;
+    options.forEach(optionText => {
+      const option = document.createElement("option");
+      option.value = optionText;
+      option.textContent = optionText;
+      input.appendChild(option);
+    });
+  } else if (type === "textarea") {
+    input = document.createElement("textarea");
+    input.rows = 3;
+  } else if (type === "checkbox") {
+    input = document.createElement("input");
+    input.type = "checkbox";
+    wrapper.classList.add("checkbox-field");
+  } else {
+    input = document.createElement("input");
+    input.type = type;
+  }
 
-  availableCategories.forEach(category => {
+  input.id = id;
+  input.name = id;
+  input.placeholder = placeholder;
+  input.required = required;
+  if (min !== null) input.min = String(min);
+  if (value) input.value = value;
+
+  wrapper.appendChild(input);
+  dynamicFormFields.appendChild(wrapper);
+  input.addEventListener("input", updateOrderSummary);
+  input.addEventListener("change", updateOrderSummary);
+  return input;
+}
+
+function renderDynamicFields() {
+  if (!dynamicFormFields) return;
+  dynamicFormFields.innerHTML = "";
+  if (orderSummary) {
+    orderSummary.hidden = true;
+    orderSummary.innerHTML = "";
+  }
+
+  const category = formCategory ? formCategory.value : "";
+  if (!category) return;
+
+  addFormField({
+    id: "formQuantity",
+    label: category === "Botez" || category === "Nunta" || category === "Nunta-Botez"
+      ? "Cantitate (minimum 25 bucăți)"
+      : "Cantitate",
+    type: "number",
+    min: 1,
+    value: "1",
+    required: true
+  });
+
+  if (["Botez", "Nunta", "Nunta-Botez"].includes(category)) {
+    document.getElementById("formQuantity").min = "25";
+    addFormField({ id: "formDate", label: "Data evenimentului", type: "date" });
+    addFormField({ id: "formNames", label: "Numele persoanelor / copilului", placeholder: "Ex.: nume copil, părinți, miri" });
+    addFormField({ id: "formText", label: "Textul dorit pe invitație", type: "textarea", placeholder: "Scrie textul invitației sau menționează că dorești ajutor" });
+    addFormField({ id: "formColors", label: "Nuanțe / culori", placeholder: "Ex.: crem, verde olive, roz" });
+    addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Plic, format, tematică sau alte cerințe" });
+  } else if (category === "Set Mot") {
+    addFormField({ id: "formChildName", label: "Numele copilului", required: true, placeholder: "Introdu numele copilului" });
+    addFormField({ id: "formTheme", label: "Tematică", type: "select", options: ["Căsuța cu ciupercuțe", "Altă tematică"], required: true });
+    addFormField({ id: "formThemeOther", label: "Dacă ai ales altă tematică, scrie aici", placeholder: "Tematica dorită" });
+    addFormField({ id: "formFrame", label: "Adaugă ramă foto (+60 lei)", type: "checkbox" });
+    addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Alte cerințe pentru set" });
+  } else if (["Cani", "Pahare", "Marturii"].includes(category)) {
+    addFormField({ id: "formNames", label: "Nume / text pentru personalizare", placeholder: "Scrie exact textul dorit" });
+    addFormField({ id: "formColors", label: "Culori", placeholder: "Culorile dorite" });
+    addFormField({ id: "formDate", label: "Data evenimentului", type: "date" });
+    addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Tematică și cerințe speciale" });
+  } else if (["Carti"].includes(category)) {
+    addFormField({ id: "formNames", label: "Numele persoanei / copilului", placeholder: "Numele pentru copertă" });
+    addFormField({ id: "formAge", label: "Vârsta (dacă este relevantă)", type: "number", min: 1 });
+    addFormField({ id: "formTheme", label: "Tematică", placeholder: "Ex.: animale, capybara, personaje" });
+    addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Ce ai dori să conțină produsul?" });
+  } else if (["Toppere", "Party"].includes(category)) {
+    addFormField({ id: "formNames", label: "Nume / text", placeholder: "Textul care trebuie să apară" });
+    addFormField({ id: "formAge", label: "Vârsta (dacă este relevantă)", type: "number", min: 1 });
+    addFormField({ id: "formColors", label: "Culori", placeholder: "Culorile dorite" });
+    addFormField({ id: "formDate", label: "Data evenimentului", type: "date" });
+    addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Tematică, dimensiuni sau alte cerințe" });
+  } else {
+    addFormField({ id: "formNames", label: "Nume / text", placeholder: "Detalii pentru personalizare" });
+    addFormField({ id: "formColors", label: "Nuanțe / culori", placeholder: "Culorile dorite" });
+    addFormField({ id: "formDate", label: "Data evenimentului", type: "date" });
+    addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Scrie aici cerințele tale" });
+  }
+
+  updateOrderSummary();
+}
+
+function updateFormProducts() {
+  if (!formCategory || !formProduct) return;
+  const category = formCategory.value;
+  const filtered = products.filter(product => product.categorie === category);
+
+  formProduct.innerHTML = `<option value="">${category ? "Alege modelul / produsul" : "Alege mai întâi categoria"}</option>`;
+  formProduct.disabled = !category || filtered.length === 0;
+
+  filtered.forEach(product => {
     const option = document.createElement("option");
+    option.value = String(product.id);
+    option.textContent = `${product.nume} — ${money(product.pret)}`;
+    formProduct.appendChild(option);
+  });
 
+  renderDynamicFields();
+  updateOrderSummary();
+}
+
+function updateOrderSummary() {
+  if (!orderSummary || !formCategory || !formProduct) return;
+  const product = products.find(item => String(item.id) === formProduct.value);
+  if (!formCategory.value) {
+    orderSummary.hidden = true;
+    orderSummary.innerHTML = "";
+    return;
+  }
+
+  const rows = [];
+  rows.push(["Categorie", formCategory.value]);
+  if (product) rows.push(["Produs", product.nume]);
+
+  const fieldLabels = {
+    formQuantity: "Cantitate",
+    formDate: "Data evenimentului",
+    formNames: "Nume / text",
+    formText: "Text invitație",
+    formColors: "Culori",
+    formDetails: "Alte detalii",
+    formChildName: "Numele copilului",
+    formTheme: "Tematică",
+    formThemeOther: "Altă tematică",
+    formAge: "Vârstă"
+  };
+
+  Object.entries(fieldLabels).forEach(([id, label]) => {
+    const input = document.getElementById(id);
+    if (input && input.value.trim()) rows.push([label, input.value.trim()]);
+  });
+
+  const frame = document.getElementById("formFrame");
+  if (frame && frame.checked) rows.push(["Ramă foto", "Da (+60 lei)"]);
+
+  if (product) {
+    const qtyInput = document.getElementById("formQuantity");
+    const qty = qtyInput ? Math.max(1, Number(qtyInput.value) || 1) : 1;
+    let unitPrice = product.pret;
+    if (product.categorie === "Set Mot" && frame && frame.checked) unitPrice += 60;
+    rows.push(["Preț estimativ", money(unitPrice * qty)]);
+  }
+
+  orderSummary.innerHTML = `<strong>Sumarul cererii</strong>${rows.map(([label, value]) =>
+    `<p><b>${label}:</b> ${String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p>`
+  ).join("")}`;
+  orderSummary.hidden = false;
+}
+
+if (orderForm && formCategory && formProduct && dynamicFormFields) {
+  formCategory.innerHTML = `<option value="">Alege categoria</option>`;
+  categories().filter(category => category !== "Toate").forEach(category => {
+    const option = document.createElement("option");
     option.value = category;
     option.textContent = category;
-
     formCategory.appendChild(option);
   });
 
-  // Încarcă produsele din categoria selectată
-  function updateFormProducts() {
+  formCategory.addEventListener("change", updateFormProducts);
+  formProduct.addEventListener("change", updateOrderSummary);
+  dynamicFormFields.addEventListener("input", updateOrderSummary);
+  dynamicFormFields.addEventListener("change", updateOrderSummary);
 
-    const selectedCategory = formCategory.value;
+  orderForm.addEventListener("submit", event => {
+    event.preventDefault();
 
-    formProduct.innerHTML =
-      '<option value="">Alege modelul / produsul</option>';
-
-    const filteredProducts = products.filter(
-      product => product.categorie === selectedCategory
-    );
-
-    if (!selectedCategory) {
-      formProduct.innerHTML =
-        '<option value="">Alege mai întâi categoria</option>';
+    const product = products.find(item => String(item.id) === formProduct.value);
+    if (!formCategory.value) {
+      alert("Te rog să alegi o categorie.");
+      return;
+    }
+    if (!product) {
+      alert("Momentan nu există un produs disponibil în categoria aleasă. Te rugăm să ne contactezi direct pe WhatsApp.");
       return;
     }
 
-    if (filteredProducts.length === 0) {
-      formProduct.innerHTML =
-        '<option value="">Momentan nu există produse în această categorie</option>';
+    const quantityInput = document.getElementById("formQuantity");
+    const quantity = quantityInput ? Number(quantityInput.value) : 1;
+    if (!Number.isInteger(quantity) || quantity < 1) {
+      alert("Te rog să introduci o cantitate validă.");
       return;
     }
 
-    filteredProducts.forEach(product => {
+    if (["Botez", "Nunta", "Nunta-Botez"].includes(product.categorie) && quantity < 25) {
+      alert("Comanda minimă pentru invitații este de 25 de bucăți.");
+      quantityInput.focus();
+      return;
+    }
 
-      const option = document.createElement("option");
+    const childName = document.getElementById("formChildName")?.value.trim() || "";
+    const themeSelect = document.getElementById("formTheme")?.value || "";
+    const themeOther = document.getElementById("formThemeOther")?.value.trim() || "";
+    const theme = themeSelect === "Altă tematică" ? themeOther : themeSelect;
+    if (product.categorie === "Set Mot" && !childName) {
+      alert("Te rog să completezi numele copilului.");
+      document.getElementById("formChildName")?.focus();
+      return;
+    }
+    if (product.categorie === "Set Mot" && !theme) {
+      alert("Te rog să completezi tematica.");
+      document.getElementById("formThemeOther")?.focus();
+      return;
+    }
 
-      option.value = product.id;
-      option.textContent = product.nume;
+    let message = "Bună! Doresc o comandă personalizată ACDmixArt.\n\n";
+    message += `Categorie: ${product.categorie}\nProdus: ${product.nume}\nCantitate: ${quantity}\n`;
 
-      formProduct.appendChild(option);
-
+    const fields = [
+      ["Nume / text", "formNames"],
+      ["Text invitație", "formText"],
+      ["Data evenimentului", "formDate"],
+      ["Culori", "formColors"],
+      ["Vârstă", "formAge"],
+      ["Alte detalii", "formDetails"]
+    ];
+    fields.forEach(([label, id]) => {
+      const input = document.getElementById(id);
+      if (input && input.value.trim()) message += `${label}: ${input.value.trim()}\n`;
     });
-  }
 
-  formCategory.addEventListener(
-    "change",
-    updateFormProducts
-  );
+    if (childName) message += `Numele copilului: ${childName}\n`;
+    if (theme) message += `Tematică: ${theme}\n`;
+    const frame = document.getElementById("formFrame");
+    if (frame && frame.checked) message += "Ramă foto: Da (+60 lei)\n";
 
-  // Trimite cererea pe WhatsApp
-  orderForm.addEventListener(
-    "submit",
-    function(event) {
+    let unitPrice = product.pret;
+    if (product.categorie === "Set Mot" && frame && frame.checked) unitPrice += 60;
+    message += `Preț estimativ: ${money(unitPrice * quantity)}\n\nVă mulțumesc!`;
 
-      event.preventDefault();
-
-      const selectedProduct = products.find(
-        product =>
-          String(product.id) === formProduct.value
-      );
-
-      const quantity = Number(
-        document.getElementById("formQuantity").value
-      );
-
-      const colors =
-        document
-          .getElementById("formColors")
-          .value
-          .trim();
-
-      const eventDate =
-        document.getElementById("formDate").value;
-
-      const details =
-        document
-          .getElementById("formDetails")
-          .value
-          .trim();
-
-      if (!formCategory.value) {
-        alert("Te rog să alegi o categorie.");
-        return;
-      }
-
-      if (!selectedProduct) {
-        alert(
-          "Te rog să alegi un model sau un produs disponibil."
-        );
-        return;
-      }
-
-      if (
-        !Number.isInteger(quantity) ||
-        quantity < 1
-      ) {
-        alert(
-          "Te rog să introduci o cantitate validă."
-        );
-        return;
-      }
-
-      // Comanda minimă pentru invitații
-      const invitationCategories = [
-        "Botez",
-        "Nunta",
-        "Nunta-Botez"
-      ];
-
-      if (
-        invitationCategories.includes(
-          selectedProduct.categorie
-        ) &&
-        quantity < 25
-      ) {
-        alert(
-          "Comanda minimă pentru invitații este de 25 de bucăți."
-        );
-        return;
-      }
-
-      let message =
-        "Bună! Doresc o comandă personalizată ACDmixArt.\n\n";
-
-      message +=
-        `Categorie: ${selectedProduct.categorie}\n`;
-
-      message +=
-        `Model / produs: ${selectedProduct.nume}\n`;
-
-      message +=
-        `Cantitate: ${quantity}\n`;
-
-      if (colors) {
-        message +=
-          `Nuanțe / culori: ${colors}\n`;
-      }
-
-      if (eventDate) {
-        message +=
-          `Data evenimentului: ${eventDate}\n`;
-      }
-
-      if (details) {
-        message +=
-          `Nume și detalii: ${details}\n`;
-      }
-
-      const whatsappUrl =
-        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-      window.open(
-        whatsappUrl,
-        "_blank"
-      );
-    }
-  );
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
+  });
 }
+
 /* =========================
    INITIALIZARE
 ========================= */
@@ -1343,10 +1117,13 @@ if (orderForm && formCategory && formProduct) {
 renderCategories();
 renderProducts();
 renderCart();
+
+const year = document.getElementById("year");
+if (year) year.textContent = new Date().getFullYear();
+
 window.addToCart = addToCart;
 window.removeFromCart = removeFromCart;
 window.setCategory = setCategory;
 window.openSetMotCustomizer = openSetMotCustomizer;
 window.changeCartQuantity = changeCartQuantity;
 window.changeProductQuantity = changeProductQuantity;
-
