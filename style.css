@@ -151,12 +151,31 @@ h1, h2, h3 {
   cursor: zoom-out;
 }
 
+
 .image-lightbox img {
-  max-width: 90%;
-  max-height: 90vh;
+  display: block;
+  max-width: calc(100vw - 120px);
+  max-height: 88vh;
+  width: auto;
+  height: auto;
   object-fit: contain;
   border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 600px) {
+  .image-lightbox img {
+    max-width: calc(100vw - 100px);
+    max-height: 82vh;
+  }
+
+  .image-lightbox .lightbox-prev,
+  .image-lightbox .lightbox-next {
+    width: 54px !important;
+    height: 54px !important;
+    font-size: 38px !important;
+    z-index: 10001;
+  }
 }
 
 .lightbox-close {
