@@ -1,3 +1,867 @@
+:root {
+  --burgundy: #A8B5A0;
+  --burgundy-dark: #66745F;
+  --cream: #FAF7F2;
+  --paper: #FFFFFF;
+  --gold: #D8A6AD;
+  --ink: #4E4945;
+  --muted: #8A8580;
+  --white: #FFFFFF;
+  --radius: 18px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap');
+
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Montserrat',sans-serif}
+a{color:inherit;text-decoration:none}
+.site-header{height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 6%;background:rgba(255,250,245,.96);border-bottom:1px solid #eadfd8;position:sticky;top:0;z-index:20}
+.logo{font:700 30px 'Cormorant Garamond',serif;color:var(--burgundy)}
+nav{display:flex;gap:28px;font-size:14px}
+nav a:hover{color:var(--burgundy)}
+.cart-button{border:1px solid #d9c6cc;background:transparent;border-radius:999px;padding:10px 15px;cursor:pointer;font-weight:600}
+#cartCount{display:inline-flex;min-width:22px;height:22px;align-items:center;justify-content:center;background:var(--burgundy);color:white;border-radius:50%;font-size:12px}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;padding:90px 8%;background:var(--cream)}
+.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:700;color:var(--gold)}
+h1,h2{font-family:'Cormorant Garamond',serif;line-height:.98;margin:12px 0}
+h1{font-size:clamp(56px,7vw,92px);max-width:760px}
+h1 em{color:var(--burgundy);font-weight:600}
+h2{font-size:clamp(42px,5vw,64px)}
+.hero-text{max-width:570px;line-height:1.8;color:var(--muted);margin:25px 0 30px}
+.button{display:inline-block;background:var(--burgundy);color:white;border:0;border-radius:999px;padding:13px 22px;font:600 13px 'Montserrat',sans-serif;cursor:pointer}
+.button:hover{background:var(--burgundy-dark)}
+.hero-card{background:white;padding:14px;border:1px solid #eadfd8}
+.hero-placeholder{height:390px;display:grid;place-items:center;text-align:center;color:#a9979e;background:var(--paper);padding:30px}
+.catalog-section{padding:85px 7%}
+.section-heading{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:35px}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filter{border:1px solid #dacbd0;background:white;border-radius:999px;padding:9px 15px;cursor:pointer}
+.filter.active,.filter:hover{background:var(--burgundy);color:white;border-color:var(--burgundy)}
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.product-card{background:white;border:1px solid #eadfd8;border-radius:var(--radius);overflow:hidden;position:relative}
+.product-photo{aspect-ratio:1/1;background:var(--paper);display:grid;place-items:center;color:#9d8e94;padding:20px;text-align:center}
+.product-photo img{width:100%;height:100%;object-fit:cover}
+.product-info{padding:18px}
+.product-category{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);font-weight:700}
+.product-name{font:600 25px 'Cormorant Garamond',serif;margin:7px 0}
+.product-price{font-weight:700;margin-bottom:14px}
+.product-actions{display:flex;gap:8px}
+/* Butoane Adauga in cos - ACDmixArt */
+.add-cart {
+  flex: 1;
+  border: 1px solid #66745F;
+  background: #66745F;
+  color: #FFFFFF;
+  border-radius: 14px;
+  padding: 12px 14px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 8px rgba(102, 116, 95, 0.12);
+}
+
+.add-cart:hover {
+  background: #4F5D49;
+  border-color: #4F5D49;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(102, 116, 95, 0.20);
+}
+
+.add-cart:active {
+  transform: scale(0.98);
+}
+
+.fav{width:42px;border:1px solid #dacbd0;background:white;border-radius:10px;font-size:18px;cursor:pointer}
+.fav.active{color:var(--burgundy)}
+.personalize-section{background:var(--burgundy);color:white;padding:80px 8%;display:grid;grid-template-columns:.9fr 1.1fr;gap:70px}
+.personalize-section .eyebrow{color:#ead09a}
+.personalize-section p{line-height:1.8}
+.order-form{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.order-form label{display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:600}
+.order-form label:last-of-type{grid-column:1/-1}
+.order-form input,.order-form select,.order-form textarea{border:0;border-radius:10px;padding:12px;font:14px 'Montserrat',sans-serif}
+.order-form .button{grid-column:1/-1;background:white;color:var(--burgundy)}
+.about-section{padding:90px 8%;max-width:1000px}
+.about-section p:not(.eyebrow){line-height:1.8;color:var(--muted)}
+footer{padding:35px;text-align:center;color:var(--muted);font-size:12px;border-top:1px solid #eadfd8}
+.cart-panel{position:fixed;right:0;top:0;width:min(430px,100%);height:100vh;background:white;z-index:50;padding:25px;transform:translateX(100%);transition:.25s;display:flex;flex-direction:column;box-shadow:-10px 0 30px rgba(0,0,0,.12)}
+.cart-panel.open{transform:translateX(0)}
+.cart-top{display:flex;justify-content:space-between;align-items:center}
+.close{border:0;background:none;font-size:30px;cursor:pointer}
+#cartItems{overflow:auto;flex:1;padding:15px 0}
+.cart-row{display:grid;grid-template-columns:1fr auto;gap:10px;border-bottom:1px solid #eee;padding:15px 0}
+.cart-row small{color:var(--muted)}
+.remove{border:0;background:none;color:var(--burgundy);cursor:pointer}
+.cart-bottom{border-top:1px solid #eee;padding-top:20px;display:grid;gap:15px}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:40}
+.overlay.open{display:block}
+@media(max-width:900px){
+  nav{display:none}.hero,.personalize-section{grid-template-columns:1fr}
+  .products-grid{grid-template-columns:repeat(2,1fr)}
+  .section-heading{align-items:start;flex-direction:column}
+}
+@media(max-width:560px){
+  .site-header{padding:0 4%}.hero,.catalog-section,.personalize-section,.about-section{padding-left:5%;padding-right:5%}
+  .products-grid{grid-template-columns:1fr}.order-form{grid-template-columns:1fr}
+  .order-form label:last-of-type,.order-form .button{grid-column:auto}
+}
+/* Ajustări ACDmixArt */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.logo,
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+.hero-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+  display: block;
+  border-radius: 14px;
+}
+/* Imagine produs mărită */
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+
+.image-lightbox img {
+  display: block;
+  max-width: calc(100vw - 120px);
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 600px) {
+  .image-lightbox img {
+    max-width: calc(100vw - 100px);
+    max-height: 82vh;
+  }
+
+  .image-lightbox .lightbox-prev,
+  .image-lightbox .lightbox-next {
+    width: 54px !important;
+    height: 54px !important;
+    font-size: 38px !important;
+    z-index: 10001;
+  }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 28px;
+  cursor: pointer;
+}
+/* =========================
+   CATEGORII - DESIGN PREMIUM
+========================= */
+
+.filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 30px auto 40px;
+  padding: 8px;
+}
+
+
+.filter-btn {
+  border: none;
+  background: #E8EDE4;
+  color: #66745F;
+  padding: 9px 18px;
+  border-radius: 30px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: none;
+}
+
+.filter-btn:hover {
+  background: #D6DFD0;
+  color: #4F5D49;
+  transform: translateY(-1px);
+}
+
+.filter-btn.active {
+  background: #66745F;
+  color: #FFFFFF;
+  box-shadow: 0 3px 10px rgba(102, 116, 95, 0.18);
+}
+
+.filter-btn:active {
+  transform: scale(0.98);
+}
+
+
+/* Butoane personalizare set moț */
+.setmot-add {
+  background: var(--burgundy-dark) !important;
+  color: var(--white) !important;
+  border: none !important;
+  border-radius: 30px !important;
+  padding: 14px 22px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 10px rgba(102, 116, 95, 0.18);
+  transition: all 0.25s ease;
+}
+
+.setmot-add:hover {
+  background: var(--burgundy) !important;
+  color: var(--ink) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(102, 116, 95, 0.25);
+}
+
+.setmot-add:active {
+  transform: scale(0.98);
+}
+
+/* Buton închidere */
+.setmot-close {
+  color: var(--ink) !important;
+  border-radius: 50% !important;
+  transition: background 0.2s ease;
+}
+
+.setmot-close:hover {
+  background: var(--cream) !important;
+}
+/* =========================
+   CANTITATE PRODUSE
+========================= */
+
+.product-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: 40px;
+  margin: 10px 0 12px;
+  border: 1px solid #dfe4dc;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f8faf7;
+}
+
+.product-quantity button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #66745F;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.product-quantity button:hover {
+  background: #E8EDE4;
+}
+
+.product-quantity span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 40px;
+  color: #4E4945;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Reparare stil butoane Adauga in cos */
+.add-cart,
+button.add-cart,
+.product-actions .add-cart {
+  background-color: #66745F !important;
+  background-image: none !important;
+  color: #FFFFFF !important;
+  border: 1px solid #66745F !important;
+  border-radius: 14px !important;
+  padding: 12px 14px !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 600 !important;
+  box-shadow: 0 3px 8px rgba(102, 116, 95, 0.12) !important;
+  transition: all 0.25s ease !important;
+}
+
+.add-cart:hover,
+button.add-cart:hover,
+.product-actions .add-cart:hover {
+  background-color: #4F5D49 !important;
+  color: #FFFFFF !important;
+  border-color: #4F5D49 !important;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   FORMULAR DINAMIC ACDmixArt
+========================= */
+
+.dynamic-form-fields {
+  display: contents;
+}
+
+.order-form label {
+  min-width: 0;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  color: #4E4945;
+  border: 1px solid rgba(102, 116, 95, 0.18);
+  border-radius: 12px;
+  padding: 13px 14px;
+  font: 14px 'DM Sans', sans-serif;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-form input:focus,
+.order-form select:focus,
+.order-form textarea:focus {
+  border-color: #66745F;
+  box-shadow: 0 0 0 3px rgba(102, 116, 95, 0.13);
+}
+
+.order-form input::placeholder,
+.order-form textarea::placeholder {
+  color: #A19C95;
+}
+
+.order-form select:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.order-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.order-form .button {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #4F5D49;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 30px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.order-form .button:hover {
+  background: #E8EDE4;
+  color: #4F5D49;
+  transform: translateY(-1px);
+}
+
+.order-summary {
+  grid-column: 1 / -1;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.96);
+  color: #4E4945;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+  box-shadow: 0 8px 22px rgba(55, 65, 49, 0.08);
+}
+
+.order-summary[hidden] {
+  display: none !important;
+}
+
+.order-summary strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #66745F;
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+}
+
+.order-summary p {
+  margin: 5px 0;
+}
+
+.order-summary .summary-total {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #E8EDE4;
+  font-weight: 700;
+  color: #4F5D49;
+}
+
+@media (max-width: 900px) {
+  .order-form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .order-form {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .order-form .button,
+  .order-summary {
+    grid-column: 1;
+  }
+
+  .order-summary {
+    padding: 16px;
+  }
+
+
+}
+
+/* ==========================================
+   ACDmixArt — GALERIE FOTO
+   Versiune curata pentru mobil si desktop
+========================================== */
+
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  box-sizing: border-box;
+  background: rgba(35, 38, 32, 0.72);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.image-lightbox,
+.image-lightbox * {
+  box-sizing: border-box;
+}
+
+.image-lightbox .lightbox-panel {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 auto;
+  width: min(440px, 94vw);
+  height: auto;
+  min-height: 0;
+  max-height: 86dvh;
+  margin: auto;
+  padding: 10px;
+  gap: 0;
+  border-radius: 16px;
+  background: #FAF7F2;
+  color: #4E4945;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.image-lightbox .lightbox-top {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 0 8px;
+}
+
+.image-lightbox .lightbox-title {
+  min-width: 0;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.3;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.image-lightbox .lightbox-close {
+  position: static;
+  display: flex;
+  flex: 0 0 34px;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  min-width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #66745F;
+  color: #FFFFFF;
+  font-size: 23px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.image-lightbox .lightbox-stage {
+  position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 230px;
+  min-width: 0;
+  min-height: 0;
+  max-height: 30dvh;
+  margin: 0;
+  padding: 4px;
+  border-radius: 10px;
+  background: #F0E8DC;
+  overflow: hidden;
+}
+
+.image-lightbox .lightbox-image {
+  display: block;
+  flex: 0 1 auto;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 5px;
+  box-shadow: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  touch-action: pan-y;
+}
+
+.image-lightbox .lightbox-prev,
+.image-lightbox .lightbox-next {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 42px;
+  padding: 0;
+  transform: translateY(-50%);
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.96);
+  color: #4F302F;
+  font-size: 29px;
+  line-height: 1;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+.image-lightbox .lightbox-prev {
+  left: 5px;
+}
+
+.image-lightbox .lightbox-next {
+  right: 5px;
+}
+
+.image-lightbox .lightbox-counter {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  z-index: 3;
+  transform: translateX(-50%);
+  padding: 4px 10px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.96);
+  color: #4F302F;
+  font-size: 11px;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.image-lightbox .lightbox-thumbnails {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  max-width: 100%;
+  min-height: 0;
+  margin: 6px 0 0;
+  padding: 2px 1px 4px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.image-lightbox .lightbox-thumb {
+  display: block;
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  padding: 2px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: #FFFFFF;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.image-lightbox .lightbox-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.image-lightbox .lightbox-thumb.active {
+  border-color: #B89B42;
+}
+
+/* Detalii produs */
+
+.image-lightbox .lightbox-product-info {
+  display: block;
+  flex: 0 0 auto;
+  min-height: 0;
+  margin: 0;
+  padding: 10px 2px 2px;
+}
+
+.image-lightbox .lightbox-category {
+  margin: 0 0 3px;
+  color: #66745F;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.image-lightbox .lightbox-product-name {
+  margin: 0 0 4px;
+  color: #4F302F;
+  font-family: Georgia, serif;
+  font-size: 22px;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.image-lightbox .lightbox-product-price {
+  margin: 0 0 6px;
+  color: #66745F;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.image-lightbox .lightbox-description {
+  margin: 0 0 9px;
+  color: #6F655E;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.image-lightbox .lightbox-actions {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+}
+
+.image-lightbox .lightbox-actions button {
+  display: block;
+  width: 100%;
+  min-height: 38px;
+  margin: 0;
+  padding: 9px 10px;
+  border: 1px solid #D8D1C5;
+  border-radius: 9px;
+  background: #FFFFFF;
+  color: #66745F;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.image-lightbox .lightbox-actions .lightbox-order {
+  border-color: #66745F;
+  background: #66745F;
+  color: #FFFFFF;
+}
+
+.image-lightbox .lightbox-actions .lightbox-add-cart {
+  border-color: #4F302F;
+  background: #4F302F;
+  color: #FFFFFF;
+}
+
+/* Ascundem butonul Personalizeaza din galeria produselor */
+.image-lightbox .lightbox-personalize,
+.image-lightbox .lightbox-customize,
+.image-lightbox [data-action="personalize"],
+.image-lightbox .lightbox-actions button:nth-child(2) {
+  display: none !important;
+}
+
+.image-lightbox button:focus-visible {
+  outline: 2px solid #B89B42;
+  outline-offset: 2px;
+}
+
+/* Telefon */
+
+@media (max-width: 600px) {
+  .image-lightbox {
+    padding: 6px;
+  }
+
+  .image-lightbox .lightbox-panel {
+    width: min(420px, 96vw);
+    height: auto;
+    max-height: 84dvh;
+    padding: 8px;
+    border-radius: 14px;
+  }
+
+  .image-lightbox .lightbox-top {
+    margin-bottom: 6px;
+  }
+
+  .image-lightbox .lightbox-title {
+    font-size: 12px;
+  }
+
+  .image-lightbox .lightbox-close {
+    flex-basis: 32px;
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    font-size: 22px;
+  }
+
+  .image-lightbox .lightbox-stage {
+    height: 25dvh;
+    max-height: 190px;
+  }
+
+  .image-lightbox .lightbox-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .image-lightbox .lightbox-prev,
+  .image-lightbox .lightbox-next {
+    width: 32px;
+    height: 38px;
+    font-size: 26px;
+  }
+
+  .image-lightbox .lightbox-counter {
+    bottom: 5px;
+    padding: 4px 9px;
+    font-size: 10px;
+  }
+
+  .image-lightbox .lightbox-thumbnails {
+    gap: 5px;
+    margin-top: 5px;
+  }
+
+  .image-lightbox .lightbox-thumb {
+    flex-basis: 42px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .image-lightbox .lightbox-product-info {
+    padding: 8px 2px 2px;
+  }
+
+  .image-lightbox .lightbox-product-name {
+    font-size: 19px;
+  }
+
+  .image-lightbox .lightbox-product-price {
+    font-size: 16px;
+  }
+
+  .image-lightbox .lightbox-description {
+    margin-bottom: 7px;
+    font-size: 10px;
+  }
+
+  .image-lightbox .lightbox-actions {
+    gap: 5px;
+  }
+
+  .image-lightbox .lightbox-actions button {
+    min-height: 35px;
+    padding: 8px;
+    font-size: 9px;
+  }
+}
+
+/* Categorii una sub alta pe telefon */
+@media (max-width: 700px) {
+  .filters {
+    display: flex;
+    flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
     flex-wrap: nowrap;
@@ -21,7 +885,7 @@
   }
 }
 
-/* Marire separata pentru fotografiile invitatiilor */
+/* Vizualizare doar fotografie mărită pentru textul invitațiilor */
 .image-lightbox .lightbox-zoom-open {
   position: absolute;
   right: 8px;
@@ -35,11 +899,7 @@
   font: 600 11px 'DM Sans', sans-serif;
   cursor: pointer;
 }
-
-.image-lightbox .lightbox-image {
-  cursor: zoom-in;
-}
-
+.image-lightbox .lightbox-image { cursor: zoom-in; }
 .photo-zoom-overlay {
   position: fixed;
   inset: 0;
@@ -53,7 +913,6 @@
   overflow: hidden;
   touch-action: none;
 }
-
 .photo-zoom-viewport {
   width: 100%;
   height: 100%;
@@ -64,11 +923,7 @@
   touch-action: none;
   cursor: grab;
 }
-
-.photo-zoom-viewport:active {
-  cursor: grabbing;
-}
-
+.photo-zoom-viewport:active { cursor: grabbing; }
 .photo-zoom-image {
   display: block;
   max-width: 100%;
@@ -81,7 +936,6 @@
   -webkit-user-drag: none;
   pointer-events: none;
 }
-
 .photo-zoom-close {
   position: absolute;
   top: 12px;
@@ -95,9 +949,7 @@
   color: white;
   font-size: 30px;
   line-height: 1;
-  cursor: pointer;
 }
-
 .photo-zoom-tools {
   position: absolute;
   top: 14px;
@@ -107,7 +959,6 @@
   align-items: center;
   gap: 7px;
 }
-
 .photo-zoom-tools button {
   min-width: 38px;
   height: 38px;
@@ -117,9 +968,7 @@
   background: rgba(255,255,255,.14);
   color: white;
   font: 600 14px 'DM Sans', sans-serif;
-  cursor: pointer;
 }
-
 .photo-zoom-hint {
   position: absolute;
   bottom: 8px;
@@ -130,11 +979,4 @@
   color: rgba(255,255,255,.75);
   font: 11px 'DM Sans', sans-serif;
   pointer-events: none;
-}
-
-@media (max-width: 600px) {
-  .image-lightbox .lightbox-zoom-open {
-    font-size: 11px;
-    padding: 8px 10px;
-  }
 }
