@@ -654,8 +654,19 @@ button.add-cart:hover,
   .image-lightbox .lightbox-title { font-size: 13px !important; }
   .image-lightbox .lightbox-close { min-width: 42px !important; height: 40px !important; padding: 0 10px !important; font-size: 23px !important; }
   .image-lightbox .lightbox-close::after { font-size: 12px; }
-  .image-lightbox .lightbox-stage { flex: 1 1 0 !important; min-height: 0 !important; }
-  .image-lightbox .lightbox-image { max-width: 100% !important; max-height: 100% !important; }
+  .image-lightbox .lightbox-stage {
+    flex: 1 1 0 !important;
+    min-height: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+  .image-lightbox .lightbox-image {
+    width: auto !important;
+    height: auto !important;
+    max-width: calc(100vw - 32px) !important;
+    max-height: calc(100dvh - 210px) !important;
+    object-fit: contain !important;
+  }
   .image-lightbox .lightbox-prev,
   .image-lightbox .lightbox-next { width: 36px !important; height: 42px !important; font-size: 30px !important; }
   .image-lightbox .lightbox-prev { left: 4px !important; }
