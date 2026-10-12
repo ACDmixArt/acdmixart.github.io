@@ -489,6 +489,62 @@ const products = [
   price: 1.5,
   images: ["etichete", "etichete1"]
 },
+  
+{
+  name: "Marturie magnetica Urs",
+  category: "Marturii",
+  price: 5.5,
+  images: ["mai", "mai1"]
+},
+
+{
+  name: "Marturie magnetica Blue",
+  category: "Marturii",
+  price: 5.5,
+  images: ["luca", "luca1", "luca2"]
+},
+
+{
+  name: "Marturie magnetica Safari",
+  category: "Marturii",
+  price: 4.5,
+  images: ["safari", "safari1"]
+},
+
+{
+  name: "Marturii magnet pe forma+mini ciocolatica",
+  category: "Marturii",
+  price: 12,
+  images: ["bomboana", "bomboana1"]
+},
+
+{
+  name: "Evantai",
+  category: "Marturii",
+  price: 4.5,
+  images: ["evantai"]
+},
+
+{
+  name: "Marturie magnetica fluture",
+  category: "Marturii",
+  price: 5.5,
+  images: ["fluture", "fluture1", "fluture2"]
+},
+
+{
+  name: "Marturie magnetica cu colturi rotunjite+saculet",
+  category: "Marturii",
+  price: 7,
+  images: ["unicorn", "unicorn1"]
+},
+
+{
+  name: "Marturie magnetica pink",
+  category: "Marturii",
+  price: 6,
+  images: ["familie", "familie1"]
+},
 
   {
     id: 43,
