@@ -1197,5 +1197,47 @@ button.add-cart:hover,
     height: 100% !important;
     object-fit: cover !important;
   }
-}
+/* Fix final galerie pe telefon */
+@media (max-width: 600px) {
+  .image-lightbox {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    padding: 8px !important;
+    box-sizing: border-box !important;
+  }
 
+  .image-lightbox .lightbox-panel {
+    width: 100% !important;
+    height: calc(100dvh - 16px) !important;
+    max-height: calc(100dvh - 16px) !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .image-lightbox .lightbox-stage {
+    flex: 1 1 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    overflow: hidden !important;
+  }
+
+  .image-lightbox .lightbox-stage .lightbox-image {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  .image-lightbox .lightbox-thumbnails {
+    flex: 0 0 auto !important;
+    max-height: 82px !important;
+  }
+}
