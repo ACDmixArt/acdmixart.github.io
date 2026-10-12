@@ -343,3 +343,130 @@ button.add-cart:hover,
   border-color: #4F5D49 !important;
   transform: translateY(-2px);
 }
+
+/* =========================
+   FORMULAR DINAMIC ACDmixArt
+========================= */
+
+.dynamic-form-fields {
+  display: contents;
+}
+
+.order-form label {
+  min-width: 0;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  color: #4E4945;
+  border: 1px solid rgba(102, 116, 95, 0.18);
+  border-radius: 12px;
+  padding: 13px 14px;
+  font: 14px 'DM Sans', sans-serif;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-form input:focus,
+.order-form select:focus,
+.order-form textarea:focus {
+  border-color: #66745F;
+  box-shadow: 0 0 0 3px rgba(102, 116, 95, 0.13);
+}
+
+.order-form input::placeholder,
+.order-form textarea::placeholder {
+  color: #A19C95;
+}
+
+.order-form select:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.order-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.order-form .button {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #4F5D49;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 30px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.order-form .button:hover {
+  background: #E8EDE4;
+  color: #4F5D49;
+  transform: translateY(-1px);
+}
+
+.order-summary {
+  grid-column: 1 / -1;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.96);
+  color: #4E4945;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+  box-shadow: 0 8px 22px rgba(55, 65, 49, 0.08);
+}
+
+.order-summary[hidden] {
+  display: none !important;
+}
+
+.order-summary strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #66745F;
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+}
+
+.order-summary p {
+  margin: 5px 0;
+}
+
+.order-summary .summary-total {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #E8EDE4;
+  font-weight: 700;
+  color: #4F5D49;
+}
+
+@media (max-width: 900px) {
+  .order-form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .order-form {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .order-form .button,
+  .order-summary {
+    grid-column: 1;
+  }
+
+  .order-summary {
+    padding: 16px;
+  }
+}
