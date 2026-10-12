@@ -882,6 +882,7 @@ document.addEventListener("click", event => {
     </div>
   `;
 
+  const previousBodyOverflow = document.body.style.overflow;
   document.body.appendChild(lightbox);
   document.body.style.overflow = "hidden";
 
@@ -942,7 +943,7 @@ document.addEventListener("click", event => {
 
   function closeGallery() {
     lightbox.remove();
-    document.body.style.overflow = "";
+    document.body.style.overflow = previousBodyOverflow;
     document.removeEventListener("keydown", handleKeys);
   }
 
