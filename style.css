@@ -138,58 +138,7 @@ h1, h2, h3 {
   display: block;
   border-radius: 14px;
 }
-/* Imagine produs mărită */
-.image-lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.75);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-  z-index: 9999;
-  cursor: zoom-out;
-}
 
-
-.image-lightbox img {
-  display: block;
-  max-width: calc(100vw - 120px);
-  max-height: 88vh;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 600px) {
-  .image-lightbox img {
-    max-width: calc(100vw - 100px);
-    max-height: 82vh;
-  }
-
-  .image-lightbox .lightbox-prev,
-  .image-lightbox .lightbox-next {
-    width: 54px !important;
-    height: 54px !important;
-    font-size: 38px !important;
-    z-index: 10001;
-  }
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 25px;
-  background: white;
-  border: none;
-  border-radius: 50%;
-  width: 42px;
-  height: 42px;
-  font-size: 28px;
-  cursor: pointer;
-}
 /* =========================
    CATEGORII - DESIGN PREMIUM
 ========================= */
@@ -493,242 +442,7 @@ button.add-cart:hover,
 }
 
 /* =========================
-   GALERIE FOTO ACDmixArt - versiune curata
-========================= */
-.image-lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px;
-  box-sizing: border-box;
-  background: rgba(35, 38, 32, 0.94);
-  overflow: hidden;
-}
-
-.lightbox-panel {
-  display: flex;
-  flex-direction: column;
-  width: min(900px, 100%);
-  max-height: calc(100vh - 24px);
-  max-height: calc(100dvh - 24px);
-  min-height: 0;
-  margin: auto;
-  padding: 14px;
-  box-sizing: border-box;
-  border-radius: 22px;
-  background: #FAF7F2;
-  color: #4E4945;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
-}
-
-.lightbox-top {
-  display: flex;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-
-.lightbox-title {
-  min-width: 0;
-  font-size: 16px;
-  font-weight: 600;
-  overflow-wrap: anywhere;
-}
-
-.image-lightbox .lightbox-close {
-  position: static;
-  flex: 0 0 auto;
-  width: 46px;
-  height: 46px;
-  padding: 0;
-  border: 0;
-  border-radius: 999px;
-  background: #66745F;
-  color: #fff;
-  font-size: 30px;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.lightbox-stage {
-  position: relative;
-  display: flex;
-  flex: 1 1 auto;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
-  min-height: 180px;
-  overflow: hidden;
-  border-radius: 14px;
-  background: #F0E8DC;
-}
-
-.image-lightbox .lightbox-image {
-  display: block;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: min(66vh, 720px);
-  max-height: min(66dvh, 720px);
-  object-fit: contain;
-  border-radius: 8px;
-  box-shadow: none;
-  touch-action: pan-y;
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-.image-lightbox .lightbox-prev,
-.image-lightbox .lightbox-next {
-  position: absolute;
-  top: 50%;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 54px;
-  height: 62px;
-  padding: 0;
-  transform: translateY(-50%);
-  border: 1px solid rgba(102, 116, 95, 0.15);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.96);
-  color: #4F302F;
-  font-size: 42px;
-  line-height: 1;
-  cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-  -webkit-tap-highlight-color: transparent;
-}
-
-.image-lightbox .lightbox-prev { left: 8px; }
-.image-lightbox .lightbox-next { right: 8px; }
-
-.lightbox-counter {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 8px 20px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.96);
-  color: #4F302F;
-  font-size: 16px;
-  font-weight: 600;
-  pointer-events: none;
-}
-
-.lightbox-thumbnails {
-  display: flex;
-  flex: 0 0 auto;
-  gap: 10px;
-  max-width: 100%;
-  margin-top: 10px;
-  padding: 2px 2px 6px;
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scrollbar-width: thin;
-}
-
-.lightbox-thumb {
-  flex: 0 0 78px;
-  width: 78px;
-  height: 78px;
-  padding: 3px;
-  border: 2px solid transparent;
-  border-radius: 12px;
-  background: #fff;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.lightbox-thumb img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.lightbox-thumb.active { border-color: #B89B42; }
-.image-lightbox button:focus-visible { outline: 3px solid #B89B42; outline-offset: 3px; }
-
-@media (max-width: 600px) {
-  .image-lightbox {
-    padding: 6px;
-    padding-top: max(6px, env(safe-area-inset-top));
-    padding-bottom: max(6px, env(safe-area-inset-bottom));
-  }
-
-  .lightbox-panel {
-    width: 100%;
-    max-height: calc(100vh - 12px);
-    max-height: calc(100dvh - 12px);
-    padding: 8px;
-    border-radius: 17px;
-  }
-
-  .lightbox-top { gap: 8px; margin-bottom: 7px; }
-  .lightbox-title { font-size: 14px; }
-
-  .image-lightbox .lightbox-close {
-    width: 44px;
-    height: 44px;
-    font-size: 28px;
-  }
-
-  .lightbox-stage {
-    flex: 0 1 auto;
-    height: auto;
-    min-height: 0;
-    max-height: calc(100dvh - 190px);
-  }
-
-  .image-lightbox .lightbox-image {
-    max-width: calc(100vw - 32px);
-    max-height: calc(100dvh - 210px);
-    object-fit: contain;
-  }
-
-  .image-lightbox .lightbox-prev,
-  .image-lightbox .lightbox-next {
-    width: 42px;
-    height: 52px;
-    font-size: 36px;
-  }
-
-  .image-lightbox .lightbox-prev { left: 4px; }
-  .image-lightbox .lightbox-next { right: 4px; }
-
-  .lightbox-counter {
-    bottom: 7px;
-    padding: 7px 16px;
-    font-size: 14px;
-  }
-
-  .lightbox-thumbnails {
-    gap: 8px;
-    margin-top: 8px;
-    padding-bottom: 3px;
-  }
-
-  .lightbox-thumb {
-    flex-basis: 66px;
-    width: 66px;
-    height: 66px;
-  }
-}
-
-
-
-/* =========================
-   GALERIE ACDmixArt - corectie finala pentru telefon
-   Pastreaza galeria si restul site-ului neschimbate.
+   GALERIE FOTO ACDmixArt — stil unic, desktop + telefon
 ========================= */
 .image-lightbox {
   position: fixed !important;
@@ -737,10 +451,13 @@ button.add-cart:hover,
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 10px !important;
-  background: rgba(35, 38, 32, .94) !important;
-  overflow: hidden !important;
+  width: 100% !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  padding: 12px !important;
   box-sizing: border-box !important;
+  background: rgba(35, 38, 32, 0.94) !important;
+  overflow: hidden !important;
   cursor: default !important;
   overscroll-behavior: contain;
 }
@@ -748,9 +465,11 @@ button.add-cart:hover,
 .image-lightbox .lightbox-panel {
   display: flex !important;
   flex-direction: column !important;
-  width: min(100%, 1000px) !important;
-  height: min(90dvh, 940px) !important;
-  max-height: calc(100dvh - 20px) !important;
+  width: min(900px, 100%) !important;
+  height: min(94vh, 940px) !important;
+  height: min(94dvh, 940px) !important;
+  max-height: calc(100vh - 24px) !important;
+  max-height: calc(100dvh - 24px) !important;
   min-height: 0 !important;
   margin: 0 auto !important;
   padding: 12px !important;
@@ -768,10 +487,14 @@ button.add-cart:hover,
   justify-content: space-between !important;
   gap: 12px !important;
   margin: 0 0 10px !important;
+  padding: 0 !important;
 }
 
 .image-lightbox .lightbox-title {
+  display: block !important;
+  flex: 1 1 auto !important;
   min-width: 0 !important;
+  color: #4E4945 !important;
   font-size: 16px !important;
   font-weight: 600 !important;
   line-height: 1.3 !important;
@@ -780,29 +503,37 @@ button.add-cart:hover,
 
 .image-lightbox .lightbox-close {
   position: static !important;
-  flex: 0 0 46px !important;
-  width: 46px !important;
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  min-width: 46px !important;
   height: 46px !important;
-  padding: 0 !important;
+  padding: 0 15px !important;
   border: 0 !important;
-  border-radius: 50% !important;
+  border-radius: 999px !important;
   background: #66745F !important;
   color: #fff !important;
-  font-size: 30px !important;
+  font-size: 26px !important;
   line-height: 1 !important;
   cursor: pointer !important;
+  white-space: nowrap !important;
 }
+.image-lightbox .lightbox-close::after { content: " Închide"; font-size: 14px; font-weight: 600; }
 
 .image-lightbox .lightbox-stage {
   position: relative !important;
   display: flex !important;
-  flex: 1 1 auto !important;
+  flex: 1 1 0 !important;
   align-items: center !important;
   justify-content: center !important;
   width: 100% !important;
   min-width: 0 !important;
   min-height: 0 !important;
   margin: 0 !important;
+  padding: 4px !important;
+  box-sizing: border-box !important;
   overflow: hidden !important;
   border-radius: 14px !important;
   background: #F0E8DC !important;
@@ -815,6 +546,8 @@ button.add-cart:hover,
   max-width: 100% !important;
   max-height: 100% !important;
   object-fit: contain !important;
+  object-position: center !important;
+  margin: 0 auto !important;
   border-radius: 6px !important;
   box-shadow: none !important;
   touch-action: pan-y !important;
@@ -831,47 +564,49 @@ button.add-cart:hover,
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 54px !important;
-  height: 62px !important;
+  width: 48px !important;
+  height: 52px !important;
+  min-width: 0 !important;
   padding: 0 !important;
   transform: translateY(-50%) !important;
-  border: 1px solid rgba(102, 116, 95, .15) !important;
-  border-radius: 50% !important;
-  background: rgba(255,255,255,.97) !important;
+  border: 1px solid rgba(102, 116, 95, 0.15) !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,0.97) !important;
   color: #4F302F !important;
-  font-size: 42px !important;
+  font-size: 38px !important;
   line-height: 1 !important;
-  box-shadow: 0 4px 14px rgba(0,0,0,.15) !important;
   cursor: pointer !important;
-  touch-action: manipulation;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15) !important;
+  touch-action: manipulation !important;
 }
-
 .image-lightbox .lightbox-prev { left: 8px !important; }
 .image-lightbox .lightbox-next { right: 8px !important; }
 
 .image-lightbox .lightbox-counter {
   position: absolute !important;
-  bottom: 10px !important;
+  bottom: 8px !important;
   left: 50% !important;
-  transform: translateX(-50%) !important;
   z-index: 4 !important;
-  padding: 8px 20px !important;
+  transform: translateX(-50%) !important;
+  padding: 6px 15px !important;
   border-radius: 999px !important;
-  background: rgba(255,255,255,.97) !important;
-  color: #4F302F !important;
-  font-size: 16px !important;
+  background: rgba(255,255,255,0.97) !important;
+  color: #4E4945 !important;
+  font-size: 14px !important;
   font-weight: 600 !important;
   pointer-events: none !important;
+  white-space: nowrap !important;
 }
 
 .image-lightbox .lightbox-thumbnails {
   display: flex !important;
   flex: 0 0 auto !important;
-  gap: 10px !important;
+  gap: 8px !important;
   width: 100% !important;
   max-width: 100% !important;
-  margin: 10px 0 0 !important;
-  padding: 2px 2px 5px !important;
+  margin: 8px 0 0 !important;
+  padding: 2px 2px 4px !important;
+  box-sizing: border-box !important;
   overflow-x: auto !important;
   overflow-y: hidden !important;
   overscroll-behavior-x: contain !important;
@@ -880,364 +615,60 @@ button.add-cart:hover,
 }
 
 .image-lightbox .lightbox-thumb {
-  flex: 0 0 78px !important;
-  width: 78px !important;
-  height: 78px !important;
+  flex: 0 0 68px !important;
+  width: 68px !important;
+  height: 68px !important;
+  min-width: 0 !important;
   padding: 3px !important;
   border: 2px solid transparent !important;
   border-radius: 12px !important;
   background: #fff !important;
   overflow: hidden !important;
   cursor: pointer !important;
-  touch-action: manipulation;
+  touch-action: manipulation !important;
 }
-
 .image-lightbox .lightbox-thumb img {
   display: block !important;
   width: 100% !important;
   height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
   object-fit: cover !important;
   border-radius: 8px !important;
 }
-
-.image-lightbox .lightbox-thumb.active {
-  border-color: #B89B42 !important;
-}
-
-.image-lightbox button:focus-visible {
-  outline: 3px solid #B89B42 !important;
-  outline-offset: 2px !important;
-}
+.image-lightbox .lightbox-thumb.active { border-color: #B89B42 !important; }
+.image-lightbox button:focus-visible { outline: 3px solid #B89B42 !important; outline-offset: 2px !important; }
 
 @media (max-width: 600px) {
   .image-lightbox {
     padding: max(6px, env(safe-area-inset-top)) 6px max(6px, env(safe-area-inset-bottom)) !important;
   }
-
   .image-lightbox .lightbox-panel {
     width: 100% !important;
-    height: calc(100dvh - 12px) !important;
-    max-height: calc(100dvh - 12px) !important;
+    height: calc(100dvh - max(12px, env(safe-area-inset-top) + env(safe-area-inset-bottom))) !important;
+    max-height: calc(100dvh - max(12px, env(safe-area-inset-top) + env(safe-area-inset-bottom))) !important;
     padding: 8px !important;
-    border-radius: 17px !important;
+    border-radius: 16px !important;
   }
-
-  .image-lightbox .lightbox-top {
-    gap: 8px !important;
-    margin-bottom: 8px !important;
-  }
-
-  .image-lightbox .lightbox-title {
-    font-size: 14px !important;
-  }
-
-  .image-lightbox .lightbox-close {
-    flex-basis: 42px !important;
-    width: 42px !important;
-    height: 42px !important;
-    font-size: 27px !important;
-  }
-
-  .image-lightbox .lightbox-stage {
-    flex: 1 1 auto !important;
-    min-height: 0 !important;
-  }
-
-  .image-lightbox .lightbox-image {
-    max-width: 100% !important;
-    max-height: 100% !important;
-  }
-
+  .image-lightbox .lightbox-top { gap: 8px !important; margin-bottom: 7px !important; }
+  .image-lightbox .lightbox-title { font-size: 13px !important; }
+  .image-lightbox .lightbox-close { min-width: 42px !important; height: 40px !important; padding: 0 10px !important; font-size: 23px !important; }
+  .image-lightbox .lightbox-close::after { font-size: 12px; }
+  .image-lightbox .lightbox-stage { flex: 1 1 0 !important; min-height: 0 !important; }
+  .image-lightbox .lightbox-image { max-width: 100% !important; max-height: 100% !important; }
   .image-lightbox .lightbox-prev,
-  .image-lightbox .lightbox-next {
-    width: 42px !important;
-    height: 50px !important;
-    font-size: 34px !important;
-  }
-
+  .image-lightbox .lightbox-next { width: 36px !important; height: 42px !important; font-size: 30px !important; }
   .image-lightbox .lightbox-prev { left: 4px !important; }
   .image-lightbox .lightbox-next { right: 4px !important; }
-
-  .image-lightbox .lightbox-counter {
-    bottom: 7px !important;
-    padding: 7px 15px !important;
-    font-size: 14px !important;
-  }
-
-  .image-lightbox .lightbox-thumbnails {
-    gap: 7px !important;
-    margin-top: 8px !important;
-    padding-bottom: 3px !important;
-  }
-
-  .image-lightbox .lightbox-thumb {
-    flex-basis: 64px !important;
-    width: 64px !important;
-    height: 64px !important;
-  }
+  .image-lightbox .lightbox-counter { bottom: 6px !important; padding: 5px 12px !important; font-size: 12px !important; }
+  .image-lightbox .lightbox-thumbnails { gap: 6px !important; margin-top: 7px !important; padding-bottom: 2px !important; }
+  .image-lightbox .lightbox-thumb { flex-basis: 56px !important; width: 56px !important; height: 56px !important; }
 }
 
 @media (max-height: 520px) and (orientation: landscape) {
-  .image-lightbox .lightbox-panel {
-    height: calc(100dvh - 12px) !important;
-    max-height: calc(100dvh - 12px) !important;
-    padding: 6px !important;
-  }
-
-  .image-lightbox .lightbox-top { margin-bottom: 5px !important; }
-  .image-lightbox .lightbox-close {
-    flex-basis: 34px !important;
-    width: 34px !important;
-    height: 34px !important;
-  }
-  .image-lightbox .lightbox-thumbnails {
-    margin-top: 5px !important;
-  }
-  .image-lightbox .lightbox-thumb {
-    flex-basis: 48px !important;
-    width: 48px !important;
-    height: 48px !important;
-  }
-/* GALERIE - aspect apropiat de model */
-.image-lightbox .lightbox-panel {
-  background: #FAF7F2 !important;
-  border-radius: 22px !important;
-  overflow: hidden !important;
-}
-
-.image-lightbox .lightbox-top {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 12px !important;
-  padding: 14px 18px !important;
-  margin: 0 !important;
-  background: #FAF7F2 !important;
-}
-
-.image-lightbox .lightbox-title {
-  display: block !important;
-  color: #4E4945 !important;
-  font-size: 15px !important;
-  font-weight: 600 !important;
-  text-align: left !important;
-}
-
-.image-lightbox .lightbox-close {
-  flex: 0 0 auto !important;
-  width: auto !important;
-  min-width: 125px !important;
-  height: 48px !important;
-  padding: 0 18px !important;
-  border: 0 !important;
-  border-radius: 28px !important;
-  background: #66745F !important;
-  color: #FFFFFF !important;
-  font-size: 16px !important;
-  font-weight: 600 !important;
-}
-
-.image-lightbox .lightbox-close::after {
-  content: " Închide";
-}
-
-.image-lightbox .lightbox-stage {
-  background: #F0E6D8 !important;
-}
-
-.image-lightbox .lightbox-counter {
-  background: #FFFFFF !important;
-  color: #4E4945 !important;
-  border-radius: 30px !important;
-  padding: 5px 16px !important;
-}
-
-.image-lightbox .lightbox-thumbnails {
-  background: #F0E6D8 !important;
-  padding: 12px 18px !important;
-  gap: 12px !important;
-}
-
-.image-lightbox .lightbox-thumb {
-  flex: 0 0 88px !important;
-  width: 88px !important;
-  height: 88px !important;
-  border-radius: 14px !important;
-}
-/* ACDmixArt — galerie adaptata pentru telefon */
-@media (max-width: 600px) {
-  .image-lightbox {
-    position: fixed !important;
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100vh !important;
-    height: 100dvh !important;
-    padding: 6px !important;
-    box-sizing: border-box !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    overflow: hidden !important;
-  }
-
-  .image-lightbox .lightbox-panel {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: calc(100% - 12px) !important;
-    max-height: calc(100% - 12px) !important;
-    min-height: 0 !important;
-    box-sizing: border-box !important;
-    display: flex !important;
-    flex-direction: column !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow: hidden !important;
-    border-radius: 18px !important;
-  }
-
-  .image-lightbox .lightbox-top {
-    flex: 0 0 auto !important;
-    min-height: 54px !important;
-    padding: 8px 10px !important;
-    gap: 8px !important;
-    box-sizing: border-box !important;
-  }
-
-  .image-lightbox .lightbox-title {
-    min-width: 0 !important;
-    flex: 1 1 auto !important;
-    font-size: 13px !important;
-    overflow-wrap: anywhere !important;
-  }
-
-  .image-lightbox .lightbox-close {
-    flex: 0 0 auto !important;
-    min-width: 96px !important;
-    width: auto !important;
-    height: 40px !important;
-    padding: 0 10px !important;
-    font-size: 14px !important;
-  }
-
-  .image-lightbox .lightbox-stage {
-    position: relative !important;
-    flex: 1 1 auto !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
-    height: auto !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    overflow: hidden !important;
-    padding: 4px !important;
-    box-sizing: border-box !important;
-  }
-
-  .image-lightbox .lightbox-image {
-    display: block !important;
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
-    object-fit: contain !important;
-    object-position: center !important;
-    margin: 0 auto !important;
-  }
-
-  .image-lightbox .lightbox-prev,
-  .image-lightbox .lightbox-next {
-    position: absolute !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    z-index: 3 !important;
-    width: 36px !important;
-    height: 36px !important;
-    min-width: 36px !important;
-    border-radius: 50% !important;
-  }
-
-  .image-lightbox .lightbox-prev { left: 6px !important; }
-  .image-lightbox .lightbox-next { right: 6px !important; }
-
-  .image-lightbox .lightbox-counter {
-    position: absolute !important;
-    left: 50% !important;
-    bottom: 8px !important;
-    transform: translateX(-50%) !important;
-    z-index: 4 !important;
-  }
-
-  .image-lightbox .lightbox-thumbnails {
-    flex: 0 0 auto !important;
-    display: flex !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-height: 0 !important;
-    max-height: 94px !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    box-sizing: border-box !important;
-    padding: 8px 10px !important;
-    gap: 8px !important;
-    justify-content: flex-start !important;
-  }
-
-  .image-lightbox .lightbox-thumb {
-    flex: 0 0 62px !important;
-    width: 62px !important;
-    height: 62px !important;
-    min-width: 62px !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-  }
-
-  .image-lightbox .lightbox-thumb img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-  }
-/* Fix final galerie pe telefon */
-@media (max-width: 600px) {
-  .image-lightbox {
-    position: fixed !important;
-    inset: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    height: 100dvh !important;
-    padding: 8px !important;
-    box-sizing: border-box !important;
-  }
-
-  .image-lightbox .lightbox-panel {
-    width: 100% !important;
-    height: calc(100dvh - 16px) !important;
-    max-height: calc(100dvh - 16px) !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    overflow: hidden !important;
-    box-sizing: border-box !important;
-  }
-
-  .image-lightbox .lightbox-stage {
-    flex: 1 1 0 !important;
-    min-height: 0 !important;
-    height: auto !important;
-    overflow: hidden !important;
-  }
-
-  .image-lightbox .lightbox-stage .lightbox-image {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
-    object-fit: contain !important;
-  }
-
-  .image-lightbox .lightbox-thumbnails {
-    flex: 0 0 auto !important;
-    max-height: 82px !important;
-  }
+  .image-lightbox .lightbox-panel { height: calc(100dvh - 12px) !important; max-height: calc(100dvh - 12px) !important; padding: 6px !important; }
+  .image-lightbox .lightbox-top { margin-bottom: 4px !important; }
+  .image-lightbox .lightbox-close { height: 32px !important; }
+  .image-lightbox .lightbox-thumbnails { margin-top: 4px !important; }
+  .image-lightbox .lightbox-thumb { flex-basis: 42px !important; width: 42px !important; height: 42px !important; }
 }
