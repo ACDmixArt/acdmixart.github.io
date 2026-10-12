@@ -482,6 +482,14 @@ const products = [
       "images/products/marturieforma3.jpg"
     ]
   },
+  
+{
+  name: "Etichete pentru marturii",
+  category: "Marturii",
+  price: 1.5,
+  images: ["etichete", "etichete1"]
+},
+
   {
     id: 43,
     nume: "Set moț – Căsuța cu ciupercuțe",
