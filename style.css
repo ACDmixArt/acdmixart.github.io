@@ -998,4 +998,71 @@ button.add-cart:hover,
     width: 48px !important;
     height: 48px !important;
   }
+/* GALERIE - aspect apropiat de model */
+.image-lightbox .lightbox-panel {
+  background: #FAF7F2 !important;
+  border-radius: 22px !important;
+  overflow: hidden !important;
 }
+
+.image-lightbox .lightbox-top {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  padding: 14px 18px !important;
+  margin: 0 !important;
+  background: #FAF7F2 !important;
+}
+
+.image-lightbox .lightbox-title {
+  display: block !important;
+  color: #4E4945 !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+}
+
+.image-lightbox .lightbox-close {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: 125px !important;
+  height: 48px !important;
+  padding: 0 18px !important;
+  border: 0 !important;
+  border-radius: 28px !important;
+  background: #66745F !important;
+  color: #FFFFFF !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+
+.image-lightbox .lightbox-close::after {
+  content: " Închide";
+}
+
+.image-lightbox .lightbox-stage {
+  background: #F0E6D8 !important;
+}
+
+.image-lightbox .lightbox-counter {
+  background: #FFFFFF !important;
+  color: #4E4945 !important;
+  border-radius: 30px !important;
+  padding: 5px 16px !important;
+}
+
+.image-lightbox .lightbox-thumbnails {
+  background: #F0E6D8 !important;
+  padding: 12px 18px !important;
+  gap: 12px !important;
+}
+
+.image-lightbox .lightbox-thumb {
+  flex: 0 0 88px !important;
+  width: 88px !important;
+  height: 88px !important;
+  border-radius: 14px !important;
+}
+}
+
