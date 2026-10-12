@@ -457,7 +457,6 @@ const products = [
       "images/products/marturie-sapun1.jpg",
       "images/products/marturie-sapun2.jpg"
     ]
-  },
 
   {
     id: 45,
