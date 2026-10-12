@@ -1396,5 +1396,90 @@ button.add-cart:hover,
   .image-lightbox .lightbox-image {
     max-height: 28dvh !important;
   }
+
+/* ACDmixArt — fereastra compacta pentru telefon */
+.image-lightbox {
+  padding: 8px !important;
+}
+
+.image-lightbox .lightbox-panel {
+  width: min(440px, 94vw) !important;
+  height: auto !important;
+  max-height: 78dvh !important;
+  min-height: 0 !important;
+  padding: 9px !important;
+  overflow-y: auto !important;
+  border-radius: 16px !important;
+  gap: 0 !important;
+}
+
+.image-lightbox .lightbox-top {
+  padding: 0 2px !important;
+  margin-bottom: 7px !important;
+}
+
+.image-lightbox .lightbox-stage {
+  flex: 0 0 auto !important;
+  height: 25dvh !important;
+  min-height: 120px !important;
+  max-height: 25dvh !important;
+  border-radius: 10px !important;
+}
+
+.image-lightbox .lightbox-image {
+  max-width: 100% !important;
+  max-height: 25dvh !important;
+  object-fit: contain !important;
+}
+
+.image-lightbox .lightbox-thumbnails {
+  padding: 6px 2px !important;
+  margin: 0 !important;
+  gap: 6px !important;
+}
+
+.image-lightbox .lightbox-thumb {
+  flex-basis: 48px !important;
+  width: 48px !important;
+  height: 48px !important;
+}
+
+.image-lightbox .lightbox-product-info {
+  padding: 7px 2px 2px !important;
+  margin: 0 !important;
+}
+
+.image-lightbox .lightbox-product-name {
+  font-size: 17px !important;
+  margin-bottom: 5px !important;
+}
+
+.image-lightbox .lightbox-product-price {
+  font-size: 17px !important;
+  margin-bottom: 6px !important;
+}
+
+.image-lightbox .lightbox-description {
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+  margin-bottom: 8px !important;
+}
+
+.image-lightbox .lightbox-actions {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 6px !important;
+}
+
+.image-lightbox .lightbox-actions button {
+  min-height: 36px !important;
+  padding: 8px 10px !important;
+  font-size: 11px !important;
+  border-radius: 8px !important;
+}
+
+.image-lightbox .lightbox-actions button[hidden] {
+  display: none !important;
+}
 }
 
