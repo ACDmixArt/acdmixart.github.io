@@ -491,9 +491,11 @@ button.add-cart:hover,
 
 }
 
-/* =========================
-   GALERIE FOTO ACDmixArt - versiune curata
-========================= */
+/* ==========================================
+   ACDmixArt — GALERIE FOTO
+   Versiune curata pentru mobil si desktop
+========================================== */
+
 .image-lightbox {
   position: fixed;
   inset: 0;
@@ -501,85 +503,108 @@ button.add-cart:hover,
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px;
+  padding: 8px;
   box-sizing: border-box;
-  background: rgba(35, 38, 32, 0.94);
-  overflow: hidden;
+  background: rgba(35, 38, 32, 0.72);
+  overflow: auto;
+  overscroll-behavior: contain;
 }
 
-.lightbox-panel {
+.image-lightbox,
+.image-lightbox * {
+  box-sizing: border-box;
+}
+
+.image-lightbox .lightbox-panel {
   display: flex;
   flex-direction: column;
-  width: min(900px, 100%);
-  max-height: calc(100vh - 24px);
-  max-height: calc(100dvh - 24px);
+  flex: 0 1 auto;
+  width: min(440px, 94vw);
+  height: auto;
   min-height: 0;
+  max-height: 86dvh;
   margin: auto;
-  padding: 14px;
-  box-sizing: border-box;
-  border-radius: 22px;
+  padding: 10px;
+  gap: 0;
+  border-radius: 16px;
   background: #FAF7F2;
   color: #4E4945;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
-.lightbox-top {
+.image-lightbox .lightbox-top {
   display: flex;
   flex: 0 0 auto;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 10px;
+  gap: 8px;
+  margin: 0 0 8px;
 }
 
-.lightbox-title {
+.image-lightbox .lightbox-title {
   min-width: 0;
-  font-size: 16px;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.3;
   font-weight: 600;
   overflow-wrap: anywhere;
 }
 
 .image-lightbox .lightbox-close {
   position: static;
-  flex: 0 0 auto;
-  width: 46px;
-  height: 46px;
+  display: flex;
+  flex: 0 0 34px;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  min-width: 34px;
+  height: 34px;
   padding: 0;
   border: 0;
-  border-radius: 999px;
+  border-radius: 50%;
   background: #66745F;
-  color: #fff;
-  font-size: 30px;
+  color: #FFFFFF;
+  font-size: 23px;
   line-height: 1;
   cursor: pointer;
 }
 
-.lightbox-stage {
+.image-lightbox .lightbox-stage {
   position: relative;
   display: flex;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 230px;
   min-width: 0;
-  min-height: 180px;
-  overflow: hidden;
-  border-radius: 14px;
+  min-height: 0;
+  max-height: 30dvh;
+  margin: 0;
+  padding: 4px;
+  border-radius: 10px;
   background: #F0E8DC;
+  overflow: hidden;
 }
 
 .image-lightbox .lightbox-image {
   display: block;
+  flex: 0 1 auto;
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: min(66vh, 720px);
-  max-height: min(66dvh, 720px);
+  max-height: 100%;
   object-fit: contain;
-  border-radius: 8px;
+  object-position: center;
+  border-radius: 5px;
   box-shadow: none;
-  touch-action: pan-y;
   user-select: none;
   -webkit-user-drag: none;
+  touch-action: pan-y;
 }
 
 .image-lightbox .lightbox-prev,
@@ -590,895 +615,269 @@ button.add-cart:hover,
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 54px;
-  height: 62px;
+  width: 36px;
+  height: 42px;
   padding: 0;
   transform: translateY(-50%);
-  border: 1px solid rgba(102, 116, 95, 0.15);
-  border-radius: 999px;
+  border: 0;
+  border-radius: 50%;
   background: rgba(255, 255, 255, 0.96);
   color: #4F302F;
-  font-size: 42px;
+  font-size: 29px;
   line-height: 1;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-  -webkit-tap-highlight-color: transparent;
 }
 
-.image-lightbox .lightbox-prev { left: 8px; }
-.image-lightbox .lightbox-next { right: 8px; }
+.image-lightbox .lightbox-prev {
+  left: 5px;
+}
 
-.lightbox-counter {
+.image-lightbox .lightbox-next {
+  right: 5px;
+}
+
+.image-lightbox .lightbox-counter {
   position: absolute;
-  bottom: 10px;
+  bottom: 6px;
   left: 50%;
+  z-index: 3;
   transform: translateX(-50%);
-  padding: 8px 20px;
-  border-radius: 999px;
+  padding: 4px 10px;
+  border-radius: 30px;
   background: rgba(255, 255, 255, 0.96);
   color: #4F302F;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 700;
   pointer-events: none;
 }
 
-.lightbox-thumbnails {
+.image-lightbox .lightbox-thumbnails {
   display: flex;
   flex: 0 0 auto;
-  gap: 10px;
-  max-width: 100%;
-  margin-top: 10px;
-  padding: 2px 2px 6px;
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scrollbar-width: thin;
-}
-
-.lightbox-thumb {
-  flex: 0 0 78px;
-  width: 78px;
-  height: 78px;
-  padding: 3px;
-  border: 2px solid transparent;
-  border-radius: 12px;
-  background: #fff;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.lightbox-thumb img {
-  display: block;
+  align-items: center;
+  gap: 6px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.lightbox-thumb.active { border-color: #B89B42; }
-.image-lightbox button:focus-visible { outline: 3px solid #B89B42; outline-offset: 3px; }
-
-@media (max-width: 600px) {
-  .image-lightbox {
-    padding: 6px;
-    padding-top: max(6px, env(safe-area-inset-top));
-    padding-bottom: max(6px, env(safe-area-inset-bottom));
-  }
-
-  .lightbox-panel {
-    width: 100%;
-    max-height: calc(100vh - 12px);
-    max-height: calc(100dvh - 12px);
-    padding: 8px;
-    border-radius: 17px;
-  }
-
-  .lightbox-top { gap: 8px; margin-bottom: 7px; }
-  .lightbox-title { font-size: 14px; }
-
-  .image-lightbox .lightbox-close {
-    width: 44px;
-    height: 44px;
-    font-size: 28px;
-  }
-
-  .lightbox-stage {
-    flex: 0 1 auto;
-    height: auto;
-    min-height: 0;
-    max-height: calc(100dvh - 190px);
-  }
-
-  .image-lightbox .lightbox-image {
-    max-width: calc(100vw - 32px);
-    max-height: calc(100dvh - 210px);
-    object-fit: contain;
-  }
-
-  .image-lightbox .lightbox-prev,
-  .image-lightbox .lightbox-next {
-    width: 42px;
-    height: 52px;
-    font-size: 36px;
-  }
-
-  .image-lightbox .lightbox-prev { left: 4px; }
-  .image-lightbox .lightbox-next { right: 4px; }
-
-  .lightbox-counter {
-    bottom: 7px;
-    padding: 7px 16px;
-    font-size: 14px;
-  }
-
-  .lightbox-thumbnails {
-    gap: 8px;
-    margin-top: 8px;
-    padding-bottom: 3px;
-  }
-
-  .lightbox-thumb {
-    flex-basis: 66px;
-    width: 66px;
-    height: 66px;
-  }
-}
-
-
-
-/* =========================
-   GALERIE ACDmixArt - corectie finala pentru telefon
-   Pastreaza galeria si restul site-ului neschimbate.
-========================= */
-.image-lightbox {
-  position: fixed !important;
-  inset: 0 !important;
-  z-index: 99999 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 10px !important;
-  background: rgba(35, 38, 32, .94) !important;
-  overflow: hidden !important;
-  box-sizing: border-box !important;
-  cursor: default !important;
-  overscroll-behavior: contain;
-}
-
-.image-lightbox .lightbox-panel {
-  display: flex !important;
-  flex-direction: column !important;
-  width: min(100%, 1000px) !important;
-  height: min(90dvh, 940px) !important;
-  max-height: calc(100dvh - 20px) !important;
-  min-height: 0 !important;
-  margin: 0 auto !important;
-  padding: 12px !important;
-  box-sizing: border-box !important;
-  border-radius: 20px !important;
-  background: #FAF7F2 !important;
-  color: #4E4945 !important;
-  overflow: hidden !important;
-}
-
-.image-lightbox .lightbox-top {
-  display: flex !important;
-  flex: 0 0 auto !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 12px !important;
-  margin: 0 0 10px !important;
-}
-
-.image-lightbox .lightbox-title {
-  min-width: 0 !important;
-  font-size: 16px !important;
-  font-weight: 600 !important;
-  line-height: 1.3 !important;
-  overflow-wrap: anywhere !important;
-}
-
-.image-lightbox .lightbox-close {
-  position: static !important;
-  flex: 0 0 46px !important;
-  width: 46px !important;
-  height: 46px !important;
-  padding: 0 !important;
-  border: 0 !important;
-  border-radius: 50% !important;
-  background: #66745F !important;
-  color: #fff !important;
-  font-size: 30px !important;
-  line-height: 1 !important;
-  cursor: pointer !important;
-}
-
-.image-lightbox .lightbox-stage {
-  position: relative !important;
-  display: flex !important;
-  flex: 1 1 auto !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 100% !important;
-  min-width: 0 !important;
-  min-height: 0 !important;
-  margin: 0 !important;
-  overflow: hidden !important;
-  border-radius: 14px !important;
-  background: #F0E8DC !important;
-}
-
-.image-lightbox .lightbox-image {
-  display: block !important;
-  width: auto !important;
-  height: auto !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
-  object-fit: contain !important;
-  border-radius: 6px !important;
-  box-shadow: none !important;
-  touch-action: pan-y !important;
-  user-select: none !important;
-  -webkit-user-select: none !important;
-  -webkit-user-drag: none !important;
-}
-
-.image-lightbox .lightbox-prev,
-.image-lightbox .lightbox-next {
-  position: absolute !important;
-  top: 50% !important;
-  z-index: 3 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 54px !important;
-  height: 62px !important;
-  padding: 0 !important;
-  transform: translateY(-50%) !important;
-  border: 1px solid rgba(102, 116, 95, .15) !important;
-  border-radius: 50% !important;
-  background: rgba(255,255,255,.97) !important;
-  color: #4F302F !important;
-  font-size: 42px !important;
-  line-height: 1 !important;
-  box-shadow: 0 4px 14px rgba(0,0,0,.15) !important;
-  cursor: pointer !important;
-  touch-action: manipulation;
-}
-
-.image-lightbox .lightbox-prev { left: 8px !important; }
-.image-lightbox .lightbox-next { right: 8px !important; }
-
-.image-lightbox .lightbox-counter {
-  position: absolute !important;
-  bottom: 10px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  z-index: 4 !important;
-  padding: 8px 20px !important;
-  border-radius: 999px !important;
-  background: rgba(255,255,255,.97) !important;
-  color: #4F302F !important;
-  font-size: 16px !important;
-  font-weight: 600 !important;
-  pointer-events: none !important;
-}
-
-.image-lightbox .lightbox-thumbnails {
-  display: flex !important;
-  flex: 0 0 auto !important;
-  gap: 10px !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 10px 0 0 !important;
-  padding: 2px 2px 5px !important;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
-  overscroll-behavior-x: contain !important;
+  max-width: 100%;
+  min-height: 0;
+  margin: 6px 0 0;
+  padding: 2px 1px 4px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
   scrollbar-width: thin;
   -webkit-overflow-scrolling: touch;
 }
 
 .image-lightbox .lightbox-thumb {
-  flex: 0 0 78px !important;
-  width: 78px !important;
-  height: 78px !important;
-  padding: 3px !important;
-  border: 2px solid transparent !important;
-  border-radius: 12px !important;
-  background: #fff !important;
-  overflow: hidden !important;
-  cursor: pointer !important;
-  touch-action: manipulation;
+  display: block;
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  padding: 2px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: #FFFFFF;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .image-lightbox .lightbox-thumb img {
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  border-radius: 8px !important;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 .image-lightbox .lightbox-thumb.active {
-  border-color: #B89B42 !important;
+  border-color: #B89B42;
+}
+
+/* Detalii produs */
+
+.image-lightbox .lightbox-product-info {
+  display: block;
+  flex: 0 0 auto;
+  min-height: 0;
+  margin: 0;
+  padding: 10px 2px 2px;
+}
+
+.image-lightbox .lightbox-category {
+  margin: 0 0 3px;
+  color: #66745F;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.image-lightbox .lightbox-product-name {
+  margin: 0 0 4px;
+  color: #4F302F;
+  font-family: Georgia, serif;
+  font-size: 22px;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.image-lightbox .lightbox-product-price {
+  margin: 0 0 6px;
+  color: #66745F;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.image-lightbox .lightbox-description {
+  margin: 0 0 9px;
+  color: #6F655E;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.image-lightbox .lightbox-actions {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+}
+
+.image-lightbox .lightbox-actions button {
+  display: block;
+  width: 100%;
+  min-height: 38px;
+  margin: 0;
+  padding: 9px 10px;
+  border: 1px solid #D8D1C5;
+  border-radius: 9px;
+  background: #FFFFFF;
+  color: #66745F;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.image-lightbox .lightbox-actions .lightbox-order {
+  border-color: #66745F;
+  background: #66745F;
+  color: #FFFFFF;
+}
+
+.image-lightbox .lightbox-actions .lightbox-add-cart {
+  border-color: #4F302F;
+  background: #4F302F;
+  color: #FFFFFF;
+}
+
+/* Ascundem butonul Personalizeaza din galeria produselor */
+.image-lightbox .lightbox-personalize,
+.image-lightbox .lightbox-customize,
+.image-lightbox [data-action="personalize"],
+.image-lightbox .lightbox-actions button:nth-child(2) {
+  display: none !important;
 }
 
 .image-lightbox button:focus-visible {
-  outline: 3px solid #B89B42 !important;
-  outline-offset: 2px !important;
+  outline: 2px solid #B89B42;
+  outline-offset: 2px;
 }
+
+/* Telefon */
 
 @media (max-width: 600px) {
   .image-lightbox {
-    padding: max(6px, env(safe-area-inset-top)) 6px max(6px, env(safe-area-inset-bottom)) !important;
+    padding: 6px;
   }
 
   .image-lightbox .lightbox-panel {
-    width: 100% !important;
-    height: calc(100dvh - 12px) !important;
-    max-height: calc(100dvh - 12px) !important;
-    padding: 8px !important;
-    border-radius: 17px !important;
+    width: min(420px, 96vw);
+    height: auto;
+    max-height: 84dvh;
+    padding: 8px;
+    border-radius: 14px;
   }
 
   .image-lightbox .lightbox-top {
-    gap: 8px !important;
-    margin-bottom: 8px !important;
+    margin-bottom: 6px;
   }
 
   .image-lightbox .lightbox-title {
-    font-size: 14px !important;
+    font-size: 12px;
   }
 
   .image-lightbox .lightbox-close {
-    flex-basis: 42px !important;
-    width: 42px !important;
-    height: 42px !important;
-    font-size: 27px !important;
+    flex-basis: 32px;
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    font-size: 22px;
   }
 
   .image-lightbox .lightbox-stage {
-    flex: 1 1 auto !important;
-    min-height: 0 !important;
+    height: 25dvh;
+    max-height: 190px;
   }
 
   .image-lightbox .lightbox-image {
-    max-width: 100% !important;
-    max-height: 100% !important;
+    max-width: 100%;
+    max-height: 100%;
   }
 
   .image-lightbox .lightbox-prev,
   .image-lightbox .lightbox-next {
-    width: 42px !important;
-    height: 50px !important;
-    font-size: 34px !important;
+    width: 32px;
+    height: 38px;
+    font-size: 26px;
   }
-
-  .image-lightbox .lightbox-prev { left: 4px !important; }
-  .image-lightbox .lightbox-next { right: 4px !important; }
 
   .image-lightbox .lightbox-counter {
-    bottom: 7px !important;
-    padding: 7px 15px !important;
-    font-size: 14px !important;
+    bottom: 5px;
+    padding: 4px 9px;
+    font-size: 10px;
   }
 
   .image-lightbox .lightbox-thumbnails {
-    gap: 7px !important;
-    margin-top: 8px !important;
-    padding-bottom: 3px !important;
+    gap: 5px;
+    margin-top: 5px;
   }
 
   .image-lightbox .lightbox-thumb {
-    flex-basis: 64px !important;
-    width: 64px !important;
-    height: 64px !important;
-  }
-}
-
-@media (max-height: 520px) and (orientation: landscape) {
-  .image-lightbox .lightbox-panel {
-    height: calc(100dvh - 12px) !important;
-    max-height: calc(100dvh - 12px) !important;
-    padding: 6px !important;
+    flex-basis: 42px;
+    width: 42px;
+    height: 42px;
   }
 
-  .image-lightbox .lightbox-top { margin-bottom: 5px !important; }
-  .image-lightbox .lightbox-close {
-    flex-basis: 34px !important;
-    width: 34px !important;
-    height: 34px !important;
-  }
-  .image-lightbox .lightbox-thumbnails {
-    margin-top: 5px !important;
-  }
-  .image-lightbox .lightbox-thumb {
-    flex-basis: 48px !important;
-    width: 48px !important;
-    height: 48px !important;
-  }
-}
-
-
-/* =========================
-   GALERIE + FIȘĂ PRODUS - mobil și desktop
-========================= */
-.image-lightbox {
-  position: fixed !important;
-  inset: 0 !important;
-  z-index: 99999 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 12px !important;
-  box-sizing: border-box !important;
-  background: rgba(35, 38, 32, .72) !important;
-  overflow: hidden !important;
-  cursor: default !important;
-  overscroll-behavior: contain !important;
-}
-
-.image-lightbox .lightbox-panel {
-  display: flex !important;
-  flex-direction: column !important;
-  width: min(900px, 100%) !important;
-  max-height: calc(100vh - 24px) !important;
-  max-height: calc(100dvh - 24px) !important;
-  min-height: 0 !important;
-  margin: 0 auto !important;
-  padding: 14px !important;
-  box-sizing: border-box !important;
-  border-radius: 20px !important;
-  background: #FAF7F2 !important;
-  color: #4E4945 !important;
-  overflow-x: hidden !important;
-  overflow-y: auto !important;
-  -webkit-overflow-scrolling: touch !important;
-}
-
-.image-lightbox .lightbox-top {
-  display: flex !important;
-  flex: 0 0 auto !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 12px !important;
-  margin: 0 0 10px !important;
-}
-.image-lightbox .lightbox-title {
-  min-width: 0 !important;
-  font-size: 16px !important;
-  font-weight: 600 !important;
-  line-height: 1.3 !important;
-  overflow-wrap: anywhere !important;
-}
-.image-lightbox .lightbox-close {
-  position: static !important;
-  flex: 0 0 auto !important;
-  min-width: 44px !important;
-  width: auto !important;
-  height: 44px !important;
-  padding: 0 18px !important;
-  border: 0 !important;
-  border-radius: 999px !important;
-  background: #66745F !important;
-  color: #fff !important;
-  font-size: 16px !important;
-  line-height: 1 !important;
-  cursor: pointer !important;
-  white-space: nowrap !important;
-}
-.image-lightbox .lightbox-stage {
-  position: relative !important;
-  display: flex !important;
-  flex: 0 0 auto !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 100% !important;
-  height: min(42vh, 420px) !important;
-  height: min(42dvh, 420px) !important;
-  min-width: 0 !important;
-  min-height: 130px !important;
-  margin: 0 !important;
-  overflow: hidden !important;
-  border-radius: 14px !important;
-  background: #F0E8DC !important;
-}
-.image-lightbox .lightbox-image {
-  display: block !important;
-  width: auto !important;
-  height: auto !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
-  object-fit: contain !important;
-  object-position: center !important;
-  border-radius: 6px !important;
-  box-shadow: none !important;
-  touch-action: pan-y !important;
-  user-select: none !important;
-  -webkit-user-select: none !important;
-  -webkit-user-drag: none !important;
-}
-.image-lightbox .lightbox-prev,
-.image-lightbox .lightbox-next {
-  position: absolute !important;
-  top: 50% !important;
-  z-index: 3 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 42px !important;
-  height: 48px !important;
-  padding: 0 !important;
-  transform: translateY(-50%) !important;
-  border: 1px solid rgba(102,116,95,.15) !important;
-  border-radius: 50% !important;
-  background: rgba(255,255,255,.97) !important;
-  color: #4F302F !important;
-  font-size: 34px !important;
-  line-height: 1 !important;
-  cursor: pointer !important;
-}
-.image-lightbox .lightbox-prev { left: 6px !important; }
-.image-lightbox .lightbox-next { right: 6px !important; }
-.image-lightbox .lightbox-counter {
-  position: absolute !important;
-  bottom: 8px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  z-index: 4 !important;
-  padding: 6px 15px !important;
-  border-radius: 999px !important;
-  background: rgba(255,255,255,.97) !important;
-  color: #4F302F !important;
-  font-size: 14px !important;
-  font-weight: 600 !important;
-  pointer-events: none !important;
-}
-.image-lightbox .lightbox-thumbnails {
-  display: flex !important;
-  flex: 0 0 auto !important;
-  gap: 8px !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 9px 0 0 !important;
-  padding: 2px 2px 5px !important;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
-  overscroll-behavior-x: contain !important;
-  scrollbar-width: thin !important;
-  -webkit-overflow-scrolling: touch !important;
-}
-.image-lightbox .lightbox-thumb {
-  flex: 0 0 64px !important;
-  width: 64px !important;
-  height: 64px !important;
-  padding: 3px !important;
-  border: 2px solid transparent !important;
-  border-radius: 12px !important;
-  background: #fff !important;
-  overflow: hidden !important;
-  cursor: pointer !important;
-}
-.image-lightbox .lightbox-thumb img {
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  border-radius: 8px !important;
-}
-.image-lightbox .lightbox-thumb.active { border-color: #B89B42 !important; }
-.image-lightbox .lightbox-product-info {
-  flex: 0 0 auto !important;
-  padding: 18px 4px 4px !important;
-}
-.image-lightbox .lightbox-category {
-  margin: 0 0 5px !important;
-  color: #66745F !important;
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  letter-spacing: 2px !important;
-  text-transform: uppercase !important;
-}
-.image-lightbox .lightbox-product-name {
-  margin: 0 0 4px !important;
-  color: #4E2028 !important;
-  font-family: 'Playfair Display', serif !important;
-  font-size: clamp(26px, 4vw, 38px) !important;
-  line-height: 1.15 !important;
-}
-.image-lightbox .lightbox-product-price {
-  margin: 0 0 10px !important;
-  color: #66745F !important;
-  font-size: 22px !important;
-  font-weight: 700 !important;
-}
-.image-lightbox .lightbox-description {
-  margin: 0 0 16px !important;
-  color: #6F655E !important;
-  font-size: 14px !important;
-  line-height: 1.65 !important;
-}
-.image-lightbox .lightbox-actions {
-  display: grid !important;
-  grid-template-columns: 1fr !important;
-  gap: 9px !important;
-}
-.image-lightbox .lightbox-actions button {
-  display: block !important;
-  width: 100% !important;
-  min-height: 48px !important;
-  padding: 12px 14px !important;
-  border: 1px solid #D8D1C5 !important;
-  border-radius: 13px !important;
-  background: #fff !important;
-  color: #66745F !important;
-  font-family: 'DM Sans', sans-serif !important;
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  letter-spacing: 1.1px !important;
-  text-align: center !important;
-  text-transform: uppercase !important;
-  cursor: pointer !important;
-}
-.image-lightbox .lightbox-actions .lightbox-order {
-  background: #66745F !important;
-  border-color: #66745F !important;
-  color: #fff !important;
-}
-.image-lightbox .lightbox-actions .lightbox-add-cart {
-  background: #4F302F !important;
-  border-color: #4F302F !important;
-  color: #fff !important;
-}
-.image-lightbox .lightbox-actions .lightbox-favorite.active {
-  border-color: #D8A6AD !important;
-  color: #8B3549 !important;
-  background: #FFF6F7 !important;
-}
-.image-lightbox button:focus-visible {
-  outline: 3px solid #B89B42 !important;
-  outline-offset: 2px !important;
-}
-@media (max-width: 600px) {
-  .image-lightbox {
-    padding: max(5px, env(safe-area-inset-top)) 5px max(5px, env(safe-area-inset-bottom)) !important;
-  }
-  .image-lightbox .lightbox-panel {
-    width: 100% !important;
-    max-height: calc(100vh - 10px) !important;
-    max-height: calc(100dvh - 10px) !important;
-    padding: 8px !important;
-    border-radius: 16px !important;
-  }
-  .image-lightbox .lightbox-top { gap: 8px !important; margin-bottom: 7px !important; }
-  .image-lightbox .lightbox-title { font-size: 14px !important; }
-  .image-lightbox .lightbox-close { height: 40px !important; padding: 0 13px !important; font-size: 14px !important; }
-  .image-lightbox .lightbox-stage {
-    height: min(30dvh, 260px) !important;
-    min-height: 115px !important;
-  }
-  .image-lightbox .lightbox-thumbnails { gap: 7px !important; margin-top: 7px !important; }
-  .image-lightbox .lightbox-thumb { flex-basis: 58px !important; width: 58px !important; height: 58px !important; }
-  .image-lightbox .lightbox-product-info { padding: 13px 3px 3px !important; }
-  .image-lightbox .lightbox-product-name { font-size: 28px !important; }
-  .image-lightbox .lightbox-product-price { font-size: 21px !important; }
-  .image-lightbox .lightbox-description { font-size: 13px !important; margin-bottom: 12px !important; }
-  .image-lightbox .lightbox-actions { gap: 7px !important; }
-  .image-lightbox .lightbox-actions button { min-height: 45px !important; padding: 10px !important; font-size: 11px !important; letter-spacing: .8px !important; }
-}
-@media (max-height: 520px) and (orientation: landscape) {
-  .image-lightbox .lightbox-stage { height: 28dvh !important; min-height: 90px !important; }
-  .image-lightbox .lightbox-thumb { flex-basis: 46px !important; width: 46px !important; height: 46px !important; }
-}
-
-
-/* CORECTIE GALERIE ACDmixArt */
-.image-lightbox .lightbox-panel {
-  height: auto !important;
-  max-height: calc(100dvh - 24px) !important;
-  overflow-y: auto !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: flex-start !important;
-}
-
-.image-lightbox .lightbox-stage {
-  flex: 0 0 auto !important;
-  height: 32dvh !important;
-  min-height: 150px !important;
-  max-height: 32dvh !important;
-}
-
-.image-lightbox .lightbox-image {
-  max-width: 100% !important;
-  max-height: 32dvh !important;
-  width: auto !important;
-  height: auto !important;
-  object-fit: contain !important;
-}
-
-.image-lightbox .lightbox-product-info {
-  display: block !important;
-  flex: 0 0 auto !important;
-  visibility: visible !important;
-  padding: 14px 4px 6px !important;
-}
-
-.image-lightbox .lightbox-actions {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 8px !important;
-}
-
-.image-lightbox .lightbox-actions button {
-  display: block !important;
-  width: 100% !important;
-  min-height: 44px !important;
-}
-
-@media (min-width: 601px) {
-  .image-lightbox .lightbox-panel {
-    width: min(900px, 96vw) !important;
+  .image-lightbox .lightbox-product-info {
+    padding: 8px 2px 2px;
   }
 
-  .image-lightbox .lightbox-stage {
-    height: 48dvh !important;
-    max-height: 48dvh !important;
+  .image-lightbox .lightbox-product-name {
+    font-size: 19px;
   }
 
-  .image-lightbox .lightbox-image {
-    max-height: 48dvh !important;
+  .image-lightbox .lightbox-product-price {
+    font-size: 16px;
   }
 
-/* ACDmixArt — galerie compacta, fara spatiu gol */
-.image-lightbox .lightbox-panel {
-  height: auto !important;
-  min-height: 0 !important;
-  max-height: 90dvh !important;
-  overflow-y: auto !important;
-  justify-content: flex-start !important;
-  gap: 0 !important;
-  padding: 10px !important;
-}
-
-.image-lightbox .lightbox-stage {
-  flex: 0 0 auto !important;
-  height: 30dvh !important;
-  min-height: 0 !important;
-  max-height: 30dvh !important;
-  padding: 4px !important;
-}
-
-.image-lightbox .lightbox-image {
-  width: auto !important;
-  height: auto !important;
-  max-width: 100% !important;
-  max-height: 30dvh !important;
-  object-fit: contain !important;
-}
-
-.image-lightbox .lightbox-thumbnails {
-  flex: 0 0 auto !important;
-  min-height: 0 !important;
-  padding: 8px 4px !important;
-  margin: 0 !important;
-}
-
-.image-lightbox .lightbox-product-info {
-  display: block !important;
-  flex: 0 0 auto !important;
-  margin-top: 8px !important;
-  padding: 10px 4px 4px !important;
-}
-
-.image-lightbox .lightbox-product-info h2,
-.image-lightbox .lightbox-product-info p {
-  margin-top: 0 !important;
-}
-
-@media (max-width: 600px) {
-  .image-lightbox {
-    align-items: center !important;
-    padding: 8px !important;
+  .image-lightbox .lightbox-description {
+    margin-bottom: 7px;
+    font-size: 10px;
   }
 
-  .image-lightbox .lightbox-panel {
-    width: 100% !important;
-    max-height: 85dvh !important;
-    border-radius: 16px !important;
+  .image-lightbox .lightbox-actions {
+    gap: 5px;
   }
 
-  .image-lightbox .lightbox-stage {
-    height: 28dvh !important;
-    max-height: 28dvh !important;
+  .image-lightbox .lightbox-actions button {
+    min-height: 35px;
+    padding: 8px;
+    font-size: 9px;
   }
-
-  .image-lightbox .lightbox-image {
-    max-height: 28dvh !important;
-  }
-
-/* ACDmixArt — fereastra compacta pentru telefon */
-.image-lightbox {
-  padding: 8px !important;
-}
-
-.image-lightbox .lightbox-panel {
-  width: min(440px, 94vw) !important;
-  height: auto !important;
-  max-height: 78dvh !important;
-  min-height: 0 !important;
-  padding: 9px !important;
-  overflow-y: auto !important;
-  border-radius: 16px !important;
-  gap: 0 !important;
-}
-
-.image-lightbox .lightbox-top {
-  padding: 0 2px !important;
-  margin-bottom: 7px !important;
-}
-
-.image-lightbox .lightbox-stage {
-  flex: 0 0 auto !important;
-  height: 25dvh !important;
-  min-height: 120px !important;
-  max-height: 25dvh !important;
-  border-radius: 10px !important;
-}
-
-.image-lightbox .lightbox-image {
-  max-width: 100% !important;
-  max-height: 25dvh !important;
-  object-fit: contain !important;
-}
-
-.image-lightbox .lightbox-thumbnails {
-  padding: 6px 2px !important;
-  margin: 0 !important;
-  gap: 6px !important;
-}
-
-.image-lightbox .lightbox-thumb {
-  flex-basis: 48px !important;
-  width: 48px !important;
-  height: 48px !important;
-}
-
-.image-lightbox .lightbox-product-info {
-  padding: 7px 2px 2px !important;
-  margin: 0 !important;
-}
-
-.image-lightbox .lightbox-product-name {
-  font-size: 17px !important;
-  margin-bottom: 5px !important;
-}
-
-.image-lightbox .lightbox-product-price {
-  font-size: 17px !important;
-  margin-bottom: 6px !important;
-}
-
-.image-lightbox .lightbox-description {
-  font-size: 12px !important;
-  line-height: 1.4 !important;
-  margin-bottom: 8px !important;
-}
-
-.image-lightbox .lightbox-actions {
-  display: grid !important;
-  grid-template-columns: 1fr !important;
-  gap: 6px !important;
-}
-
-.image-lightbox .lightbox-actions button {
-  min-height: 36px !important;
-  padding: 8px 10px !important;
-  font-size: 11px !important;
-  border-radius: 8px !important;
-}
-
-.image-lightbox .lightbox-actions button[hidden] {
-  display: none !important;
 }
 
