@@ -483,68 +483,98 @@ const products = [
     ]
   },
   
-{
-  name: "Etichete pentru marturii",
-  category: "Marturii",
-  price: 1.5,
-  images: ["etichete", "etichete1"]
-},
-  
-{
-  name: "Marturie magnetica Urs",
-  category: "Marturii",
-  price: 5.5,
-  images: ["mai", "mai1"]
-},
 
-{
-  name: "Marturie magnetica Blue",
-  category: "Marturii",
-  price: 5.5,
-  images: ["luca", "luca1", "luca2"]
-},
-
-{
-  name: "Marturie magnetica Safari",
-  category: "Marturii",
-  price: 4.5,
-  images: ["safari", "safari1"]
-},
-
-{
-  name: "Marturii magnet pe forma+mini ciocolatica",
-  category: "Marturii",
-  price: 12,
-  images: ["bomboana", "bomboana1"]
-},
-
-{
-  name: "Evantai",
-  category: "Marturii",
-  price: 4.5,
-  images: ["evantai"]
-},
-
-{
-  name: "Marturie magnetica fluture",
-  category: "Marturii",
-  price: 5.5,
-  images: ["fluture", "fluture1", "fluture2"]
-},
-
-{
-  name: "Marturie magnetica cu colturi rotunjite+saculet",
-  category: "Marturii",
-  price: 7,
-  images: ["unicorn", "unicorn1"]
-},
-
-{
-  name: "Marturie magnetica pink",
-  category: "Marturii",
-  price: 6,
-  images: ["familie", "familie1"]
-},
+  {
+    id: 47,
+    nume: "Etichete pentru marturii",
+    categorie: "Marturii",
+    pret: 1.5,
+    poze: [
+      "images/products/etichete.jpg",
+      "images/products/etichete1.jpg"
+    ]
+  },
+  {
+    id: 48,
+    nume: "Marturie magnetica Urs",
+    categorie: "Marturii",
+    pret: 5.5,
+    poze: [
+      "images/products/mai.jpg",
+      "images/products/mai1.jpg"
+    ]
+  },
+  {
+    id: 49,
+    nume: "Marturie magnetica Blue",
+    categorie: "Marturii",
+    pret: 5.5,
+    poze: [
+      "images/products/luca.jpg",
+      "images/products/luca1.jpg",
+      "images/products/luca2.jpg"
+    ]
+  },
+  {
+    id: 50,
+    nume: "Marturie magnetica Safari",
+    categorie: "Marturii",
+    pret: 4.5,
+    poze: [
+      "images/products/safari.jpg",
+      "images/products/safari1.jpg"
+    ]
+  },
+  {
+    id: 51,
+    nume: "Marturii magnet pe forma+mini ciocolatica",
+    categorie: "Marturii",
+    pret: 12,
+    poze: [
+      "images/products/bomboana.jpg",
+      "images/products/bomboana1.jpg"
+    ]
+  },
+  {
+    id: 52,
+    nume: "Evantai",
+    categorie: "Marturii",
+    pret: 4.5,
+    poze: [
+      "images/products/evantai.jpg"
+    ]
+  },
+  {
+    id: 53,
+    nume: "Marturie magnetica fluture",
+    categorie: "Marturii",
+    pret: 5.5,
+    poze: [
+      "images/products/fluture.jpg",
+      "images/products/fluture1.jpg",
+      "images/products/fluture2.jpg"
+    ]
+  },
+  {
+    id: 54,
+    nume: "Marturie magnetica cu colturi rotunjite+saculet",
+    categorie: "Marturii",
+    pret: 7,
+    poze: [
+      "images/products/unicorn.jpg",
+      "images/products/unicorn1.jpg"
+    ]
+  },
+  {
+    id: 55,
+    nume: "Marturie magnetica pink",
+    categorie: "Marturii",
+    pret: 6,
+    poze: [
+      "images/products/familie.jpg",
+      "images/products/familie1.jpg"
+    ]
+  },
 
   {
     id: 43,
