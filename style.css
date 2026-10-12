@@ -469,4 +469,88 @@ button.add-cart:hover,
   .order-summary {
     padding: 16px;
   }
+
+/* Galerie foto - butoane mari pe telefon */
+.image-lightbox {
+  padding: 16px;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.image-lightbox .lightbox-image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: calc(100vw - 120px);
+  max-height: 86vh;
+  object-fit: contain;
+}
+
+.image-lightbox .lightbox-prev,
+.image-lightbox .lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  background: rgba(55, 65, 50, 0.88);
+  color: white;
+  font-size: 42px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.image-lightbox .lightbox-prev {
+  left: 12px;
+}
+
+.image-lightbox .lightbox-next {
+  right: 12px;
+}
+
+.image-lightbox .lightbox-close {
+  z-index: 3;
+}
+
+@media (max-width: 600px) {
+  .image-lightbox {
+    padding: 10px;
+  }
+
+  .image-lightbox .lightbox-image {
+    max-width: calc(100vw - 100px);
+    max-height: 82vh;
+  }
+
+  .image-lightbox .lightbox-prev,
+  .image-lightbox .lightbox-next {
+    width: 52px;
+    height: 58px;
+    font-size: 40px;
+  }
+
+  .image-lightbox .lightbox-prev {
+    left: 4px;
+  }
+
+  .image-lightbox .lightbox-next {
+    right: 4px;
+  }
+
+  .image-lightbox .lightbox-close {
+    top: 12px;
+    right: 12px;
+    width: 46px;
+    height: 46px;
+    font-size: 30px;
+  }
 }
