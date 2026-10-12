@@ -1270,3 +1270,168 @@ button.add-cart:hover,
   .image-lightbox .lightbox-stage { height: 28dvh !important; min-height: 90px !important; }
   .image-lightbox .lightbox-thumb { flex-basis: 46px !important; width: 46px !important; height: 46px !important; }
 }
+
+/* =====================================
+   ACDmixArt — galerie cu detalii produs
+   Optimizare desktop si telefon
+===================================== */
+
+.image-lightbox .lightbox-panel {
+  width: min(900px, 100%) !important;
+  height: auto !important;
+  max-height: calc(100dvh - 24px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+  box-sizing: border-box !important;
+}
+
+.image-lightbox .lightbox-stage {
+  flex: 0 1 auto !important;
+  height: auto !important;
+  min-height: 160px !important;
+  max-height: 48dvh !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.image-lightbox .lightbox-image {
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 48dvh !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+.image-lightbox .lightbox-thumbnails {
+  flex: 0 0 auto !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+}
+
+.image-lightbox .lightbox-product-info {
+  flex: 0 0 auto !important;
+  padding: 16px 4px 4px !important;
+  color: #4E4945 !important;
+}
+
+.image-lightbox .lightbox-category {
+  margin: 0 0 5px !important;
+  color: #66745F !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.image-lightbox .lightbox-product-name {
+  margin: 0 0 8px !important;
+  font-size: 21px !important;
+  line-height: 1.3 !important;
+  overflow-wrap: anywhere !important;
+}
+
+.image-lightbox .lightbox-product-price {
+  margin: 0 0 10px !important;
+  color: #66745F !important;
+  font-size: 21px !important;
+  font-weight: 700 !important;
+}
+
+.image-lightbox .lightbox-description {
+  margin: 0 0 14px !important;
+  font-size: 14px !important;
+  line-height: 1.55 !important;
+}
+
+.image-lightbox .lightbox-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 9px !important;
+}
+
+.image-lightbox .lightbox-actions button {
+  min-height: 43px !important;
+  padding: 11px 15px !important;
+  border: 0 !important;
+  border-radius: 10px !important;
+  background: #66745F !important;
+  color: #FFFFFF !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+}
+
+.image-lightbox .lightbox-actions .lightbox-order {
+  background: #4F6849 !important;
+}
+
+.image-lightbox .lightbox-actions button[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  .image-lightbox {
+    padding: 6px !important;
+  }
+
+  .image-lightbox .lightbox-panel {
+    width: 100% !important;
+    max-height: calc(100dvh - 12px) !important;
+    padding: 9px !important;
+    border-radius: 15px !important;
+  }
+
+  .image-lightbox .lightbox-top {
+    gap: 8px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .image-lightbox .lightbox-title {
+    font-size: 14px !important;
+  }
+
+  .image-lightbox .lightbox-close {
+    flex: 0 0 40px !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    height: 40px !important;
+    padding: 0 !important;
+  }
+
+  .image-lightbox .lightbox-stage {
+    min-height: 120px !important;
+    max-height: 38dvh !important;
+  }
+
+  .image-lightbox .lightbox-image {
+    max-width: calc(100vw - 44px) !important;
+    max-height: 38dvh !important;
+  }
+
+  .image-lightbox .lightbox-product-info {
+    padding-top: 12px !important;
+  }
+
+  .image-lightbox .lightbox-product-name {
+    font-size: 18px !important;
+  }
+
+  .image-lightbox .lightbox-product-price {
+    font-size: 19px !important;
+  }
+
+  .image-lightbox .lightbox-actions {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  .image-lightbox .lightbox-actions button {
+    width: 100% !important;
+    min-height: 44px !important;
+  }
+}
