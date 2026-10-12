@@ -468,6 +468,18 @@ const products = [
       "images/products/marturie1.jpg",
       "images/products/marturie2.jpg"
     ]
+  
+  {
+    id: 46,
+    nume: "Marturie magnetica nunta+botez",
+    categorie: "Marturii",
+    pret: 7.5,
+    poze: [
+      "images/products/marturieforma.jpg",
+      "images/products/marturieforma1.jpg",
+      "images/products/marturieforma2.jpg",
+      "images/products/marturieforma3.jpg"
+    ]
   },
 
   {
