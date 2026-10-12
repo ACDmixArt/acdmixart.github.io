@@ -1329,4 +1329,72 @@ button.add-cart:hover,
   .image-lightbox .lightbox-image {
     max-height: 48dvh !important;
   }
+
+/* ACDmixArt — galerie compacta, fara spatiu gol */
+.image-lightbox .lightbox-panel {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: 90dvh !important;
+  overflow-y: auto !important;
+  justify-content: flex-start !important;
+  gap: 0 !important;
+  padding: 10px !important;
 }
+
+.image-lightbox .lightbox-stage {
+  flex: 0 0 auto !important;
+  height: 30dvh !important;
+  min-height: 0 !important;
+  max-height: 30dvh !important;
+  padding: 4px !important;
+}
+
+.image-lightbox .lightbox-image {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 30dvh !important;
+  object-fit: contain !important;
+}
+
+.image-lightbox .lightbox-thumbnails {
+  flex: 0 0 auto !important;
+  min-height: 0 !important;
+  padding: 8px 4px !important;
+  margin: 0 !important;
+}
+
+.image-lightbox .lightbox-product-info {
+  display: block !important;
+  flex: 0 0 auto !important;
+  margin-top: 8px !important;
+  padding: 10px 4px 4px !important;
+}
+
+.image-lightbox .lightbox-product-info h2,
+.image-lightbox .lightbox-product-info p {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 600px) {
+  .image-lightbox {
+    align-items: center !important;
+    padding: 8px !important;
+  }
+
+  .image-lightbox .lightbox-panel {
+    width: 100% !important;
+    max-height: 85dvh !important;
+    border-radius: 16px !important;
+  }
+
+  .image-lightbox .lightbox-stage {
+    height: 28dvh !important;
+    max-height: 28dvh !important;
+  }
+
+  .image-lightbox .lightbox-image {
+    max-height: 28dvh !important;
+  }
+}
+
