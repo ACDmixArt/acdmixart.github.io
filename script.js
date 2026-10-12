@@ -836,47 +836,149 @@ if (cartWhatsapp) {
   });
 }
 
+
 /* =========================
-   GALERIE FOTO
+   GALERIE FOTO ACDmixArt
 ========================= */
 
 document.addEventListener("click", event => {
   const img = event.target.closest(".product-photo img");
   if (!img) return;
 
-  const product = products.find(item => item.id === Number(img.dataset.productId));
+  const product = products.find(
+    item => item.id === Number(img.dataset.productId)
+  );
   if (!product) return;
 
-  const images = product.poze || [product.poza];
+  const images = (product.poze || [product.poza]).filter(Boolean);
   if (!images.length) return;
-  let index = 0;
+
+  // Nu deschidem două galerii simultan.
+  document.querySelector(".image-lightbox")?.remove();
+
+  let index = images.indexOf(img.getAttribute("src"));
+  if (index < 0) index = 0;
 
   const lightbox = document.createElement("div");
   lightbox.className = "image-lightbox";
+  lightbox.setAttribute("role", "dialog");
+  lightbox.setAttribute("aria-label", "Galerie foto produs");
+
   lightbox.innerHTML = `
-    <button type="button" class="lightbox-close" aria-label="Închide">×</button>
-    <button type="button" class="lightbox-prev" aria-label="Fotografia precedentă">‹</button>
-    <img class="lightbox-image" src="${images[index]}" alt="${product.nume}">
-    <button type="button" class="lightbox-next" aria-label="Fotografia următoare">›</button>
+    <div class="lightbox-panel">
+      <div class="lightbox-top">
+        <span class="lightbox-title"></span>
+        <button type="button" class="lightbox-close" aria-label="Închide">×</button>
+      </div>
+
+      <div class="lightbox-stage">
+        <button type="button" class="lightbox-prev" aria-label="Fotografia precedentă">‹</button>
+        <img class="lightbox-image" alt="">
+        <button type="button" class="lightbox-next" aria-label="Fotografia următoare">›</button>
+        <span class="lightbox-counter"></span>
+      </div>
+
+      <div class="lightbox-thumbnails" aria-label="Alege fotografia"></div>
+    </div>
   `;
+
   document.body.appendChild(lightbox);
+  document.body.style.overflow = "hidden";
 
   const largeImage = lightbox.querySelector(".lightbox-image");
-  lightbox.querySelector(".lightbox-prev").addEventListener("click", e => {
-    e.stopPropagation();
-    index = (index - 1 + images.length) % images.length;
-    largeImage.src = images[index];
+  const counter = lightbox.querySelector(".lightbox-counter");
+  const thumbnails = lightbox.querySelector(".lightbox-thumbnails");
+  const previousButton = lightbox.querySelector(".lightbox-prev");
+  const nextButton = lightbox.querySelector(".lightbox-next");
+
+  lightbox.querySelector(".lightbox-title").textContent = product.nume;
+
+  images.forEach((src, i) => {
+    const thumb = document.createElement("button");
+    thumb.type = "button";
+    thumb.className = "lightbox-thumb";
+    thumb.setAttribute("aria-label", `Fotografia ${i + 1}`);
+    thumb.innerHTML = `<img alt="" loading="lazy">`;
+    thumb.querySelector("img").src = src;
+    thumb.addEventListener("click", e => {
+      e.stopPropagation();
+      showImage(i);
+    });
+    thumbnails.appendChild(thumb);
   });
-  lightbox.querySelector(".lightbox-next").addEventListener("click", e => {
-    e.stopPropagation();
-    index = (index + 1) % images.length;
+
+  function showImage(newIndex) {
+    index = (newIndex + images.length) % images.length;
     largeImage.src = images[index];
+    largeImage.alt = `${product.nume} – fotografia ${index + 1}`;
+    counter.textContent = `${index + 1} / ${images.length}`;
+
+    thumbnails.querySelectorAll(".lightbox-thumb").forEach((thumb, i) => {
+      thumb.classList.toggle("active", i === index);
+      thumb.setAttribute("aria-current", i === index ? "true" : "false");
+    });
+
+    thumbnails.querySelector(".lightbox-thumb.active")?.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center"
+    });
+
+    previousButton.hidden = images.length < 2;
+    nextButton.hidden = images.length < 2;
+    thumbnails.hidden = images.length < 2;
+    counter.hidden = images.length < 2;
+  }
+
+  previousButton.addEventListener("click", e => {
+    e.stopPropagation();
+    showImage(index - 1);
   });
-  lightbox.querySelector(".lightbox-close").addEventListener("click", () => lightbox.remove());
+
+  nextButton.addEventListener("click", e => {
+    e.stopPropagation();
+    showImage(index + 1);
+  });
+
+  function closeGallery() {
+    lightbox.remove();
+    document.body.style.overflow = "";
+    document.removeEventListener("keydown", handleKeys);
+  }
+
+  function handleKeys(e) {
+    if (e.key === "Escape") closeGallery();
+    if (e.key === "ArrowLeft") showImage(index - 1);
+    if (e.key === "ArrowRight") showImage(index + 1);
+  }
+
+  lightbox.querySelector(".lightbox-close").addEventListener("click", closeGallery);
   lightbox.addEventListener("click", e => {
-    if (e.target === lightbox) lightbox.remove();
+    if (e.target === lightbox) closeGallery();
   });
+  document.addEventListener("keydown", handleKeys);
+
+  // Glisare stânga-dreapta pe telefon.
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  largeImage.addEventListener("touchstart", e => {
+    touchStartX = e.changedTouches[0].clientX;
+    touchStartY = e.changedTouches[0].clientY;
+  }, { passive: true });
+
+  largeImage.addEventListener("touchend", e => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    const dy = e.changedTouches[0].clientY - touchStartY;
+
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) {
+      showImage(index + (dx < 0 ? 1 : -1));
+    }
+  }, { passive: true });
+
+  showImage(index);
 });
+
 
 /* =========================
    FORMULAR DINAMIC + WHATSAPP
