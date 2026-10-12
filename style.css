@@ -116,7 +116,7 @@
   font: 11px 'DM Sans', sans-serif;
   pointer-events: none;
 }
-```css
+
 /* Marire separata pentru fotografiile invitatiilor */
 .lightbox-zoom-open {
   position: absolute;
@@ -212,4 +212,3 @@
     max-height: 72vh;
   }
 }
-```
