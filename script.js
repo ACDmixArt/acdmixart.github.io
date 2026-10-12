@@ -446,7 +446,31 @@ const products = [
     "images/products/leb1.jpg",
     "images/products/leb2.jpg"
   ]
-},
+      
+  {
+    id: 44,
+    nume: "Marturie din sapun floare",
+    categorie: "Marturii",
+    pret: 9,
+    poze: [
+      "images/products/marturie-sapun.jpg",
+      "images/products/marturie-sapun1.jpg",
+      "images/products/marturie-sapun2.jpg"
+    ]
+  },
+
+  {
+    id: 45,
+    nume: "Marturie magnetica Minnie Mouse",
+    categorie: "Marturii",
+    pret: 5.5,
+    poze: [
+      "images/products/marturie.jpg",
+      "images/products/marturie1.jpg",
+      "images/products/marturie2.jpg"
+    ]
+  },
+
   {
     id: 43,
     nume: "Set moț – Căsuța cu ciupercuțe",
