@@ -21,7 +21,7 @@
   }
 }
 
-/* Vizualizare doar fotografie mărită pentru textul invitațiilor */
+/* Marire separata pentru fotografiile invitatiilor */
 .image-lightbox .lightbox-zoom-open {
   position: absolute;
   right: 8px;
@@ -35,7 +35,11 @@
   font: 600 11px 'DM Sans', sans-serif;
   cursor: pointer;
 }
-.image-lightbox .lightbox-image { cursor: zoom-in; }
+
+.image-lightbox .lightbox-image {
+  cursor: zoom-in;
+}
+
 .photo-zoom-overlay {
   position: fixed;
   inset: 0;
@@ -49,6 +53,7 @@
   overflow: hidden;
   touch-action: none;
 }
+
 .photo-zoom-viewport {
   width: 100%;
   height: 100%;
@@ -59,7 +64,11 @@
   touch-action: none;
   cursor: grab;
 }
-.photo-zoom-viewport:active { cursor: grabbing; }
+
+.photo-zoom-viewport:active {
+  cursor: grabbing;
+}
+
 .photo-zoom-image {
   display: block;
   max-width: 100%;
@@ -72,6 +81,7 @@
   -webkit-user-drag: none;
   pointer-events: none;
 }
+
 .photo-zoom-close {
   position: absolute;
   top: 12px;
@@ -85,7 +95,9 @@
   color: white;
   font-size: 30px;
   line-height: 1;
+  cursor: pointer;
 }
+
 .photo-zoom-tools {
   position: absolute;
   top: 14px;
@@ -95,6 +107,7 @@
   align-items: center;
   gap: 7px;
 }
+
 .photo-zoom-tools button {
   min-width: 38px;
   height: 38px;
@@ -104,7 +117,9 @@
   background: rgba(255,255,255,.14);
   color: white;
   font: 600 14px 'DM Sans', sans-serif;
+  cursor: pointer;
 }
+
 .photo-zoom-hint {
   position: absolute;
   bottom: 8px;
@@ -117,98 +132,9 @@
   pointer-events: none;
 }
 
-/* Marire separata pentru fotografiile invitatiilor */
-.lightbox-zoom-open {
-  position: absolute;
-  right: 8px;
-  top: 8px;
-  z-index: 5;
-  padding: 9px 12px;
-  border: 0;
-  border-radius: 20px;
-  background: #66745F;
-  color: #fff;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.photo-zoom-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 100000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 15px;
-  background: rgba(20, 20, 20, 0.96);
-}
-
-.photo-zoom-close {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 44px;
-  height: 44px;
-  border: 0;
-  border-radius: 50%;
-  background: #fff;
-  color: #333;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.photo-zoom-tools {
-  display: flex;
-  gap: 12px;
-  margin: 55px 0 15px;
-}
-
-.photo-zoom-tools button {
-  min-width: 48px;
-  min-height: 42px;
-  padding: 8px 14px;
-  border: 0;
-  border-radius: 10px;
-  background: #66745F;
-  color: #fff;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-.photo-zoom-viewport {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 75vh;
-  overflow: auto;
-  touch-action: pan-x pan-y;
-}
-
-.photo-zoom-image {
-  display: block;
-  max-width: 95%;
-  max-height: 70vh;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  transform-origin: center;
-  transition: transform 0.15s ease;
-}
-
 @media (max-width: 600px) {
-  .lightbox-zoom-open {
+  .image-lightbox .lightbox-zoom-open {
     font-size: 11px;
     padding: 8px 10px;
-  }
-
-  .photo-zoom-viewport {
-    height: 78vh;
-  }
-
-  .photo-zoom-image {
-    max-width: 100%;
-    max-height: 72vh;
   }
 }
