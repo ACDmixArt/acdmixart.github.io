@@ -538,22 +538,15 @@ button.add-cart:hover,
   background: #F0E8DC !important;
 }
 
+
 .image-lightbox .lightbox-image {
-  display: block !important;
   width: auto !important;
   height: auto !important;
   max-width: 100% !important;
   max-height: 100% !important;
   object-fit: contain !important;
-  object-position: center !important;
-  margin: 0 auto !important;
-  border-radius: 6px !important;
-  box-shadow: none !important;
-  touch-action: pan-y !important;
-  user-select: none !important;
-  -webkit-user-select: none !important;
-  -webkit-user-drag: none !important;
 }
+
 
 .image-lightbox .lightbox-prev,
 .image-lightbox .lightbox-next {
