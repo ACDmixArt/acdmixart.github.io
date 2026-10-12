@@ -493,9 +493,8 @@ button.add-cart:hover,
 }
 
 /* =========================
-   GALERIE FOTO ACDmixArt
+   GALERIE FOTO ACDmixArt - versiune curata
 ========================= */
-
 .image-lightbox {
   position: fixed;
   inset: 0;
@@ -504,16 +503,21 @@ button.add-cart:hover,
   align-items: center;
   justify-content: center;
   padding: 12px;
+  box-sizing: border-box;
   background: rgba(35, 38, 32, 0.94);
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
 }
 
 .lightbox-panel {
-  width: 100%;
-  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  width: min(900px, 100%);
+  max-height: calc(100vh - 24px);
+  max-height: calc(100dvh - 24px);
+  min-height: 0;
   margin: auto;
   padding: 14px;
+  box-sizing: border-box;
   border-radius: 22px;
   background: #FAF7F2;
   color: #4E4945;
@@ -522,10 +526,11 @@ button.add-cart:hover,
 
 .lightbox-top {
   display: flex;
+  flex: 0 0 auto;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .lightbox-title {
@@ -540,10 +545,11 @@ button.add-cart:hover,
   flex: 0 0 auto;
   width: 46px;
   height: 46px;
+  padding: 0;
   border: 0;
   border-radius: 999px;
   background: #66745F;
-  color: white;
+  color: #fff;
   font-size: 30px;
   line-height: 1;
   cursor: pointer;
@@ -552,12 +558,14 @@ button.add-cart:hover,
 .lightbox-stage {
   position: relative;
   display: flex;
+  flex: 1 1 auto;
   align-items: center;
   justify-content: center;
-  min-height: 200px;
-  background: #F0E8DC;
-  border-radius: 14px;
+  min-width: 0;
+  min-height: 180px;
   overflow: hidden;
+  border-radius: 14px;
+  background: #F0E8DC;
 }
 
 .image-lightbox .lightbox-image {
@@ -565,11 +573,14 @@ button.add-cart:hover,
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: 65vh;
+  max-height: min(66vh, 720px);
+  max-height: min(66dvh, 720px);
   object-fit: contain;
   border-radius: 8px;
   box-shadow: none;
   touch-action: pan-y;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .image-lightbox .lightbox-prev,
@@ -586,7 +597,7 @@ button.add-cart:hover,
   transform: translateY(-50%);
   border: 1px solid rgba(102, 116, 95, 0.15);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.96);
   color: #4F302F;
   font-size: 42px;
   line-height: 1;
@@ -595,17 +606,12 @@ button.add-cart:hover,
   -webkit-tap-highlight-color: transparent;
 }
 
-.image-lightbox .lightbox-prev {
-  left: 8px;
-}
-
-.image-lightbox .lightbox-next {
-  right: 8px;
-}
+.image-lightbox .lightbox-prev { left: 8px; }
+.image-lightbox .lightbox-next { right: 8px; }
 
 .lightbox-counter {
   position: absolute;
-  bottom: 12px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   padding: 8px 20px;
@@ -614,12 +620,15 @@ button.add-cart:hover,
   color: #4F302F;
   font-size: 16px;
   font-weight: 600;
+  pointer-events: none;
 }
 
 .lightbox-thumbnails {
   display: flex;
+  flex: 0 0 auto;
   gap: 10px;
-  margin-top: 12px;
+  max-width: 100%;
+  margin-top: 10px;
   padding: 2px 2px 6px;
   overflow-x: auto;
   overscroll-behavior-x: contain;
@@ -633,7 +642,7 @@ button.add-cart:hover,
   padding: 3px;
   border: 2px solid transparent;
   border-radius: 12px;
-  background: white;
+  background: #fff;
   overflow: hidden;
   cursor: pointer;
 }
@@ -646,115 +655,71 @@ button.add-cart:hover,
   border-radius: 8px;
 }
 
-.lightbox-thumb.active {
-  border-color: #B89B42;
-}
-
-.image-lightbox button:focus-visible {
-  outline: 3px solid #B89B42;
-  outline-offset: 3px;
-}
+.lightbox-thumb.active { border-color: #B89B42; }
+.image-lightbox button:focus-visible { outline: 3px solid #B89B42; outline-offset: 3px; }
 
 @media (max-width: 600px) {
   .image-lightbox {
     padding: 6px;
+    padding-top: max(6px, env(safe-area-inset-top));
+    padding-bottom: max(6px, env(safe-area-inset-bottom));
   }
 
   .lightbox-panel {
-    padding: 9px;
+    width: 100%;
+    max-height: calc(100vh - 12px);
+    max-height: calc(100dvh - 12px);
+    padding: 8px;
     border-radius: 17px;
   }
 
-  .lightbox-title {
-    font-size: 14px;
-  }
+  .lightbox-top { gap: 8px; margin-bottom: 7px; }
+  .lightbox-title { font-size: 14px; }
 
-  .lightbox-stage {
-    min-height: 180px;
-  }
-
-  .image-lightbox .lightbox-image {
-    max-width: 100%;
-    max-height: 62vh;
-  }
-
-  .image-lightbox .lightbox-prev,
-  .image-lightbox .lightbox-next {
+  .image-lightbox .lightbox-close {
     width: 44px;
-    height: 54px;
-    font-size: 36px;
-  }
-
-  .image-lightbox .lightbox-prev {
-    left: 5px;
-  }
-
-  .image-lightbox .lightbox-next {
-    right: 5px;
-  }
-
-  .lightbox-counter {
-    bottom: 8px;
-    padding: 7px 17px;
-    font-size: 14px;
-  }
-
-  .lightbox-thumb {
-    flex-basis: 68px;
-    width: 68px;
-    height: 68px;
-  }
-
-/* Galerie adaptată pentru telefon - fără zoom */
-@media (max-width: 600px) {
-  .image-lightbox {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    height: 100dvh;
-    padding: 5px;
-    overflow: hidden;
-    box-sizing: border-box;
-  }
-
-  .lightbox-panel {
-    width: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    padding: 8px;
-    margin: 0;
-    overflow: hidden;
-    box-sizing: border-box;
-  }
-
-  .lightbox-top {
-    margin-bottom: 6px;
+    height: 44px;
+    font-size: 28px;
   }
 
   .lightbox-stage {
-    width: 100%;
-    height: 60dvh;
+    flex: 0 1 auto;
+    height: auto;
     min-height: 0;
-    overflow: hidden;
+    max-height: calc(100dvh - 190px);
   }
 
   .image-lightbox .lightbox-image {
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
+    max-width: calc(100vw - 32px);
+    max-height: calc(100dvh - 210px);
     object-fit: contain;
-    touch-action: pan-y;
   }
 
   .image-lightbox .lightbox-prev,
   .image-lightbox .lightbox-next {
     width: 42px;
-    height: 50px;
+    height: 52px;
+    font-size: 36px;
+  }
+
+  .image-lightbox .lightbox-prev { left: 4px; }
+  .image-lightbox .lightbox-next { right: 4px; }
+
+  .lightbox-counter {
+    bottom: 7px;
+    padding: 7px 16px;
+    font-size: 14px;
   }
 
   .lightbox-thumbnails {
-    max-width: 100%;
-    overflow-x: auto;
+    gap: 8px;
+    margin-top: 8px;
+    padding-bottom: 3px;
   }
+
+  .lightbox-thumb {
+    flex-basis: 66px;
+    width: 66px;
+    height: 66px;
+  }
+}
