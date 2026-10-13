@@ -1673,6 +1673,17 @@ const products = [
       "images/products/dudu.jpg"
     ]
   },
+  {
+    id: 157,
+    nume: "Invitatie botez fetita Safari",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/pupuy.jpg",
+      "images/products/pupuy1.jpg",
+      "images/products/pupuy2.jpg"
+    ]
+  },
 ];
 
 
