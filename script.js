@@ -1449,8 +1449,6 @@ const products = [
     ]
   },
   {
-
-  {
     id: 135,
     nume: "Plic dar mot",
     categorie: "Plicuri dar botez",
