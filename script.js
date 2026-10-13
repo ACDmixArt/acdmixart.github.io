@@ -1383,6 +1383,16 @@ const products = [
       "images/products/and1.jpg"
     ]
   },
+  {
+    id: 127,
+    nume: "Plic botez 3",
+    categorie: "Plicuri pentru dar",
+    tip: "Botez",
+    pret: 2.5,
+    poze: [
+      "images/products/ffffffffffff.jpg"
+    ]
+  },
 ];
 
 
