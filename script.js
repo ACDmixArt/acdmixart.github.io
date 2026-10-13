@@ -1664,6 +1664,15 @@ const products = [
       "images/products/nnn1.jpg"
     ]
   },
+  {
+    id: 156,
+    nume: "Plic dar botez 29",
+    categorie: "Plicuri dar botez",
+    pret: 2.5,
+    poze: [
+      "images/products/dudu.jpg"
+    ]
+  },
 ];
 
 
