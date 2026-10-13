@@ -1538,6 +1538,16 @@ const products = [
       "images/products/maiaioana1.jpg"
     ]
   },
+  {
+    id: 143,
+    nume: "Plic dar botez 16",
+    categorie: "Plicuri dar botez",
+    pret: 2.5,
+    poze: [
+      "images/products/ririx.jpg",
+      "images/products/ririx1.jpg"
+    ]
+  },
 ];
 
 
