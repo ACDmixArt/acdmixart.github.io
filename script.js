@@ -1363,7 +1363,7 @@ const products = [
   },
   {
     id: 125,
-    nume: "Plic dar botez model 2",
+    nume: "Plic dar botez 2",
     categorie: "Plicuri pentru dar",
     tip: "Botez",
     pret: 2.5,
