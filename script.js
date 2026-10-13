@@ -1760,6 +1760,13 @@ const products = [
     poze: [
       "images/products/vanessa.jpg"
     ]
+  },
+  {
+    id: 171,
+    nume: "Agenda personalizata cu caricatura",
+    categorie: "Agende",
+    pret: 120,
+    poze: []
   }
 ];
 
@@ -1851,12 +1858,7 @@ function renderProducts() {
     return `
       <article class="product-card">
         <div class="product-photo">
-          <img
-            src="${firstImage}"
-            alt="${product.nume}"
-            data-product-id="${product.id}"
-            loading="lazy"
-          >
+          ${firstImage ? `<img src="${firstImage}" alt="${product.nume}" data-product-id="${product.id}" loading="lazy">` : `<div style="min-height:220px;display:flex;align-items:center;justify-content:center;padding:20px;text-align:center;color:#66745F;background:#FAF7F2;font-weight:700;">Agenda personalizată<br>cu caricatură</div>`}
         </div>
         <div class="product-info">
           <h3>${product.nume}</h3>
@@ -1869,7 +1871,9 @@ function renderProducts() {
           ${
             product.categorie === "Set Mot"
               ? `<button type="button" class="add-cart" onclick="openSetMotCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
-              : `<button type="button" class="add-cart" onclick="addToCart(${product.id}, document.getElementById('qty-${product.id}').textContent)">Adaugă în coș</button>`
+              : product.categorie === "Agende"
+                ? `<button type="button" class="add-cart" onclick="openAgendaCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Alege caricatura</button>`
+                : `<button type="button" class="add-cart" onclick="addToCart(${product.id}, document.getElementById('qty-${product.id}').textContent)">Adaugă în coș</button>`
           }
         </div>
       </article>
@@ -1981,6 +1985,59 @@ function openSetMotCustomizer(productId, quantity = 1) {
 }
 
 /* =========================
+   PERSONALIZARE AGENDA
+========================= */
+
+function openAgendaCustomizer(productId, quantity = 1) {
+  const product = products.find(item => item.id === Number(productId));
+  if (!product) return;
+
+  const qty = Math.max(1, Number(quantity) || 1);
+  const modal = document.createElement("div");
+  modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.65);display:flex;align-items:center;justify-content:center;z-index:9999;padding:20px;";
+  modal.innerHTML = `
+    <div style="background:white;width:100%;max-width:500px;max-height:90vh;overflow:auto;border-radius:16px;padding:25px;box-sizing:border-box;position:relative;">
+      <button type="button" class="agenda-close" aria-label="Închide" style="position:absolute;top:10px;right:15px;border:0;background:none;font-size:30px;cursor:pointer;">×</button>
+      <h2 style="margin-top:0;">Personalizează agenda</h2>
+      <p>Agenda costă 120 lei. Alege câte personaje dorești pentru caricatură.</p>
+      <label for="agendaCharacters" style="display:block;margin-top:15px;font-weight:600;">Caricatură</label>
+      <select id="agendaCharacters" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+        <option value="0">Fără caricatură — 0 lei</option>
+        <option value="1">1 personaj — 20 lei</option>
+        <option value="2">2 personaje — 35 lei</option>
+        <option value="3">3 personaje — 50 lei</option>
+      </select>
+      <p class="agenda-price" style="font-size:21px;font-weight:700;margin:18px 0;"></p>
+      <button type="button" class="agenda-add add-cart" style="width:100%;padding:14px;border:0;border-radius:9px;background:#66745F;color:white;font-weight:700;cursor:pointer;font-size:16px;">Adaugă în coș</button>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  const select = modal.querySelector("#agendaCharacters");
+  const price = modal.querySelector(".agenda-price");
+  const costs = { 0: 0, 1: 20, 2: 35, 3: 50 };
+  function updatePrice() {
+    price.textContent = "Total: " + money((product.pret + costs[select.value]) * qty) + (qty > 1 ? ` (${qty} agende)` : "");
+  }
+  updatePrice();
+  select.addEventListener("change", updatePrice);
+  modal.querySelector(".agenda-close").addEventListener("click", () => modal.remove());
+  modal.addEventListener("click", event => { if (event.target === modal) modal.remove(); });
+  modal.querySelector(".agenda-add").addEventListener("click", () => {
+    const characters = Number(select.value);
+    const caricaturePrice = costs[characters];
+    cart.push({
+      ...product,
+      quantity: qty,
+      pret: product.pret + caricaturePrice,
+      personalizare: { tip: "agenda", personaje: characters, pretCaricatura: caricaturePrice }
+    });
+    modal.remove();
+    renderCart();
+    openCart();
+  });
+}
+/* =========================
    COS
 ========================= */
 
@@ -2034,9 +2091,11 @@ function renderCart() {
         <strong>${item.nume}</strong>
         <span>${money(item.pret)} / buc.</span>
         ${
-          item.personalizare
-            ? `<p>Nume: ${item.personalizare.numeCopil}<br>Tematică: ${item.personalizare.tematica}<br>Ramă foto: ${item.personalizare.ramaFoto ? "Da" : "Nu"}</p>`
-            : ""
+          item.personalizare?.tip === "agenda"
+            ? `<p>Caricatură: ${item.personalizare.personaje === 0 ? "Fără caricatură" : item.personalizare.personaje + (item.personalizare.personaje === 1 ? " personaj" : " personaje")}<br>Cost caricatură: ${money(item.personalizare.pretCaricatura)}</p>`
+            : item.personalizare
+              ? `<p>Nume: ${item.personalizare.numeCopil}<br>Tematică: ${item.personalizare.tematica}<br>Ramă foto: ${item.personalizare.ramaFoto ? "Da" : "Nu"}</p>`
+              : ""
         }
         <div class="cart-quantity">
           <button type="button" aria-label="Scade cantitatea" onclick="changeCartQuantity(${index}, ${Math.max(1, (Number(item.quantity) || 1) - 1)})">−</button>
@@ -2090,7 +2149,9 @@ if (cartWhatsapp) {
     let message = "Bună! Doresc să plasez o comandă ACDmixArt:\n\n";
     cart.forEach((item, index) => {
       message += `${index + 1}. ${item.nume}\nCantitate: ${item.quantity || 1}\nPreț/buc.: ${money(item.pret)}\nSubtotal: ${money(item.pret * (item.quantity || 1))}\n`;
-      if (item.personalizare) {
+      if (item.personalizare?.tip === "agenda") {
+        message += `Caricatură: ${item.personalizare.personaje === 0 ? "Fără caricatură" : item.personalizare.personaje + (item.personalizare.personaje === 1 ? " personaj" : " personaje")}\nCost caricatură: ${money(item.personalizare.pretCaricatura)}\n`;
+      } else if (item.personalizare) {
         message += `Numele copilului: ${item.personalizare.numeCopil}\nTematică: ${item.personalizare.tematica}\nRamă foto: ${item.personalizare.ramaFoto ? "Da" : "Nu"}\n`;
       }
       message += "\n";
@@ -2251,13 +2312,14 @@ zoomButton.addEventListener("click", function (e) {
 
   const personalizeButton = lightbox.querySelector(".lightbox-personalize");
 
-  if (product.categorie !== "Set Mot") {
+  if (!["Set Mot", "Agende"].includes(product.categorie)) {
     personalizeButton.hidden = true;
   }
 
   personalizeButton.addEventListener("click", () => {
     closeGallery();
-    openSetMotCustomizer(product.id, 1);
+    if (product.categorie === "Agende") openAgendaCustomizer(product.id, 1);
+    else openSetMotCustomizer(product.id, 1);
   });
 
   lightbox.querySelector(".lightbox-add-cart").addEventListener("click", () => {
@@ -2265,6 +2327,8 @@ zoomButton.addEventListener("click", function (e) {
 
     if (product.categorie === "Set Mot") {
       openSetMotCustomizer(product.id, 1);
+    } else if (product.categorie === "Agende") {
+      openAgendaCustomizer(product.id, 1);
     } else {
       addToCart(product.id, 1);
     }
@@ -2467,6 +2531,10 @@ function renderDynamicFields() {
     addFormField({ id: "formColors", label: "Culori", placeholder: "Culorile dorite" });
     addFormField({ id: "formDate", label: "Data evenimentului", type: "date" });
     addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Tematică și cerințe speciale" });
+  } else if (category === "Agende") {
+    addFormField({ id: "formAgendaCharacters", label: "Caricatură", type: "select", options: ["Fără caricatură — 0 lei", "1 personaj — 20 lei", "2 personaje — 35 lei", "3 personaje — 50 lei"] });
+    addFormField({ id: "formNames", label: "Nume / detalii pentru agendă", placeholder: "Numele sau textul dorit pe agendă" });
+    addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Detalii pentru personalizare" });
   } else if (["Carti"].includes(category)) {
     addFormField({ id: "formNames", label: "Numele persoanei / copilului", placeholder: "Numele pentru copertă" });
     addFormField({ id: "formAge", label: "Vârsta (dacă este relevantă)", type: "number", min: 1 });
@@ -2546,6 +2614,11 @@ function updateOrderSummary() {
     const qty = qtyInput ? Math.max(1, Number(qtyInput.value) || 1) : 1;
     let unitPrice = product.pret;
     if (product.categorie === "Set Mot" && frame && frame.checked) unitPrice += 60;
+    const agendaCharacters = document.getElementById("formAgendaCharacters");
+    if (product.categorie === "Agende" && agendaCharacters) {
+      const optionCosts = { "Fără caricatură — 0 lei": 0, "1 personaj — 20 lei": 20, "2 personaje — 35 lei": 35, "3 personaje — 50 lei": 50 };
+      unitPrice += optionCosts[agendaCharacters.value] || 0;
+    }
     rows.push(["Preț estimativ", money(unitPrice * qty)]);
   }
 
@@ -2615,6 +2688,7 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
 
     const fields = [
       ["Nume / text", "formNames"],
+      ["Caricatură pentru agendă", "formAgendaCharacters"],
       ["Text invitație", "formText"],
       ["Data evenimentului", "formDate"],
       ["Culori", "formColors"],
@@ -2633,6 +2707,11 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
 
     let unitPrice = product.pret;
     if (product.categorie === "Set Mot" && frame && frame.checked) unitPrice += 60;
+    const agendaCharacters = document.getElementById("formAgendaCharacters");
+    if (product.categorie === "Agende" && agendaCharacters) {
+      const optionCosts = { "Fără caricatură — 0 lei": 0, "1 personaj — 20 lei": 20, "2 personaje — 35 lei": 35, "3 personaje — 50 lei": 50 };
+      unitPrice += optionCosts[agendaCharacters.value] || 0;
+    }
     message += `Preț estimativ: ${money(unitPrice * quantity)}\n\nVă mulțumesc!`;
 
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
