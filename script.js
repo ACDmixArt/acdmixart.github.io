@@ -762,8 +762,8 @@ const products = [
   categorie: "Marturii",
   pret: 4.5,
   poze: [
-    "images/products/eric.jpg",
-    "images/products/eric1.jpg"
+    "images/products/bec.jpg",
+    "images/products/bec1.jpg"
   ]
 },
 
