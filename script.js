@@ -1361,6 +1361,17 @@ const products = [
       "images/products/aa1.jpg"
     ]
   },
+  {
+    id: 125,
+    nume: "Plic dar botez model 2",
+    categorie: "Plicuri pentru dar",
+    tip: "Botez",
+    pret: 2.5,
+    poze: [
+      "images/products/bbx.jpg",
+      "images/products/bbx1.jpg"
+    ]
+  },
 ];
 
 
