@@ -1702,6 +1702,15 @@ const products = [
     poze: [
       "images/products/fob.jpg"
     ]
+  },
+  {
+    id: 165,
+    nume: "Plic dar nunta 10",
+    categorie: "Plicuri dar nunta",
+    pret: 2.5,
+    poze: [
+      "images/products/vbvb.jpg"
+    ]
   }
 ];
 
