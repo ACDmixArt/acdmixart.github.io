@@ -1548,6 +1548,16 @@ const products = [
       "images/products/ririx1.jpg"
     ]
   },
+  {
+    id: 144,
+    nume: "Plic dar botez 17",
+    categorie: "Plicuri dar botez",
+    pret: 2.5,
+    poze: [
+      "images/products/okok.jpg",
+      "images/products/okok1.jpg"
+    ]
+  },
 ];
 
 
