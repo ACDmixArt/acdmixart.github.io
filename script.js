@@ -4,149 +4,296 @@
 
 const products = [
   {
-    id: 1,
-    nume: "Invitație botez – Flori roz",
-    categorie: "Botez",
-    pret: 9,
-    poze: [
-      "images/products/amaliaa.jpg",
-      "images/products/amaliaa1.jpg",
-      "images/products/amaliaa2.jpg"
-    ]
-  },
+      id: 1,
+      nume: "Invitație botez – Flori roz",
+      categorie: "Botez",
+      pret: 9,
+      poze: [
+        "images/products/amaliaa.jpg",
+        "images/products/amaliaa1.jpg",
+        "images/products/amaliaa2.jpg"
+      ]
+    },
   {
-    id: 2,
-    nume: "Invitație botez-Urs",
-    categorie: "Botez",
-    pret: 6.5,
-    poze: [
-      "images/products/urs.jpg",
-      "images/products/urs1.jpg",
-      "images/products/urs2.jpg"
-    ]
-  },
+      id: 2,
+      nume: "Invitație botez-Urs",
+      categorie: "Botez",
+      pret: 6.5,
+      poze: [
+        "images/products/urs.jpg",
+        "images/products/urs1.jpg",
+        "images/products/urs2.jpg"
+      ]
+    },
   {
-    id: 3,
-    nume: "Invitație botez Minnie1",
-    categorie: "Botez",
-    pret: 6.5,
-    poze: [
-      "images/products/ioana.jpg",
-      "images/products/ioana1.jpg"
-    ]
-  },
+      id: 3,
+      nume: "Invitație botez Minnie1",
+      categorie: "Botez",
+      pret: 6.5,
+      poze: [
+        "images/products/ioana.jpg",
+        "images/products/ioana1.jpg"
+      ]
+    },
   {
-    id: 4,
-    nume: "Invitație botez-Dior",
-    categorie: "Botez",
-    pret: 7,
-    poze: [
-      "images/products/dior.jpg",
-      "images/products/dior1.jpg",
-      "images/products/dior2.jpg"
-    ]
-  },
+      id: 4,
+      nume: "Invitație botez-Dior",
+      categorie: "Botez",
+      pret: 7,
+      poze: [
+        "images/products/dior.jpg",
+        "images/products/dior1.jpg",
+        "images/products/dior2.jpg"
+      ]
+    },
   {
-    id: 5,
-    nume: "Invitație botez-Dior",
-    categorie: "Botez",
-    pret: 7,
-    poze: [
-      "images/products/diorfata.jpg",
-      "images/products/diorfata1.jpg",
-      "images/products/diorfata2.jpg"
-    ]
-  },
+      id: 5,
+      nume: "Invitație botez-Dior",
+      categorie: "Botez",
+      pret: 7,
+      poze: [
+        "images/products/diorfata.jpg",
+        "images/products/diorfata1.jpg",
+        "images/products/diorfata2.jpg"
+      ]
+    },
   {
-    id: 6,
-    nume: "Invitație botez-Jungla",
-    categorie: "Botez",
-    pret: 4.5,
-    poze: [
-      "images/products/leut.jpg",
-      "images/products/leut1.jpg",
-      "images/products/leut2.jpg"
-    ]
-  },
+      id: 6,
+      nume: "Invitație botez-Jungla",
+      categorie: "Botez",
+      pret: 4.5,
+      poze: [
+        "images/products/leut.jpg",
+        "images/products/leut1.jpg",
+        "images/products/leut2.jpg"
+      ]
+    },
   {
-    id: 7,
-    nume: "Invitație botez-Ingeras",
+      id: 7,
+      nume: "Invitație botez-Ingeras",
+      categorie: "Botez",
+      pret: 3.5,
+      poze: [
+        "images/products/ingeras.jpg",
+        "images/products/ingeras1.jpg"
+      ]
+    },
+  {
+      id: 8,
+      nume: "Invitație botez-Balon",
+      categorie: "Botez",
+      pret: 3.5,
+      poze: [
+        "images/products/balon.jpg",
+        "images/products/balon1.jpg",
+        "images/products/balon2.jpg",
+        "images/products/balon3.jpg"
+      ]
+    },
+  {
+      id: 9,
+      nume: "Invitație botez-Zana",
+      categorie: "Botez",
+      pret: 3.5,
+      poze: [
+        "images/products/casuta.jpg",
+        "images/products/casuta1.jpg"
+      ]
+    },
+  {
+      id: 10,
+      nume: "Invitație botez-Carusel",
+      categorie: "Botez",
+      pret: 8,
+      poze: [
+        "images/products/carusel.jpg",
+        "images/products/carusel1.jpg",
+        "images/products/carusel2.jpg"
+      ]
+    },
+  {
+      id: 11,
+      nume: "Invitație botez-Minnie2",
+      categorie: "Botez",
+      pret: 3.5,
+      poze: [
+        "images/products/seleni.jpg",
+        "images/products/seleni1.jpg",
+        "images/products/seleni2.jpg"
+      ]
+    },
+  {
+      id: 12,
+      nume: "Invitație mot Cocomelon",
+      categorie: "Botez",
+      pret: 5.5,
+      poze: [
+        "images/products/teo.jpg",
+        "images/products/teo1.jpg",
+        "images/products/teo2.jpg",
+        "images/products/teo3.jpg"
+      ]
+    },
+  {
+      id: 13,
+      nume: "Invitație botez-Balerina",
+      categorie: "Botez",
+      pret: 3.5,
+      poze: [
+        "images/products/balerina.jpg",
+        "images/products/balerina1.jpg"
+      ]
+    },
+  {
+      id: 14,
+      nume: "Invitație botez-Floral",
+      categorie: "Botez",
+      pret: 5,
+      poze: [
+        "images/products/funda.jpg",
+        "images/products/funda1.jpg"
+      ]
+    },
+  {
+      id: 15,
+      nume: "Invitație botez-Oglinda",
+      categorie: "Botez",
+      pret: 10,
+      poze: [
+        "images/products/invitatie.jpg",
+        "images/products/invitatie1.jpg",
+        "images/products/invitatie2.jpg"
+      ]
+    },
+  {
+    id: 16,
+    nume: "Invitatie botez- Fluturas",
     categorie: "Botez",
     pret: 3.5,
     poze: [
-      "images/products/ingeras.jpg",
-      "images/products/ingeras1.jpg"
+      "images/products/eliz.jpg",
+      "images/products/eliz1.jpg",
+      "images/products/eliz2.jpg"
     ]
   },
   {
-    id: 8,
-    nume: "Invitație botez-Balon",
-    categorie: "Botez",
-    pret: 3.5,
-    poze: [
-      "images/products/balon.jpg",
-      "images/products/balon1.jpg",
-      "images/products/balon2.jpg",
-      "images/products/balon3.jpg"
-    ]
-  },
-  {
-    id: 9,
-    nume: "Invitație botez-Zana",
-    categorie: "Botez",
-    pret: 3.5,
-    poze: [
-      "images/products/casuta.jpg",
-      "images/products/casuta1.jpg"
-    ]
-  },
-  {
-    id: 10,
-    nume: "Invitație botez-Carusel",
+    id: 17,
+    nume: "Invitatie botez-UrsX",
     categorie: "Botez",
     pret: 8,
     poze: [
-      "images/products/carusel.jpg",
-      "images/products/carusel1.jpg",
-      "images/products/carusel2.jpg"
+      "images/products/zian.jpg",
+      "images/products/zian1.jpg",
+      "images/products/zian2.jpg",
+      "images/products/zian3.jpg"
     ]
   },
   {
-    id: 11,
-    nume: "Invitație botez-Minnie2",
+    id: 18,
+    nume: "Invitatie botez- Urs verde",
     categorie: "Botez",
     pret: 3.5,
     poze: [
-      "images/products/seleni.jpg",
-      "images/products/seleni1.jpg",
-      "images/products/seleni2.jpg"
+      "images/products/ursverde.jpg",
+      "images/products/ursverde1.jpg",
+      "images/products/ursverde2.jpg"
     ]
   },
   {
-    id: 12,
-    nume: "Invitație mot Cocomelon",
+    id: 19,
+    nume: "Invitatie botez-pergament",
     categorie: "Botez",
-    pret: 5.5,
+    pret: 7.5,
     poze: [
-      "images/products/teo.jpg",
-      "images/products/teo1.jpg",
-      "images/products/teo2.jpg",
-      "images/products/teo3.jpg"
+      "images/products/calc.jpg",
+      "images/products/calc1.jpg",
+      "images/products/calc2.jpg"
     ]
   },
-    {
-    id: 13,
-    nume: "Invitație botez-Balerina",
+  {
+    id: 20,
+    nume: "Invitatie botez + plic pentru dar",
+    categorie: "Botez",
+    pret: 6,
+    poze: [
+      "images/products/invitatieverde.jpg",
+      "images/products/invitatieverde1.jpg",
+      "images/products/invitatieverde2.jpg",
+      "images/products/invitatieverde3.jpg"
+    ]
+  },
+  {
+    id: 21,
+    nume: "Invitatie botez- Balerina2",
+    categorie: "Botez",
+    pret: 6.5,
+    poze: [
+      "images/products/balerinaplic.jpg",
+      "images/products/balerinaplic1.jpg",
+      "images/products/balerinaplic2.jpg",
+      "images/products/balerinaplic3.jpg"
+    ]
+  },
+  {
+    id: 22,
+    nume: "Invitatie botez-Stitch and Angel",
     categorie: "Botez",
     pret: 3.5,
     poze: [
-      "images/products/balerina.jpg",
-      "images/products/balerina1.jpg"
+      "images/products/stitch.jpg",
+      "images/products/stitch1.jpg",
+      "images/products/stitch2.jpg"
     ]
   },
-    {
-    id: 14,
-    nume: "Invitație botez-Floral",
+  {
+    id: 23,
+    nume: "Invitatie botez-Mickey Mouse",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/mihai.jpg",
+      "images/products/mihai1.jpg",
+      "images/products/mihai2.jpg",
+      "images/products/mihai3.jpg",
+      "images/products/mihai4.jpg"
+    ]
+  },
+  {
+    id: 24,
+    nume: "Invitatie botez-Minnie3",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/minnie3.jpg",
+      "images/products/minnie4.jpg",
+      "images/products/minnie5.jpg"
+    ]
+  },
+  {
+    id: 25,
+    nume: "Invitatie botez-Jungla2",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/patri.jpg",
+      "images/products/patri1.jpg",
+      "images/products/patri2.jpg"
+    ]
+  },
+  {
+    id: 26,
+    nume: "Invitatie botez-Castel",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/printesa.jpg",
+      "images/products/printesa1.jpg",
+      "images/products/printesa2.jpg"
+    ]
+  },
+  {
+    id: 27,
+    nume: "Invitatie botez-Floral",
     categorie: "Botez",
     pret: 5,
     poze: [
@@ -154,1585 +301,1390 @@ const products = [
       "images/products/funda1.jpg"
     ]
   },
-    {
-    id: 15,
-    nume: "Invitație botez-Oglinda",
+  {
+    id: 28,
+    nume: "Invitatie botez- Babyblue",
     categorie: "Botez",
-    pret: 10,
+    pret: 6.5,
     poze: [
-      "images/products/invitatie.jpg",
-      "images/products/invitatie1.jpg",
-      "images/products/invitatie2.jpg"
+      "images/products/matei1.jpg",
+      "images/products/matei.jpg"
     ]
   },
   {
-  id: 16,
-  nume: "Invitatie botez- Fluturas",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/eliz.jpg",
-    "images/products/eliz1.jpg",
-    "images/products/eliz2.jpg"
-  ]
-},
+    id: 29,
+    nume: "Invitatie Timon and Pumbaa",
+    categorie: "Botez",
+    pret: 5,
+    poze: [
+      "images/products/adonis.jpg",
+      "images/products/adonis1.jpg",
+      "images/products/adonis2.jpg"
+    ]
+  },
   {
-  id: 17,
-  nume: "Invitatie botez-UrsX",
-  categorie: "Botez",
-  pret: 8,
-  poze: [
-    "images/products/zian.jpg",
-    "images/products/zian1.jpg",
-    "images/products/zian2.jpg",
-    "images/products/zian3.jpg"
-  ]
-},
+    id: 30,
+    nume: "Invitatie botez- Happybaby",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/roz.jpg"
+    ]
+  },
   {
-  id: 18,
-  nume: "Invitatie botez- Urs verde",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/ursverde.jpg",
-    "images/products/ursverde1.jpg",
-    "images/products/ursverde2.jpg"
-  ]
-},
+    id: 31,
+    nume: "Invitatie botez-Butterfly",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/butterfly.jpg"
+    ]
+  },
   {
-  id: 19,
-  nume: "Invitatie botez-pergament",
-  categorie: "Botez",
-  pret: 7.5,
-  poze: [
-    "images/products/calc.jpg",
-    "images/products/calc1.jpg",
-    "images/products/calc2.jpg"
-  ]
-},
-  {
-  id: 20,
-  nume: "Invitatie botez + plic pentru dar",
-  categorie: "Botez",
-  pret: 6,
-  poze: [
-    "images/products/invitatieverde.jpg",
-    "images/products/invitatieverde1.jpg",
-    "images/products/invitatieverde2.jpg",
-    "images/products/invitatieverde3.jpg"
-  ]
-},
-  {
-  id: 21,
-  nume: "Invitatie botez- Balerina2",
-  categorie: "Botez",
-  pret: 6.5,
-  poze: [
-    "images/products/balerinaplic.jpg",
-    "images/products/balerinaplic1.jpg",
-    "images/products/balerinaplic2.jpg",
-    "images/products/balerinaplic3.jpg"
-  ]
-},
-  {
-  id: 22,
-  nume: "Invitatie botez-Stitch and Angel",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/stitch.jpg",
-    "images/products/stitch1.jpg",
-    "images/products/stitch2.jpg"
-  ]
-},
-  {
-  id: 23,
-  nume: "Invitatie botez-Mickey Mouse",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/mihai.jpg",
-    "images/products/mihai1.jpg",
-    "images/products/mihai2.jpg",
-    "images/products/mihai3.jpg",
-    "images/products/mihai4.jpg"
-  ]
-},
-  {
-  id: 24,
-  nume: "Invitatie botez-Minnie3",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/minnie3.jpg",
-    "images/products/minnie4.jpg",
-    "images/products/minnie5.jpg"
-  ]
-},
-  {
-  id: 25,
-  nume: "Invitatie botez-Jungla2",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/patri.jpg",
-    "images/products/patri1.jpg",
-    "images/products/patri2.jpg"
-  ]
-},
-  {
-  id: 26,
-  nume: "Invitatie botez-Castel",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/printesa.jpg",
-    "images/products/printesa1.jpg",
-    "images/products/printesa2.jpg"
-  ]
-},
- {
-  id: 27,
-  nume: "Invitatie botez-Floral",
-  categorie: "Botez",
-  pret: 5,
-  poze: [
-    "images/products/funda.jpg",
-    "images/products/funda1.jpg"
-  ]
-}, 
-  {
-  id: 28,
-  nume: "Invitatie botez- Babyblue",
-  categorie: "Botez",
-  pret: 6.5,
-  poze: [
-    "images/products/matei1.jpg",
-    "images/products/matei.jpg"
-  ]
-},
-  {
-  id: 29,
-  nume: "Invitatie Timon and Pumbaa",
-  categorie: "Botez",
-  pret: 5,
-  poze: [
-    "images/products/adonis.jpg",
-    "images/products/adonis1.jpg",
-    "images/products/adonis2.jpg"
-  ]
-},
-  {
-  id: 30,
-  nume: "Invitatie botez- Happybaby",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/roz.jpg"
-  ]
-},
-  {
-  id: 31,
-  nume: "Invitatie botez-Butterfly",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/butterfly.jpg"
-  ]
-},
-  {
-  id: 32,
-  nume: "Invitatie botez-Lebada",
-  categorie: "Botez",
-  pret: 7,
-  poze: [
-    "images/products/lebada.jpg",
-    "images/products/lebada1.jpg"
-  ]
-},
-  {
-  id: 33,
-  nume: "Invitatie botez-Curcubeu + plic pentru dar",
-  categorie: "Botez",
-  pret: 6.5,
-  poze: [
-    "images/products/il.jpg",
-    "images/products/il1.jpg"
-  ]
-},
-  {
-  id: 34,
-  nume: "Invitatie botez-Elefant",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/elefant.jpg"
-  ]
-},
-  {
-  id: 35,
-  nume: "Invitatie mot cu plic",
-  categorie: "Botez",
-  pret: 4,
-  poze: [
-    "images/products/motisor.jpg"
-  ]
-},
-  {
-  id: 36,
-  nume: "Invitatie botez-Gemeni",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/gemeni.jpg",
-    "images/products/gemeni1.jpg"
-  ]
-},
-  {
-  id: 37,
-  nume: "Invitatie botez-Baby Boss",
-  categorie: "Botez",
-  pret: 4,
-  poze: [
-    "images/products/boss.jpg",
-    "images/products/boss1.jpg"
-  ]
-},
-  {
-  id: 38,
-  nume: "Invitatie botez-Ursulet",
-  categorie: "Botez",
-  pret: 3.5,
-  poze: [
-    "images/products/ursfata.jpg",
-    "images/products/ursfata1.jpg"
-  ]
-},
-  {
-  id: 39,
-  nume: "Invitatie botez-Safari",
-  categorie: "Botez",
-  pret: 4,
-  poze: [
-    "images/products/animale.jpg",
-    "images/products/animale1.jpg"
-  ]
-},
-  {
-  id: 40,
-  nume: "Invitatie botez-Leu",
-  categorie: "Botez",
-  pret: 4,
-  poze: [
-    "images/products/leu.jpg"
-  ]
-},
-  {
-  id: 41,
-  nume: "Invitatie botez-Mickey",
-  categorie: "Botez",
-  pret: 4,
-  poze: [
-    "images/products/mici.jpg",
-    "images/products/mici1.jpg"
-  ]
-},
-   
-  {
-    id: 42,
-    nume: "Invitatie botez-Lebada1",
+    id: 32,
+    nume: "Invitatie botez-Lebada",
     categorie: "Botez",
     pret: 7,
     poze: [
-      "images/products/leb.jpg",
-      "images/products/leb1.jpg",
-      "images/products/leb2.jpg"
+      "images/products/lebada.jpg",
+      "images/products/lebada1.jpg"
     ]
   },
   {
-    id: 44,
-    nume: "Marturie din sapun floare",
-    categorie: "Marturii",
-    pret: 9,
+    id: 33,
+    nume: "Invitatie botez-Curcubeu + plic pentru dar",
+    categorie: "Botez",
+    pret: 6.5,
     poze: [
-      "images/products/marturie sapun.jpg",
-      "images/products/marturie sapun1.jpg",
-      "images/products/marturie sapun2.jpg"
+      "images/products/il.jpg",
+      "images/products/il1.jpg"
     ]
   },
   {
-    id: 45,
-    nume: "Marturie magnetica Minnie Mouse",
-    categorie: "Marturii",
-    pret: 5.5,
+    id: 34,
+    nume: "Invitatie botez-Elefant",
+    categorie: "Botez",
+    pret: 3.5,
     poze: [
-      "images/products/marturie.jpg",
-      "images/products/marturie1.jpg",
-      "images/products/marturie2.jpg"
+      "images/products/elefant.jpg"
     ]
   },
   {
-    id: 46,
-    nume: "Marturie magnetica nunta+botez",
+    id: 35,
+    nume: "Invitatie mot cu plic",
+    categorie: "Botez",
+    pret: 4,
+    poze: [
+      "images/products/motisor.jpg"
+    ]
+  },
+  {
+    id: 36,
+    nume: "Invitatie botez-Gemeni",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/gemeni.jpg",
+      "images/products/gemeni1.jpg"
+    ]
+  },
+  {
+    id: 37,
+    nume: "Invitatie botez-Baby Boss",
+    categorie: "Botez",
+    pret: 4,
+    poze: [
+      "images/products/boss.jpg",
+      "images/products/boss1.jpg"
+    ]
+  },
+  {
+    id: 38,
+    nume: "Invitatie botez-Ursulet",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/ursfata.jpg",
+      "images/products/ursfata1.jpg"
+    ]
+  },
+  {
+    id: 39,
+    nume: "Invitatie botez-Safari",
+    categorie: "Botez",
+    pret: 4,
+    poze: [
+      "images/products/animale.jpg",
+      "images/products/animale1.jpg"
+    ]
+  },
+  {
+    id: 40,
+    nume: "Invitatie botez-Leu",
+    categorie: "Botez",
+    pret: 4,
+    poze: [
+      "images/products/leu.jpg"
+    ]
+  },
+  {
+    id: 41,
+    nume: "Invitatie botez-Mickey",
+    categorie: "Botez",
+    pret: 4,
+    poze: [
+      "images/products/mici.jpg",
+      "images/products/mici1.jpg"
+    ]
+  },
+  {
+      id: 42,
+      nume: "Invitatie botez-Lebada1",
+      categorie: "Botez",
+      pret: 7,
+      poze: [
+        "images/products/leb.jpg",
+        "images/products/leb1.jpg",
+        "images/products/leb2.jpg"
+      ]
+    },
+  {
+      id: 44,
+      nume: "Marturie din sapun floare",
+      categorie: "Marturii",
+      pret: 9,
+      poze: [
+        "images/products/marturie sapun.jpg",
+        "images/products/marturie sapun1.jpg",
+        "images/products/marturie sapun2.jpg"
+      ]
+    },
+  {
+      id: 45,
+      nume: "Marturie magnetica Minnie Mouse",
+      categorie: "Marturii",
+      pret: 5.5,
+      poze: [
+        "images/products/marturie.jpg",
+        "images/products/marturie1.jpg",
+        "images/products/marturie2.jpg"
+      ]
+    },
+  {
+      id: 46,
+      nume: "Marturie magnetica nunta+botez",
+      categorie: "Marturii",
+      pret: 7.5,
+      poze: [
+        "images/products/marturieforma.jpg",
+        "images/products/marturieforma1.jpg",
+        "images/products/marturieforma2.jpg",
+        "images/products/marturieforma3.jpg"
+      ]
+    },
+  {
+      id: 47,
+      nume: "Etichete pentru marturii",
+      categorie: "Marturii",
+      pret: 1.5,
+      poze: [
+        "images/products/etichete.jpg",
+        "images/products/etichete1.jpg"
+      ]
+    },
+  {
+      id: 48,
+      nume: "Marturie magnetica Urs",
+      categorie: "Marturii",
+      pret: 5.5,
+      poze: [
+        "images/products/mai.jpg",
+        "images/products/mai1.jpg"
+      ]
+    },
+  {
+      id: 49,
+      nume: "Marturie magnetica Blue",
+      categorie: "Marturii",
+      pret: 5.5,
+      poze: [
+        "images/products/luca.jpg",
+        "images/products/luca1.jpg",
+        "images/products/luca2.jpg"
+      ]
+    },
+  {
+      id: 50,
+      nume: "Marturie magnetica Safari",
+      categorie: "Marturii",
+      pret: 4.5,
+      poze: [
+        "images/products/safari.jpg",
+        "images/products/safari1.jpg"
+      ]
+    },
+  {
+      id: 51,
+      nume: "Marturii magnet pe forma+mini ciocolatica",
+      categorie: "Marturii",
+      pret: 12,
+      poze: [
+        "images/products/bomboana.jpg",
+        "images/products/bomboana1.jpg"
+      ]
+    },
+  {
+      id: 52,
+      nume: "Evantai",
+      categorie: "Marturii",
+      pret: 4.5,
+      poze: [
+        "images/products/evantai.jpg"
+      ]
+    },
+  {
+      id: 53,
+      nume: "Marturie magnetica fluture",
+      categorie: "Marturii",
+      pret: 5.5,
+      poze: [
+        "images/products/fluture.jpg",
+        "images/products/fluture1.jpg",
+        "images/products/fluture2.jpg"
+      ]
+    },
+  {
+      id: 54,
+      nume: "Marturie magnetica cu colturi rotunjite+saculet",
+      categorie: "Marturii",
+      pret: 7,
+      poze: [
+        "images/products/unicorn.jpg",
+        "images/products/unicorn1.jpg"
+      ]
+    },
+  {
+      id: 55,
+      nume: "Marturie magnetica pink",
+      categorie: "Marturii",
+      pret: 6,
+      poze: [
+        "images/products/familie.jpg",
+        "images/products/familie1.jpg"
+      ]
+    },
+  {
+    id: 56,
+    nume: "Marturie magnetica cu plic si accesoriu",
     categorie: "Marturii",
     pret: 7.5,
     poze: [
-      "images/products/marturieforma.jpg",
-      "images/products/marturieforma1.jpg",
-      "images/products/marturieforma2.jpg",
-      "images/products/marturieforma3.jpg"
-    ]
-  },
-  
-
-  {
-    id: 47,
-    nume: "Etichete pentru marturii",
-    categorie: "Marturii",
-    pret: 1.5,
-    poze: [
-      "images/products/etichete.jpg",
-      "images/products/etichete1.jpg"
+      "images/products/ionut.jpg",
+      "images/products/ionu1.jpg",
+      "images/products/ionut2.jpg",
+      "images/products/ionut3.jpg"
     ]
   },
   {
-    id: 48,
-    nume: "Marturie magnetica Urs",
-    categorie: "Marturii",
-    pret: 5.5,
-    poze: [
-      "images/products/mai.jpg",
-      "images/products/mai1.jpg"
-    ]
-  },
-  {
-    id: 49,
-    nume: "Marturie magnetica Blue",
-    categorie: "Marturii",
-    pret: 5.5,
-    poze: [
-      "images/products/luca.jpg",
-      "images/products/luca1.jpg",
-      "images/products/luca2.jpg"
-    ]
-  },
-  {
-    id: 50,
-    nume: "Marturie magnetica Safari",
-    categorie: "Marturii",
-    pret: 4.5,
-    poze: [
-      "images/products/safari.jpg",
-      "images/products/safari1.jpg"
-    ]
-  },
-  {
-    id: 51,
-    nume: "Marturii magnet pe forma+mini ciocolatica",
-    categorie: "Marturii",
-    pret: 12,
-    poze: [
-      "images/products/bomboana.jpg",
-      "images/products/bomboana1.jpg"
-    ]
-  },
-  {
-    id: 52,
-    nume: "Evantai",
-    categorie: "Marturii",
-    pret: 4.5,
-    poze: [
-      "images/products/evantai.jpg"
-    ]
-  },
-  {
-    id: 53,
-    nume: "Marturie magnetica fluture",
-    categorie: "Marturii",
-    pret: 5.5,
-    poze: [
-      "images/products/fluture.jpg",
-      "images/products/fluture1.jpg",
-      "images/products/fluture2.jpg"
-    ]
-  },
-  {
-    id: 54,
-    nume: "Marturie magnetica cu colturi rotunjite+saculet",
+    id: 57,
+    nume: "Marturii magnetice cu colturi rotunjite: Stitch and Angel",
     categorie: "Marturii",
     pret: 7,
     poze: [
-      "images/products/unicorn.jpg",
-      "images/products/unicorn1.jpg"
+      "images/products/marturies.jpg",
+      "images/products/marturies1.jpg",
+      "images/products/marturies2.jpg"
     ]
   },
   {
-    id: 55,
-    nume: "Marturie magnetica pink",
-    categorie: "Marturii",
-    pret: 6,
-    poze: [
-      "images/products/familie.jpg",
-      "images/products/familie1.jpg"
-    ]
-  },
-
-{
-  id: 56,
-  nume: "Marturie magnetica cu plic si accesoriu",
-  categorie: "Marturii",
-  pret: 7.5,
-  poze: [
-    "images/products/ionut.jpg",
-    "images/products/ionu1.jpg",
-    "images/products/ionut2.jpg",
-    "images/products/ionut3.jpg"
-  ]
-},
-
-{
-  id: 57,
-  nume: "Marturii magnetice cu colturi rotunjite: Stitch and Angel",
-  categorie: "Marturii",
-  pret: 7,
-  poze: [
-    "images/products/marturies.jpg",
-    "images/products/marturies1.jpg",
-    "images/products/marturies2.jpg"
-  ]
-},
-
-{
-  id: 58,
-  nume: "Marturie magnetica: Regele Leu",
-  categorie: "Marturii",
-  pret: 4.5,
-  poze: [
-    "images/products/elias.jpg",
-    "images/products/elias1.jpg",
-    "images/products/elias2.jpg"
-  ]
-},
-
-{
-  id: 59,
-  nume: "Etichete marturii autoadezive (5x3cm)",
-  categorie: "Marturii",
-  pret: 1,
-  poze: [
-    "images/products/balon.jpg"
-  ]
-},
-
-{
-  id: 60,
-  nume: "Etichete rotunde (A4) autoadezive",
-  categorie: "Marturii",
-  pret: 20,
-  poze: [
-    "images/products/eti.jpg"
-  ]
-},
-
-{
-  id: 61,
-  nume: "Etichete pentru marturii 3D caricatura",
-  categorie: "Marturii",
-  pret: 2,
-  poze: [
-    "images/products/cari.jpg",
-    "images/products/cari1.jpg"
-  ]
-},
-
-{
-  id: 62,
-  nume: "Marturii curcubeu+saculet+eticheta personalizata",
-  categorie: "Marturii",
-  pret: 8.5,
-  poze: [
-    "images/products/curcubeu.jpg",
-    "images/products/curcubeu1.jpg",
-    "images/products/curcubeu2.jpg",
-    "images/products/curcubeu3.jpg"
-  ]
-},
-
-{
-  id: 63,
-  nume: "Ciocolata personalizata",
-  categorie: "Marturii",
-  pret: 20,
-  poze: [
-    "images/products/cioco.jpg",
-    "images/products/cioco1.jpg"
-  ]
-},
-
-{
-  id: 64,
-  nume: "Marturie magnetica Balon",
-  categorie: "Marturii",
-  pret: 7.5,
-  poze: [
-    "images/products/nicolo.jpg",
-    "images/products/nicolo1.jpg",
-    "images/products/nicolo2.jpg",
-    "images/products/nicolo3.jpg"
-  ]
-},
-
-{
-  id: 65,
-  nume: "Marturie ciocolata (se personalizeaza cu orice tematica)",
-  categorie: "Marturii",
-  pret: 7,
-  poze: [
-    "images/products/mini.jpg"
-  ]
-},
-
-{
-  id: 66,
-  nume: "Insigna Bride",
-  categorie: "Marturii",
-  pret: 20,
-  poze: [
-    "images/products/insi.jpg"
-  ]
-},
-
-{
-  id: 67,
-  nume: "Marturie magnetica: Harry Potter",
-  categorie: "Marturii",
-  pret: 4.5,
-  poze: [
-    "images/products/harry.jpg",
-    "images/products/harry1.jpg"
-  ]
-},
-
-{
-  id: 68,
-  nume: "Marturie magnetica cu iconita",
-  categorie: "Marturii",
-  pret: 4.5,
-  poze: [
-    "images/products/icoana.jpg"
-  ]
-},
-
-{
-  id: 69,
-  nume: "Marturie magnetica jungla",
-  categorie: "Marturii",
-  pret: 4.5,
-  poze: [
-    "images/products/masina.jpg",
-    "images/products/masina1.jpg"
-  ]
-},
-
-{
-  id: 70,
-  nume: "Marturie magnetica simpla",
-  categorie: "Marturii",
-  pret: 4.5,
-  poze: [
-    "images/products/poza.jpg",
-    "images/products/poza1.jpg"
-  ]
-},
-
-{
-  id: 71,
-  nume: "Marturie magnetica Minnie Mouse 2",
-  categorie: "Marturii",
-  pret: 4.5,
-  poze: [
-    "images/products/minnie.jpg",
-    "images/products/minnie1.jpg"
-  ]
-},
-
-{
-  id: 72,
-  nume: "Marturie magnetica Bear",
-  categorie: "Marturii",
-  pret: 4.5,
-  poze: [
-    "images/products/bec.jpg",
-    "images/products/bec1.jpg"
-  ]
-},
-
-{
-  id: 73,
-  nume: "Marturie magnetica Zana",
-  categorie: "Marturii",
-  pret: 4.5,
-  poze: [
-    "images/products/zanik.jpg",
-    "images/products/zanik1.jpg"
-  ]
-},
-
-{
-  id: 74,
-  nume: "Marturie ciocolata mare",
-  categorie: "Marturii",
-  pret: 20,
-  poze: [
-    "images/products/septembrie.jpg",
-    "images/products/septembrie1.jpg",
-    "images/products/septembrie2.jpg"
-  ]
-},
-
-{
-  id: 75,
-  nume: "Marturie ciocolata mare2",
-  categorie: "Marturii",
-  pret: 20,
-  poze: [
-    "images/products/karina.jpg",
-    "images/products/karina1.jpg",
-    "images/products/karina2.jpg"
-  ]
-},
-
-{
-  id: 76,
-  nume: "Marturie magnetica 2",
-  categorie: "Marturii",
-  pret: 4.5,
-  poze: [
-    "images/products/eric.jpg",
-    "images/products/eric1.jpg"
-  ]
-},
-
-{
-  id: 77,
-  nume: "Marturie magnetica: Girafa",
-  categorie: "Marturii",
-  pret: 4.5,
-  poze: [
-    "images/products/girafa.jpg",
-    "images/products/girafa1.jpg",
-    "images/products/girafa2.jpg",
-    "images/products/girafa3.jpg"
-  ]
-},
-
-{
-  id: 78,
-  nume: "Eticheta personalizata autoadeziva",
-  categorie: "Marturii",
-  pret: 2,
-  poze: [
-    "images/products/tuica.jpg",
-    "images/products/tuica1.jpg"
-  ]
-},
-
-{
-  id: 79,
-  nume: "Marturie magnetica Mickey Mouse",
-  categorie: "Marturii",
-  pret: 4.5,
-  poze: [
-    "images/products/feb.jpg",
-    "images/products/feb1.jpg"
-  ]
-},
-
-{
-  id: 80,
-  nume: "Marturie magnetica: Briosa",
-  categorie: "Marturii",
-  pret: 4.5,
-  poze: [
-    "images/products/praji.jpg",
-    "images/products/praji1.jpg"
-  ]
-},
-
-{
-  id: 81,
-  nume: "Marturie magnetica: Elefant",
-  categorie: "Marturii",
-  pret: 4.5,
-  poze: [
-    "images/products/elefante.jpg",
-    "images/products/elefante1.jpg"
-  ]
-},
-
-{
-  id: 82,
-  nume: "Marturie magnetica Winnie",
-  categorie: "Marturii",
-  pret: 4.5,
-  poze: [
-    "images/products/craciun.jpg",
-    "images/products/craciun1.jpg",
-    "images/products/craciun2.jpg"
-  ]
-},
-
-{
-  id: 83,
-  nume: "Marturie magnetica: Minnie Mouse mov",
-  categorie: "Marturii",
-  pret: 4.5,
-  poze: [
-    "images/products/minniemov.jpg",
-    "images/products/minniemov1.jpg"
-  ]
-},
-
-{
-  id: 84,
-  nume: "Marturie magnetica: Unicorn curcubeu",
-  categorie: "Marturii",
-  pret: 4.5,
-  poze: [
-    "images/products/unic.jpg",
-    "images/products/unic1.jpg"
-  ]
-},
-
-{
-  id: 85,
-  nume: "Marturie magnetica: Lebada",
-  categorie: "Marturii",
-  pret: 4.5,
-  poze: [
-    "images/products/lebada.jpg",
-    "images/products/lebada1.jpg"
-  ]
-},
-{
-    id: 86,
-    nume: "Marturie magnetica: Minnie Mouse rosu",
+    id: 58,
+    nume: "Marturie magnetica: Regele Leu",
     categorie: "Marturii",
     pret: 4.5,
     poze: [
-        "images/products/rosu.jpg",
-        "images/products/rosu1.jpg"
+      "images/products/elias.jpg",
+      "images/products/elias1.jpg",
+      "images/products/elias2.jpg"
     ]
-},
-{
-    id: 87,
-    nume: "Marturie magnetica: Unicorn butterfly",
+  },
+  {
+    id: 59,
+    nume: "Etichete marturii autoadezive (5x3cm)",
     categorie: "Marturii",
-    pret: 4.5,
+    pret: 1,
     poze: [
-        "images/products/alma.jpg",
-        "images/products/alma1.jpg"
+      "images/products/balon.jpg"
     ]
-},
-{
-    id: 88,
-    nume: "Marturie magnetica: Ingeras",
+  },
+  {
+    id: 60,
+    nume: "Etichete rotunde (A4) autoadezive",
     categorie: "Marturii",
-    pret: 4.5,
+    pret: 20,
     poze: [
-        "images/products/ingerass.jpg"
+      "images/products/eti.jpg"
     ]
-},
- {
-    id: 89,
-    nume: "Marturie magnetica: Baby boss",
+  },
+  {
+    id: 61,
+    nume: "Etichete pentru marturii 3D caricatura",
     categorie: "Marturii",
-    pret: 4.5,
+    pret: 2,
     poze: [
-        "images/products/babyboss.jpg",
-        "images/products/babyboss1.jpg"
+      "images/products/cari.jpg",
+      "images/products/cari1.jpg"
     ]
-},
-{
-    id: 90,
-    nume: "Marturie magnetica: Sirena",
+  },
+  {
+    id: 62,
+    nume: "Marturii curcubeu+saculet+eticheta personalizata",
     categorie: "Marturii",
-    pret: 4.5,
+    pret: 8.5,
     poze: [
-        "images/products/sirena.jpg"
+      "images/products/curcubeu.jpg",
+      "images/products/curcubeu1.jpg",
+      "images/products/curcubeu2.jpg",
+      "images/products/curcubeu3.jpg"
     ]
-},
-{
-    id: 91,
-    nume: "Marturie magnetica: Pisicuta Marie",
+  },
+  {
+    id: 63,
+    nume: "Ciocolata personalizata",
     categorie: "Marturii",
-    pret: 4.5,
+    pret: 20,
     poze: [
-        "images/products/marie.jpg"
-    ]
-},
-  
-  
-  {
-    id: 43,
-    nume: "Set moț – Căsuța cu ciupercuțe",
-    categorie: "Set Mot",
-    pret: 230,
-    poze: [
-      "images/products/setmot.jpg",
-      "images/products/setmot1.jpg",
-      "images/products/setmot2.jpg",
-      "images/products/setmot3.jpg",
-      "images/products/setmot4.jpg",
-      "images/products/setmot5.jpg",
-      "images/products/setmot6.jpg",
-      "images/products/setmot7.jpg",
-      "images/products/setmot8.jpg"
+      "images/products/cioco.jpg",
+      "images/products/cioco1.jpg"
     ]
   },
   {
-    id: 92,
-    nume: "Set mot - Gabby",
-    categorie: "Set Mot",
-    pret: 230,
+    id: 64,
+    nume: "Marturie magnetica Balon",
+    categorie: "Marturii",
+    pret: 7.5,
     poze: [
-        "images/products/gabby.jpg",
-        "images/products/gabby1.jpg",
-        "images/products/gabby2.jpg",
-        "images/products/gabby3.jpg",
-        "images/products/gabby4.jpg"
-    ]
-},
-  {
-    id: 93,
-    nume: "Set mot - Ferma",
-    categorie: "Set Mot",
-    pret: 230,
-    poze: [
-        "images/products/ferma.jpg",
-        "images/products/ferma1.jpg"
-    ]
-},
-{
-    id: 94,
-    nume: "Set mot - Curcubeu",
-    categorie: "Set Mot",
-    pret: 230,
-    poze: [
-        "images/products/anais.jpg",
-        "images/products/anais1.jpg",
-        "images/products/anais2.jpg",
-        "images/products/anais3.jpg",
-        "images/products/anais4.jpg",
-        "images/products/anais5.jpg"
-    ]
-},
-  {
-    id: 95,
-    nume: "Set mot - Marinar",
-    categorie: "Set Mot",
-    pret: 230,
-    descriere: "Caricatura se achita separat: +30 lei/persoana",
-    poze: [
-        "images/products/marinar.jpg",
-        "images/products/marinar1.jpg",
-        "images/products/marinar2.jpg",
-        "images/products/marinar3.jpg",
-        "images/products/marinar4.jpg",
-        "images/products/marinar5.jpg",
-        "images/products/marinar6.jpg"
-    ]
-},
-  {
-    id: 96,
-    nume: "Set mot - Bluey si Bingo",
-    categorie: "Set Mot",
-    pret: 230,
-    poze: [
-        "images/products/blue.jpg",
-        "images/products/blue1.jpg",
-        "images/products/blue2.jpg",
-        "images/products/blue3.jpg",
-        "images/products/blue4.jpg",
-        "images/products/blue5.jpg"
-    ]
-},
-  {
-    id: 97,
-    nume: "Set mot - Traditional",
-    categorie: "Set Mot",
-    pret: 230,
-    poze: [
-        "images/products/traditie.jpg",
-        "images/products/traditie1.jpg",
-        "images/products/traditie2.jpg",
-        "images/products/traditie3.jpg",
-        "images/products/traditie4.jpg"
-    ]
-},
-  {
-    id: 98,
-    nume: "Set mot - Harry Potter",
-    categorie: "Set Mot",
-    pret: 230,
-    poze: [
-        "images/products/har.jpg",
-        "images/products/har1.jpg",
-        "images/products/har2.jpg",
-        "images/products/har3.jpg"
-    ]
-},
-{
-    id: 99,
-    nume: "Set mot - Pompier",
-    categorie: "Set Mot",
-    pret: 230,
-    poze: [
-        "images/products/david.jpg",
-        "images/products/david1.jpg",
-        "images/products/david2.jpg",
-        "images/products/david3.jpg",
-        "images/products/david4.jpg",
-        "images/products/david5.jpg"
-    ]
-},
-  {
-    id: 100,
-    nume: "Set mot - Minnie Mouse pink",
-    categorie: "Set Mot",
-    pret: 230,
-    poze: [
-        "images/products/minn.jpg",
-        "images/products/minn1.jpg",
-        "images/products/minn2.jpg",
-        "images/products/minn3.jpg",
-        "images/products/minn4.jpg",
-        "images/products/minn5.jpg",
-        "images/products/minn6.jpg"
-    ]
-},
-  {
-    id: 101,
-    nume: "Set mot - Cocomelon",
-    categorie: "Set Mot",
-    pret: 230,
-    descriere: "+45 lei pahar",
-    poze: [
-        "images/products/coco.jpg",
-        "images/products/coco1.jpg",
-        "images/products/coco2.jpg",
-        "images/products/coco3.jpg",
-        "images/products/coco4.jpg",
-        "images/products/coco5.jpg",
-        "images/products/coco6.jpg",
-        "images/products/coco7.jpg"
-    ]
-},
-  {
-    id: 102,
-    nume: "Set mot - Zana",
-    categorie: "Set Mot",
-    pret: 230,
-    poze: [
-        "images/products/zana.jpg"
-    ]
-},
-{
-    id: 103,
-    nume: "Set mot - Winnie",
-    categorie: "Set Mot",
-    pret: 230,
-    poze: [
-        "images/products/filip.jpg"
-    ]
-},
-  {
-    id: 104,
-    nume: "Set mot - Vanator",
-    categorie: "Set Mot",
-    pret: 230,
-    poze: [
-        "images/products/vanator.jpg"
-    ]
-},
-  {
-    id: 105,
-    nume: "Set mot - Sirena",
-    categorie: "Set Mot",
-    pret: 230,
-    poze: [
-        "images/products/medeea.jpg"
-    ]
-},
-  {
-    id: 106,
-    nume: "Set mot - Toamna",
-    categorie: "Set Mot",
-    pret: 230,
-    poze: [
-        "images/products/toamna.jpg"
-    ]
-},
- {
-    id: 107,
-    nume: "Set mot - Stitch and Angel",
-    categorie: "Set Mot",
-    pret: 230,
-    poze: [
-        "images/products/angel.jpg"
-    ]
-},
-  {
-    id: 108,
-    nume: "Set mot - Girafa",
-    categorie: "Set Mot",
-    pret: 230,
-    poze: [
-        "images/products/gi.jpg"
-    ]
-},
-  {
-    id: 109,
-    nume: "Set mot - Ferma 2",
-    categorie: "Set Mot",
-    pret: 230,
-    poze: [
-        "images/products/ioan.jpg"
-    ]
-},
-  {
-    id: 110,
-    nume: "Set mot - Princess",
-    categorie: "Set Mot",
-    pret: 230,
-    poze: [
-        "images/products/princess.jpg"
-    ]
-},
-  {
-    id: 111,
-    nume: "Set mot - Safari",
-    categorie: "Set Mot",
-    pret: 230,
-    poze: [
-        "images/products/jungla.jpg"
-    ]
-},
-  {
-    id: 112,
-    nume: "Set mot - Paienjenel",
-    categorie: "Set Mot",
-    pret: 230,
-    poze: [
-        "images/products/paienjenel.jpg"
-    ]
-},
- {
-    id: 113,
-    nume: "Pahar Minnie Mouse",
-    categorie: "Pahare",
-    pret: 45,
-    poze: [
-        "images/products/amalia.jpg",
-        "images/products/amalia1.jpg"
-    ]
-},
-  {
-    id: 114,
-    nume: "Pahar cu poza",
-    categorie: "Pahare",
-    pret: 45,
-    poze: [
-        "images/products/pp.jpg",
-        "images/products/pp1.jpg",
-        "images/products/pp2.jpg"
-    ]
-},
-{
-    id: 115,
-    nume: "Pahar tematica urs",
-    categorie: "Pahare",
-    pret: 45,
-    poze: [
-        "images/products/zi.jpg",
-        "images/products/zi1.jpg",
-        "images/products/zi2.jpg"
-    ]
-},
-  {
-    id: 116,
-    nume: "Pahar nunta verde",
-    categorie: "Pahare",
-    pret: 45,
-    poze: [
-        "images/products/oo.jpg",
-        "images/products/oo1.jpg",
-        "images/products/oo2.jpg",
-        "images/products/oo3.jpg",
-        "images/products/oo4.jpg",
-        "images/products/oo5.jpg"
-    ]
-},
-  {
-    id: 117,
-    nume: "Pahar cu caricatura",
-    categorie: "Pahare",
-    pret: 55,
-    poze: [
-        "images/products/caricatura.jpg",
-        "images/products/caricatura1.jpg",
-        "images/products/caricatura2.jpg",
-        "images/products/caricatura3.jpg",
-        "images/products/caricatura4.jpg"
-    ]
-},
-  {
-    id: 118,
-    nume: "Pahar cununie",
-    categorie: "Pahare",
-    pret: 45,
-    poze: [
-        "images/products/cununie.jpg",
-        "images/products/cununie1.jpg"
-    ]
-},
-  {
-    id: 119,
-    nume: "Pahare \"Vreti sa fiti nasii nostri?\" set 2 buc",
-    categorie: "Pahare",
-    pret: 80,
-    poze: [
-        "images/products/seet.jpg"
-    ]
-},
-  {
-    id: 120,
-    nume: "Pahar Stitch",
-    categorie: "Pahare",
-    pret: 45,
-    poze: [
-        "images/products/ggg.jpg"
-    ]
-},
-  {
-    id: 121,
-    nume: "Pahare nunta",
-    categorie: "Pahare",
-    pret: 45,
-    poze: [
-        "images/products/mica.jpg",
-        "images/products/mica1.jpg"
-    ]
-},
-  {
-    id: 122,
-    nume: "Pahar cu scris auriu personalizabil",
-    categorie: "Pahare",
-    pret: 40,
-    poze: [
-        "images/products/kk.jpg",
-        "images/products/kk1.jpg",
-        "images/products/kk2.jpg",
-        "images/products/kk3.jpg",
-        "images/products/kk4.jpg"
-    ]
-},
-  {
-    id: 123,
-    nume: "Invitatie botez verde",
-    categorie: "Botez",
-    pret: 3.5,
-    poze: [
-      "images/products/capp.jpg",
-      "images/products/capp1.jpg",
-      "images/products/capp2.jpg"
-    ]
-  },
-  
-  
-  {
-    id: 124,
-    nume: "Plic dar botez 1",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
-    poze: [
-      "images/products/aa.jpg",
-      "images/products/aa1.jpg"
+      "images/products/nicolo.jpg",
+      "images/products/nicolo1.jpg",
+      "images/products/nicolo2.jpg",
+      "images/products/nicolo3.jpg"
     ]
   },
   {
-    id: 125,
-    nume: "Plic dar botez 2",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
-    poze: [
-      "images/products/bbx.jpg",
-      "images/products/bbx1.jpg"
-    ]
-  },
-  {
-    id: 126,
-    nume: "Plic dar nunta 1",
-    categorie: "Plicuri dar nunta",
-    pret: 2.5,
-    poze: [
-      "images/products/and.jpg",
-      "images/products/and1.jpg"
-    ]
-  },
-  {
-    id: 127,
-    nume: "Plic botez 3",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
-    poze: [
-      "images/products/ffffffffffff.jpg"
-    ]
-  },
-  {
-    id: 128,
-    nume: "Plic botez 4",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
-    poze: [
-      "images/products/dfdf.jpg",
-      "images/products/dfdf1.jpg"
-    ]
-  },
-  {
-    id: 129,
-    nume: "Plic dar nunta 2",
-    categorie: "Plicuri dar nunta",
-    pret: 2.5,
-    poze: [
-      "images/products/cori.jpg",
-      "images/products/cori1.jpg"
-    ]
-  },
-  {
-    id: 130,
-    nume: "Plic dar nunta 3",
-    categorie: "Plicuri dar nunta",
-    pret: 2.5,
-    poze: [
-      "images/products/romica.jpg"
-    ]
-  },
-  {
-    id: 131,
-    nume: "Plic dar botez 5",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
-    poze: [
-      "images/products/verso.jpg",
-      "images/products/verso1.jpg",
-      "images/products/verso2.jpg"
-    ]
-  },
-  {
-    id: 132,
-    nume: "Plic dar botez 6",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
-    poze: [
-      "images/products/cxx.jpg"
-    ]
-  },
-  {
-    id: 133,
-    nume: "Plic dar botez 7",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
-    poze: [
-      "images/products/hj.jpg",
-      "images/products/hj1.jpg"
-    ]
-  },
-  {
-    id: 134,
-    nume: "Plic dar botez 8",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
-    poze: [
-      "images/products/crisss.jpg",
-      "images/products/crisss1.jpg"
-    ]
-  },
-  {
-    id: 135,
-    nume: "Plic dar mot",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
-    poze: [
-      "images/products/mo.jpg"
-    ]
-  },
-  {
-    id: 136,
-    nume: "Plic dar botez 10",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
-    poze: [
-      "images/products/ew.jpg",
-      "images/products/ew1.jpg"
-    ]
-  },
-
-  {
-    id: 137,
-    nume: "Plic dar botez 11",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
-    poze: [
-      "images/products/iib.jpg",
-      "images/products/iib1.jpg"
-    ]
-  },
-  {
-    id: 138,
-    nume: "Plic dar botez 12",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
-    poze: [
-      "images/products/rih.jpg",
-      "images/products/rih1.jpg"
-    ]
-  },
-  {
-    id: 139,
-    nume: "Plic dar botez 13",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
-    poze: [
-      "images/products/bea.jpg",
-      "images/products/bea1.jpg"
-    ]
-  },
-  {
-    id: 140,
-    nume: "Plic dar botez 14",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
-    poze: [
-      "images/products/via.jpg",
-      "images/products/via1.jpg"
-    ]
-  },
-  {
-    id: 141,
-    nume: "Plic dar botez 15",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
-    poze: [
-      "images/products/mi.jpg",
-      "images/products/mi1.jpg"
-    ]
-  },
-  {
-    id: 142,
-    nume: "Marturie magnetica-Balerina",
+    id: 65,
+    nume: "Marturie ciocolata (se personalizeaza cu orice tematica)",
     categorie: "Marturii",
     pret: 7,
     poze: [
-      "images/products/maiaioana.jpg",
-      "images/products/maiaioana1.jpg"
+      "images/products/mini.jpg"
     ]
   },
   {
-    id: 143,
-    nume: "Plic dar botez 16",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
+    id: 66,
+    nume: "Insigna Bride",
+    categorie: "Marturii",
+    pret: 20,
     poze: [
-      "images/products/ririx.jpg",
-      "images/products/ririx1.jpg"
+      "images/products/insi.jpg"
     ]
   },
   {
-    id: 144,
-    nume: "Plic dar botez 17",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
+    id: 67,
+    nume: "Marturie magnetica: Harry Potter",
+    categorie: "Marturii",
+    pret: 4.5,
     poze: [
-      "images/products/ehe.jpg",
-      "images/products/ehe1.jpg"
+      "images/products/harry.jpg",
+      "images/products/harry1.jpg"
     ]
   },
   {
-    id: 145,
-    nume: "Plic dar botez 18",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
+    id: 68,
+    nume: "Marturie magnetica cu iconita",
+    categorie: "Marturii",
+    pret: 4.5,
     poze: [
-      "images/products/pl.jpg",
-      "images/products/pl1.jpg"
+      "images/products/icoana.jpg"
     ]
   },
   {
-    id: 146,
-    nume: "Plic dar botez 19",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
+    id: 69,
+    nume: "Marturie magnetica jungla",
+    categorie: "Marturii",
+    pret: 4.5,
     poze: [
-      "images/products/plicux.jpg"
+      "images/products/masina.jpg",
+      "images/products/masina1.jpg"
     ]
   },
   {
-    id: 147,
-    nume: "Plic dar botez 20",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
+    id: 70,
+    nume: "Marturie magnetica simpla",
+    categorie: "Marturii",
+    pret: 4.5,
     poze: [
-      "images/products/acda.jpg",
-      "images/products/acda1.jpg"
+      "images/products/poza.jpg",
+      "images/products/poza1.jpg"
     ]
   },
   {
-    id: 148,
-    nume: "Plic dar botez 21",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
+    id: 71,
+    nume: "Marturie magnetica Minnie Mouse 2",
+    categorie: "Marturii",
+    pret: 4.5,
     poze: [
-      "images/products/gk.jpg",
-      "images/products/gk1.jpg"
+      "images/products/minnie.jpg",
+      "images/products/minnie1.jpg"
     ]
   },
   {
-    id: 149,
-    nume: "Plic dar botez 22",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
+    id: 72,
+    nume: "Marturie magnetica Bear",
+    categorie: "Marturii",
+    pret: 4.5,
     poze: [
-      "images/products/cacv.jpg"
+      "images/products/bec.jpg",
+      "images/products/bec1.jpg"
     ]
   },
   {
-    id: 150,
-    nume: "Plic dar botez 23",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
+    id: 73,
+    nume: "Marturie magnetica Zana",
+    categorie: "Marturii",
+    pret: 4.5,
     poze: [
-      "images/products/bubui.jpg",
-      "images/products/bubui1.jpg"
+      "images/products/zanik.jpg",
+      "images/products/zanik1.jpg"
     ]
   },
   {
-    id: 151,
-    nume: "Plic dar botez 24",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
+    id: 74,
+    nume: "Marturie ciocolata mare",
+    categorie: "Marturii",
+    pret: 20,
     poze: [
-      "images/products/lolo.jpg",
-      "images/products/lolo1.jpg"
+      "images/products/septembrie.jpg",
+      "images/products/septembrie1.jpg",
+      "images/products/septembrie2.jpg"
     ]
   },
   {
-    id: 152,
-    nume: "Plic dar botez 25",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
+    id: 75,
+    nume: "Marturie ciocolata mare2",
+    categorie: "Marturii",
+    pret: 20,
     poze: [
-      "images/products/carus.jpg",
-      "images/products/carus1.jpg"
+      "images/products/karina.jpg",
+      "images/products/karina1.jpg",
+      "images/products/karina2.jpg"
     ]
   },
   {
-    id: 153,
-    nume: "Plic dar botez 26",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
+    id: 76,
+    nume: "Marturie magnetica 2",
+    categorie: "Marturii",
+    pret: 4.5,
     poze: [
-      "images/products/elphi.jpg"
+      "images/products/eric.jpg",
+      "images/products/eric1.jpg"
     ]
   },
   {
-    id: 154,
-    nume: "Plic dar botez 27",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
+    id: 77,
+    nume: "Marturie magnetica: Girafa",
+    categorie: "Marturii",
+    pret: 4.5,
     poze: [
-      "images/products/gigic.jpg"
+      "images/products/girafa.jpg",
+      "images/products/girafa1.jpg",
+      "images/products/girafa2.jpg",
+      "images/products/girafa3.jpg"
     ]
   },
   {
-    id: 155,
-    nume: "Plic dar botez 28",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
+    id: 78,
+    nume: "Eticheta personalizata autoadeziva",
+    categorie: "Marturii",
+    pret: 2,
     poze: [
-      "images/products/nnn.jpg",
-      "images/products/nnn1.jpg"
+      "images/products/tuica.jpg",
+      "images/products/tuica1.jpg"
     ]
   },
   {
-    id: 156,
-    nume: "Plic dar botez 29",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
+    id: 79,
+    nume: "Marturie magnetica Mickey Mouse",
+    categorie: "Marturii",
+    pret: 4.5,
     poze: [
-      "images/products/dudu.jpg"
+      "images/products/feb.jpg",
+      "images/products/feb1.jpg"
     ]
   },
   {
-    id: 157,
-    nume: "Invitatie botez fetita Safari",
-    categorie: "Botez",
-    pret: 3.5,
+    id: 80,
+    nume: "Marturie magnetica: Briosa",
+    categorie: "Marturii",
+    pret: 4.5,
     poze: [
-      "images/products/pupuy.jpg",
-      "images/products/pupuy1.jpg",
-      "images/products/pupuy2.jpg"
+      "images/products/praji.jpg",
+      "images/products/praji1.jpg"
     ]
   },
   {
-    id: 158,
-    nume: "Plic dar nunta 4",
-    categorie: "Plicuri dar nunta",
-    pret: 2.5,
+    id: 81,
+    nume: "Marturie magnetica: Elefant",
+    categorie: "Marturii",
+    pret: 4.5,
     poze: [
-      "images/products/crih.jpg",
-      "images/products/crih1.jpg"
-    ]
-  },,
-  {
-    id: 159,
-    nume: "Plic dar nunta 5",
-    categorie: "Plicuri dar nunta",
-    pret: 2.5,
-    poze: [
-      "images/products/a00.jpg"
-    ]
-  },,
-  {
-    id: 160,
-    nume: "Plic dar nunta 6",
-    categorie: "Plicuri dar nunta",
-    pret: 2.5,
-    poze: [
-      "images/products/ionelasivictor.jpg",
-      "images/products/ionelasivictor1.jpg"
-    ]
-  },,
-  {
-    id: 161,
-    nume: "Plic dar nunta 7",
-    categorie: "Plicuri dar nunta",
-    pret: 2.5,
-    poze: [
-      "images/products/udi.jpg",
-      "images/products/udi1.jpg"
-    ]
-  },,
-  {
-    id: 162,
-    nume: "Plic dar nunta 8",
-    categorie: "Plicuri dar nunta",
-    pret: 2.5,
-    poze: [
-      "images/products/simomo.jpg",
-      "images/products/simomo1.jpg"
+      "images/products/elefante.jpg",
+      "images/products/elefante1.jpg"
     ]
   },
+  {
+    id: 82,
+    nume: "Marturie magnetica Winnie",
+    categorie: "Marturii",
+    pret: 4.5,
+    poze: [
+      "images/products/craciun.jpg",
+      "images/products/craciun1.jpg",
+      "images/products/craciun2.jpg"
+    ]
+  },
+  {
+    id: 83,
+    nume: "Marturie magnetica: Minnie Mouse mov",
+    categorie: "Marturii",
+    pret: 4.5,
+    poze: [
+      "images/products/minniemov.jpg",
+      "images/products/minniemov1.jpg"
+    ]
+  },
+  {
+    id: 84,
+    nume: "Marturie magnetica: Unicorn curcubeu",
+    categorie: "Marturii",
+    pret: 4.5,
+    poze: [
+      "images/products/unic.jpg",
+      "images/products/unic1.jpg"
+    ]
+  },
+  {
+    id: 85,
+    nume: "Marturie magnetica: Lebada",
+    categorie: "Marturii",
+    pret: 4.5,
+    poze: [
+      "images/products/lebada.jpg",
+      "images/products/lebada1.jpg"
+    ]
+  },
+  {
+      id: 86,
+      nume: "Marturie magnetica: Minnie Mouse rosu",
+      categorie: "Marturii",
+      pret: 4.5,
+      poze: [
+          "images/products/rosu.jpg",
+          "images/products/rosu1.jpg"
+      ]
+  },
+  {
+      id: 87,
+      nume: "Marturie magnetica: Unicorn butterfly",
+      categorie: "Marturii",
+      pret: 4.5,
+      poze: [
+          "images/products/alma.jpg",
+          "images/products/alma1.jpg"
+      ]
+  },
+  {
+      id: 88,
+      nume: "Marturie magnetica: Ingeras",
+      categorie: "Marturii",
+      pret: 4.5,
+      poze: [
+          "images/products/ingerass.jpg"
+      ]
+  },
+  {
+      id: 89,
+      nume: "Marturie magnetica: Baby boss",
+      categorie: "Marturii",
+      pret: 4.5,
+      poze: [
+          "images/products/babyboss.jpg",
+          "images/products/babyboss1.jpg"
+      ]
+  },
+  {
+      id: 90,
+      nume: "Marturie magnetica: Sirena",
+      categorie: "Marturii",
+      pret: 4.5,
+      poze: [
+          "images/products/sirena.jpg"
+      ]
+  },
+  {
+      id: 91,
+      nume: "Marturie magnetica: Pisicuta Marie",
+      categorie: "Marturii",
+      pret: 4.5,
+      poze: [
+          "images/products/marie.jpg"
+      ]
+  },
+  {
+      id: 43,
+      nume: "Set moț – Căsuța cu ciupercuțe",
+      categorie: "Set Mot",
+      pret: 230,
+      poze: [
+        "images/products/setmot.jpg",
+        "images/products/setmot1.jpg",
+        "images/products/setmot2.jpg",
+        "images/products/setmot3.jpg",
+        "images/products/setmot4.jpg",
+        "images/products/setmot5.jpg",
+        "images/products/setmot6.jpg",
+        "images/products/setmot7.jpg",
+        "images/products/setmot8.jpg"
+      ]
+    },
+  {
+      id: 92,
+      nume: "Set mot - Gabby",
+      categorie: "Set Mot",
+      pret: 230,
+      poze: [
+          "images/products/gabby.jpg",
+          "images/products/gabby1.jpg",
+          "images/products/gabby2.jpg",
+          "images/products/gabby3.jpg",
+          "images/products/gabby4.jpg"
+      ]
+  },
+  {
+      id: 93,
+      nume: "Set mot - Ferma",
+      categorie: "Set Mot",
+      pret: 230,
+      poze: [
+          "images/products/ferma.jpg",
+          "images/products/ferma1.jpg"
+      ]
+  },
+  {
+      id: 94,
+      nume: "Set mot - Curcubeu",
+      categorie: "Set Mot",
+      pret: 230,
+      poze: [
+          "images/products/anais.jpg",
+          "images/products/anais1.jpg",
+          "images/products/anais2.jpg",
+          "images/products/anais3.jpg",
+          "images/products/anais4.jpg",
+          "images/products/anais5.jpg"
+      ]
+  },
+  {
+      id: 95,
+      nume: "Set mot - Marinar",
+      categorie: "Set Mot",
+      pret: 230,
+      descriere: "Caricatura se achita separat: +30 lei/persoana",
+      poze: [
+          "images/products/marinar.jpg",
+          "images/products/marinar1.jpg",
+          "images/products/marinar2.jpg",
+          "images/products/marinar3.jpg",
+          "images/products/marinar4.jpg",
+          "images/products/marinar5.jpg",
+          "images/products/marinar6.jpg"
+      ]
+  },
+  {
+      id: 96,
+      nume: "Set mot - Bluey si Bingo",
+      categorie: "Set Mot",
+      pret: 230,
+      poze: [
+          "images/products/blue.jpg",
+          "images/products/blue1.jpg",
+          "images/products/blue2.jpg",
+          "images/products/blue3.jpg",
+          "images/products/blue4.jpg",
+          "images/products/blue5.jpg"
+      ]
+  },
+  {
+      id: 97,
+      nume: "Set mot - Traditional",
+      categorie: "Set Mot",
+      pret: 230,
+      poze: [
+          "images/products/traditie.jpg",
+          "images/products/traditie1.jpg",
+          "images/products/traditie2.jpg",
+          "images/products/traditie3.jpg",
+          "images/products/traditie4.jpg"
+      ]
+  },
+  {
+      id: 98,
+      nume: "Set mot - Harry Potter",
+      categorie: "Set Mot",
+      pret: 230,
+      poze: [
+          "images/products/har.jpg",
+          "images/products/har1.jpg",
+          "images/products/har2.jpg",
+          "images/products/har3.jpg"
+      ]
+  },
+  {
+      id: 99,
+      nume: "Set mot - Pompier",
+      categorie: "Set Mot",
+      pret: 230,
+      poze: [
+          "images/products/david.jpg",
+          "images/products/david1.jpg",
+          "images/products/david2.jpg",
+          "images/products/david3.jpg",
+          "images/products/david4.jpg",
+          "images/products/david5.jpg"
+      ]
+  },
+  {
+      id: 100,
+      nume: "Set mot - Minnie Mouse pink",
+      categorie: "Set Mot",
+      pret: 230,
+      poze: [
+          "images/products/minn.jpg",
+          "images/products/minn1.jpg",
+          "images/products/minn2.jpg",
+          "images/products/minn3.jpg",
+          "images/products/minn4.jpg",
+          "images/products/minn5.jpg",
+          "images/products/minn6.jpg"
+      ]
+  },
+  {
+      id: 101,
+      nume: "Set mot - Cocomelon",
+      categorie: "Set Mot",
+      pret: 230,
+      descriere: "+45 lei pahar",
+      poze: [
+          "images/products/coco.jpg",
+          "images/products/coco1.jpg",
+          "images/products/coco2.jpg",
+          "images/products/coco3.jpg",
+          "images/products/coco4.jpg",
+          "images/products/coco5.jpg",
+          "images/products/coco6.jpg",
+          "images/products/coco7.jpg"
+      ]
+  },
+  {
+      id: 102,
+      nume: "Set mot - Zana",
+      categorie: "Set Mot",
+      pret: 230,
+      poze: [
+          "images/products/zana.jpg"
+      ]
+  },
+  {
+      id: 103,
+      nume: "Set mot - Winnie",
+      categorie: "Set Mot",
+      pret: 230,
+      poze: [
+          "images/products/filip.jpg"
+      ]
+  },
+  {
+      id: 104,
+      nume: "Set mot - Vanator",
+      categorie: "Set Mot",
+      pret: 230,
+      poze: [
+          "images/products/vanator.jpg"
+      ]
+  },
+  {
+      id: 105,
+      nume: "Set mot - Sirena",
+      categorie: "Set Mot",
+      pret: 230,
+      poze: [
+          "images/products/medeea.jpg"
+      ]
+  },
+  {
+      id: 106,
+      nume: "Set mot - Toamna",
+      categorie: "Set Mot",
+      pret: 230,
+      poze: [
+          "images/products/toamna.jpg"
+      ]
+  },
+  {
+      id: 107,
+      nume: "Set mot - Stitch and Angel",
+      categorie: "Set Mot",
+      pret: 230,
+      poze: [
+          "images/products/angel.jpg"
+      ]
+  },
+  {
+      id: 108,
+      nume: "Set mot - Girafa",
+      categorie: "Set Mot",
+      pret: 230,
+      poze: [
+          "images/products/gi.jpg"
+      ]
+  },
+  {
+      id: 109,
+      nume: "Set mot - Ferma 2",
+      categorie: "Set Mot",
+      pret: 230,
+      poze: [
+          "images/products/ioan.jpg"
+      ]
+  },
+  {
+      id: 110,
+      nume: "Set mot - Princess",
+      categorie: "Set Mot",
+      pret: 230,
+      poze: [
+          "images/products/princess.jpg"
+      ]
+  },
+  {
+      id: 111,
+      nume: "Set mot - Safari",
+      categorie: "Set Mot",
+      pret: 230,
+      poze: [
+          "images/products/jungla.jpg"
+      ]
+  },
+  {
+      id: 112,
+      nume: "Set mot - Paienjenel",
+      categorie: "Set Mot",
+      pret: 230,
+      poze: [
+          "images/products/paienjenel.jpg"
+      ]
+  },
+  {
+      id: 113,
+      nume: "Pahar Minnie Mouse",
+      categorie: "Pahare",
+      pret: 45,
+      poze: [
+          "images/products/amalia.jpg",
+          "images/products/amalia1.jpg"
+      ]
+  },
+  {
+      id: 114,
+      nume: "Pahar cu poza",
+      categorie: "Pahare",
+      pret: 45,
+      poze: [
+          "images/products/pp.jpg",
+          "images/products/pp1.jpg",
+          "images/products/pp2.jpg"
+      ]
+  },
+  {
+      id: 115,
+      nume: "Pahar tematica urs",
+      categorie: "Pahare",
+      pret: 45,
+      poze: [
+          "images/products/zi.jpg",
+          "images/products/zi1.jpg",
+          "images/products/zi2.jpg"
+      ]
+  },
+  {
+      id: 116,
+      nume: "Pahar nunta verde",
+      categorie: "Pahare",
+      pret: 45,
+      poze: [
+          "images/products/oo.jpg",
+          "images/products/oo1.jpg",
+          "images/products/oo2.jpg",
+          "images/products/oo3.jpg",
+          "images/products/oo4.jpg",
+          "images/products/oo5.jpg"
+      ]
+  },
+  {
+      id: 117,
+      nume: "Pahar cu caricatura",
+      categorie: "Pahare",
+      pret: 55,
+      poze: [
+          "images/products/caricatura.jpg",
+          "images/products/caricatura1.jpg",
+          "images/products/caricatura2.jpg",
+          "images/products/caricatura3.jpg",
+          "images/products/caricatura4.jpg"
+      ]
+  },
+  {
+      id: 118,
+      nume: "Pahar cununie",
+      categorie: "Pahare",
+      pret: 45,
+      poze: [
+          "images/products/cununie.jpg",
+          "images/products/cununie1.jpg"
+      ]
+  },
+  {
+      id: 119,
+      nume: "Pahare \"Vreti sa fiti nasii nostri?\" set 2 buc",
+      categorie: "Pahare",
+      pret: 80,
+      poze: [
+          "images/products/seet.jpg"
+      ]
+  },
+  {
+      id: 120,
+      nume: "Pahar Stitch",
+      categorie: "Pahare",
+      pret: 45,
+      poze: [
+          "images/products/ggg.jpg"
+      ]
+  },
+  {
+      id: 121,
+      nume: "Pahare nunta",
+      categorie: "Pahare",
+      pret: 45,
+      poze: [
+          "images/products/mica.jpg",
+          "images/products/mica1.jpg"
+      ]
+  },
+  {
+      id: 122,
+      nume: "Pahar cu scris auriu personalizabil",
+      categorie: "Pahare",
+      pret: 40,
+      poze: [
+          "images/products/kk.jpg",
+          "images/products/kk1.jpg",
+          "images/products/kk2.jpg",
+          "images/products/kk3.jpg",
+          "images/products/kk4.jpg"
+      ]
+  },
+  {
+      id: 123,
+      nume: "Invitatie botez verde",
+      categorie: "Botez",
+      pret: 3.5,
+      poze: [
+        "images/products/capp.jpg",
+        "images/products/capp1.jpg",
+        "images/products/capp2.jpg"
+      ]
+    },
+  {
+      id: 124,
+      nume: "Plic dar botez 1",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/aa.jpg",
+        "images/products/aa1.jpg"
+      ]
+    },
+  {
+      id: 125,
+      nume: "Plic dar botez 2",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/bbx.jpg",
+        "images/products/bbx1.jpg"
+      ]
+    },
+  {
+      id: 127,
+      nume: "Plic botez 3",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/ffffffffffff.jpg"
+      ]
+    },
+  {
+      id: 128,
+      nume: "Plic botez 4",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/dfdf.jpg",
+        "images/products/dfdf1.jpg"
+      ]
+    },
+  {
+      id: 131,
+      nume: "Plic dar botez 5",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/verso.jpg",
+        "images/products/verso1.jpg",
+        "images/products/verso2.jpg"
+      ]
+    },
+  {
+      id: 132,
+      nume: "Plic dar botez 6",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/cxx.jpg"
+      ]
+    },
+  {
+      id: 133,
+      nume: "Plic dar botez 7",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/hj.jpg",
+        "images/products/hj1.jpg"
+      ]
+    },
+  {
+      id: 134,
+      nume: "Plic dar botez 8",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/crisss.jpg",
+        "images/products/crisss1.jpg"
+      ]
+    },
+  {
+      id: 135,
+      nume: "Plic dar mot",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/mo.jpg"
+      ]
+    },
+  {
+      id: 136,
+      nume: "Plic dar botez 10",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/ew.jpg",
+        "images/products/ew1.jpg"
+      ]
+    },
+  {
+      id: 137,
+      nume: "Plic dar botez 11",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/iib.jpg",
+        "images/products/iib1.jpg"
+      ]
+    },
+  {
+      id: 138,
+      nume: "Plic dar botez 12",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/rih.jpg",
+        "images/products/rih1.jpg"
+      ]
+    },
+  {
+      id: 139,
+      nume: "Plic dar botez 13",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/bea.jpg",
+        "images/products/bea1.jpg"
+      ]
+    },
+  {
+      id: 140,
+      nume: "Plic dar botez 14",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/via.jpg",
+        "images/products/via1.jpg"
+      ]
+    },
+  {
+      id: 141,
+      nume: "Plic dar botez 15",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/mi.jpg",
+        "images/products/mi1.jpg"
+      ]
+    },
+  {
+      id: 142,
+      nume: "Marturie magnetica-Balerina",
+      categorie: "Marturii",
+      pret: 7,
+      poze: [
+        "images/products/maiaioana.jpg",
+        "images/products/maiaioana1.jpg"
+      ]
+    },
+  {
+      id: 143,
+      nume: "Plic dar botez 16",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/ririx.jpg",
+        "images/products/ririx1.jpg"
+      ]
+    },
+  {
+      id: 144,
+      nume: "Plic dar botez 17",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/ehe.jpg",
+        "images/products/ehe1.jpg"
+      ]
+    },
+  {
+      id: 145,
+      nume: "Plic dar botez 18",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/pl.jpg",
+        "images/products/pl1.jpg"
+      ]
+    },
+  {
+      id: 146,
+      nume: "Plic dar botez 19",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/plicux.jpg"
+      ]
+    },
+  {
+      id: 147,
+      nume: "Plic dar botez 20",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/acda.jpg",
+        "images/products/acda1.jpg"
+      ]
+    },
+  {
+      id: 148,
+      nume: "Plic dar botez 21",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/gk.jpg",
+        "images/products/gk1.jpg"
+      ]
+    },
+  {
+      id: 149,
+      nume: "Plic dar botez 22",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/cacv.jpg"
+      ]
+    },
+  {
+      id: 150,
+      nume: "Plic dar botez 23",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/bubui.jpg",
+        "images/products/bubui1.jpg"
+      ]
+    },
+  {
+      id: 151,
+      nume: "Plic dar botez 24",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/lolo.jpg",
+        "images/products/lolo1.jpg"
+      ]
+    },
+  {
+      id: 152,
+      nume: "Plic dar botez 25",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/carus.jpg",
+        "images/products/carus1.jpg"
+      ]
+    },
+  {
+      id: 153,
+      nume: "Plic dar botez 26",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/elphi.jpg"
+      ]
+    },
+  {
+      id: 154,
+      nume: "Plic dar botez 27",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/gigic.jpg"
+      ]
+    },
+  {
+      id: 155,
+      nume: "Plic dar botez 28",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/nnn.jpg",
+        "images/products/nnn1.jpg"
+      ]
+    },
+  {
+      id: 156,
+      nume: "Plic dar botez 29",
+      categorie: "Plicuri dar botez",
+      pret: 2.5,
+      poze: [
+        "images/products/dudu.jpg"
+      ]
+    },
+  {
+      id: 157,
+      nume: "Invitatie botez fetita Safari",
+      categorie: "Botez",
+      pret: 3.5,
+      poze: [
+        "images/products/pupuy.jpg",
+        "images/products/pupuy1.jpg",
+        "images/products/pupuy2.jpg"
+      ]
+    },
+  {
+      id: 126,
+      nume: "Plic dar nunta 1",
+      categorie: "Plicuri dar nunta",
+      pret: 2.5,
+      poze: [
+        "images/products/and.jpg",
+        "images/products/and1.jpg"
+      ]
+    },
+  {
+      id: 129,
+      nume: "Plic dar nunta 2",
+      categorie: "Plicuri dar nunta",
+      pret: 2.5,
+      poze: [
+        "images/products/cori.jpg",
+        "images/products/cori1.jpg"
+      ]
+    },
+  {
+      id: 130,
+      nume: "Plic dar nunta 3",
+      categorie: "Plicuri dar nunta",
+      pret: 2.5,
+      poze: [
+        "images/products/romica.jpg"
+      ]
+    },
+  {
+      id: 158,
+      nume: "Plic dar nunta 4",
+      categorie: "Plicuri dar nunta",
+      pret: 2.5,
+      poze: [
+        "images/products/crih.jpg",
+        "images/products/crih1.jpg"
+      ]
+    },
+  {
+      id: 159,
+      nume: "Plic dar nunta 5",
+      categorie: "Plicuri dar nunta",
+      pret: 2.5,
+      poze: [
+        "images/products/a00.jpg"
+      ]
+    },
+  {
+      id: 160,
+      nume: "Plic dar nunta 6",
+      categorie: "Plicuri dar nunta",
+      pret: 2.5,
+      poze: [
+        "images/products/ionelasivictor.jpg",
+        "images/products/ionelasivictor1.jpg"
+      ]
+    },
+  {
+      id: 162,
+      nume: "Plic dar nunta 7",
+      categorie: "Plicuri dar nunta",
+      pret: 2.5,
+      poze: [
+        "images/products/simomo.jpg",
+        "images/products/simomo1.jpg"
+      ]
+    }
 ];
 
 
