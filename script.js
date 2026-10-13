@@ -1829,6 +1829,16 @@ const products = [
       "images/products/noi1.jpg",
       "images/products/noi2.jpg"
     ]
+  },
+  {
+    id: 177,
+    nume: "Agendă personalizată cu caricatură 7",
+    categorie: "Agende",
+    pret: 120,
+    poze: [
+      "images/products/balenciaga.jpg",
+      "images/products/balenciaga1.jpg"
+    ]
   }
 ];
 
