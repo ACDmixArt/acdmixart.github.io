@@ -1767,10 +1767,9 @@ const products = [
     categorie: "Agende",
     pret: 120,
     poze: [
-      "images/products/agenda.jpg",
-      "images/products/agenda1.jpg",
-      "images/products/agenda2.jpg",
-      "images/products/agenda3.jpg"
+      "images/products/cabanaagenda.jpg",
+      "images/products/cabanaagenda1.jpg",
+      "images/products/cabanaagenda2.jpg"
     ]
   }
 ];
