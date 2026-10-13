@@ -1684,6 +1684,16 @@ const products = [
       "images/products/pupuy2.jpg"
     ]
   },
+  {
+    id: 158,
+    nume: "Plic dar nunta 4",
+    categorie: "Plicuri dar nunta",
+    pret: 2.5,
+    poze: [
+      "images/products/crih.jpg",
+      "images/products/crih1.jpg"
+    ]
+  },
 ];
 
 
