@@ -1466,6 +1466,16 @@ const products = [
       "images/products/mo.jpg"
     ]
   },
+  {
+    id: 136,
+    nume: "Plic dar botez 10",
+    categorie: "Plicuri dar botez",
+    pret: 2.5,
+    poze: [
+      "images/products/ew.jpg",
+      "images/products/ew1.jpg"
+    ]
+  },
 ];
 
 
