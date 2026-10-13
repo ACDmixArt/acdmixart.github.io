@@ -1351,10 +1351,6 @@ const products = [
   
   
   {
-    id: 124,
-    nume: "Plic dar botez 1",
-    categorie: "Plicuri pentru dar",
-    tip: "Botez",
     pret: 2.5,
     poze: [
       "images/products/aa.jpg",
@@ -1362,10 +1358,6 @@ const products = [
     ]
   },
   {
-    id: 125,
-    nume: "Plic dar botez 2",
-    categorie: "Plicuri pentru dar",
-    tip: "Botez",
     pret: 2.5,
     poze: [
       "images/products/bbx.jpg",
@@ -1373,10 +1365,6 @@ const products = [
     ]
   },
   {
-    id: 126,
-    nume: "Plic dar nunta 1",
-    categorie: "Plicuri pentru dar",
-    tip: "Nunta",
     pret: 2.5,
     poze: [
       "images/products/and.jpg",
@@ -1384,20 +1372,12 @@ const products = [
     ]
   },
   {
-    id: 127,
-    nume: "Plic botez 3",
-    categorie: "Plicuri pentru dar",
-    tip: "Botez",
     pret: 2.5,
     poze: [
       "images/products/ffffffffffff.jpg"
     ]
   },
   {
-    id: 128,
-    nume: "Plic botez 4",
-    categorie: "Plicuri pentru dar",
-    tip: "Botez",
     pret: 2.5,
     poze: [
       "images/products/dfdf.jpg",
@@ -1405,10 +1385,6 @@ const products = [
     ]
   },
   {
-    id: 129,
-    nume: "Plic dar nunta 2",
-    categorie: "Plicuri pentru dar",
-    tip: "Nunta",
     pret: 2.5,
     poze: [
       "images/products/cori.jpg",
@@ -1416,20 +1392,12 @@ const products = [
     ]
   },
   {
-    id: 130,
-    nume: "Plic dar nunta 3",
-    categorie: "Plicuri pentru dar",
-    tip: "Nunta",
     pret: 2.5,
     poze: [
       "images/products/romica.jpg"
     ]
   },
   {
-    id: 131,
-    nume: "Plic dar botez 5",
-    categorie: "Plicuri pentru dar",
-    tip: "Botez",
     pret: 2.5,
     poze: [
       "images/products/verso.jpg",
@@ -1463,7 +1431,8 @@ function categories() {
     "Nunta",
     "Nunta-Botez",
     "Marturii",
-    "Plicuri pentru dar",
+    "Plicuri dar botez",
+    "Plicuri dar nunta",
     "Cani",
     "Pahare",
     "Toppere",
