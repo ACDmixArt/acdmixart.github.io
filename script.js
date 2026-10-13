@@ -1508,6 +1508,16 @@ const products = [
       "images/products/bea1.jpg"
     ]
   },
+  {
+    id: 140,
+    nume: "Plic dar botez 14",
+    categorie: "Plicuri dar botez",
+    pret: 2.5,
+    poze: [
+      "images/products/via.jpg",
+      "images/products/via1.jpg"
+    ]
+  },
 ];
 
 
