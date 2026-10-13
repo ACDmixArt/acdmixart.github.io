@@ -913,7 +913,64 @@ const products = [
     "images/products/lebada1.jpg"
   ]
 },
-
+{
+    id: 86,
+    nume: "Marturie magnetica: Minnie Mouse rosu",
+    categorie: "Marturii",
+    pret: 4.5,
+    poze: [
+        "images/products/rosu.jpg",
+        "images/products/rosu1.jpg"
+    ]
+},
+{
+    id: 87,
+    nume: "Marturie magnetica: Unicorn butterfly",
+    categorie: "Marturii",
+    pret: 4.5,
+    poze: [
+        "images/products/alma.jpg",
+        "images/products/alma1.jpg"
+    ]
+},
+{
+    id: 88,
+    nume: "Marturie magnetica: Ingeras",
+    categorie: "Marturii",
+    pret: 4.5,
+    poze: [
+        "images/products/ingerass.jpg"
+    ]
+},
+ {
+    id: 89,
+    nume: "Marturie magnetica: Baby boss",
+    categorie: "Marturii",
+    pret: 4.5,
+    poze: [
+        "images/products/babyboss.jpg",
+        "images/products/babyboss1.jpg"
+    ]
+},
+{
+    id: 90,
+    nume: "Marturie magnetica: Sirena",
+    categorie: "Marturii",
+    pret: 4.5,
+    poze: [
+        "images/products/sirena.jpg"
+    ]
+},
+{
+    id: 91,
+    nume: "Marturie magnetica: Pisicuta Marie",
+    categorie: "Marturii",
+    pret: 4.5,
+    poze: [
+        "images/products/marie.jpg"
+    ]
+},
+  
   
   {
     id: 43,
