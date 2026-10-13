@@ -1226,8 +1226,118 @@ const products = [
         "images/products/paienjenel.jpg"
     ]
 },
+ {
+    id: 113,
+    nume: "Pahar Minnie Mouse",
+    categorie: "Pahare",
+    pret: 45,
+    poze: [
+        "images/products/amalia.jpg",
+        "images/products/amalia1.jpg"
+    ]
+},
+  {
+    id: 114,
+    nume: "Pahar cu poza",
+    categorie: "Pahare",
+    pret: 45,
+    poze: [
+        "images/products/pp.jpg",
+        "images/products/pp1.jpg",
+        "images/products/pp2.jpg"
+    ]
+},
+{
+    id: 115,
+    nume: "Pahar tematica urs",
+    categorie: "Pahare",
+    pret: 45,
+    poze: [
+        "images/products/zi.jpg",
+        "images/products/zi1.jpg",
+        "images/products/zi2.jpg"
+    ]
+},
+  {
+    id: 116,
+    nume: "Pahar nunta verde",
+    categorie: "Pahare",
+    pret: 45,
+    poze: [
+        "images/products/oo.jpg",
+        "images/products/oo1.jpg",
+        "images/products/oo2.jpg",
+        "images/products/oo3.jpg",
+        "images/products/oo4.jpg",
+        "images/products/oo5.jpg"
+    ]
+},
+  {
+    id: 117,
+    nume: "Pahar cu caricatura",
+    categorie: "Pahare",
+    pret: 55,
+    poze: [
+        "images/products/caricatura.jpg",
+        "images/products/caricatura1.jpg",
+        "images/products/caricatura2.jpg",
+        "images/products/caricatura3.jpg",
+        "images/products/caricatura4.jpg"
+    ]
+},
+  {
+    id: 118,
+    nume: "Pahar cununie",
+    categorie: "Pahare",
+    pret: 45,
+    poze: [
+        "images/products/cununie.jpg",
+        "images/products/cununie1.jpg"
+    ]
+},
+  {
+    id: 119,
+    nume: "Pahare \"Vreti sa fiti nasii nostri?\" set 2 buc",
+    categorie: "Pahare",
+    pret: 80,
+    poze: [
+        "images/products/seet.jpg"
+    ]
+},
+  {
+    id: 120,
+    nume: "Pahar Stitch",
+    categorie: "Pahare",
+    pret: 45,
+    poze: [
+        "images/products/ggg.jpg"
+    ]
+},
+  {
+    id: 121,
+    nume: "Pahare nunta",
+    categorie: "Pahare",
+    pret: 45,
+    poze: [
+        "images/products/mica.jpg",
+        "images/products/mica1.jpg"
+    ]
+},
+  {
+    id: 122,
+    nume: "Pahar cu scris auriu personalizabil",
+    categorie: "Pahare",
+    pret: 40,
+    poze: [
+        "images/products/kk.jpg",
+        "images/products/kk1.jpg",
+        "images/products/kk2.jpg",
+        "images/products/kk3.jpg",
+        "images/products/kk4.jpg"
+    ]
+},
   
-
+  
 ];
 
 
