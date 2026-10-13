@@ -1616,6 +1616,16 @@ const products = [
       "images/products/bubui1.jpg"
     ]
   },
+  {
+    id: 151,
+    nume: "Plic dar botez 24",
+    categorie: "Plicuri dar botez",
+    pret: 2.5,
+    poze: [
+      "images/products/lolo.jpg",
+      "images/products/lolo1.jpg"
+    ]
+  },
 ];
 
 
