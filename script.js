@@ -773,7 +773,7 @@ const products = [
   pret: 4.5,
   poze: [
     "images/products/zanik.jpg",
-    "images/products/zxanik1.jpg"
+    "images/products/zanik1.jpg"
   ]
 },
 
