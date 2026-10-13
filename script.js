@@ -989,6 +989,245 @@ const products = [
       "images/products/setmot8.jpg"
     ]
   },
+  {
+    id: 92,
+    nume: "Set mot - Gabby",
+    categorie: "Set Mot",
+    pret: 230,
+    poze: [
+        "images/products/gabby.jpg",
+        "images/products/gabby1.jpg",
+        "images/products/gabby2.jpg",
+        "images/products/gabby3.jpg",
+        "images/products/gabby4.jpg"
+    ]
+},
+  {
+    id: 93,
+    nume: "Set mot - Ferma",
+    categorie: "Set Mot",
+    pret: 230,
+    poze: [
+        "images/products/ferma.jpg",
+        "images/products/ferma1.jpg"
+    ]
+},
+{
+    id: 94,
+    nume: "Set mot - Curcubeu",
+    categorie: "Set Mot",
+    pret: 230,
+    poze: [
+        "images/products/anais.jpg",
+        "images/products/anais1.jpg",
+        "images/products/anais2.jpg",
+        "images/products/anais3.jpg",
+        "images/products/anais4.jpg",
+        "images/products/anais5.jpg"
+    ]
+},
+  {
+    id: 95,
+    nume: "Set mot - Marinar",
+    categorie: "Set Mot",
+    pret: 230,
+    descriere: "Caricatura se achita separat: +30 lei/persoana",
+    poze: [
+        "images/products/marinar.jpg",
+        "images/products/marinar1.jpg",
+        "images/products/marinar2.jpg",
+        "images/products/marinar3.jpg",
+        "images/products/marinar4.jpg",
+        "images/products/marinar5.jpg",
+        "images/products/marinar6.jpg"
+    ]
+},
+  {
+    id: 96,
+    nume: "Set mot - Bluey si Bingo",
+    categorie: "Set Mot",
+    pret: 230,
+    poze: [
+        "images/products/blue.jpg",
+        "images/products/blue1.jpg",
+        "images/products/blue2.jpg",
+        "images/products/blue3.jpg",
+        "images/products/blue4.jpg",
+        "images/products/blue5.jpg"
+    ]
+},
+  {
+    id: 97,
+    nume: "Set mot - Traditional",
+    categorie: "Set Mot",
+    pret: 230,
+    poze: [
+        "images/products/traditie.jpg",
+        "images/products/traditie1.jpg",
+        "images/products/traditie2.jpg",
+        "images/products/traditie3.jpg",
+        "images/products/traditie4.jpg"
+    ]
+},
+  {
+    id: 98,
+    nume: "Set mot - Harry Potter",
+    categorie: "Set Mot",
+    pret: 230,
+    poze: [
+        "images/products/har.jpg",
+        "images/products/har1.jpg",
+        "images/products/har2.jpg",
+        "images/products/har3.jpg"
+    ]
+},
+{
+    id: 99,
+    nume: "Set mot - Pompier",
+    categorie: "Set Mot",
+    pret: 230,
+    poze: [
+        "images/products/david.jpg",
+        "images/products/david1.jpg",
+        "images/products/david2.jpg",
+        "images/products/david3.jpg",
+        "images/products/david4.jpg",
+        "images/products/david5.jpg"
+    ]
+},
+  {
+    id: 100,
+    nume: "Set mot - Minnie Mouse pink",
+    categorie: "Set Mot",
+    pret: 230,
+    poze: [
+        "images/products/minn.jpg",
+        "images/products/minn1.jpg",
+        "images/products/minn2.jpg",
+        "images/products/minn3.jpg",
+        "images/products/minn4.jpg",
+        "images/products/minn5.jpg",
+        "images/products/minn6.jpg"
+    ]
+},
+  {
+    id: 101,
+    nume: "Set mot - Cocomelon",
+    categorie: "Set Mot",
+    pret: 230,
+    descriere: "+45 lei pahar",
+    poze: [
+        "images/products/coco.jpg",
+        "images/products/coco1.jpg",
+        "images/products/coco2.jpg",
+        "images/products/coco3.jpg",
+        "images/products/coco4.jpg",
+        "images/products/coco5.jpg",
+        "images/products/coco6.jpg",
+        "images/products/coco7.jpg"
+    ]
+},
+  {
+    id: 102,
+    nume: "Set mot - Zana",
+    categorie: "Set Mot",
+    pret: 230,
+    poze: [
+        "images/products/zana.jpg"
+    ]
+},
+{
+    id: 103,
+    nume: "Set mot - Winnie",
+    categorie: "Set Mot",
+    pret: 230,
+    poze: [
+        "images/products/filip.jpg"
+    ]
+},
+  {
+    id: 104,
+    nume: "Set mot - Vanator",
+    categorie: "Set Mot",
+    pret: 230,
+    poze: [
+        "images/products/vanator.jpg"
+    ]
+},
+  {
+    id: 105,
+    nume: "Set mot - Sirena",
+    categorie: "Set Mot",
+    pret: 230,
+    poze: [
+        "images/products/medeea.jpg"
+    ]
+},
+  {
+    id: 106,
+    nume: "Set mot - Toamna",
+    categorie: "Set Mot",
+    pret: 230,
+    poze: [
+        "images/products/toamna.jpg"
+    ]
+},
+ {
+    id: 107,
+    nume: "Set mot - Stitch and Angel",
+    categorie: "Set Mot",
+    pret: 230,
+    poze: [
+        "images/products/angel.jpg"
+    ]
+},
+  {
+    id: 108,
+    nume: "Set mot - Girafa",
+    categorie: "Set Mot",
+    pret: 230,
+    poze: [
+        "images/products/gi.jpg"
+    ]
+},
+  {
+    id: 109,
+    nume: "Set mot - Ferma 2",
+    categorie: "Set Mot",
+    pret: 230,
+    poze: [
+        "images/products/ioan.jpg"
+    ]
+},
+  {
+    id: 110,
+    nume: "Set mot - Princess",
+    categorie: "Set Mot",
+    pret: 230,
+    poze: [
+        "images/products/princess.jpg"
+    ]
+},
+  {
+    id: 111,
+    nume: "Set mot - Safari",
+    categorie: "Set Mot",
+    pret: 230,
+    poze: [
+        "images/products/jungla.jpg"
+    ]
+},
+  {
+    id: 112,
+    nume: "Set mot - Paienjenel",
+    categorie: "Set Mot",
+    pret: 230,
+    poze: [
+        "images/products/paienjenel.jpg"
+    ]
+},
+  
+
 ];
 
 
