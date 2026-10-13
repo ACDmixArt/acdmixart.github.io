@@ -1693,6 +1693,15 @@ const products = [
       "images/products/crih.jpg",
       "images/products/crih1.jpg"
     ]
+  },,
+  {
+    id: 159,
+    nume: "Plic dar nunta 5",
+    categorie: "Plicuri dar nunta",
+    pret: 2.5,
+    poze: [
+      "images/products/a00.jpg"
+    ]
   },
 ];
 
