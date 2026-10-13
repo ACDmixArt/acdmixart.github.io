@@ -1425,6 +1425,18 @@ const products = [
       "images/products/romica.jpg"
     ]
   },
+  {
+    id: 131,
+    nume: "Plic dar botez 5",
+    categorie: "Plicuri pentru dar",
+    tip: "Botez",
+    pret: 2.5,
+    poze: [
+      "images/products/verso.jpg",
+      "images/products/verso1.jpg",
+      "images/products/verso2.jpg"
+    ]
+  },
 ];
 
 
