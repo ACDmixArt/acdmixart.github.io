@@ -1393,6 +1393,17 @@ const products = [
       "images/products/ffffffffffff.jpg"
     ]
   },
+  {
+    id: 128,
+    nume: "Plic botez 4",
+    categorie: "Plicuri pentru dar",
+    tip: "Botez",
+    pret: 2.5,
+    poze: [
+      "images/products/dfdf.jpg",
+      "images/products/dfdf1.jpg"
+    ]
+  },
 ];
 
 
