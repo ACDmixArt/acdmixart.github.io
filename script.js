@@ -1848,6 +1848,15 @@ const products = [
     poze: [
       "images/products/lavinia.jpg"
     ]
+  },
+  {
+    id: 179,
+    nume: "Agendă personalizată cu caricatură 9",
+    categorie: "Agende",
+    pret: 120,
+    poze: [
+      "images/products/claudiu.jpg"
+    ]
   }
 ];
 
