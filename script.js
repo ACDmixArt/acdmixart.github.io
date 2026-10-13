@@ -777,6 +777,143 @@ const products = [
   ]
 },
 
+{
+  id: 74,
+  nume: "Marturie ciocolata mare",
+  categorie: "Marturii",
+  pret: 20,
+  poze: [
+    "images/products/septembrie.jpg",
+    "images/products/septembrie1.jpg",
+    "images/products/septembrie2.jpg"
+  ]
+},
+
+{
+  id: 75,
+  nume: "Marturie ciocolata mare2",
+  categorie: "Marturii",
+  pret: 20,
+  poze: [
+    "images/products/karina.jpg",
+    "images/products/karina1.jpg",
+    "images/products/karina2.jpg"
+  ]
+},
+
+{
+  id: 76,
+  nume: "Marturie magnetica 2",
+  categorie: "Marturii",
+  pret: 4.5,
+  poze: [
+    "images/products/eric.jpg",
+    "images/products/eric1.jpg"
+  ]
+},
+
+{
+  id: 77,
+  nume: "Marturie magnetica: Girafa",
+  categorie: "Marturii",
+  pret: 4.5,
+  poze: [
+    "images/products/girafa.jpg",
+    "images/products/girafa1.jpg",
+    "images/products/girafa2.jpg",
+    "images/products/girafa3.jpg"
+  ]
+},
+
+{
+  id: 78,
+  nume: "Eticheta personalizata autoadeziva",
+  categorie: "Marturii",
+  pret: 2,
+  poze: [
+    "images/products/tuica.jpg",
+    "images/products/tuica1.jpg"
+  ]
+},
+
+{
+  id: 79,
+  nume: "Marturie magnetica Mickey Mouse",
+  categorie: "Marturii",
+  pret: 4.5,
+  poze: [
+    "images/products/feb.jpg",
+    "images/products/feb1.jpg"
+  ]
+},
+
+{
+  id: 80,
+  nume: "Marturie magnetica: Briosa",
+  categorie: "Marturii",
+  pret: 4.5,
+  poze: [
+    "images/products/praji.jpg",
+    "images/products/praji1.jpg"
+  ]
+},
+
+{
+  id: 81,
+  nume: "Marturie magnetica: Elefant",
+  categorie: "Marturii",
+  pret: 4.5,
+  poze: [
+    "images/products/elefante.jpg",
+    "images/products/elefante1.jpg"
+  ]
+},
+
+{
+  id: 82,
+  nume: "Marturie magnetica Winnie",
+  categorie: "Marturii",
+  pret: 4.5,
+  poze: [
+    "images/products/craciun.jpg",
+    "images/products/craciun1.jpg",
+    "images/products/craciun2.jpg"
+  ]
+},
+
+{
+  id: 83,
+  nume: "Marturie magnetica: Minnie Mouse mov",
+  categorie: "Marturii",
+  pret: 4.5,
+  poze: [
+    "images/products/minniemov.jpg",
+    "images/products/minniemov1.jpg"
+  ]
+},
+
+{
+  id: 84,
+  nume: "Marturie magnetica: Unicorn curcubeu",
+  categorie: "Marturii",
+  pret: 4.5,
+  poze: [
+    "images/products/unic.jpg",
+    "images/products/unic1.jpg"
+  ]
+},
+
+{
+  id: 85,
+  nume: "Marturie magnetica: Lebada",
+  categorie: "Marturii",
+  pret: 4.5,
+  poze: [
+    "images/products/lebada.jpg",
+    "images/products/lebada1.jpg"
+  ]
+},
+
   
   {
     id: 43,
