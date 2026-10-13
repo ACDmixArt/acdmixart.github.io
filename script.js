@@ -1528,6 +1528,16 @@ const products = [
       "images/products/mi1.jpg"
     ]
   },
+  {
+    id: 142,
+    nume: "Marturie magnetica-Balerina",
+    categorie: "Marturii",
+    pret: 7,
+    poze: [
+      "images/products/maiaioana.jpg",
+      "images/products/maiaioana1.jpg"
+    ]
+  },
 ];
 
 
