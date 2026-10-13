@@ -1597,6 +1597,15 @@ const products = [
       "images/products/gk1.jpg"
     ]
   },
+  {
+    id: 149,
+    nume: "Plic dar botez 22",
+    categorie: "Plicuri dar botez",
+    pret: 2.5,
+    poze: [
+      "images/products/cacv.jpg"
+    ]
+  },
 ];
 
 
