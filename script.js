@@ -117,9 +117,9 @@ const products = [
     categorie: "Botez",
     pret: 3.5,
     poze: [
-      "images/products/minnie.jpg",
-      "images/products/minnie1.jpg",
-      "images/products/minnie2.jpg"
+      "images/products/seleni.jpg",
+      "images/products/seleni1.jpg",
+      "images/products/seleni2.jpg"
     ]
   },
   {
