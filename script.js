@@ -1722,6 +1722,16 @@ const products = [
       "images/products/udi.jpg",
       "images/products/udi1.jpg"
     ]
+  },,
+  {
+    id: 162,
+    nume: "Plic dar nunta 8",
+    categorie: "Plicuri dar nunta",
+    pret: 2.5,
+    poze: [
+      "images/products/simomo.jpg",
+      "images/products/simomo1.jpg"
+    ]
   },
 ];
 
