@@ -1372,6 +1372,17 @@ const products = [
       "images/products/bbx1.jpg"
     ]
   },
+  {
+    id: 126,
+    nume: "Plic dar nunta 1",
+    categorie: "Plicuri pentru dar",
+    tip: "Nunta",
+    pret: 2.5,
+    poze: [
+      "images/products/and.jpg",
+      "images/products/and1.jpg"
+    ]
+  },
 ];
 
 
