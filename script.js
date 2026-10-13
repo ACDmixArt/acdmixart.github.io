@@ -1404,6 +1404,17 @@ const products = [
       "images/products/dfdf1.jpg"
     ]
   },
+  {
+    id: 129,
+    nume: "Plic dar nunta 2",
+    categorie: "Plicuri pentru dar",
+    tip: "Nunta",
+    pret: 2.5,
+    poze: [
+      "images/products/cori.jpg",
+      "images/products/cori1.jpg"
+    ]
+  },
 ];
 
 
