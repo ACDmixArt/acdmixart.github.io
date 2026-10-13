@@ -1645,6 +1645,15 @@ const products = [
       "images/products/elphi.jpg"
     ]
   },
+  {
+    id: 154,
+    nume: "Plic dar botez 27",
+    categorie: "Plicuri dar botez",
+    pret: 2.5,
+    poze: [
+      "images/products/gigic.jpg"
+    ]
+  },
 ];
 
 
