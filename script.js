@@ -1654,6 +1654,16 @@ const products = [
       "images/products/gigic.jpg"
     ]
   },
+  {
+    id: 155,
+    nume: "Plic dar botez 28",
+    categorie: "Plicuri dar botez",
+    pret: 2.5,
+    poze: [
+      "images/products/nnn.jpg",
+      "images/products/nnn1.jpg"
+    ]
+  },
 ];
 
 
