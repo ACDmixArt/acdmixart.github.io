@@ -1376,6 +1376,7 @@ function categories() {
     "Nunta",
     "Nunta-Botez",
     "Marturii",
+    "Plicuri pentru dar",
     "Cani",
     "Pahare",
     "Toppere",
