@@ -1794,6 +1794,18 @@ const products = [
       "images/products/ivo1.jpg",
       "images/products/ivo2.jpg"
     ]
+  },
+  {
+    id: 174,
+    nume: "Agendă personalizată cu caricatură 4",
+    categorie: "Agende",
+    pret: 120,
+    poze: [
+      "images/products/agenda.jpg",
+      "images/products/agenda1.jpg",
+      "images/products/agenda2.jpg",
+      "images/products/agenda3.jpg"
+    ]
   }
 ];
 
