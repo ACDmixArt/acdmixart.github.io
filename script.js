@@ -63,9 +63,9 @@ const products = [
     categorie: "Botez",
     pret: 4.5,
     poze: [
-      "images/products/jungla.jpg",
-      "images/products/jungla1.jpg",
-      "images/products/jungla2.jpg"
+      "images/products/leut.jpg",
+      "images/products/leut1.jpg",
+      "images/products/leut2.jpg"
     ]
   },
   {
