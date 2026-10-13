@@ -1712,6 +1712,16 @@ const products = [
       "images/products/ionelasivictor.jpg",
       "images/products/ionelasivictor1.jpg"
     ]
+  },,
+  {
+    id: 161,
+    nume: "Plic dar nunta 7",
+    categorie: "Plicuri dar nunta",
+    pret: 2.5,
+    poze: [
+      "images/products/udi.jpg",
+      "images/products/udi1.jpg"
+    ]
   },
 ];
 
