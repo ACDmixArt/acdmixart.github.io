@@ -1587,6 +1587,16 @@ const products = [
       "images/products/acda1.jpg"
     ]
   },
+  {
+    id: 148,
+    nume: "Plic dar botez 21",
+    categorie: "Plicuri dar botez",
+    pret: 2.5,
+    poze: [
+      "images/products/gk.jpg",
+      "images/products/gk1.jpg"
+    ]
+  },
 ];
 
 
