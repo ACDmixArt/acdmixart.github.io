@@ -1763,7 +1763,7 @@ const products = [
   },
   {
     id: 171,
-    nume: "Agendă personalizată cu caricatură - Cabana",
+    nume: "Agendă personalizată cu caricatură 1",
     categorie: "Agende",
     pret: 120,
     poze: [
@@ -1774,7 +1774,7 @@ const products = [
   },
   {
     id: 172,
-    nume: "Agendă personalizată cu caricatură - Ade",
+    nume: "Agendă personalizată cu caricatură 2",
     categorie: "Agende",
     pret: 120,
     poze: [
