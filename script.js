@@ -1606,6 +1606,16 @@ const products = [
       "images/products/cacv.jpg"
     ]
   },
+  {
+    id: 150,
+    nume: "Plic dar botez 23",
+    categorie: "Plicuri dar botez",
+    pret: 2.5,
+    poze: [
+      "images/products/bubui.jpg",
+      "images/products/bubui1.jpg"
+    ]
+  },
 ];
 
 
