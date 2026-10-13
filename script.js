@@ -1488,6 +1488,16 @@ const products = [
       "images/products/iib1.jpg"
     ]
   },
+  {
+    id: 138,
+    nume: "Plic dar botez 12",
+    categorie: "Plicuri dar botez",
+    pret: 2.5,
+    poze: [
+      "images/products/rih.jpg",
+      "images/products/rih1.jpg"
+    ]
+  },
 ];
 
 
