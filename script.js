@@ -1766,7 +1766,12 @@ const products = [
     nume: "Agendă personalizată cu caricatură",
     categorie: "Agende",
     pret: 120,
-    poze: []
+    poze: [
+      "images/products/agenda.jpg",
+      "images/products/agenda1.jpg",
+      "images/products/agenda2.jpg",
+      "images/products/agenda3.jpg"
+    ]
   }
 ];
 
