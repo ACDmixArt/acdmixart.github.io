@@ -1577,6 +1577,16 @@ const products = [
       "images/products/plicux.jpg"
     ]
   },
+  {
+    id: 147,
+    nume: "Plic dar botez 20",
+    categorie: "Plicuri dar botez",
+    pret: 2.5,
+    poze: [
+      "images/products/acda.jpg",
+      "images/products/acda1.jpg"
+    ]
+  },
 ];
 
 
