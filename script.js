@@ -1793,6 +1793,7 @@ function categories() {
     "Pahare",
     "Toppere",
     "Carti",
+    "Agende",
     "Party",
     "Set Mot"
   ];
