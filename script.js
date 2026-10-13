@@ -1763,7 +1763,7 @@ const products = [
   },
   {
     id: 171,
-    nume: "Agenda personalizata cu caricatura",
+    nume: "Agendă personalizată cu caricatură",
     categorie: "Agende",
     pret: 120,
     poze: []
@@ -2598,7 +2598,8 @@ function updateOrderSummary() {
     formChildName: "Numele copilului",
     formTheme: "Tematică",
     formThemeOther: "Altă tematică",
-    formAge: "Vârstă"
+    formAge: "Vârstă",
+    formAgendaCharacters: "Caricatură pentru agendă"
   };
 
   Object.entries(fieldLabels).forEach(([id, label]) => {
@@ -2733,5 +2734,6 @@ window.addToCart = addToCart;
 window.removeFromCart = removeFromCart;
 window.setCategory = setCategory;
 window.openSetMotCustomizer = openSetMotCustomizer;
+window.openAgendaCustomizer = openAgendaCustomizer;
 window.changeCartQuantity = changeCartQuantity;
 window.changeProductQuantity = changeProductQuantity;
