@@ -1702,6 +1702,16 @@ const products = [
     poze: [
       "images/products/a00.jpg"
     ]
+  },,
+  {
+    id: 160,
+    nume: "Plic dar nunta 6",
+    categorie: "Plicuri dar nunta",
+    pret: 2.5,
+    poze: [
+      "images/products/ionelasivictor.jpg",
+      "images/products/ionelasivictor1.jpg"
+    ]
   },
 ];
 
