@@ -1469,6 +1469,16 @@ const products = [
       "images/products/ew1.jpg"
     ]
   },
+  {
+    id: 134,
+    nume: "Plic dar botez 8",
+    categorie: "Plicuri dar botez",
+    pret: 2.5,
+    poze: [
+      "images/products/crisss.jpg",
+      "images/products/crisss1.jpg"
+    ]
+  },
 ];
 
 
