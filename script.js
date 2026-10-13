@@ -1636,6 +1636,15 @@ const products = [
       "images/products/carus1.jpg"
     ]
   },
+  {
+    id: 153,
+    nume: "Plic dar botez 26",
+    categorie: "Plicuri dar botez",
+    pret: 2.5,
+    poze: [
+      "images/products/elphi.jpg"
+    ]
+  },
 ];
 
 
