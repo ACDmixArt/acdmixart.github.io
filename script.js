@@ -1741,6 +1741,16 @@ const products = [
       "images/products/judecata.jpg",
       "images/products/judecata1.jpg"
     ]
+  },
+  {
+    id: 169,
+    nume: "Plic dar nunta 14",
+    categorie: "Plicuri dar nunta",
+    pret: 2.5,
+    poze: [
+      "images/products/ooo.jpg",
+      "images/products/ooo1.jpg"
+    ]
   }
 ];
 
