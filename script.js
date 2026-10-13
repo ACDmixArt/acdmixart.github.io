@@ -212,13 +212,14 @@ const products = [
 },
   {
   id: 20,
-  nume: "Invitatie botez verde",
+  nume: "Invitatie botez + plic pentru dar",
   categorie: "Botez",
-  pret: 3.5,
+  pret: 6,
   poze: [
-    "images/products/capp.jpg",
-    "images/products/capp1.jpg",
-    "images/products/capp2.jpg"
+    "images/products/invitatieverde.jpg",
+    "images/products/invitatieverde1.jpg",
+    "images/products/invitatieverde2.jpg",
+    "images/products/invitatieverde3.jpg"
   ]
 },
   {
@@ -1336,6 +1337,17 @@ const products = [
         "images/products/kk4.jpg"
     ]
 },
+  {
+    id: 123,
+    nume: "Invitatie botez verde",
+    categorie: "Botez",
+    pret: 3.5,
+    poze: [
+      "images/products/capp.jpg",
+      "images/products/capp1.jpg",
+      "images/products/capp2.jpg"
+    ]
+  },
   
   
 ];
