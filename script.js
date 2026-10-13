@@ -1415,6 +1415,16 @@ const products = [
       "images/products/cori1.jpg"
     ]
   },
+  {
+    id: 130,
+    nume: "Plic dar nunta 3",
+    categorie: "Plicuri pentru dar",
+    tip: "Nunta",
+    pret: 2.5,
+    poze: [
+      "images/products/romica.jpg"
+    ]
+  },
 ];
 
 
