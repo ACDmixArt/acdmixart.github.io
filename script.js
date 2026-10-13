@@ -1626,6 +1626,16 @@ const products = [
       "images/products/lolo1.jpg"
     ]
   },
+  {
+    id: 152,
+    nume: "Plic dar botez 25",
+    categorie: "Plicuri dar botez",
+    pret: 2.5,
+    poze: [
+      "images/products/carus.jpg",
+      "images/products/carus1.jpg"
+    ]
+  },
 ];
 
 
