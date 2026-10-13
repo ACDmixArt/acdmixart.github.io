@@ -1429,6 +1429,15 @@ const products = [
       "images/products/verso2.jpg"
     ]
   },
+  {
+    id: 132,
+    nume: "Plic dar botez 6",
+    categorie: "Plicuri dar botez",
+    pret: 2.5,
+    poze: [
+      "images/products/cxx.jpg"
+    ]
+  },
 ];
 
 
