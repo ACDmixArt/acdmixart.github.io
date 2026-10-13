@@ -1806,6 +1806,18 @@ const products = [
       "images/products/agenda2.jpg",
       "images/products/agenda3.jpg"
     ]
+  },
+  {
+    id: 175,
+    nume: "Agendă personalizată cu caricatură 5",
+    categorie: "Agende",
+    pret: 120,
+    poze: [
+      "images/products/ioanakarina.jpg",
+      "images/products/ioanakarina1.jpg",
+      "images/products/ioanakarina2.jpg",
+      "images/products/ioanakarina3.jpg"
+    ]
   }
 ];
 
