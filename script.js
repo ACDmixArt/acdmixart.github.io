@@ -576,6 +576,208 @@ const products = [
     ]
   },
 
+{
+  id: 56,
+  nume: "Marturie magnetica cu plic si accesoriu",
+  categorie: "Marturii",
+  pret: 7.5,
+  poze: [
+    "images/products/ionut.jpg",
+    "images/products/ionu1.jpg",
+    "images/products/ionut2.jpg",
+    "images/products/ionut3.jpg"
+  ]
+},
+
+{
+  id: 57,
+  nume: "Marturii magnetice cu colturi rotunjite: Stitch and Angel",
+  categorie: "Marturii",
+  pret: 7,
+  poze: [
+    "images/products/marturies.jpg",
+    "images/products/marturies1.jpg",
+    "images/products/marturies2.jpg"
+  ]
+},
+
+{
+  id: 58,
+  nume: "Marturie magnetica: Regele Leu",
+  categorie: "Marturii",
+  pret: 4.5,
+  poze: [
+    "images/products/elias.jpg",
+    "images/products/elias1.jpg",
+    "images/products/elias2.jpg"
+  ]
+},
+
+{
+  id: 59,
+  nume: "Etichete marturii autoadezive (5x3cm)",
+  categorie: "Marturii",
+  pret: 1,
+  poze: [
+    "images/products/balon.jpg"
+  ]
+},
+
+{
+  id: 60,
+  nume: "Etichete rotunde (A4) autoadezive",
+  categorie: "Marturii",
+  pret: 20,
+  poze: [
+    "images/products/eti.jpg"
+  ]
+},
+
+{
+  id: 61,
+  nume: "Etichete pentru marturii 3D caricatura",
+  categorie: "Marturii",
+  pret: 2,
+  poze: [
+    "images/products/cari.jpg",
+    "images/products/cari1.jpg"
+  ]
+},
+
+{
+  id: 62,
+  nume: "Marturii curcubeu+saculet+eticheta personalizata",
+  categorie: "Marturii",
+  pret: 8.5,
+  poze: [
+    "images/products/curcubeu.jpg",
+    "images/products/curcubeu1.jpg",
+    "images/products/curcubeu2.jpg",
+    "images/products/curcubeu3.jpg"
+  ]
+},
+
+{
+  id: 63,
+  nume: "Ciocolata personalizata",
+  categorie: "Marturii",
+  pret: 20,
+  poze: [
+    "images/products/cioco.jpg",
+    "images/products/cioco1.jpg"
+  ]
+},
+
+{
+  id: 64,
+  nume: "Marturie magnetica Balon",
+  categorie: "Marturii",
+  pret: 7.5,
+  poze: [
+    "images/products/nicolo.jpg",
+    "images/products/nicolo1.jpg",
+    "images/products/nicolo2.jpg",
+    "images/products/nicolo3.jpg"
+  ]
+},
+
+{
+  id: 65,
+  nume: "Marturie ciocolata (se personalizeaza cu orice tematica)",
+  categorie: "Marturii",
+  pret: 7,
+  poze: [
+    "images/products/mini.jpg"
+  ]
+},
+
+{
+  id: 66,
+  nume: "Insigna Bride",
+  categorie: "Marturii",
+  pret: 20,
+  poze: [
+    "images/products/insi.jpg"
+  ]
+},
+
+{
+  id: 67,
+  nume: "Marturie magnetica: Harry Potter",
+  categorie: "Marturii",
+  pret: 4.5,
+  poze: [
+    "images/products/harry.jpg",
+    "images/products/harry1.jpg"
+  ]
+},
+
+{
+  id: 68,
+  nume: "Marturie magnetica cu iconita",
+  categorie: "Marturii",
+  pret: 4.5,
+  poze: [
+    "images/products/icoana.jpg"
+  ]
+},
+
+{
+  id: 69,
+  nume: "Marturie magnetica jungla",
+  categorie: "Marturii",
+  pret: 4.5,
+  poze: [
+    "images/products/masina.jpg",
+    "images/products/masina1.jpg"
+  ]
+},
+
+{
+  id: 70,
+  nume: "Marturie magnetica simpla",
+  categorie: "Marturii",
+  pret: 4.5,
+  poze: [
+    "images/products/poza.jpg",
+    "images/products/poza1.jpg"
+  ]
+},
+
+{
+  id: 71,
+  nume: "Marturie magnetica Minnie Mouse 2",
+  categorie: "Marturii",
+  pret: 4.5,
+  poze: [
+    "images/products/minnie.jpg",
+    "images/products/minnie1.jpg"
+  ]
+},
+
+{
+  id: 72,
+  nume: "Marturie magnetica Bear",
+  categorie: "Marturii",
+  pret: 4.5,
+  poze: [
+    "images/products/eric.jpg",
+    "images/products/eric1.jpg"
+  ]
+},
+
+{
+  id: 73,
+  nume: "Marturie magnetica Zana",
+  categorie: "Marturii",
+  pret: 4.5,
+  poze: [
+    "images/products/zanik.jpg",
+    "images/products/zxanik1.jpg"
+  ]
+},
+
+  
   {
     id: 43,
     nume: "Set moț – Căsuța cu ciupercuțe",
