@@ -1449,14 +1449,7 @@ const products = [
     ]
   },
   {
-    id: 134,
-    nume: "Plic dar botez 8",
-    categorie: "Plicuri dar botez",
-    pret: 2.5,
-    poze: [
-      "images/products/ada.jpg"
-    ]
-  },
+
   {
     id: 135,
     nume: "Plic dar mot",
