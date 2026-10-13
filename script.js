@@ -1558,6 +1558,16 @@ const products = [
       "images/products/ehe1.jpg"
     ]
   },
+  {
+    id: 145,
+    nume: "Plic dar botez 18",
+    categorie: "Plicuri dar botez",
+    pret: 2.5,
+    poze: [
+      "images/products/pl.jpg",
+      "images/products/pl1.jpg"
+    ]
+  },
 ];
 
 
