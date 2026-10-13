@@ -171,9 +171,9 @@ const products = [
   categorie: "Botez",
   pret: 3.5,
   poze: [
-    "images/products/fluture.jpg",
-    "images/products/fluture1.jpg",
-    "images/products/fluture2.jpg"
+    "images/products/eliz.jpg",
+    "images/products/eliz1.jpg",
+    "images/products/eliz2.jpg"
   ]
 },
   {
