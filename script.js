@@ -2878,12 +2878,21 @@ function changeProductQuantity(productId, change) {
 function renderProducts() {
   if (!grila) return;
 
-  const list = activeCategory === "Toate"
+  const query = (document.getElementById("productSearch")?.value || "").trim().toLocaleLowerCase("ro")
+    .normalize("NFD").replace(/[\\u0300-\\u036f]/g, "");
+  const categoryList = activeCategory === "Toate"
     ? products
     : products.filter(product => product.categorie === activeCategory);
+  const list = query
+    ? categoryList.filter(product => {
+        const searchable = `${product.nume} ${product.categorie}`.toLocaleLowerCase("ro")
+          .normalize("NFD").replace(/[\\u0300-\\u036f]/g, "");
+        return searchable.includes(query);
+      })
+    : categoryList;
 
   if (!list.length) {
-    grila.innerHTML = `<div class="empty-products">Nu există produse în această categorie momentan.</div>`;
+    grila.innerHTML = `<div class="empty-products">${query ? "Nu am găsit produse pentru această căutare." : "Nu există produse în această categorie momentan."}</div>`;
     return;
   }
 
@@ -3858,6 +3867,33 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
 renderCategories();
 renderProducts();
 renderCart();
+
+const openSearchButton = document.getElementById("openSearch");
+const productSearchInput = document.getElementById("productSearch");
+if (openSearchButton && productSearchInput) {
+  openSearchButton.addEventListener("click", () => {
+    productSearchInput.hidden = !productSearchInput.hidden;
+    if (!productSearchInput.hidden) {
+      productSearchInput.focus();
+      document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      productSearchInput.value = "";
+      renderProducts();
+    }
+  });
+  productSearchInput.addEventListener("input", () => {
+    renderProducts();
+    document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+  productSearchInput.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      productSearchInput.value = "";
+      productSearchInput.hidden = true;
+      renderProducts();
+      openSearchButton.focus();
+    }
+  });
+}
 
 const year = document.getElementById("year");
 if (year) year.textContent = new Date().getFullYear();
