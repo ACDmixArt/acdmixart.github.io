@@ -1917,3 +1917,9 @@ main .hero h1 em {
     margin-top: 2px;
   }
 }
+
+
+/* Remove the duplicate brand label; keep only the decorative single label */
+.hero > div:first-child > .eyebrow:not(.hero-eyebrow) { display: none !important; }
+.hero .hero-eyebrow { margin-top: 2px !important; }
+.hero h1.hero-calligraphy { margin-top: 12px !important; }
