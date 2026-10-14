@@ -2511,3 +2511,20 @@ header.site-header a.logo .logo-script {
     white-space: normal !important;
   }
 }
+
+
+/* Buton discret pentru descrierile extinse ale produselor */
+.description-toggle {
+  display: inline-block;
+  margin: -5px 0 12px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #A8757F;
+  font: 600 12px 'Montserrat', sans-serif;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.description-toggle:hover { color: #80535B; }
+.product-description [hidden] { display: none !important; }
