@@ -1980,6 +1980,23 @@ const products = [
       "images/products/te11.jpg",
       "images/products/te12.jpg"
     ]
+  },
+  {
+    id: 190,
+    nume: "Carte de activitati simpla (A4)",
+    categorie: "Carti",
+    pret: 160,
+    poze: [
+      "images/products/ya.jpg",
+      "images/products/ya1.jpg",
+      "images/products/ya2.jpg",
+      "images/products/ya3.jpg",
+      "images/products/ya4.jpg",
+      "images/products/ya5.jpg",
+      "images/products/ya6.jpg",
+      "images/products/ya7.jpg",
+      "images/products/ya8.jpg"
+    ]
   }
 ];
 
