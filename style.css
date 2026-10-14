@@ -1711,3 +1711,30 @@ main .hero h1 em {
   }
   .hero-calligraphy-emphasis { font-size: 1.12em; }
 }
+
+
+/* Armonizare titlu: aceeasi familie de litere pentru toate cuvintele */
+.hero h1.hero-calligraphy {
+  font-family: 'Parisienne', cursive !important;
+  font-size: clamp(54px, 7vw, 82px) !important;
+  line-height: 1.02 !important;
+}
+.hero-calligraphy-light,
+.hero-calligraphy-emphasis,
+.hero-calligraphy-last {
+  font-family: 'Parisienne', cursive !important;
+  font-size: 1em !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  line-height: inherit !important;
+  letter-spacing: 0 !important;
+}
+.hero-calligraphy-light { color: var(--ink); }
+.hero-calligraphy-emphasis { color: var(--burgundy-dark); }
+.hero-calligraphy-last { color: var(--ink); }
+@media (max-width: 560px) {
+  .hero h1.hero-calligraphy {
+    font-size: clamp(47px, 12.5vw, 64px) !important;
+    line-height: 1.02 !important;
+  }
+}
