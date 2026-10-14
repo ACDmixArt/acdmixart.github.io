@@ -2276,6 +2276,16 @@ const products = [
       "images/products/cfcf.jpg",
       "images/products/cfcf1.jpg"
     ]
+  },
+  {
+    id: 212,
+    nume: "Invitatie nunta 13",
+    categorie: "Nunta",
+    pret: 5,
+    poze: [
+      "images/products/6e.jpg",
+      "images/products/6e1.jpg"
+    ]
   }
 ];
 
