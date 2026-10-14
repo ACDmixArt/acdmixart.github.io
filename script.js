@@ -2232,6 +2232,18 @@ const products = [
       "images/products/simbas1.jpg",
       "images/products/simbas2.jpg"
     ]
+  },
+  {
+    id: 208,
+    nume: "Invitatie nunta 9",
+    categorie: "Nunta",
+    pret: 7,
+    poze: [
+      "images/products/calka.jpg",
+      "images/products/calka1.jpg",
+      "images/products/calka2.jpg",
+      "images/products/calka3.jpg"
+    ]
   }
 ];
 
