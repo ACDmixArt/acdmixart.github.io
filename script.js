@@ -2349,12 +2349,7 @@ const products = [
     nume: "Invitatie nunta 19",
     categorie: "Nunta",
     pret: 3,
-    poze: [
-      "images/products/mk.jpg",
-      "images/products/mk1.jpg",
-      "images/products/mk2.jpg",
-      "images/products/mk3.jpg"
-    ]
+    poze: []
   },
   {
     id: 219,
@@ -2482,7 +2477,7 @@ function renderProducts() {
     return `
       <article class="product-card">
         <div class="product-photo">
-          ${firstImage ? `<img src="${firstImage}" alt="${product.nume}" data-product-id="${product.id}" loading="lazy">` : `<div style="min-height:220px;display:flex;align-items:center;justify-content:center;padding:20px;text-align:center;color:#66745F;background:#FAF7F2;font-weight:700;">Agenda personalizată<br>cu caricatură</div>`}
+          ${firstImage ? `<img src="${firstImage}" alt="${product.nume}" data-product-id="${product.id}" loading="lazy">` : `<div style="min-height:220px;display:flex;align-items:center;justify-content:center;padding:20px;text-align:center;color:#66745F;background:#FAF7F2;font-weight:700;">Fotografie în curs de adăugare</div>`}
         </div>
         <div class="product-info">
           <h3>${product.nume}</h3>
