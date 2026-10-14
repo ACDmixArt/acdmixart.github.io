@@ -2399,6 +2399,22 @@ const products = [
       "images/products/fd.jpg",
       "images/products/fd1.jpg"
     ]
+  },
+  {
+    id: 223,
+    nume: "Invitatie nunta 24",
+    categorie: "Nunta",
+    pret: 7.5,
+    poze: [
+      "images/products/q.jpg",
+      "images/products/q1.jpg",
+      "images/products/q2.jpg",
+      "images/products/q3.jpg",
+      "images/products/q4.jpg",
+      "images/products/q5.jpg",
+      "images/products/q6.jpg",
+      "images/products/q7.jpg"
+    ]
   }
 ];
 
