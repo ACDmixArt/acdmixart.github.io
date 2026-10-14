@@ -2809,3 +2809,21 @@ header.site-header a.logo .logo-script {
 .favorite-count {
   background: #D7A7B0 !important;
 }
+
+
+/* Butoane de categorii mai subțiri pe mobil și tabletă */
+@media (max-width: 900px) {
+  #filters.filters { gap: 8px !important; }
+  #filters.filters .filter-btn {
+    min-height: 34px !important;
+    padding: 6px 5px !important;
+    border-radius: 11px !important;
+    box-shadow: 0 2px 0 rgba(102,116,95,.06), 0 3px 8px rgba(78,73,69,.025) !important;
+    font-size: 11px !important;
+    line-height: 1.15 !important;
+  }
+  #filters.filters .filter-btn.active,
+  #filters.filters .filter-btn.active:hover {
+    box-shadow: 0 2px 0 rgba(132,83,94,.10), 0 4px 10px rgba(183,126,136,.12) !important;
+  }
+}
