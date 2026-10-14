@@ -56,6 +56,8 @@ h2{font-size:clamp(42px,5vw,64px)}
 .product-category{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);font-weight:700}
 .product-name{font:600 25px 'Cormorant Garamond',serif;margin:7px 0}
 .product-price{font-weight:700;margin-bottom:14px}
+.product-description{font-size:13px;line-height:1.55;color:#6f6865;margin:8px 0 14px}
+
 .product-actions{display:flex;gap:8px}
 /* Butoane Adauga in cos - ACDmixArt */
 .add-cart {
