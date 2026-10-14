@@ -1258,3 +1258,108 @@ footer {
   .hero-card img { height: 320px; border-radius: 15px; }
   .logo { font-size: 29px; }
 }
+
+
+/* Redesign inspirat de referinta: burgundy, fotografie prima, navigatie vizibila */
+.site-header {
+  height: auto;
+  min-height: 76px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  padding: 14px 5%;
+  background: #5A1021;
+  border-bottom: 1px solid rgba(216,166,173,.4);
+  color: #FFF6F0;
+}
+.site-header .logo {
+  color: #FFF0E7;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 35px;
+  font-weight: 600;
+  letter-spacing: -.04em;
+}
+.site-header nav {
+  order: 3;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  color: #FFF0E7;
+}
+.site-header nav a { color: #FFF0E7; }
+.site-header nav a:hover { color: #E7B95F; }
+.site-header .cart-button {
+  margin-left: auto;
+  color: #FFF0E7;
+  border-color: rgba(255,240,231,.5);
+}
+.site-header #cartCount { background: #D8A6AD; color: #5A1021; }
+.hero {
+  background: #5A1021;
+  color: #FFF6F0;
+  grid-template-columns: 1fr;
+  gap: 38px;
+  padding: 42px 6% 66px;
+}
+.hero > div:first-child {
+  order: 2;
+  max-width: 760px;
+  margin: 0 auto;
+  width: 100%;
+}
+.hero .eyebrow { color: #E7B95F; }
+.hero h1 { color: #FFF6F0; }
+.hero h1 em { color: #E7B95F; }
+.hero .hero-text { color: rgba(255,246,240,.82); }
+.hero-card {
+  order: 1;
+  width: min(100%, 720px);
+  margin: 0 auto;
+  padding: 0;
+  border: 1px solid rgba(231,185,95,.55);
+  border-radius: 22px;
+  background: transparent;
+  box-shadow: 0 18px 42px rgba(20,0,5,.2);
+  overflow: hidden;
+}
+.hero-card img {
+  display: block;
+  width: 100%;
+  height: clamp(300px, 58vw, 560px);
+  object-fit: cover;
+  object-position: center 38%;
+  border-radius: 21px;
+}
+.hero .button {
+  background: #E7B95F;
+  color: #5A1021;
+  box-shadow: none;
+}
+.hero .button:hover { background: #F0D18D; }
+.about-section {
+  background: #5A1021;
+  color: #FFF6F0;
+  border-top: 1px solid rgba(216,166,173,.28);
+}
+.about-section .eyebrow { color: #E7B95F; }
+.about-section h2 { color: #FFF6F0; }
+.about-section p { color: rgba(255,246,240,.84); }
+@media (min-width: 901px) {
+  .site-header { padding-left: 6%; padding-right: 6%; }
+  .site-header nav { order: 0; width: auto; margin-left: auto; }
+  .hero { grid-template-columns: 1fr 1fr; align-items: center; gap: 6%; padding: 56px 8% 78px; }
+  .hero > div:first-child { order: 1; }
+  .hero-card { order: 2; }
+}
+@media (max-width: 560px) {
+  .site-header { padding: 12px 5%; gap: 10px; }
+  .site-header .logo { font-size: 29px; }
+  .site-header nav { justify-content: space-between; gap: 10px; font-size: 12px; }
+  .site-header .cart-button { padding: 8px 11px; }
+  .hero { padding: 24px 5% 48px; gap: 34px; }
+  .hero-card img { height: 390px; border-radius: 20px; }
+  .hero h1 { font-size: clamp(43px, 12vw, 64px); }
+  .hero .hero-text { font-size: 16px; }
+}
