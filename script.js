@@ -2080,7 +2080,7 @@ const products = [
       "images/products/jurnalbebe3.jpg",
       "images/products/jurnalbebe4.jpg",
       "images/products/jurnalbebe9.jpg",
-      "images/products/juranlbebe8.jpg",
+      "images/products/jurnalbebe8.jpg",
       "images/products/jurnalbebe5.jpg",
       "images/products/jurnalbebe6.jpg",
       "images/products/jurnalbebe7.jpg",
