@@ -2108,6 +2108,15 @@ const products = [
       "images/products/jurnalfata10.jpg",
       "images/products/jurnal11.jpg"
     ]
+  },
+  {
+    id: 198,
+    nume: "Set gatit mire/mireasa - tavita",
+    categorie: "Set Gatit",
+    pret: 65,
+    poze: [
+      "images/products/mire.jpg"
+    ]
   }
 ];
 
@@ -2144,7 +2153,8 @@ function categories() {
     "Jurnale",
     "Agende",
     "Party",
-    "Set Mot"
+    "Set Mot",
+    "Set Gatit"
   ];
 }
 
@@ -2213,7 +2223,9 @@ function renderProducts() {
           ${
             product.categorie === "Set Mot"
               ? `<button type="button" class="add-cart" onclick="openSetMotCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
-              : product.categorie === "Agende"
+              : product.categorie === "Set Gatit"
+                ? `<button type="button" class="add-cart" onclick="openGatitCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Alege accesoriile</button>`
+                : product.categorie === "Agende"
                 ? `<button type="button" class="add-cart" onclick="openAgendaCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Alege caricatura</button>`
                 : `<button type="button" class="add-cart" onclick="addToCart(${product.id}, document.getElementById('qty-${product.id}').textContent)">Adaugă în coș</button>`
           }
@@ -2320,6 +2332,79 @@ function openSetMotCustomizer(productId, quantity = 1) {
       }
     });
 
+    modal.remove();
+    renderCart();
+    openCart();
+  });
+}
+
+/* =========================
+   PERSONALIZARE SET GATIT
+========================= */
+
+function openGatitCustomizer(productId, quantity = 1) {
+  const product = products.find(item => item.id === Number(productId));
+  if (!product) return;
+
+  const qty = Math.max(1, Number(quantity) || 1);
+  const options = [
+    { id: "verighete", label: "Cutie pentru verighete", price: 60 },
+    { id: "pieptene", label: "Pieptene", price: 30 },
+    { id: "perie", label: "Perie", price: 30 },
+    { id: "pamatuf", label: "Pămătuf de bărbierit", price: 25 },
+    { id: "brici", label: "Brici de bărbierit", price: 30 },
+    { id: "oglinda", label: "Oglindă", price: 30 },
+    { id: "placute", label: "Set de 2 plăcuțe pentru ușă: Mire și Mireasă", price: 30 }
+  ];
+
+  const modal = document.createElement("div");
+  modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.65);display:flex;align-items:center;justify-content:center;z-index:9999;padding:20px;";
+  modal.innerHTML = `
+    <div style="background:white;width:100%;max-width:540px;max-height:90vh;overflow:auto;border-radius:16px;padding:25px;box-sizing:border-box;position:relative;">
+      <button type="button" class="gatit-close" aria-label="Închide" style="position:absolute;top:10px;right:15px;border:0;background:none;font-size:30px;cursor:pointer;">×</button>
+      <h2 style="margin-top:0;">Personalizează setul de bărbierit</h2>
+      <p>Tăvița de bază: <strong>${money(product.pret)}</strong>. Bifează accesoriile dorite:</p>
+      <div class="gatit-options" style="display:grid;gap:12px;margin:18px 0;">
+        ${options.map(option => `
+          <label style="display:flex;align-items:center;gap:10px;justify-content:space-between;border:1px solid #e5e5e5;border-radius:10px;padding:12px;cursor:pointer;">
+            <span style="display:flex;align-items:center;gap:10px;"><input type="checkbox" data-gatit-option="${option.id}" style="width:18px;height:18px;"> ${option.label}</span>
+            <strong style="white-space:nowrap;">+${option.price} lei</strong>
+          </label>
+        `).join("")}
+      </div>
+      <p class="gatit-price" style="font-size:21px;font-weight:700;margin:18px 0;"></p>
+      <button type="button" class="gatit-add add-cart" style="width:100%;padding:14px;border:0;border-radius:9px;background:#66745F;color:white;font-weight:700;cursor:pointer;font-size:16px;">Adaugă în coș</button>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+  const price = modal.querySelector(".gatit-price");
+  const checkboxes = [...modal.querySelectorAll("[data-gatit-option]")];
+
+  function selectedOptions() {
+    return options.filter(option => modal.querySelector(`[data-gatit-option="${option.id}"]`).checked);
+  }
+  function updatePrice() {
+    const extras = selectedOptions().reduce((sum, option) => sum + option.price, 0);
+    price.textContent = "Total: " + money((product.pret + extras) * qty) + (qty > 1 ? ` (${qty} seturi)` : "");
+  }
+  updatePrice();
+  checkboxes.forEach(checkbox => checkbox.addEventListener("change", updatePrice));
+  modal.querySelector(".gatit-close").addEventListener("click", () => modal.remove());
+  modal.addEventListener("click", event => { if (event.target === modal) modal.remove(); });
+  modal.querySelector(".gatit-add").addEventListener("click", () => {
+    const chosen = selectedOptions();
+    const extras = chosen.reduce((sum, option) => sum + option.price, 0);
+    cart.push({
+      ...product,
+      quantity: qty,
+      pret: product.pret + extras,
+      personalizare: {
+        tip: "setGatit",
+        accesorii: chosen.map(option => ({ nume: option.label, pret: option.price })),
+        pretAccesorii: extras
+      }
+    });
     modal.remove();
     renderCart();
     openCart();
@@ -2435,9 +2520,11 @@ function renderCart() {
         ${
           item.personalizare?.tip === "agenda"
             ? `<p>Caricatură: ${item.personalizare.personaje === 0 ? "Fără caricatură" : item.personalizare.personaje + (item.personalizare.personaje === 1 ? " personaj" : " personaje")}<br>Cost caricatură: ${money(item.personalizare.pretCaricatura)}</p>`
-            : item.personalizare
-              ? `<p>Nume: ${item.personalizare.numeCopil}<br>Tematică: ${item.personalizare.tematica}<br>Ramă foto: ${item.personalizare.ramaFoto ? "Da" : "Nu"}</p>`
-              : ""
+            : item.personalizare?.tip === "setGatit"
+              ? `<p>Accesorii: ${item.personalizare.accesorii.length ? item.personalizare.accesorii.map(option => option.nume + " (+" + money(option.pret) + ")").join(", ") : "Fără accesorii suplimentare"}</p>`
+              : item.personalizare
+                ? `<p>Nume: ${item.personalizare.numeCopil}<br>Tematică: ${item.personalizare.tematica}<br>Ramă foto: ${item.personalizare.ramaFoto ? "Da" : "Nu"}</p>`
+                : ""
         }
         <div class="cart-quantity">
           <button type="button" aria-label="Scade cantitatea" onclick="changeCartQuantity(${index}, ${Math.max(1, (Number(item.quantity) || 1) - 1)})">−</button>
@@ -2493,6 +2580,8 @@ if (cartWhatsapp) {
       message += `${index + 1}. ${item.nume}\nCantitate: ${item.quantity || 1}\nPreț/buc.: ${money(item.pret)}\nSubtotal: ${money(item.pret * (item.quantity || 1))}\n`;
       if (item.personalizare?.tip === "agenda") {
         message += `Caricatură: ${item.personalizare.personaje === 0 ? "Fără caricatură" : item.personalizare.personaje + (item.personalizare.personaje === 1 ? " personaj" : " personaje")}\nCost caricatură: ${money(item.personalizare.pretCaricatura)}\n`;
+      } else if (item.personalizare?.tip === "setGatit") {
+        message += `Accesorii: ${item.personalizare.accesorii.length ? item.personalizare.accesorii.map(option => option.nume + " (+" + money(option.pret) + ")").join(", ") : "Fără accesorii suplimentare"}\nSupliment accesorii: ${money(item.personalizare.pretAccesorii)}\n`;
       } else if (item.personalizare) {
         message += `Numele copilului: ${item.personalizare.numeCopil}\nTematică: ${item.personalizare.tematica}\nRamă foto: ${item.personalizare.ramaFoto ? "Da" : "Nu"}\n`;
       }
@@ -3076,6 +3165,7 @@ window.addToCart = addToCart;
 window.removeFromCart = removeFromCart;
 window.setCategory = setCategory;
 window.openSetMotCustomizer = openSetMotCustomizer;
+window.openGatitCustomizer = openGatitCustomizer;
 window.openAgendaCustomizer = openAgendaCustomizer;
 window.changeCartQuantity = changeCartQuantity;
 window.changeProductQuantity = changeProductQuantity;
