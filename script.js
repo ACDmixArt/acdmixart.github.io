@@ -2688,6 +2688,22 @@ const products = [
       "images/products/invitatiefluture1.jpg",
       "images/products/invitatiefluture.jpg"
     ]
+  },
+  {
+    id: 249,
+    nume: "Carte de vizita Lash Artist",
+    categorie: "Carti de vizita",
+    pret: 2.5,
+    tarifeCantitate: [
+      { min: 1, max: 49, pret: 2.5 },
+      { min: 50, max: 100, pret: 2 },
+      { min: 101, max: null, pret: 1.7 }
+    ],
+    poze: [
+      "images/products/makeup.jpg",
+      "images/products/makeup1.jpg",
+      "images/products/makeup2.jpg"
+    ]
   }
 ];
 
@@ -2760,6 +2776,9 @@ function changeProductQuantity(productId, change) {
   if (!el) return;
   const next = Math.max(1, (Number(el.textContent) || 1) + change);
   el.textContent = next;
+  const product = products.find(item => item.id === Number(productId));
+  const priceEl = document.getElementById(`price-${productId}`);
+  if (product && priceEl) priceEl.textContent = `${money(unitPriceForQuantity(product, next))} / buc.`;
 }
 
 function renderProducts() {
@@ -2785,7 +2804,8 @@ function renderProducts() {
         </div>
         <div class="product-info">
           <h3>${product.nume}</h3>
-          <p class="product-price">${money(product.pret)}</p>
+          <p class="product-price" id="price-${product.id}">${money(unitPriceForQuantity(product, 1))} / buc.</p>
+          ${Array.isArray(product.tarifeCantitate) ? `<p class="product-tier-prices" style="font-size:13px;line-height:1.5;margin:4px 0 10px;">1–49 buc.: 2,50 lei/buc.<br>50–100 buc.: 2 lei/buc.<br>Peste 100 buc.: 1,70 lei/buc.</p>` : ""}
           <div class="product-quantity">
             <button type="button" aria-label="Scade cantitatea" onclick="changeProductQuantity(${product.id}, -1)">−</button>
             <span id="qty-${product.id}">1</span>
@@ -3041,6 +3061,15 @@ function openAgendaCustomizer(productId, quantity = 1) {
    COS
 ========================= */
 
+function unitPriceForQuantity(product, quantity = 1) {
+  const qty = Math.max(1, Number(quantity) || 1);
+  if (Array.isArray(product?.tarifeCantitate)) {
+    const tier = product.tarifeCantitate.find(item => qty >= item.min && (item.max === null || qty <= item.max));
+    if (tier) return tier.pret;
+  }
+  return product?.pret || 0;
+}
+
 function addToCart(productId, quantity = 1, personalizare = null) {
   const product = products.find(item => item.id === Number(productId));
   const qty = Number(quantity);
@@ -3051,7 +3080,7 @@ function addToCart(productId, quantity = 1, personalizare = null) {
     return;
   }
 
-  cart.push({ ...product, quantity: qty, ...(personalizare ? { personalizare } : {}) });
+  cart.push({ ...product, pret: unitPriceForQuantity(product, qty), quantity: qty, ...(personalizare ? { personalizare } : {}) });
   renderCart();
   openCart();
 }
@@ -3070,6 +3099,7 @@ function changeCartQuantity(index, quantity) {
   }
   if (!cart[index]) return;
   cart[index].quantity = qty;
+  cart[index].pret = unitPriceForQuantity(cart[index], qty);
   renderCart();
 }
 
@@ -3619,13 +3649,15 @@ function updateOrderSummary() {
   if (product) {
     const qtyInput = document.getElementById("formQuantity");
     const qty = qtyInput ? Math.max(1, Number(qtyInput.value) || 1) : 1;
-    let unitPrice = product.pret;
+    let unitPrice = unitPriceForQuantity(product, quantity);
     if (product.categorie === "Set Mot" && frame && frame.checked) unitPrice += 60;
     const agendaCharacters = document.getElementById("formAgendaCharacters");
     if (product.categorie === "Agende" && agendaCharacters) {
       const optionCosts = { "Fără caricatură — 0 lei": 0, "1 personaj — 20 lei": 20, "2 personaje — 35 lei": 35, "3 personaje — 50 lei": 50 };
       unitPrice += optionCosts[agendaCharacters.value] || 0;
     }
+    unitPrice = product.categorie === "Set Mot" || product.categorie === "Agende" ? unitPrice : unitPriceForQuantity(product, qty);
+    rows.push(["Preț/bucată", money(unitPrice)]);
     rows.push(["Preț estimativ", money(unitPrice * qty)]);
   }
 
