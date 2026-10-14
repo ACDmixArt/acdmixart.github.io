@@ -2635,3 +2635,23 @@ header.site-header a.logo .logo-script {
     border-radius: 13px !important;
   }
 }
+
+
+/* Reduce spațiul irosit deasupra categoriilor pe mobil */
+@media (max-width: 700px) {
+  .catalog-section {
+    padding-top: 38px !important;
+    padding-bottom: 42px !important;
+  }
+  .section-heading {
+    margin-bottom: 18px !important;
+    gap: 10px !important;
+  }
+  .section-heading h2 {
+    margin-bottom: 0 !important;
+  }
+  #filters.filters {
+    margin-top: 0 !important;
+    margin-bottom: 22px !important;
+  }
+}
