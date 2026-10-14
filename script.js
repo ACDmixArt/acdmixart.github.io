@@ -1926,6 +1926,17 @@ const products = [
     poze: [
       "images/products/liam.jpg"
     ]
+  },
+  {
+    id: 187,
+    nume: "Carte de colorat (A4)",
+    categorie: "Carti",
+    pret: 110,
+    poze: [
+      "images/products/arianacarte.jpg",
+      "images/products/arianacarte1.jpg",
+      "images/products/arianacarte2.jpg"
+    ]
   }
 ];
 
