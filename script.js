@@ -3499,7 +3499,7 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
       return;
     }
 
-    if (["Botez", "Nunta", "Nunta-Botez"].includes(product.categorie) && quantity < 25) {
+    if (["Botez", "Nunta"].includes(product.categorie) && quantity < 25) {
       alert("Comanda minimă pentru invitații este de 25 de bucăți.");
       quantityInput.focus();
       return;
