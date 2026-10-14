@@ -2998,7 +2998,6 @@ function renderProducts() {
           ${descrierePersonalizare(product).trim().split(/\s+/).length > 3 ? `<button type="button" class="description-toggle" aria-expanded="false" onclick="toggleProductDescription(${product.id}, this)">Vezi mai mult</button>` : ""}
           <p class="product-price" id="price-${product.id}">${money(unitPriceForQuantity(product, 1))} / buc.</p>
           ${Array.isArray(product.tarifeCantitate) ? `<p class="product-tier-prices" style="font-size:13px;line-height:1.5;margin:4px 0 10px;">1–49 buc.: 2,50 lei/buc.<br>50–100 buc.: 2 lei/buc.<br>Peste 100 buc.: 1,70 lei/buc.</p>` : ""}
-          ${isMin25Invitation(product) ? `<p class="minimum-order-note">Comandă minimă: 25 buc.</p>` : ""}
           <div class="product-quantity">
             <button type="button" aria-label="Scade cantitatea" onclick="changeProductQuantity(${product.id}, -1)">−</button>
             <span id="qty-${product.id}">${isMin25Invitation(product) ? INVITATION_MINIMUM : 1}</span>
@@ -3319,7 +3318,6 @@ function renderCart() {
   cartItems.innerHTML = cart.map((item, index) => `
     <div class="cart-item">
       <div>
-        ${isMin25Invitation(item) ? `<small class="minimum-order-note">Comandă minimă: 25 buc.</small>` : ""}
         <strong>${item.nume}</strong>
         <span>${money(item.pret)} / buc.</span>
         ${
