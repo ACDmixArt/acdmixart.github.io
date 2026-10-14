@@ -20,7 +20,7 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="style.css?v=20261014-quicklinks1">
+  <link rel="stylesheet" href="style.css?v=20261014-hours-popup1">
 </head>
 
 <body>
@@ -328,11 +328,24 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.7" cy="6.5" r="1" class="quick-social-dot"/></svg>
     </a>
     <span class="quick-divider" aria-hidden="true"></span>
-    <a class="quick-hours-link" href="#program-comenzi" aria-label="Vezi programul de lucru">
+    <a class="quick-hours-link" href="#program-comenzi" aria-label="Vezi programul de lucru" onclick="document.getElementById('quickHoursPopup').hidden=false; return false;">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
       <span>Program</span>
     </a>
   </nav>
+
+  <div class="quick-hours-backdrop" id="quickHoursPopup" hidden onclick="if(event.target===this)this.hidden=true">
+    <section class="quick-hours-dialog" role="dialog" aria-modal="true" aria-labelledby="quickHoursTitle">
+      <button class="quick-hours-close" type="button" aria-label="Închide programul" onclick="document.getElementById('quickHoursPopup').hidden=true">×</button>
+      <p class="quick-hours-eyebrow">ACDmixArt</p>
+      <h2 id="quickHoursTitle">Program pentru comenzi</h2>
+      <p class="quick-hours-intro">Când îmi poți scrie pentru comenzi și personalizări:</p>
+      <div class="quick-hours-row"><span>Luni – Vineri</span><strong>09:00–20:00</strong></div>
+      <div class="quick-hours-row"><span>Sâmbătă</span><strong>09:00–12:00</strong></div>
+      <div class="quick-hours-row"><span>Duminică</span><strong>Închis</strong></div>
+      <a class="quick-hours-message" href="https://wa.me/40742059730" target="_blank" rel="noopener">Scrie-mi pe WhatsApp</a>
+    </section>
+  </div>
 
   <footer class="site-footer">
     <div class="footer-main">
