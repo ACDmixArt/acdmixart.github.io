@@ -2927,7 +2927,7 @@ function renderProducts() {
   const categoryList = query || activeCategory === "Toate"
     ? products
     : products.filter(product => product.categorie === activeCategory);
-  const terms = query.split(/\\s+/).filter(Boolean);
+  const terms = query.split(/\s+/).filter(Boolean);
   const list = query
     ? categoryList.filter(product => {
         const searchable = normalizeSearch(`${product.nume} ${product.categorie}`);
@@ -2961,10 +2961,10 @@ function renderProducts() {
         <div class="product-info">
           <h3>${product.nume}</h3>
           <p class="product-description">
-            <span id="desc-preview-${product.id}">${descrierePersonalizare(product).trim().split(/\\s+/).slice(0, 3).join(" ")}${descrierePersonalizare(product).trim().split(/\\s+/).length > 3 ? "…" : ""}</span>
+            <span id="desc-preview-${product.id}">${descrierePersonalizare(product).trim().split(/\s+/).slice(0, 3).join(" ")}${descrierePersonalizare(product).trim().split(/\s+/).length > 3 ? "…" : ""}</span>
             <span id="desc-full-${product.id}" hidden>${descrierePersonalizare(product)}</span>
           </p>
-          ${descrierePersonalizare(product).trim().split(/\\s+/).length > 3 ? `<button type="button" class="description-toggle" aria-expanded="false" onclick="toggleProductDescription(${product.id}, this)">Vezi mai mult</button>` : ""}
+          ${descrierePersonalizare(product).trim().split(/\s+/).length > 3 ? `<button type="button" class="description-toggle" aria-expanded="false" onclick="toggleProductDescription(${product.id}, this)">Vezi mai mult</button>` : ""}
           <p class="product-price" id="price-${product.id}">${money(unitPriceForQuantity(product, 1))} / buc.</p>
           ${Array.isArray(product.tarifeCantitate) ? `<p class="product-tier-prices" style="font-size:13px;line-height:1.5;margin:4px 0 10px;">1–49 buc.: 2,50 lei/buc.<br>50–100 buc.: 2 lei/buc.<br>Peste 100 buc.: 1,70 lei/buc.</p>` : ""}
           <div class="product-quantity">
