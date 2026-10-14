@@ -2704,6 +2704,22 @@ const products = [
       "images/products/makeup1.jpg",
       "images/products/makeup2.jpg"
     ]
+  },
+  {
+    id: 250,
+    nume: "Carte de vizita ACDmixArt — Plotter",
+    categorie: "Carti de vizita",
+    pret: 2.5,
+    tarifeCantitate: [
+      { min: 1, max: 49, pret: 2.5 },
+      { min: 50, max: 100, pret: 2 },
+      { min: 101, max: null, pret: 1.7 }
+    ],
+    poze: [
+      "images/products/gzi.jpg",
+      "images/products/gzi1.jpg",
+      "images/products/gzi2.jpg"
+    ]
   }
 ];
 
