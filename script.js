@@ -2320,6 +2320,16 @@ const products = [
       "images/products/ziaru1.jpg",
       "images/products/ziaru2.jpg"
     ]
+  },
+  {
+    id: 216,
+    nume: "Invitatie nunta 17",
+    categorie: "Nunta",
+    pret: 7.5,
+    poze: [
+      "images/products/capic.jpg",
+      "images/products/capic1.jpg"
+    ]
   }
 ];
 
