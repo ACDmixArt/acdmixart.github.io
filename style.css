@@ -2727,3 +2727,41 @@ header.site-header a.logo .logo-script {
     margin-bottom: 0 !important;
   }
 }
+
+
+/* Navigație premium: verde salvie cu contur auriu fin */
+.site-header nav {
+  gap: 10px clamp(8px, 1.7vw, 20px) !important;
+  align-items: center;
+}
+.site-header nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 12px;
+  border: 1px solid rgba(190, 158, 91, .78);
+  border-radius: 999px;
+  background: #E7EBE1;
+  color: #66745F !important;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+.site-header nav a:hover,
+.site-header nav a:focus-visible {
+  background: #DCE3D6;
+  box-shadow: 0 2px 9px rgba(190,158,91,.18);
+  transform: translateY(-1px);
+  color: #52614B !important;
+}
+@media (max-width: 560px) {
+  .site-header nav {
+    gap: 7px !important;
+  }
+  .site-header nav a {
+    padding: 7px 9px;
+    font-size: 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+}
