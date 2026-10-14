@@ -2593,3 +2593,45 @@ header.site-header a.logo .logo-script {
     border-radius: 12px !important;
   }
 }
+
+
+/* Finisaj elegant pentru categoriile catalogului */
+#filters.filters {
+  gap: 10px !important;
+}
+#filters.filters .filter-btn {
+  position: relative;
+  min-height: 43px !important;
+  padding: 10px 9px !important;
+  border: 1px solid rgba(102,116,95,.22) !important;
+  border-radius: 15px !important;
+  background: linear-gradient(145deg, #F3F4EE 0%, #E7EBE1 100%) !important;
+  color: #66745F !important;
+  box-shadow: 0 3px 0 rgba(102,116,95,.08), 0 5px 14px rgba(78,73,69,.035);
+  font-weight: 600 !important;
+  letter-spacing: -.015em;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+}
+#filters.filters .filter-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(102,116,95,.42) !important;
+  background: #F8F7F2 !important;
+  color: #596652 !important;
+  box-shadow: 0 5px 0 rgba(102,116,95,.07), 0 9px 18px rgba(78,73,69,.07);
+}
+#filters.filters .filter-btn.active,
+#filters.filters .filter-btn.active:hover {
+  border-color: #B77E88 !important;
+  background: linear-gradient(135deg, #C38D97 0%, #AD7580 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 0 rgba(132,83,94,.14), 0 8px 18px rgba(183,126,136,.2);
+  transform: translateY(-1px);
+}
+@media (max-width: 700px) {
+  #filters.filters .filter-btn {
+    min-height: 40px !important;
+    padding: 8px 5px !important;
+    font-size: 11px !important;
+    border-radius: 13px !important;
+  }
+}
