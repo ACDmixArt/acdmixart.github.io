@@ -2645,6 +2645,17 @@ const products = [
       "images/products/pacpa2.jpg",
       "images/products/pacpa3.jpg"
     ]
+  },
+  {
+    id: 245,
+    nume: "Invitatie domnisoare si cavaleri de onoare",
+    categorie: "Nunta",
+    pret: 15,
+    poze: [
+      "images/products/dodo.jpg",
+      "images/products/dodo1.jpg",
+      "images/products/dodo2.jpg"
+    ]
   }
 ];
 
