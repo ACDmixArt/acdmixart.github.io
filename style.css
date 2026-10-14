@@ -1541,3 +1541,29 @@ footer {
     font-size: 11px;
   }
 }
+
+
+/* Headline hero: caligrafie subtire, spectaculoasa */
+.hero h1 {
+  font-family: 'Italianno', 'Allura', cursive;
+  font-size: clamp(76px, 10vw, 132px);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: .86;
+  max-width: 900px;
+  margin: 18px 0 26px;
+}
+.hero h1 em {
+  font-family: 'Italianno', 'Allura', cursive;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  color: var(--burgundy-dark);
+}
+@media (max-width: 560px) {
+  .hero h1 {
+    font-size: clamp(66px, 17vw, 94px);
+    line-height: .84;
+    margin: 15px 0 24px;
+  }
+}
