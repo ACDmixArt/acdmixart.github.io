@@ -2720,6 +2720,7 @@ function categories() {
     "Pahare",
     "Toppere",
     "Carti",
+    "Carti de vizita",
     "Jurnale",
     "Agende",
     "Party",
