@@ -2720,6 +2720,22 @@ const products = [
       "images/products/gzi1.jpg",
       "images/products/gzi2.jpg"
     ]
+  },
+  {
+    id: 251,
+    nume: "Carte de vizita Nail Artist — Fluture",
+    categorie: "Carti de vizita",
+    pret: 2.5,
+    tarifeCantitate: [
+      { min: 1, max: 49, pret: 2.5 },
+      { min: 50, max: 100, pret: 2 },
+      { min: 101, max: null, pret: 1.7 }
+    ],
+    poze: [
+      "images/products/floc.jpg",
+      "images/products/floc1.jpg",
+      "images/products/floc2.jpg"
+    ]
   }
 ];
 
