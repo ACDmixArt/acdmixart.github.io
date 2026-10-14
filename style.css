@@ -2453,3 +2453,61 @@ header.site-header a.logo .logo-script {
 .quick-hours-row strong { color:#A8757F; font-weight:600; white-space:nowrap; }
 .quick-hours-message { display:block; margin-top:21px; padding:13px 16px; border-radius:999px; background:#B77E88; color:#fff !important; text-align:center; text-decoration:none; font-size:14px; font-weight:600; }
 .quick-hours-message:hover { background:#A8757F; }
+
+
+/* Catalog compact: două produse pe rând pe telefon */
+@media (max-width: 560px) {
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+  .product-card {
+    min-width: 0;
+    border-radius: 15px !important;
+  }
+  .product-photo {
+    aspect-ratio: 1 / 1;
+    padding: 8px !important;
+  }
+  .product-info {
+    padding: 11px !important;
+  }
+  .product-name {
+    font-size: 15px !important;
+    line-height: 1.25 !important;
+    overflow-wrap: anywhere;
+  }
+  .product-info p,
+  .product-description {
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+  }
+  .product-info strong,
+  .product-price {
+    font-size: 15px !important;
+  }
+  .product-quantity {
+    gap: 7px !important;
+    padding: 7px 8px !important;
+    min-height: 38px;
+  }
+  .product-quantity button {
+    width: 25px !important;
+    min-width: 25px !important;
+    height: 25px !important;
+  }
+  .product-quantity span {
+    min-width: 14px;
+    font-size: 13px !important;
+  }
+  .add-cart,
+  button.add-cart,
+  .product-actions .add-cart {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 10px 7px !important;
+    font-size: 12px !important;
+    line-height: 1.3 !important;
+    white-space: normal !important;
+  }
+}
