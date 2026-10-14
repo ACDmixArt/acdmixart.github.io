@@ -2778,7 +2778,7 @@ const products = [
     pret: 1,
     tarifeCantitate: [
       { min: 1, max: 100, pret: 1 },
-      { min: 101, max: null, pret: 0.8 }
+      { min: 101, max: null, pret: 0.7 }
     ],
     poze: [
       "images/products/firmaauto.jpg"
