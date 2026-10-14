@@ -20,7 +20,7 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="style.css?v=20261014-colors26">
+  <link rel="stylesheet" href="style.css?v=20261014-search27">
 </head>
 
 <body>
@@ -33,9 +33,10 @@
     </a>
 
     <div class="header-actions">
-      <a class="header-icon" href="#catalog" aria-label="Caută produse" title="Caută produse">
+      <button class="header-icon" id="openSearch" type="button" aria-label="Caută produse" title="Caută produse">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.2 4.2"></path></svg>
-      </a>
+      </button>
+      <input id="productSearch" class="header-search-input" type="search" placeholder="Caută produse..." aria-label="Caută produse" hidden>
       <a class="header-icon" href="#catalog" aria-label="Vezi catalogul" title="Vezi catalogul">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.8c0 5.2-8.8 10.2-8.8 10.2S3.2 14 3.2 8.8A4.7 4.7 0 0 1 12 6.3a4.7 4.7 0 0 1 8.8 2.5Z"></path></svg>
       </a>
@@ -311,7 +312,7 @@
     © <span id="year"></span> ACDmixArt
   </footer>
 
-  <script src="script.js?v=20261014-12"></script>
+  <script src="script.js?v=20261014-search27"></script>
 
 </body>
 </html>
