@@ -4048,3 +4048,40 @@ window.openGatitCustomizer = openGatitCustomizer;
 window.openAgendaCustomizer = openAgendaCustomizer;
 window.changeCartQuantity = changeCartQuantity;
 window.changeProductQuantity = changeProductQuantity;
+
+
+// Fereastra programului de comenzi din bara flotanta
+(function () {
+  function initQuickHoursPopup() {
+    var popup = document.getElementById("quickHoursPopup");
+    var trigger = document.querySelector(".quick-hours-link");
+    if (!popup || !trigger) return;
+    trigger.addEventListener("click", function (event) {
+      event.preventDefault();
+      popup.hidden = false;
+      document.body.style.overflow = "hidden";
+    });
+    var close = popup.querySelector(".quick-hours-close");
+    if (close) close.addEventListener("click", function () {
+      popup.hidden = true;
+      document.body.style.overflow = "";
+    });
+    popup.addEventListener("click", function (event) {
+      if (event.target === popup) {
+        popup.hidden = true;
+        document.body.style.overflow = "";
+      }
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && !popup.hidden) {
+        popup.hidden = true;
+        document.body.style.overflow = "";
+      }
+    });
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initQuickHoursPopup);
+  } else {
+    initQuickHoursPopup();
+  }
+})();
