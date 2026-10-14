@@ -2544,7 +2544,6 @@ function categories() {
     "Toate",
     "Botez",
     "Nunta",
-    "Nunta-Botez",
     "Marturii",
     "Plicuri dar botez",
     "Plicuri dar nunta",
@@ -3341,7 +3340,7 @@ function renderDynamicFields() {
 
   addFormField({
     id: "formQuantity",
-    label: category === "Botez" || category === "Nunta" || category === "Nunta-Botez"
+    label: category === "Botez" || category === "Nunta"
       ? "Cantitate (minimum 25 bucăți)"
       : "Cantitate",
     type: "number",
@@ -3350,7 +3349,7 @@ function renderDynamicFields() {
     required: true
   });
 
-  if (["Botez", "Nunta", "Nunta-Botez"].includes(category)) {
+  if (["Botez", "Nunta"].includes(category)) {
     document.getElementById("formQuantity").min = "25";
     addFormField({ id: "formDate", label: "Data evenimentului", type: "date" });
     addFormField({ id: "formNames", label: "Numele persoanelor / copilului", placeholder: "Ex.: nume copil, părinți, miri" });
