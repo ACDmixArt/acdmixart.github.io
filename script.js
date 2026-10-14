@@ -2870,9 +2870,10 @@ function setCategory(category) {
 function changeProductQuantity(productId, change) {
   const el = document.getElementById(`qty-${productId}`);
   if (!el) return;
-  const product = products.find(item => item.id === Number(productId));\n  const minimum = isMin25Invitation(product) ? INVITATION_MINIMUM : 1;\n  const next = Math.max(minimum, (Number(el.textContent) || minimum) + change);
-  el.textContent = next;
   const product = products.find(item => item.id === Number(productId));
+  const minimum = isMin25Invitation(product) ? INVITATION_MINIMUM : 1;
+  const next = Math.max(minimum, (Number(el.textContent) || minimum) + change);
+  el.textContent = next;
   const priceEl = document.getElementById(`price-${productId}`);
   if (product && priceEl) priceEl.textContent = `${money(unitPriceForQuantity(product, next))} / buc.`;
 }
@@ -2978,7 +2979,8 @@ function renderProducts() {
           ${descrierePersonalizare(product).trim().split(/\s+/).length > 3 ? `<button type="button" class="description-toggle" aria-expanded="false" onclick="toggleProductDescription(${product.id}, this)">Vezi mai mult</button>` : ""}
           <p class="product-price" id="price-${product.id}">${money(unitPriceForQuantity(product, 1))} / buc.</p>
           ${Array.isArray(product.tarifeCantitate) ? `<p class="product-tier-prices" style="font-size:13px;line-height:1.5;margin:4px 0 10px;">1–49 buc.: 2,50 lei/buc.<br>50–100 buc.: 2 lei/buc.<br>Peste 100 buc.: 1,70 lei/buc.</p>` : ""}
-          ${isMin25Invitation(product) ? `<p class="minimum-order-note">Comandă minimă: 25 buc.</p>` : ""}\n          <div class="product-quantity">
+          ${isMin25Invitation(product) ? `<p class="minimum-order-note">Comandă minimă: 25 buc.</p>` : ""}\n          ${isMin25Invitation(product) ? `<p class="minimum-order-note">Comandă minimă: 25 buc.</p>` : ""}
+          <div class="product-quantity">
             <button type="button" aria-label="Scade cantitatea" onclick="changeProductQuantity(${product.id}, -1)">−</button>
             <span id="qty-${product.id}">${isMin25Invitation(product) ? INVITATION_MINIMUM : 1}</span>
             <button type="button" aria-label="Crește cantitatea" onclick="changeProductQuantity(${product.id}, 1)">+</button>
@@ -3244,9 +3246,16 @@ function unitPriceForQuantity(product, quantity = 1) {
 
 function addToCart(productId, quantity = 1, personalizare = null) {
   const product = products.find(item => item.id === Number(productId));
-  const qty = Number(quantity);
+  let qty = Number(quantity);
 
   if (!product) return;
+  const minimum = isMin25Invitation(product) ? INVITATION_MINIMUM : 1;
+  if (isMin25Invitation(product) && qty < minimum) {
+    alert("Comanda minimă pentru invitațiile de nuntă și botez este de 25 de bucăți.");
+    const quantityEl = document.getElementById(`qty-${productId}`);
+    if (quantityEl) quantityEl.textContent = String(minimum);
+    return;
+  }
   if (!Number.isInteger(qty) || qty < 1) {
     alert("Introdu un număr valid de bucăți.");
     return;
@@ -3264,12 +3273,13 @@ function removeFromCart(index) {
 
 function changeCartQuantity(index, quantity) {
   const qty = Number(quantity);
-  if (!Number.isInteger(qty) || qty < 1) {
-    alert("Cantitatea minimă este 1.");
+  if (!cart[index]) return;
+  const minimum = isMin25Invitation(cart[index]) ? INVITATION_MINIMUM : 1;
+  if (!Number.isInteger(qty) || qty < minimum) {
+    alert(isMin25Invitation(cart[index]) ? "Comanda minimă pentru invitațiile de nuntă și botez este de 25 de bucăți." : "Cantitatea minimă este 1.");
     renderCart();
     return;
   }
-  if (!cart[index]) return;
   cart[index].quantity = qty;
   cart[index].pret = unitPriceForQuantity(cart[index], qty);
   renderCart();
@@ -3290,6 +3300,7 @@ function renderCart() {
   cartItems.innerHTML = cart.map((item, index) => `
     <div class="cart-item">
       <div>
+        ${isMin25Invitation(item) ? `<small class="minimum-order-note">Comandă minimă: 25 buc.</small>` : ""}
         <strong>${item.nume}</strong>
         <span>${money(item.pret)} / buc.</span>
         ${
