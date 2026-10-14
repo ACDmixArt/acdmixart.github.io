@@ -2028,6 +2028,20 @@ const products = [
       "images/products/pum6.jpg",
       "images/products/pum7.jpg"
     ]
+  },
+  {
+    id: 193,
+    nume: "Model 13 - Carte de colorat A4",
+    categorie: "Carti",
+    pret: 110,
+    poze: [
+      "images/products/ujuj.jpg",
+      "images/products/ujuj1.jpg",
+      "images/products/ujuj2.jpg",
+      "images/products/ujuj3.jpg",
+      "images/products/ujuj4.jpg",
+      "images/products/ujuj5.jpg"
+    ]
   }
 ];
 
