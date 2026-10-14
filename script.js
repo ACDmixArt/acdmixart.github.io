@@ -3649,7 +3649,7 @@ function updateOrderSummary() {
   if (product) {
     const qtyInput = document.getElementById("formQuantity");
     const qty = qtyInput ? Math.max(1, Number(qtyInput.value) || 1) : 1;
-    let unitPrice = unitPriceForQuantity(product, quantity);
+    let unitPrice = unitPriceForQuantity(product, qty);
     if (product.categorie === "Set Mot" && frame && frame.checked) unitPrice += 60;
     const agendaCharacters = document.getElementById("formAgendaCharacters");
     if (product.categorie === "Agende" && agendaCharacters) {
@@ -3744,14 +3744,14 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
     const frame = document.getElementById("formFrame");
     if (frame && frame.checked) message += "Ramă foto: Da (+60 lei)\n";
 
-    let unitPrice = product.pret;
+    let unitPrice = unitPriceForQuantity(product, quantity);
     if (product.categorie === "Set Mot" && frame && frame.checked) unitPrice += 60;
     const agendaCharacters = document.getElementById("formAgendaCharacters");
     if (product.categorie === "Agende" && agendaCharacters) {
       const optionCosts = { "Fără caricatură — 0 lei": 0, "1 personaj — 20 lei": 20, "2 personaje — 35 lei": 35, "3 personaje — 50 lei": 50 };
       unitPrice += optionCosts[agendaCharacters.value] || 0;
     }
-    message += `Preț estimativ: ${money(unitPrice * quantity)}\n\nVă mulțumesc!`;
+    message += `Preț/bucată: ${money(unitPrice)}\nPreț estimativ: ${money(unitPrice * quantity)}\n\nVă mulțumesc!`;
 
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
   });
