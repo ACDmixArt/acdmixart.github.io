@@ -2211,6 +2211,16 @@ const products = [
       "images/products/kl.jpg",
       "images/products/kl1.jpg"
     ]
+  },
+  {
+    id: 206,
+    nume: "Invitatie nunta 7",
+    categorie: "Nunta",
+    pret: 10,
+    poze: [
+      "images/products/pip.jpg",
+      "images/products/pip1.jpg"
+    ]
   }
 ];
 
