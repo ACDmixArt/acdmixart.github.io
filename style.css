@@ -1152,3 +1152,109 @@ footer {
     font-size: 24px;
   }
 }
+
+
+/* ACDmixArt premium v2 — schimbari vizibile */
+:root {
+  --pink-powder: #D8A6AD;
+  --pink-powder-light: #F4E4E6;
+}
+body {
+  background: #FAF7F2;
+}
+.site-header {
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid #E8C9CE;
+}
+.logo {
+  font-size: 34px;
+  letter-spacing: -0.04em;
+}
+.hero {
+  background: linear-gradient(115deg, #FAF7F2 0%, #FFFDFD 58%, #F4E4E6 100%);
+}
+.hero h1 {
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+.hero h1 em {
+  color: #B77E88;
+}
+.hero-card {
+  position: relative;
+  padding: 10px;
+  border: 1px solid #D8A6AD;
+  border-radius: 28px;
+  background: #FFFFFF;
+  box-shadow: 0 22px 55px rgba(102, 72, 78, 0.16);
+}
+.hero-card img {
+  width: 100%;
+  height: clamp(320px, 39vw, 500px);
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+}
+.button {
+  background: #66745F;
+  border-radius: 999px;
+  padding: 15px 26px;
+  box-shadow: 0 8px 20px rgba(102, 116, 95, 0.18);
+}
+.button:hover {
+  background: #4F5D49;
+}
+.catalog-section {
+  background: #FFFFFF;
+}
+.section-heading h2,
+.personalize-section h2,
+#about h2 {
+  letter-spacing: -0.035em;
+}
+.product-card {
+  border: 1px solid #E8D3D6;
+  border-radius: 20px;
+  box-shadow: 0 7px 24px rgba(78, 73, 69, 0.055);
+}
+.product-card:hover {
+  border-color: #D8A6AD;
+  box-shadow: 0 14px 32px rgba(102, 72, 78, 0.12);
+}
+.product-name {
+  font-size: 27px;
+  line-height: 1.08;
+}
+.eyebrow,
+.product-category {
+  color: #B77E88;
+}
+.filter {
+  border-color: #E3C2C8;
+}
+.filter.active,
+.filter:hover {
+  background: #66745F;
+  border-color: #66745F;
+}
+.personalize-section {
+  background: linear-gradient(120deg, #66745F 0%, #56664F 100%);
+}
+.personalize-section .button,
+.order-form .button {
+  background: #F4E4E6;
+  color: #4F5D49;
+}
+footer {
+  border-top: 1px solid #E8C9CE;
+  background: #FAF7F2;
+}
+@media (max-width: 900px) {
+  .hero-card img { height: clamp(280px, 58vw, 420px); }
+}
+@media (max-width: 560px) {
+  .hero-card { padding: 7px; border-radius: 22px; }
+  .hero-card img { height: 320px; border-radius: 15px; }
+  .logo { font-size: 29px; }
+}
