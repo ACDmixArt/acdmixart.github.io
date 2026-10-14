@@ -2581,6 +2581,16 @@ const products = [
       "images/products/ga.jpg",
       "images/products/ga1.jpg"
     ]
+  },
+  {
+    id: 239,
+    nume: "Invitatie nunta 39",
+    categorie: "Nunta",
+    pret: 6.5,
+    poze: [
+      "images/products/capsi.jpg",
+      "images/products/capsi1.jpg"
+    ]
   }
 ];
 
