@@ -2817,6 +2817,8 @@ const whatsappNumber = "40742059730";
 
 let activeCategory = "Toate";
 let cart = [];
+let favoritesOnly = false;
+let favoriteIds = (() => { try { return JSON.parse(localStorage.getItem("acdmixart-favorites") || "[]").map(Number); } catch (_) { return []; } })();
 
 function categories() {
   return [
@@ -2924,9 +2926,9 @@ function renderProducts() {
     .trim();
   const query = normalizeSearch(document.getElementById("productSearch")?.value || "");
   // A typed search always searches all products, not only the active category.
-  const categoryList = query || activeCategory === "Toate"
-    ? products
-    : products.filter(product => product.categorie === activeCategory);
+  const categoryList = favoritesOnly
+    ? products.filter(product => favoriteIds.includes(Number(product.id)))
+    : (query || activeCategory === "Toate" ? products : products.filter(product => product.categorie === activeCategory));
   const terms = query.split(/\s+/).filter(Boolean);
   const list = query
     ? categoryList.filter(product => {
@@ -2956,6 +2958,7 @@ function renderProducts() {
     return `
       <article class="product-card">
         <div class="product-photo">
+          <button type="button" class="product-favorite ${favoriteIds.includes(Number(product.id)) ? "is-favorite" : ""}" aria-label="${favoriteIds.includes(Number(product.id)) ? "Scoate de la favorite" : "Adaugă la favorite"}" aria-pressed="${favoriteIds.includes(Number(product.id))}" onclick="toggleFavorite(${product.id}, this)">♥</button>
           ${firstImage ? `<img src="${firstImage}" alt="${product.nume}" data-product-id="${product.id}" loading="lazy">` : `<div style="min-height:220px;display:flex;align-items:center;justify-content:center;padding:20px;text-align:center;color:#B77E88;background:#FAF7F2;font-weight:700;">Fotografie în curs de adăugare</div>`}
         </div>
         <div class="product-info">
@@ -4102,3 +4105,6 @@ window.toggleProductDescription = function (productId, button) {
   button.setAttribute("aria-expanded", String(!expanded));
   button.textContent = expanded ? "Vezi mai mult" : "Vezi mai puțin";
 };
+
+window.toggleFavorite = function(productId, button) { const id=Number(productId); const exists=favoriteIds.includes(id); favoriteIds=exists?favoriteIds.filter(x=>x!==id):[...favoriteIds,id]; try{localStorage.setItem('acdmixart-favorites',JSON.stringify(favoriteIds));}catch(_){} if(button){button.classList.toggle('is-favorite',!exists);button.setAttribute('aria-pressed',String(!exists));button.setAttribute('aria-label',exists?'Adaugă la favorite':'Scoate de la favorite');} if(favoritesOnly)renderProducts(); };
+window.toggleFavoritesView = function() { favoritesOnly=!favoritesOnly; const b=document.getElementById('openFavorites'); if(b){b.classList.toggle('favorites-active',favoritesOnly);b.setAttribute('aria-pressed',String(favoritesOnly));b.title=favoritesOnly?'Vezi toate produsele':'Produse favorite';} if(favoritesOnly){activeCategory='Toate';renderCategories();} renderProducts();document.getElementById('catalog')?.scrollIntoView({behavior:'smooth',block:'start'});};
