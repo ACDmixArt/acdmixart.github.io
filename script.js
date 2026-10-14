@@ -2012,6 +2012,22 @@ const products = [
       "images/products/giaz5.jpg",
       "images/products/giaz6.jpg"
     ]
+  },
+  {
+    id: 192,
+    nume: "Model 12 - Carte de colorat A4",
+    categorie: "Carti",
+    pret: 110,
+    poze: [
+      "images/products/pum.jpg",
+      "images/products/pum1.jpg",
+      "images/products/pum2.jpg",
+      "images/products/pum3.jpg",
+      "images/products/pum4.jpg",
+      "images/products/pum5.jpg",
+      "images/products/pum6.jpg",
+      "images/products/pum7.jpg"
+    ]
   }
 ];
 
