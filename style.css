@@ -2882,3 +2882,17 @@ header.site-header a.logo .logo-script {
   .cart-bottom strong { font-size: 18px; }
   #cartWhatsapp { padding: 13px 14px !important; }
 }
+
+
+/* Finisare pentru elementele reale din coș */
+.cart-item { display:grid; grid-template-columns:minmax(0,1fr) 38px; gap:12px; align-items:start; padding:18px 0 !important; border-bottom:1px solid rgba(215,167,176,.24) !important; }
+.cart-item > div > strong { display:block; margin-bottom:5px; font-size:16px; line-height:1.4; }
+.cart-item > div > span { display:block; color:#817875; font-size:13px; }
+.cart-item p { color:#77716d; font-size:13px; line-height:1.5; margin:10px 0; }
+.cart-item .cart-quantity { display:inline-flex; align-items:center; gap:12px; margin-top:10px; padding:4px 7px; border:1px solid rgba(215,167,176,.35); border-radius:999px; background:#fff; }
+.cart-item .cart-quantity button { display:grid; place-items:center; width:30px; height:30px; min-width:30px; padding:0; border:0 !important; border-radius:50%; background:#F5E9EB !important; color:#986873 !important; font-size:19px; line-height:1; cursor:pointer; }
+.cart-item .cart-quantity span { min-width:14px; color:#4E4945; text-align:center; font-size:14px; }
+.cart-item > button { display:grid; place-items:center; width:36px; height:36px; padding:0; border:1px solid rgba(215,167,176,.4) !important; border-radius:50%; background:#fff !important; color:#A8757F !important; font-size:21px; line-height:1; cursor:pointer; }
+.cart-item p:last-child { margin:12px 0 0; font-size:14px; color:#4E4945; font-weight:600; }
+.cart-panel.open ~ .quick-access { display:none !important; }
+@media (max-width:560px) { .cart-item { grid-template-columns:minmax(0,1fr) 34px; gap:8px; } .cart-item > div > strong { font-size:15px; } }
