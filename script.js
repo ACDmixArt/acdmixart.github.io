@@ -1857,6 +1857,16 @@ const products = [
     poze: [
       "images/products/claudiu.jpg"
     ]
+  },
+  {
+    id: 180,
+    nume: "Marturie mir personalizabila pe orice tematica",
+    categorie: "Marturii",
+    pret: 8,
+    poze: [
+      "images/products/mirax.jpg",
+      "images/products/mirax1.jpg"
+    ]
   }
 ];
 
