@@ -2678,6 +2678,16 @@ const products = [
       "images/products/cires1.jpg",
       "images/products/cires2.jpg"
     ]
+  },
+  {
+    id: 248,
+    nume: "Invitatie nunta 47",
+    categorie: "Nunta",
+    pret: 3.5,
+    poze: [
+      "images/products/invitatiefluture1.jpg",
+      "images/products/invitatiefluture.jpg"
+    ]
   }
 ];
 
