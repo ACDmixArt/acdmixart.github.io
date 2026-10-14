@@ -2881,7 +2881,7 @@ function renderProducts() {
   const normalizeSearch = value => String(value || "")
     .toLocaleLowerCase("ro")
     .normalize("NFD")
-    .replace(/[\\u0300-\\u036f]/g, "")
+    .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9]+/g, " ")
     .trim();
   const query = normalizeSearch(document.getElementById("productSearch")?.value || "");
@@ -2918,7 +2918,7 @@ function renderProducts() {
     return `
       <article class="product-card">
         <div class="product-photo">
-          ${firstImage ? `<img src="${firstImage}" alt="${product.nume}" data-product-id="${product.id}" loading="lazy">` : `<div style="min-height:220px;display:flex;align-items:center;justify-content:center;padding:20px;text-align:center;color:#66745F;background:#FAF7F2;font-weight:700;">Fotografie în curs de adăugare</div>`}
+          ${firstImage ? `<img src="${firstImage}" alt="${product.nume}" data-product-id="${product.id}" loading="lazy">` : `<div style="min-height:220px;display:flex;align-items:center;justify-content:center;padding:20px;text-align:center;color:#B77E88;background:#FAF7F2;font-weight:700;">Fotografie în curs de adăugare</div>`}
         </div>
         <div class="product-info">
           <h3>${product.nume}</h3>
@@ -2980,7 +2980,7 @@ function openSetMotCustomizer(productId, quantity = 1) {
 
       <p class="setmot-price" style="font-size:21px;font-weight:700;margin:18px 0;"></p>
       <p class="setmot-error" role="alert" style="color:#b00020;display:none;margin:8px 0;"></p>
-      <button type="button" class="setmot-add add-cart" style="width:100%;padding:14px;border:0;border-radius:9px;background:#66745F;color:white;font-weight:700;cursor:pointer;font-size:16px;">Adaugă în coș</button>
+      <button type="button" class="setmot-add add-cart" style="width:100%;padding:14px;border:0;border-radius:9px;background:#B77E88;color:white;font-weight:700;cursor:pointer;font-size:16px;">Adaugă în coș</button>
     </div>
   `;
 
@@ -3084,7 +3084,7 @@ function openGatitCustomizer(productId, quantity = 1) {
         `).join("")}
       </div>
       <p class="gatit-price" style="font-size:21px;font-weight:700;margin:18px 0;"></p>
-      <button type="button" class="gatit-add add-cart" style="width:100%;padding:14px;border:0;border-radius:9px;background:#66745F;color:white;font-weight:700;cursor:pointer;font-size:16px;">Adaugă în coș</button>
+      <button type="button" class="gatit-add add-cart" style="width:100%;padding:14px;border:0;border-radius:9px;background:#B77E88;color:white;font-weight:700;cursor:pointer;font-size:16px;">Adaugă în coș</button>
     </div>
   `;
 
@@ -3146,7 +3146,7 @@ function openAgendaCustomizer(productId, quantity = 1) {
         <option value="3">3 personaje — 50 lei</option>
       </select>
       <p class="agenda-price" style="font-size:21px;font-weight:700;margin:18px 0;"></p>
-      <button type="button" class="agenda-add add-cart" style="width:100%;padding:14px;border:0;border-radius:9px;background:#66745F;color:white;font-weight:700;cursor:pointer;font-size:16px;">Adaugă în coș</button>
+      <button type="button" class="agenda-add add-cart" style="width:100%;padding:14px;border:0;border-radius:9px;background:#B77E88;color:white;font-weight:700;cursor:pointer;font-size:16px;">Adaugă în coș</button>
     </div>
   `;
   document.body.appendChild(modal);
