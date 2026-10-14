@@ -2244,6 +2244,17 @@ const products = [
       "images/products/calka2.jpg",
       "images/products/calka3.jpg"
     ]
+  },
+  {
+    id: 209,
+    nume: "Invitatie nunta 10",
+    categorie: "Nunta",
+    pret: 3.5,
+    poze: [
+      "images/products/inchise.jpg",
+      "images/products/inchise1.jpg",
+      "images/products/inchise2.jpg"
+    ]
   }
 ];
 
