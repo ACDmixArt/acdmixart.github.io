@@ -2330,6 +2330,19 @@ const products = [
       "images/products/capic.jpg",
       "images/products/capic1.jpg"
     ]
+  },
+  {
+    id: 217,
+    nume: "Invitatie nunta 18",
+    categorie: "Nunta",
+    pret: 7,
+    poze: [
+      "images/products/cliv.jpg",
+      "images/products/cliv1.jpg",
+      "images/products/cliv2.jpg",
+      "images/products/cliv3.jpg",
+      "images/products/cliv4.jpg"
+    ]
   }
 ];
 
