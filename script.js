@@ -2870,7 +2870,7 @@ function setCategory(category) {
 function changeProductQuantity(productId, change) {
   const el = document.getElementById(`qty-${productId}`);
   if (!el) return;
-  const next = Math.max(1, (Number(el.textContent) || 1) + change);
+  const product = products.find(item => item.id === Number(productId));\n  const minimum = isMin25Invitation(product) ? INVITATION_MINIMUM : 1;\n  const next = Math.max(minimum, (Number(el.textContent) || minimum) + change);
   el.textContent = next;
   const product = products.find(item => item.id === Number(productId));
   const priceEl = document.getElementById(`price-${productId}`);
@@ -2914,6 +2914,14 @@ function descrierePersonalizare(product) {
   }
   return "Culorile, textul, numele și personajele pot fi adaptate în funcție de model. Scrie-mi ce îți dorești și găsim împreună varianta potrivită.";
 }
+
+function isMin25Invitation(product) {
+  if (!product) return false;
+  const name = String(product.nume || "").toLocaleLowerCase("ro").normalize("NFD").replace(/[\\u0300-\\u036f]/g, "");
+  const category = String(product.categorie || "").toLocaleLowerCase("ro").normalize("NFD").replace(/[\\u0300-\\u036f]/g, "");
+  return name.includes("invitatie") && (category.includes("botez") || category.includes("nunta"));
+}
+const INVITATION_MINIMUM = 25;
 
 function renderProducts() {
   if (!grila) return;
@@ -2970,9 +2978,9 @@ function renderProducts() {
           ${descrierePersonalizare(product).trim().split(/\s+/).length > 3 ? `<button type="button" class="description-toggle" aria-expanded="false" onclick="toggleProductDescription(${product.id}, this)">Vezi mai mult</button>` : ""}
           <p class="product-price" id="price-${product.id}">${money(unitPriceForQuantity(product, 1))} / buc.</p>
           ${Array.isArray(product.tarifeCantitate) ? `<p class="product-tier-prices" style="font-size:13px;line-height:1.5;margin:4px 0 10px;">1–49 buc.: 2,50 lei/buc.<br>50–100 buc.: 2 lei/buc.<br>Peste 100 buc.: 1,70 lei/buc.</p>` : ""}
-          <div class="product-quantity">
+          ${isMin25Invitation(product) ? `<p class="minimum-order-note">Comandă minimă: 25 buc.</p>` : ""}\n          <div class="product-quantity">
             <button type="button" aria-label="Scade cantitatea" onclick="changeProductQuantity(${product.id}, -1)">−</button>
-            <span id="qty-${product.id}">1</span>
+            <span id="qty-${product.id}">${isMin25Invitation(product) ? INVITATION_MINIMUM : 1}</span>
             <button type="button" aria-label="Crește cantitatea" onclick="changeProductQuantity(${product.id}, 1)">+</button>
           </div>
           ${
@@ -3296,7 +3304,7 @@ function renderCart() {
                   : ""
         }
         <div class="cart-quantity">
-          <button type="button" aria-label="Scade cantitatea" onclick="changeCartQuantity(${index}, ${Math.max(1, (Number(item.quantity) || 1) - 1)})">−</button>
+          <button type="button" aria-label="Scade cantitatea" onclick="changeCartQuantity(${index}, ${Math.max(isMin25Invitation(item) ? INVITATION_MINIMUM : 1, (Number(item.quantity) || 1) - 1)})">−</button>
           <span>${item.quantity || 1}</span>
           <button type="button" aria-label="Crește cantitatea" onclick="changeCartQuantity(${index}, ${(Number(item.quantity) || 1) + 1})">+</button>
         </div>
