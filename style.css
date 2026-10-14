@@ -2655,3 +2655,46 @@ header.site-header a.logo .logo-script {
     margin-bottom: 22px !important;
   }
 }
+
+
+/* Elimină spațiile goale dintre elementele cardurilor de produs */
+@media (max-width: 700px) {
+  .products-grid {
+    align-items: start !important;
+    row-gap: 14px !important;
+  }
+  .products-grid .product-card {
+    align-self: start !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  .products-grid .product-photo {
+    padding: 8px !important;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+  }
+  .products-grid .product-photo img {
+    display: block;
+    object-fit: cover;
+  }
+  .products-grid .product-info {
+    padding: 10px 11px 12px !important;
+  }
+  .products-grid .product-info h3 {
+    margin: 4px 0 7px !important;
+    line-height: 1.18 !important;
+  }
+  .products-grid .product-description {
+    margin: 5px 0 7px !important;
+    line-height: 1.35 !important;
+  }
+  .products-grid .description-toggle {
+    margin: 0 0 8px !important;
+  }
+  .products-grid .product-price {
+    margin: 5px 0 9px !important;
+  }
+  .products-grid .product-quantity {
+    margin: 0 0 9px !important;
+  }
+}
