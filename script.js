@@ -2206,7 +2206,7 @@ const products = [
     id: 205,
     nume: "Invitatie nunta 6",
     categorie: "Nunta",
-    pret: 9.5,
+    pret: 8.5,
     poze: [
       "images/products/kl.jpg",
       "images/products/kl1.jpg"
