@@ -2266,6 +2266,16 @@ const products = [
       "images/products/oni1.jpg",
       "images/products/oni2.jpg"
     ]
+  },
+  {
+    id: 211,
+    nume: "Invitatie nunta 12",
+    categorie: "Nunta",
+    pret: 4.5,
+    poze: [
+      "images/products/cfcf.jpg",
+      "images/products/cfcf1.jpg"
+    ]
   }
 ];
 
