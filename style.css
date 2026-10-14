@@ -1,9 +1,9 @@
 :root {
-  --burgundy: #A8B5A0;
-  --burgundy-dark: #66745F;
+  --burgundy: #D8A6AD;
+  --burgundy-dark: #B77E88;
   --cream: #FAF7F2;
   --paper: #FFFFFF;
-  --gold: #D8A6AD;
+  --gold: #A8B5A0;
   --ink: #4E4945;
   --muted: #8A8580;
   --white: #FFFFFF;
@@ -2193,3 +2193,18 @@ header.site-header a.logo .logo-script {
     margin: 10px auto 22px !important;
   }
 }
+
+
+/* Explicit color-role swap for all visible brand accents */
+:root { --pink-powder: #A8B5A0; --pink-powder-light: #E8EDE4; }
+.site-header .logo-subtitle, .hero .hero-eyebrow, .eyebrow, .product-category, nav a:hover { color: #66745F !important; }
+.site-header .header-icon, .cart-button, .filter, .fav { border-color: rgba(102,116,95,.48) !important; }
+.filter.active, .filter:hover { background: #B77E88 !important; border-color: #B77E88 !important; }
+.hero-calligraphy-emphasis { color: #B77E88 !important; }
+.hero .hero-eyebrow::before, .hero .hero-eyebrow::after, footer { border-color: rgba(102,116,95,.45) !important; }
+.button { background: #B77E88 !important; border-color: #B77E88 !important; }
+.button:hover { background: #66745F !important; border-color: #66745F !important; }
+.personalize-section { background: #B77E88 !important; }
+.personalize-section .eyebrow { color: #E8EDE4 !important; }
+.product-card { border-color: rgba(102,116,95,.32) !important; }
+.product-card:hover { border-color: rgba(102,116,95,.8) !important; }
