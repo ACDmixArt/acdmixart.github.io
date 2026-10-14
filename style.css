@@ -1672,3 +1672,42 @@ main .hero h1 em {
   main .hero h1 { font-size: clamp(38px, 10.3vw, 48px) !important; }
   main .hero h1 em { font-size: 1.2em !important; }
 }
+
+
+/* Titlu principal: caligrafie subtire + accent de invitatie premium */
+.hero h1.hero-calligraphy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  max-width: 100%;
+  margin: 18px 0 26px;
+  font-family: 'Allura', cursive !important;
+  font-size: clamp(55px, 7vw, 88px) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: .98 !important;
+}
+.hero-calligraphy-light {
+  font-family: 'Allura', cursive;
+  font-weight: 400;
+  color: var(--ink);
+}
+.hero-calligraphy-emphasis {
+  font-family: 'Great Vibes', 'Alex Brush', cursive;
+  font-size: 1.18em;
+  font-weight: 400;
+  line-height: .96;
+  color: var(--burgundy-dark);
+}
+.hero-calligraphy-last {
+  color: var(--ink);
+}
+@media (max-width: 560px) {
+  .hero h1.hero-calligraphy {
+    font-size: clamp(53px, 13.5vw, 72px) !important;
+    line-height: .98 !important;
+    margin: 15px 0 24px;
+  }
+  .hero-calligraphy-emphasis { font-size: 1.12em; }
+}
