@@ -2179,6 +2179,17 @@ const products = [
       "images/products/pasap2.jpg",
       "images/products/pasap3.jpg"
     ]
+  },
+  {
+    id: 203,
+    nume: "Invitatie nunta 4",
+    categorie: "Nunta",
+    pret: 4.5,
+    poze: [
+      "images/products/romrom.jpg",
+      "images/products/romrom1.jpg",
+      "images/products/romrom2.jpg"
+    ]
   }
 ];
 
