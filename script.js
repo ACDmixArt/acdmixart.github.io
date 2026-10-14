@@ -2890,7 +2890,7 @@ function renderProducts() {
   const list = query
     ? categoryList.filter(product => {
         const searchable = `${product.nume} ${product.categorie}`.toLocaleLowerCase("ro")
-          .normalize("NFD").replace(/[\\u0300-\\u036f]/g, "");
+          .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
         return queryVariants.some(term => searchable.includes(term));
       })
     : categoryList;
