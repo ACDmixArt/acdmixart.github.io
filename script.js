@@ -2115,7 +2115,16 @@ const products = [
     categorie: "Set Gatit",
     pret: 65,
     poze: [
-      "images/products/mire.jpg"
+      "images/products/setmireasa.jpg",
+      "images/products/setmireasa1.jpg",
+      "images/products/setmireasa2.jpg",
+      "images/products/setmireasa3.jpg",
+      "images/products/setmireasa4.jpg",
+      "images/products/setmireasa5.jpg",
+      "images/products/setmireasa6.jpg",
+      "images/products/setmireasa7.jpg",
+      "images/products/setmireasa8.jpg",
+      "images/products/setmireasa9.jpg"
     ]
   }
 ];
