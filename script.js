@@ -2297,6 +2297,18 @@ const products = [
       "images/products/capcapcap1.jpg",
       "images/products/capcapcap2.jpg"
     ]
+  },
+  {
+    id: 214,
+    nume: "Invitatie nunta 15",
+    categorie: "Nunta",
+    pret: 3.5,
+    poze: [
+      "images/products/anta.jpg",
+      "images/products/anta1.jpg",
+      "images/products/anta2.jpg",
+      "images/products/anta3.jpg"
+    ]
   }
 ];
 
