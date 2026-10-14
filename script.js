@@ -2456,6 +2456,15 @@ const products = [
       "images/products/redu2.jpg",
       "images/products/redu3.jpg"
     ]
+  },
+  {
+    id: 227,
+    nume: "Marturie ciocolata",
+    categorie: "Marturii",
+    pret: 7,
+    poze: [
+      "images/products/redu0.jpg"
+    ]
   }
 ];
 
@@ -2566,7 +2575,9 @@ function renderProducts() {
                 ? `<button type="button" class="add-cart" onclick="openGatitCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Alege accesoriile</button>`
                 : product.categorie === "Agende"
                 ? `<button type="button" class="add-cart" onclick="openAgendaCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Alege caricatura</button>`
-                : `<button type="button" class="add-cart" onclick="addToCart(${product.id}, document.getElementById('qty-${product.id}').textContent)">Adaugă în coș</button>`
+                : product.id === 227
+                  ? `<label style="display:flex;align-items:center;gap:8px;margin:10px 0;font-size:14px;"><input type="checkbox" id="insigna-${product.id}"> + Insignă (20 lei)</label><button type="button" class="add-cart" onclick="addToCart(${product.id}, document.getElementById('qty-${product.id}').textContent, { tip: 'marturieCiocolata', insigna: document.getElementById('insigna-${product.id}').checked })">Adaugă în coș</button>`
+                  : `<button type="button" class="add-cart" onclick="addToCart(${product.id}, document.getElementById('qty-${product.id}').textContent)">Adaugă în coș</button>`
           }
         </div>
       </article>
@@ -2807,7 +2818,7 @@ function openAgendaCustomizer(productId, quantity = 1) {
    COS
 ========================= */
 
-function addToCart(productId, quantity = 1) {
+function addToCart(productId, quantity = 1, personalizare = null) {
   const product = products.find(item => item.id === Number(productId));
   const qty = Number(quantity);
 
@@ -2817,7 +2828,7 @@ function addToCart(productId, quantity = 1) {
     return;
   }
 
-  cart.push({ ...product, quantity: qty });
+  cart.push({ ...product, quantity: qty, ...(personalizare ? { personalizare } : {}) });
   renderCart();
   openCart();
 }
@@ -2861,22 +2872,24 @@ function renderCart() {
             ? `<p>Caricatură: ${item.personalizare.personaje === 0 ? "Fără caricatură" : item.personalizare.personaje + (item.personalizare.personaje === 1 ? " personaj" : " personaje")}<br>Cost caricatură: ${money(item.personalizare.pretCaricatura)}</p>`
             : item.personalizare?.tip === "setGatit"
               ? `<p>Accesorii: ${item.personalizare.accesorii.length ? item.personalizare.accesorii.map(option => option.nume + " (+" + money(option.pret) + ")").join(", ") : "Fără accesorii suplimentare"}</p>`
-              : item.personalizare
-                ? `<p>Nume: ${item.personalizare.numeCopil}<br>Tematică: ${item.personalizare.tematica}<br>Ramă foto: ${item.personalizare.ramaFoto ? "Da" : "Nu"}</p>`
-                : ""
+              : item.personalizare?.tip === "marturieCiocolata"
+                ? `<p>Insignă: ${item.personalizare.insigna ? "Da (+" + money(20) + " / buc.)" : "Nu"}</p>`
+                : item.personalizare
+                  ? `<p>Nume: ${item.personalizare.numeCopil}<br>Tematică: ${item.personalizare.tematica}<br>Ramă foto: ${item.personalizare.ramaFoto ? "Da" : "Nu"}</p>`
+                  : ""
         }
         <div class="cart-quantity">
           <button type="button" aria-label="Scade cantitatea" onclick="changeCartQuantity(${index}, ${Math.max(1, (Number(item.quantity) || 1) - 1)})">−</button>
           <span>${item.quantity || 1}</span>
           <button type="button" aria-label="Crește cantitatea" onclick="changeCartQuantity(${index}, ${(Number(item.quantity) || 1) + 1})">+</button>
         </div>
-        <p>Subtotal: ${money(item.pret * (item.quantity || 1))}</p>
+        <p>Subtotal: ${money((item.pret + (item.personalizare?.tip === "marturieCiocolata" && item.personalizare.insigna ? 20 : 0)) * (item.quantity || 1))}</p>
       </div>
       <button type="button" aria-label="Șterge produsul" onclick="removeFromCart(${index})">×</button>
     </div>
   `).join("");
 
-  const total = cart.reduce((sum, item) => sum + item.pret * (item.quantity || 1), 0);
+  const total = cart.reduce((sum, item) => sum + (item.pret + (item.personalizare?.tip === "marturieCiocolata" && item.personalizare.insigna ? 20 : 0)) * (item.quantity || 1), 0);
   cartTotal.textContent = money(total);
 }
 
