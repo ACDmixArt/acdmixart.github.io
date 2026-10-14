@@ -2349,7 +2349,12 @@ const products = [
     nume: "Invitatie nunta 19",
     categorie: "Nunta",
     pret: 3,
-    poze: []
+    poze: [
+      "images/products/mkmk.jpg",
+      "images/products/mkmk1.jpg",
+      "images/products/mkmk2.jpg",
+      "images/products/mkmk3.jpg"
+    ]
   },
   {
     id: 219,
