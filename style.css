@@ -2765,3 +2765,5 @@ header.site-header a.logo .logo-script {
     white-space: nowrap;
   }
 }
+
+.product-photo{position:relative}.product-favorite{position:absolute;top:10px;right:10px;z-index:2;display:grid;place-items:center;width:36px;height:36px;padding:0;border:1px solid rgba(183,126,136,.38);border-radius:50%;background:rgba(255,255,255,.94);color:#A8757F;font-size:20px;line-height:1;cursor:pointer;box-shadow:0 3px 10px rgba(78,73,69,.12)}.product-favorite.is-favorite{background:#B77E88;color:#fff;border-color:#B77E88}#openFavorites.favorites-active{background:#B77E88;color:#fff}
