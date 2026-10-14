@@ -2190,6 +2190,17 @@ const products = [
       "images/products/romrom1.jpg",
       "images/products/romrom2.jpg"
     ]
+  },
+  {
+    id: 204,
+    nume: "Invitatie nunta 5",
+    categorie: "Nunta",
+    pret: 4,
+    poze: [
+      "images/products/ytr.jpg",
+      "images/products/ytr1.jpg",
+      "images/products/ytr2.jpg"
+    ]
   }
 ];
 
