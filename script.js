@@ -1878,6 +1878,18 @@ const products = [
       "images/products/capy1.jpg",
       "images/products/capy2.jpg"
     ]
+  },
+  {
+    id: 182,
+    nume: "Carte de colorat Kpop A5",
+    categorie: "Carti",
+    pret: 65,
+    poze: [
+      "images/products/kpop.jpg",
+      "images/products/kpop1.jpg",
+      "images/products/kpop2.jpg",
+      "images/products/kpop3.jpg"
+    ]
   }
 ];
 
