@@ -2633,6 +2633,18 @@ const products = [
       "images/products/tiri2.jpg",
       "images/products/tiri3.jpg"
     ]
+  },
+  {
+    id: 244,
+    nume: "Invitatie nunta 44",
+    categorie: "Nunta",
+    pret: 5,
+    poze: [
+      "images/products/pacpa.jpg",
+      "images/products/pacpa1.jpg",
+      "images/products/pacpa2.jpg",
+      "images/products/pacpa3.jpg"
+    ]
   }
 ];
 
