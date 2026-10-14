@@ -2057,6 +2057,15 @@ const products = [
       "images/products/cracra5.jpg",
       "images/products/cracra6.jpg"
     ]
+  },
+  {
+    id: 195,
+    nume: "Model 15 - Carte de colorat A4",
+    categorie: "Carti",
+    pret: 110,
+    poze: [
+      "images/products/simsim.jpg"
+    ]
   }
 ];
 
