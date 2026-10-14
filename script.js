@@ -1899,6 +1899,15 @@ const products = [
     poze: [
       "images/products/miriAm.jpg"
     ]
+  },
+  {
+    id: 184,
+    nume: "Carte de colorat (A5) + insigna",
+    categorie: "Carti",
+    pret: 80,
+    poze: [
+      "images/products/ingrid.jpg"
+    ]
   }
 ];
 
