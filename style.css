@@ -2155,3 +2155,24 @@ main .hero h1 em {
     margin-top: 7px !important;
   }
 }
+
+
+/* Emergency final override: absolutely no decorative heart in the header logo */
+header.site-header a.logo::before,
+header.site-header a.logo::after,
+header.site-header a.logo .logo-script::before,
+header.site-header a.logo .logo-script::after {
+  content: none !important;
+  display: none !important;
+  visibility: hidden !important;
+}
+header.site-header a.logo {
+  position: static !important;
+}
+header.site-header a.logo .logo-script {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  font-size: clamp(38px, 4.6vw, 49px) !important;
+  letter-spacing: -.045em !important;
+}
