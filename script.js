@@ -2488,6 +2488,16 @@ const products = [
       "images/products/Doamne1.jpg",
       "images/products/Doamne2.jpg"
     ]
+  },
+  {
+    id: 230,
+    nume: "Invitatie nunta 30",
+    categorie: "Nunta",
+    pret: 7,
+    poze: [
+      "images/products/bvc.jpg",
+      "images/products/bvc1.jpg"
+    ]
   }
 ];
 
