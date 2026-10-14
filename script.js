@@ -2859,6 +2859,7 @@ function renderCategories() {
       onclick="setCategory('${category}')"
     >${category}</button>
   `).join("");
+  updateMinimumOrderNotice();
 }
 
 function setCategory(category) {
@@ -2918,11 +2919,29 @@ function descrierePersonalizare(product) {
 
 function isMin25Invitation(product) {
   if (!product) return false;
-  const name = String(product.nume || "").toLocaleLowerCase("ro").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-  const category = String(product.categorie || "").toLocaleLowerCase("ro").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-  return (name.includes("invitatie") && (category.includes("botez") || category.includes("nunta"))) || name.includes("plic pentru dar") || name.includes("plicuri pentru dar") || category.includes("plicuri pentru dar");
+  const normalize = value => String(value || "").toLocaleLowerCase("ro").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const name = normalize(product.nume);
+  const category = normalize(product.categorie);
+  const isInvitation = name.includes("invitatie") && (category.includes("botez") || category.includes("nunta"));
+  const isGiftEnvelope = category.includes("plicuri dar botez") || category.includes("plicuri dar nunta") ||
+    ((name.includes("plic") && name.includes("dar")) && (category.includes("botez") || category.includes("nunta")));
+  return isInvitation || isGiftEnvelope;
 }
 const INVITATION_MINIMUM = 25;
+
+function updateMinimumOrderNotice() {
+  const notice = document.getElementById("siteMinimumOrder");
+  if (!notice) return;
+  const messages = {
+    "Botez": "Pentru invitațiile de botez, comanda minimă este de 25 de bucăți.",
+    "Nuntă": "Pentru invitațiile de nuntă, comanda minimă este de 25 de bucăți.",
+    "Plicuri dar botez": "Pentru plicurile de dar pentru botez, comanda minimă este de 25 de bucăți.",
+    "Plicuri dar nuntă": "Pentru plicurile de dar pentru nuntă, comanda minimă este de 25 de bucăți."
+  };
+  const message = messages[activeCategory];
+  notice.hidden = !message;
+  notice.innerHTML = message ? message.replace("25 de bucăți", "<strong>25 de bucăți</strong>") : "";
+}
 
 function renderProducts() {
   if (!grila) return;
@@ -3251,7 +3270,7 @@ function addToCart(productId, quantity = 1, personalizare = null) {
   if (!product) return;
   const minimum = isMin25Invitation(product) ? INVITATION_MINIMUM : 1;
   if (isMin25Invitation(product) && qty < minimum) {
-    alert("Comanda minimă pentru invitațiile de nuntă și botez este de 25 de bucăți.");
+    alert("Comanda minimă pentru acest produs este de 25 de bucăți.");
     const quantityEl = document.getElementById(`qty-${productId}`);
     if (quantityEl) quantityEl.textContent = String(minimum);
     return;
@@ -3276,7 +3295,7 @@ function changeCartQuantity(index, quantity) {
   if (!cart[index]) return;
   const minimum = isMin25Invitation(cart[index]) ? INVITATION_MINIMUM : 1;
   if (!Number.isInteger(qty) || qty < minimum) {
-    alert(isMin25Invitation(cart[index]) ? "Comanda minimă pentru invitațiile de nuntă și botez este de 25 de bucăți." : "Cantitatea minimă este 1.");
+    alert(isMin25Invitation(cart[index]) ? "Comanda minimă pentru acest produs este de 25 de bucăți." : "Cantitatea minimă este 1.");
     renderCart();
     return;
   }
