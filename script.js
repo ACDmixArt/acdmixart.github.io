@@ -2465,6 +2465,18 @@ const products = [
     poze: [
       "images/products/redu0.jpg"
     ]
+  },
+  {
+    id: 228,
+    nume: "Invitatie nunta 28",
+    categorie: "Nunta",
+    pret: 3.5,
+    poze: [
+      "images/products/ad.jpg",
+      "images/products/ad1.jpg",
+      "images/products/ad2.jpg",
+      "images/products/ad3.jpg"
+    ]
   }
 ];
 
