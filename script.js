@@ -2752,6 +2752,24 @@ const products = [
       "images/products/capr1.jpg",
       "images/products/capr2.jpg"
     ]
+  },
+  {
+    id: 253,
+    nume: "Carti de vizita — Perii pentru gene",
+    categorie: "Carti de vizita",
+    pret: 2.5,
+    tarifeCantitate: [
+      { min: 1, max: 49, pret: 2.5 },
+      { min: 50, max: 100, pret: 2 },
+      { min: 101, max: null, pret: 1.7 }
+    ],
+    poze: [
+      "images/products/avu.jpg",
+      "images/products/avu1.jpg",
+      "images/products/avu2.jpg",
+      "images/products/avu3.jpg",
+      "images/products/avu4.jpg"
+    ]
   }
 ];
 
