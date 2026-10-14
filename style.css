@@ -2896,3 +2896,10 @@ header.site-header a.logo .logo-script {
 .cart-item p:last-child { margin:12px 0 0; font-size:14px; color:#4E4945; font-weight:600; }
 .cart-panel.open ~ .quick-access { display:none !important; }
 @media (max-width:560px) { .cart-item { grid-template-columns:minmax(0,1fr) 34px; gap:8px; } .cart-item > div > strong { font-size:15px; } }
+
+
+/* Anunț vizibil pentru comanda minimă la invitații */
+.site-minimum-order,.minimum-order-note { color:#8f626d; background:#fbf0f2; border:1px solid rgba(215,167,176,.38); border-radius:12px; padding:10px 13px; font-size:13px; line-height:1.5; }
+.site-minimum-order { margin:0 0 18px; }
+.minimum-order-note { margin:8px 0 10px; padding:7px 10px; font-size:12px; }
+.cart-item .minimum-order-note { display:inline-block; margin:0 0 8px; }
