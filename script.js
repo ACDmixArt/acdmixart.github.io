@@ -3939,17 +3939,9 @@ if (openSearchButton && productSearchInput) {
   };
 
   openSearchButton.addEventListener("click", () => {
-    productSearchInput.hidden = !productSearchInput.hidden;
-    if (!productSearchInput.hidden) {
-      searchHasScrolled = false;
-      requestAnimationFrame(() => productSearchInput.focus());
-    } else {
-      productSearchInput.value = "";
-      searchSuggestions.hidden = true;
-      searchSuggestions.innerHTML = "";
-      searchHasScrolled = false;
-      renderProducts();
-    }
+    productSearchInput.hidden = false;
+    searchHasScrolled = false;
+    requestAnimationFrame(() => productSearchInput.focus());
   });
 
   productSearchInput.addEventListener("input", () => {
