@@ -451,7 +451,7 @@ const products = [
     },
   {
       id: 44,
-      nume: "Mărturie din sapun floare",
+      nume: "Mărturie din săpun – floare",
       categorie: "Mărturii",
       pret: 9,
       poze: [
@@ -462,7 +462,7 @@ const products = [
     },
   {
       id: 45,
-      nume: "Mărturie magnetică Minnie Mouse",
+      nume: "Mărturie magnetică: Minnie Mouse",
       categorie: "Mărturii",
       pret: 5.5,
       poze: [
@@ -473,7 +473,7 @@ const products = [
     },
   {
       id: 46,
-      nume: "Mărturie magnetică nuntă+botez",
+      nume: "Mărturie magnetică nuntă și botez",
       categorie: "Mărturii",
       pret: 7.5,
       poze: [
@@ -526,7 +526,7 @@ const products = [
     },
   {
       id: 51,
-      nume: "Mărturii magnet pe forma+mini ciocolatica",
+      nume: "Mărturie magnetică pe formă + mini ciocolățică",
       categorie: "Mărturii",
       pret: 12,
       poze: [
@@ -536,7 +536,7 @@ const products = [
     },
   {
       id: 52,
-      nume: "Evantai",
+      nume: "Evantai personalizat",
       categorie: "Mărturii",
       pret: 4.5,
       poze: [
@@ -556,7 +556,7 @@ const products = [
     },
   {
       id: 54,
-      nume: "Mărturie magnetică cu colturi rotunjite+saculet",
+      nume: "Mărturie magnetică cu colțuri rotunjite și săculeț",
       categorie: "Mărturii",
       pret: 7,
       poze: [
@@ -588,7 +588,7 @@ const products = [
   },
   {
     id: 57,
-    nume: "Mărturii magnetice cu colturi rotunjite: Stitch and Angel",
+    nume: "Mărturii magnetice cu colțuri rotunjite: Stitch și Angel",
     categorie: "Mărturii",
     pret: 7,
     poze: [
@@ -638,7 +638,7 @@ const products = [
   },
   {
     id: 62,
-    nume: "Mărturii curcubeu+saculet+eticheta personalizată",
+    nume: "Mărturie curcubeu cu săculeț și etichetă personalizată",
     categorie: "Mărturii",
     pret: 8.5,
     poze: [
@@ -650,7 +650,7 @@ const products = [
   },
   {
     id: 63,
-    nume: "Ciocolata personalizată",
+    nume: "Ciocolată personalizată",
     categorie: "Mărturii",
     pret: 20,
     poze: [
@@ -672,7 +672,7 @@ const products = [
   },
   {
     id: 65,
-    nume: "Mărturie ciocolata (se personalizeaza cu orice tematica)",
+    nume: "Mărturie din ciocolată (personalizabilă cu orice tematică)",
     categorie: "Mărturii",
     pret: 7,
     poze: [
@@ -681,7 +681,7 @@ const products = [
   },
   {
     id: 66,
-    nume: "Insigna Bride",
+    nume: "Insignă Bride",
     categorie: "Mărturii",
     pret: 20,
     poze: [
@@ -700,7 +700,7 @@ const products = [
   },
   {
     id: 68,
-    nume: "Mărturie magnetică cu iconita",
+    nume: "Mărturie magnetică cu iconiță",
     categorie: "Mărturii",
     pret: 4.5,
     poze: [
@@ -709,7 +709,7 @@ const products = [
   },
   {
     id: 69,
-    nume: "Mărturie magnetică jungla",
+    nume: "Mărturie magnetică junglă",
     categorie: "Mărturii",
     pret: 4.5,
     poze: [
@@ -719,7 +719,7 @@ const products = [
   },
   {
     id: 70,
-    nume: "Mărturie magnetică simpla",
+    nume: "Mărturie magnetică simplă",
     categorie: "Mărturii",
     pret: 4.5,
     poze: [
@@ -729,7 +729,7 @@ const products = [
   },
   {
     id: 71,
-    nume: "Mărturie magnetică Minnie Mouse 2",
+    nume: "Mărturie magnetică: Minnie Mouse 2",
     categorie: "Mărturii",
     pret: 4.5,
     poze: [
@@ -759,7 +759,7 @@ const products = [
   },
   {
     id: 74,
-    nume: "Mărturie ciocolata mare",
+    nume: "Mărturie din ciocolată mare",
     categorie: "Mărturii",
     pret: 20,
     poze: [
@@ -770,7 +770,7 @@ const products = [
   },
   {
     id: 75,
-    nume: "Mărturie ciocolata mare2",
+    nume: "Mărturie din ciocolată mare 2",
     categorie: "Mărturii",
     pret: 20,
     poze: [
@@ -803,7 +803,7 @@ const products = [
   },
   {
     id: 78,
-    nume: "Eticheta personalizată autoadeziva",
+    nume: "Etichetă personalizată autoadezivă",
     categorie: "Mărturii",
     pret: 2,
     poze: [
@@ -884,7 +884,7 @@ const products = [
   },
   {
       id: 86,
-      nume: "Mărturie magnetică: Minnie Mouse rosu",
+      nume: "Mărturie magnetică: Minnie Mouse roșu",
       categorie: "Mărturii",
       pret: 4.5,
       poze: [
@@ -923,7 +923,7 @@ const products = [
   },
   {
       id: 90,
-      nume: "Mărturie magnetică: Sirena",
+      nume: "Mărturie magnetică: Sirenă",
       categorie: "Mărturii",
       pret: 4.5,
       poze: [
@@ -1464,7 +1464,7 @@ const products = [
     },
   {
       id: 142,
-      nume: "Mărturie magnetică-Balerina",
+      nume: "Mărturie magnetică – Balerină",
       categorie: "Mărturii",
       pret: 7,
       poze: [
@@ -1861,7 +1861,7 @@ const products = [
   },
   {
     id: 180,
-    nume: "Mărturie mir personalizabila pe orice tematica",
+    nume: "Mărturie cu mir, personalizabilă pentru orice tematică",
     categorie: "Mărturii",
     pret: 8,
     poze: [
@@ -2459,7 +2459,7 @@ const products = [
   },
   {
     id: 227,
-    nume: "Mărturie ciocolata",
+    nume: "Mărturie din ciocolată",
     categorie: "Mărturii",
     pret: 7,
     poze: [
