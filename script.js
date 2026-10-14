@@ -2042,6 +2042,21 @@ const products = [
       "images/products/ujuj4.jpg",
       "images/products/ujuj5.jpg"
     ]
+  },
+  {
+    id: 194,
+    nume: "Model 14 - Carte de colorat A4",
+    categorie: "Carti",
+    pret: 110,
+    poze: [
+      "images/products/cracra.jpg",
+      "images/products/cracra1.jpg",
+      "images/products/cracra2.jpg",
+      "images/products/cracra3.jpg",
+      "images/products/cracra4.jpg",
+      "images/products/cracra5.jpg",
+      "images/products/cracra6.jpg"
+    ]
   }
 ];
 
