@@ -2783,6 +2783,21 @@ const products = [
     poze: [
       "images/products/firmaauto.jpg"
     ]
+  },
+  {
+    id: 255,
+    nume: "Flyere personalizate 10 × 15 cm",
+    categorie: "Carti",
+    pret: 1.5,
+    tarifeCantitate: [
+      { min: 25, max: 49, pret: 1.5 },
+      { min: 50, max: 99, pret: 1.2 },
+      { min: 100, max: 199, pret: 0.9 },
+      { min: 200, max: null, pret: 0.7 }
+    ],
+    poze: [
+      "images/products/flier.jpg"
+    ]
   }
 ];
 
