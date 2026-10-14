@@ -2773,7 +2773,7 @@ const products = [
   },
   {
     id: 254,
-    nume: "Carte de vizita — Firma auto",
+    nume: "Carti de vizita dreptunghi",
     categorie: "Carti de vizita",
     pret: 1,
     tarifeCantitate: [
