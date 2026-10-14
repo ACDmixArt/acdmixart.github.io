@@ -161,7 +161,7 @@ const products = [
       categorie: "Botez",
       pret: 10,
       poze: [
-        "images/products/invitație.jpg",
+        "images/products/invitatie.jpg",
         "images/products/invitatie1.jpg",
         "images/products/invitatie2.jpg"
       ]
