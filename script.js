@@ -3879,9 +3879,7 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
    INITIALIZARE
 ========================= */
 
-renderCategories();
-renderProducts();
-renderCart();
+/* Initial rendering is intentionally performed after search listeners are attached. */
 
 const openSearchButton = document.getElementById("openSearch");
 const productSearchInput = document.getElementById("productSearch");
@@ -4003,6 +4001,10 @@ if (openSearchButton && productSearchInput) {
     }
   });
 }
+
+renderCategories();
+renderProducts();
+renderCart();
 
 const year = document.getElementById("year");
 if (year) year.textContent = new Date().getFullYear();
