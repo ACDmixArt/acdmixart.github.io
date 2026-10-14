@@ -2648,7 +2648,7 @@ const products = [
   },
   {
     id: 245,
-    nume: "Invitatie domnisoare si cavaleri de onoare",
+    nume: "Invitatie nunta — domnisoare si cavaleri de onoare",
     categorie: "Nunta",
     pret: 15,
     poze: [
