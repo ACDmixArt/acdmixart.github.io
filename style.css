@@ -1738,3 +1738,21 @@ main .hero h1 em {
     line-height: 1.02 !important;
   }
 }
+
+
+/* Logo wordmark cleanup: elegant, readable, no exaggerated swashes */
+.site-header .logo .logo-script {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: clamp(36px, 4.2vw, 46px) !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  letter-spacing: -.045em !important;
+  line-height: 1 !important;
+  color: var(--burgundy-dark) !important;
+}
+@media (max-width: 560px) {
+  .site-header .logo .logo-script {
+    font-size: 34px !important;
+    letter-spacing: -.045em !important;
+  }
+}
