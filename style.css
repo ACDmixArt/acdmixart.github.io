@@ -2010,3 +2010,50 @@ main .hero h1 em {
     line-height: 1.04 !important;
   }
 }
+
+
+/* Compact mobile hero: fit the full calligraphic phrase on one line */
+.hero .hero-eyebrow {
+  margin-bottom: 12px !important;
+  gap: 0 !important;
+}
+.hero .hero-eyebrow::before,
+.hero .hero-eyebrow::after { display: none !important; }
+.hero .heart-divider { display: none !important; }
+.hero h1.hero-calligraphy {
+  width: 100% !important;
+  max-width: 100% !important;
+  align-items: center !important;
+  margin: 0 auto 18px !important;
+  font-size: clamp(34px, 8vw, 62px) !important;
+  line-height: 1.04 !important;
+}
+.hero-calligraphy-light {
+  white-space: nowrap !important;
+  font-size: 1em !important;
+}
+.hero-calligraphy-emphasis {
+  display: block !important;
+  white-space: nowrap !important;
+  font-size: clamp(47px, 10.6vw, 82px) !important;
+  line-height: 1.08 !important;
+}
+@media (max-width: 560px) {
+  .hero { padding-top: 18px !important; }
+  .hero .hero-eyebrow {
+    margin-bottom: 10px !important;
+    font-size: 10px !important;
+    letter-spacing: .24em !important;
+  }
+  .hero h1.hero-calligraphy {
+    font-size: clamp(30px, 7.6vw, 42px) !important;
+    line-height: 1.08 !important;
+    margin-bottom: 18px !important;
+  }
+  .hero-calligraphy-light { white-space: normal !important; }
+  .hero-calligraphy-emphasis {
+    font-size: clamp(42px, 10.4vw, 57px) !important;
+    white-space: nowrap !important;
+    line-height: 1.08 !important;
+  }
+}
