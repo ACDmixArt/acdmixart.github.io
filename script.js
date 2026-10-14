@@ -1997,6 +1997,21 @@ const products = [
       "images/products/ya7.jpg",
       "images/products/ya8.jpg"
     ]
+  },
+  {
+    id: 191,
+    nume: "Carte de colorat (A4)",
+    categorie: "Carti",
+    pret: 110,
+    poze: [
+      "images/products/giaz.jpg",
+      "images/products/giaz1.jpg",
+      "images/products/giaz2.jpg",
+      "images/products/giaz3.jpg",
+      "images/products/giaz4.jpg",
+      "images/products/giaz5.jpg",
+      "images/products/giaz6.jpg"
+    ]
   }
 ];
 
