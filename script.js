@@ -2601,6 +2601,16 @@ const products = [
       "images/products/tranda.jpg",
       "images/products/tranda1.jpg"
     ]
+  },
+  {
+    id: 241,
+    nume: "Invitatie nunta 41",
+    categorie: "Nunta",
+    pret: 2.5,
+    poze: [
+      "images/products/1234.jpg",
+      "images/products/12345.jpg"
+    ]
   }
 ];
 
