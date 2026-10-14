@@ -1614,3 +1614,35 @@ footer {
     letter-spacing: -.06em;
   }
 }
+
+
+/* Fonturi revizuite dupa captura: logo si slogan in caligrafie reala */
+.site-header .logo-script {
+  font-family: 'Alex Brush', 'Allura', cursive;
+  font-size: clamp(45px, 5vw, 59px);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: .9;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(42px, 5.4vw, 68px);
+  letter-spacing: -.035em;
+  line-height: 1.08;
+  max-width: 850px;
+}
+.hero h1 em {
+  font-family: 'Alex Brush', 'Allura', cursive;
+  font-size: 1.23em;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--burgundy-dark);
+  white-space: nowrap;
+}
+@media (max-width: 560px) {
+  .site-header .logo-script { font-size: 43px; }
+  .hero h1 { font-size: clamp(38px, 10.3vw, 48px); line-height: 1.12; }
+  .hero h1 em { font-size: 1.2em; }
+}
