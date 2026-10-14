@@ -2755,7 +2755,7 @@ const products = [
   },
   {
     id: 253,
-    nume: "Carti de vizita — Perii pentru gene",
+    nume: "Suport pentru perii de gene cu instructiuni",
     categorie: "Carti de vizita",
     pret: 2.5,
     tarifeCantitate: [
