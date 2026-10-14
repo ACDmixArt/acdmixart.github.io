@@ -20,7 +20,7 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="style.css?v=20261015-reviews1">
+  <link rel="stylesheet" href="style.css?v=20261015-favorite-rose">
 </head>
 
 <body>
@@ -267,36 +267,6 @@
 
     </section>
 
-    <!-- RECOMANDARI CLIENTI -->
-    <section id="recomandari" class="reviews-section">
-      <div class="reviews-intro">
-        <p class="eyebrow">Părerea ta contează</p>
-        <h2>Ai comandat de la ACDmixArt?</h2>
-        <p>Mi-ar face mare plăcere să-mi lași câteva cuvinte despre experiența ta. Feedbackul tău mă ajută să cresc și îi ajută pe viitorii clienți să mă cunoască.</p>
-        <div class="reviews-note">♡ Recomandarea ta îmi va fi trimisă direct pe WhatsApp. O voi putea publica pe site doar cu acordul tău.</div>
-      </div>
-      <form id="reviewForm" class="review-form">
-        <label for="reviewName">Numele tău</label>
-        <input id="reviewName" name="name" type="text" maxlength="80" placeholder="Cum te numești?" required>
-        <fieldset class="review-rating">
-          <legend>Ce notă ai acorda experienței tale?</legend>
-          <div class="review-stars" role="radiogroup" aria-label="Alege o notă de la 1 la 5">
-            <label><input type="radio" name="rating" value="1" required><span aria-hidden="true">★</span><small>1</small></label>
-            <label><input type="radio" name="rating" value="2"><span aria-hidden="true">★</span><small>2</small></label>
-            <label><input type="radio" name="rating" value="3"><span aria-hidden="true">★</span><small>3</small></label>
-            <label><input type="radio" name="rating" value="4"><span aria-hidden="true">★</span><small>4</small></label>
-            <label><input type="radio" name="rating" value="5"><span aria-hidden="true">★</span><small>5</small></label>
-          </div>
-        </fieldset>
-        <label for="reviewText">Recomandarea ta</label>
-        <textarea id="reviewText" name="review" rows="5" maxlength="1200" placeholder="Povestește-ne cum a fost experiența ta..." required></textarea>
-        <button class="button review-submit" type="submit">Trimite recomandarea pe WhatsApp</button>
-        <p class="review-privacy">Recomandarea nu se publică automat. Mesajul se deschide în WhatsApp ca să îl poți verifica și trimite.</p>
-      </form>
-    </section>
-
-  </main>
-
   <!-- COȘ -->
 
   <aside
@@ -411,23 +381,7 @@
     </div>
   </footer>
 
-  <script>
-    (function () {
-      const form = document.getElementById("reviewForm");
-      if (!form) return;
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        const name = document.getElementById("reviewName").value.trim();
-        const rating = form.querySelector('input[name="rating"]:checked');
-        const review = document.getElementById("reviewText").value.trim();
-        if (!name || !rating || !review) return;
-        const message = "Bună! Îți las o recomandare pentru ACDmixArt.\n\nNume: " + name + "\nEvaluare: " + rating.value + "/5 stele\nRecomandare: " + review;
-        window.open("https://wa.me/40742059730?text=" + encodeURIComponent(message), "_blank", "noopener");
-      });
-    })();
-  </script>
-
-  <script src="script.js?v=20261015-favorite2"></script>
+<script src="script.js?v=20261015-favorite2"></script>
 
 </body>
 </html>
