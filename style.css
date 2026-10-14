@@ -1646,3 +1646,29 @@ footer {
   .hero h1 { font-size: clamp(38px, 10.3vw, 48px); line-height: 1.12; }
   .hero h1 em { font-size: 1.2em; }
 }
+
+
+/* FINAL OVERRIDE — prioritate maxima pentru fonturile titlului si logo-ului */
+.site-header .logo .logo-script {
+  font-family: 'Alex Brush', 'Allura', cursive !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+main .hero h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.035em !important;
+  line-height: 1.08 !important;
+}
+main .hero h1 em {
+  font-family: 'Alex Brush', 'Allura', cursive !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  color: var(--burgundy-dark) !important;
+}
+@media (max-width: 560px) {
+  .site-header .logo .logo-script { font-size: 43px !important; }
+  main .hero h1 { font-size: clamp(38px, 10.3vw, 48px) !important; }
+  main .hero h1 em { font-size: 1.2em !important; }
+}
