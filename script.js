@@ -2343,6 +2343,18 @@ const products = [
       "images/products/cliv3.jpg",
       "images/products/cliv4.jpg"
     ]
+  },
+  {
+    id: 218,
+    nume: "Invitatie nunta 19",
+    categorie: "Nunta",
+    pret: 3,
+    poze: [
+      "images/products/mk.jpg",
+      "images/products/mk1.jpg",
+      "images/products/mk2.jpg",
+      "images/products/mk3.jpg"
+    ]
   }
 ];
 
