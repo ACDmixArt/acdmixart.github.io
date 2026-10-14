@@ -1859,24 +1859,6 @@ const products = [
     ]
   },
   {
-    id: 199,
-    nume: "Agendă personalizată cu caricatură 10",
-    categorie: "Agende",
-    pret: 120,
-    poze: [
-      "images/products/simonica.jpg",
-      "images/products/simonica1.jpg",
-      "images/products/simonica2.jpg",
-      "images/products/simonica3.jpg",
-      "images/products/simonica4.jpg",
-      "images/products/simonica5.jpg",
-      "images/products/simonica6.jpg",
-      "images/products/simonica7.jpg",
-      "images/products/simonica8.jpg",
-      "images/products/simonica9.jpg"
-    ]
-  },
-  {
     id: 180,
     nume: "Marturie mir personalizabila pe orice tematica",
     categorie: "Marturii",
@@ -2133,16 +2115,16 @@ const products = [
     categorie: "Set Gatit",
     pret: 65,
     poze: [
-      "images/products/setmireasa.jpg",
-      "images/products/setmireasa1.jpg",
-      "images/products/setmireasa2.jpg",
-      "images/products/setmireasa3.jpg",
-      "images/products/setmireasa4.jpg",
-      "images/products/setmireasa5.jpg",
-      "images/products/setmireasa6.jpg",
-      "images/products/setmireasa7.jpg",
-      "images/products/setmireasa8.jpg",
-      "images/products/setmireasa9.jpg"
+      "images/products/simonica.jpg",
+      "images/products/simonica1.jpg",
+      "images/products/simonica2.jpg",
+      "images/products/simonica3.jpg",
+      "images/products/simonica4.jpg",
+      "images/products/simonica5.jpg",
+      "images/products/simonica6.jpg",
+      "images/products/simonica7.jpg",
+      "images/products/simonica8.jpg",
+      "images/products/simonica9.jpg"
     ]
   }
 ];
