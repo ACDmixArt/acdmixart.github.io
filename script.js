@@ -2540,6 +2540,17 @@ const products = [
       "images/products/mog.jpg",
       "images/products/mog1.jpg"
     ]
+  },
+  {
+    id: 235,
+    nume: "Invitatie nunta 35",
+    categorie: "Nunta",
+    pret: 7,
+    poze: [
+      "images/products/fri.jpg",
+      "images/products/fri1.jpg",
+      "images/products/fri2.jpg"
+    ]
   }
 ];
 
