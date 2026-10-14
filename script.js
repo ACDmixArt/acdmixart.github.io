@@ -2416,7 +2416,6 @@ const products = [
       "images/products/q7.jpg"
     ]
   },
-  },
   {
     id: 224,
     nume: "Invitatie nunta 25",
@@ -2433,6 +2432,17 @@ const products = [
       "images/products/w7.jpg",
       "images/products/w8.jpg",
       "images/products/w9.jpg"
+    ]
+  },
+  {
+    id: 225,
+    nume: "Invitatie nunta 26",
+    categorie: "Nunta",
+    pret: 8,
+    poze: [
+      "images/products/wow.jpg",
+      "images/products/wow1.jpg",
+      "images/products/wow2.jpg"
     ]
   }
 ];
