@@ -2551,6 +2551,16 @@ const products = [
       "images/products/fri1.jpg",
       "images/products/fri2.jpg"
     ]
+  },
+  {
+    id: 236,
+    nume: "Invitatie nunta 36",
+    categorie: "Nunta",
+    pret: 5,
+    poze: [
+      "images/products/jpg.jpg",
+      "images/products/jpg1.jpg"
+    ]
   }
 ];
 
