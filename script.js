@@ -2286,6 +2286,17 @@ const products = [
       "images/products/6e.jpg",
       "images/products/6e1.jpg"
     ]
+  },
+  {
+    id: 213,
+    nume: "Invitatie nunta 14",
+    categorie: "Nunta",
+    pret: 7.5,
+    poze: [
+      "images/products/capcapcap.jpg",
+      "images/products/capcapcap1.jpg",
+      "images/products/capcapcap2.jpg"
+    ]
   }
 ];
 
