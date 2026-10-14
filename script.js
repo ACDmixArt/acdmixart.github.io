@@ -2918,8 +2918,8 @@ function descrierePersonalizare(product) {
 
 function isMin25Invitation(product) {
   if (!product) return false;
-  const name = String(product.nume || "").toLocaleLowerCase("ro").normalize("NFD").replace(/[\\u0300-\\u036f]/g, "");
-  const category = String(product.categorie || "").toLocaleLowerCase("ro").normalize("NFD").replace(/[\\u0300-\\u036f]/g, "");
+  const name = String(product.nume || "").toLocaleLowerCase("ro").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const category = String(product.categorie || "").toLocaleLowerCase("ro").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   return name.includes("invitatie") && (category.includes("botez") || category.includes("nunta"));
 }
 const INVITATION_MINIMUM = 25;
