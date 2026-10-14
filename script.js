@@ -2201,6 +2201,16 @@ const products = [
       "images/products/ytr1.jpg",
       "images/products/ytr2.jpg"
     ]
+  },
+  {
+    id: 205,
+    nume: "Invitatie nunta 6",
+    categorie: "Nunta",
+    pret: 9.5,
+    poze: [
+      "images/products/kl.jpg",
+      "images/products/kl1.jpg"
+    ]
   }
 ];
 
