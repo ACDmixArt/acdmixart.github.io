@@ -2088,6 +2088,26 @@ const products = [
       "images/products/jurnalbebe11.jpg",
       "images/products/jurnalbebe2.jpg"
     ]
+  },
+  {
+    id: 197,
+    nume: "Jurnalul bebelusului BabyGirl",
+    categorie: "Jurnale",
+    pret: 110,
+    poze: [
+      "images/products/jurnalfata.jpg",
+      "images/products/jurnalfata1.jpg",
+      "images/products/jurnalfata4.jpg",
+      "images/products/jurnalfata2.jpg",
+      "images/products/jurnalfata3.jpg",
+      "images/products/jurnalfata7.jpg",
+      "images/products/jurnalfata5.jpg",
+      "images/products/jurnalfata6.jpg",
+      "images/products/jurnalfata8.jpg",
+      "images/products/jurnalfata9.jpg",
+      "images/products/jurnalfata10.jpg",
+      "images/products/jurnal11.jpg"
+    ]
   }
 ];
 
