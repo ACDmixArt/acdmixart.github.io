@@ -2391,3 +2391,51 @@ header.site-header a.logo .logo-script {
 .footer-opening-hours p:last-child { border-bottom:0; }
 .footer-opening-hours strong { color:#4E4945; font-weight:600; white-space:nowrap; }
 @media (max-width:700px) { .footer-opening-hours { max-width:360px; } }
+
+
+/* Bara discretă de acces rapid: social + program */
+.quick-access {
+  position: fixed;
+  z-index: 900;
+  left: 50%;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 9px;
+  border: 1px solid rgba(183,126,136,.28);
+  border-radius: 999px;
+  background: rgba(250,247,242,.94);
+  box-shadow: 0 4px 18px rgba(78,73,69,.10);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.quick-access a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 36px;
+  min-height: 36px;
+  padding: 0 9px;
+  border-radius: 999px;
+  color: #A8757F;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  transition: background .2s ease;
+}
+.quick-access a:hover, .quick-access a:focus-visible { background: #F4E4E6; outline: none; }
+.quick-access svg { width: 17px; height: 17px; fill: currentColor; }
+.quick-access a:nth-child(2) svg, .quick-access a.quick-hours-link svg { fill: none; stroke: currentColor; stroke-width: 1.8; }
+.quick-access .quick-social-dot { fill: currentColor; stroke: none; }
+.quick-access .quick-divider { width: 1px; height: 22px; margin: 0 2px; background: rgba(183,126,136,.3); }
+.quick-access .quick-hours-link { padding: 0 12px 0 8px; }
+@media (min-width: 900px) {
+  .quick-access { left: auto; right: 24px; transform: none; bottom: 20px; }
+}
+@media (max-width: 560px) {
+  .quick-access { bottom: max(10px, env(safe-area-inset-bottom)); }
+  body { padding-bottom: 60px; }
+}
