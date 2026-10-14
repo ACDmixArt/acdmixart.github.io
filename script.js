@@ -2656,6 +2656,17 @@ const products = [
       "images/products/dodo1.jpg",
       "images/products/dodo2.jpg"
     ]
+  },
+  {
+    id: 246,
+    nume: "Invitatie nunta 45",
+    categorie: "Nunta",
+    pret: 6,
+    poze: [
+      "images/products/6lei.jpg",
+      "images/products/6lei1.jpg",
+      "images/products/6lei2.jpg"
+    ]
   }
 ];
 
