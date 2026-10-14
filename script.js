@@ -1,5 +1,5 @@
 /*
-  ACDmixArt - produse, categorii, cos si galerie
+  ACDmixArt - produse, categorii, coș și galerie
 */
 
 const products = [
@@ -71,11 +71,11 @@ const products = [
     },
   {
       id: 7,
-      nume: "Invitație botez-Ingeras",
+      nume: "Invitație botez-Îngeraș",
       categorie: "Botez",
       pret: 3.5,
       poze: [
-        "images/products/ingeras.jpg",
+        "images/products/îngeraș.jpg",
         "images/products/ingeras1.jpg"
       ]
     },
@@ -93,7 +93,7 @@ const products = [
     },
   {
       id: 9,
-      nume: "Invitație botez-Zana",
+      nume: "Invitație botez-Zână",
       categorie: "Botez",
       pret: 3.5,
       poze: [
@@ -125,7 +125,7 @@ const products = [
     },
   {
       id: 12,
-      nume: "Invitație mot Cocomelon",
+      nume: "Invitație moț Cocomelon",
       categorie: "Botez",
       pret: 5.5,
       poze: [
@@ -161,14 +161,14 @@ const products = [
       categorie: "Botez",
       pret: 10,
       poze: [
-        "images/products/invitatie.jpg",
+        "images/products/invitație.jpg",
         "images/products/invitatie1.jpg",
         "images/products/invitatie2.jpg"
       ]
     },
   {
     id: 16,
-    nume: "Invitatie botez- Fluturas",
+    nume: "Invitație botez- Fluturaș",
     categorie: "Botez",
     pret: 3.5,
     poze: [
@@ -179,7 +179,7 @@ const products = [
   },
   {
     id: 17,
-    nume: "Invitatie botez-UrsX",
+    nume: "Invitație botez-UrsX",
     categorie: "Botez",
     pret: 8,
     poze: [
@@ -191,7 +191,7 @@ const products = [
   },
   {
     id: 18,
-    nume: "Invitatie botez- Urs verde",
+    nume: "Invitație botez- Urs verde",
     categorie: "Botez",
     pret: 3.5,
     poze: [
@@ -202,7 +202,7 @@ const products = [
   },
   {
     id: 19,
-    nume: "Invitatie botez-pergament",
+    nume: "Invitație botez-pergament",
     categorie: "Botez",
     pret: 7.5,
     poze: [
@@ -213,7 +213,7 @@ const products = [
   },
   {
     id: 20,
-    nume: "Invitatie botez + plic pentru dar",
+    nume: "Invitație botez + plic pentru dar",
     categorie: "Botez",
     pret: 6,
     poze: [
@@ -225,7 +225,7 @@ const products = [
   },
   {
     id: 21,
-    nume: "Invitatie botez- Balerina2",
+    nume: "Invitație botez- Balerina2",
     categorie: "Botez",
     pret: 6.5,
     poze: [
@@ -237,7 +237,7 @@ const products = [
   },
   {
     id: 22,
-    nume: "Invitatie botez-Stitch and Angel",
+    nume: "Invitație botez-Stitch and Angel",
     categorie: "Botez",
     pret: 3.5,
     poze: [
@@ -248,7 +248,7 @@ const products = [
   },
   {
     id: 23,
-    nume: "Invitatie botez-Mickey Mouse",
+    nume: "Invitație botez-Mickey Mouse",
     categorie: "Botez",
     pret: 3.5,
     poze: [
@@ -261,7 +261,7 @@ const products = [
   },
   {
     id: 24,
-    nume: "Invitatie botez-Minnie3",
+    nume: "Invitație botez-Minnie3",
     categorie: "Botez",
     pret: 3.5,
     poze: [
@@ -272,7 +272,7 @@ const products = [
   },
   {
     id: 25,
-    nume: "Invitatie botez-Jungla2",
+    nume: "Invitație botez-Jungla2",
     categorie: "Botez",
     pret: 3.5,
     poze: [
@@ -283,7 +283,7 @@ const products = [
   },
   {
     id: 26,
-    nume: "Invitatie botez-Castel",
+    nume: "Invitație botez-Castel",
     categorie: "Botez",
     pret: 3.5,
     poze: [
@@ -294,7 +294,7 @@ const products = [
   },
   {
     id: 27,
-    nume: "Invitatie botez-Floral",
+    nume: "Invitație botez-Floral",
     categorie: "Botez",
     pret: 5,
     poze: [
@@ -304,7 +304,7 @@ const products = [
   },
   {
     id: 28,
-    nume: "Invitatie botez- Babyblue",
+    nume: "Invitație botez- Babyblue",
     categorie: "Botez",
     pret: 6.5,
     poze: [
@@ -314,7 +314,7 @@ const products = [
   },
   {
     id: 29,
-    nume: "Invitatie Timon and Pumbaa",
+    nume: "Invitație Timon and Pumbaa",
     categorie: "Botez",
     pret: 5,
     poze: [
@@ -325,7 +325,7 @@ const products = [
   },
   {
     id: 30,
-    nume: "Invitatie botez- Happybaby",
+    nume: "Invitație botez- Happybaby",
     categorie: "Botez",
     pret: 3.5,
     poze: [
@@ -334,7 +334,7 @@ const products = [
   },
   {
     id: 31,
-    nume: "Invitatie botez-Butterfly",
+    nume: "Invitație botez-Butterfly",
     categorie: "Botez",
     pret: 3.5,
     poze: [
@@ -343,17 +343,17 @@ const products = [
   },
   {
     id: 32,
-    nume: "Invitatie botez-Lebada",
+    nume: "Invitație botez-Lebădă",
     categorie: "Botez",
     pret: 7,
     poze: [
-      "images/products/lebada.jpg",
+      "images/products/lebădă.jpg",
       "images/products/lebada1.jpg"
     ]
   },
   {
     id: 33,
-    nume: "Invitatie botez-Curcubeu + plic pentru dar",
+    nume: "Invitație botez-Curcubeu + plic pentru dar",
     categorie: "Botez",
     pret: 6.5,
     poze: [
@@ -363,7 +363,7 @@ const products = [
   },
   {
     id: 34,
-    nume: "Invitatie botez-Elefant",
+    nume: "Invitație botez-Elefant",
     categorie: "Botez",
     pret: 3.5,
     poze: [
@@ -372,7 +372,7 @@ const products = [
   },
   {
     id: 35,
-    nume: "Invitatie mot cu plic",
+    nume: "Invitație moț cu plic",
     categorie: "Botez",
     pret: 4,
     poze: [
@@ -381,7 +381,7 @@ const products = [
   },
   {
     id: 36,
-    nume: "Invitatie botez-Gemeni",
+    nume: "Invitație botez-Gemeni",
     categorie: "Botez",
     pret: 3.5,
     poze: [
@@ -391,7 +391,7 @@ const products = [
   },
   {
     id: 37,
-    nume: "Invitatie botez-Baby Boss",
+    nume: "Invitație botez-Baby Boss",
     categorie: "Botez",
     pret: 4,
     poze: [
@@ -401,7 +401,7 @@ const products = [
   },
   {
     id: 38,
-    nume: "Invitatie botez-Ursulet",
+    nume: "Invitație botez-Ursulet",
     categorie: "Botez",
     pret: 3.5,
     poze: [
@@ -411,7 +411,7 @@ const products = [
   },
   {
     id: 39,
-    nume: "Invitatie botez-Safari",
+    nume: "Invitație botez-Safari",
     categorie: "Botez",
     pret: 4,
     poze: [
@@ -421,7 +421,7 @@ const products = [
   },
   {
     id: 40,
-    nume: "Invitatie botez-Leu",
+    nume: "Invitație botez-Leu",
     categorie: "Botez",
     pret: 4,
     poze: [
@@ -430,7 +430,7 @@ const products = [
   },
   {
     id: 41,
-    nume: "Invitatie botez-Mickey",
+    nume: "Invitație botez-Mickey",
     categorie: "Botez",
     pret: 4,
     poze: [
@@ -440,7 +440,7 @@ const products = [
   },
   {
       id: 42,
-      nume: "Invitatie botez-Lebada1",
+      nume: "Invitație botez-Lebada1",
       categorie: "Botez",
       pret: 7,
       poze: [
@@ -451,30 +451,30 @@ const products = [
     },
   {
       id: 44,
-      nume: "Marturie din sapun floare",
-      categorie: "Marturii",
+      nume: "Mărturie din sapun floare",
+      categorie: "Mărturii",
       pret: 9,
       poze: [
-        "images/products/marturie sapun.jpg",
-        "images/products/marturie sapun1.jpg",
-        "images/products/marturie sapun2.jpg"
+        "images/products/mărturie sapun.jpg",
+        "images/products/mărturie sapun1.jpg",
+        "images/products/mărturie sapun2.jpg"
       ]
     },
   {
       id: 45,
-      nume: "Marturie magnetica Minnie Mouse",
-      categorie: "Marturii",
+      nume: "Mărturie magnetică Minnie Mouse",
+      categorie: "Mărturii",
       pret: 5.5,
       poze: [
-        "images/products/marturie.jpg",
+        "images/products/mărturie.jpg",
         "images/products/marturie1.jpg",
         "images/products/marturie2.jpg"
       ]
     },
   {
       id: 46,
-      nume: "Marturie magnetica nunta+botez",
-      categorie: "Marturii",
+      nume: "Mărturie magnetică nuntă+botez",
+      categorie: "Mărturii",
       pret: 7.5,
       poze: [
         "images/products/marturieforma.jpg",
@@ -485,8 +485,8 @@ const products = [
     },
   {
       id: 47,
-      nume: "Etichete pentru marturii",
-      categorie: "Marturii",
+      nume: "Etichete pentru mărturii",
+      categorie: "Mărturii",
       pret: 1.5,
       poze: [
         "images/products/etichete.jpg",
@@ -495,8 +495,8 @@ const products = [
     },
   {
       id: 48,
-      nume: "Marturie magnetica Urs",
-      categorie: "Marturii",
+      nume: "Mărturie magnetică Urs",
+      categorie: "Mărturii",
       pret: 5.5,
       poze: [
         "images/products/mai.jpg",
@@ -505,8 +505,8 @@ const products = [
     },
   {
       id: 49,
-      nume: "Marturie magnetica Blue",
-      categorie: "Marturii",
+      nume: "Mărturie magnetică Blue",
+      categorie: "Mărturii",
       pret: 5.5,
       poze: [
         "images/products/luca.jpg",
@@ -516,8 +516,8 @@ const products = [
     },
   {
       id: 50,
-      nume: "Marturie magnetica Safari",
-      categorie: "Marturii",
+      nume: "Mărturie magnetică Safari",
+      categorie: "Mărturii",
       pret: 4.5,
       poze: [
         "images/products/safari.jpg",
@@ -526,8 +526,8 @@ const products = [
     },
   {
       id: 51,
-      nume: "Marturii magnet pe forma+mini ciocolatica",
-      categorie: "Marturii",
+      nume: "Mărturii magnet pe forma+mini ciocolatica",
+      categorie: "Mărturii",
       pret: 12,
       poze: [
         "images/products/bomboana.jpg",
@@ -537,7 +537,7 @@ const products = [
   {
       id: 52,
       nume: "Evantai",
-      categorie: "Marturii",
+      categorie: "Mărturii",
       pret: 4.5,
       poze: [
         "images/products/evantai.jpg"
@@ -545,8 +545,8 @@ const products = [
     },
   {
       id: 53,
-      nume: "Marturie magnetica fluture",
-      categorie: "Marturii",
+      nume: "Mărturie magnetică fluture",
+      categorie: "Mărturii",
       pret: 5.5,
       poze: [
         "images/products/fluture.jpg",
@@ -556,8 +556,8 @@ const products = [
     },
   {
       id: 54,
-      nume: "Marturie magnetica cu colturi rotunjite+saculet",
-      categorie: "Marturii",
+      nume: "Mărturie magnetică cu colturi rotunjite+saculet",
+      categorie: "Mărturii",
       pret: 7,
       poze: [
         "images/products/unicorn.jpg",
@@ -566,8 +566,8 @@ const products = [
     },
   {
       id: 55,
-      nume: "Marturie magnetica pink",
-      categorie: "Marturii",
+      nume: "Mărturie magnetică pink",
+      categorie: "Mărturii",
       pret: 6,
       poze: [
         "images/products/familie.jpg",
@@ -576,8 +576,8 @@ const products = [
     },
   {
     id: 56,
-    nume: "Marturie magnetica cu plic si accesoriu",
-    categorie: "Marturii",
+    nume: "Mărturie magnetică cu plic și accesoriu",
+    categorie: "Mărturii",
     pret: 7.5,
     poze: [
       "images/products/ionut.jpg",
@@ -588,8 +588,8 @@ const products = [
   },
   {
     id: 57,
-    nume: "Marturii magnetice cu colturi rotunjite: Stitch and Angel",
-    categorie: "Marturii",
+    nume: "Mărturii magnetice cu colturi rotunjite: Stitch and Angel",
+    categorie: "Mărturii",
     pret: 7,
     poze: [
       "images/products/marturies.jpg",
@@ -599,8 +599,8 @@ const products = [
   },
   {
     id: 58,
-    nume: "Marturie magnetica: Regele Leu",
-    categorie: "Marturii",
+    nume: "Mărturie magnetică: Regele Leu",
+    categorie: "Mărturii",
     pret: 4.5,
     poze: [
       "images/products/elias.jpg",
@@ -610,8 +610,8 @@ const products = [
   },
   {
     id: 59,
-    nume: "Etichete marturii autoadezive (5x3cm)",
-    categorie: "Marturii",
+    nume: "Etichete mărturii autoadezive (5x3cm)",
+    categorie: "Mărturii",
     pret: 1,
     poze: [
       "images/products/balon.jpg"
@@ -620,7 +620,7 @@ const products = [
   {
     id: 60,
     nume: "Etichete rotunde (A4) autoadezive",
-    categorie: "Marturii",
+    categorie: "Mărturii",
     pret: 20,
     poze: [
       "images/products/eti.jpg"
@@ -628,8 +628,8 @@ const products = [
   },
   {
     id: 61,
-    nume: "Etichete pentru marturii 3D caricatura",
-    categorie: "Marturii",
+    nume: "Etichete pentru mărturii 3D caricatura",
+    categorie: "Mărturii",
     pret: 2,
     poze: [
       "images/products/cari.jpg",
@@ -638,8 +638,8 @@ const products = [
   },
   {
     id: 62,
-    nume: "Marturii curcubeu+saculet+eticheta personalizata",
-    categorie: "Marturii",
+    nume: "Mărturii curcubeu+saculet+eticheta personalizată",
+    categorie: "Mărturii",
     pret: 8.5,
     poze: [
       "images/products/curcubeu.jpg",
@@ -650,8 +650,8 @@ const products = [
   },
   {
     id: 63,
-    nume: "Ciocolata personalizata",
-    categorie: "Marturii",
+    nume: "Ciocolata personalizată",
+    categorie: "Mărturii",
     pret: 20,
     poze: [
       "images/products/cioco.jpg",
@@ -660,8 +660,8 @@ const products = [
   },
   {
     id: 64,
-    nume: "Marturie magnetica Balon",
-    categorie: "Marturii",
+    nume: "Mărturie magnetică Balon",
+    categorie: "Mărturii",
     pret: 7.5,
     poze: [
       "images/products/nicolo.jpg",
@@ -672,8 +672,8 @@ const products = [
   },
   {
     id: 65,
-    nume: "Marturie ciocolata (se personalizeaza cu orice tematica)",
-    categorie: "Marturii",
+    nume: "Mărturie ciocolata (se personalizeaza cu orice tematica)",
+    categorie: "Mărturii",
     pret: 7,
     poze: [
       "images/products/mini.jpg"
@@ -682,7 +682,7 @@ const products = [
   {
     id: 66,
     nume: "Insigna Bride",
-    categorie: "Marturii",
+    categorie: "Mărturii",
     pret: 20,
     poze: [
       "images/products/insi.jpg"
@@ -690,8 +690,8 @@ const products = [
   },
   {
     id: 67,
-    nume: "Marturie magnetica: Harry Potter",
-    categorie: "Marturii",
+    nume: "Mărturie magnetică: Harry Potter",
+    categorie: "Mărturii",
     pret: 4.5,
     poze: [
       "images/products/harry.jpg",
@@ -700,8 +700,8 @@ const products = [
   },
   {
     id: 68,
-    nume: "Marturie magnetica cu iconita",
-    categorie: "Marturii",
+    nume: "Mărturie magnetică cu iconita",
+    categorie: "Mărturii",
     pret: 4.5,
     poze: [
       "images/products/icoana.jpg"
@@ -709,8 +709,8 @@ const products = [
   },
   {
     id: 69,
-    nume: "Marturie magnetica jungla",
-    categorie: "Marturii",
+    nume: "Mărturie magnetică jungla",
+    categorie: "Mărturii",
     pret: 4.5,
     poze: [
       "images/products/masina.jpg",
@@ -719,18 +719,18 @@ const products = [
   },
   {
     id: 70,
-    nume: "Marturie magnetica simpla",
-    categorie: "Marturii",
+    nume: "Mărturie magnetică simpla",
+    categorie: "Mărturii",
     pret: 4.5,
     poze: [
-      "images/products/poza.jpg",
+      "images/products/poză.jpg",
       "images/products/poza1.jpg"
     ]
   },
   {
     id: 71,
-    nume: "Marturie magnetica Minnie Mouse 2",
-    categorie: "Marturii",
+    nume: "Mărturie magnetică Minnie Mouse 2",
+    categorie: "Mărturii",
     pret: 4.5,
     poze: [
       "images/products/minnie.jpg",
@@ -739,8 +739,8 @@ const products = [
   },
   {
     id: 72,
-    nume: "Marturie magnetica Bear",
-    categorie: "Marturii",
+    nume: "Mărturie magnetică Bear",
+    categorie: "Mărturii",
     pret: 4.5,
     poze: [
       "images/products/bec.jpg",
@@ -749,8 +749,8 @@ const products = [
   },
   {
     id: 73,
-    nume: "Marturie magnetica Zana",
-    categorie: "Marturii",
+    nume: "Mărturie magnetică Zână",
+    categorie: "Mărturii",
     pret: 4.5,
     poze: [
       "images/products/zanik.jpg",
@@ -759,8 +759,8 @@ const products = [
   },
   {
     id: 74,
-    nume: "Marturie ciocolata mare",
-    categorie: "Marturii",
+    nume: "Mărturie ciocolata mare",
+    categorie: "Mărturii",
     pret: 20,
     poze: [
       "images/products/septembrie.jpg",
@@ -770,8 +770,8 @@ const products = [
   },
   {
     id: 75,
-    nume: "Marturie ciocolata mare2",
-    categorie: "Marturii",
+    nume: "Mărturie ciocolata mare2",
+    categorie: "Mărturii",
     pret: 20,
     poze: [
       "images/products/karina.jpg",
@@ -781,8 +781,8 @@ const products = [
   },
   {
     id: 76,
-    nume: "Marturie magnetica 2",
-    categorie: "Marturii",
+    nume: "Mărturie magnetică 2",
+    categorie: "Mărturii",
     pret: 4.5,
     poze: [
       "images/products/eric.jpg",
@@ -791,8 +791,8 @@ const products = [
   },
   {
     id: 77,
-    nume: "Marturie magnetica: Girafa",
-    categorie: "Marturii",
+    nume: "Mărturie magnetică: Girafa",
+    categorie: "Mărturii",
     pret: 4.5,
     poze: [
       "images/products/girafa.jpg",
@@ -803,8 +803,8 @@ const products = [
   },
   {
     id: 78,
-    nume: "Eticheta personalizata autoadeziva",
-    categorie: "Marturii",
+    nume: "Eticheta personalizată autoadeziva",
+    categorie: "Mărturii",
     pret: 2,
     poze: [
       "images/products/tuica.jpg",
@@ -813,8 +813,8 @@ const products = [
   },
   {
     id: 79,
-    nume: "Marturie magnetica Mickey Mouse",
-    categorie: "Marturii",
+    nume: "Mărturie magnetică Mickey Mouse",
+    categorie: "Mărturii",
     pret: 4.5,
     poze: [
       "images/products/feb.jpg",
@@ -823,8 +823,8 @@ const products = [
   },
   {
     id: 80,
-    nume: "Marturie magnetica: Briosa",
-    categorie: "Marturii",
+    nume: "Mărturie magnetică: Brioșă",
+    categorie: "Mărturii",
     pret: 4.5,
     poze: [
       "images/products/praji.jpg",
@@ -833,8 +833,8 @@ const products = [
   },
   {
     id: 81,
-    nume: "Marturie magnetica: Elefant",
-    categorie: "Marturii",
+    nume: "Mărturie magnetică: Elefant",
+    categorie: "Mărturii",
     pret: 4.5,
     poze: [
       "images/products/elefante.jpg",
@@ -843,8 +843,8 @@ const products = [
   },
   {
     id: 82,
-    nume: "Marturie magnetica Winnie",
-    categorie: "Marturii",
+    nume: "Mărturie magnetică Winnie",
+    categorie: "Mărturii",
     pret: 4.5,
     poze: [
       "images/products/craciun.jpg",
@@ -854,8 +854,8 @@ const products = [
   },
   {
     id: 83,
-    nume: "Marturie magnetica: Minnie Mouse mov",
-    categorie: "Marturii",
+    nume: "Mărturie magnetică: Minnie Mouse mov",
+    categorie: "Mărturii",
     pret: 4.5,
     poze: [
       "images/products/minniemov.jpg",
@@ -864,8 +864,8 @@ const products = [
   },
   {
     id: 84,
-    nume: "Marturie magnetica: Unicorn curcubeu",
-    categorie: "Marturii",
+    nume: "Mărturie magnetică: Unicorn curcubeu",
+    categorie: "Mărturii",
     pret: 4.5,
     poze: [
       "images/products/unic.jpg",
@@ -874,18 +874,18 @@ const products = [
   },
   {
     id: 85,
-    nume: "Marturie magnetica: Lebada",
-    categorie: "Marturii",
+    nume: "Mărturie magnetică: Lebădă",
+    categorie: "Mărturii",
     pret: 4.5,
     poze: [
-      "images/products/lebada.jpg",
+      "images/products/lebădă.jpg",
       "images/products/lebada1.jpg"
     ]
   },
   {
       id: 86,
-      nume: "Marturie magnetica: Minnie Mouse rosu",
-      categorie: "Marturii",
+      nume: "Mărturie magnetică: Minnie Mouse rosu",
+      categorie: "Mărturii",
       pret: 4.5,
       poze: [
           "images/products/rosu.jpg",
@@ -894,8 +894,8 @@ const products = [
   },
   {
       id: 87,
-      nume: "Marturie magnetica: Unicorn butterfly",
-      categorie: "Marturii",
+      nume: "Mărturie magnetică: Unicorn butterfly",
+      categorie: "Mărturii",
       pret: 4.5,
       poze: [
           "images/products/alma.jpg",
@@ -904,8 +904,8 @@ const products = [
   },
   {
       id: 88,
-      nume: "Marturie magnetica: Ingeras",
-      categorie: "Marturii",
+      nume: "Mărturie magnetică: Îngeraș",
+      categorie: "Mărturii",
       pret: 4.5,
       poze: [
           "images/products/ingerass.jpg"
@@ -913,8 +913,8 @@ const products = [
   },
   {
       id: 89,
-      nume: "Marturie magnetica: Baby boss",
-      categorie: "Marturii",
+      nume: "Mărturie magnetică: Baby boss",
+      categorie: "Mărturii",
       pret: 4.5,
       poze: [
           "images/products/babyboss.jpg",
@@ -923,8 +923,8 @@ const products = [
   },
   {
       id: 90,
-      nume: "Marturie magnetica: Sirena",
-      categorie: "Marturii",
+      nume: "Mărturie magnetică: Sirena",
+      categorie: "Mărturii",
       pret: 4.5,
       poze: [
           "images/products/sirena.jpg"
@@ -932,8 +932,8 @@ const products = [
   },
   {
       id: 91,
-      nume: "Marturie magnetica: Pisicuta Marie",
-      categorie: "Marturii",
+      nume: "Mărturie magnetică: Pisicuță Marie",
+      categorie: "Mărturii",
       pret: 4.5,
       poze: [
           "images/products/marie.jpg"
@@ -942,7 +942,7 @@ const products = [
   {
       id: 43,
       nume: "Set moț – Căsuța cu ciupercuțe",
-      categorie: "Set Mot",
+      categorie: "Set Moț",
       pret: 230,
       poze: [
         "images/products/setmot.jpg",
@@ -958,8 +958,8 @@ const products = [
     },
   {
       id: 92,
-      nume: "Set mot - Gabby",
-      categorie: "Set Mot",
+      nume: "Set moț - Gabby",
+      categorie: "Set Moț",
       pret: 230,
       poze: [
           "images/products/gabby.jpg",
@@ -971,8 +971,8 @@ const products = [
   },
   {
       id: 93,
-      nume: "Set mot - Ferma",
-      categorie: "Set Mot",
+      nume: "Set moț - Ferma",
+      categorie: "Set Moț",
       pret: 230,
       poze: [
           "images/products/ferma.jpg",
@@ -981,8 +981,8 @@ const products = [
   },
   {
       id: 94,
-      nume: "Set mot - Curcubeu",
-      categorie: "Set Mot",
+      nume: "Set moț - Curcubeu",
+      categorie: "Set Moț",
       pret: 230,
       poze: [
           "images/products/anais.jpg",
@@ -995,8 +995,8 @@ const products = [
   },
   {
       id: 95,
-      nume: "Set mot - Marinar",
-      categorie: "Set Mot",
+      nume: "Set moț - Marinar",
+      categorie: "Set Moț",
       pret: 230,
       descriere: "Caricatura se achita separat: +30 lei/persoana",
       poze: [
@@ -1011,8 +1011,8 @@ const products = [
   },
   {
       id: 96,
-      nume: "Set mot - Bluey si Bingo",
-      categorie: "Set Mot",
+      nume: "Set moț - Bluey și Bingo",
+      categorie: "Set Moț",
       pret: 230,
       poze: [
           "images/products/blue.jpg",
@@ -1025,8 +1025,8 @@ const products = [
   },
   {
       id: 97,
-      nume: "Set mot - Traditional",
-      categorie: "Set Mot",
+      nume: "Set moț - Traditional",
+      categorie: "Set Moț",
       pret: 230,
       poze: [
           "images/products/traditie.jpg",
@@ -1038,8 +1038,8 @@ const products = [
   },
   {
       id: 98,
-      nume: "Set mot - Harry Potter",
-      categorie: "Set Mot",
+      nume: "Set moț - Harry Potter",
+      categorie: "Set Moț",
       pret: 230,
       poze: [
           "images/products/har.jpg",
@@ -1050,8 +1050,8 @@ const products = [
   },
   {
       id: 99,
-      nume: "Set mot - Pompier",
-      categorie: "Set Mot",
+      nume: "Set moț - Pompier",
+      categorie: "Set Moț",
       pret: 230,
       poze: [
           "images/products/david.jpg",
@@ -1064,8 +1064,8 @@ const products = [
   },
   {
       id: 100,
-      nume: "Set mot - Minnie Mouse pink",
-      categorie: "Set Mot",
+      nume: "Set moț - Minnie Mouse pink",
+      categorie: "Set Moț",
       pret: 230,
       poze: [
           "images/products/minn.jpg",
@@ -1079,8 +1079,8 @@ const products = [
   },
   {
       id: 101,
-      nume: "Set mot - Cocomelon",
-      categorie: "Set Mot",
+      nume: "Set moț - Cocomelon",
+      categorie: "Set Moț",
       pret: 230,
       descriere: "+45 lei pahar",
       poze: [
@@ -1096,17 +1096,17 @@ const products = [
   },
   {
       id: 102,
-      nume: "Set mot - Zana",
-      categorie: "Set Mot",
+      nume: "Set moț - Zână",
+      categorie: "Set Moț",
       pret: 230,
       poze: [
-          "images/products/zana.jpg"
+          "images/products/zână.jpg"
       ]
   },
   {
       id: 103,
-      nume: "Set mot - Winnie",
-      categorie: "Set Mot",
+      nume: "Set moț - Winnie",
+      categorie: "Set Moț",
       pret: 230,
       poze: [
           "images/products/filip.jpg"
@@ -1114,8 +1114,8 @@ const products = [
   },
   {
       id: 104,
-      nume: "Set mot - Vanator",
-      categorie: "Set Mot",
+      nume: "Set moț - Vanator",
+      categorie: "Set Moț",
       pret: 230,
       poze: [
           "images/products/vanator.jpg"
@@ -1123,8 +1123,8 @@ const products = [
   },
   {
       id: 105,
-      nume: "Set mot - Sirena",
-      categorie: "Set Mot",
+      nume: "Set moț - Sirena",
+      categorie: "Set Moț",
       pret: 230,
       poze: [
           "images/products/medeea.jpg"
@@ -1132,8 +1132,8 @@ const products = [
   },
   {
       id: 106,
-      nume: "Set mot - Toamna",
-      categorie: "Set Mot",
+      nume: "Set moț - Toamna",
+      categorie: "Set Moț",
       pret: 230,
       poze: [
           "images/products/toamna.jpg"
@@ -1141,8 +1141,8 @@ const products = [
   },
   {
       id: 107,
-      nume: "Set mot - Stitch and Angel",
-      categorie: "Set Mot",
+      nume: "Set moț - Stitch and Angel",
+      categorie: "Set Moț",
       pret: 230,
       poze: [
           "images/products/angel.jpg"
@@ -1150,8 +1150,8 @@ const products = [
   },
   {
       id: 108,
-      nume: "Set mot - Girafa",
-      categorie: "Set Mot",
+      nume: "Set moț - Girafa",
+      categorie: "Set Moț",
       pret: 230,
       poze: [
           "images/products/gi.jpg"
@@ -1159,8 +1159,8 @@ const products = [
   },
   {
       id: 109,
-      nume: "Set mot - Ferma 2",
-      categorie: "Set Mot",
+      nume: "Set moț - Ferma 2",
+      categorie: "Set Moț",
       pret: 230,
       poze: [
           "images/products/ioan.jpg"
@@ -1168,8 +1168,8 @@ const products = [
   },
   {
       id: 110,
-      nume: "Set mot - Princess",
-      categorie: "Set Mot",
+      nume: "Set moț - Princess",
+      categorie: "Set Moț",
       pret: 230,
       poze: [
           "images/products/princess.jpg"
@@ -1177,8 +1177,8 @@ const products = [
   },
   {
       id: 111,
-      nume: "Set mot - Safari",
-      categorie: "Set Mot",
+      nume: "Set moț - Safari",
+      categorie: "Set Moț",
       pret: 230,
       poze: [
           "images/products/jungla.jpg"
@@ -1186,11 +1186,11 @@ const products = [
   },
   {
       id: 112,
-      nume: "Set mot - Paienjenel",
-      categorie: "Set Mot",
+      nume: "Set moț - Păienjenel",
+      categorie: "Set Moț",
       pret: 230,
       poze: [
-          "images/products/paienjenel.jpg"
+          "images/products/păienjenel.jpg"
       ]
   },
   {
@@ -1205,7 +1205,7 @@ const products = [
   },
   {
       id: 114,
-      nume: "Pahar cu poza",
+      nume: "Pahar cu poză",
       categorie: "Pahare",
       pret: 45,
       poze: [
@@ -1227,7 +1227,7 @@ const products = [
   },
   {
       id: 116,
-      nume: "Pahar nunta verde",
+      nume: "Pahar nuntă verde",
       categorie: "Pahare",
       pret: 45,
       poze: [
@@ -1264,7 +1264,7 @@ const products = [
   },
   {
       id: 119,
-      nume: "Pahare \"Vreti sa fiti nasii nostri?\" set 2 buc",
+      nume: "Pahare \"Vreți sa fiți nașii nostri?\" set 2 buc",
       categorie: "Pahare",
       pret: 80,
       poze: [
@@ -1282,7 +1282,7 @@ const products = [
   },
   {
       id: 121,
-      nume: "Pahare nunta",
+      nume: "Pahare nuntă",
       categorie: "Pahare",
       pret: 45,
       poze: [
@@ -1305,7 +1305,7 @@ const products = [
   },
   {
       id: 123,
-      nume: "Invitatie botez verde",
+      nume: "Invitație botez verde",
       categorie: "Botez",
       pret: 3.5,
       poze: [
@@ -1395,7 +1395,7 @@ const products = [
     },
   {
       id: 135,
-      nume: "Plic dar mot",
+      nume: "Plic dar moț",
       categorie: "Plicuri dar botez",
       pret: 2.5,
       poze: [
@@ -1464,8 +1464,8 @@ const products = [
     },
   {
       id: 142,
-      nume: "Marturie magnetica-Balerina",
-      categorie: "Marturii",
+      nume: "Mărturie magnetică-Balerina",
+      categorie: "Mărturii",
       pret: 7,
       poze: [
         "images/products/maiaioana.jpg",
@@ -1609,7 +1609,7 @@ const products = [
     },
   {
       id: 157,
-      nume: "Invitatie botez fetita Safari",
+      nume: "Invitație botez fetita Safari",
       categorie: "Botez",
       pret: 3.5,
       poze: [
@@ -1620,8 +1620,8 @@ const products = [
     },
   {
       id: 126,
-      nume: "Plic dar nunta 1",
-      categorie: "Plicuri dar nunta",
+      nume: "Plic dar nuntă 1",
+      categorie: "Plicuri dar nuntă",
       pret: 2.5,
       poze: [
         "images/products/and.jpg",
@@ -1630,8 +1630,8 @@ const products = [
     },
   {
       id: 129,
-      nume: "Plic dar nunta 2",
-      categorie: "Plicuri dar nunta",
+      nume: "Plic dar nuntă 2",
+      categorie: "Plicuri dar nuntă",
       pret: 2.5,
       poze: [
         "images/products/cori.jpg",
@@ -1640,8 +1640,8 @@ const products = [
     },
   {
       id: 130,
-      nume: "Plic dar nunta 3",
-      categorie: "Plicuri dar nunta",
+      nume: "Plic dar nuntă 3",
+      categorie: "Plicuri dar nuntă",
       pret: 2.5,
       poze: [
         "images/products/romica.jpg"
@@ -1649,8 +1649,8 @@ const products = [
     },
   {
       id: 158,
-      nume: "Plic dar nunta 4",
-      categorie: "Plicuri dar nunta",
+      nume: "Plic dar nuntă 4",
+      categorie: "Plicuri dar nuntă",
       pret: 2.5,
       poze: [
         "images/products/crih.jpg",
@@ -1659,8 +1659,8 @@ const products = [
     },
   {
       id: 159,
-      nume: "Plic dar nunta 5",
-      categorie: "Plicuri dar nunta",
+      nume: "Plic dar nuntă 5",
+      categorie: "Plicuri dar nuntă",
       pret: 2.5,
       poze: [
         "images/products/a00.jpg"
@@ -1668,8 +1668,8 @@ const products = [
     },
   {
       id: 160,
-      nume: "Plic dar nunta 6",
-      categorie: "Plicuri dar nunta",
+      nume: "Plic dar nuntă 6",
+      categorie: "Plicuri dar nuntă",
       pret: 2.5,
       poze: [
         "images/products/ionelasivictor.jpg",
@@ -1678,8 +1678,8 @@ const products = [
     },
   {
       id: 162,
-      nume: "Plic dar nunta 7",
-      categorie: "Plicuri dar nunta",
+      nume: "Plic dar nuntă 7",
+      categorie: "Plicuri dar nuntă",
       pret: 2.5,
       poze: [
         "images/products/simomo.jpg",
@@ -1688,8 +1688,8 @@ const products = [
     },
   {
     id: 163,
-    nume: "Plic dar nunta 8",
-    categorie: "Plicuri dar nunta",
+    nume: "Plic dar nuntă 8",
+    categorie: "Plicuri dar nuntă",
     pret: 2.5,
     poze: [
       "images/products/lob.jpg"
@@ -1697,8 +1697,8 @@ const products = [
   },
   {
     id: 164,
-    nume: "Plic dar nunta 9",
-    categorie: "Plicuri dar nunta",
+    nume: "Plic dar nuntă 9",
+    categorie: "Plicuri dar nuntă",
     pret: 2.5,
     poze: [
       "images/products/fob.jpg"
@@ -1706,8 +1706,8 @@ const products = [
   },
   {
     id: 165,
-    nume: "Plic dar nunta 10",
-    categorie: "Plicuri dar nunta",
+    nume: "Plic dar nuntă 10",
+    categorie: "Plicuri dar nuntă",
     pret: 2.5,
     poze: [
       "images/products/vbvb.jpg"
@@ -1715,8 +1715,8 @@ const products = [
   },
   {
     id: 166,
-    nume: "Plic dar nunta 11",
-    categorie: "Plicuri dar nunta",
+    nume: "Plic dar nuntă 11",
+    categorie: "Plicuri dar nuntă",
     pret: 2.5,
     poze: [
       "images/products/uuuy.jpg",
@@ -1725,8 +1725,8 @@ const products = [
   },
   {
     id: 167,
-    nume: "Plic dar nunta 12",
-    categorie: "Plicuri dar nunta",
+    nume: "Plic dar nuntă 12",
+    categorie: "Plicuri dar nuntă",
     pret: 2.5,
     poze: [
       "images/products/dwdw.jpg",
@@ -1735,8 +1735,8 @@ const products = [
   },
   {
     id: 168,
-    nume: "Plic dar nunta 13",
-    categorie: "Plicuri dar nunta",
+    nume: "Plic dar nuntă 13",
+    categorie: "Plicuri dar nuntă",
     pret: 2.5,
     poze: [
       "images/products/judecata.jpg",
@@ -1745,8 +1745,8 @@ const products = [
   },
   {
     id: 169,
-    nume: "Plic dar nunta 14",
-    categorie: "Plicuri dar nunta",
+    nume: "Plic dar nuntă 14",
+    categorie: "Plicuri dar nuntă",
     pret: 2.5,
     poze: [
       "images/products/ooo.jpg",
@@ -1755,8 +1755,8 @@ const products = [
   },
   {
     id: 170,
-    nume: "Plic dar nunta 15",
-    categorie: "Plicuri dar nunta",
+    nume: "Plic dar nuntă 15",
+    categorie: "Plicuri dar nuntă",
     pret: 2.5,
     poze: [
       "images/products/vanessa.jpg"
@@ -1802,7 +1802,7 @@ const products = [
     categorie: "Agende",
     pret: 120,
     poze: [
-      "images/products/agenda.jpg",
+      "images/products/agendă.jpg",
       "images/products/agenda1.jpg",
       "images/products/agenda2.jpg",
       "images/products/agenda3.jpg"
@@ -1861,8 +1861,8 @@ const products = [
   },
   {
     id: 180,
-    nume: "Marturie mir personalizabila pe orice tematica",
-    categorie: "Marturii",
+    nume: "Mărturie mir personalizabila pe orice tematica",
+    categorie: "Mărturii",
     pret: 8,
     poze: [
       "images/products/mirax.jpg",
@@ -1872,7 +1872,7 @@ const products = [
   {
     id: 181,
     nume: "Model 1 - Carte de colorat Capybara A5",
-    categorie: "Carti",
+    categorie: "Cărți",
     pret: 65,
     poze: [
       "images/products/capy.jpg",
@@ -1883,7 +1883,7 @@ const products = [
   {
     id: 182,
     nume: "Model 2 - Carte de colorat Kpop A5",
-    categorie: "Carti",
+    categorie: "Cărți",
     pret: 65,
     poze: [
       "images/products/kpop.jpg",
@@ -1895,7 +1895,7 @@ const products = [
   {
     id: 183,
     nume: "Model 3 - Carte de colorat A5 + insigna",
-    categorie: "Carti",
+    categorie: "Cărți",
     pret: 80,
     poze: [
       "images/products/miriAm.jpg"
@@ -1904,7 +1904,7 @@ const products = [
   {
     id: 184,
     nume: "Model 4 - Carte de colorat A5 + insigna",
-    categorie: "Carti",
+    categorie: "Cărți",
     pret: 80,
     poze: [
       "images/products/ingrid.jpg"
@@ -1913,7 +1913,7 @@ const products = [
   {
     id: 185,
     nume: "Model 5 - Carte de colorat A5 + insigna",
-    categorie: "Carti",
+    categorie: "Cărți",
     pret: 80,
     poze: [
       "images/products/2197.jpg"
@@ -1922,7 +1922,7 @@ const products = [
   {
     id: 186,
     nume: "Model 6 - Carte de colorat A5 + insigna",
-    categorie: "Carti",
+    categorie: "Cărți",
     pret: 80,
     poze: [
       "images/products/liam.jpg"
@@ -1931,7 +1931,7 @@ const products = [
   {
     id: 187,
     nume: "Model 7 - Carte de colorat A4",
-    categorie: "Carti",
+    categorie: "Cărți",
     pret: 110,
     poze: [
       "images/products/arianacarte.jpg",
@@ -1941,8 +1941,8 @@ const products = [
   },
   {
     id: 188,
-    nume: "Model 8 - Carte de activitati A4",
-    categorie: "Carti",
+    nume: "Model 8 - Carte de activități A4",
+    categorie: "Cărți",
     pret: 280,
     poze: [
       "images/products/asas.jpg",
@@ -1963,8 +1963,8 @@ const products = [
   },
   {
     id: 189,
-    nume: "Model 9 - Carte de activitati",
-    categorie: "Carti",
+    nume: "Model 9 - Carte de activități",
+    categorie: "Cărți",
     pret: 280,
     poze: [
       "images/products/te.jpg",
@@ -1984,8 +1984,8 @@ const products = [
   },
   {
     id: 190,
-    nume: "Model 10 - Carte de activitati simpla A4",
-    categorie: "Carti",
+    nume: "Model 10 - Carte de activități simpla A4",
+    categorie: "Cărți",
     pret: 160,
     poze: [
       "images/products/ya.jpg",
@@ -2002,7 +2002,7 @@ const products = [
   {
     id: 191,
     nume: "Model 11 - Carte de colorat A4",
-    categorie: "Carti",
+    categorie: "Cărți",
     pret: 110,
     poze: [
       "images/products/giaz.jpg",
@@ -2017,7 +2017,7 @@ const products = [
   {
     id: 192,
     nume: "Model 12 - Carte de colorat A4",
-    categorie: "Carti",
+    categorie: "Cărți",
     pret: 110,
     poze: [
       "images/products/pum.jpg",
@@ -2033,7 +2033,7 @@ const products = [
   {
     id: 193,
     nume: "Model 13 - Carte de colorat A4",
-    categorie: "Carti",
+    categorie: "Cărți",
     pret: 110,
     poze: [
       "images/products/ujuj.jpg",
@@ -2047,7 +2047,7 @@ const products = [
   {
     id: 194,
     nume: "Model 14 - Carte de colorat A4",
-    categorie: "Carti",
+    categorie: "Cărți",
     pret: 110,
     poze: [
       "images/products/cracra.jpg",
@@ -2062,7 +2062,7 @@ const products = [
   {
     id: 195,
     nume: "Model 15 - Carte de colorat A4",
-    categorie: "Carti",
+    categorie: "Cărți",
     pret: 110,
     poze: [
       "images/products/simsim.jpg"
@@ -2070,7 +2070,7 @@ const products = [
   },
   {
     id: 196,
-    nume: "Jurnalul bebelusului Safari",
+    nume: "Jurnalul bebelușului Safari",
     categorie: "Jurnale",
     pret: 110,
     poze: [
@@ -2092,7 +2092,7 @@ const products = [
   },
   {
     id: 197,
-    nume: "Jurnalul bebelusului BabyGirl",
+    nume: "Jurnalul bebelușului BabyGirl",
     categorie: "Jurnale",
     pret: 110,
     poze: [
@@ -2112,8 +2112,8 @@ const products = [
   },
   {
     id: 198,
-    nume: "Set gatit mireasa/mire - Model 2",
-    categorie: "Set Gatit",
+    nume: "Set gătit mireasa/mire - Model 2",
+    categorie: "Set Gătit",
     pret: 65,
     poze: [
       "images/products/simonica.jpg",
@@ -2130,8 +2130,8 @@ const products = [
   },
   {
     id: 199,
-    nume: "Set gatit mireasa/mire - Model 1",
-    categorie: "Set Gatit",
+    nume: "Set gătit mireasa/mire - Model 1",
+    categorie: "Set Gătit",
     pret: 65,
     poze: [
       "images/products/setmireasa.jpg",
@@ -2148,8 +2148,8 @@ const products = [
   },
   {
     id: 200,
-    nume: "Invitatie nunta 1",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 1",
+    categorie: "Nuntă",
     pret: 7.5,
     poze: [
       "images/products/inv.jpg",
@@ -2159,8 +2159,8 @@ const products = [
   },
   {
     id: 201,
-    nume: "Invitatie nunta 2",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 2",
+    categorie: "Nuntă",
     pret: 7.5,
     poze: [
       "images/products/re.jpg",
@@ -2170,8 +2170,8 @@ const products = [
   },
   {
     id: 202,
-    nume: "Invitatie nunta 3",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 3",
+    categorie: "Nuntă",
     pret: 7.5,
     poze: [
       "images/products/pasap.jpg",
@@ -2182,8 +2182,8 @@ const products = [
   },
   {
     id: 203,
-    nume: "Invitatie nunta 4",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 4",
+    categorie: "Nuntă",
     pret: 4.5,
     poze: [
       "images/products/romrom.jpg",
@@ -2193,8 +2193,8 @@ const products = [
   },
   {
     id: 204,
-    nume: "Invitatie nunta 5",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 5",
+    categorie: "Nuntă",
     pret: 4,
     poze: [
       "images/products/ytr.jpg",
@@ -2204,8 +2204,8 @@ const products = [
   },
   {
     id: 205,
-    nume: "Invitatie nunta 6",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 6",
+    categorie: "Nuntă",
     pret: 8.5,
     poze: [
       "images/products/kl.jpg",
@@ -2214,8 +2214,8 @@ const products = [
   },
   {
     id: 206,
-    nume: "Invitatie nunta 7",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 7",
+    categorie: "Nuntă",
     pret: 10,
     poze: [
       "images/products/pip.jpg",
@@ -2224,8 +2224,8 @@ const products = [
   },
   {
     id: 207,
-    nume: "Invitatie nunta 8",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 8",
+    categorie: "Nuntă",
     pret: 8.5,
     poze: [
       "images/products/simbas.jpg",
@@ -2235,8 +2235,8 @@ const products = [
   },
   {
     id: 208,
-    nume: "Invitatie nunta 9",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 9",
+    categorie: "Nuntă",
     pret: 7,
     poze: [
       "images/products/calka.jpg",
@@ -2247,8 +2247,8 @@ const products = [
   },
   {
     id: 209,
-    nume: "Invitatie nunta 10",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 10",
+    categorie: "Nuntă",
     pret: 3.5,
     poze: [
       "images/products/inchise.jpg",
@@ -2258,8 +2258,8 @@ const products = [
   },
   {
     id: 210,
-    nume: "Invitatie nunta 11",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 11",
+    categorie: "Nuntă",
     pret: 5,
     poze: [
       "images/products/oni.jpg",
@@ -2269,8 +2269,8 @@ const products = [
   },
   {
     id: 211,
-    nume: "Invitatie nunta 12",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 12",
+    categorie: "Nuntă",
     pret: 4.5,
     poze: [
       "images/products/cfcf.jpg",
@@ -2279,8 +2279,8 @@ const products = [
   },
   {
     id: 212,
-    nume: "Invitatie nunta 13",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 13",
+    categorie: "Nuntă",
     pret: 5,
     poze: [
       "images/products/6e.jpg",
@@ -2289,8 +2289,8 @@ const products = [
   },
   {
     id: 213,
-    nume: "Invitatie nunta 14",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 14",
+    categorie: "Nuntă",
     pret: 7.5,
     poze: [
       "images/products/capcapcap.jpg",
@@ -2300,8 +2300,8 @@ const products = [
   },
   {
     id: 214,
-    nume: "Invitatie nunta 15",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 15",
+    categorie: "Nuntă",
     pret: 3.5,
     poze: [
       "images/products/anta.jpg",
@@ -2312,8 +2312,8 @@ const products = [
   },
   {
     id: 215,
-    nume: "Invitatie nunta 16",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 16",
+    categorie: "Nuntă",
     pret: 3,
     poze: [
       "images/products/ziaru.jpg",
@@ -2323,8 +2323,8 @@ const products = [
   },
   {
     id: 216,
-    nume: "Invitatie nunta 17",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 17",
+    categorie: "Nuntă",
     pret: 7.5,
     poze: [
       "images/products/capic.jpg",
@@ -2333,8 +2333,8 @@ const products = [
   },
   {
     id: 217,
-    nume: "Invitatie nunta 18",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 18",
+    categorie: "Nuntă",
     pret: 7,
     poze: [
       "images/products/cliv.jpg",
@@ -2346,8 +2346,8 @@ const products = [
   },
   {
     id: 218,
-    nume: "Invitatie nunta 19",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 19",
+    categorie: "Nuntă",
     pret: 3,
     poze: [
       "images/products/mkmk.jpg",
@@ -2358,8 +2358,8 @@ const products = [
   },
   {
     id: 219,
-    nume: "Invitatie nunta 20",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 20",
+    categorie: "Nuntă",
     pret: 4.5,
     poze: [
       "images/products/booom.jpg",
@@ -2368,8 +2368,8 @@ const products = [
   },
   {
     id: 220,
-    nume: "Invitatie nunta 21",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 21",
+    categorie: "Nuntă",
     pret: 7.5,
     poze: [
       "images/products/rt.jpg",
@@ -2379,8 +2379,8 @@ const products = [
   },
   {
     id: 221,
-    nume: "Invitatie nunta 22",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 22",
+    categorie: "Nuntă",
     pret: 8,
     poze: [
       "images/products/qw.jpg",
@@ -2392,8 +2392,8 @@ const products = [
   },
   {
     id: 222,
-    nume: "Invitatie nunta 23",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 23",
+    categorie: "Nuntă",
     pret: 4.5,
     poze: [
       "images/products/fd.jpg",
@@ -2402,8 +2402,8 @@ const products = [
   },
   {
     id: 223,
-    nume: "Invitatie nunta 24",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 24",
+    categorie: "Nuntă",
     pret: 7.5,
     poze: [
       "images/products/q.jpg",
@@ -2418,8 +2418,8 @@ const products = [
   },
   {
     id: 224,
-    nume: "Invitatie nunta 25",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 25",
+    categorie: "Nuntă",
     pret: 9,
     poze: [
       "images/products/w.jpg",
@@ -2436,8 +2436,8 @@ const products = [
   },
   {
     id: 225,
-    nume: "Invitatie nunta 26",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 26",
+    categorie: "Nuntă",
     pret: 8,
     poze: [
       "images/products/wow.jpg",
@@ -2447,8 +2447,8 @@ const products = [
   },
   {
     id: 226,
-    nume: "Invitatie nunta 27",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 27",
+    categorie: "Nuntă",
     pret: 4.5,
     poze: [
       "images/products/redu.jpg",
@@ -2459,8 +2459,8 @@ const products = [
   },
   {
     id: 227,
-    nume: "Marturie ciocolata",
-    categorie: "Marturii",
+    nume: "Mărturie ciocolata",
+    categorie: "Mărturii",
     pret: 7,
     poze: [
       "images/products/redu0.jpg"
@@ -2468,8 +2468,8 @@ const products = [
   },
   {
     id: 228,
-    nume: "Invitatie nunta 28",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 28",
+    categorie: "Nuntă",
     pret: 3.5,
     poze: [
       "images/products/ad.jpg",
@@ -2480,8 +2480,8 @@ const products = [
   },
   {
     id: 229,
-    nume: "Invitatie nunta 29",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 29",
+    categorie: "Nuntă",
     pret: 4.5,
     poze: [
       "images/products/Doamne.jpg",
@@ -2491,8 +2491,8 @@ const products = [
   },
   {
     id: 230,
-    nume: "Invitatie nunta 30",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 30",
+    categorie: "Nuntă",
     pret: 7,
     poze: [
       "images/products/bvc.jpg",
@@ -2501,8 +2501,8 @@ const products = [
   },
   {
     id: 231,
-    nume: "Invitatie nunta 31",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 31",
+    categorie: "Nuntă",
     pret: 5.5,
     poze: [
       "images/products/eee.jpg",
@@ -2512,8 +2512,8 @@ const products = [
   },
   {
     id: 232,
-    nume: "Invitatie nunta 32",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 32",
+    categorie: "Nuntă",
     pret: 6.5,
     poze: [
       "images/products/taba.jpg",
@@ -2522,8 +2522,8 @@ const products = [
   },
   {
     id: 233,
-    nume: "Invitatie nunta 33",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 33",
+    categorie: "Nuntă",
     pret: 3.5,
     poze: [
       "images/products/reg.jpg",
@@ -2533,8 +2533,8 @@ const products = [
   },
   {
     id: 234,
-    nume: "Invitatie nunta 34",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 34",
+    categorie: "Nuntă",
     pret: 4.5,
     poze: [
       "images/products/mog.jpg",
@@ -2543,8 +2543,8 @@ const products = [
   },
   {
     id: 235,
-    nume: "Invitatie nunta 35",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 35",
+    categorie: "Nuntă",
     pret: 7,
     poze: [
       "images/products/fri.jpg",
@@ -2554,8 +2554,8 @@ const products = [
   },
   {
     id: 236,
-    nume: "Invitatie nunta 36",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 36",
+    categorie: "Nuntă",
     pret: 5,
     poze: [
       "images/products/jpg.jpg",
@@ -2564,8 +2564,8 @@ const products = [
   },
   {
     id: 237,
-    nume: "Invitatie nunta 37",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 37",
+    categorie: "Nuntă",
     pret: 5,
     poze: [
       "images/products/olic.jpg",
@@ -2574,8 +2574,8 @@ const products = [
   },
   {
     id: 238,
-    nume: "Invitatie nunta 38",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 38",
+    categorie: "Nuntă",
     pret: 7,
     poze: [
       "images/products/ga.jpg",
@@ -2584,8 +2584,8 @@ const products = [
   },
   {
     id: 239,
-    nume: "Invitatie nunta 39",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 39",
+    categorie: "Nuntă",
     pret: 6.5,
     poze: [
       "images/products/capsi.jpg",
@@ -2594,8 +2594,8 @@ const products = [
   },
   {
     id: 240,
-    nume: "Invitatie nunta 40",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 40",
+    categorie: "Nuntă",
     pret: 3.5,
     poze: [
       "images/products/tranda.jpg",
@@ -2604,8 +2604,8 @@ const products = [
   },
   {
     id: 241,
-    nume: "Invitatie nunta 41",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 41",
+    categorie: "Nuntă",
     pret: 2.5,
     poze: [
       "images/products/1234.jpg",
@@ -2614,8 +2614,8 @@ const products = [
   },
   {
     id: 242,
-    nume: "Invitatie nunta 42",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 42",
+    categorie: "Nuntă",
     pret: 5,
     poze: [
       "images/products/almeu.jpg",
@@ -2624,8 +2624,8 @@ const products = [
   },
   {
     id: 243,
-    nume: "Invitatie nunta 43",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 43",
+    categorie: "Nuntă",
     pret: 7,
     poze: [
       "images/products/tiri.jpg",
@@ -2636,8 +2636,8 @@ const products = [
   },
   {
     id: 244,
-    nume: "Invitatie nunta 44",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 44",
+    categorie: "Nuntă",
     pret: 5,
     poze: [
       "images/products/pacpa.jpg",
@@ -2648,8 +2648,8 @@ const products = [
   },
   {
     id: 245,
-    nume: "Invitatie nunta — domnisoare si cavaleri de onoare",
-    categorie: "Nunta",
+    nume: "Invitație nuntă — domnișoare și cavaleri de onoare",
+    categorie: "Nuntă",
     pret: 15,
     poze: [
       "images/products/dodo.jpg",
@@ -2659,8 +2659,8 @@ const products = [
   },
   {
     id: 246,
-    nume: "Invitatie nunta 45",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 45",
+    categorie: "Nuntă",
     pret: 6,
     poze: [
       "images/products/6lei.jpg",
@@ -2670,8 +2670,8 @@ const products = [
   },
   {
     id: 247,
-    nume: "Invitatie nunta 46",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 46",
+    categorie: "Nuntă",
     pret: 6,
     poze: [
       "images/products/cires.jpg",
@@ -2681,8 +2681,8 @@ const products = [
   },
   {
     id: 248,
-    nume: "Invitatie nunta 47",
-    categorie: "Nunta",
+    nume: "Invitație nuntă 47",
+    categorie: "Nuntă",
     pret: 3.5,
     poze: [
       "images/products/invitatiefluture1.jpg",
@@ -2692,7 +2692,7 @@ const products = [
   {
     id: 249,
     nume: "Carte de vizita Lash Artist",
-    categorie: "Carti de vizita",
+    categorie: "Cărți de vizita",
     pret: 2.5,
     tarifeCantitate: [
       { min: 1, max: 49, pret: 2.5 },
@@ -2708,7 +2708,7 @@ const products = [
   {
     id: 250,
     nume: "Carte de vizita ACDmixArt — Plotter",
-    categorie: "Carti de vizita",
+    categorie: "Cărți de vizita",
     pret: 2.5,
     tarifeCantitate: [
       { min: 1, max: 49, pret: 2.5 },
@@ -2724,7 +2724,7 @@ const products = [
   {
     id: 251,
     nume: "Carte de vizita Nail Artist — Fluture",
-    categorie: "Carti de vizita",
+    categorie: "Cărți de vizita",
     pret: 2.5,
     tarifeCantitate: [
       { min: 1, max: 49, pret: 2.5 },
@@ -2739,8 +2739,8 @@ const products = [
   },
   {
     id: 252,
-    nume: "Carte de vizita — Ferma de caprite",
-    categorie: "Carti de vizita",
+    nume: "Carte de vizita — Ferma de căprițe",
+    categorie: "Cărți de vizita",
     pret: 2.5,
     tarifeCantitate: [
       { min: 1, max: 49, pret: 2.5 },
@@ -2756,7 +2756,7 @@ const products = [
   {
     id: 253,
     nume: "Suport pentru perii de gene cu instructiuni",
-    categorie: "Carti de vizita",
+    categorie: "Cărți de vizita",
     pret: 2.5,
     tarifeCantitate: [
       { min: 1, max: 49, pret: 2.5 },
@@ -2773,8 +2773,8 @@ const products = [
   },
   {
     id: 254,
-    nume: "Carti de vizita dreptunghi",
-    categorie: "Carti de vizita",
+    nume: "Cărți de vizita dreptunghi",
+    categorie: "Cărți de vizita",
     pret: 1,
     tarifeCantitate: [
       { min: 1, max: 100, pret: 1 },
@@ -2787,7 +2787,7 @@ const products = [
   {
     id: 255,
     nume: "Flyere personalizate 10 × 15 cm",
-    categorie: "Carti",
+    categorie: "Cărți",
     pret: 1.5,
     tarifeCantitate: [
       { min: 25, max: 49, pret: 1.5 },
@@ -2803,7 +2803,7 @@ const products = [
 
 
 /* =========================
-   ELEMENTE SI STARE
+   ELEMENTE ȘI STARE
 ========================= */
 
 const filtre = document.querySelector(".filters");
@@ -2822,20 +2822,20 @@ function categories() {
   return [
     "Toate",
     "Botez",
-    "Nunta",
-    "Marturii",
+    "Nuntă",
+    "Mărturii",
     "Plicuri dar botez",
-    "Plicuri dar nunta",
-    "Cani",
+    "Plicuri dar nuntă",
+    "Căni",
     "Pahare",
     "Toppere",
-    "Carti",
-    "Carti de vizita",
+    "Cărți",
+    "Cărți de vizita",
     "Jurnale",
     "Agende",
     "Party",
-    "Set Mot",
-    "Set Gatit"
+    "Set Moț",
+    "Set Gătit"
   ];
 }
 
@@ -2844,7 +2844,7 @@ function money(value) {
 }
 
 /* =========================
-   CATEGORII SI PRODUSE
+   CATEGORII ȘI PRODUSE
 ========================= */
 
 function renderCategories() {
@@ -2894,13 +2894,13 @@ function renderProducts() {
     ? categoryList.filter(product => {
         const searchable = normalizeSearch(`${product.nume} ${product.categorie}`);
         const searchableVariants = [searchable];
-        // Match common Romanian singular/plural forms, e.g. "invitatii" and "invitatie".
-        searchableVariants.push(searchable.replace(/invitatie/g, "invitatii"));
+        // Match common Romanian singular/plural forms, e.g. "invitații" and "invitație".
+        searchableVariants.push(searchable.replace(/invitație/g, "invitații"));
         const searchableText = searchableVariants.join(" ");
         return terms.every(term => {
           if (searchableText.includes(term)) return true;
-          if (term === "invitatii") return searchable.includes("invitatie");
-          if (term === "invitatie") return searchable.includes("invitatii");
+          if (term === "invitații") return searchable.includes("invitație");
+          if (term === "invitație") return searchable.includes("invitații");
           return false;
         });
       })
@@ -2912,7 +2912,7 @@ function renderProducts() {
   }
 
   grila.innerHTML = list.map(product => {
-    const images = product.poze || [product.poza];
+    const images = product.poze || [product.poză];
     const firstImage = images[0] || "";
 
     return `
@@ -2930,9 +2930,9 @@ function renderProducts() {
             <button type="button" aria-label="Crește cantitatea" onclick="changeProductQuantity(${product.id}, 1)">+</button>
           </div>
           ${
-            product.categorie === "Set Mot"
+            product.categorie === "Set Moț"
               ? `<button type="button" class="add-cart" onclick="openSetMotCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
-              : product.categorie === "Set Gatit"
+              : product.categorie === "Set Gătit"
                 ? `<button type="button" class="add-cart" onclick="openGatitCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Alege accesoriile</button>`
                 : product.categorie === "Agende"
                 ? `<button type="button" class="add-cart" onclick="openAgendaCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Alege caricatura</button>`
@@ -2947,7 +2947,7 @@ function renderProducts() {
 }
 
 /* =========================
-   PERSONALIZARE SET MOT
+   PERSONALIZARE SET MOȚ
 ========================= */
 
 function openSetMotCustomizer(productId, quantity = 1) {
@@ -3050,7 +3050,7 @@ function openSetMotCustomizer(productId, quantity = 1) {
 }
 
 /* =========================
-   PERSONALIZARE SET GATIT
+   PERSONALIZARE SET GĂTIT
 ========================= */
 
 function openGatitCustomizer(productId, quantity = 1) {
@@ -3072,28 +3072,28 @@ function openGatitCustomizer(productId, quantity = 1) {
   modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.65);display:flex;align-items:center;justify-content:center;z-index:9999;padding:20px;";
   modal.innerHTML = `
     <div style="background:white;width:100%;max-width:540px;max-height:90vh;overflow:auto;border-radius:16px;padding:25px;box-sizing:border-box;position:relative;">
-      <button type="button" class="gatit-close" aria-label="Închide" style="position:absolute;top:10px;right:15px;border:0;background:none;font-size:30px;cursor:pointer;">×</button>
+      <button type="button" class="gătit-close" aria-label="Închide" style="position:absolute;top:10px;right:15px;border:0;background:none;font-size:30px;cursor:pointer;">×</button>
       <h2 style="margin-top:0;">Personalizează setul de bărbierit</h2>
       <p>Tăvița de bază: <strong>${money(product.pret)}</strong>. Bifează accesoriile dorite:</p>
-      <div class="gatit-options" style="display:grid;gap:12px;margin:18px 0;">
+      <div class="gătit-options" style="display:grid;gap:12px;margin:18px 0;">
         ${options.map(option => `
           <label style="display:flex;align-items:center;gap:10px;justify-content:space-between;border:1px solid #e5e5e5;border-radius:10px;padding:12px;cursor:pointer;">
-            <span style="display:flex;align-items:center;gap:10px;"><input type="checkbox" data-gatit-option="${option.id}" style="width:18px;height:18px;"> ${option.label}</span>
+            <span style="display:flex;align-items:center;gap:10px;"><input type="checkbox" data-gătit-option="${option.id}" style="width:18px;height:18px;"> ${option.label}</span>
             <strong style="white-space:nowrap;">+${option.price} lei</strong>
           </label>
         `).join("")}
       </div>
-      <p class="gatit-price" style="font-size:21px;font-weight:700;margin:18px 0;"></p>
-      <button type="button" class="gatit-add add-cart" style="width:100%;padding:14px;border:0;border-radius:9px;background:#B77E88;color:white;font-weight:700;cursor:pointer;font-size:16px;">Adaugă în coș</button>
+      <p class="gătit-price" style="font-size:21px;font-weight:700;margin:18px 0;"></p>
+      <button type="button" class="gătit-add add-cart" style="width:100%;padding:14px;border:0;border-radius:9px;background:#B77E88;color:white;font-weight:700;cursor:pointer;font-size:16px;">Adaugă în coș</button>
     </div>
   `;
 
   document.body.appendChild(modal);
-  const price = modal.querySelector(".gatit-price");
-  const checkboxes = [...modal.querySelectorAll("[data-gatit-option]")];
+  const price = modal.querySelector(".gătit-price");
+  const checkboxes = [...modal.querySelectorAll("[data-gătit-option]")];
 
   function selectedOptions() {
-    return options.filter(option => modal.querySelector(`[data-gatit-option="${option.id}"]`).checked);
+    return options.filter(option => modal.querySelector(`[data-gătit-option="${option.id}"]`).checked);
   }
   function updatePrice() {
     const extras = selectedOptions().reduce((sum, option) => sum + option.price, 0);
@@ -3101,9 +3101,9 @@ function openGatitCustomizer(productId, quantity = 1) {
   }
   updatePrice();
   checkboxes.forEach(checkbox => checkbox.addEventListener("change", updatePrice));
-  modal.querySelector(".gatit-close").addEventListener("click", () => modal.remove());
+  modal.querySelector(".gătit-close").addEventListener("click", () => modal.remove());
   modal.addEventListener("click", event => { if (event.target === modal) modal.remove(); });
-  modal.querySelector(".gatit-add").addEventListener("click", () => {
+  modal.querySelector(".gătit-add").addEventListener("click", () => {
     const chosen = selectedOptions();
     const extras = chosen.reduce((sum, option) => sum + option.price, 0);
     cart.push({
@@ -3123,7 +3123,7 @@ function openGatitCustomizer(productId, quantity = 1) {
 }
 
 /* =========================
-   PERSONALIZARE AGENDA
+   PERSONALIZARE AGENDĂ
 ========================= */
 
 function openAgendaCustomizer(productId, quantity = 1) {
@@ -3135,9 +3135,9 @@ function openAgendaCustomizer(productId, quantity = 1) {
   modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.65);display:flex;align-items:center;justify-content:center;z-index:9999;padding:20px;";
   modal.innerHTML = `
     <div style="background:white;width:100%;max-width:500px;max-height:90vh;overflow:auto;border-radius:16px;padding:25px;box-sizing:border-box;position:relative;">
-      <button type="button" class="agenda-close" aria-label="Închide" style="position:absolute;top:10px;right:15px;border:0;background:none;font-size:30px;cursor:pointer;">×</button>
-      <h2 style="margin-top:0;">Personalizează agenda</h2>
-      <p>Agenda costă 120 lei. Alege câte personaje dorești pentru caricatură.</p>
+      <button type="button" class="agendă-close" aria-label="Închide" style="position:absolute;top:10px;right:15px;border:0;background:none;font-size:30px;cursor:pointer;">×</button>
+      <h2 style="margin-top:0;">Personalizează agendă</h2>
+      <p>Agendă costă 120 lei. Alege câte personaje dorești pentru caricatură.</p>
       <label for="agendaCharacters" style="display:block;margin-top:15px;font-weight:600;">Caricatură</label>
       <select id="agendaCharacters" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
         <option value="0">Fără caricatură — 0 lei</option>
@@ -3145,30 +3145,30 @@ function openAgendaCustomizer(productId, quantity = 1) {
         <option value="2">2 personaje — 35 lei</option>
         <option value="3">3 personaje — 50 lei</option>
       </select>
-      <p class="agenda-price" style="font-size:21px;font-weight:700;margin:18px 0;"></p>
-      <button type="button" class="agenda-add add-cart" style="width:100%;padding:14px;border:0;border-radius:9px;background:#B77E88;color:white;font-weight:700;cursor:pointer;font-size:16px;">Adaugă în coș</button>
+      <p class="agendă-price" style="font-size:21px;font-weight:700;margin:18px 0;"></p>
+      <button type="button" class="agendă-add add-cart" style="width:100%;padding:14px;border:0;border-radius:9px;background:#B77E88;color:white;font-weight:700;cursor:pointer;font-size:16px;">Adaugă în coș</button>
     </div>
   `;
   document.body.appendChild(modal);
 
   const select = modal.querySelector("#agendaCharacters");
-  const price = modal.querySelector(".agenda-price");
+  const price = modal.querySelector(".agendă-price");
   const costs = { 0: 0, 1: 20, 2: 35, 3: 50 };
   function updatePrice() {
     price.textContent = "Total: " + money((product.pret + costs[select.value]) * qty) + (qty > 1 ? ` (${qty} agende)` : "");
   }
   updatePrice();
   select.addEventListener("change", updatePrice);
-  modal.querySelector(".agenda-close").addEventListener("click", () => modal.remove());
+  modal.querySelector(".agendă-close").addEventListener("click", () => modal.remove());
   modal.addEventListener("click", event => { if (event.target === modal) modal.remove(); });
-  modal.querySelector(".agenda-add").addEventListener("click", () => {
+  modal.querySelector(".agendă-add").addEventListener("click", () => {
     const characters = Number(select.value);
     const caricaturePrice = costs[characters];
     cart.push({
       ...product,
       quantity: qty,
       pret: product.pret + caricaturePrice,
-      personalizare: { tip: "agenda", personaje: characters, pretCaricatura: caricaturePrice }
+      personalizare: { tip: "agendă", personaje: characters, pretCaricatura: caricaturePrice }
     });
     modal.remove();
     renderCart();
@@ -3176,7 +3176,7 @@ function openAgendaCustomizer(productId, quantity = 1) {
   });
 }
 /* =========================
-   COS
+   COȘ
 ========================= */
 
 function unitPriceForQuantity(product, quantity = 1) {
@@ -3239,7 +3239,7 @@ function renderCart() {
         <strong>${item.nume}</strong>
         <span>${money(item.pret)} / buc.</span>
         ${
-          item.personalizare?.tip === "agenda"
+          item.personalizare?.tip === "agendă"
             ? `<p>Caricatură: ${item.personalizare.personaje === 0 ? "Fără caricatură" : item.personalizare.personaje + (item.personalizare.personaje === 1 ? " personaj" : " personaje")}<br>Cost caricatură: ${money(item.personalizare.pretCaricatura)}</p>`
             : item.personalizare?.tip === "setGatit"
               ? `<p>Accesorii: ${item.personalizare.accesorii.length ? item.personalizare.accesorii.map(option => option.nume + " (+" + money(option.pret) + ")").join(", ") : "Fără accesorii suplimentare"}</p>`
@@ -3301,7 +3301,7 @@ if (cartWhatsapp) {
     let message = "Bună! Doresc să plasez o comandă ACDmixArt:\n\n";
     cart.forEach((item, index) => {
       message += `${index + 1}. ${item.nume}\nCantitate: ${item.quantity || 1}\nPreț/buc.: ${money(item.pret)}\nSubtotal: ${money(item.pret * (item.quantity || 1))}\n`;
-      if (item.personalizare?.tip === "agenda") {
+      if (item.personalizare?.tip === "agendă") {
         message += `Caricatură: ${item.personalizare.personaje === 0 ? "Fără caricatură" : item.personalizare.personaje + (item.personalizare.personaje === 1 ? " personaj" : " personaje")}\nCost caricatură: ${money(item.personalizare.pretCaricatura)}\n`;
       } else if (item.personalizare?.tip === "setGatit") {
         message += `Accesorii: ${item.personalizare.accesorii.length ? item.personalizare.accesorii.map(option => option.nume + " (+" + money(option.pret) + ")").join(", ") : "Fără accesorii suplimentare"}\nSupliment accesorii: ${money(item.personalizare.pretAccesorii)}\n`;
@@ -3331,7 +3331,7 @@ document.addEventListener("click", event => {
   );
   if (!product) return;
 
-  const images = (product.poze || [product.poza]).filter(Boolean);
+  const images = (product.poze || [product.poză]).filter(Boolean);
   if (!images.length) return;
 
   document.querySelector(".image-lightbox")?.remove();
@@ -3392,7 +3392,7 @@ document.addEventListener("click", event => {
 const zoomButton = document.createElement("button");
 zoomButton.type = "button";
 zoomButton.className = "lightbox-zoom-open";
-zoomButton.textContent = "⤢ Mărește poza";
+zoomButton.textContent = "⤢ Mărește poză";
 lightbox.querySelector(".lightbox-stage").appendChild(zoomButton);
 
 zoomButton.addEventListener("click", function (e) {
@@ -3466,7 +3466,7 @@ zoomButton.addEventListener("click", function (e) {
 
   const personalizeButton = lightbox.querySelector(".lightbox-personalize");
 
-  if (!["Set Mot", "Agende"].includes(product.categorie)) {
+  if (!["Set Moț", "Agende"].includes(product.categorie)) {
     personalizeButton.hidden = true;
   }
 
@@ -3479,7 +3479,7 @@ zoomButton.addEventListener("click", function (e) {
   lightbox.querySelector(".lightbox-add-cart").addEventListener("click", () => {
     closeGallery();
 
-    if (product.categorie === "Set Mot") {
+    if (product.categorie === "Set Moț") {
       openSetMotCustomizer(product.id, 1);
     } else if (product.categorie === "Agende") {
       openAgendaCustomizer(product.id, 1);
@@ -3658,7 +3658,7 @@ function renderDynamicFields() {
 
   addFormField({
     id: "formQuantity",
-    label: category === "Botez" || category === "Nunta"
+    label: category === "Botez" || category === "Nuntă"
       ? "Cantitate (minimum 25 bucăți)"
       : "Cantitate",
     type: "number",
@@ -3667,20 +3667,20 @@ function renderDynamicFields() {
     required: true
   });
 
-  if (["Botez", "Nunta"].includes(category)) {
+  if (["Botez", "Nuntă"].includes(category)) {
     document.getElementById("formQuantity").min = "25";
     addFormField({ id: "formDate", label: "Data evenimentului", type: "date" });
     addFormField({ id: "formNames", label: "Numele persoanelor / copilului", placeholder: "Ex.: nume copil, părinți, miri" });
     addFormField({ id: "formText", label: "Textul dorit pe invitație", type: "textarea", placeholder: "Scrie textul invitației sau menționează că dorești ajutor" });
     addFormField({ id: "formColors", label: "Nuanțe / culori", placeholder: "Ex.: crem, verde olive, roz" });
     addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Plic, format, tematică sau alte cerințe" });
-  } else if (category === "Set Mot") {
+  } else if (category === "Set Moț") {
     addFormField({ id: "formChildName", label: "Numele copilului", required: true, placeholder: "Introdu numele copilului" });
     addFormField({ id: "formTheme", label: "Tematică", type: "select", options: ["Căsuța cu ciupercuțe", "Altă tematică"], required: true });
     addFormField({ id: "formThemeOther", label: "Dacă ai ales altă tematică, scrie aici", placeholder: "Tematica dorită" });
     addFormField({ id: "formFrame", label: "Adaugă ramă foto (+60 lei)", type: "checkbox" });
     addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Alte cerințe pentru set" });
-  } else if (["Cani", "Pahare", "Marturii"].includes(category)) {
+  } else if (["Căni", "Pahare", "Mărturii"].includes(category)) {
     addFormField({ id: "formNames", label: "Nume / text pentru personalizare", placeholder: "Scrie exact textul dorit" });
     addFormField({ id: "formColors", label: "Culori", placeholder: "Culorile dorite" });
     addFormField({ id: "formDate", label: "Data evenimentului", type: "date" });
@@ -3689,7 +3689,7 @@ function renderDynamicFields() {
     addFormField({ id: "formAgendaCharacters", label: "Caricatură", type: "select", options: ["Fără caricatură — 0 lei", "1 personaj — 20 lei", "2 personaje — 35 lei", "3 personaje — 50 lei"] });
     addFormField({ id: "formNames", label: "Nume / detalii pentru agendă", placeholder: "Numele sau textul dorit pe agendă" });
     addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Detalii pentru personalizare" });
-  } else if (["Carti"].includes(category)) {
+  } else if (["Cărți"].includes(category)) {
     addFormField({ id: "formNames", label: "Numele persoanei / copilului", placeholder: "Numele pentru copertă" });
     addFormField({ id: "formAge", label: "Vârsta (dacă este relevantă)", type: "number", min: 1 });
     addFormField({ id: "formTheme", label: "Tematică", placeholder: "Ex.: animale, capybara, personaje" });
@@ -3768,13 +3768,13 @@ function updateOrderSummary() {
     const qtyInput = document.getElementById("formQuantity");
     const qty = qtyInput ? Math.max(1, Number(qtyInput.value) || 1) : 1;
     let unitPrice = unitPriceForQuantity(product, qty);
-    if (product.categorie === "Set Mot" && frame && frame.checked) unitPrice += 60;
+    if (product.categorie === "Set Moț" && frame && frame.checked) unitPrice += 60;
     const agendaCharacters = document.getElementById("formAgendaCharacters");
     if (product.categorie === "Agende" && agendaCharacters) {
       const optionCosts = { "Fără caricatură — 0 lei": 0, "1 personaj — 20 lei": 20, "2 personaje — 35 lei": 35, "3 personaje — 50 lei": 50 };
       unitPrice += optionCosts[agendaCharacters.value] || 0;
     }
-    unitPrice = product.categorie === "Set Mot" || product.categorie === "Agende" ? unitPrice : unitPriceForQuantity(product, qty);
+    unitPrice = product.categorie === "Set Moț" || product.categorie === "Agende" ? unitPrice : unitPriceForQuantity(product, qty);
     rows.push(["Preț/bucată", money(unitPrice)]);
     rows.push(["Preț estimativ", money(unitPrice * qty)]);
   }
@@ -3819,8 +3819,8 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
       return;
     }
 
-    if (["Botez", "Nunta"].includes(product.categorie) && quantity < 25) {
-      alert("Comanda minimă pentru invitații este de 25 de bucăți.");
+    if (["Botez", "Nuntă"].includes(product.categorie) && quantity < 25) {
+      alert("Comandă minimă pentru invitații este de 25 de bucăți.");
       quantityInput.focus();
       return;
     }
@@ -3829,12 +3829,12 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
     const themeSelect = document.getElementById("formTheme")?.value || "";
     const themeOther = document.getElementById("formThemeOther")?.value.trim() || "";
     const theme = themeSelect === "Altă tematică" ? themeOther : themeSelect;
-    if (product.categorie === "Set Mot" && !childName) {
+    if (product.categorie === "Set Moț" && !childName) {
       alert("Te rog să completezi numele copilului.");
       document.getElementById("formChildName")?.focus();
       return;
     }
-    if (product.categorie === "Set Mot" && !theme) {
+    if (product.categorie === "Set Moț" && !theme) {
       alert("Te rog să completezi tematica.");
       document.getElementById("formThemeOther")?.focus();
       return;
@@ -3863,7 +3863,7 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
     if (frame && frame.checked) message += "Ramă foto: Da (+60 lei)\n";
 
     let unitPrice = unitPriceForQuantity(product, quantity);
-    if (product.categorie === "Set Mot" && frame && frame.checked) unitPrice += 60;
+    if (product.categorie === "Set Moț" && frame && frame.checked) unitPrice += 60;
     const agendaCharacters = document.getElementById("formAgendaCharacters");
     if (product.categorie === "Agende" && agendaCharacters) {
       const optionCosts = { "Fără caricatură — 0 lei": 0, "1 personaj — 20 lei": 20, "2 personaje — 35 lei": 35, "3 personaje — 50 lei": 50 };
@@ -3909,10 +3909,10 @@ if (openSearchButton && productSearchInput) {
     const terms = query.split(/\s+/).filter(Boolean);
     return products.filter(product => {
       const haystack = normalizeSearchTerm(product.nume + " " + product.categorie);
-      const variants = haystack + " " + haystack.replace(/invitatie/g, "invitatii");
+      const variants = haystack + " " + haystack.replace(/invitație/g, "invitații");
       return terms.every(term => variants.includes(term) ||
-        (term === "invitatii" && haystack.includes("invitatie")) ||
-        (term === "invitatie" && haystack.includes("invitatii")));
+        (term === "invitații" && haystack.includes("invitație")) ||
+        (term === "invitație" && haystack.includes("invitații")));
     }).slice(0, 8);
   };
 
