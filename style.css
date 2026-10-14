@@ -2384,3 +2384,10 @@ header.site-header a.logo .logo-script {
 .footer-socials svg { width:17px; height:17px; fill:currentColor; flex:none; }
 .footer-socials a:nth-child(2) svg { fill:none; stroke:currentColor; stroke-width:1.8; }
 .footer-socials .social-dot { fill:currentColor; stroke:none; }
+
+.footer-opening-hours { margin-top:16px; width:100%; max-width:330px; }
+.footer-opening-hours h3 { margin:0 0 10px; color:#B77E88; font-size:11px; line-height:1.5; font-weight:600; letter-spacing:.12em; text-transform:uppercase; }
+.footer-opening-hours p { display:flex; justify-content:space-between; gap:16px; margin:0 !important; padding:7px 0; border-bottom:1px solid rgba(183,126,136,.18); color:#6e6662 !important; font-size:13px !important; line-height:1.5 !important; }
+.footer-opening-hours p:last-child { border-bottom:0; }
+.footer-opening-hours strong { color:#4E4945; font-weight:600; white-space:nowrap; }
+@media (max-width:700px) { .footer-opening-hours { max-width:360px; } }
