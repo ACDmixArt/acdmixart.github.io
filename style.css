@@ -2528,3 +2528,39 @@ header.site-header a.logo .logo-script {
 }
 .description-toggle:hover { color: #80535B; }
 .product-description [hidden] { display: none !important; }
+
+
+/* Categorii compacte, grupate pe randuri pe mobil */
+@media (max-width: 560px) {
+  .filters {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    align-items: stretch;
+  }
+  .filters .filter-btn {
+    width: 100%;
+    min-width: 0;
+    min-height: 38px;
+    padding: 8px 5px !important;
+    border-radius: 12px !important;
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    white-space: normal !important;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+}
+@media (min-width: 561px) and (max-width: 900px) {
+  .filters {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 9px !important;
+  }
+  .filters .filter-btn {
+    min-width: 0;
+    padding: 9px 8px !important;
+    font-size: 12px !important;
+    white-space: normal !important;
+  }
+}
