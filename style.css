@@ -1756,3 +1756,120 @@ main .hero h1 em {
     letter-spacing: -.045em !important;
   }
 }
+
+
+/* ACDmixArt WOW hero: fotografia deasupra, titlu editorial si caligrafie coerenta */
+.hero {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+  padding: 24px 5% 68px !important;
+  background:
+    radial-gradient(ellipse at 0% 92%, rgba(244,228,230,.7), transparent 32%),
+    radial-gradient(ellipse at 100% 70%, rgba(216,166,173,.18), transparent 30%),
+    var(--cream) !important;
+}
+.hero-card {
+  order: 0 !important;
+  width: min(100%, 980px) !important;
+  margin: 0 auto 34px !important;
+  padding: 0 !important;
+  border: 1px solid rgba(216,166,173,.48) !important;
+  border-radius: 26px !important;
+  background: #fff !important;
+  overflow: hidden !important;
+  box-shadow: 0 18px 42px rgba(78,73,69,.10) !important;
+}
+.hero-card img {
+  display: block !important;
+  width: 100% !important;
+  height: clamp(320px, 54vw, 570px) !important;
+  object-fit: cover !important;
+  object-position: center 38% !important;
+  border-radius: 25px !important;
+}
+.hero > div:first-child {
+  order: 1 !important;
+  width: 100% !important;
+  max-width: 1000px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+.hero .hero-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  color: #B77E88 !important;
+  font-size: 12px;
+  letter-spacing: .34em;
+  margin: 0 0 20px;
+}
+.heart-divider {
+  color: var(--pink-powder);
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.hero h1.hero-calligraphy {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0 !important;
+  max-width: 100% !important;
+  margin: 0 auto 24px !important;
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: clamp(48px, 7.2vw, 92px) !important;
+  font-weight: 400 !important;
+  letter-spacing: -.045em !important;
+  line-height: .98 !important;
+}
+.hero-calligraphy-light {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  color: var(--ink) !important;
+}
+.hero-calligraphy-emphasis {
+  font-family: 'Great Vibes', 'Alex Brush', cursive !important;
+  font-size: clamp(64px, 9vw, 112px) !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  letter-spacing: 0 !important;
+  line-height: 1.05 !important;
+  color: var(--burgundy-dark) !important;
+}
+.hero .hero-text {
+  max-width: 740px !important;
+  margin: 12px auto 30px !important;
+  text-align: center !important;
+  font-size: clamp(16px, 2vw, 21px);
+  line-height: 1.85;
+}
+.hero .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 220px;
+  padding: 16px 28px;
+  font-size: 15px;
+  border-radius: 999px;
+}
+@media (max-width: 560px) {
+  .hero { padding: 20px 5% 48px !important; }
+  .hero-card { margin-bottom: 28px !important; border-radius: 22px !important; }
+  .hero-card img { height: 390px !important; border-radius: 21px !important; }
+  .hero .hero-eyebrow { gap: 10px; font-size: 10px; letter-spacing: .25em; }
+  .heart-divider { font-size: 21px; }
+  .hero h1.hero-calligraphy {
+    font-size: clamp(40px, 10.8vw, 56px) !important;
+    line-height: 1.04 !important;
+    letter-spacing: -.035em !important;
+  }
+  .hero-calligraphy-emphasis {
+    font-size: clamp(53px, 14vw, 72px) !important;
+    line-height: 1.06 !important;
+  }
+  .hero .hero-text { font-size: 16px; line-height: 1.8; }
+}
