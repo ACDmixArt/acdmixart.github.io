@@ -2208,3 +2208,34 @@ header.site-header a.logo .logo-script {
 .personalize-section .eyebrow { color: #E8EDE4 !important; }
 .product-card { border-color: rgba(102,116,95,.32) !important; }
 .product-card:hover { border-color: rgba(102,116,95,.8) !important; }
+
+
+/* Functional product search opened from the magnifying-glass button */
+.header-search-input {
+  width: min(260px, 42vw);
+  min-width: 130px;
+  height: 42px;
+  padding: 0 13px;
+  border: 1px solid var(--burgundy-dark);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font: 14px 'Montserrat', sans-serif;
+  outline: none;
+}
+.header-search-input:focus {
+  box-shadow: 0 0 0 3px rgba(216,166,173,.18);
+}
+.header-search-input[hidden] { display: none !important; }
+@media (max-width: 560px) {
+  .header-search-input {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 5%;
+    z-index: 30;
+    width: min(280px, 88vw);
+    background: var(--paper);
+    box-shadow: 0 8px 24px rgba(78,73,69,.12);
+  }
+  .header-actions { position: relative; }
+}
