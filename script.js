@@ -2571,6 +2571,16 @@ const products = [
       "images/products/olic.jpg",
       "images/products/olic1.jpg"
     ]
+  },
+  {
+    id: 238,
+    nume: "Invitatie nunta 38",
+    categorie: "Nunta",
+    pret: 7,
+    poze: [
+      "images/products/ga.jpg",
+      "images/products/ga1.jpg"
+    ]
   }
 ];
 
