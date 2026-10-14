@@ -1890,6 +1890,15 @@ const products = [
       "images/products/kpop2.jpg",
       "images/products/kpop3.jpg"
     ]
+  },
+  {
+    id: 183,
+    nume: "Carte de colorat (A5) + insigna",
+    categorie: "Carti",
+    pret: 80,
+    poze: [
+      "images/products/miriAm.jpg"
+    ]
   }
 ];
 
