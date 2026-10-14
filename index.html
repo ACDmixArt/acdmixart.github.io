@@ -16,35 +16,42 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="style.css?v=20261014-layout4">
+  <link rel="stylesheet" href="style.css?v=20261014-header5">
 </head>
 
 <body>
 
   <header class="site-header">
 
-    <a class="logo" href="#">
-      ACDmixArt
+    <a class="logo" href="#" aria-label="ACDmixArt - Acasă">
+      <span class="logo-script">ACDmixArt</span>
+      <span class="logo-subtitle">CREAȚII PERSONALIZATE</span>
     </a>
 
-    <nav>
-      <a href="#catalog">Catalog</a>
-      <a href="#personalizare">Personalizare</a>
-      <a href="#despre">Despre noi</a>
-    </nav>
+    <div class="header-actions">
+      <a class="header-icon" href="#catalog" aria-label="Caută produse" title="Caută produse">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.2 4.2"></path></svg>
+      </a>
+      <a class="header-icon" href="#catalog" aria-label="Vezi catalogul" title="Vezi catalogul">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.8c0 5.2-8.8 10.2-8.8 10.2S3.2 14 3.2 8.8A4.7 4.7 0 0 1 12 6.3a4.7 4.7 0 0 1 8.8 2.5Z"></path></svg>
+      </a>
+      <button class="header-icon cart-icon" id="openCart" type="button" aria-label="Deschide coșul" title="Coșul tău">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.1a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.5L22 8H6"></path><circle cx="10" cy="20" r="1.2"></circle><circle cx="18" cy="20" r="1.2"></circle></svg>
+        <span id="cartCount">0</span>
+      </button>
+    </div>
 
-    <button
-      class="cart-button"
-      id="openCart"
-      type="button"
-    >
-      🛒 Coș
-      <span id="cartCount">0</span>
-    </button>
+    <nav>
+      <a href="#">Acasă</a>
+      <a href="#despre">Despre mine</a>
+      <a href="#catalog">Catalog</a>
+      <a href="#catalog">Modele</a>
+      <a href="#personalizare">Personalizare</a>
+    </nav>
 
   </header>
 
