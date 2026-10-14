@@ -2376,6 +2376,19 @@ const products = [
       "images/products/rt1.jpg",
       "images/products/rt2.jpg"
     ]
+  },
+  {
+    id: 221,
+    nume: "Invitatie nunta 22",
+    categorie: "Nunta",
+    pret: 8,
+    poze: [
+      "images/products/qw.jpg",
+      "images/products/qw1.jpg",
+      "images/products/qw2.jpg",
+      "images/products/qw3.jpg",
+      "images/products/qw4.jpg"
+    ]
   }
 ];
 
