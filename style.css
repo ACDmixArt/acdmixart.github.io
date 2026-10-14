@@ -2852,3 +2852,33 @@ header.site-header a.logo .logo-script {
     box-shadow: 0 1px 3px rgba(78,73,69,.035) !important;
   }
 }
+
+
+/* Coș elegant și coerent cu identitatea ACDmixArt */
+.cart-panel {
+  width: min(460px, 100%) !important;
+  padding: 26px 24px 22px !important;
+  background: #FFFCFA !important;
+  color: #4E4945 !important;
+  border-left: 1px solid rgba(215,167,176,.28);
+  box-shadow: -12px 0 40px rgba(78,73,69,.12) !important;
+}
+.cart-top { padding-bottom: 16px; border-bottom: 1px solid rgba(215,167,176,.28); }
+.cart-top h2 { margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(30px, 7vw, 42px); line-height: 1.1; color: #4E4945; }
+.cart-top .close { width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(215,167,176,.45); color: #A8757F; font-size: 25px; line-height: 1; }
+#cartItems { padding: 8px 0 18px !important; }
+.cart-row { grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 12px; padding: 17px 0 !important; border-bottom: 1px solid rgba(215,167,176,.22) !important; }
+.cart-row strong { color: #4E4945; font-size: 15px; line-height: 1.45; }
+.cart-row small { display: inline-block; margin-top: 5px; color: #817875 !important; font-size: 13px; }
+.cart-row button, .cart-row .remove { border: 1px solid rgba(215,167,176,.42) !important; border-radius: 10px; background: #fff !important; color: #A8757F !important; min-width: 34px; min-height: 34px; font-size: 16px; }
+.cart-bottom { gap: 18px !important; padding-top: 20px !important; border-top: 1px solid rgba(215,167,176,.3) !important; }
+.cart-bottom strong { display: flex; justify-content: space-between; gap: 12px; font-size: 19px; color: #4E4945; }
+#cartWhatsapp { width: 100%; border-radius: 999px !important; padding: 14px 18px !important; background: #B77E88 !important; color: #fff !important; border: 0 !important; font-size: 14px; font-weight: 600; box-shadow: 0 5px 14px rgba(183,126,136,.18); }
+#cartWhatsapp:hover { background: #A8757F !important; }
+@media (max-width: 560px) {
+  .cart-panel { padding: 24px 20px max(18px, env(safe-area-inset-bottom)) !important; }
+  .cart-row { gap: 8px; }
+  .cart-row strong { font-size: 14px; }
+  .cart-bottom strong { font-size: 18px; }
+  #cartWhatsapp { padding: 13px 14px !important; }
+}
