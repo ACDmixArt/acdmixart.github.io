@@ -1923,3 +1923,90 @@ main .hero h1 em {
 .hero > div:first-child > .eyebrow:not(.hero-eyebrow) { display: none !important; }
 .hero .hero-eyebrow { margin-top: 2px !important; }
 .hero h1.hero-calligraphy { margin-top: 12px !important; }
+
+
+/* Reference polish v18: one brand label, heart detail, restrained mobile type */
+.site-header .logo {
+  position: relative;
+}
+.site-header .logo .logo-script {
+  font-family: 'Alex Brush', 'Allura', cursive !important;
+  font-size: clamp(40px, 4.8vw, 55px) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: .92 !important;
+  color: var(--burgundy-dark) !important;
+}
+.site-header .logo .logo-script::after {
+  content: "♡";
+  display: inline-block;
+  margin-left: 8px;
+  color: var(--gold);
+  font-family: 'Allura', cursive;
+  font-size: .62em;
+  font-weight: 400;
+  transform: translateY(-.12em) rotate(12deg);
+}
+.site-header .logo-subtitle {
+  margin-top: 9px;
+  letter-spacing: .28em;
+  color: #B77E88;
+}
+.hero .hero-eyebrow {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: min(100%, 620px);
+  margin: 0 auto 20px !important;
+  color: #B77E88 !important;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .32em;
+}
+.hero .hero-eyebrow::before,
+.hero .hero-eyebrow::after {
+  content: "";
+  display: block;
+  height: 1px;
+  flex: 1 1 50px;
+  background: rgba(216,166,173,.65);
+}
+.hero .heart-divider { display: none !important; }
+.hero h1.hero-calligraphy {
+  margin: 0 auto 22px !important;
+  gap: 0 !important;
+  font-size: clamp(43px, 6.4vw, 78px) !important;
+  line-height: 1 !important;
+}
+.hero-calligraphy-light {
+  font-size: 1em !important;
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -.045em !important;
+  color: var(--ink) !important;
+}
+.hero-calligraphy-emphasis {
+  font-family: 'Allura', cursive !important;
+  font-size: clamp(65px, 9vw, 106px) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.02 !important;
+  color: var(--burgundy-dark) !important;
+}
+.hero .hero-text { margin: 12px auto 28px !important; }
+@media (max-width: 560px) {
+  .site-header .logo .logo-script { font-size: 40px !important; }
+  .site-header .logo-subtitle { font-size: 7px !important; letter-spacing: .19em !important; }
+  .hero .hero-eyebrow { gap: 10px; margin-bottom: 17px !important; font-size: 10px; letter-spacing: .22em; }
+  .hero h1.hero-calligraphy {
+    font-size: clamp(38px, 9.6vw, 48px) !important;
+    line-height: 1.04 !important;
+    letter-spacing: -.035em !important;
+  }
+  .hero-calligraphy-light { white-space: normal; }
+  .hero-calligraphy-emphasis {
+    font-size: clamp(58px, 14.5vw, 72px) !important;
+    line-height: 1.04 !important;
+  }
+}
