@@ -2792,3 +2792,5 @@ header.site-header a.logo .logo-script {
     white-space: nowrap;
   }
 }
+
+.header-icon{position:relative}.favorite-count{position:absolute;top:-5px;right:-5px;min-width:18px;height:18px;padding:0 4px;display:grid;place-items:center;border-radius:999px;background:#B77E88;color:#fff;font:600 10px 'Montserrat',sans-serif;box-shadow:0 2px 5px rgba(78,73,69,.12)}.favorite-count[hidden]{display:none!important}
