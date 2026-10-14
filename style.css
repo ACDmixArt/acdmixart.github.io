@@ -2269,3 +2269,40 @@ header.site-header a.logo .logo-script {
     z-index: 9999;
   }
 }
+
+
+/* Live product-search suggestions */
+.header-actions { position: relative; }
+.search-suggestions {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 1000;
+  width: min(320px, 86vw);
+  max-height: 55vh;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #ead6da;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(78, 45, 52, .16);
+  padding: 6px;
+}
+.search-suggestions[hidden] { display: none !important; }
+.search-suggestion {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 9px;
+  background: #fff;
+  color: #4E4945;
+  text-align: left;
+  cursor: pointer;
+}
+.search-suggestion + .search-suggestion { border-top: 1px solid #f3e7e9; }
+.search-suggestion:hover, .search-suggestion:focus { background: #FAF0F2; outline: none; }
+.search-suggestion small { color: #B77E88; font-size: 11px; }
+.search-suggestion-empty { padding: 12px; color: #8A8580; font-size: 13px; }
