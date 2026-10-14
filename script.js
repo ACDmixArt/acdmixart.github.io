@@ -2111,7 +2111,7 @@ const products = [
   },
   {
     id: 198,
-    nume: "Set gatit mireasa/mire",
+    nume: "Set gatit mireasa/mire - Model 2",
     categorie: "Set Gatit",
     pret: 65,
     poze: [
@@ -2125,6 +2125,24 @@ const products = [
       "images/products/simonica7.jpg",
       "images/products/simonica8.jpg",
       "images/products/simonica9.jpg"
+    ]
+  },
+  {
+    id: 199,
+    nume: "Set gatit mireasa/mire - Model 1",
+    categorie: "Set Gatit",
+    pret: 65,
+    poze: [
+      "images/products/setmireasa.jpg",
+      "images/products/setmireasa1.jpg",
+      "images/products/setmireasa2.jpg",
+      "images/products/setmireasa3.jpg",
+      "images/products/setmireasa4.jpg",
+      "images/products/setmireasa5.jpg",
+      "images/products/setmireasa6.jpg",
+      "images/products/setmireasa7.jpg",
+      "images/products/setmireasa8.jpg",
+      "images/products/setmireasa9.jpg"
     ]
   }
 ];
