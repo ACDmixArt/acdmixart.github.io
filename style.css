@@ -1363,3 +1363,46 @@ footer {
   .hero h1 { font-size: clamp(43px, 12vw, 64px); }
   .hero .hero-text { font-size: 16px; }
 }
+
+
+/* Corectie: pastram paleta ACDmixArt; copiem doar structura vizuala a referintei */
+.site-header {
+  background: rgba(255,255,255,.97);
+  color: var(--ink);
+  border-bottom-color: rgba(216,166,173,.45);
+}
+.site-header .logo { color: var(--burgundy-dark); }
+.site-header nav, .site-header nav a { color: var(--ink); }
+.site-header nav a:hover { color: #B77E88; }
+.site-header .cart-button {
+  color: var(--ink);
+  border-color: rgba(216,166,173,.65);
+}
+.site-header #cartCount { background: var(--burgundy); color: #fff; }
+.hero {
+  background: linear-gradient(115deg, #FAF7F2 0%, #FFFFFF 62%, #F4E4E6 100%);
+  color: var(--ink);
+}
+.hero h1 { color: var(--ink); }
+.hero h1 em { color: var(--burgundy-dark); }
+.hero .eyebrow { color: #B77E88; }
+.hero .hero-text { color: var(--muted); }
+.hero .button {
+  background: var(--burgundy);
+  color: #FFFFFF;
+  box-shadow: 0 8px 20px rgba(102,116,95,.18);
+}
+.hero .button:hover { background: var(--burgundy-dark); }
+.hero-card {
+  border-color: rgba(216,166,173,.7);
+  background: #FFFFFF;
+  box-shadow: 0 18px 44px rgba(78,73,69,.10);
+}
+.about-section {
+  background: var(--cream);
+  color: var(--ink);
+  border-top: 1px solid rgba(216,166,173,.35);
+}
+.about-section .eyebrow { color: #B77E88; }
+.about-section h2 { color: var(--ink); }
+.about-section p { color: var(--muted); }
