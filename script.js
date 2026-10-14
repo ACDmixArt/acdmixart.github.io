@@ -3888,7 +3888,7 @@ const productSearchInput = document.getElementById("productSearch");
 if (openSearchButton && productSearchInput) {
   let searchHasScrolled = false;
   const showSearchResults = () => {
-    document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document.getElementById("productsGrid")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
   openSearchButton.addEventListener("click", () => {
     productSearchInput.hidden = !productSearchInput.hidden;
@@ -3902,6 +3902,10 @@ if (openSearchButton && productSearchInput) {
     }
   });
   productSearchInput.addEventListener("input", () => {
+    if (productSearchInput.value.trim()) {
+      activeCategory = "Toate";
+      renderCategories();
+    }
     renderProducts();
     if (productSearchInput.value.trim().length >= 2 && !searchHasScrolled) {
       searchHasScrolled = true;
