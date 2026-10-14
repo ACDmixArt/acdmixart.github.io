@@ -2355,6 +2355,16 @@ const products = [
       "images/products/mk2.jpg",
       "images/products/mk3.jpg"
     ]
+  },
+  {
+    id: 219,
+    nume: "Invitatie nunta 20",
+    categorie: "Nunta",
+    pret: 4.5,
+    poze: [
+      "images/products/booom.jpg",
+      "images/products/booom1.jpg"
+    ]
   }
 ];
 
