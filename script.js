@@ -1859,6 +1859,24 @@ const products = [
     ]
   },
   {
+    id: 199,
+    nume: "Agendă personalizată cu caricatură 10",
+    categorie: "Agende",
+    pret: 120,
+    poze: [
+      "images/products/simonica.jpg",
+      "images/products/simonica1.jpg",
+      "images/products/simonica2.jpg",
+      "images/products/simonica3.jpg",
+      "images/products/simonica4.jpg",
+      "images/products/simonica5.jpg",
+      "images/products/simonica6.jpg",
+      "images/products/simonica7.jpg",
+      "images/products/simonica8.jpg",
+      "images/products/simonica9.jpg"
+    ]
+  },
+  {
     id: 180,
     nume: "Marturie mir personalizabila pe orice tematica",
     categorie: "Marturii",
