@@ -2444,6 +2444,18 @@ const products = [
       "images/products/wow1.jpg",
       "images/products/wow2.jpg"
     ]
+  },
+  {
+    id: 226,
+    nume: "Invitatie nunta 27",
+    categorie: "Nunta",
+    pret: 4.5,
+    poze: [
+      "images/products/redu.jpg",
+      "images/products/redu1.jpg",
+      "images/products/redu2.jpg",
+      "images/products/redu3.jpg"
+    ]
   }
 ];
 
