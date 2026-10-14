@@ -3344,7 +3344,12 @@ if (cartWhatsapp) {
       return;
     }
 
-    let message = "Bună! Doresc să plasez o comandă ACDmixArt:\n\n";
+function getACDMixArtGreeting() {
+  const hour = Number(new Intl.DateTimeFormat('ro-RO', { hour: '2-digit', hourCycle: 'h23', timeZone: 'Europe/Bucharest' }).format(new Date()));
+  return hour >= 5 && hour < 12 ? 'Bună dimineața!' : hour >= 12 && hour < 18 ? 'Bună ziua!' : 'Bună seara!';
+}
+
+    let message = getACDMixArtGreeting() + " Doresc să plasez o comandă ACDmixArt:\n\n";
     cart.forEach((item, index) => {
       message += `${index + 1}. ${item.nume}\nCantitate: ${item.quantity || 1}\nPreț/buc.: ${money(item.pret)}\nSubtotal: ${money(item.pret * (item.quantity || 1))}\n`;
       if (item.personalizare?.tip === "agendă") {
@@ -3536,7 +3541,7 @@ zoomButton.addEventListener("click", function (e) {
 
   lightbox.querySelector(".lightbox-order").addEventListener("click", () => {
     const message =
-      `Bună! Doresc detalii despre produsul: ${product.nume}.\n` +
+      `${getACDMixArtGreeting()} Doresc detalii despre produsul: ${product.nume}.\n` +
       `Categorie: ${product.categorie}\n` +
       `Preț afișat: ${money(product.pret)}\n` +
       `Mă interesează detalii despre comandă și personalizare.`;
@@ -3886,7 +3891,7 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
       return;
     }
 
-    let message = "Bună! Doresc o comandă personalizată ACDmixArt.\n\n";
+    let message = getACDMixArtGreeting() + " Doresc o comandă personalizată ACDmixArt.\n\n";
     message += `Categorie: ${product.categorie}\nProdus: ${product.nume}\nCantitate: ${quantity}\n`;
 
     const fields = [
