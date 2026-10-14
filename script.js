@@ -2221,6 +2221,17 @@ const products = [
       "images/products/pip.jpg",
       "images/products/pip1.jpg"
     ]
+  },
+  {
+    id: 207,
+    nume: "Invitatie nunta 8",
+    categorie: "Nunta",
+    pret: 8.5,
+    poze: [
+      "images/products/simbas.jpg",
+      "images/products/simbas1.jpg",
+      "images/products/simbas2.jpg"
+    ]
   }
 ];
 
