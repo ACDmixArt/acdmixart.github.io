@@ -2880,14 +2880,18 @@ function renderProducts() {
 
   const query = (document.getElementById("productSearch")?.value || "").trim().toLocaleLowerCase("ro")
     .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-  const categoryList = activeCategory === "Toate"
+  // Search across all products, regardless of the selected category.
+  const categoryList = query || activeCategory === "Toate"
     ? products
     : products.filter(product => product.categorie === activeCategory);
+  const queryVariants = query ? [query] : [];
+  // Let the common plural "invitatii" also match titles written as "invitatie".
+  if (query.endsWith("ii")) queryVariants.push(query.slice(0, -2) + "ie");
   const list = query
     ? categoryList.filter(product => {
         const searchable = `${product.nume} ${product.categorie}`.toLocaleLowerCase("ro")
-          .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-        return searchable.includes(query);
+          .normalize("NFD").replace(/[\\u0300-\\u036f]/g, "");
+        return queryVariants.some(term => searchable.includes(term));
       })
     : categoryList;
 
@@ -3884,7 +3888,11 @@ if (openSearchButton && productSearchInput) {
     renderProducts();
   });
   productSearchInput.addEventListener("keydown", event => {
-    if (event.key === "Escape") {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      renderProducts();
+      document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else if (event.key === "Escape") {
       productSearchInput.value = "";
       productSearchInput.hidden = true;
       renderProducts();
