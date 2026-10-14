@@ -2530,6 +2530,16 @@ const products = [
       "images/products/reg1.jpg",
       "images/products/reg2.jpg"
     ]
+  },
+  {
+    id: 234,
+    nume: "Invitatie nunta 34",
+    categorie: "Nunta",
+    pret: 4.5,
+    poze: [
+      "images/products/mog.jpg",
+      "images/products/mog1.jpg"
+    ]
   }
 ];
 
