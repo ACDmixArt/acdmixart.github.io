@@ -2365,6 +2365,17 @@ const products = [
       "images/products/booom.jpg",
       "images/products/booom1.jpg"
     ]
+  },
+  {
+    id: 220,
+    nume: "Invitatie nunta 21",
+    categorie: "Nunta",
+    pret: 7.5,
+    poze: [
+      "images/products/rt.jpg",
+      "images/products/rt1.jpg",
+      "images/products/rt2.jpg"
+    ]
   }
 ];
 
