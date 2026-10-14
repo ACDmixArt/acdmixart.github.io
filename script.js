@@ -2477,6 +2477,17 @@ const products = [
       "images/products/ad2.jpg",
       "images/products/ad3.jpg"
     ]
+  },
+  {
+    id: 229,
+    nume: "Invitatie nunta 29",
+    categorie: "Nunta",
+    pret: 4.5,
+    poze: [
+      "images/products/Doamne.jpg",
+      "images/products/Doamne1.jpg",
+      "images/products/Doamne2.jpg"
+    ]
   }
 ];
 
