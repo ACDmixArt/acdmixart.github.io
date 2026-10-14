@@ -1867,6 +1867,17 @@ const products = [
       "images/products/mirax.jpg",
       "images/products/mirax1.jpg"
     ]
+  },
+  {
+    id: 181,
+    nume: "Carte de colorat Capybara A5",
+    categorie: "Carti",
+    pret: 65,
+    poze: [
+      "images/products/capy.jpg",
+      "images/products/capy1.jpg",
+      "images/products/capy2.jpg"
+    ]
   }
 ];
 
