@@ -2111,7 +2111,7 @@ const products = [
   },
   {
     id: 198,
-    nume: "Set gatit mire/mireasa - tavita",
+    nume: "Set gatit mireasa/mire",
     categorie: "Set Gatit",
     pret: 65,
     poze: [
