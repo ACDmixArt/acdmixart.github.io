@@ -2611,6 +2611,16 @@ const products = [
       "images/products/1234.jpg",
       "images/products/12345.jpg"
     ]
+  },
+  {
+    id: 242,
+    nume: "Invitatie nunta 42",
+    categorie: "Nunta",
+    pret: 5,
+    poze: [
+      "images/products/almeu.jpg",
+      "images/products/almeu2.jpg"
+    ]
   }
 ];
 
