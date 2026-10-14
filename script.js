@@ -2879,14 +2879,14 @@ function renderProducts() {
   if (!grila) return;
 
   const query = (document.getElementById("productSearch")?.value || "").trim().toLocaleLowerCase("ro")
-    .normalize("NFD").replace(/[\\u0300-\\u036f]/g, "");
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   const categoryList = activeCategory === "Toate"
     ? products
     : products.filter(product => product.categorie === activeCategory);
   const list = query
     ? categoryList.filter(product => {
         const searchable = `${product.nume} ${product.categorie}`.toLocaleLowerCase("ro")
-          .normalize("NFD").replace(/[\\u0300-\\u036f]/g, "");
+          .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
         return searchable.includes(query);
       })
     : categoryList;
@@ -3874,8 +3874,7 @@ if (openSearchButton && productSearchInput) {
   openSearchButton.addEventListener("click", () => {
     productSearchInput.hidden = !productSearchInput.hidden;
     if (!productSearchInput.hidden) {
-      productSearchInput.focus();
-      document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      requestAnimationFrame(() => productSearchInput.focus());
     } else {
       productSearchInput.value = "";
       renderProducts();
@@ -3883,7 +3882,6 @@ if (openSearchButton && productSearchInput) {
   });
   productSearchInput.addEventListener("input", () => {
     renderProducts();
-    document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
   productSearchInput.addEventListener("keydown", event => {
     if (event.key === "Escape") {
