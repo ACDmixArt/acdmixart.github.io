@@ -2384,6 +2384,16 @@ const products = [
       "images/products/qw3.jpg",
       "images/products/qw4.jpg"
     ]
+  },
+  {
+    id: 222,
+    nume: "Invitatie nunta 23",
+    categorie: "Nunta",
+    pret: 4.5,
+    poze: [
+      "images/products/fd.jpg",
+      "images/products/fd1.jpg"
+    ]
   }
 ];
 
