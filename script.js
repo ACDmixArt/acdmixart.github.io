@@ -3885,11 +3885,61 @@ renderCart();
 
 const openSearchButton = document.getElementById("openSearch");
 const productSearchInput = document.getElementById("productSearch");
+
 if (openSearchButton && productSearchInput) {
   let searchHasScrolled = false;
+  let searchSuggestions = document.getElementById("searchSuggestions");
+
+  if (!searchSuggestions) {
+    searchSuggestions = document.createElement("div");
+    searchSuggestions.id = "searchSuggestions";
+    searchSuggestions.className = "search-suggestions";
+    searchSuggestions.hidden = true;
+    productSearchInput.insertAdjacentElement("afterend", searchSuggestions);
+  }
+
+  const normalizeSearchTerm = value => String(value || "")
+    .toLocaleLowerCase("ro")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+
+  const findSearchMatches = value => {
+    const query = normalizeSearchTerm(value);
+    if (!query) return [];
+    const terms = query.split(/\s+/).filter(Boolean);
+    return products.filter(product => {
+      const haystack = normalizeSearchTerm(product.nume + " " + product.categorie);
+      const variants = haystack + " " + haystack.replace(/invitatie/g, "invitatii");
+      return terms.every(term => variants.includes(term) ||
+        (term === "invitatii" && haystack.includes("invitatie")) ||
+        (term === "invitatie" && haystack.includes("invitatii")));
+    }).slice(0, 8);
+  };
+
+  const escapeSearchText = value => String(value).replace(/[&<>"']/g, char => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  }[char]));
+
   const showSearchResults = () => {
     document.getElementById("productsGrid")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+
+  const updateSearchSuggestions = () => {
+    const query = productSearchInput.value.trim();
+    if (!query) {
+      searchSuggestions.hidden = true;
+      searchSuggestions.innerHTML = "";
+      return;
+    }
+    const matches = findSearchMatches(query);
+    searchSuggestions.innerHTML = matches.length
+      ? matches.map(product => `<button type="button" class="search-suggestion" data-search-product="${product.id}"><span>${escapeSearchText(product.nume)}</span><small>${escapeSearchText(product.categorie)}</small></button>`).join("")
+      : '<div class="search-suggestion-empty">Nu am găsit produse. Încearcă alt cuvânt.</div>';
+    searchSuggestions.hidden = false;
+  };
+
   openSearchButton.addEventListener("click", () => {
     productSearchInput.hidden = !productSearchInput.hidden;
     if (!productSearchInput.hidden) {
@@ -3897,31 +3947,56 @@ if (openSearchButton && productSearchInput) {
       requestAnimationFrame(() => productSearchInput.focus());
     } else {
       productSearchInput.value = "";
+      searchSuggestions.hidden = true;
+      searchSuggestions.innerHTML = "";
       searchHasScrolled = false;
       renderProducts();
     }
   });
+
   productSearchInput.addEventListener("input", () => {
-    if (productSearchInput.value.trim()) {
-      activeCategory = "Toate";
-      renderCategories();
-    }
+    activeCategory = "Toate";
+    renderCategories();
     renderProducts();
+    updateSearchSuggestions();
     if (productSearchInput.value.trim().length >= 2 && !searchHasScrolled) {
       searchHasScrolled = true;
       showSearchResults();
     }
     if (!productSearchInput.value.trim()) searchHasScrolled = false;
   });
-  productSearchInput.addEventListener("search", () => renderProducts());
+
+  searchSuggestions.addEventListener("click", event => {
+    const button = event.target.closest("[data-search-product]");
+    if (!button) return;
+    const product = products.find(item => String(item.id) === button.dataset.searchProduct);
+    if (!product) return;
+    productSearchInput.value = product.nume;
+    activeCategory = "Toate";
+    renderCategories();
+    renderProducts();
+    searchSuggestions.hidden = true;
+    showSearchResults();
+  });
+
+  productSearchInput.addEventListener("search", () => {
+    renderProducts();
+    updateSearchSuggestions();
+  });
+
   productSearchInput.addEventListener("keydown", event => {
     if (event.key === "Enter") {
       event.preventDefault();
+      activeCategory = "Toate";
+      renderCategories();
       renderProducts();
+      updateSearchSuggestions();
       showSearchResults();
     } else if (event.key === "Escape") {
       productSearchInput.value = "";
       productSearchInput.hidden = true;
+      searchSuggestions.hidden = true;
+      searchSuggestions.innerHTML = "";
       searchHasScrolled = false;
       renderProducts();
       openSearchButton.focus();
