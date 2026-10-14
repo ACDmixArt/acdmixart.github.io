@@ -2519,6 +2519,17 @@ const products = [
       "images/products/taba.jpg",
       "images/products/taba1.jpg"
     ]
+  },
+  {
+    id: 233,
+    nume: "Invitatie nunta 33",
+    categorie: "Nunta",
+    pret: 3.5,
+    poze: [
+      "images/products/reg.jpg",
+      "images/products/reg1.jpg",
+      "images/products/reg2.jpg"
+    ]
   }
 ];
 
