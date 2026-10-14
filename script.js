@@ -2875,6 +2875,44 @@ function changeProductQuantity(productId, change) {
   if (product && priceEl) priceEl.textContent = `${money(unitPriceForQuantity(product, next))} / buc.`;
 }
 
+function descrierePersonalizare(product) {
+  const categorie = (product.categorie || "").toLocaleLowerCase("ro");
+  if (categorie.includes("botez")) {
+    return "Personalizăm culorile, numele, data și textul, iar tema poate fi adaptată în funcție de preferințe.";
+  }
+  if (categorie.includes("nuntă") || categorie.includes("nunta") || categorie.includes("plicuri dar")) {
+    return "Alege culorile, numele, data și mesajul dorit. Adaptăm modelul pentru a se potrivi tematicii evenimentului.";
+  }
+  if (categorie.includes("mărtur") || categorie.includes("martur")) {
+    return "Poate fi personalizat cu nume, dată, text, culori și tematica evenimentului, în funcție de model.";
+  }
+  if (categorie.includes("căni") || categorie.includes("cani") || categorie.includes("pahare")) {
+    return "Personalizăm cu nume, mesaje, imagini și culori, în funcție de model și de suprafața disponibilă.";
+  }
+  if (categorie.includes("topper")) {
+    return "Personalizăm textul, numele, vârsta și culorile, în funcție de eveniment și de modelul ales.";
+  }
+  if (categorie.includes("cărți de vizită") || categorie.includes("carti de vizita")) {
+    return "Designul poate fi adaptat cu datele, textele, culorile și elementele grafice potrivite afacerii tale.";
+  }
+  if (categorie.includes("cărți") || categorie.includes("carti") || categorie.includes("jurnale")) {
+    return "Personalizăm numele, textele, coperta, culorile și personajele, în funcție de modelul ales.";
+  }
+  if (categorie.includes("agende")) {
+    return "Alege personalizarea copertei, numele, culorile și, unde este disponibil, personajele sau caricatura.";
+  }
+  if (categorie.includes("party")) {
+    return "Adaptăm culorile, textul și tema decorului pentru petrecerea ta, în funcție de produs.";
+  }
+  if (categorie.includes("moț") || categorie.includes("mot")) {
+    return "Personalizăm detaliile setului, culorile și textul, în funcție de opțiunile disponibile pentru model.";
+  }
+  if (categorie.includes("gătit") || categorie.includes("gatit")) {
+    return "Poți alege accesoriile și detaliile de personalizare disponibile pentru set.";
+  }
+  return "Culorile, textul, numele și personajele pot fi adaptate în funcție de model. Scrie-mi ce îți dorești și găsim împreună varianta potrivită.";
+}
+
 function renderProducts() {
   if (!grila) return;
 
@@ -2922,6 +2960,7 @@ function renderProducts() {
         </div>
         <div class="product-info">
           <h3>${product.nume}</h3>
+          <p class="product-description">${descrierePersonalizare(product)}</p>
           <p class="product-price" id="price-${product.id}">${money(unitPriceForQuantity(product, 1))} / buc.</p>
           ${Array.isArray(product.tarifeCantitate) ? `<p class="product-tier-prices" style="font-size:13px;line-height:1.5;margin:4px 0 10px;">1–49 buc.: 2,50 lei/buc.<br>50–100 buc.: 2 lei/buc.<br>Peste 100 buc.: 1,70 lei/buc.</p>` : ""}
           <div class="product-quantity">
