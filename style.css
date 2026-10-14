@@ -2698,3 +2698,32 @@ header.site-header a.logo .logo-script {
     margin: 0 0 9px !important;
   }
 }
+
+
+/* Fix definitiv: cardurile nu se mai întind pe înălțimea rândului */
+@media (max-width: 700px) {
+  #productsGrid.products-grid {
+    align-items: start !important;
+    grid-auto-rows: max-content !important;
+  }
+  #productsGrid.products-grid > .product-card {
+    display: block !important;
+    align-self: start !important;
+    height: fit-content !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 !important;
+  }
+  #productsGrid .product-info {
+    display: block !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  #productsGrid .product-info > * {
+    flex: initial !important;
+  }
+  #productsGrid .product-info .add-cart {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
