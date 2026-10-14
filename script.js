@@ -75,7 +75,7 @@ const products = [
       categorie: "Botez",
       pret: 3.5,
       poze: [
-        "images/products/îngeraș.jpg",
+        "images/products/ingeras.jpg",
         "images/products/ingeras1.jpg"
       ]
     },
@@ -347,7 +347,7 @@ const products = [
     categorie: "Botez",
     pret: 7,
     poze: [
-      "images/products/lebădă.jpg",
+      "images/products/lebada.jpg",
       "images/products/lebada1.jpg"
     ]
   },
@@ -455,9 +455,9 @@ const products = [
       categorie: "Mărturii",
       pret: 9,
       poze: [
-        "images/products/mărturie sapun.jpg",
-        "images/products/mărturie sapun1.jpg",
-        "images/products/mărturie sapun2.jpg"
+        "images/products/marturie sapun.jpg",
+        "images/products/marturie sapun1.jpg",
+        "images/products/marturie sapun2.jpg"
       ]
     },
   {
@@ -466,7 +466,7 @@ const products = [
       categorie: "Mărturii",
       pret: 5.5,
       poze: [
-        "images/products/mărturie.jpg",
+        "images/products/marturie.jpg",
         "images/products/marturie1.jpg",
         "images/products/marturie2.jpg"
       ]
@@ -581,7 +581,7 @@ const products = [
     pret: 7.5,
     poze: [
       "images/products/ionut.jpg",
-      "images/products/ionu1.jpg",
+      "images/products/ionut1.jpg",
       "images/products/ionut2.jpg",
       "images/products/ionut3.jpg"
     ]
@@ -723,7 +723,7 @@ const products = [
     categorie: "Mărturii",
     pret: 4.5,
     poze: [
-      "images/products/poză.jpg",
+      "images/products/poza.jpg",
       "images/products/poza1.jpg"
     ]
   },
@@ -878,7 +878,7 @@ const products = [
     categorie: "Mărturii",
     pret: 4.5,
     poze: [
-      "images/products/lebădă.jpg",
+      "images/products/lebada.jpg",
       "images/products/lebada1.jpg"
     ]
   },
@@ -1100,7 +1100,7 @@ const products = [
       categorie: "Set Moț",
       pret: 230,
       poze: [
-          "images/products/zână.jpg"
+          "images/products/zana.jpg"
       ]
   },
   {
