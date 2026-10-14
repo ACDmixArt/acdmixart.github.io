@@ -2770,6 +2770,19 @@ const products = [
       "images/products/avu3.jpg",
       "images/products/avu4.jpg"
     ]
+  },
+  {
+    id: 254,
+    nume: "Carte de vizita — Firma auto",
+    categorie: "Carti de vizita",
+    pret: 1,
+    tarifeCantitate: [
+      { min: 1, max: 100, pret: 1 },
+      { min: 101, max: null, pret: 0.8 }
+    ],
+    poze: [
+      "images/products/firmaauto.jpg"
+    ]
   }
 ];
 
