@@ -1937,6 +1937,28 @@ const products = [
       "images/products/arianacarte1.jpg",
       "images/products/arianacarte2.jpg"
     ]
+  },
+  {
+    id: 188,
+    nume: "Carte de activitati (A4)",
+    categorie: "Carti",
+    pret: 280,
+    poze: [
+      "images/products/asas.jpg",
+      "images/products/asas1.jpg",
+      "images/products/asas2.jpg",
+      "images/products/asas3.jpg",
+      "images/products/asas4.jpg",
+      "images/products/asas5.jpg",
+      "images/products/asas6.jpg",
+      "images/products/asas7.jpg",
+      "images/products/asas8.jpg",
+      "images/products/asas9.jpg",
+      "images/products/asas10.jpg",
+      "images/products/asas11.jpg",
+      "images/products/asas12.jpg",
+      "images/products/asas13.jpg"
+    ]
   }
 ];
 
