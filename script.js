@@ -1870,7 +1870,7 @@ const products = [
   },
   {
     id: 181,
-    nume: "Carte de colorat Capybara A5",
+    nume: "Model 1 - Carte de colorat Capybara A5",
     categorie: "Carti",
     pret: 65,
     poze: [
@@ -1881,7 +1881,7 @@ const products = [
   },
   {
     id: 182,
-    nume: "Carte de colorat Kpop A5",
+    nume: "Model 2 - Carte de colorat Kpop A5",
     categorie: "Carti",
     pret: 65,
     poze: [
@@ -1893,7 +1893,7 @@ const products = [
   },
   {
     id: 183,
-    nume: "Carte de colorat (A5) + insigna",
+    nume: "Model 3 - Carte de colorat A5 + insigna",
     categorie: "Carti",
     pret: 80,
     poze: [
@@ -1902,7 +1902,7 @@ const products = [
   },
   {
     id: 184,
-    nume: "Carte de colorat (A5) + insigna",
+    nume: "Model 4 - Carte de colorat A5 + insigna",
     categorie: "Carti",
     pret: 80,
     poze: [
@@ -1911,7 +1911,7 @@ const products = [
   },
   {
     id: 185,
-    nume: "Carte de colorat (A5) + insigna",
+    nume: "Model 5 - Carte de colorat A5 + insigna",
     categorie: "Carti",
     pret: 80,
     poze: [
@@ -1920,7 +1920,7 @@ const products = [
   },
   {
     id: 186,
-    nume: "Carte de colorat (A5) + insigna",
+    nume: "Model 6 - Carte de colorat A5 + insigna",
     categorie: "Carti",
     pret: 80,
     poze: [
@@ -1929,7 +1929,7 @@ const products = [
   },
   {
     id: 187,
-    nume: "Carte de colorat (A4)",
+    nume: "Model 7 - Carte de colorat A4",
     categorie: "Carti",
     pret: 110,
     poze: [
@@ -1940,7 +1940,7 @@ const products = [
   },
   {
     id: 188,
-    nume: "Carte de activitati (A4)",
+    nume: "Model 8 - Carte de activitati A4",
     categorie: "Carti",
     pret: 280,
     poze: [
@@ -1962,7 +1962,7 @@ const products = [
   },
   {
     id: 189,
-    nume: "Carte de activitati",
+    nume: "Model 9 - Carte de activitati",
     categorie: "Carti",
     pret: 280,
     poze: [
@@ -1983,7 +1983,7 @@ const products = [
   },
   {
     id: 190,
-    nume: "Carte de activitati simpla (A4)",
+    nume: "Model 10 - Carte de activitati simpla A4",
     categorie: "Carti",
     pret: 160,
     poze: [
@@ -2000,7 +2000,7 @@ const products = [
   },
   {
     id: 191,
-    nume: "Carte de colorat (A4)",
+    nume: "Model 11 - Carte de colorat A4",
     categorie: "Carti",
     pret: 110,
     poze: [
