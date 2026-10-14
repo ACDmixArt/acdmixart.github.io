@@ -2439,3 +2439,17 @@ header.site-header a.logo .logo-script {
   .quick-access { bottom: max(10px, env(safe-area-inset-bottom)); }
   body { padding-bottom: 60px; }
 }
+
+
+/* Fereastră popup pentru programul de lucru */
+.quick-hours-backdrop[hidden] { display:none !important; }
+.quick-hours-backdrop { position:fixed; inset:0; z-index:10000; display:flex; align-items:center; justify-content:center; padding:20px; background:rgba(55,43,45,.38); backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px); }
+.quick-hours-dialog { position:relative; width:min(420px,100%); padding:32px 25px 25px; border:1px solid rgba(183,126,136,.32); border-radius:22px; background:#FAF7F2; box-shadow:0 18px 55px rgba(45,30,34,.2); color:#4E4945; }
+.quick-hours-close { position:absolute; top:12px; right:14px; width:34px; height:34px; border:1px solid rgba(183,126,136,.3); border-radius:50%; background:transparent; color:#A8757F; font-size:24px; line-height:1; cursor:pointer; }
+.quick-hours-eyebrow { margin:0 0 8px; color:#B77E88; font-size:10px; font-weight:600; letter-spacing:.22em; text-transform:uppercase; }
+.quick-hours-dialog h2 { margin:0 35px 10px 0; color:#4E4945; font-family:'Cormorant Garamond',Georgia,serif; font-size:30px; font-weight:600; line-height:1.15; }
+.quick-hours-intro { margin:0 0 17px; color:#77716d; font-size:13px; line-height:1.6; }
+.quick-hours-row { display:flex; align-items:center; justify-content:space-between; gap:15px; padding:13px 0; border-bottom:1px solid rgba(183,126,136,.22); font-size:14px; }
+.quick-hours-row strong { color:#A8757F; font-weight:600; white-space:nowrap; }
+.quick-hours-message { display:block; margin-top:21px; padding:13px 16px; border-radius:999px; background:#B77E88; color:#fff !important; text-align:center; text-decoration:none; font-size:14px; font-weight:600; }
+.quick-hours-message:hover { background:#A8757F; }
