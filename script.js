@@ -2498,6 +2498,17 @@ const products = [
       "images/products/bvc.jpg",
       "images/products/bvc1.jpg"
     ]
+  },
+  {
+    id: 231,
+    nume: "Invitatie nunta 31",
+    categorie: "Nunta",
+    pret: 5.5,
+    poze: [
+      "images/products/eee.jpg",
+      "images/products/eee1.jpg",
+      "images/products/eee2.jpg"
+    ]
   }
 ];
 
