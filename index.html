@@ -33,7 +33,7 @@
     </a>
 
     <div class="header-actions">
-      <button class="header-icon" id="openSearch" type="button" aria-label="Caută produse" title="Caută produse">
+      <button class="header-icon" id="openSearch" type="button" aria-label="Caută produse" title="Caută produse" onclick="document.getElementById(\'productSearch\').hidden=false; document.getElementById(\'productSearch\').focus();">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.2 4.2"></path></svg>
       </button>
       <input id="productSearch" class="header-search-input" type="search" placeholder="Caută produse..." aria-label="Caută produse" hidden>
@@ -312,7 +312,7 @@
     © <span id="year"></span> ACDmixArt
   </footer>
 
-  <script src="script.js?v=20261014-search35"></script>
+  <script src="script.js?v=20261014-search36"></script>
 
 </body>
 </html>
