@@ -2156,8 +2156,18 @@ const products = [
       "images/products/inv1.jpg",
       "images/products/inv2.jpg"
     ]
+  },
+  {
+    id: 201,
+    nume: "Invitatie nunta 2",
+    categorie: "Nunta",
+    pret: 7.5,
+    poze: [
+      "images/products/re.jpg",
+      "images/products/re1.jpg",
+      "images/products/re2.jpg"
+    ]
   }
-
 ];
 
 
