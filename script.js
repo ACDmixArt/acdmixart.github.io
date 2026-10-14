@@ -3,6 +3,7 @@
 */
 
 const products = [
+
   {
       id: 1,
       nume: "Invitație botez – Flori roz",
@@ -2144,7 +2145,19 @@ const products = [
       "images/products/setmireasa8.jpg",
       "images/products/setmireasa9.jpg"
     ]
+  },
+  {
+    id: 200,
+    nume: "Invitatie nunta 1",
+    categorie: "Nunta",
+    pret: 7.5,
+    poze: [
+      "images/products/inv.jpg",
+      "images/products/inv1.jpg",
+      "images/products/inv2.jpg"
+    ]
   }
+
 ];
 
 
