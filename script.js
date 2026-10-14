@@ -2692,7 +2692,7 @@ const products = [
   {
     id: 249,
     nume: "Carte de vizita Lash Artist",
-    categorie: "Cărți de vizita",
+    categorie: "Cărți de vizită",
     pret: 2.5,
     tarifeCantitate: [
       { min: 1, max: 49, pret: 2.5 },
@@ -2708,7 +2708,7 @@ const products = [
   {
     id: 250,
     nume: "Carte de vizita ACDmixArt — Plotter",
-    categorie: "Cărți de vizita",
+    categorie: "Cărți de vizită",
     pret: 2.5,
     tarifeCantitate: [
       { min: 1, max: 49, pret: 2.5 },
@@ -2724,7 +2724,7 @@ const products = [
   {
     id: 251,
     nume: "Carte de vizita Nail Artist — Fluture",
-    categorie: "Cărți de vizita",
+    categorie: "Cărți de vizită",
     pret: 2.5,
     tarifeCantitate: [
       { min: 1, max: 49, pret: 2.5 },
@@ -2740,7 +2740,7 @@ const products = [
   {
     id: 252,
     nume: "Carte de vizita — Ferma de căprițe",
-    categorie: "Cărți de vizita",
+    categorie: "Cărți de vizită",
     pret: 2.5,
     tarifeCantitate: [
       { min: 1, max: 49, pret: 2.5 },
@@ -2756,7 +2756,7 @@ const products = [
   {
     id: 253,
     nume: "Suport pentru perii de gene cu instructiuni",
-    categorie: "Cărți de vizita",
+    categorie: "Cărți de vizită",
     pret: 2.5,
     tarifeCantitate: [
       { min: 1, max: 49, pret: 2.5 },
@@ -2774,7 +2774,7 @@ const products = [
   {
     id: 254,
     nume: "Cărți de vizita dreptunghi",
-    categorie: "Cărți de vizita",
+    categorie: "Cărți de vizită",
     pret: 1,
     tarifeCantitate: [
       { min: 1, max: 100, pret: 1 },
@@ -2830,7 +2830,7 @@ function categories() {
     "Pahare",
     "Toppere",
     "Cărți",
-    "Cărți de vizita",
+    "Cărți de vizită",
     "Jurnale",
     "Agende",
     "Party",
