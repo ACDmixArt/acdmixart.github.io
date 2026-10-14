@@ -2878,20 +2878,31 @@ function changeProductQuantity(productId, change) {
 function renderProducts() {
   if (!grila) return;
 
-  const query = (document.getElementById("productSearch")?.value || "").trim().toLocaleLowerCase("ro")
-    .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-  // Search across all products, regardless of the selected category.
+  const normalizeSearch = value => String(value || "")
+    .toLocaleLowerCase("ro")
+    .normalize("NFD")
+    .replace(/[\\u0300-\\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+  const query = normalizeSearch(document.getElementById("productSearch")?.value || "");
+  // A typed search always searches all products, not only the active category.
   const categoryList = query || activeCategory === "Toate"
     ? products
     : products.filter(product => product.categorie === activeCategory);
-  const queryVariants = query ? [query] : [];
-  // Let the common plural "invitatii" also match titles written as "invitatie".
-  if (query.endsWith("ii")) queryVariants.push(query.slice(0, -2) + "ie");
+  const terms = query.split(/\\s+/).filter(Boolean);
   const list = query
     ? categoryList.filter(product => {
-        const searchable = `${product.nume} ${product.categorie}`.toLocaleLowerCase("ro")
-          .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-        return queryVariants.some(term => searchable.includes(term));
+        const searchable = normalizeSearch(`${product.nume} ${product.categorie}`);
+        const searchableVariants = [searchable];
+        // Match common Romanian singular/plural forms, e.g. "invitatii" and "invitatie".
+        searchableVariants.push(searchable.replace(/invitatie/g, "invitatii"));
+        const searchableText = searchableVariants.join(" ");
+        return terms.every(term => {
+          if (searchableText.includes(term)) return true;
+          if (term === "invitatii") return searchable.includes("invitatie");
+          if (term === "invitatie") return searchable.includes("invitatii");
+          return false;
+        });
       })
     : categoryList;
 
@@ -3875,26 +3886,39 @@ renderCart();
 const openSearchButton = document.getElementById("openSearch");
 const productSearchInput = document.getElementById("productSearch");
 if (openSearchButton && productSearchInput) {
+  let searchHasScrolled = false;
+  const showSearchResults = () => {
+    document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
   openSearchButton.addEventListener("click", () => {
     productSearchInput.hidden = !productSearchInput.hidden;
     if (!productSearchInput.hidden) {
+      searchHasScrolled = false;
       requestAnimationFrame(() => productSearchInput.focus());
     } else {
       productSearchInput.value = "";
+      searchHasScrolled = false;
       renderProducts();
     }
   });
   productSearchInput.addEventListener("input", () => {
     renderProducts();
+    if (productSearchInput.value.trim().length >= 2 && !searchHasScrolled) {
+      searchHasScrolled = true;
+      showSearchResults();
+    }
+    if (!productSearchInput.value.trim()) searchHasScrolled = false;
   });
+  productSearchInput.addEventListener("search", () => renderProducts());
   productSearchInput.addEventListener("keydown", event => {
     if (event.key === "Enter") {
       event.preventDefault();
       renderProducts();
-      document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      showSearchResults();
     } else if (event.key === "Escape") {
       productSearchInput.value = "";
       productSearchInput.hidden = true;
+      searchHasScrolled = false;
       renderProducts();
       openSearchButton.focus();
     }
