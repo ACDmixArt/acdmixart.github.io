@@ -2118,3 +2118,40 @@ main .hero h1 em {
     white-space: nowrap !important;
   }
 }
+
+
+/* Final logo refinement: no heart; polished and highly legible wordmark */
+.site-header .logo::after,
+.site-header .logo .logo-script::after {
+  content: none !important;
+  display: none !important;
+}
+.site-header .logo .logo-script {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: clamp(38px, 4.6vw, 49px) !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  letter-spacing: -.045em !important;
+  line-height: 1 !important;
+  color: var(--burgundy-dark) !important;
+}
+.site-header .logo-subtitle {
+  margin-top: 7px !important;
+  padding-left: 2px;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 8px !important;
+  font-weight: 500 !important;
+  letter-spacing: .23em !important;
+  color: #B77E88 !important;
+}
+@media (max-width: 560px) {
+  .site-header .logo .logo-script {
+    font-size: 35px !important;
+    letter-spacing: -.04em !important;
+  }
+  .site-header .logo-subtitle {
+    font-size: 7px !important;
+    letter-spacing: .17em !important;
+    margin-top: 7px !important;
+  }
+}
