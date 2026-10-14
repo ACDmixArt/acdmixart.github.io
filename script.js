@@ -2066,6 +2066,28 @@ const products = [
     poze: [
       "images/products/simsim.jpg"
     ]
+  },
+  {
+    id: 196,
+    nume: "Jurnalul bebelusului Safari",
+    categorie: "Jurnale",
+    pret: 110,
+    poze: [
+      "images/products/jurnalbebe.jpg",
+      "images/products/jurnalbebe1.jpg",
+      "images/products/jurnalbebe12.jpg",
+      "images/products/jurnalbebe15.jpg",
+      "images/products/jurnalbebe3.jpg",
+      "images/products/jurnalbebe4.jpg",
+      "images/products/jurnalbebe9.jpg",
+      "images/products/juranlbebe8.jpg",
+      "images/products/jurnalbebe5.jpg",
+      "images/products/jurnalbebe6.jpg",
+      "images/products/jurnalbebe7.jpg",
+      "images/products/jurnalbebe10.jpg",
+      "images/products/jurnalbebe11.jpg",
+      "images/products/jurnalbebe2.jpg"
+    ]
   }
 ];
 
@@ -2099,6 +2121,7 @@ function categories() {
     "Pahare",
     "Toppere",
     "Carti",
+    "Jurnale",
     "Agende",
     "Party",
     "Set Mot"
