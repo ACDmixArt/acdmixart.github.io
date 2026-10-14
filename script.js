@@ -1959,6 +1959,27 @@ const products = [
       "images/products/asas12.jpg",
       "images/products/asas13.jpg"
     ]
+  },
+  {
+    id: 189,
+    nume: "Carte de activitati",
+    categorie: "Carti",
+    pret: 280,
+    poze: [
+      "images/products/te.jpg",
+      "images/products/te1.jpg",
+      "images/products/te2.jpg",
+      "images/products/te3.jpg",
+      "images/products/te4.jpg",
+      "images/products/te5.jpg",
+      "images/products/te6.jpg",
+      "images/products/te7.jpg",
+      "images/products/te8.jpg",
+      "images/products/te9.jpg",
+      "images/products/te10.jpg",
+      "images/products/te11.jpg",
+      "images/products/te12.jpg"
+    ]
   }
 ];
 
