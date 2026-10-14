@@ -2591,6 +2591,16 @@ const products = [
       "images/products/capsi.jpg",
       "images/products/capsi1.jpg"
     ]
+  },
+  {
+    id: 240,
+    nume: "Invitatie nunta 40",
+    categorie: "Nunta",
+    pret: 3.5,
+    poze: [
+      "images/products/tranda.jpg",
+      "images/products/tranda1.jpg"
+    ]
   }
 ];
 
