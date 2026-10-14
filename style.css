@@ -2827,3 +2827,28 @@ header.site-header a.logo .logo-script {
     box-shadow: 0 2px 0 rgba(132,83,94,.10), 0 4px 10px rgba(183,126,136,.12) !important;
   }
 }
+
+
+/* Categorii tip etichetă: conturul urmează textul, nu o grilă egală */
+@media (max-width: 900px) {
+  #filters.filters {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+  }
+  #filters.filters .filter-btn {
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: 31px !important;
+    padding: 6px 13px !important;
+    border-radius: 999px !important;
+    font-size: 11px !important;
+    line-height: 1.15 !important;
+    white-space: nowrap !important;
+    box-shadow: 0 1px 3px rgba(78,73,69,.035) !important;
+  }
+}
