@@ -1873,3 +1873,47 @@ main .hero h1 em {
   }
   .hero .hero-text { font-size: 16px; line-height: 1.8; }
 }
+
+
+/* Typography matching the approved visual reference */
+.hero h1.hero-calligraphy {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: clamp(46px, 7.2vw, 94px) !important;
+  font-weight: 400 !important;
+  letter-spacing: -.055em !important;
+  line-height: .98 !important;
+}
+.hero-calligraphy-light {
+  display: block;
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  letter-spacing: -.055em !important;
+  color: var(--ink) !important;
+}
+.hero-calligraphy-emphasis {
+  display: block;
+  margin-top: -2px;
+  font-family: 'Allura', cursive !important;
+  font-size: clamp(78px, 10.6vw, 132px) !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  letter-spacing: 0 !important;
+  line-height: 1.05 !important;
+  color: var(--burgundy-dark) !important;
+}
+@media (max-width: 560px) {
+  .hero h1.hero-calligraphy {
+    font-size: clamp(40px, 10.7vw, 56px) !important;
+    line-height: 1.02 !important;
+    letter-spacing: -.045em !important;
+  }
+  .hero-calligraphy-light {
+    white-space: normal;
+  }
+  .hero-calligraphy-emphasis {
+    font-size: clamp(65px, 16.2vw, 86px) !important;
+    line-height: 1.04 !important;
+    margin-top: 2px;
+  }
+}
