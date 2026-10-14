@@ -1908,6 +1908,15 @@ const products = [
     poze: [
       "images/products/ingrid.jpg"
     ]
+  },
+  {
+    id: 185,
+    nume: "Carte de colorat (A5) + insigna",
+    categorie: "Carti",
+    pret: 80,
+    poze: [
+      "images/products/2197.jpg"
+    ]
   }
 ];
 
