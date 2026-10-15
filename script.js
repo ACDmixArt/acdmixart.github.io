@@ -3961,6 +3961,8 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
 
   formCategory.addEventListener("change", updateFormProducts);
   formProduct.addEventListener("change", updateOrderSummary);
+  // Afișează câmpurile comune imediat, chiar înainte de selectarea categoriei.
+  renderDynamicFields();
   dynamicFormFields.addEventListener("input", updateOrderSummary);
   dynamicFormFields.addEventListener("change", updateOrderSummary);
 
