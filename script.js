@@ -3413,7 +3413,18 @@ function getACDMixArtGreeting() {
         window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message + "\\nFotografia trebuie atașată manual.")}`, "_blank");
       }
     } else {
-      window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
+    const imageFile = referenceImage && referenceImage.files ? referenceImage.files[0] : null;
+    if (imageFile && navigator.share && navigator.canShare && navigator.canShare({ files: [imageFile] })) {
+      try {
+        await navigator.share({ title: "Cerere personalizată ACDmixArt", text: message, files: [imageFile] });
+      } catch (error) {
+        if (error && error.name === "AbortError") return;
+        window.open("https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message), "_blank");
+      }
+    } else {
+      window.open("https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message), "_blank");
+      if (imageFile) alert("Pentru atașarea automată a fotografiei, deschide site-ul în Chrome. Dacă nu apare atașată, va trebui selectată în WhatsApp.");
+    }
       if (imageFile) {
         alert("Browserul nu permite atașarea automată a fotografiei. Dacă WhatsApp se deschide fără poză, atașeaz-o manual sau deschide site-ul în Chrome.");
       }
@@ -4054,7 +4065,7 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
 
     const referenceImage = document.getElementById("formReferenceImage");
     if (referenceImage && referenceImage.files && referenceImage.files[0]) {
-      message += `Poză de inspirație selectată: ${referenceImage.files[0].name}\nTe rog să atașezi fotografia manual în conversația WhatsApp.\n`;
+      message += `Poză de inspirație selectată: ${referenceImage.files[0].name}\n`;
     }
     if (childName) message += `Numele copilului: ${childName}\n`;
     if (theme) message += `Tematică: ${theme}\n`;
