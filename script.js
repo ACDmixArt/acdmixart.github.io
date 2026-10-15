@@ -2949,6 +2949,28 @@ const products = [
       "images/products/tricouadult3.jpg",
       "images/products/tricouadult4.jpg"
     ]
+  },
+
+  {
+    id: 269,
+    nume: "Carte de povești cu copilul ca personaj principal",
+    categorie: "Carti",
+    pret: 180,
+    poze: [
+      "images/products/nat.jpg",
+      "images/products/nat1.jpg",
+      "images/products/nat2.jpg",
+      "images/products/nat3.jpg",
+      "images/products/nat4.jpg",
+      "images/products/nat5.jpg",
+      "images/products/nat6.jpg",
+      "images/products/nat7.jpg",
+      "images/products/nat8.jpg",
+      "images/products/nat9.jpg",
+      "images/products/nat10.jpg",
+      "images/products/nat11.jpg",
+      "images/products/nat12.jpg"
+    ]
   }
 ];
 
