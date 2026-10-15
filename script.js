@@ -2799,6 +2799,16 @@ const products = [
     poze: [
       "images/products/flier.jpg"
     ]
+  },
+  {
+    id: 256,
+    nume: "Tricou personalizat pentru copii",
+    categorie: "Party",
+    pret: 45,
+    descriere: "Se poate realiza cu orice tematică.",
+    poze: [
+      "images/products/tricoucopil.jpg"
+    ]
   }
 ];
 
