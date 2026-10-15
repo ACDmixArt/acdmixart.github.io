@@ -3807,7 +3807,50 @@ function renderDynamicFields() {
   const referenceImage = document.getElementById("formReferenceImage");
   if (referenceImage) {
     referenceImage.accept = "image/*";
-    referenceImage.addEventListener("change", updateOrderSummary);
+    referenceImage.multiple = false;
+    const previewWrap = document.createElement("div");
+    previewWrap.className = "reference-image-preview";
+    previewWrap.id = "formReferencePreview";
+    previewWrap.hidden = true;
+    previewWrap.innerHTML = '<img alt="Previzualizare poză de inspirație"><div class="reference-image-actions"><span class="reference-image-name"></span><button type="button" class="reference-image-remove">Șterge poza</button></div>';
+    referenceImage.closest("label")?.insertAdjacentElement("afterend", previewWrap);
+    const previewImage = previewWrap.querySelector("img");
+    const previewName = previewWrap.querySelector(".reference-image-name");
+    const removeButton = previewWrap.querySelector(".reference-image-remove");
+    let previewUrl = "";
+    referenceImage.addEventListener("change", () => {
+      const file = referenceImage.files && referenceImage.files[0];
+      if (previewUrl) URL.revokeObjectURL(previewUrl);
+      previewUrl = "";
+      if (!file) {
+        previewWrap.hidden = true;
+        previewImage.removeAttribute("src");
+        if (previewName) previewName.textContent = "";
+      } else if (!file.type.startsWith("image/")) {
+        referenceImage.value = "";
+        previewWrap.hidden = true;
+        alert("Te rog să alegi un fișier imagine.");
+      } else if (file.size > 10 * 1024 * 1024) {
+        referenceImage.value = "";
+        previewWrap.hidden = true;
+        alert("Poza trebuie să aibă maximum 10 MB.");
+      } else {
+        previewUrl = URL.createObjectURL(file);
+        previewImage.src = previewUrl;
+        if (previewName) previewName.textContent = file.name;
+        previewWrap.hidden = false;
+      }
+      updateOrderSummary();
+    });
+    removeButton?.addEventListener("click", () => {
+      referenceImage.value = "";
+      if (previewUrl) URL.revokeObjectURL(previewUrl);
+      previewUrl = "";
+      previewWrap.hidden = true;
+      previewImage.removeAttribute("src");
+      if (previewName) previewName.textContent = "";
+      updateOrderSummary();
+    });
   }
 
   const priceSection = document.createElement("div");
