@@ -2939,3 +2939,25 @@ body.personalize-modal-open{overflow:hidden}
 .reference-image-name{font-size:.9rem;overflow-wrap:anywhere}
 .reference-image-remove{border:1px solid rgba(255,255,255,.75);border-radius:999px;padding:8px 14px;background:#fff8f6;color:#805761;font:inherit;cursor:pointer}
 @media(max-width:700px){.reference-image-preview img{max-height:240px}.reference-image-actions{align-items:flex-start;flex-direction:column}}
+
+
+/* Butonul de trimitere WhatsApp — alb semi-transparent, clar vizibil */
+.personalize-modal-dialog .order-form button[type="submit"],
+#personalizare .order-form button[type="submit"]{
+  background:rgba(255,255,255,.78)!important;
+  color:#704b54!important;
+  border:1px solid rgba(255,255,255,.96)!important;
+  box-shadow:0 8px 22px rgba(77,42,49,.18),inset 0 1px 0 rgba(255,255,255,.85);
+  font-weight:800;
+  letter-spacing:.01em;
+  min-height:54px;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+.personalize-modal-dialog .order-form button[type="submit"]:hover,
+#personalizare .order-form button[type="submit"]:hover{
+  background:rgba(255,255,255,.94)!important;
+  color:#704b54!important;
+  box-shadow:0 10px 26px rgba(77,42,49,.22);
+  transform:translateY(-2px);
+}
