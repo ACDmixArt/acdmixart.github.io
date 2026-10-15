@@ -347,8 +347,9 @@ const products = [
     categorie: "Botez",
     pret: 7,
     poze: [
-      "images/products/lebada.jpg",
-      "images/products/lebada1.jpg"
+      "images/products/leb.jpg",
+      "images/products/leb1.jpg",
+      "images/products/leb2.jpg"
     ]
   },
   {
@@ -1802,7 +1803,7 @@ const products = [
     categorie: "Agende",
     pret: 120,
     poze: [
-      "images/products/agendă.jpg",
+      "images/products/agenda.jpg",
       "images/products/agenda1.jpg",
       "images/products/agenda2.jpg",
       "images/products/agenda3.jpg"
