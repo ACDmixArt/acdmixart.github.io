@@ -2852,6 +2852,22 @@ const products = [
       "images/products/caserola.jpg",
       "images/products/caserola1.jpg"
     ]
+  },
+  {
+    id: 261,
+    nume: "Coif personalizabil",
+    categorie: "Party",
+    pret: 7,
+    descriere: "Preț pe bucată.",
+    poze: [
+      "images/products/coif.jpg",
+      "images/products/coif1.jpg",
+      "images/products/coif2.jpg",
+      "images/products/coif3.jpg",
+      "images/products/coif4.jpg",
+      "images/products/coif5.jpg",
+      "images/products/coif6.jpg"
+    ]
   }
 ];
 
