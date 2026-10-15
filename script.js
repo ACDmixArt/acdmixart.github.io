@@ -2887,6 +2887,18 @@ const products = [
     poze: [
       "images/products/tortacadea.jpg"
     ]
+  },
+  {
+    id: 264,
+    nume: "Pai personalizat",
+    categorie: "Party",
+    pret: 4,
+    descriere: "Preț pe bucată.",
+    poze: [
+      "images/products/pai.jpg",
+      "images/products/pai1.jpg",
+      "images/products/pai2.jpg"
+    ]
   }
 ];
 
