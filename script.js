@@ -2923,6 +2923,17 @@ const products = [
       "images/products/ghirlanda1.jpg",
       "images/products/ghirlanda2.jpg"
     ]
+  },
+  {
+    id: 267,
+    nume: "Farfurie personalizată",
+    categorie: "Party",
+    pret: 7,
+    descriere: "Preț pe bucată.",
+    poze: [
+      "images/products/farfuriee.jpg",
+      "images/products/farfuriee1.jpg"
+    ]
   }
 ];
 
