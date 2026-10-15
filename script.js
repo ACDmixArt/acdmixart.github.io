@@ -1191,7 +1191,7 @@ const products = [
       categorie: "Set Moț",
       pret: 230,
       poze: [
-          "images/products/păienjenel.jpg"
+          "images/products/paienjenel.jpg"
       ]
   },
   {
