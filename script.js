@@ -3966,7 +3966,7 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
       return;
     }
 
-    let message = getACDMixArtGreeting() + " Doresc o comandă personalizată ACDmixArt.\n\n";
+    let message = "Bună ziua! Doresc o comandă personalizată ACDmixArt.\n\n";
     message += `Categorie: ${category}\n${product ? "Model / produs ales: " + product.nume : "Model / produs: model propriu — fără model existent"}\nCantitate: ${quantity}\n`;
 
     const fields = [
@@ -4097,9 +4097,8 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
     message += "\nVă mulțumesc!";
 
     const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
-    // Acțiune sincronă în gestul utilizatorului, cu fallback în aceeași filă.
-    const popup = window.open(url, "_blank");
-    if (!popup) window.location.assign(url);
+    // Navigare directă în aceeași filă: nu depinde de popup-uri sau permisiuni.
+    window.location.href = url;
   }, true);
 })();
 
