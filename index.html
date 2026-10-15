@@ -51,7 +51,7 @@
       <a href="#despre">Despre mine</a>
       <a href="#catalog">Catalog</a>
       <a href="#catalog">Modele</a>
-      <a href="#personalizare">Personalizare</a>
+      <a href="#personalizare" onclick="openPersonalizeModal(); return false;">Personalizare</a>
     </nav>
 
   </header>
@@ -132,6 +132,9 @@
 
     <!-- PERSONALIZARE -->
 
+    <div class="personalize-modal-backdrop" id="personalizeModal" hidden onclick="if(event.target===this)closePersonalizeModal()">
+      <section class="personalize-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="personalizeModalTitle">
+        <button class="personalize-modal-close" type="button" aria-label="Închide personalizarea" onclick="closePersonalizeModal()">×</button>
     <section
       id="personalizare"
       class="personalize-section"
@@ -143,7 +146,7 @@
           Comandă personalizată
         </p>
 
-        <h2>
+        <h2 id="personalizeModalTitle">
           Spune-mi ce îți dorești.
         </h2>
 
@@ -213,6 +216,8 @@
       </form>
 
     </section>
+      </section>
+    </div>
 
     <!-- DESPRE -->
 
@@ -327,7 +332,7 @@
     <a href="https://instagram.com/acdmixart?rpxt=Y2xxZmRnY2JhY254" target="_blank" rel="noopener noreferrer" aria-label="Instagram ACDmixArt" title="Instagram">
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.7" cy="6.5" r="1" class="quick-social-dot"/></svg>
     </a>
-    <a class="quick-personalize-link" href="#personalizare" aria-label="Mergi la personalizare" title="Personalizare">
+    <a class="quick-personalize-link" href="#personalizare" aria-label="Deschide personalizarea" title="Personalizare" onclick="openPersonalizeModal(); return false;">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18"/><path d="m7 7 10 10M17 7 7 17"/></svg>
       <span>Personalizare</span>
     </a>
@@ -387,6 +392,11 @@
     </div>
   </footer>
 
+<script>
+function openPersonalizeModal(){const m=document.getElementById("personalizeModal");if(m){m.hidden=false;document.body.classList.add("personalize-modal-open");}}
+function closePersonalizeModal(){const m=document.getElementById("personalizeModal");if(m){m.hidden=true;document.body.classList.remove("personalize-modal-open");}}
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closePersonalizeModal();});
+</script>
 <script src="script.js?v=20261015-imagini-corectate"></script>
 
 </body>
