@@ -3978,7 +3978,7 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
   dynamicFormFields.addEventListener("input", updateOrderSummary);
   dynamicFormFields.addEventListener("change", updateOrderSummary);
 
-  orderForm.addEventListener("submit", event => {
+  orderForm.addEventListener("submit", async event => {
     event.preventDefault();
 
     const product = products.find(item => String(item.id) === formProduct.value);
@@ -4057,7 +4057,19 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
     else message += "Prețul va fi stabilit în funcție de modelul propus și materiale.\n";
     message += "\nVă mulțumesc!";
 
+    const imageFile = referenceImage && referenceImage.files ? referenceImage.files[0] : null;
+    if (imageFile && typeof navigator.share === "function" && typeof navigator.canShare === "function" && navigator.canShare({ files: [imageFile] })) {
+      try {
+        await navigator.share({ title: "Cerere personalizată ACDmixArt", text: message, files: [imageFile] });
+        return;
+      } catch (error) {
+        if (error && error.name === "AbortError") return;
+      }
+    }
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
+    if (imageFile) {
+      alert("Mesajul este pregătit în WhatsApp. Dacă fotografia nu apare atașată, acest browser nu permite partajarea ei directă; încearcă să deschizi site-ul în Chrome.");
+    }
   });
 }
 
