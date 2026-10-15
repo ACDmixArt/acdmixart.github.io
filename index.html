@@ -224,9 +224,9 @@
       <div class="order-section-heading">
         <p class="eyebrow">COMANDĂ PERSONALIZATĂ</p>
         <h2>Ai un model în minte?</h2>
-        <p>Completează cererea de comandă personalizată și trimite detaliile direct pe WhatsApp.</p>
-        <button class="button" type="button" onclick="openPersonalizeModal()">Deschide formularul de comandă</button>
+        <p>Completează formularul de mai jos sau deschide-l separat, peste pagină.</p>
       </div>
+      <div id="personalizeInlinePlaceholder"></div>
     </section>
 
     <!-- DESPRE -->
@@ -403,11 +403,11 @@
   </footer>
 
 <script>
-function openPersonalizeModal(){const m=document.getElementById("personalizeModal");if(m){m.hidden=false;document.body.classList.add("personalize-modal-open");}}
-function closePersonalizeModal(){const m=document.getElementById("personalizeModal");if(m){m.hidden=true;document.body.classList.remove("personalize-modal-open");}}
+function openPersonalizeModal(){const m=document.getElementById("personalizeModal");const d=m&&m.querySelector(".personalize-modal-dialog");const s=document.getElementById("personalizare");if(m&&d&&s){d.appendChild(s);m.hidden=false;document.body.classList.add("personalize-modal-open");}}
+function closePersonalizeModal(){const m=document.getElementById("personalizeModal");const p=document.getElementById("personalizeInlinePlaceholder");const s=document.getElementById("personalizare");if(m){m.hidden=true;document.body.classList.remove("personalize-modal-open");}if(p&&s)p.appendChild(s);}
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closePersonalizeModal();});
 </script>
-<script src="script.js?v=20261015-whatsapp-fix5"></script>
+<script src="script.js?v=20261015-whatsapp-fix6"></script>
 
 </body>
 </html>
