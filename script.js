@@ -2818,6 +2818,15 @@ const products = [
     poze: [
       "images/products/apa1.jpg"
     ]
+  },
+  {
+    id: 258,
+    nume: "Pahar personalizat",
+    categorie: "Party",
+    pret: 5,
+    poze: [
+      "images/products/paharmaria.jpg"
+    ]
   }
 ];
 
