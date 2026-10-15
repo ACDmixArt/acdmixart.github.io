@@ -3886,7 +3886,7 @@ function updateFormProducts() {
   const category = formCategory.value;
   const filtered = products.filter(product => product.categorie === category);
 
-  formProduct.innerHTML = `<option value="">${category ? "Alege modelul / produsul" : "Alege mai întâi categoria"}</option>`;
+  formProduct.innerHTML = `<option value="">${category ? "Nu aleg un model existent (model propriu)" : "Alege mai întâi categoria"}</option>`;
   formProduct.disabled = !category || filtered.length === 0;
 
   filtered.forEach(product => {
@@ -3945,9 +3945,9 @@ function updateOrderSummary() {
     const qtyInput = document.getElementById("formQuantity");
     const qty = qtyInput ? Math.max(1, Number(qtyInput.value) || 1) : 1;
     let unitPrice = unitPriceForQuantity(product, qty);
-    if (product.categorie === "Set Moț" && frame && frame.checked) unitPrice += 60;
+    if (product && product.categorie === "Set Moț" && frame && frame.checked) unitPrice += 60;
     const agendaCharacters = document.getElementById("formAgendaCharacters");
-    if (product.categorie === "Agende" && agendaCharacters) {
+    if (product && product.categorie === "Agende" && agendaCharacters) {
       const optionCosts = { "Fără caricatură — 0 lei": 0, "1 personaj — 20 lei": 20, "2 personaje — 35 lei": 35, "3 personaje — 50 lei": 50 };
       unitPrice += optionCosts[agendaCharacters.value] || 0;
     }
@@ -3986,11 +3986,7 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
       alert("Te rog să alegi o categorie.");
       return;
     }
-    if (!product) {
-      alert("Momentan nu există un produs disponibil în categoria aleasă. Te rugăm să ne contactezi direct pe WhatsApp.");
-      return;
-    }
-
+    const category = formCategory.value;
     const quantityInput = document.getElementById("formQuantity");
     const quantity = quantityInput ? Number(quantityInput.value) : 1;
     if (!Number.isInteger(quantity) || quantity < 1) {
@@ -3998,7 +3994,7 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
       return;
     }
 
-    if (["Botez", "Nuntă"].includes(product.categorie) && quantity < 25) {
+    if (["Botez", "Nuntă"].includes(formCategory.value) && quantity < 25) {
       alert("Comandă minimă pentru invitații este de 25 de bucăți.");
       quantityInput.focus();
       return;
@@ -4008,19 +4004,19 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
     const themeSelect = document.getElementById("formTheme")?.value || "";
     const themeOther = document.getElementById("formThemeOther")?.value.trim() || "";
     const theme = themeSelect === "Altă tematică" ? themeOther : themeSelect;
-    if (product.categorie === "Set Moț" && !childName) {
+    if (product && product.categorie === "Set Moț" && !childName) {
       alert("Te rog să completezi numele copilului.");
       document.getElementById("formChildName")?.focus();
       return;
     }
-    if (product.categorie === "Set Moț" && !theme) {
+    if (product && product.categorie === "Set Moț" && !theme) {
       alert("Te rog să completezi tematica.");
       document.getElementById("formThemeOther")?.focus();
       return;
     }
 
     let message = getACDMixArtGreeting() + " Doresc o comandă personalizată ACDmixArt.\n\n";
-    message += `Categorie: ${product.categorie}\nProdus: ${product.nume}\nCantitate: ${quantity}\n`;
+    message += `Categorie: ${category}\n${product ? "Model / produs ales: " + product.nume : "Model / produs: model propriu — fără model existent"}\nCantitate: ${quantity}\n`;
 
     const fields = [
       ["Nume / text", "formNames"],
@@ -4048,7 +4044,7 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
     const frame = document.getElementById("formFrame");
     if (frame && frame.checked) message += "Ramă foto: Da (+60 lei)\n";
 
-    let unitPrice = unitPriceForQuantity(product, quantity);
+    let unitPrice = product ? unitPriceForQuantity(product, quantity) : null;
     if (product.categorie === "Set Moț" && frame && frame.checked) unitPrice += 60;
     const agendaCharacters = document.getElementById("formAgendaCharacters");
     if (product.categorie === "Agende" && agendaCharacters) {
@@ -4057,7 +4053,9 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
     }
     const suggestedPrice = document.getElementById("formSuggestedPrice");
     if (suggestedPrice && suggestedPrice.value.trim()) message += `Buget propus de client: ${suggestedPrice.value.trim()} lei\n`;
-    message += `Preț/bucată: ${money(unitPrice)}\nPreț estimativ: ${money(unitPrice * quantity)}\n\nVă mulțumesc!`;
+    if (product) message += `Preț/bucată: ${money(unitPrice)}\nPreț estimativ: ${money(unitPrice * quantity)}\n`;
+    else message += "Prețul va fi stabilit în funcție de modelul propus și materiale.\n";
+    message += "\nVă mulțumesc!";
 
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
   });
