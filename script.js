@@ -2868,6 +2868,16 @@ const products = [
       "images/products/coif5.jpg",
       "images/products/coif6.jpg"
     ]
+  },
+  {
+    id: 262,
+    nume: "Coif cu inserții 3D",
+    categorie: "Party",
+    pret: 8.5,
+    descriere: "Preț pe bucată.",
+    poze: [
+      "images/products/coif7.jpg"
+    ]
   }
 ];
 
