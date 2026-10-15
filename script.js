@@ -2809,6 +2809,15 @@ const products = [
     poze: [
       "images/products/tricoucopil.jpg"
     ]
+  },
+  {
+    id: 257,
+    nume: "Sticlă cu apă personalizată",
+    categorie: "Party",
+    pret: 5.5,
+    poze: [
+      "images/products/apa1.jpg"
+    ]
   }
 ];
 
