@@ -3041,9 +3041,11 @@ function renderProducts() {
             <button type="button" aria-label="Crește cantitatea" onclick="changeProductQuantity(${product.id}, 1)">+</button>
           </div>
           ${
-            product.categorie === "Set Moț"
-              ? `<button type="button" class="add-cart" onclick="openSetMotCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
-              : product.categorie === "Set Gătit"
+            product.categorie === "Party"
+              ? `<button type="button" class="add-cart" onclick="openPartyCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
+              : product.categorie === "Set Moț"
+                ? `<button type="button" class="add-cart" onclick="openSetMotCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
+                : product.categorie === "Set Gătit"
                 ? `<button type="button" class="add-cart" onclick="openGatitCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Alege accesoriile</button>`
                 : product.categorie === "Agende"
                 ? `<button type="button" class="add-cart" onclick="openAgendaCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Alege caricatura</button>`
@@ -3055,6 +3057,67 @@ function renderProducts() {
       </article>
     `;
   }).join("");
+}
+
+/* =========================
+   PERSONALIZARE PRODUSE PARTY
+========================= */
+
+function openPartyCustomizer(productId, quantity = 1) {
+  const product = products.find(item => item.id === Number(productId));
+  if (!product) return;
+
+  const qty = Math.max(1, Number(quantity) || 1);
+  document.querySelector(".party-customizer-modal")?.remove();
+
+  const modal = document.createElement("div");
+  modal.className = "party-customizer-modal";
+  modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.65);display:flex;align-items:center;justify-content:center;z-index:9999;padding:20px;";
+  modal.innerHTML = `
+    <div style="background:white;width:100%;max-width:520px;max-height:90vh;overflow:auto;border-radius:16px;padding:25px;box-sizing:border-box;position:relative;">
+      <button type="button" aria-label="Închide" class="party-customizer-close" style="position:absolute;top:10px;right:15px;border:0;background:none;font-size:30px;cursor:pointer;">×</button>
+      <h2 style="margin-top:0;">Personalizează: ${product.nume}</h2>
+      <p>Completează tematica și detaliile dorite pentru produs.</p>
+      <label style="display:block;margin-top:12px;font-weight:600;" for="party-custom-name">Nume / text</label>
+      <input id="party-custom-name" type="text" placeholder="Textul care trebuie să apară" style="width:100%;padding:11px;margin-top:5px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+      <label style="display:block;margin-top:12px;font-weight:600;" for="party-custom-age">Vârsta (dacă este relevantă)</label>
+      <input id="party-custom-age" type="number" min="1" placeholder="Vârsta" style="width:100%;padding:11px;margin-top:5px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+      <label style="display:block;margin-top:12px;font-weight:600;" for="party-custom-theme">Tematica dorită *</label>
+      <input id="party-custom-theme" type="text" required placeholder="Ex.: Minnie, fotbal, prințese..." style="width:100%;padding:11px;margin-top:5px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+      <label style="display:block;margin-top:12px;font-weight:600;" for="party-custom-colors">Culori</label>
+      <input id="party-custom-colors" type="text" placeholder="Culorile dorite" style="width:100%;padding:11px;margin-top:5px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+      <label style="display:block;margin-top:12px;font-weight:600;" for="party-custom-date">Data evenimentului</label>
+      <input id="party-custom-date" type="date" style="width:100%;padding:11px;margin-top:5px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+      <label style="display:block;margin-top:12px;font-weight:600;" for="party-custom-details">Alte detalii</label>
+      <textarea id="party-custom-details" rows="3" placeholder="Alte cerințe pentru produs" style="width:100%;padding:11px;margin-top:5px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;resize:vertical;"></textarea>
+      <button type="button" class="party-customizer-add add-cart" style="width:100%;padding:14px;margin-top:18px;border:0;border-radius:9px;background:#B77E88;color:white;font-weight:700;cursor:pointer;font-size:16px;">Adaugă în coș</button>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  modal.querySelector(".party-customizer-close").addEventListener("click", () => modal.remove());
+  modal.addEventListener("click", event => { if (event.target === modal) modal.remove(); });
+  modal.querySelector(".party-customizer-add").addEventListener("click", () => {
+    const tematica = modal.querySelector("#party-custom-theme").value.trim();
+    if (!tematica) {
+      modal.querySelector("#party-custom-theme").focus();
+      modal.querySelector("#party-custom-theme").style.borderColor = "#c00";
+      return;
+    }
+    const personalizare = {
+      tip: "party",
+      nume: modal.querySelector("#party-custom-name").value.trim(),
+      varsta: modal.querySelector("#party-custom-age").value.trim(),
+      tematica,
+      culori: modal.querySelector("#party-custom-colors").value.trim(),
+      data: modal.querySelector("#party-custom-date").value,
+      detalii: modal.querySelector("#party-custom-details").value.trim()
+    };
+    cart.push({ ...product, pret: unitPriceForQuantity(product, qty), quantity: qty, personalizare });
+    renderCart();
+    modal.remove();
+    openCart();
+  });
 }
 
 /* =========================
@@ -3358,7 +3421,9 @@ function renderCart() {
         <strong>${item.nume}</strong>
         <span>${money(item.pret)} / buc.</span>
         ${
-          item.personalizare?.tip === "agendă"
+          item.personalizare?.tip === "party"
+            ? `<p>Text: ${item.personalizare.nume || "Nespecificat"}<br>Vârstă: ${item.personalizare.varsta || "Nespecificată"}<br>Tematică: ${item.personalizare.tematica}<br>Culori: ${item.personalizare.culori || "Nespecificate"}<br>Data evenimentului: ${item.personalizare.data || "Nespecificată"}<br>Alte detalii: ${item.personalizare.detalii || "Nespecificate"}</p>`
+            : item.personalizare?.tip === "agendă"
             ? `<p>Caricatură: ${item.personalizare.personaje === 0 ? "Fără caricatură" : item.personalizare.personaje + (item.personalizare.personaje === 1 ? " personaj" : " personaje")}<br>Cost caricatură: ${money(item.personalizare.pretCaricatura)}</p>`
             : item.personalizare?.tip === "setGatit"
               ? `<p>Accesorii: ${item.personalizare.accesorii.length ? item.personalizare.accesorii.map(option => option.nume + " (+" + money(option.pret) + ")").join(", ") : "Fără accesorii suplimentare"}</p>`
@@ -3424,6 +3489,8 @@ if (cartWhatsapp) {
       message += `${index + 1}. ${item.nume}\nCantitate: ${item.quantity || 1}\nPreț/buc.: ${money(item.pret)}\nSubtotal: ${money(item.pret * (item.quantity || 1))}\n`;
       if (item.personalizare?.tip === "agendă") {
         message += `Caricatură: ${item.personalizare.personaje === 0 ? "Fără caricatură" : item.personalizare.personaje + (item.personalizare.personaje === 1 ? " personaj" : " personaje")}\nCost caricatură: ${money(item.personalizare.pretCaricatura)}\n`;
+      } else if (item.personalizare?.tip === "party") {
+        message += `Text: ${item.personalizare.nume || "Nespecificat"}\nVârstă: ${item.personalizare.varsta || "Nespecificată"}\nTematică: ${item.personalizare.tematica}\nCulori: ${item.personalizare.culori || "Nespecificate"}\nData evenimentului: ${item.personalizare.data || "Nespecificată"}\nAlte detalii: ${item.personalizare.detalii || "Nespecificate"}\n`;
       } else if (item.personalizare?.tip === "setGatit") {
         message += `Accesorii: ${item.personalizare.accesorii.length ? item.personalizare.accesorii.map(option => option.nume + " (+" + money(option.pret) + ")").join(", ") : "Fără accesorii suplimentare"}\nSupliment accesorii: ${money(item.personalizare.pretAccesorii)}\n`;
       } else if (item.personalizare) {
@@ -3591,13 +3658,14 @@ zoomButton.addEventListener("click", function (e) {
 
   const personalizeButton = lightbox.querySelector(".lightbox-personalize");
 
-  if (!["Set Moț", "Agende"].includes(product.categorie)) {
+  if (!["Set Moț", "Agende", "Party"].includes(product.categorie)) {
     personalizeButton.hidden = true;
   }
 
   personalizeButton.addEventListener("click", () => {
     closeGallery();
     if (product.categorie === "Agende") openAgendaCustomizer(product.id, 1);
+    else if (product.categorie === "Party") openPartyCustomizer(product.id, 1);
     else openSetMotCustomizer(product.id, 1);
   });
 
@@ -3608,6 +3676,8 @@ zoomButton.addEventListener("click", function (e) {
       openSetMotCustomizer(product.id, 1);
     } else if (product.categorie === "Agende") {
       openAgendaCustomizer(product.id, 1);
+    } else if (product.categorie === "Party") {
+      openPartyCustomizer(product.id, 1);
     } else {
       addToCart(product.id, 1);
     }
