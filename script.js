@@ -2830,6 +2830,18 @@ const products = [
       "images/products/kevinpahar1.jpg",
       "images/products/kevinpahar2.jpg"
     ]
+  },
+  {
+    id: 259,
+    nume: "Mini carte de colorat",
+    categorie: "Party",
+    pret: 5,
+    poze: [
+      "images/products/coc.jpg",
+      "images/products/coc1.jpg",
+      "images/products/coc2.jpg",
+      "images/products/coc3.jpg"
+    ]
   }
 ];
 
