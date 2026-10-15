@@ -2934,6 +2934,21 @@ const products = [
       "images/products/farfuriee.jpg",
       "images/products/farfuriee1.jpg"
     ]
+  },
+
+  {
+    id: 268,
+    nume: "Tricou adult",
+    categorie: "Party",
+    pret: 45,
+    descriere: "Preț pe bucată.",
+    poze: [
+      "images/products/tricouadult.jpg",
+      "images/products/tricouadult1.jpg",
+      "images/products/tricouadult2.jpg",
+      "images/products/tricouadult3.jpg",
+      "images/products/tricouadult4.jpg"
+    ]
   }
 ];
 
