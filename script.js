@@ -2899,6 +2899,18 @@ const products = [
       "images/products/pai1.jpg",
       "images/products/pai2.jpg"
     ]
+  },
+  {
+    id: 265,
+    nume: "Cutiuțe pentru popcorn sau gustări",
+    categorie: "Party",
+    pret: 7,
+    descriere: "Preț pe bucată.",
+    poze: [
+      "images/products/popcornx.jpg",
+      "images/products/popcornx1.jpg",
+      "images/products/popcornx2.jpg"
+    ]
   }
 ];
 
