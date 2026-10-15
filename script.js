@@ -3400,7 +3400,24 @@ function getACDMixArtGreeting() {
     });
     message += `Total: ${cartTotal ? cartTotal.textContent : ""}`;
 
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
+    const imageFile = referenceImage && referenceImage.files ? referenceImage.files[0] : null;
+    if (imageFile && navigator.share && navigator.canShare && navigator.canShare({ files: [imageFile] })) {
+      try {
+        await navigator.share({
+          title: "Cerere personalizată ACDmixArt",
+          text: message,
+          files: [imageFile]
+        });
+      } catch (error) {
+        if (error && error.name === "AbortError") return;
+        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message + "\\nFotografia trebuie atașată manual.")}`, "_blank");
+      }
+    } else {
+      window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
+      if (imageFile) {
+        alert("Browserul nu permite atașarea automată a fotografiei. Dacă WhatsApp se deschide fără poză, atașeaz-o manual sau deschide site-ul în Chrome.");
+      }
+    }
   });
 }
 
@@ -3978,7 +3995,7 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
   dynamicFormFields.addEventListener("input", updateOrderSummary);
   dynamicFormFields.addEventListener("change", updateOrderSummary);
 
-  orderForm.addEventListener("submit", event => {
+  orderForm.addEventListener("submit", async event => {
     event.preventDefault();
 
     const product = products.find(item => String(item.id) === formProduct.value);
