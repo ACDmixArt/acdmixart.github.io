@@ -3742,64 +3742,11 @@ function renderCustomModelFields() {
     
       addFormField({ id: "formCustomText", label: "Text / idee pentru modelul tău", type: "textarea", placeholder: "Ce text vrei să apară? Cum ai vrea să arate?" });
       addFormField({ id: "formCustomColors", label: "Culori preferate", placeholder: "Ex.: roz pudrat, crem, verde salvie" });
-      addFormField({ id: "formReferenceImage", label: "Atașează o poză de inspirație (opțional)", type: "file" });
-      const referenceImage = document.getElementById("formReferenceImage");
-      if (referenceImage) {
-        referenceImage.accept = "image/*";
-        referenceImage.multiple = false;
-        const uploadControl = document.createElement("label");
-        uploadControl.className = "reference-upload-control";
-        uploadControl.htmlFor = "formReferenceImage";
-        uploadControl.innerHTML = '<span class="reference-upload-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M5 14v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5"/></svg>Alege o fotografie</span><span class="reference-upload-status">Nicio fotografie selectată</span>';
-        referenceImage.insertAdjacentElement("afterend", uploadControl);
-        const uploadStatus = uploadControl.querySelector(".reference-upload-status");
-        const previewWrap = document.createElement("div");
-        previewWrap.className = "reference-image-preview";
-        previewWrap.id = "formReferencePreview";
-        previewWrap.hidden = true;
-        previewWrap.innerHTML = '<img alt="Previzualizare poză de inspirație"><div class="reference-image-actions"><span class="reference-image-name"></span><button type="button" class="reference-image-remove">Șterge poza</button></div>';
-        referenceImage.closest("label")?.insertAdjacentElement("afterend", previewWrap);
-        const previewImage = previewWrap.querySelector("img");
-        const previewName = previewWrap.querySelector(".reference-image-name");
-        const removeButton = previewWrap.querySelector(".reference-image-remove");
-        let previewUrl = "";
-        referenceImage.addEventListener("change", () => {
-          const file = referenceImage.files && referenceImage.files[0];
-          if (previewUrl) URL.revokeObjectURL(previewUrl);
-          previewUrl = "";
-          if (!file) {
-            previewWrap.hidden = true;
-            previewImage.removeAttribute("src");
-            if (previewName) previewName.textContent = "";
-            if (uploadStatus) uploadStatus.textContent = "Nicio fotografie selectată";
-          } else if (!file.type.startsWith("image/")) {
-            referenceImage.value = "";
-            previewWrap.hidden = true;
-            alert("Te rog să alegi un fișier imagine.");
-          } else if (file.size > 10 * 1024 * 1024) {
-            referenceImage.value = "";
-            previewWrap.hidden = true;
-            alert("Poza trebuie să aibă maximum 10 MB.");
-          } else {
-            previewUrl = URL.createObjectURL(file);
-            previewImage.src = previewUrl;
-            if (previewName) previewName.textContent = file.name;
-            if (uploadStatus) uploadStatus.textContent = file.name;
-            previewWrap.hidden = false;
-          }
-          updateOrderSummary();
-        });
-        removeButton?.addEventListener("click", () => {
-          referenceImage.value = "";
-          if (previewUrl) URL.revokeObjectURL(previewUrl);
-          previewUrl = "";
-          previewWrap.hidden = true;
-          previewImage.removeAttribute("src");
-          if (previewName) previewName.textContent = "";
-          updateOrderSummary();
-        });
-      }
-    
+      const referenceNote = document.createElement("div");
+      referenceNote.className = "reference-photo-note";
+      referenceNote.innerHTML = "<strong>Ai un model de referință?</strong><p>După ce se deschide WhatsApp cu cererea ta, atașează în conversație fotografia modelului pe care vrei să ni-l trimiți.</p>";
+      customSection.appendChild(referenceNote);
+
       const priceSection = document.createElement("div");
       priceSection.className = "custom-model-fields custom-price-fields";
       priceSection.innerHTML = '<h3>Propune și un preț</h3><p>Spune-mi ce buget ai în minte. Prețul final îl stabilim împreună, în funcție de model și materiale.</p>';
@@ -4057,19 +4004,7 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
     else message += "Prețul va fi stabilit în funcție de modelul propus și materiale.\n";
     message += "\nVă mulțumesc!";
 
-    const imageFile = referenceImage && referenceImage.files ? referenceImage.files[0] : null;
-    if (imageFile && typeof navigator.share === "function" && typeof navigator.canShare === "function" && navigator.canShare({ files: [imageFile] })) {
-      try {
-        await navigator.share({ title: "Cerere personalizată ACDmixArt", text: message, files: [imageFile] });
-        return;
-      } catch (error) {
-        if (error && error.name === "AbortError") return;
-      }
-    }
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
-    if (imageFile) {
-      alert("Mesajul este pregătit în WhatsApp. Dacă fotografia nu apare atașată, acest browser nu permite partajarea ei directă; încearcă să deschizi site-ul în Chrome.");
-    }
   });
 }
 
