@@ -2825,7 +2825,10 @@ const products = [
     categorie: "Party",
     pret: 5,
     poze: [
-      "images/products/paharmaria.jpg"
+      "images/products/paharmaria.jpg",
+      "images/products/kevinpahar.jpg",
+      "images/products/kevinpahar1.jpg",
+      "images/products/kevinpahar2.jpg"
     ]
   }
 ];
@@ -3847,9 +3850,10 @@ function renderDynamicFields() {
   } else if (["Toppere", "Party"].includes(category)) {
     addFormField({ id: "formNames", label: "Nume / text", placeholder: "Textul care trebuie să apară" });
     addFormField({ id: "formAge", label: "Vârsta (dacă este relevantă)", type: "number", min: 1 });
+    addFormField({ id: "formTheme", label: "Tematica dorită", placeholder: "Scrie ce tematică dorești pentru produs" });
     addFormField({ id: "formColors", label: "Culori", placeholder: "Culorile dorite" });
     addFormField({ id: "formDate", label: "Data evenimentului", type: "date" });
-    addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Tematică, dimensiuni sau alte cerințe" });
+    addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Dimensiuni sau alte cerințe" });
   } else {
     addFormField({ id: "formNames", label: "Nume / text", placeholder: "Detalii pentru personalizare" });
     addFormField({ id: "formColors", label: "Nuanțe / culori", placeholder: "Culorile dorite" });
