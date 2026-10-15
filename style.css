@@ -2981,3 +2981,24 @@ body.personalize-modal-open{overflow:hidden}
   box-shadow:0 10px 26px rgba(77,42,49,.22);
   transform:translateY(-2px);
 }
+
+
+/* Buton elegant pentru încărcarea fotografiei de inspirație */
+#formReferenceImage{
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  padding:0!important;
+  margin:-1px!important;
+  overflow:hidden!important;
+  clip:rect(0,0,0,0)!important;
+  white-space:nowrap!important;
+  border:0!important;
+}
+.reference-upload-control{display:flex;align-items:center;gap:14px;flex-wrap:wrap;width:100%;box-sizing:border-box;padding:14px 16px;border:1px solid rgba(255,255,255,.72);border-radius:16px;background:rgba(255,255,255,.20)}
+.reference-upload-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.95);background:rgba(255,255,255,.88);color:#79535b;font:inherit;font-size:.95rem;font-weight:700;cursor:pointer;box-shadow:0 4px 12px rgba(75,43,49,.10);transition:background .18s ease,transform .18s ease}
+.reference-upload-button:hover{background:#fff;transform:translateY(-1px)}
+.reference-upload-button svg{width:19px;height:19px;flex:none;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.reference-upload-status{min-width:0;flex:1;font-size:.9rem;color:#fff;overflow-wrap:anywhere}
+#formReferenceImage:focus-visible+.reference-upload-control .reference-upload-button{outline:3px solid #fff;outline-offset:3px}
+@media(max-width:480px){.reference-upload-control{gap:10px;padding:12px}.reference-upload-button{width:100%;box-sizing:border-box}.reference-upload-status{flex-basis:100%;text-align:center}}
