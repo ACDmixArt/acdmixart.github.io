@@ -3400,7 +3400,11 @@ function getACDMixArtGreeting() {
     });
     message += `Total: ${cartTotal ? cartTotal.textContent : ""}`;
 
-    window.location.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    // Deschide WhatsApp dintr-un gest direct al utilizatorului; dacă browserul blochează
+    // fereastra nouă, folosește navigarea în aceeași filă ca variantă de rezervă.
+    const whatsappTab = window.open(whatsappUrl, "_blank");
+    if (!whatsappTab) window.location.assign(whatsappUrl);
   });
 }
 
