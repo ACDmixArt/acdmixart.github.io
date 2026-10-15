@@ -3400,7 +3400,7 @@ function getACDMixArtGreeting() {
     });
     message += `Total: ${cartTotal ? cartTotal.textContent : ""}`;
 
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
+    window.location.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
   });
 }
 
