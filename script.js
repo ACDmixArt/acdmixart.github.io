@@ -3795,6 +3795,27 @@ function renderDynamicFields() {
     addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Scrie aici cerințele tale" });
   }
 
+  // Secțiune comună pentru ideile proprii ale clientului
+  const customSection = document.createElement("div");
+  customSection.className = "custom-model-fields";
+  customSection.innerHTML = '<h3>Modelul tău</h3><p>Descrie modelul pe care ți-l imaginezi. Poți indica textul, culorile și atașa o fotografie de inspirație.</p>';
+  dynamicFormFields.appendChild(customSection);
+
+  addFormField({ id: "formCustomText", label: "Text / idee pentru modelul tău", type: "textarea", placeholder: "Ce text vrei să apară? Cum ai vrea să arate?" });
+  addFormField({ id: "formCustomColors", label: "Culori preferate", placeholder: "Ex.: roz pudrat, crem, verde salvie" });
+  addFormField({ id: "formReferenceImage", label: "Atașează o poză de inspirație (opțional)", type: "file" });
+  const referenceImage = document.getElementById("formReferenceImage");
+  if (referenceImage) {
+    referenceImage.accept = "image/*";
+    referenceImage.addEventListener("change", updateOrderSummary);
+  }
+
+  const priceSection = document.createElement("div");
+  priceSection.className = "custom-model-fields custom-price-fields";
+  priceSection.innerHTML = '<h3>Propune și un preț</h3><p>Spune-mi ce buget ai în minte. Prețul final îl stabilim împreună, în funcție de model și materiale.</p>';
+  dynamicFormFields.appendChild(priceSection);
+  addFormField({ id: "formSuggestedPrice", label: "Bugetul tău propus (lei)", type: "number", min: 0, placeholder: "Ex.: 50" });
+
   updateOrderSummary();
 }
 
@@ -3841,13 +3862,19 @@ function updateOrderSummary() {
     formTheme: "Tematică",
     formThemeOther: "Altă tematică",
     formAge: "Vârstă",
-    formAgendaCharacters: "Caricatură pentru agendă"
+    formAgendaCharacters: "Caricatură pentru agendă",
+    formCustomText: "Modelul tău — text / idee",
+    formCustomColors: "Modelul tău — culori",
+    formSuggestedPrice: "Buget propus (lei)"
   };
 
   Object.entries(fieldLabels).forEach(([id, label]) => {
     const input = document.getElementById(id);
     if (input && input.value.trim()) rows.push([label, input.value.trim()]);
   });
+
+  const referenceImage = document.getElementById("formReferenceImage");
+  if (referenceImage && referenceImage.files && referenceImage.files[0]) rows.push(["Poză de inspirație", referenceImage.files[0].name]);
 
   const frame = document.getElementById("formFrame");
   if (frame && frame.checked) rows.push(["Ramă foto", "Da (+60 lei)"]);
@@ -3938,13 +3965,20 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
       ["Data evenimentului", "formDate"],
       ["Culori", "formColors"],
       ["Vârstă", "formAge"],
-      ["Alte detalii", "formDetails"]
+      ["Alte detalii", "formDetails"],
+      ["Modelul tău — text / idee", "formCustomText"],
+      ["Modelul tău — culori", "formCustomColors"],
+      ["Buget propus", "formSuggestedPrice"]
     ];
     fields.forEach(([label, id]) => {
       const input = document.getElementById(id);
       if (input && input.value.trim()) message += `${label}: ${input.value.trim()}\n`;
     });
 
+    const referenceImage = document.getElementById("formReferenceImage");
+    if (referenceImage && referenceImage.files && referenceImage.files[0]) {
+      message += `Poză de inspirație selectată: ${referenceImage.files[0].name}\nTe rog să atașezi fotografia manual în conversația WhatsApp.\n`;
+    }
     if (childName) message += `Numele copilului: ${childName}\n`;
     if (theme) message += `Tematică: ${theme}\n`;
     const frame = document.getElementById("formFrame");
@@ -3957,6 +3991,8 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
       const optionCosts = { "Fără caricatură — 0 lei": 0, "1 personaj — 20 lei": 20, "2 personaje — 35 lei": 35, "3 personaje — 50 lei": 50 };
       unitPrice += optionCosts[agendaCharacters.value] || 0;
     }
+    const suggestedPrice = document.getElementById("formSuggestedPrice");
+    if (suggestedPrice && suggestedPrice.value.trim()) message += `Buget propus de client: ${suggestedPrice.value.trim()} lei\n`;
     message += `Preț/bucată: ${money(unitPrice)}\nPreț estimativ: ${money(unitPrice * quantity)}\n\nVă mulțumesc!`;
 
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
