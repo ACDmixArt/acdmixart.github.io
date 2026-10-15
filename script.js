@@ -3413,18 +3413,7 @@ function getACDMixArtGreeting() {
         window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message + "\\nFotografia trebuie atașată manual.")}`, "_blank");
       }
     } else {
-    const imageFile = referenceImage && referenceImage.files ? referenceImage.files[0] : null;
-    if (imageFile && navigator.share && navigator.canShare && navigator.canShare({ files: [imageFile] })) {
-      try {
-        await navigator.share({ title: "Cerere personalizată ACDmixArt", text: message, files: [imageFile] });
-      } catch (error) {
-        if (error && error.name === "AbortError") return;
-        window.open("https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message), "_blank");
-      }
-    } else {
-      window.open("https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message), "_blank");
-      if (imageFile) alert("Pentru atașarea automată a fotografiei, deschide site-ul în Chrome. Dacă nu apare atașată, va trebui selectată în WhatsApp.");
-    }
+      window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
       if (imageFile) {
         alert("Browserul nu permite atașarea automată a fotografiei. Dacă WhatsApp se deschide fără poză, atașeaz-o manual sau deschide site-ul în Chrome.");
       }
@@ -4085,7 +4074,18 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
     else message += "Prețul va fi stabilit în funcție de modelul propus și materiale.\n";
     message += "\nVă mulțumesc!";
 
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
+    const imageFile = referenceImage && referenceImage.files ? referenceImage.files[0] : null;
+    if (imageFile && navigator.share && navigator.canShare && navigator.canShare({ files: [imageFile] })) {
+      try {
+        await navigator.share({ title: "Cerere personalizată ACDmixArt", text: message, files: [imageFile] });
+      } catch (error) {
+        if (error && error.name === "AbortError") return;
+        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
+      }
+    } else {
+      window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
+      if (imageFile) alert("Browserul nu permite partajarea automată a fotografiei. Dacă WhatsApp se deschide fără poză, va trebui atașată manual.");
+    }
   });
 }
 
