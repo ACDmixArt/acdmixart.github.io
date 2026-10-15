@@ -3747,6 +3747,12 @@ function renderCustomModelFields() {
       if (referenceImage) {
         referenceImage.accept = "image/*";
         referenceImage.multiple = false;
+        const uploadControl = document.createElement("label");
+        uploadControl.className = "reference-upload-control";
+        uploadControl.htmlFor = "formReferenceImage";
+        uploadControl.innerHTML = '<span class="reference-upload-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M5 14v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5"/></svg>Alege o fotografie</span><span class="reference-upload-status">Nicio fotografie selectată</span>';
+        referenceImage.insertAdjacentElement("afterend", uploadControl);
+        const uploadStatus = uploadControl.querySelector(".reference-upload-status");
         const previewWrap = document.createElement("div");
         previewWrap.className = "reference-image-preview";
         previewWrap.id = "formReferencePreview";
@@ -3765,6 +3771,7 @@ function renderCustomModelFields() {
             previewWrap.hidden = true;
             previewImage.removeAttribute("src");
             if (previewName) previewName.textContent = "";
+            if (uploadStatus) uploadStatus.textContent = "Nicio fotografie selectată";
           } else if (!file.type.startsWith("image/")) {
             referenceImage.value = "";
             previewWrap.hidden = true;
@@ -3777,6 +3784,7 @@ function renderCustomModelFields() {
             previewUrl = URL.createObjectURL(file);
             previewImage.src = previewUrl;
             if (previewName) previewName.textContent = file.name;
+            if (uploadStatus) uploadStatus.textContent = file.name;
             previewWrap.hidden = false;
           }
           updateOrderSummary();
