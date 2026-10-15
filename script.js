@@ -4004,7 +4004,7 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
     else message += "Prețul va fi stabilit în funcție de modelul propus și materiale.\n";
     message += "\nVă mulțumesc!";
 
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
+    window.location.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
   });
 }
 
