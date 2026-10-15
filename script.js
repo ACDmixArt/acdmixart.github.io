@@ -2816,6 +2816,11 @@ const cartPanel = document.querySelector(".cart-panel");
 const overlay = document.querySelector(".overlay");
 const whatsappNumber = "40742059730";
 
+function getACDMixArtGreeting() {
+  const hour = Number(new Intl.DateTimeFormat('ro-RO', { hour: '2-digit', hourCycle: 'h23', timeZone: 'Europe/Bucharest' }).format(new Date()));
+  return hour >= 5 && hour < 12 ? 'Bună dimineața!' : hour >= 12 && hour < 18 ? 'Bună ziua!' : 'Bună seara!';
+}
+
 let activeCategory = "Toate";
 let cart = [];
 let favoritesOnly = false;
@@ -3381,10 +3386,7 @@ if (cartWhatsapp) {
       return;
     }
 
-function getACDMixArtGreeting() {
-  const hour = Number(new Intl.DateTimeFormat('ro-RO', { hour: '2-digit', hourCycle: 'h23', timeZone: 'Europe/Bucharest' }).format(new Date()));
-  return hour >= 5 && hour < 12 ? 'Bună dimineața!' : hour >= 12 && hour < 18 ? 'Bună ziua!' : 'Bună seara!';
-}
+
 
     let message = getACDMixArtGreeting() + " Doresc să plasez o comandă ACDmixArt:\n\n";
     cart.forEach((item, index) => {
@@ -4013,94 +4015,7 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
 }
 
 
-/* ACDMIXART_DIRECT_FORM_WHATSAPP_FIX
-   Trimitere directă la atingerea butonului, independent de evenimentul submit.
-   Păstrează validările și compune mesajul din câmpurile formularului. */
-(() => {
-  const form = document.getElementById("orderForm");
-  const sendButton = form?.querySelector('button[type="submit"]');
-  if (!form || !sendButton) return;
 
-  sendButton.addEventListener("click", event => {
-    event.preventDefault();
-    event.stopImmediatePropagation();
-
-    const category = document.getElementById("formCategory")?.value || "";
-    const productSelect = document.getElementById("formProduct");
-    const product = products.find(item => String(item.id) === (productSelect?.value || ""));
-    const quantityInput = document.getElementById("formQuantity");
-    const quantity = quantityInput ? Number(quantityInput.value) : 1;
-
-    if (!category) {
-      alert("Te rog să alegi o categorie.");
-      document.getElementById("formCategory")?.focus();
-      return;
-    }
-    if (!Number.isInteger(quantity) || quantity < 1) {
-      alert("Te rog să introduci o cantitate validă.");
-      quantityInput?.focus();
-      return;
-    }
-    if (["Botez", "Nuntă", "Nunta-Botez"].includes(category) && quantity < 25) {
-      alert("Comanda minimă pentru invitații este de 25 de bucăți.");
-      quantityInput?.focus();
-      return;
-    }
-
-    const labels = [
-      ["Nume / text", "formNames"],
-      ["Caricatură pentru agendă", "formAgendaCharacters"],
-      ["Text invitație", "formText"],
-      ["Data evenimentului", "formDate"],
-      ["Culori", "formColors"],
-      ["Vârstă", "formAge"],
-      ["Alte detalii", "formDetails"],
-      ["Numele copilului", "formChildName"],
-      ["Tematică", "formTheme"],
-      ["Altă tematică", "formThemeOther"],
-      ["Modelul tău — text / idee", "formCustomText"],
-      ["Modelul tău — culori", "formCustomColors"],
-      ["Buget propus", "formSuggestedPrice"]
-    ];
-
-    let message = getACDMixArtGreeting() + " Doresc o comandă personalizată ACDmixArt.\n\n";
-    message += "Categorie: " + category + "\n";
-    message += "Model / produs: " + (product ? product.nume : "model propriu — fără model existent") + "\n";
-    message += "Cantitate: " + quantity + "\n";
-
-    labels.forEach(([label, id]) => {
-      const input = document.getElementById(id);
-      if (!input) return;
-      const value = input.type === "checkbox" ? (input.checked ? "Da" : "") : String(input.value || "").trim();
-      if (value) message += label + ": " + value + "\n";
-    });
-
-    const frame = document.getElementById("formFrame");
-    if (frame?.checked) message += "Ramă foto: Da (+60 lei)\n";
-    const referenceImage = document.getElementById("formReferenceImage");
-    if (referenceImage?.files?.[0]) {
-      message += "Fotografie de inspirație: " + referenceImage.files[0].name + " (te rog să o atașezi separat în WhatsApp)\n";
-    }
-
-    if (product) {
-      let unitPrice = unitPriceForQuantity(product, quantity);
-      if (product.categorie === "Set Moț" && frame?.checked) unitPrice += 60;
-      const agendaCharacters = document.getElementById("formAgendaCharacters");
-      if (product.categorie === "Agende" && agendaCharacters) {
-        const costs = { "Fără caricatură — 0 lei": 0, "1 personaj — 20 lei": 20, "2 personaje — 35 lei": 35, "3 personaje — 50 lei": 50 };
-        unitPrice += costs[agendaCharacters.value] || 0;
-      }
-      message += "Preț/bucată: " + money(unitPrice) + "\nPreț estimativ: " + money(unitPrice * quantity) + "\n";
-    } else {
-      message += "Prețul va fi stabilit în funcție de model și materiale.\n";
-    }
-    message += "\nVă mulțumesc!";
-
-    const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
-    // Navigare directă în aceeași filă: nu depinde de popup-uri sau permisiuni.
-    window.location.href = url;
-  }, true);
-})();
 
 /* =========================
    INITIALIZARE
