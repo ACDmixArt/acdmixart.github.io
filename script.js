@@ -2842,6 +2842,16 @@ const products = [
       "images/products/coc2.jpg",
       "images/products/coc3.jpg"
     ]
+  },
+  {
+    id: 260,
+    nume: "Caserolă personalizată",
+    categorie: "Party",
+    pret: 65,
+    poze: [
+      "images/products/caserola.jpg",
+      "images/products/caserola1.jpg"
+    ]
   }
 ];
 
