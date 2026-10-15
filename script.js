@@ -2878,6 +2878,15 @@ const products = [
     poze: [
       "images/products/coif7.jpg"
     ]
+  },
+  {
+    id: 263,
+    nume: "Acadea personalizată",
+    categorie: "Party",
+    pret: 4,
+    poze: [
+      "images/products/tortacadea.jpg"
+    ]
   }
 ];
 
