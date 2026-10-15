@@ -2911,6 +2911,18 @@ const products = [
       "images/products/popcornx1.jpg",
       "images/products/popcornx2.jpg"
     ]
+  },
+  {
+    id: 266,
+    nume: "Ghirlandă cu nume",
+    categorie: "Party",
+    pret: 10,
+    descriere: "10 lei/literă. Bifează literele dorite la personalizare.",
+    poze: [
+      "images/products/ghirlanda.jpg",
+      "images/products/ghirlanda1.jpg",
+      "images/products/ghirlanda2.jpg"
+    ]
   }
 ];
 
@@ -3123,7 +3135,7 @@ function renderProducts() {
           </div>
           ${
             product.categorie === "Party"
-              ? `<button type="button" class="add-cart" onclick="openPartyCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
+              ? `<button type="button" class="add-cart" onclick="${product.id === 266 ? "openGarlandCustomizer" : "openPartyCustomizer"}(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
               : product.categorie === "Set Moț"
                 ? `<button type="button" class="add-cart" onclick="openSetMotCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
                 : product.categorie === "Set Gătit"
@@ -3138,6 +3150,84 @@ function renderProducts() {
       </article>
     `;
   }).join("");
+}
+
+/* =========================
+   PERSONALIZARE GHIRLANDĂ CU NUME
+========================= */
+
+function openGarlandCustomizer(productId, quantity = 1) {
+  const product = products.find(item => item.id === Number(productId));
+  if (!product) return;
+  const qty = Math.max(1, Number(quantity) || 1);
+  document.querySelector(".garland-customizer-modal")?.remove();
+
+  const modal = document.createElement("div");
+  modal.className = "garland-customizer-modal";
+  modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.65);display:flex;align-items:center;justify-content:center;z-index:9999;padding:20px;";
+  modal.innerHTML = `
+    <div style="background:white;width:100%;max-width:520px;max-height:90vh;overflow:auto;border-radius:16px;padding:25px;box-sizing:border-box;position:relative;">
+      <button type="button" aria-label="Închide" class="garland-close" style="position:absolute;top:10px;right:15px;border:0;background:none;font-size:30px;cursor:pointer;">×</button>
+      <h2 style="margin-top:0;">Personalizează ghirlanda cu nume</h2>
+      <p>Preț: <strong>10 lei pentru fiecare literă</strong>. Scrie numele, apoi bifează literele pe care dorești să le comanzi.</p>
+      <label for="garland-name" style="display:block;margin-top:12px;font-weight:600;">Numele dorit</label>
+      <input id="garland-name" type="text" placeholder="Ex.: AVA" style="width:100%;padding:11px;margin-top:5px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+      <div id="garland-letters" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;"></div>
+      <p id="garland-total" style="font-size:18px;font-weight:700;margin:16px 0;">Selectează literele pentru a calcula prețul.</p>
+      <button type="button" class="garland-add add-cart" style="width:100%;padding:14px;border:0;border-radius:9px;background:#B77E88;color:white;font-weight:700;cursor:pointer;font-size:16px;">Adaugă în coș</button>
+    </div>
+  `;
+  document.body.appendChild(modal);
+  const nameInput = modal.querySelector("#garland-name");
+  const lettersBox = modal.querySelector("#garland-letters");
+  const total = modal.querySelector("#garland-total");
+
+  function renderLetters() {
+    const chars = [...nameInput.value.trim()].filter(char => char.trim());
+    lettersBox.innerHTML = "";
+    chars.forEach((char, index) => {
+      const label = document.createElement("label");
+      label.style.cssText = "display:flex;align-items:center;gap:6px;border:1px solid #e5e5e5;border-radius:8px;padding:9px 11px;cursor:pointer;";
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.checked = true;
+      checkbox.dataset.letterIndex = String(index);
+      const text = document.createElement("span");
+      text.textContent = char + " (" + (index + 1) + ")";
+      label.append(checkbox, text);
+      lettersBox.appendChild(label);
+      checkbox.addEventListener("change", updateTotal);
+    });
+    updateTotal();
+  }
+  function updateTotal() {
+    const count = lettersBox.querySelectorAll('input[type="checkbox"]:checked').length;
+    total.textContent = count ? `Litere selectate: ${count} × 10 lei = ${count * 10 * qty} lei${qty > 1 ? ` pentru ${qty} ghirlande` : ""}` : "Bifează cel puțin o literă.";
+  }
+  nameInput.addEventListener("input", renderLetters);
+  modal.querySelector(".garland-close").addEventListener("click", () => modal.remove());
+  modal.addEventListener("click", event => { if (event.target === modal) modal.remove(); });
+  modal.querySelector(".garland-add").addEventListener("click", () => {
+    const name = nameInput.value.trim();
+    const selected = [...lettersBox.querySelectorAll('input[type="checkbox"]:checked')];
+    if (!name || !selected.length) {
+      if (!name) nameInput.focus();
+      else lettersBox.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+    const chars = [...name].filter(char => char.trim());
+    const selectedLetters = selected.map(box => chars[Number(box.dataset.letterIndex)]);
+    const pricePerGarland = selectedLetters.length * product.pret;
+    cart.push({
+      ...product,
+      pret: pricePerGarland,
+      quantity: qty,
+      personalizare: { tip: "ghirlanda", nume: name, litere: selectedLetters }
+    });
+    renderCart();
+    modal.remove();
+    openCart();
+  });
 }
 
 /* =========================
@@ -3502,7 +3592,9 @@ function renderCart() {
         <strong>${item.nume}</strong>
         <span>${money(item.pret)} / buc.</span>
         ${
-          item.personalizare?.tip === "party"
+          item.personalizare?.tip === "ghirlanda"
+            ? `<p>Nume: ${item.personalizare.nume}<br>Litere selectate: ${item.personalizare.litere.join(", ")}<br>Preț: 10 lei/literă</p>`
+            : item.personalizare?.tip === "party"
             ? `<p>Text: ${item.personalizare.nume || "Nespecificat"}<br>Vârstă: ${item.personalizare.varsta || "Nespecificată"}<br>Tematică: ${item.personalizare.tematica}<br>Culori: ${item.personalizare.culori || "Nespecificate"}<br>Data evenimentului: ${item.personalizare.data || "Nespecificată"}<br>Alte detalii: ${item.personalizare.detalii || "Nespecificate"}</p>`
             : item.personalizare?.tip === "agendă"
             ? `<p>Caricatură: ${item.personalizare.personaje === 0 ? "Fără caricatură" : item.personalizare.personaje + (item.personalizare.personaje === 1 ? " personaj" : " personaje")}<br>Cost caricatură: ${money(item.personalizare.pretCaricatura)}</p>`
@@ -3570,6 +3662,8 @@ if (cartWhatsapp) {
       message += `${index + 1}. ${item.nume}\nCantitate: ${item.quantity || 1}\nPreț/buc.: ${money(item.pret)}\nSubtotal: ${money(item.pret * (item.quantity || 1))}\n`;
       if (item.personalizare?.tip === "agendă") {
         message += `Caricatură: ${item.personalizare.personaje === 0 ? "Fără caricatură" : item.personalizare.personaje + (item.personalizare.personaje === 1 ? " personaj" : " personaje")}\nCost caricatură: ${money(item.personalizare.pretCaricatura)}\n`;
+      } else if (item.personalizare?.tip === "ghirlanda") {
+        message += `Nume pentru ghirlandă: ${item.personalizare.nume}\nLitere bifate: ${item.personalizare.litere.join(", ")}\nPreț: 10 lei/literă\n`;
       } else if (item.personalizare?.tip === "party") {
         message += `Text: ${item.personalizare.nume || "Nespecificat"}\nVârstă: ${item.personalizare.varsta || "Nespecificată"}\nTematică: ${item.personalizare.tematica}\nCulori: ${item.personalizare.culori || "Nespecificate"}\nData evenimentului: ${item.personalizare.data || "Nespecificată"}\nAlte detalii: ${item.personalizare.detalii || "Nespecificate"}\n`;
       } else if (item.personalizare?.tip === "setGatit") {
@@ -3746,7 +3840,7 @@ zoomButton.addEventListener("click", function (e) {
   personalizeButton.addEventListener("click", () => {
     closeGallery();
     if (product.categorie === "Agende") openAgendaCustomizer(product.id, 1);
-    else if (product.categorie === "Party") openPartyCustomizer(product.id, 1);
+    else if (product.categorie === "Party") (product.id === 266 ? openGarlandCustomizer : openPartyCustomizer)(product.id, 1);
     else openSetMotCustomizer(product.id, 1);
   });
 
@@ -3758,7 +3852,7 @@ zoomButton.addEventListener("click", function (e) {
     } else if (product.categorie === "Agende") {
       openAgendaCustomizer(product.id, 1);
     } else if (product.categorie === "Party") {
-      openPartyCustomizer(product.id, 1);
+      (product.id === 266 ? openGarlandCustomizer : openPartyCustomizer)(product.id, 1);
     } else {
       addToCart(product.id, 1);
     }
