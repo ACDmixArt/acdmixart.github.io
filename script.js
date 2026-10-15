@@ -2788,7 +2788,7 @@ const products = [
   {
     id: 255,
     nume: "Flyere personalizate 10 × 15 cm",
-    categorie: "Cărți",
+    categorie: "Carti de vizita",
     pret: 1.5,
     tarifeCantitate: [
       { min: 25, max: 49, pret: 1.5 },
