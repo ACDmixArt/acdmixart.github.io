@@ -208,7 +208,8 @@
 
         <button
           class="button"
-          type="submit"
+          type="button"
+          onclick="(function(){var f=document.getElementById('orderForm');var cat=document.getElementById('formCategory');var prod=document.getElementById('formProduct');if(!cat||!cat.value){alert('Te rog să alegi o categorie.');return;}var msg='Bună ziua! Doresc o comandă personalizată ACDmixArt.\\n\\nCategorie: '+cat.value+'\\n';if(prod&&prod.value){msg+='Model / produs: '+prod.options[prod.selectedIndex].text+'\\n';}else{msg+='Model / produs: model propriu — fără model existent\\n';}var q=document.getElementById('formQuantity');if(q&&q.value)msg+='Cantitate: '+q.value+'\\n';if(f){Array.prototype.forEach.call(f.querySelectorAll('input,select,textarea'),function(el){if(!el.id||['formCategory','formProduct','formQuantity','formReferenceImage'].indexOf(el.id)!==-1||el.type==='button'||el.type==='submit'||el.type==='file'||el.type==='checkbox')return;var v=(el.value||'').trim();if(v){var lab=f.querySelector('label[for="'+el.id+'"]');var name=lab?lab.innerText.replace(/\\s+/g,' ').trim():el.id;msg+=name+': '+v+'\\n';}});Array.prototype.forEach.call(f.querySelectorAll('input[type=checkbox]:checked'),function(el){var lab=f.querySelector('label[for="'+el.id+'"]');msg+=(lab?lab.innerText.trim():el.id)+': Da\\n';});}msg+='\\nVă mulțumesc!';window.location.href='https://wa.me/40742059730?text='+encodeURIComponent(msg);})()"
         >
           Trimite cererea pe WhatsApp
         </button>
@@ -397,7 +398,7 @@ function openPersonalizeModal(){const m=document.getElementById("personalizeModa
 function closePersonalizeModal(){const m=document.getElementById("personalizeModal");if(m){m.hidden=true;document.body.classList.remove("personalize-modal-open");}}
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closePersonalizeModal();});
 </script>
-<script src="script.js?v=20261015-whatsapp-fix3"></script>
+<script src="script.js?v=20261015-whatsapp-fix4"></script>
 
 </body>
 </html>
