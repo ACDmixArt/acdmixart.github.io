@@ -2910,3 +2910,13 @@ header.site-header a.logo .logo-script {
 .quick-personalize-link svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .quick-personalize-link span{font-size:inherit}
 @media(max-width:480px){.quick-personalize-link{gap:4px}.quick-personalize-link span{font-size:12px}}
+
+
+/* Fereastră modal pentru formularul de personalizare */
+.personalize-modal-backdrop{position:fixed;inset:0;z-index:10050;background:rgba(45,35,38,.58);display:flex;align-items:center;justify-content:center;padding:18px;overflow-y:auto;}
+.personalize-modal-backdrop[hidden]{display:none!important}
+.personalize-modal-dialog{position:relative;width:min(1100px,100%);max-height:calc(100dvh - 36px);overflow-y:auto;border-radius:24px;box-shadow:0 24px 80px rgba(0,0,0,.28);background:#B77E88;}
+.personalize-modal-dialog .personalize-section{margin:0;min-height:0;border-radius:24px;padding:54px clamp(20px,4vw,56px) 36px;gap:32px;}
+.personalize-modal-close{position:sticky;top:12px;float:right;margin:12px 12px -48px 0;z-index:2;width:40px;height:40px;border:1px solid rgba(255,255,255,.75);border-radius:50%;background:#fff7f4;color:#8d5964;font-size:30px;line-height:1;cursor:pointer;box-shadow:0 3px 12px rgba(0,0,0,.12)}
+body.personalize-modal-open{overflow:hidden}
+@media(max-width:700px){.personalize-modal-backdrop{padding:8px}.personalize-modal-dialog{max-height:calc(100dvh - 16px);border-radius:18px}.personalize-modal-dialog .personalize-section{grid-template-columns:1fr;padding:56px 20px 24px;gap:22px;border-radius:18px}.personalize-modal-dialog .personalize-section h2{font-size:clamp(30px,8vw,42px)}.personalize-modal-close{top:8px;margin:8px 8px -48px 0;width:36px;height:36px}}
