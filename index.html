@@ -208,7 +208,8 @@
 
         <button
           class="button"
-          type="submit"
+          type="button"
+          onclick="sendOrderToWhatsApp()"
         >
           Trimite cererea pe WhatsApp
         </button>
@@ -403,12 +404,39 @@
   </footer>
 
 <script>
+function sendOrderToWhatsApp(){
+  const form=document.getElementById("orderForm");
+  const category=document.getElementById("formCategory");
+  const product=document.getElementById("formProduct");
+  if(!category||!category.value){alert("Te rog să alegi o categorie.");return;}
+  let message="Bună ziua! Doresc o comandă personalizată ACDmixArt.\n\n";
+  message+="Categorie: "+category.value+"\n";
+  message+="Model / produs: "+(product&&product.value?product.options[product.selectedIndex].text:"model propriu — fără model existent")+"\n";
+  const quantity=document.getElementById("formQuantity");
+  if(quantity&&quantity.value)message+="Cantitate: "+quantity.value+"\n";
+  if(form){
+    form.querySelectorAll("input,select,textarea").forEach(function(el){
+      if(!el.id||["formCategory","formProduct","formQuantity","formReferenceImage"].includes(el.id)||["button","submit","file","checkbox"].includes(el.type))return;
+      const value=String(el.value||"").trim();
+      if(!value)return;
+      const label=form.querySelector('label[for="'+el.id+'"]');
+      const name=label?label.innerText.replace(/\s+/g," ").trim():el.id;
+      message+=name+": "+value+"\n";
+    });
+    form.querySelectorAll('input[type="checkbox"]:checked').forEach(function(el){
+      const label=form.querySelector('label[for="'+el.id+'"]');
+      message+=(label?label.innerText.trim():el.id)+": Da\n";
+    });
+  }
+  message+="\nVă mulțumesc!";
+  window.location.href="https://wa.me/40742059730?text="+encodeURIComponent(message);
+}
 function openPersonalizeModal(){const m=document.getElementById("personalizeModal");const d=m&&m.querySelector(".personalize-modal-dialog");const s=document.getElementById("personalizare");if(m&&d&&s){d.appendChild(s);m.hidden=false;document.body.classList.add("personalize-modal-open");}}
 function closePersonalizeModal(){const m=document.getElementById("personalizeModal");const p=document.getElementById("personalizeInlinePlaceholder");const s=document.getElementById("personalizare");if(m){m.hidden=true;document.body.classList.remove("personalize-modal-open");}if(p&&s)p.appendChild(s);}
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closePersonalizeModal();});
 closePersonalizeModal();
 </script>
-<script src="script.js?v=20261015-whatsapp-fix7"></script>
+<script src="script.js?v=20261015-whatsapp-fix8"></script>
 
 </body>
 </html>
