@@ -3122,6 +3122,16 @@ const products = [
       "images/products/spi2.jpg"
     ]
   },
+  {
+    id: 280,
+    nume: "Topper Winnie",
+    categorie: "Toppere",
+    pret: 160,
+    poze: [
+      "images/products/wi.jpg",
+      "images/products/wi1.jpg"
+    ]
+  },
 
 ];
 
