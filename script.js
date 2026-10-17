@@ -3168,6 +3168,18 @@ const products = [
       "images/products/gabt3.jpg"
     ]
   },
+  {
+    id: 284,
+    nume: "Set topper 2",
+    categorie: "Toppere",
+    pret: 65,
+    descriere: "Set topper central + 8 toppere mici în 2 straturi. Se poate adăuga orice număr de toppere mici suplimentare, la 5 lei/bucată.",
+    poze: [
+      "images/products/paw.jpg",
+      "images/products/paw1.jpg",
+      "images/products/paw2.jpg"
+    ]
+  },
 
 ];
 
@@ -3422,8 +3434,8 @@ function openTopperCustomizer(productId, quantity = 1) {
   if (!product || product.categorie !== "Toppere") return;
   const qty = Math.max(1, Number(quantity) || 1);
 
-  // Set topper 1: central topper + 8 small toppers, with optional extras.
-  if (Number(product.id) === 283) {
+  // Set topper 1 and 2 share the same customization and pricing.
+  if ([283, 284].includes(Number(product.id))) {
     document.querySelector(".topper-customizer-modal")?.remove();
     const modal = document.createElement("div");
     modal.className = "topper-customizer-modal";
@@ -3431,7 +3443,7 @@ function openTopperCustomizer(productId, quantity = 1) {
     modal.innerHTML = `
       <div style="background:white;width:100%;max-width:560px;max-height:92vh;overflow:auto;border-radius:16px;padding:24px;box-sizing:border-box;position:relative;">
         <button type="button" aria-label="Închide" class="topper-close" style="position:absolute;top:8px;right:12px;border:0;background:none;font-size:30px;cursor:pointer;">×</button>
-        <h2 style="margin:0 35px 8px 0;color:#66745F;">Personalizează Set topper 1</h2>
+        <h2 style="margin:0 35px 8px 0;color:#66745F;">Personalizează ${product.nume}</h2>
         <p>Set topper central + 8 toppere mici în 2 straturi.</p>
         <p>Preț set: <strong>65 lei</strong>. Fiecare topper mic suplimentar costă <strong>5 lei</strong>.</p>
         <label for="set1-name" style="display:block;margin-top:14px;font-weight:600;">Nume *</label>
@@ -3480,8 +3492,8 @@ function openTopperCustomizer(productId, quantity = 1) {
         return;
       }
       const unitPrice = 65 + extra * 5;
-      const personalizare = { tip: "setTopper", varianta: "Set topper 1 — topper central + 8 toppere mici în 2 straturi", pretBaza: 65, toppereMiciIncluse: 8, toppereMiciSuplimentare: extra, pretSuplimente: extra * 5, nume: name, varsta: age, tematica: theme, detalii };
-      cart.push({ ...product, nume: "Set topper 1 personalizat", pret: unitPrice, quantity: qty, personalizare });
+      const personalizare = { tip: "setTopper", varianta: product.nume + " — topper central + 8 toppere mici în 2 straturi", pretBaza: 65, toppereMiciIncluse: 8, toppereMiciSuplimentare: extra, pretSuplimente: extra * 5, nume: name, varsta: age, tematica: theme, detalii };
+      cart.push({ ...product, nume: product.nume + " personalizat", pret: unitPrice, quantity: qty, personalizare });
       renderCart();
       modal.remove();
       openCart();
