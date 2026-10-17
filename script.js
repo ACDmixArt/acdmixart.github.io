@@ -3685,13 +3685,25 @@ const products = [
   },
   {
     id: 327,
-    nume: "Numere pentru mese",
+    nume: "Număr pentru masă – Nuntă 1",
     categorie: "Numere pentru mese",
     pret: 6,
-    descriere: "Numere pentru mese personalizate, potrivite pentru nuntă sau botez. Prețul este per bucată. Alege tematica, intervalul numerelor, numele mirilor sau al copilului și data evenimentului.",
+    descriere: "Număr pentru masă personalizat pentru nuntă. Prețul este per bucată. Alege tematica, intervalul numerelor, numele mirilor și data evenimentului.",
     poze: [
       "images/products/nrmasanunta.jpg",
       "images/products/nrmasanunta1.jpg"
+    ]
+  },
+  {
+    id: 328,
+    nume: "Număr pentru masă – Botez 2",
+    categorie: "Numere pentru mese",
+    pret: 6,
+    descriere: "Număr pentru masă personalizat pentru botez. Prețul este per bucată. Alege tematica, intervalul numerelor, numele copilului și data evenimentului.",
+    poze: [
+      "images/products/nrmasabotez.jpg",
+      "images/products/nrmasabotez1.jpg",
+      "images/products/nrmasabotez2.jpg"
     ]
   },
 
