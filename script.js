@@ -3742,7 +3742,7 @@ function renderProducts() {
   const backButton = document.getElementById("backToFolders");
   const catalogTitle = document.getElementById("catalogTitle");
   if (backButton) backButton.hidden = showFolders;
-  if (filtre) filtre.style.display = showFolders ? "none" : "";
+  if (filtre) { filtre.hidden = showFolders; filtre.style.display = showFolders ? "none" : ""; }
   if (catalogTitle) catalogTitle.textContent = showFolders ? "Explorează colecțiile" : "Produsele ACDmixArt";
   if (showFolders) {
     updateMinimumOrderNotice();
