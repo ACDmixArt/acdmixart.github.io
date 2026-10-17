@@ -3132,6 +3132,18 @@ const products = [
       "images/products/wi1.jpg"
     ]
   },
+  {
+    id: 281,
+    nume: "Topper Gabby",
+    categorie: "Toppere",
+    pret: 160,
+    poze: [
+      "images/products/gaba.jpg",
+      "images/products/gaba1.jpg",
+      "images/products/gaba2.jpg",
+      "images/products/gaba3.jpg"
+    ]
+  },
 
 ];
 
@@ -3387,7 +3399,7 @@ function openTopperCustomizer(productId, quantity = 1) {
   const qty = Math.max(1, Number(quantity) || 1);
 
   // Topper Winnie is a separate fixed-price design, not one of the 75/140/180 lei variants.
-  if (Number(product.id) === 280) {
+  if ([280, 281].includes(Number(product.id))) {
     document.querySelector(".topper-customizer-modal")?.remove();
     const modal = document.createElement("div");
     modal.className = "topper-customizer-modal";
@@ -3395,7 +3407,7 @@ function openTopperCustomizer(productId, quantity = 1) {
     modal.innerHTML = `
       <div style="background:white;width:100%;max-width:560px;max-height:92vh;overflow:auto;border-radius:16px;padding:24px;box-sizing:border-box;position:relative;">
         <button type="button" aria-label="Închide" class="topper-close" style="position:absolute;top:8px;right:12px;border:0;background:none;font-size:30px;cursor:pointer;">×</button>
-        <h2 style="margin:0 35px 8px 0;color:#66745F;">Personalizează Topper Winnie</h2>
+        <h2 style="margin:0 35px 8px 0;color:#66745F;">Personalizează ${product.nume}</h2>
         <p>Completează detaliile pentru designul topperului. Preț fix: <strong>160 lei/bucată</strong>.</p>
         <label for="winnie-name" style="display:block;margin-top:14px;font-weight:600;">Nume *</label>
         <input id="winnie-name" type="text" required maxlength="120" placeholder="Numele care va apărea pe topper" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
@@ -3424,8 +3436,8 @@ function openTopperCustomizer(productId, quantity = 1) {
         error.style.display = "block";
         return;
       }
-      const personalizare = { tip: "topper", varianta: "Topper Winnie", pretBaza: 160, personaje: 0, pretCaricatura: 0, tematica: theme, nume: name, varsta: age, detalii };
-      cart.push({ ...product, nume: "Topper Winnie personalizat", pret: 160, quantity: qty, personalizare });
+      const personalizare = { tip: "topper", varianta: product.nume, pretBaza: 160, personaje: 0, pretCaricatura: 0, tematica: theme, nume: name, varsta: age, detalii };
+      cart.push({ ...product, nume: product.nume + " personalizat", pret: 160, quantity: qty, personalizare });
       renderCart();
       modal.remove();
       openCart();
