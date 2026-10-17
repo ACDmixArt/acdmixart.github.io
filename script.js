@@ -3530,10 +3530,18 @@ const products = [
       "images/products/save.jpg",
       "images/products/save1.jpg",
       "images/products/save2.jpg",
-      "images/products/save3.jpg",
-      "images/products/save4.jpg",
       "images/products/agag.jpg",
       "images/products/agag1.jpg"
+    ]
+  },
+  {
+    id: 338,
+    nume: "Save the Date – Model 2",
+    categorie: "Save the Date",
+    pret: 45,
+    poze: [
+      "images/products/save3.jpg",
+      "images/products/save4.jpg"
     ]
   },
   {
