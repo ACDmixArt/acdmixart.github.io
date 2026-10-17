@@ -3587,6 +3587,21 @@ const products = [
       "images/products/canacraciun2.jpg"
     ]
   },
+  {
+    id: 318,
+    nume: "Cană cu personaj și nume",
+    categorie: "Căni",
+    pret: 30,
+    descriere: "Cană personalizată cu personajul și numele alese. În formular, scrie personajul dorit și numele exact pentru personalizare.",
+    poze: [
+      "images/products/cana.jpg",
+      "images/products/cana1.jpg",
+      "images/products/cana2.jpg",
+      "images/products/cana3.jpg",
+      "images/products/cana4.jpg",
+      "images/products/cana5.jpg"
+    ]
+  },
 
 ];
 
@@ -5306,6 +5321,9 @@ function renderDynamicFields() {
     addFormField({ id: "formFrame", label: "Adaugă ramă foto (+60 lei)", type: "checkbox" });
     addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Alte cerințe pentru set" });
   } else if (["Căni", "Pahare", "Mărturii"].includes(category)) {
+    if (category === "Căni" && document.getElementById("formProduct")?.selectedOptions?.[0]?.textContent?.includes("Cană cu personaj și nume")) {
+      addFormField({ id: "formCharacter", label: "Personajul dorit", placeholder: "Scrie personajul pe care îl dorești", required: true });
+    }
     addFormField({ id: "formNames", label: "Nume / text pentru personalizare", placeholder: "Scrie exact numele sau mesajul dorit" });
     addFormField({ id: "formColors", label: "Culori", placeholder: "Culorile dorite (dacă este cazul)" });
     addFormField({ id: "formDate", label: "Data evenimentului", type: "date" });
