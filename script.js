@@ -2971,6 +2971,23 @@ const products = [
       "images/products/nat11.jpg",
       "images/products/nat12.jpg"
     ]
+  },
+
+  {
+    id: 270,
+    nume: "Mărțișor – floare din săpun",
+    categorie: "Martisoare",
+    pret: 12,
+    poze: [
+      "images/products/Martisor/martisor.jpg",
+      "images/products/Martisor/martisor1.jpg",
+      "images/products/Martisor/martisor2.jpg",
+      "images/products/Martisor/martisor3.jpg",
+      "images/products/Martisor/martisor4.jpg",
+      "images/products/Martisor/martisor5.jpg",
+      "images/products/Martisor/martisor6.jpg",
+      "images/products/Martisor/martisor7.jpg"
+    ]
   }
 ];
 
