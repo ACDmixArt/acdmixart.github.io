@@ -3631,16 +3631,7 @@ const products = [
     pret: 75,
     descriere: "Bidon pentru apă personalizat cu personajul preferat, nume și text la alegere. Completează toate detaliile în formularul de comandă.",
     poze: [
-      "images/products/bidonapa2.jpg"
-    ]
-  },
-  {
-    id: 322,
-    nume: "Bidon pentru apă personalizabil 9",
-    categorie: "Căni",
-    pret: 75,
-    descriere: "Bidon pentru apă personalizat cu personajul preferat, nume și text la alegere. Completează toate detaliile în formularul de comandă.",
-    poze: [
+      "images/products/bidonapa2.jpg",
       "images/products/bidonapa3.jpg"
     ]
   },
