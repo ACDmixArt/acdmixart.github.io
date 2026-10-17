@@ -3646,6 +3646,19 @@ const products = [
       "images/products/sticlabere1.jpg"
     ]
   },
+  {
+    id: 324,
+    nume: "Sticlă de vin cu text auriu",
+    categorie: "Căni",
+    pret: 160,
+    descriere: "Sticlă de vin personalizată cu text auriu, ideală pentru un cadou elegant sau o ocazie specială. Fotografiile și detaliile de referință se trimit pe WhatsApp după finalizarea comenzii.",
+    poze: [
+      "images/products/vin.jpg",
+      "images/products/vin1.jpg",
+      "images/products/vin2.jpg",
+      "images/products/vin3.jpg"
+    ]
+  },
 
 ];
 
@@ -5366,10 +5379,15 @@ function renderDynamicFields() {
     addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Alte cerințe pentru set" });
   } else if (["Căni", "Pahare", "Mărturii"].includes(category)) {
     const selectedProductName = document.getElementById("formProduct")?.selectedOptions?.[0]?.textContent || "";
-    if (category === "Căni" && (selectedProductName.includes("Cană cu personaj și nume") || selectedProductName.includes("Termos personalizat") || selectedProductName.includes("Bidon pentru apă personalizabil") || selectedProductName.includes("Sticlă de bere personalizabilă"))) {
+    if (category === "Căni" && !selectedProductName.includes("Sticlă de vin cu text auriu") && (selectedProductName.includes("Cană cu personaj și nume") || selectedProductName.includes("Termos personalizat") || selectedProductName.includes("Bidon pentru apă personalizabil") || selectedProductName.includes("Sticlă de bere personalizabilă"))) {
       addFormField({ id: "formCharacter", label: "Personajul dorit", placeholder: "Scrie personajul pe care îl dorești", required: true });
     }
-    addFormField({ id: "formNames", label: "Nume / text pentru personalizare", placeholder: "Scrie exact numele sau mesajul dorit" });
+    if (category === "Căni" && selectedProductName.includes("Sticlă de vin cu text auriu")) {
+      addFormField({ id: "formNames", label: "Textul auriu dorit", placeholder: "Scrie exact textul care va apărea pe sticlă", required: true });
+      addFormField({ id: "formDetails", label: "Fotografii / model de referință", type: "textarea", placeholder: "După finalizarea comenzii, trimite fotografiile de referință pe WhatsApp." });
+    } else {
+      addFormField({ id: "formNames", label: "Nume / text pentru personalizare", placeholder: "Scrie exact numele sau mesajul dorit" });
+    }
     addFormField({ id: "formColors", label: "Culori", placeholder: "Culorile dorite (dacă este cazul)" });
     addFormField({ id: "formDate", label: "Data evenimentului", type: "date" });
     addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: category === "Căni" ? "Descrie personalizarea dorită. Pentru cana cu poză, atașează fotografia în conversația WhatsApp când trimiți comanda." : "Tematică și cerințe speciale" });
