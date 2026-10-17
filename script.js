@@ -3641,7 +3641,7 @@ const products = [
     categorie: "Caricaturi",
     pret: 120,
     descriere: "Caricatură în format digital, pentru 1–2 personaje incluse. Personajele suplimentare, ținutele profesionale și accesoriile se pot adăuga contra cost.",
-    poze: ["images/products/onlinex.jpg"]
+    poze: ["images/products/onlinex1.jpg"]
   },
   {
     id: 313,
