@@ -3554,6 +3554,16 @@ const products = [
       "images/products/canapoza.jpg"
     ]
   },
+  {
+    id: 315,
+    nume: "Cană albă personalizată",
+    categorie: "Căni",
+    pret: 30,
+    descriere: "Cană albă personalizată cu nume, text sau mesaj la alegere. Dacă dorești personalizare cu fotografie, atașează poza în conversația WhatsApp când trimiți comanda.",
+    poze: [
+      "images/products/canaalb.jpg"
+    ]
+  },
 
 ];
 
