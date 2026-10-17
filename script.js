@@ -3231,9 +3231,15 @@ const products = [
     pret: 65,
     descriere: "Set topper central + 8 toppere mici în 2 straturi. Se poate adăuga orice număr de toppere mici suplimentare, la 5 lei/bucată.",
     poze: [
-      "images/products/67.jpg",
-      "images/products/671.jpg",
-      "images/products/672.jpg"
+      "images/products/bri.jpg",
+      "images/products/bri1.jpg",
+      "images/products/bri2.jpg",
+      "images/products/bri3.jpg",
+      "images/products/bri4.jpg",
+      "images/products/bri5.jpg",
+      "images/products/bri6.jpg",
+      "images/products/bri7.jpg",
+      "images/products/bri8.jpg"
     ]
   },
   {
