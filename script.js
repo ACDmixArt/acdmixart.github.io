@@ -3542,8 +3542,8 @@ const products = [
     poze: [
       "images/products/save3.jpg",
       "images/products/save4.jpg",
-      "images/products/agf.jpg",
-      "images/products/agf1.jpg"
+      "images/products/agf.png",
+      "images/products/agf1.png"
     ]
   },
   {
