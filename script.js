@@ -3554,7 +3554,15 @@ const products = [
     pret: 45,
     poze: [
       "images/products/save3.jpg",
-      "images/products/save4.jpg",
+      "images/products/save4.jpg"
+    ]
+  },
+  {
+    id: 344,
+    nume: "Save the Date – Model 3",
+    categorie: "Save the Date",
+    pret: 45,
+    poze: [
       "images/products/agf.png",
       "images/products/agf1.png"
     ]
