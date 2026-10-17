@@ -3369,6 +3369,17 @@ const products = [
     ]
   },
   {
+    id: 301,
+    nume: "Tort din cutiuțe 6",
+    categorie: "Torturi din cutiuțe",
+    pret: 7,
+    descriere: "Cutiuță de 7 lei cu 9 toppere decorative și topper central incluse. Opțional: suport +25 lei și luminițe +25 lei. Varianta cu dulciuri este 19 lei și include toppere, suport și luminițe.",
+    poze: [
+      "images/products/carlitas.jpg",
+      "images/products/carlitas1.jpg"
+    ]
+  },
+  {
     id: 293,
     nume: "Mini topper",
     categorie: "Toppere",
