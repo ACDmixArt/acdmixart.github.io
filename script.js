@@ -3635,6 +3635,17 @@ const products = [
       "images/products/bidonapa3.jpg"
     ]
   },
+  {
+    id: 323,
+    nume: "Sticlă de bere personalizabilă",
+    categorie: "Căni",
+    pret: 30,
+    descriere: "Sticlă de bere personalizabilă cu personajul, numele și textul dorit. Completează personajul preferat, numele și mesajul exact în formularul de comandă.",
+    poze: [
+      "images/products/sticlabere.jpg",
+      "images/products/sticlabere1.jpg"
+    ]
+  },
 
 ];
 
@@ -5355,7 +5366,7 @@ function renderDynamicFields() {
     addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Alte cerințe pentru set" });
   } else if (["Căni", "Pahare", "Mărturii"].includes(category)) {
     const selectedProductName = document.getElementById("formProduct")?.selectedOptions?.[0]?.textContent || "";
-    if (category === "Căni" && (selectedProductName.includes("Cană cu personaj și nume") || selectedProductName.includes("Termos personalizat") || selectedProductName.includes("Bidon pentru apă personalizabil"))) {
+    if (category === "Căni" && (selectedProductName.includes("Cană cu personaj și nume") || selectedProductName.includes("Termos personalizat") || selectedProductName.includes("Bidon pentru apă personalizabil") || selectedProductName.includes("Sticlă de bere personalizabilă"))) {
       addFormField({ id: "formCharacter", label: "Personajul dorit", placeholder: "Scrie personajul pe care îl dorești", required: true });
     }
     addFormField({ id: "formNames", label: "Nume / text pentru personalizare", placeholder: "Scrie exact numele sau mesajul dorit" });
