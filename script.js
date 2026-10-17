@@ -3262,7 +3262,9 @@ function renderProducts() {
             <button type="button" aria-label="Crește cantitatea" onclick="changeProductQuantity(${product.id}, 1)">+</button>
           </div>
           ${
-            product.categorie === "Party"
+            product.categorie === "Martisoare"
+              ? `<button type="button" class="add-cart" onclick="openMartisorCustomizer(${product.id}, document.getElementById(&quot;qty-${product.id}&quot;).textContent)">Personalizează</button>`
+              : product.categorie === "Party"
               ? `<button type="button" class="add-cart" onclick="${product.id === 266 ? "openGarlandCustomizer" : "openPartyCustomizer"}(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
               : product.categorie === "Set Moț"
                 ? `<button type="button" class="add-cart" onclick="openSetMotCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
