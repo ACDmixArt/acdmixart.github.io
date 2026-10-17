@@ -3365,3 +3365,35 @@ body.personalize-modal-open{overflow:hidden}
   .category-folder-cover::before,
   .category-folder-cover::after { width: 53px !important; height: 53px !important; }
 }
+
+
+/* Floral pattern belongs to the label area below each category photo, never over the title text */
+.category-folder-card::before {
+  display: none !important;
+}
+.category-folder-info {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  background-color: #fbf0ed !important;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 100'%3E%3Cg fill='none' stroke='%2393A187' stroke-width='1.3' stroke-linecap='round' opacity='.58'%3E%3Cpath d='M-5 100Q20 70 22 38M9 79Q-1 64 3 53M14 68Q31 68 40 52M300 0Q274 22 276 57M287 20Q298 31 294 42M281 37Q264 36 255 49'/%3E%3C/g%3E%3Cg fill='%23E6B5C0' fill-opacity='.68' stroke='%23D6A1AD' stroke-opacity='.4' stroke-width='.5'%3E%3Cellipse cx='10' cy='31' rx='6' ry='12' transform='rotate(-35 10 31)'/%3E%3Cellipse cx='24' cy='33' rx='6' ry='12' transform='rotate(40 24 33)'/%3E%3Cellipse cx='18' cy='45' rx='6' ry='12'/%3E%3Cellipse cx='270' cy='59' rx='6' ry='12' transform='rotate(-35 270 59)'/%3E%3Cellipse cx='284' cy='61' rx='6' ry='12' transform='rotate(40 284 61)'/%3E%3Cellipse cx='278' cy='73' rx='6' ry='12'/%3E%3C/g%3E%3Cg fill='%23D8B77E' opacity='.65'%3E%3Ccircle cx='18' cy='38' r='2.3'/%3E%3Ccircle cx='278' cy='66' r='2.3'/%3E%3C/g%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.74), transparent 72%),
+    linear-gradient(145deg, #fff8f4 0%, #f8e9e6 100%) !important;
+  background-size: 100% 100%, 100% 100%, 100% 100% !important;
+  background-repeat: no-repeat !important;
+  border-top: 1px solid rgba(210,170,171,.32) !important;
+}
+.category-folder-info h3,
+.category-folder-info h4,
+.category-folder-info p,
+.category-folder-info span,
+.category-folder-info strong {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 900px) {
+  .category-folder-info {
+    background-size: 100% 100%, 100% 100%, 100% 100% !important;
+  }
+}
