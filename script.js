@@ -3809,6 +3809,17 @@ const products = [
       "images/products/meniubaiat4.jpg"
     ]
   },
+  {
+    id: 337,
+    nume: "Pungi personalizate pentru copii",
+    categorie: "Torturi din cutiuțe",
+    pret: 8,
+    descriere: "Pungă personalizată pentru copii: 8 lei goală sau 20 lei cu Barni, Kinder Chocolate și acadea. Opțional, mini carte de colorat personalizată (+5 lei). Completează tematica, numele copilului și vârsta.",
+    poze: [
+      "images/products/pungipersonalizate.jpg",
+      "images/products/pungipersonalizate1.jpg"
+    ]
+  },
 
 
 ];
@@ -4082,7 +4093,7 @@ function renderProducts() {
             product.categorie === "Toppere"
               ? `<button type="button" class="add-cart" onclick="openTopperCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Alege topperul</button>`
               : product.categorie === "Torturi din cutiuțe"
-              ? `<button type="button" class="add-cart" onclick="openCakeBoxCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
+              ? `<button type="button" class="add-cart" onclick="${product.id === 337 ? "openPungiCustomizer" : "openCakeBoxCustomizer"}(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
               : product.categorie === "Martisoare"
               ? `<button type="button" class="add-cart" onclick="openMartisorCustomizer(${product.id}, document.getElementById(&quot;qty-${product.id}&quot;).textContent)">Personalizează</button>`
               : product.categorie === "Party"
@@ -4115,6 +4126,84 @@ function topperOptionPrice(label) {
   if (value.includes("shaker")) return 140;
   if (value.includes("simplu")) return 75;
   return 75;
+}
+
+function openPungiCustomizer(productId, quantity = 1) {
+  const product = products.find(item => item.id === Number(productId));
+  if (!product || Number(product.id) !== 337) return;
+  const qty = Math.max(1, Number(quantity) || 1);
+  document.querySelector(".pungi-customizer-modal")?.remove();
+  const modal = document.createElement("div");
+  modal.className = "pungi-customizer-modal";
+  modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.68);display:flex;align-items:center;justify-content:center;z-index:9999;padding:16px;";
+  modal.innerHTML = `
+    <div style="background:white;width:100%;max-width:560px;max-height:92vh;overflow:auto;border-radius:16px;padding:24px;box-sizing:border-box;position:relative;">
+      <button type="button" aria-label="Închide" class="pungi-close" style="position:absolute;top:8px;right:12px;border:0;background:none;font-size:30px;cursor:pointer;">×</button>
+      <h2 style="margin:0 35px 8px 0;color:#66745F;">Personalizează punga pentru copii</h2>
+      <p style="margin:8px 0 14px;">Alege punga goală sau varianta cu dulciuri. Mini cartea de colorat personalizată este opțională.</p>
+      <label style="display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid #ddd;border-radius:8px;margin-top:10px;">
+        <input type="radio" name="pungi-variant" value="empty" checked style="margin-top:4px;">
+        <span><strong>Pungă goală — 8 lei</strong></span>
+      </label>
+      <label style="display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid #ddd;border-radius:8px;margin-top:10px;">
+        <input type="radio" name="pungi-variant" value="sweets" style="margin-top:4px;">
+        <span><strong>Pungă cu dulciuri — 20 lei</strong><br><small>Include Barni, Kinder Chocolate și acadea.</small></span>
+      </label>
+      <label style="display:flex;gap:8px;align-items:flex-start;margin:12px 0;padding:12px;border:1px solid #eee;border-radius:8px;">
+        <input type="checkbox" class="pungi-coloring-book" style="margin-top:4px;">
+        <span><strong>Mini carte de colorat personalizată (+5 lei)</strong></span>
+      </label>
+      <label for="pungi-theme" style="display:block;margin-top:14px;font-weight:600;">Tematică *</label>
+      <input id="pungi-theme" type="text" required maxlength="250" placeholder="Ex.: animăluțe, prințese, mașinuțe..." style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+      <label for="pungi-name" style="display:block;margin-top:14px;font-weight:600;">Numele copilului *</label>
+      <input id="pungi-name" type="text" required maxlength="120" placeholder="Numele copilului" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+      <label for="pungi-age" style="display:block;margin-top:14px;font-weight:600;">Vârsta *</label>
+      <input id="pungi-age" type="text" required maxlength="60" placeholder="Ex.: 4 ani" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+      <p class="pungi-live-price" style="font-size:22px;font-weight:700;margin:18px 0;color:#66745F;"></p>
+      <p class="pungi-error" role="alert" style="color:#b00020;display:none;"></p>
+      <button type="button" class="pungi-add add-cart" style="width:100%;padding:14px;border:0;border-radius:9px;background:#B77E88;color:white;font-weight:700;cursor:pointer;font-size:16px;">Adaugă în coș</button>
+    </div>`;
+  document.body.appendChild(modal);
+  const radios = [...modal.querySelectorAll('input[name="pungi-variant"]')];
+  const coloringBook = modal.querySelector(".pungi-coloring-book");
+  const livePrice = modal.querySelector(".pungi-live-price");
+  const selectedVariant = () => modal.querySelector('input[name="pungi-variant"]:checked')?.value || "empty";
+  const unitPrice = () => (selectedVariant() === "sweets" ? 20 : 8) + (coloringBook.checked ? 5 : 0);
+  const updatePrice = () => {
+    livePrice.textContent = `Total: ${money(unitPrice() * qty)} · ${qty} pungă/pungi · ${money(unitPrice())} / bucată`;
+  };
+  radios.forEach(radio => radio.addEventListener("change", updatePrice));
+  coloringBook.addEventListener("change", updatePrice);
+  modal.querySelector(".pungi-close").addEventListener("click", () => modal.remove());
+  modal.addEventListener("click", event => { if (event.target === modal) modal.remove(); });
+  updatePrice();
+  modal.querySelector(".pungi-add").addEventListener("click", () => {
+    const theme = modal.querySelector("#pungi-theme").value.trim();
+    const name = modal.querySelector("#pungi-name").value.trim();
+    const age = modal.querySelector("#pungi-age").value.trim();
+    const error = modal.querySelector(".pungi-error");
+    if (!theme || !name || !age) {
+      error.textContent = "Completează tematica, numele copilului și vârsta.";
+      error.style.display = "block";
+      return;
+    }
+    const variant = selectedVariant();
+    const price = unitPrice();
+    const personalizare = {
+      tip: "pungiPersonalizate",
+      varianta: variant === "sweets" ? "Pungă cu Barni, Kinder Chocolate și acadea" : "Pungă goală",
+      pretBaza: variant === "sweets" ? 20 : 8,
+      miniCarteColorat: coloringBook.checked,
+      pretMiniCarteColorat: coloringBook.checked ? 5 : 0,
+      tematica: theme,
+      nume: name,
+      varsta: age
+    };
+    cart.push({ ...product, nume: product.nume + " — " + personalizare.varianta, pret: price, quantity: qty, personalizare });
+    renderCart();
+    modal.remove();
+    openCart();
+  });
 }
 
 function openCakeBoxCustomizer(productId, quantity = 1) {
@@ -6045,6 +6134,7 @@ window.addToCart = addToCart;
 window.removeFromCart = removeFromCart;
 window.setCategory = setCategory;
 window.openSetMotCustomizer = openSetMotCustomizer;
+window.openPungiCustomizer = openPungiCustomizer;
 window.openProductPersonalization = openProductPersonalization;
 window.closePersonalizeModal = closePersonalizeModal;
 window.openTopperCustomizer = openTopperCustomizer;
