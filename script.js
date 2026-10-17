@@ -3731,6 +3731,17 @@ const products = [
       "images/products/nrmasabaiat2.jpg"
     ]
   },
+  {
+    id: 331,
+    nume: "Număr pentru masă – Botez Stitch 5",
+    categorie: "Numere pentru mese",
+    pret: 6,
+    descriere: "Număr pentru masă personalizat pentru botez, cu tematică Stitch. Prețul este per bucată. Alege tematica, intervalul numerelor, numele copilului și data evenimentului.",
+    poze: [
+      "images/products/nrstitch.jpg",
+      "images/products/nrstitch1.jpg"
+    ]
+  },
 
 ];
 
