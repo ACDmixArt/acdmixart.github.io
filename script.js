@@ -4087,6 +4087,8 @@ function renderProducts() {
               ? `<button type="button" class="add-cart" onclick="openMartisorCustomizer(${product.id}, document.getElementById(&quot;qty-${product.id}&quot;).textContent)">Personalizează</button>`
               : product.categorie === "Party"
               ? `<button type="button" class="add-cart" onclick="${product.id === 266 ? "openGarlandCustomizer" : "openPartyCustomizer"}(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
+              : ["Numere pentru mese", "Meniuri"].includes(product.categorie)
+              ? `<button type="button" class="add-cart" onclick="openProductPersonalization(${product.id})">Personalizează</button>`
               : product.categorie === "Set Moț"
                 ? `<button type="button" class="add-cart" onclick="openSetMotCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
                 : product.categorie === "Set Gătit"
@@ -5518,9 +5520,11 @@ function renderDynamicFields() {
   });
 
   if (category === "Meniuri") {
+    const selectedMenuName = document.getElementById("formProduct")?.selectedOptions?.[0]?.textContent || "";
+    const isBaptismMenu = /botez/i.test(selectedMenuName);
     addFormField({ id: "formMenuText", label: "Meniul — preparate și băuturi", type: "textarea", placeholder: "Scrie meniul complet, în ordinea dorită", required: true });
     addFormField({ id: "formTheme", label: "Tematica dorită", placeholder: "Ex.: elegant, floral, rustic, culorile evenimentului", required: true });
-    addFormField({ id: "formNames", label: "Numele mirilor", placeholder: "Ex.: Andreea și Mihai", required: true });
+    addFormField({ id: "formNames", label: isBaptismMenu ? "Numele copilului" : "Numele mirilor", placeholder: isBaptismMenu ? "Ex.: numele copilului" : "Ex.: Andreea și Mihai", required: true });
     addFormField({ id: "formDate", label: "Data evenimentului", type: "date", required: true });
     addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Format, stil sau cerințe speciale" });
   } else if (category === "Numere pentru mese") {
@@ -5600,6 +5604,30 @@ function renderDynamicFields() {
   // Secțiunile proprii sunt la finalul formularului, după câmpurile categoriei.
   renderCustomModelFields();
   updateOrderSummary();
+}
+
+function openProductPersonalization(productId) {
+  const product = products.find(item => Number(item.id) === Number(productId));
+  const modal = document.getElementById("personalizeModal");
+  if (!product || !modal || !formCategory || !formProduct) return;
+
+  modal.hidden = false;
+  document.body.style.overflow = "hidden";
+  formCategory.value = product.categorie;
+  updateFormProducts();
+  formProduct.value = String(product.id);
+  renderDynamicFields();
+  updateOrderSummary();
+
+  const title = document.getElementById("personalizeModalTitle");
+  if (title) title.textContent = "Personalizează: " + product.nume;
+  document.getElementById("formQuantity")?.focus();
+}
+
+function closePersonalizeModal() {
+  const modal = document.getElementById("personalizeModal");
+  if (modal) modal.hidden = true;
+  document.body.style.overflow = "";
 }
 
 function updateFormProducts() {
@@ -6017,6 +6045,8 @@ window.addToCart = addToCart;
 window.removeFromCart = removeFromCart;
 window.setCategory = setCategory;
 window.openSetMotCustomizer = openSetMotCustomizer;
+window.openProductPersonalization = openProductPersonalization;
+window.closePersonalizeModal = closePersonalizeModal;
 window.openTopperCustomizer = openTopperCustomizer;
 window.openGatitCustomizer = openGatitCustomizer;
 window.openAgendaCustomizer = openAgendaCustomizer;
