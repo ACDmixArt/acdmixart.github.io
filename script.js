@@ -3096,7 +3096,6 @@ const products = [
     poze: [
       "images/products/yop.jpg",
       "images/products/yop1.jpg",
-      "images/products/yop2.jpg",
       "images/products/yop3.jpg",
       "images/products/yop4.jpg"
     ]
