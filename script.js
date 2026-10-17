@@ -3214,6 +3214,17 @@ const products = [
       "images/products/672.jpg"
     ]
   },
+  {
+    id: 288,
+    nume: "Set mini toppere 1",
+    categorie: "Toppere",
+    pret: 30,
+    descriere: "Set mini toppere personalizabile cu nume, vârstă și tematica dorită. Se pot adăuga toppere mici suplimentare la 3 lei/bucată.",
+    poze: [
+      "images/products/ju.jpg",
+      "images/products/ju1.jpg"
+    ]
+  },
 
 ];
 
@@ -3301,7 +3312,7 @@ function changeProductQuantity(productId, change) {
   if (product && priceEl) priceEl.textContent = `${money(unitPriceForQuantity(product, next))} / buc.`;
 }
 
-function descrierePersonalizare(product) {
+function descrierePersonalizareBaza(product) {
   const categorie = (product.categorie || "").toLocaleLowerCase("ro");
   if (categorie.includes("botez")) {
     return "Personalizăm culorile, numele, data și textul, iar tema poate fi adaptată în funcție de preferințe.";
@@ -3340,6 +3351,12 @@ function descrierePersonalizare(product) {
     return "Poți alege accesoriile și detaliile de personalizare disponibile pentru set.";
   }
   return "Culorile, textul, numele și personajele pot fi adaptate în funcție de model. Scrie-mi ce îți dorești și găsim împreună varianta potrivită.";
+}
+
+function descrierePersonalizare(product) {
+  const base = String(product?.descriere || descrierePersonalizareBaza(product)).trim();
+  const themeNote = "Se poate personaliza în tematica dorită.";
+  return base.toLocaleLowerCase("ro").includes(themeNote.toLocaleLowerCase("ro")) ? base : `${base} ${themeNote}`;
 }
 
 function isMin25Invitation(product) {
@@ -3467,6 +3484,72 @@ function openTopperCustomizer(productId, quantity = 1) {
   const product = products.find(item => item.id === Number(productId));
   if (!product || product.categorie !== "Toppere") return;
   const qty = Math.max(1, Number(quantity) || 1);
+
+  // Set mini toppere 1: base price plus optional extra mini toppers.
+  if (Number(product.id) === 288) {
+    document.querySelector(".topper-customizer-modal")?.remove();
+    const modal = document.createElement("div");
+    modal.className = "topper-customizer-modal";
+    modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.68);display:flex;align-items:center;justify-content:center;z-index:9999;padding:16px;";
+    modal.innerHTML = `
+      <div style="background:white;width:100%;max-width:560px;max-height:92vh;overflow:auto;border-radius:16px;padding:24px;box-sizing:border-box;position:relative;">
+        <button type="button" aria-label="Închide" class="topper-close" style="position:absolute;top:8px;right:12px;border:0;background:none;font-size:30px;cursor:pointer;">×</button>
+        <h2 style="margin:0 35px 8px 0;color:#66745F;">Personalizează Set mini toppere 1</h2>
+        <p>Preț de bază: <strong>30 lei</strong>. Poți adăuga toppere mici suplimentare la <strong>3 lei/bucată</strong>.</p>
+        <label for="mini1-name" style="display:block;margin-top:14px;font-weight:600;">Nume *</label>
+        <input id="mini1-name" type="text" required maxlength="120" placeholder="Numele dorit" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+        <label for="mini1-age" style="display:block;margin-top:14px;font-weight:600;">Vârstă *</label>
+        <input id="mini1-age" type="number" min="1" max="120" required placeholder="Ex.: 5" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+        <label for="mini1-theme" style="display:block;margin-top:14px;font-weight:600;">Tematică *</label>
+        <input id="mini1-theme" type="text" required maxlength="250" placeholder="Ex.: animăluțe, flori, personaje..." style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+        <label for="mini1-extra" style="display:block;margin-top:14px;font-weight:600;">Toppere mici suplimentare (opțional)</label>
+        <input id="mini1-extra" type="number" min="0" max="100" step="1" value="0" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+        <label for="mini1-details" style="display:block;margin-top:14px;font-weight:600;">Alte detalii (opțional)</label>
+        <textarea id="mini1-details" rows="3" maxlength="600" placeholder="Culori sau alte preferințe" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;resize:vertical;"></textarea>
+        <p class="mini1-live-price" style="font-size:22px;font-weight:700;margin:18px 0;color:#66745F;"></p>
+        <p class="mini1-error" role="alert" style="color:#b00020;display:none;"></p>
+        <button type="button" class="mini1-add add-cart" style="width:100%;padding:14px;border:0;border-radius:9px;background:#B77E88;color:white;font-weight:700;cursor:pointer;font-size:16px;">Adaugă în coș</button>
+      </div>
+    `;
+    document.body.appendChild(modal);
+    const extraInput = modal.querySelector("#mini1-extra");
+    const livePrice = modal.querySelector(".mini1-live-price");
+    const updateMiniPrice = () => {
+      const raw = Number(extraInput.value);
+      const extra = Number.isInteger(raw) ? Math.max(0, Math.min(100, raw)) : 0;
+      livePrice.textContent = `Total: ${money((30 + extra * 3) * qty)} · ${qty} set(uri) · ${extra} toppere suplimentare/set`;
+    };
+    extraInput.addEventListener("input", updateMiniPrice);
+    modal.querySelector(".topper-close").addEventListener("click", () => modal.remove());
+    modal.addEventListener("click", event => { if (event.target === modal) modal.remove(); });
+    updateMiniPrice();
+    modal.querySelector(".mini1-add").addEventListener("click", () => {
+      const name = modal.querySelector("#mini1-name").value.trim();
+      const age = modal.querySelector("#mini1-age").value.trim();
+      const theme = modal.querySelector("#mini1-theme").value.trim();
+      const details = modal.querySelector("#mini1-details").value.trim();
+      const rawExtra = Number(extraInput.value);
+      const extra = Number.isInteger(rawExtra) ? rawExtra : -1;
+      const error = modal.querySelector(".mini1-error");
+      if (!name || !theme || !age || Number(age) < 1 || Number(age) > 120) {
+        error.textContent = "Completează numele, tematica și o vârstă validă.";
+        error.style.display = "block";
+        return;
+      }
+      if (extra < 0 || extra > 100) {
+        error.textContent = "Numărul de toppere suplimentare trebuie să fie între 0 și 100.";
+        error.style.display = "block";
+        return;
+      }
+      const unitPrice = 30 + extra * 3;
+      const personalizare = { tip: "miniToppere", varianta: "Set mini toppere 1", pretBaza: 30, toppereSuplimentare: extra, pretSuplimente: extra * 3, nume: name, varsta: age, tematica: theme, detalii };
+      cart.push({ ...product, nume: "Set mini toppere 1 personalizat", pret: unitPrice, quantity: qty, personalizare });
+      renderCart();
+      modal.remove();
+      openCart();
+    });
+    return;
+  }
 
   // Set topper 1 and 2 share the same customization and pricing.
   if ([283, 284, 285, 286].includes(Number(product.id))) {
