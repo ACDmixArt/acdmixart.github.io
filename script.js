@@ -3669,6 +3669,18 @@ const products = [
       "images/products/vincaricatura.jpg"
     ]
   },
+  {
+    id: 326,
+    nume: "Sticlă de vin cu tematică de Crăciun",
+    categorie: "Căni",
+    pret: 120,
+    descriere: "Sticlă de vin personalizată cu tematică de Crăciun. Completează textul dorit în formular, apoi trimite fotografiile sau modelul de referință pe WhatsApp după finalizarea comenzii.",
+    poze: [
+      "images/products/vincraciun.jpg",
+      "images/products/vincraciun1.jpg",
+      "images/products/vincraciun2.jpg"
+    ]
+  },
 
 ];
 
