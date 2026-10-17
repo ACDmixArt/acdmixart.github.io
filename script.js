@@ -3613,6 +3613,17 @@ const products = [
       "images/products/termos1.jpg"
     ]
   },
+  {
+    id: 320,
+    nume: "Bidon pentru apă personalizabil",
+    categorie: "Căni",
+    pret: 75,
+    descriere: "Bidon pentru apă personalizat după preferințele tale! Alege personajul dorit, adaugă un nume și un text sau mesaj special. Toate detaliile se completează în formularul de comandă.",
+    poze: [
+      "images/products/bidonapa.jpg",
+      "images/products/bidonapa1.jpg"
+    ]
+  },
 
 ];
 
@@ -5333,7 +5344,7 @@ function renderDynamicFields() {
     addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Alte cerințe pentru set" });
   } else if (["Căni", "Pahare", "Mărturii"].includes(category)) {
     const selectedProductName = document.getElementById("formProduct")?.selectedOptions?.[0]?.textContent || "";
-    if (category === "Căni" && (selectedProductName.includes("Cană cu personaj și nume") || selectedProductName.includes("Termos personalizat"))) {
+    if (category === "Căni" && (selectedProductName.includes("Cană cu personaj și nume") || selectedProductName.includes("Termos personalizat") || selectedProductName.includes("Bidon pentru apă personalizabil"))) {
       addFormField({ id: "formCharacter", label: "Personajul dorit", placeholder: "Scrie personajul pe care îl dorești", required: true });
     }
     addFormField({ id: "formNames", label: "Nume / text pentru personalizare", placeholder: "Scrie exact numele sau mesajul dorit" });
