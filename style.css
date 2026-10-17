@@ -3033,3 +3033,7 @@ body.personalize-modal-open{overflow:hidden}
   .products-grid.category-folders-grid{gap:12px}
   .category-folder-name{font-size:18px}
 }
+
+
+/* Ascunde filtrele pe pagina principală a colecțiilor; nu le afișa peste dosare. */
+#filters.filters[hidden] { display: none !important; }
