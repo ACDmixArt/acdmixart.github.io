@@ -5624,7 +5624,7 @@ if (openSearchButton && productSearchInput) {
 function renderFeaturedProducts() {
   const container = document.getElementById("featuredProducts");
   if (!container) return;
-  const featuredIds = [1, 276, 290, 291];
+  const featuredIds = [1, 200, 282, 256];
   const featured = featuredIds
     .map(id => products.find(product => Number(product.id) === id))
     .filter(Boolean);
