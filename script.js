@@ -5620,9 +5620,55 @@ if (openSearchButton && productSearchInput) {
   });
 }
 
+
+function renderFeaturedProducts() {
+  const container = document.getElementById("featuredProducts");
+  if (!container) return;
+  const featuredCategories = ["Botez", "Nuntă", "Toppere", "Party"];
+  const featured = featuredCategories
+    .map(category => products.find(product => String(product.categorie || "").toLocaleLowerCase("ro") === category.toLocaleLowerCase("ro")))
+    .filter(Boolean);
+
+  const escapeHTML = value => String(value ?? "").replace(/[&<>"']/g, char => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  }[char]));
+
+  container.innerHTML = featured.map(product => {
+    const image = (product.poze || [product.poză]).find(Boolean) || "";
+    return `
+      <article class="featured-card">
+        <button class="featured-image-button" type="button" onclick="showFeaturedProduct(${Number(product.id)})" aria-label="Vezi ${escapeHTML(product.nume)} în catalog">
+          <img src="${escapeHTML(image)}" alt="${escapeHTML(product.nume)}" loading="lazy" onerror="this.style.display='none'">
+          <span class="featured-arrow" aria-hidden="true">↗</span>
+        </button>
+        <div class="featured-card-copy">
+          <p class="featured-category">${escapeHTML(product.categorie)}</p>
+          <h3>${escapeHTML(product.nume)}</h3>
+          <p class="featured-price">${money(product.pret)}</p>
+          <button class="featured-link" type="button" onclick="showFeaturedProduct(${Number(product.id)})">Vezi modelul <span aria-hidden="true">→</span></button>
+        </div>
+      </article>`;
+  }).join("");
+}
+
+window.showFeaturedProduct = function(productId) {
+  const product = products.find(item => Number(item.id) === Number(productId));
+  if (!product) return;
+  const search = document.getElementById("productSearch");
+  if (search) {
+    search.value = product.nume;
+    search.hidden = false;
+  }
+  activeCategory = "Toate";
+  renderCategories();
+  renderProducts();
+  document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth", block: "start" });
+};
+
 renderCategories();
 renderProducts();
 renderCart();
+renderFeaturedProducts();
 
 const year = document.getElementById("year");
 if (year) year.textContent = new Date().getFullYear();
