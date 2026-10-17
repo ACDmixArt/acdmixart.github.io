@@ -3066,6 +3066,13 @@ const products = [
       "images/products/magnetmartisor12.jpg"
     ]
   },
+  {
+    id: 276,
+    nume: "Topper personalizat",
+    categorie: "Toppere",
+    pret: 75,
+    poze: []
+  },
 
 ];
 
@@ -3281,7 +3288,9 @@ function renderProducts() {
             <button type="button" aria-label="Crește cantitatea" onclick="changeProductQuantity(${product.id}, 1)">+</button>
           </div>
           ${
-            product.categorie === "Martisoare"
+            product.categorie === "Toppere"
+              ? `<button type="button" class="add-cart" onclick="openTopperCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Alege topperul</button>`
+              : product.categorie === "Martisoare"
               ? `<button type="button" class="add-cart" onclick="openMartisorCustomizer(${product.id}, document.getElementById(&quot;qty-${product.id}&quot;).textContent)">Personalizează</button>`
               : product.categorie === "Party"
               ? `<button type="button" class="add-cart" onclick="${product.id === 266 ? "openGarlandCustomizer" : "openPartyCustomizer"}(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
@@ -3299,6 +3308,109 @@ function renderProducts() {
       </article>
     `;
   }).join("");
+}
+
+/* =========================
+   PERSONALIZARE TOPPERE
+========================= */
+
+function topperOptionPrice(label) {
+  const value = String(label || "");
+  if (value.includes("shaker + luminițe")) return 180;
+  if (value.includes("shaker")) return 140;
+  if (value.includes("simplu")) return 75;
+  return 75;
+}
+
+function openTopperCustomizer(productId, quantity = 1) {
+  const product = products.find(item => item.id === Number(productId));
+  if (!product || product.categorie !== "Toppere") return;
+  const qty = Math.max(1, Number(quantity) || 1);
+  document.querySelector(".topper-customizer-modal")?.remove();
+
+  const modal = document.createElement("div");
+  modal.className = "topper-customizer-modal";
+  modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.68);display:flex;align-items:center;justify-content:center;z-index:9999;padding:16px;";
+  modal.innerHTML = `
+    <div style="background:white;width:100%;max-width:560px;max-height:92vh;overflow:auto;border-radius:16px;padding:24px;box-sizing:border-box;position:relative;">
+      <button type="button" aria-label="Închide" class="topper-close" style="position:absolute;top:8px;right:12px;border:0;background:none;font-size:30px;cursor:pointer;">×</button>
+      <h2 style="margin:0 35px 8px 0;color:#66745F;">Personalizează topperul</h2>
+      <p>Alege varianta, apoi completează detaliile pentru design.</p>
+      <label for="topper-variant" style="display:block;margin-top:14px;font-weight:600;">Tip topper</label>
+      <select id="topper-variant" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+        <option value="75" data-label="Topper simplu — 2 straturi">Topper simplu — 2 straturi — 75 lei</option>
+        <option value="140" data-label="Topper cu shaker — 3–5 straturi">Topper cu shaker — 3–5 straturi — 140 lei</option>
+        <option value="180" data-label="Topper cu shaker + luminițe — 4–5 straturi">Topper cu shaker + luminițe — 4–5 straturi — 180 lei</option>
+      </select>
+      <label for="topper-theme" style="display:block;margin-top:14px;font-weight:600;">Tematica dorită *</label>
+      <input id="topper-theme" type="text" required maxlength="250" placeholder="Ex.: prințese, fotbal, flori, personaje..." style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+      <label for="topper-name" style="display:block;margin-top:14px;font-weight:600;">Nume *</label>
+      <input id="topper-name" type="text" required maxlength="120" placeholder="Numele care va apărea pe topper" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+      <label for="topper-age" style="display:block;margin-top:14px;font-weight:600;">Vârsta</label>
+      <input id="topper-age" type="number" min="1" max="120" placeholder="Ex.: 5" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+      <label for="topper-characters" style="display:block;margin-top:14px;font-weight:600;">Caricatură — număr de personaje (+20 lei/personaj)</label>
+      <input id="topper-characters" type="number" min="0" max="20" step="1" value="0" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+      <p style="font-size:13px;color:#555;margin:6px 0 0;">Lasă 0 dacă nu dorești caricatură. Fiecare personaj adaugă 20 lei.</p>
+      <label for="topper-details" style="display:block;margin-top:14px;font-weight:600;">Alte detalii (opțional)</label>
+      <textarea id="topper-details" rows="3" maxlength="600" placeholder="Culori, mesaj sau alte preferințe" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;resize:vertical;"></textarea>
+      <p class="topper-live-price" style="font-size:22px;font-weight:700;margin:18px 0;color:#66745F;">Total: 75,00 lei / topper</p>
+      <p class="topper-error" role="alert" style="color:#b00020;display:none;"></p>
+      <button type="button" class="topper-add add-cart" style="width:100%;padding:14px;border:0;border-radius:9px;background:#B77E88;color:white;font-weight:700;cursor:pointer;font-size:16px;">Adaugă în coș</button>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  const variant = modal.querySelector("#topper-variant");
+  const characters = modal.querySelector("#topper-characters");
+  const price = modal.querySelector(".topper-live-price");
+  const updatePrice = () => {
+    const base = Number(variant.value) || 75;
+    const count = Math.max(0, Math.min(20, Number(characters.value) || 0));
+    price.textContent = `Total: ${money(base + count * 20)} / topper · Cantitate: ${qty}`;
+  };
+  variant.addEventListener("change", updatePrice);
+  characters.addEventListener("input", updatePrice);
+  modal.querySelector(".topper-close").addEventListener("click", () => modal.remove());
+  modal.addEventListener("click", event => { if (event.target === modal) modal.remove(); });
+  updatePrice();
+
+  modal.querySelector(".topper-add").addEventListener("click", () => {
+    const name = modal.querySelector("#topper-name").value.trim();
+    const theme = modal.querySelector("#topper-theme").value.trim();
+    const age = modal.querySelector("#topper-age").value.trim();
+    const details = modal.querySelector("#topper-details").value.trim();
+    const rawCharacters = Number(characters.value);
+    const count = Number.isInteger(rawCharacters) ? rawCharacters : -1;
+    const error = modal.querySelector(".topper-error");
+    if (!name || !theme) {
+      error.textContent = "Completează numele și tematica topperului.";
+      error.style.display = "block";
+      return;
+    }
+    if (count < 0 || count > 20) {
+      error.textContent = "Numărul de personaje trebuie să fie între 0 și 20.";
+      error.style.display = "block";
+      return;
+    }
+    const basePrice = Number(variant.value) || 75;
+    const variantLabel = variant.options[variant.selectedIndex].dataset.label;
+    const unitPrice = basePrice + count * 20;
+    const personalizare = {
+      tip: "topper",
+      varianta: variantLabel,
+      pretBaza: basePrice,
+      personaje: count,
+      pretCaricatura: count * 20,
+      tematica: theme,
+      nume: name,
+      varsta: age,
+      detalii
+    };
+    cart.push({ ...product, nume: "Topper personalizat", pret: unitPrice, quantity: qty, personalizare });
+    renderCart();
+    modal.remove();
+    openCart();
+  });
 }
 
 /* =========================
@@ -3782,7 +3894,9 @@ function renderCart() {
         <strong>${item.nume}</strong>
         <span>${money(item.pret)} / buc.</span>
         ${
-          item.personalizare?.tip === "martisor"
+          item.personalizare?.tip === "topper"
+            ? `<p>Variantă: ${item.personalizare.varianta}<br>Tematică: ${item.personalizare.tematica}<br>Nume: ${item.personalizare.nume}<br>Vârstă: ${item.personalizare.varsta || "Nespecificată"}<br>Caricatură: ${item.personalizare.personaje} ${item.personalizare.personaje === 1 ? "personaj" : "personaje"} (+${money(item.personalizare.pretCaricatura)})<br>Alte detalii: ${item.personalizare.detalii || "Nespecificate"}</p>`
+            : item.personalizare?.tip === "martisor"
             ? `<p>Pentru: ${item.personalizare.pentru || "Nespecificat"}<br>De la: ${item.personalizare.deLa || "Nespecificat"}<br>Mesaj: ${item.personalizare.mesaj || "Fără mesaj"}</p>`
             : item.personalizare?.tip === "ghirlanda"
               ? `<p>Nume: ${item.personalizare.nume}<br>Litere selectate: ${item.personalizare.litere.join(", ")}<br>Preț: 10 lei/literă</p>`
@@ -3852,7 +3966,9 @@ if (cartWhatsapp) {
     let message = getACDMixArtGreeting() + " Doresc să plasez o comandă ACDmixArt:\n\n";
     cart.forEach((item, index) => {
       message += `${index + 1}. ${item.nume}\nCantitate: ${item.quantity || 1}\nPreț/buc.: ${money(item.pret)}\nSubtotal: ${money(item.pret * (item.quantity || 1))}\n`;
-      if (item.personalizare?.tip === "martisor") {
+      if (item.personalizare?.tip === "topper") {
+        message += `Variantă: ${item.personalizare.varianta}\nTematică: ${item.personalizare.tematica}\nNume: ${item.personalizare.nume}\nVârstă: ${item.personalizare.varsta || "Nespecificată"}\nCaricatură: ${item.personalizare.personaje} ${item.personalizare.personaje === 1 ? "personaj" : "personaje"} (+${money(item.personalizare.pretCaricatura)})\nAlte detalii: ${item.personalizare.detalii || "Nespecificate"}\n`;
+      } else if (item.personalizare?.tip === "martisor") {
         message += `Pentru: ${item.personalizare.pentru || "Nespecificat"}\nDe la: ${item.personalizare.deLa || "Nespecificat"}\nMesaj: ${item.personalizare.mesaj || "Fără mesaj"}\n`;
       } else if (item.personalizare?.tip === "agendă") {
         message += `Caricatură: ${item.personalizare.personaje === 0 ? "Fără caricatură" : item.personalizare.personaje + (item.personalizare.personaje === 1 ? " personaj" : " personaje")}\nCost caricatură: ${money(item.personalizare.pretCaricatura)}\n`;
@@ -4027,13 +4143,14 @@ zoomButton.addEventListener("click", function (e) {
 
   const personalizeButton = lightbox.querySelector(".lightbox-personalize");
 
-  if (!["Set Moț", "Agende", "Party", "Martisoare"].includes(product.categorie)) {
+  if (!["Set Moț", "Agende", "Party", "Martisoare", "Toppere"].includes(product.categorie)) {
     personalizeButton.hidden = true;
   }
 
   personalizeButton.addEventListener("click", () => {
     closeGallery();
-    if (product.categorie === "Agende") openAgendaCustomizer(product.id, 1);
+    if (product.categorie === "Toppere") openTopperCustomizer(product.id, 1);
+    else if (product.categorie === "Agende") openAgendaCustomizer(product.id, 1);
     else if (product.categorie === "Party") (product.id === 266 ? openGarlandCustomizer : openPartyCustomizer)(product.id, 1);
     else if (product.categorie === "Martisoare") openMartisorCustomizer(product.id, 1);
     else openSetMotCustomizer(product.id, 1);
@@ -4042,7 +4159,9 @@ zoomButton.addEventListener("click", function (e) {
   lightbox.querySelector(".lightbox-add-cart").addEventListener("click", () => {
     closeGallery();
 
-    if (product.categorie === "Set Moț") {
+    if (product.categorie === "Toppere") {
+      openTopperCustomizer(product.id, 1);
+    } else if (product.categorie === "Set Moț") {
       openSetMotCustomizer(product.id, 1);
     } else if (product.categorie === "Martisoare") {
       openMartisorCustomizer(product.id, 1);
@@ -4289,7 +4408,16 @@ function renderDynamicFields() {
     addFormField({ id: "formAge", label: "Vârsta (dacă este relevantă)", type: "number", min: 1 });
     addFormField({ id: "formTheme", label: "Tematică", placeholder: "Ex.: animale, capybara, personaje" });
     addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Ce ai dori să conțină produsul?" });
-  } else if (["Toppere", "Party"].includes(category)) {
+  } else if (category === "Toppere") {
+    addFormField({ id: "formTopperType", label: "Tip topper", type: "select", options: ["Topper simplu — 2 straturi — 75 lei", "Topper cu shaker — 3–5 straturi — 140 lei", "Topper cu shaker + luminițe — 4–5 straturi — 180 lei"], required: true });
+    addFormField({ id: "formTopperCharacters", label: "Caricatură — număr de personaje (+20 lei/personaj)", type: "number", min: 0, value: "0" });
+    addFormField({ id: "formNames", label: "Nume", placeholder: "Numele care va apărea pe topper", required: true });
+    addFormField({ id: "formAge", label: "Vârsta", type: "number", min: 1 });
+    addFormField({ id: "formTheme", label: "Tematica dorită", placeholder: "Scrie ce tematică dorești pentru produs", required: true });
+    addFormField({ id: "formColors", label: "Culori", placeholder: "Culorile dorite" });
+    addFormField({ id: "formDate", label: "Data evenimentului", type: "date" });
+    addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Mesaj, culori sau alte cerințe" });
+  } else if (category === "Party") {
     addFormField({ id: "formNames", label: "Nume / text", placeholder: "Textul care trebuie să apară" });
     addFormField({ id: "formAge", label: "Vârsta (dacă este relevantă)", type: "number", min: 1 });
     addFormField({ id: "formTheme", label: "Tematica dorită", placeholder: "Scrie ce tematică dorești pentru produs" });
@@ -4352,6 +4480,8 @@ function updateOrderSummary() {
     formThemeOther: "Altă tematică",
     formAge: "Vârstă",
     formAgendaCharacters: "Caricatură pentru agendă",
+    formTopperType: "Tip topper",
+    formTopperCharacters: "Număr personaje pentru caricatură",
     formCustomText: "Modelul tău — text / idee",
     formCustomColors: "Modelul tău — culori",
     formSuggestedPrice: "Buget propus (lei)"
@@ -4378,7 +4508,13 @@ function updateOrderSummary() {
       const optionCosts = { "Fără caricatură — 0 lei": 0, "1 personaj — 20 lei": 20, "2 personaje — 35 lei": 35, "3 personaje — 50 lei": 50 };
       unitPrice += optionCosts[agendaCharacters.value] || 0;
     }
-    unitPrice = product.categorie === "Set Moț" || product.categorie === "Agende" ? unitPrice : unitPriceForQuantity(product, qty);
+    if (product.categorie === "Toppere") {
+      const topperType = document.getElementById("formTopperType");
+      const characters = Math.max(0, Number(document.getElementById("formTopperCharacters")?.value) || 0);
+      unitPrice = topperOptionPrice(topperType?.value) + characters * 20;
+    } else {
+      unitPrice = product.categorie === "Set Moț" || product.categorie === "Agende" ? unitPrice : unitPriceForQuantity(product, qty);
+    }
     rows.push(["Preț/bucată", money(unitPrice)]);
     rows.push(["Preț estimativ", money(unitPrice * qty)]);
   }
@@ -4448,6 +4584,8 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
     const fields = [
       ["Nume / text", "formNames"],
       ["Caricatură pentru agendă", "formAgendaCharacters"],
+      ["Tip topper", "formTopperType"],
+      ["Număr personaje pentru caricatură", "formTopperCharacters"],
       ["Text invitație", "formText"],
       ["Data evenimentului", "formDate"],
       ["Culori", "formColors"],
@@ -4477,6 +4615,20 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
     if (product && product.categorie === "Agende" && agendaCharacters) {
       const optionCosts = { "Fără caricatură — 0 lei": 0, "1 personaj — 20 lei": 20, "2 personaje — 35 lei": 35, "3 personaje — 50 lei": 50 };
       unitPrice += optionCosts[agendaCharacters.value] || 0;
+    }
+    if (product && product.categorie === "Toppere") {
+      const topperType = document.getElementById("formTopperType");
+      const characters = Math.max(0, Number(document.getElementById("formTopperCharacters")?.value) || 0);
+      if (!topperType?.value) {
+        alert("Te rog să alegi tipul de topper.");
+        topperType?.focus();
+        return;
+      }
+      if (!document.getElementById("formNames")?.value.trim() || !document.getElementById("formTheme")?.value.trim()) {
+        alert("Te rog să completezi numele și tematica topperului.");
+        return;
+      }
+      unitPrice = topperOptionPrice(topperType.value) + characters * 20;
     }
     const suggestedPrice = document.getElementById("formSuggestedPrice");
     if (suggestedPrice && suggestedPrice.value.trim()) message += `Buget propus de client: ${suggestedPrice.value.trim()} lei\n`;
@@ -4621,6 +4773,7 @@ window.addToCart = addToCart;
 window.removeFromCart = removeFromCart;
 window.setCategory = setCategory;
 window.openSetMotCustomizer = openSetMotCustomizer;
+window.openTopperCustomizer = openTopperCustomizer;
 window.openGatitCustomizer = openGatitCustomizer;
 window.openAgendaCustomizer = openAgendaCustomizer;
 window.changeCartQuantity = changeCartQuantity;
