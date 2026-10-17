@@ -3316,6 +3316,20 @@ const products = [
     ]
   },
   {
+    id: 297,
+    nume: "Tort din cutiuțe – Superbi",
+    categorie: "Torturi din cutiuțe",
+    pret: 7,
+    descriere: "Cutiuță de 7 lei cu 9 toppere decorative și topper central incluse. Opțional: suport +25 lei și luminițe +25 lei. Varianta cu dulciuri este 19 lei și include toppere, suport și luminițe.",
+    poze: [
+      "images/products/superbi.jpg",
+      "images/products/superbi1.jpg",
+      "images/products/superbi2.jpg",
+      "images/products/superbi3.jpg",
+      "images/products/superbi4.jpg"
+    ]
+  },
+  {
     id: 293,
     nume: "Mini topper",
     categorie: "Toppere",
