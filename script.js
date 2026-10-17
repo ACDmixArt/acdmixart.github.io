@@ -3184,8 +3184,8 @@ const products = [
     pret: 160,
     poze: [
       "images/products/minc.jpg",
-      "images/products/mic1.jpg",
-      "images/products/mic2.jpg"
+      "images/products/minc1.jpg",
+      "images/products/minc2.jpg"
     ]
   },
   {
