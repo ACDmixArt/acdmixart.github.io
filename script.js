@@ -3544,6 +3544,16 @@ const products = [
       "images/products/bridee1.jpg"
     ]
   },
+  {
+    id: 314,
+    nume: "Cană cu poză",
+    categorie: "Căni",
+    pret: 30,
+    descriere: "Cană personalizată cu fotografia și textul dorit. Poți adăuga un nume sau un mesaj. Fotografia se atașează direct în WhatsApp când trimiți comanda.",
+    poze: [
+      "images/products/canapoza.jpg"
+    ]
+  },
 
 ];
 
@@ -5263,10 +5273,10 @@ function renderDynamicFields() {
     addFormField({ id: "formFrame", label: "Adaugă ramă foto (+60 lei)", type: "checkbox" });
     addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Alte cerințe pentru set" });
   } else if (["Căni", "Pahare", "Mărturii"].includes(category)) {
-    addFormField({ id: "formNames", label: "Nume / text pentru personalizare", placeholder: "Scrie exact textul dorit" });
-    addFormField({ id: "formColors", label: "Culori", placeholder: "Culorile dorite" });
+    addFormField({ id: "formNames", label: "Nume / text pentru personalizare", placeholder: "Scrie exact numele sau mesajul dorit" });
+    addFormField({ id: "formColors", label: "Culori", placeholder: "Culorile dorite (dacă este cazul)" });
     addFormField({ id: "formDate", label: "Data evenimentului", type: "date" });
-    addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Tematică și cerințe speciale" });
+    addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: category === "Căni" ? "Descrie personalizarea dorită. Pentru cana cu poză, atașează fotografia în conversația WhatsApp când trimiți comanda." : "Tematică și cerințe speciale" });
   } else if (category === "Agende") {
     addFormField({ id: "formAgendaCharacters", label: "Caricatură", type: "select", options: ["Fără caricatură — 0 lei", "1 personaj — 20 lei", "2 personaje — 35 lei", "3 personaje — 50 lei"] });
     addFormField({ id: "formNames", label: "Nume / detalii pentru agendă", placeholder: "Numele sau textul dorit pe agendă" });
