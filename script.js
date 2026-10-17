@@ -3602,6 +3602,17 @@ const products = [
       "images/products/cana5.jpg"
     ]
   },
+  {
+    id: 319,
+    nume: "Termos personalizat",
+    categorie: "Căni",
+    pret: 90,
+    descriere: "Termos personalizat cu personajul preferat, nume și text la alegere. Completează în formular personajul dorit, numele și mesajul exact pentru personalizare.",
+    poze: [
+      "images/products/termos.jpg",
+      "images/products/termos1.jpg"
+    ]
+  },
 
 ];
 
@@ -5321,7 +5332,8 @@ function renderDynamicFields() {
     addFormField({ id: "formFrame", label: "Adaugă ramă foto (+60 lei)", type: "checkbox" });
     addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Alte cerințe pentru set" });
   } else if (["Căni", "Pahare", "Mărturii"].includes(category)) {
-    if (category === "Căni" && document.getElementById("formProduct")?.selectedOptions?.[0]?.textContent?.includes("Cană cu personaj și nume")) {
+    const selectedProductName = document.getElementById("formProduct")?.selectedOptions?.[0]?.textContent || "";
+    if (category === "Căni" && (selectedProductName.includes("Cană cu personaj și nume") || selectedProductName.includes("Termos personalizat"))) {
       addFormField({ id: "formCharacter", label: "Personajul dorit", placeholder: "Scrie personajul pe care îl dorești", required: true });
     }
     addFormField({ id: "formNames", label: "Nume / text pentru personalizare", placeholder: "Scrie exact numele sau mesajul dorit" });
