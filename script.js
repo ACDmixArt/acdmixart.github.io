@@ -3144,6 +3144,17 @@ const products = [
       "images/products/gaba3.jpg"
     ]
   },
+  {
+    id: 282,
+    nume: "Topper Minecraft",
+    categorie: "Toppere",
+    pret: 160,
+    poze: [
+      "images/products/minc.jpg",
+      "images/products/mic1.jpg",
+      "images/products/mic2.jpg"
+    ]
+  },
 
 ];
 
@@ -3399,7 +3410,7 @@ function openTopperCustomizer(productId, quantity = 1) {
   const qty = Math.max(1, Number(quantity) || 1);
 
   // Topper Winnie is a separate fixed-price design, not one of the 75/140/180 lei variants.
-  if ([280, 281].includes(Number(product.id))) {
+  if ([280, 281, 282].includes(Number(product.id))) {
     document.querySelector(".topper-customizer-modal")?.remove();
     const modal = document.createElement("div");
     modal.className = "topper-customizer-modal";
