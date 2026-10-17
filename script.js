@@ -3303,6 +3303,19 @@ const products = [
     ]
   },
   {
+    id: 296,
+    nume: "Tort din cutiuțe",
+    categorie: "Torturi din cutiuțe",
+    pret: 7,
+    descriere: "Cutiuță de 7 lei cu 9 toppere decorative și topper central incluse. Opțional: suport +25 lei și luminițe +25 lei. Varianta cu dulciuri este 19 lei și include toppere, suport și luminițe.",
+    poze: [
+      "images/products/tortcu.jpg",
+      "images/products/tortcu1.jpg",
+      "images/products/tortcu2.jpg",
+      "images/products/tortcu3.jpg"
+    ]
+  },
+  {
     id: 293,
     nume: "Mini topper",
     categorie: "Toppere",
@@ -3359,7 +3372,8 @@ function categories() {
     "Agende",
     "Party",
     "Set Moț",
-    "Set Gătit"
+    "Set Gătit",
+    "Torturi din cutiuțe"
   ];
 }
 
@@ -3567,6 +3581,97 @@ function topperOptionPrice(label) {
   if (value.includes("shaker")) return 140;
   if (value.includes("simplu")) return 75;
   return 75;
+}
+
+function openCakeBoxCustomizer(productId, quantity = 1) {
+  const product = products.find(item => item.id === Number(productId));
+  if (!product || product.categorie !== "Torturi din cutiuțe") return;
+  const qty = Math.max(1, Number(quantity) || 1);
+  document.querySelector(".cakebox-customizer-modal")?.remove();
+  const modal = document.createElement("div");
+  modal.className = "cakebox-customizer-modal";
+  modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.68);display:flex;align-items:center;justify-content:center;z-index:9999;padding:16px;";
+  modal.innerHTML = `
+    <div style="background:white;width:100%;max-width:580px;max-height:92vh;overflow:auto;border-radius:16px;padding:24px;box-sizing:border-box;position:relative;">
+      <button type="button" aria-label="Închide" class="cakebox-close" style="position:absolute;top:8px;right:12px;border:0;background:none;font-size:30px;cursor:pointer;">×</button>
+      <h2 style="margin:0 35px 8px 0;color:#66745F;">Personalizează tortul din cutiuțe</h2>
+      <p style="margin:8px 0 14px;">Alege varianta dorită. Cutiuța simplă include 9 toppere decorative și topperul central.</p>
+      <label style="display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid #ddd;border-radius:8px;margin-top:10px;">
+        <input type="radio" name="cakebox-variant" value="simple" checked style="margin-top:4px;">
+        <span><strong>Cutiuță simplă — 7 lei</strong><br><small>Include 9 toppere decorative + topper central.</small></span>
+      </label>
+      <label style="display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid #ddd;border-radius:8px;margin-top:10px;">
+        <input type="radio" name="cakebox-variant" value="sweets" style="margin-top:4px;">
+        <span><strong>Cutie cu dulciuri — 19 lei</strong><br><small>Kinder Chocolate, Barni și acadea. Include toppere, suport și luminițe.</small></span>
+      </label>
+      <div class="cakebox-extras" style="margin-top:12px;padding:12px;border:1px solid #eee;border-radius:8px;">
+        <p style="margin:0 0 8px;font-weight:600;">Opționale pentru cutiuța simplă</p>
+        <label style="display:flex;gap:8px;align-items:center;margin:8px 0;"><input type="checkbox" class="cakebox-support"> Suport (+25 lei)</label>
+        <label style="display:flex;gap:8px;align-items:center;margin:8px 0;"><input type="checkbox" class="cakebox-lights"> Luminițe (+25 lei)</label>
+      </div>
+      <label for="cakebox-theme" style="display:block;margin-top:14px;font-weight:600;">Tematică *</label>
+      <input id="cakebox-theme" type="text" required maxlength="250" placeholder="Ex.: animăluțe, flori, personaje..." style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+      <label for="cakebox-name" style="display:block;margin-top:14px;font-weight:600;">Nume *</label>
+      <input id="cakebox-name" type="text" required maxlength="120" placeholder="Numele dorit" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+      <label for="cakebox-age" style="display:block;margin-top:14px;font-weight:600;">Vârstă (opțional)</label>
+      <input id="cakebox-age" type="text" maxlength="60" placeholder="Ex.: 5 ani" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+      <p class="cakebox-live-price" style="font-size:22px;font-weight:700;margin:18px 0;color:#66745F;"></p>
+      <p class="cakebox-error" role="alert" style="color:#b00020;display:none;"></p>
+      <button type="button" class="cakebox-add add-cart" style="width:100%;padding:14px;border:0;border-radius:9px;background:#B77E88;color:white;font-weight:700;cursor:pointer;font-size:16px;">Adaugă în coș</button>
+    </div>`;
+  document.body.appendChild(modal);
+  const radios = [...modal.querySelectorAll('input[name="cakebox-variant"]')];
+  const support = modal.querySelector(".cakebox-support");
+  const lights = modal.querySelector(".cakebox-lights");
+  const extras = modal.querySelector(".cakebox-extras");
+  const livePrice = modal.querySelector(".cakebox-live-price");
+  const selectedVariant = () => modal.querySelector('input[name="cakebox-variant"]:checked')?.value || "simple";
+  const updatePrice = () => {
+    const sweets = selectedVariant() === "sweets";
+    support.disabled = sweets;
+    lights.disabled = sweets;
+    extras.style.opacity = sweets ? "0.5" : "1";
+    const unitPrice = sweets ? 19 : 7 + (support.checked ? 25 : 0) + (lights.checked ? 25 : 0);
+    livePrice.textContent = `Total: ${money(unitPrice * qty)} · ${qty} cutiuță/cutiuțe · ${money(unitPrice)} / bucată`;
+  };
+  radios.forEach(radio => radio.addEventListener("change", updatePrice));
+  support.addEventListener("change", updatePrice);
+  lights.addEventListener("change", updatePrice);
+  modal.querySelector(".cakebox-close").addEventListener("click", () => modal.remove());
+  modal.addEventListener("click", event => { if (event.target === modal) modal.remove(); });
+  updatePrice();
+  modal.querySelector(".cakebox-add").addEventListener("click", () => {
+    const theme = modal.querySelector("#cakebox-theme").value.trim();
+    const name = modal.querySelector("#cakebox-name").value.trim();
+    const age = modal.querySelector("#cakebox-age").value.trim();
+    const error = modal.querySelector(".cakebox-error");
+    if (!theme || !name) {
+      error.textContent = "Completează tematica și numele.";
+      error.style.display = "block";
+      return;
+    }
+    const variant = selectedVariant();
+    const unitPrice = variant === "sweets" ? 19 : 7 + (support.checked ? 25 : 0) + (lights.checked ? 25 : 0);
+    const personalizare = {
+      tip: "tortDinCutiute",
+      varianta: variant === "sweets" ? "Cutie cu dulciuri (Kinder Chocolate, Barni și acadea)" : "Cutiuță simplă",
+      pretBaza: variant === "sweets" ? 19 : 7,
+      suport: variant === "simple" && support.checked,
+      pretSuport: variant === "simple" && support.checked ? 25 : 0,
+      luminite: variant === "simple" && lights.checked,
+      pretLuminite: variant === "simple" && lights.checked ? 25 : 0,
+      includeToppere: true,
+      includeSuportSiLuminite: variant === "sweets",
+      toppereIncluse: "9 toppere decorative + topper central",
+      tematica: theme,
+      nume: name,
+      varsta: age
+    };
+    cart.push({ ...product, nume: product.nume + " — " + personalizare.varianta, pret: unitPrice, quantity: qty, personalizare });
+    renderCart();
+    modal.remove();
+    openCart();
+  });
 }
 
 function openTopperCustomizer(productId, quantity = 1) {
@@ -4632,13 +4737,14 @@ zoomButton.addEventListener("click", function (e) {
 
   const personalizeButton = lightbox.querySelector(".lightbox-personalize");
 
-  if (!["Set Moț", "Agende", "Party", "Martisoare", "Toppere"].includes(product.categorie)) {
+  if (!["Set Moț", "Agende", "Party", "Martisoare", "Toppere", "Torturi din cutiuțe"].includes(product.categorie)) {
     personalizeButton.hidden = true;
   }
 
   personalizeButton.addEventListener("click", () => {
     closeGallery();
     if (product.categorie === "Toppere") openTopperCustomizer(product.id, 1);
+    else if (product.categorie === "Torturi din cutiuțe") openCakeBoxCustomizer(product.id, 1);
     else if (product.categorie === "Agende") openAgendaCustomizer(product.id, 1);
     else if (product.categorie === "Party") (product.id === 266 ? openGarlandCustomizer : openPartyCustomizer)(product.id, 1);
     else if (product.categorie === "Martisoare") openMartisorCustomizer(product.id, 1);
@@ -4650,6 +4756,8 @@ zoomButton.addEventListener("click", function (e) {
 
     if (product.categorie === "Toppere") {
       openTopperCustomizer(product.id, 1);
+    } else if (product.categorie === "Torturi din cutiuțe") {
+      openCakeBoxCustomizer(product.id, 1);
     } else if (product.categorie === "Set Moț") {
       openSetMotCustomizer(product.id, 1);
     } else if (product.categorie === "Martisoare") {
