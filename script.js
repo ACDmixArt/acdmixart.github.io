@@ -4409,7 +4409,7 @@ function renderDynamicFields() {
     addFormField({ id: "formTheme", label: "Tematică", placeholder: "Ex.: animale, capybara, personaje" });
     addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Ce ai dori să conțină produsul?" });
   } else if (category === "Toppere") {
-    addFormField({ id: "formTopperType", label: "Tip topper", type: "select", options: ["Topper simplu — 2 straturi — 75 lei", "Topper cu shaker — 3–5 straturi — 140 lei", "Topper cu shaker + luminițe — 4–5 straturi — 180 lei"], required: true });
+    addFormField({ id: "formTopperType", label: "Tip topper", type: "select", options: ["Topper simplu — 2 straturi — 75 lei", "Topper cu shaker — 3–5 straturi — 140 lei", "Topper cu shaker + luminițe — 4–5 straturi — 180 lei"], required: true, value: "Topper simplu — 2 straturi — 75 lei" });
     addFormField({ id: "formTopperCharacters", label: "Caricatură — număr de personaje (+20 lei/personaj)", type: "number", min: 0, value: "0" });
     addFormField({ id: "formNames", label: "Nume", placeholder: "Numele care va apărea pe topper", required: true });
     addFormField({ id: "formAge", label: "Vârsta", type: "number", min: 1 });
