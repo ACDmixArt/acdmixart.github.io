@@ -3102,6 +3102,17 @@ const products = [
     ]
   },
   {
+    id: 290,
+    nume: "Topper Bluey",
+    categorie: "Toppere",
+    pret: 75,
+    poze: [
+      "images/products/smlc.jpg",
+      "images/products/smlc1.jpg",
+      "images/products/smlc2.jpg"
+    ]
+  },
+  {
     id: 287,
     nume: "Topper 3D Super pisicuțe",
     categorie: "Toppere",
