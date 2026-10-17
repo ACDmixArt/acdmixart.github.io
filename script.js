@@ -3636,6 +3636,16 @@ const products = [
     ]
   },
   {
+    id: 342,
+    nume: "Halba de bere personalizabila",
+    categorie: "Căni",
+    pret: 60,
+    descriere: "Halbă de bere personalizabilă cu nume și text la alegere. Completează detaliile în formularul de personalizare.",
+    poze: [
+      "images/products/halba.jpg"
+    ]
+  },
+  {
     id: 341,
     nume: "Caricatură online",
     categorie: "Caricaturi",
