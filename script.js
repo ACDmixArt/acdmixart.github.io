@@ -5150,7 +5150,9 @@ function renderCart() {
         <strong>${item.nume}</strong>
         <span>${money(item.pret)} / buc.</span>
         ${
-          item.personalizare?.tip === "topper"
+          item.personalizare?.tip === "caricatura"
+            ? `<p>Format: ${item.personalizare.format}<br>Personaje: ${item.personalizare.personaje} (incluse 1–2, suplimentare: ${item.personalizare.personajeSuplimentare})<br>Ținute de meserie: ${item.personalizare.tinuteProfesie ? "Da (+30 lei)" : "Nu"}<br>Mașină: ${item.personalizare.masina ? "Da (+15 lei)" : "Nu"}<br>Motocicletă: ${item.personalizare.motocicleta ? "Da (+15 lei)" : "Nu"}<br>Animal de companie: ${item.personalizare.animalCompanie ? "Da (+15 lei)" : "Nu"}<br>Detalii: ${item.personalizare.detalii || "Nespecificate"}</p>`
+            : item.personalizare?.tip === "topper"
             ? `<p>Variantă: ${item.personalizare.varianta}<br>Tematică: ${item.personalizare.tematica}<br>Nume: ${item.personalizare.nume}<br>Vârstă: ${item.personalizare.varsta || "Nespecificată"}<br>Caricatură: ${item.personalizare.personaje} ${item.personalizare.personaje === 1 ? "personaj" : "personaje"} (+${money(item.personalizare.pretCaricatura)})<br>Alte detalii: ${item.personalizare.detalii || "Nespecificate"}</p>`
             : item.personalizare?.tip === "martisor"
             ? `<p>Pentru: ${item.personalizare.pentru || "Nespecificat"}<br>De la: ${item.personalizare.deLa || "Nespecificat"}<br>Mesaj: ${item.personalizare.mesaj || "Fără mesaj"}</p>`
@@ -5224,7 +5226,9 @@ if (cartWhatsapp) {
     let message = getACDMixArtGreeting() + " Doresc să plasez o comandă ACDmixArt:\n\n";
     cart.forEach((item, index) => {
       message += `${index + 1}. ${item.nume}\nCantitate: ${item.quantity || 1}\nPreț/buc.: ${money(item.pret)}\nSubtotal: ${money(item.pret * (item.quantity || 1))}\n`;
-      if (item.personalizare?.tip === "topper") {
+      if (item.personalizare?.tip === "caricatura") {
+        message += `Format: ${item.personalizare.format}\\nPersonaje: ${item.personalizare.personaje} (suplimentare: ${item.personalizare.personajeSuplimentare}, +${money(item.personalizare.pretPersonajeSuplimentare)})\\nȚinute de meserie: ${item.personalizare.tinuteProfesie ? "Da (+30 lei)" : "Nu"}\\nMașină: ${item.personalizare.masina ? "Da (+15 lei)" : "Nu"}\\nMotocicletă: ${item.personalizare.motocicleta ? "Da (+15 lei)" : "Nu"}\\nAnimal de companie: ${item.personalizare.animalCompanie ? "Da (+15 lei)" : "Nu"}\\nAlte detalii: ${item.personalizare.detalii || "Nespecificate"}\\n`;
+      } else if (item.personalizare?.tip === "topper") {
         message += `Variantă: ${item.personalizare.varianta}\nTematică: ${item.personalizare.tematica}\nNume: ${item.personalizare.nume}\nVârstă: ${item.personalizare.varsta || "Nespecificată"}\nCaricatură: ${item.personalizare.personaje} ${item.personalizare.personaje === 1 ? "personaj" : "personaje"} (+${money(item.personalizare.pretCaricatura)})\nAlte detalii: ${item.personalizare.detalii || "Nespecificate"}\n`;
       } else if (item.personalizare?.tip === "martisor") {
         message += `Pentru: ${item.personalizare.pentru || "Nespecificat"}\nDe la: ${item.personalizare.deLa || "Nespecificat"}\nMesaj: ${item.personalizare.mesaj || "Fără mesaj"}\n`;
@@ -6009,6 +6013,101 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
 
 
 
+
+/* =========================
+   PERSONALIZARE CARICATURI
+========================= */
+function openCaricatureCustomizer(productId, quantity = 1) {
+  const product = products.find(item => item.id === Number(productId) && item.categorie === "Caricaturi");
+  if (!product) return;
+  const qty = Math.max(1, Number(quantity) || 1);
+  document.querySelector(".caricature-customizer-modal")?.remove();
+  const defaults = {
+    339: { format: "A4 cu ramă", base: 140 },
+    340: { format: "A3 cu ramă", base: 190 },
+    341: { format: "Online", base: 120 }
+  };
+  const selected = defaults[product.id] || defaults[339];
+  const modal = document.createElement("div");
+  modal.className = "caricature-customizer-modal";
+  modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.65);display:flex;align-items:center;justify-content:center;z-index:99999;padding:16px;overflow:auto;";
+  modal.innerHTML = '<div style="background:#fff;width:100%;max-width:560px;max-height:92vh;overflow:auto;border-radius:16px;padding:22px;box-sizing:border-box;color:#4E4945;">' +
+    '<h2 style="margin:0 0 8px;color:#66745F;">Personalizează caricatura</h2>' +
+    '<p style="margin:0 0 16px;">Alege formatul și opțiunile. Prețul se actualizează automat.</p>' +
+    '<label for="caricature-format" style="display:block;font-weight:600;margin:12px 0 6px;">Format</label>' +
+    '<select id="caricature-format" style="width:100%;padding:11px;border:1px solid #ccc;border-radius:8px;">' +
+    '<option value="A4 cu ramă" data-base="140">A4 — 21 × 30 cm, cu ramă — 140 lei</option>' +
+    '<option value="A3 cu ramă" data-base="190">A3 — 30 × 42 cm, cu ramă — 190 lei</option>' +
+    '<option value="Online" data-base="120">Online — 120 lei</option></select>' +
+    '<label for="caricature-people" style="display:block;font-weight:600;margin:14px 0 6px;">Număr de personaje (1–2 incluse)</label>' +
+    '<input id="caricature-people" type="number" min="1" max="30" step="1" value="1" style="width:100%;padding:11px;border:1px solid #ccc;border-radius:8px;box-sizing:border-box;">' +
+    '<label style="display:flex;gap:10px;align-items:flex-start;margin:14px 0;"><input id="caricature-profession" type="checkbox" style="margin-top:4px;"> <span>Personaje îmbrăcate în ținute specifice meseriei <strong>(+30 lei)</strong></span></label>' +
+    '<div style="font-weight:600;margin:12px 0 6px;">Elemente suplimentare (+15 lei fiecare)</div>' +
+    '<label style="display:flex;gap:10px;align-items:center;margin:8px 0;"><input id="caricature-car" type="checkbox"> Mașină (+15 lei)</label>' +
+    '<label style="display:flex;gap:10px;align-items:center;margin:8px 0;"><input id="caricature-motorcycle" type="checkbox"> Motocicletă (+15 lei)</label>' +
+    '<label style="display:flex;gap:10px;align-items:center;margin:8px 0;"><input id="caricature-pet" type="checkbox"> Animal de companie (+15 lei)</label>' +
+    '<label for="caricature-details" style="display:block;font-weight:600;margin:14px 0 6px;">Detalii / meserii / alte cerințe</label>' +
+    '<textarea id="caricature-details" rows="3" placeholder="Scrie meseriile și detaliile dorite. Fotografiile se trimit pe WhatsApp după apăsarea butonului de comandă." style="width:100%;padding:11px;border:1px solid #ccc;border-radius:8px;box-sizing:border-box;resize:vertical;"></textarea>' +
+    '<div id="caricature-price" style="margin:16px 0;padding:13px;background:#FAF7F2;border-radius:10px;font-weight:700;font-size:18px;">Preț estimativ: ' + money(selected.base) + '</div>' +
+    '<div style="display:flex;gap:10px;flex-wrap:wrap;"><button type="button" id="caricature-add" class="add-cart" style="flex:1;min-width:160px;">Adaugă în coș</button><button type="button" id="caricature-cancel" style="padding:11px 16px;border:1px solid #ccc;border-radius:9px;background:#fff;cursor:pointer;">Renunță</button></div>' +
+    '</div>';
+  document.body.appendChild(modal);
+  const formatEl = modal.querySelector("#caricature-format");
+  const peopleEl = modal.querySelector("#caricature-people");
+  const professionEl = modal.querySelector("#caricature-profession");
+  const carEl = modal.querySelector("#caricature-car");
+  const motoEl = modal.querySelector("#caricature-motorcycle");
+  const petEl = modal.querySelector("#caricature-pet");
+  const detailsEl = modal.querySelector("#caricature-details");
+  const priceEl = modal.querySelector("#caricature-price");
+  formatEl.value = selected.format;
+  const calc = () => {
+    const base = Number(formatEl.selectedOptions[0]?.dataset.base) || 120;
+    const people = Math.max(1, Math.floor(Number(peopleEl.value) || 1));
+    const extraPeople = Math.max(0, people - 2) * 20;
+    const profession = professionEl.checked ? 30 : 0;
+    const extras = (carEl.checked ? 15 : 0) + (motoEl.checked ? 15 : 0) + (petEl.checked ? 15 : 0);
+    const total = base + extraPeople + profession + extras;
+    priceEl.textContent = "Preț/bucată: " + money(total) + " · Total pentru " + qty + " buc.: " + money(total * qty);
+    return { base, people, extraPeople, profession, extras, total };
+  };
+  [formatEl, peopleEl, professionEl, carEl, motoEl, petEl].forEach(el => {
+    el.addEventListener("input", calc);
+    el.addEventListener("change", calc);
+  });
+  calc();
+  modal.querySelector("#caricature-cancel").addEventListener("click", () => modal.remove());
+  modal.addEventListener("click", event => { if (event.target === modal) modal.remove(); });
+  modal.querySelector("#caricature-add").addEventListener("click", () => {
+    const people = Number(peopleEl.value);
+    if (!Number.isInteger(people) || people < 1 || people > 30) {
+      alert("Introdu un număr de personaje între 1 și 30.");
+      peopleEl.focus();
+      return;
+    }
+    const price = calc();
+    const personalizare = {
+      tip: "caricatura",
+      format: formatEl.value,
+      personaje: people,
+      personajeSuplimentare: Math.max(0, people - 2),
+      pretPersonajeSuplimentare: price.extraPeople,
+      tinuteProfesie: professionEl.checked,
+      masina: carEl.checked,
+      motocicleta: motoEl.checked,
+      animalCompanie: petEl.checked,
+      detalii: detailsEl.value.trim(),
+      pretBaza: price.base,
+      pretTinute: price.profession,
+      pretElemente: price.extras
+    };
+    cart.push({ ...product, nume: product.nume + " — " + formatEl.value, pret: price.total, quantity: qty, personalizare });
+    renderCart();
+    modal.remove();
+    openCart();
+  });
+}
+
 /* =========================
    INITIALIZARE
 ========================= */
@@ -6187,6 +6286,7 @@ window.setCategory = setCategory;
 window.openSetMotCustomizer = openSetMotCustomizer;
 window.openPungiCustomizer = openPungiCustomizer;
 window.openProductPersonalization = openProductPersonalization;
+window.openCaricatureCustomizer = openCaricatureCustomizer;
 window.closePersonalizeModal = closePersonalizeModal;
 window.openTopperCustomizer = openTopperCustomizer;
 window.openGatitCustomizer = openGatitCustomizer;
