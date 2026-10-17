@@ -3023,6 +3023,20 @@ const products = [
       "images/products/Martisor/inc7.jpg",
       "images/products/Martisor/inc8.jpg"
     ]
+  },
+
+  {
+    id: 273,
+    nume: "Insignă mărțișor cu poză",
+    categorie: "Martisoare",
+    pret: 20,
+    poze: [
+      "images/products/Martisor/inc9.jpg",
+      "images/products/Martisor/inc10.jpg",
+      "images/products/Martisor/inc11.jpg",
+      "images/products/Martisor/inc12.jpg",
+      "images/products/Martisor/inc13.jpg"
+    ]
   }
 ];
 
