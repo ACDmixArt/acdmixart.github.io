@@ -4098,7 +4098,7 @@ function renderProducts() {
               ? `<button type="button" class="add-cart" onclick="openMartisorCustomizer(${product.id}, document.getElementById(&quot;qty-${product.id}&quot;).textContent)">Personalizează</button>`
               : product.categorie === "Party"
               ? `<button type="button" class="add-cart" onclick="${product.id === 266 ? "openGarlandCustomizer" : "openPartyCustomizer"}(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
-              : ["Numere pentru mese", "Meniuri", "Căni"].includes(product.categorie)
+              : ["Numere pentru mese", "Meniuri", "Căni", "Cărți"].includes(product.categorie)
               ? `<button type="button" class="add-cart" onclick="openProductPersonalization(${product.id})">Personalizează</button>`
               : product.categorie === "Set Moț"
                 ? `<button type="button" class="add-cart" onclick="openSetMotCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
@@ -5663,10 +5663,11 @@ function renderDynamicFields() {
     addFormField({ id: "formNames", label: "Nume / detalii pentru agendă", placeholder: "Numele sau textul dorit pe agendă" });
     addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Detalii pentru personalizare" });
   } else if (["Cărți"].includes(category)) {
-    addFormField({ id: "formNames", label: "Numele persoanei / copilului", placeholder: "Numele pentru copertă" });
-    addFormField({ id: "formAge", label: "Vârsta (dacă este relevantă)", type: "number", min: 1 });
-    addFormField({ id: "formTheme", label: "Tematică", placeholder: "Ex.: animale, capybara, personaje" });
-    addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Ce ai dori să conțină produsul?" });
+    addFormField({ id: "formTheme", label: "Tematica dorită", placeholder: "Ex.: animale, capybara, prințese, dinozauri, personaj preferat", required: true });
+    addFormField({ id: "formNames", label: "Numele copilului", placeholder: "Scrie numele exact pentru copertă", required: true });
+    addFormField({ id: "formAge", label: "Vârsta copilului", type: "number", min: 1, placeholder: "Ex.: 4", required: true });
+    addFormField({ id: "formText", label: "Textul dorit pe copertă / în carte", type: "textarea", placeholder: "Scrie mesajul exact sau alte texte care trebuie incluse" });
+    addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Ce ai dori să conțină cartea? Alte cerințe pentru personalizare" });
   } else if (category === "Toppere") {
     addFormField({ id: "formTopperType", label: "Tip topper", type: "select", options: ["Topper simplu — 2 straturi — 75 lei", "Topper cu shaker — 3–5 straturi — 140 lei", "Topper cu shaker + luminițe — 4–5 straturi — 180 lei"], required: true, value: "Topper simplu — 2 straturi — 75 lei" });
     addFormField({ id: "formTopperCharacters", label: "Caricatură — număr de personaje (+20 lei/personaj)", type: "number", min: 0, value: "0" });
