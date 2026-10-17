@@ -3113,6 +3113,17 @@ const products = [
     ]
   },
   {
+    id: 291,
+    nume: "Topper Mașinuțe",
+    categorie: "Toppere",
+    pret: 75,
+    poze: [
+      "images/products/thhh.jpg",
+      "images/products/thhh1.jpg",
+      "images/products/thh2.jpg"
+    ]
+  },
+  {
     id: 287,
     nume: "Topper 3D Super pisicuțe",
     categorie: "Toppere",
