@@ -3531,7 +3531,9 @@ const products = [
       "images/products/save1.jpg",
       "images/products/save2.jpg",
       "images/products/save3.jpg",
-      "images/products/save4.jpg"
+      "images/products/save4.jpg",
+      "images/products/agag.jpg",
+      "images/products/agag1.jpg"
     ]
   },
   {
