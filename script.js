@@ -3281,6 +3281,47 @@ function renderProducts() {
 }
 
 /* =========================
+   PERSONALIZARE MĂRȚIȘOARE
+========================= */
+
+function openMartisorCustomizer(productId, quantity = 1) {
+  const product = products.find(item => item.id === Number(productId));
+  if (!product || product.categorie !== "Martisoare") return;
+  const qty = Math.max(1, Number(quantity) || 1);
+  document.querySelector(".martisor-customizer-modal")?.remove();
+
+  const modal = document.createElement("div");
+  modal.className = "martisor-customizer-modal";
+  modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.65);display:flex;align-items:center;justify-content:center;z-index:9999;padding:16px;";
+  modal.innerHTML = `
+    <div style="background:white;width:100%;max-width:520px;max-height:90vh;overflow:auto;border-radius:16px;padding:24px;box-sizing:border-box;position:relative;">
+      <button type="button" aria-label="Închide" class="martisor-close" style="position:absolute;top:8px;right:12px;border:0;background:none;font-size:30px;cursor:pointer;">×</button>
+      <h2 style="margin:0 35px 8px 0;color:#66745F;">Personalizează: ${product.nume}</h2>
+      <p>Preț: <strong>${money(product.pret)} / buc.</strong> · Cantitate: <strong>${qty}</strong></p>
+      <label for="martisor-pentru" style="display:block;margin-top:14px;font-weight:600;">Pentru cine?</label>
+      <input id="martisor-pentru" type="text" maxlength="120" placeholder="Numele persoanei care primește mărțișorul" style="width:100%;padding:11px;margin-top:5px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+      <label for="martisor-de-la" style="display:block;margin-top:14px;font-weight:600;">De la cine?</label>
+      <input id="martisor-de-la" type="text" maxlength="120" placeholder="Numele persoanei care oferă mărțișorul" style="width:100%;padding:11px;margin-top:5px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+      <label for="martisor-mesaj" style="display:block;margin-top:14px;font-weight:600;">Mesaj</label>
+      <textarea id="martisor-mesaj" maxlength="500" rows="3" placeholder="Scrie mesajul dorit" style="width:100%;padding:11px;margin-top:5px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;resize:vertical;"></textarea>
+      <button type="button" class="martisor-add add-cart" style="width:100%;padding:14px;margin-top:18px;border:0;border-radius:9px;background:#B77E88;color:white;font-weight:700;cursor:pointer;font-size:16px;">Adaugă în coș</button>
+    </div>
+  `;
+  document.body.appendChild(modal);
+  modal.querySelector(".martisor-close").addEventListener("click", () => modal.remove());
+  modal.addEventListener("click", event => { if (event.target === modal) modal.remove(); });
+  modal.querySelector(".martisor-add").addEventListener("click", () => {
+    const pentru = modal.querySelector("#martisor-pentru").value.trim();
+    const deLa = modal.querySelector("#martisor-de-la").value.trim();
+    const mesaj = modal.querySelector("#martisor-mesaj").value.trim();
+    cart.push({ ...product, quantity: qty, personalizare: { tip: "martisor", pentru, deLa, mesaj } });
+    renderCart();
+    modal.remove();
+    openCart();
+  });
+}
+
+/* =========================
    PERSONALIZARE GHIRLANDĂ CU NUME
 ========================= */
 
