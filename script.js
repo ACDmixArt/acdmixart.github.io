@@ -3564,6 +3564,17 @@ const products = [
       "images/products/canaalb.jpg"
     ]
   },
+  {
+    id: 316,
+    nume: "Cană albă cu caricatură",
+    categorie: "Căni",
+    pret: 45,
+    descriere: "Cană albă personalizată cu caricatură. Poți adăuga și un nume sau un mesaj. Fotografiile necesare pentru realizarea caricaturii se atașează în conversația WhatsApp când trimiți comanda.",
+    poze: [
+      "images/products/canacaricatura.jpg",
+      "images/products/canacaricatura1.jpg"
+    ]
+  },
 
 ];
 
