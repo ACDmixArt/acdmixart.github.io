@@ -3291,6 +3291,18 @@ const products = [
     ]
   },
   {
+    id: 295,
+    nume: "Set mini toppere 6",
+    categorie: "Toppere",
+    pret: 30,
+    descriere: "Set mini toppere personalizabile cu nume, vârstă și tematica dorită. Se pot adăuga toppere mici suplimentare la 3 lei/bucată.",
+    poze: [
+      "images/products/adelica.jpg",
+      "images/products/adelica1.jpg",
+      "images/products/adelica2.jpg"
+    ]
+  },
+  {
     id: 293,
     nume: "Mini topper",
     categorie: "Toppere",
@@ -3624,7 +3636,7 @@ function openTopperCustomizer(productId, quantity = 1) {
     return;
   }
 
-  if ([286, 288, 289, 292, 294].includes(Number(product.id))) {
+  if ([286, 288, 289, 292, 294, 295].includes(Number(product.id))) {
     document.querySelector(".topper-customizer-modal")?.remove();
     const modal = document.createElement("div");
     modal.className = "topper-customizer-modal";
