@@ -3742,6 +3742,23 @@ const products = [
       "images/products/nrstitch1.jpg"
     ]
   },
+  {
+    id: 332,
+    nume: "Meniu de nuntă – Model 1",
+    categorie: "Meniuri",
+    pret: 7,
+    descriere: "Meniu personalizat pentru nuntă. Prețul este per bucată. Completează meniul cu preparatele și băuturile, tematica, numele mirilor și data evenimentului.",
+    poze: [
+      "images/products/meniuprincipal.jpg",
+      "images/products/meniuprincipal1.jpg",
+      "images/products/meniuprincipal2.jpg",
+      "images/products/meniuprincipal3.jpg",
+      "images/products/meniuprincipal4.jpg",
+      "images/products/meniuprincipal5.jpg"
+    ]
+  },
+
+
 
 ];
 
@@ -3776,6 +3793,7 @@ function categories() {
     "Nuntă",
     "Save the Date",
     "Numere pentru mese",
+    "Meniuri",
     "Mărturii",
     "Martisoare",
     "Plicuri dar botez",
@@ -5448,7 +5466,13 @@ function renderDynamicFields() {
     required: true
   });
 
-  if (category === "Numere pentru mese") {
+  if (category === "Meniuri") {
+    addFormField({ id: "formMenuText", label: "Meniul — preparate și băuturi", type: "textarea", placeholder: "Scrie meniul complet, în ordinea dorită", required: true });
+    addFormField({ id: "formTheme", label: "Tematica dorită", placeholder: "Ex.: elegant, floral, rustic, culorile evenimentului", required: true });
+    addFormField({ id: "formNames", label: "Numele mirilor", placeholder: "Ex.: Andreea și Mihai", required: true });
+    addFormField({ id: "formDate", label: "Data evenimentului", type: "date", required: true });
+    addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Format, stil sau cerințe speciale" });
+  } else if (category === "Numere pentru mese") {
     addFormField({ id: "formTheme", label: "Tematica dorită", placeholder: "Ex.: floral, elegant, rustic, personaje", required: true });
     addFormField({ id: "formTableStart", label: "Numerotare — de la numărul", type: "number", min: 1, placeholder: "Ex.: 1", required: true });
     addFormField({ id: "formTableEnd", label: "Numerotare — până la numărul", type: "number", min: 1, placeholder: "Ex.: 15", required: true });
@@ -5566,6 +5590,7 @@ function updateOrderSummary() {
     formTableEnd: "Număr până la",
     formNames: "Nume / text",
     formText: "Text invitație",
+    formMenuText: "Meniul — preparate și băuturi",
     formColors: "Culori",
     formDetails: "Alte detalii",
     formChildName: "Numele copilului",
@@ -5659,6 +5684,16 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
       return;
     }
 
+    if (category === "Meniuri") {
+      if (!document.getElementById("formMenuText")?.value.trim() ||
+          !document.getElementById("formTheme")?.value.trim() ||
+          !document.getElementById("formNames")?.value.trim() ||
+          !document.getElementById("formDate")?.value) {
+        alert("Completează meniul, tematica, numele mirilor și data evenimentului.");
+        return;
+      }
+    }
+
     if (category === "Numere pentru mese") {
       const start = Number(document.getElementById("formTableStart")?.value);
       const end = Number(document.getElementById("formTableEnd")?.value);
@@ -5698,6 +5733,7 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
       ["Tip topper", "formTopperType"],
       ["Număr personaje pentru caricatură", "formTopperCharacters"],
       ["Text invitație", "formText"],
+      ["Meniul — preparate și băuturi", "formMenuText"],
       ["Data evenimentului", "formDate"],
       ["Culori", "formColors"],
       ["Vârstă", "formAge"],
