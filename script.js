@@ -3044,7 +3044,9 @@ const products = [
       "images/products/ciocol3.jpg",
       "images/products/ciocol4.jpg",
       "images/products/ciocol5.jpg",
-      "images/products/ciocol6.jpg"
+      "images/products/ciocol6.jpg",
+      "images/products/cicol9.jpg",
+      "images/products/cicol10.jpg"
     ]
   },
 
