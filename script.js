@@ -3755,6 +3755,7 @@ function openCakeBoxCustomizer(productId, quantity = 1) {
         <label style="display:flex;gap:8px;align-items:center;margin:8px 0;"><input type="checkbox" class="cakebox-support"> Suport (+25 lei)</label>
         <label style="display:flex;gap:8px;align-items:center;margin:8px 0;"><input type="checkbox" class="cakebox-lights"> Luminițe (+25 lei)</label>
       </div>
+      <label style="display:flex;gap:8px;align-items:center;margin:12px 0;padding:12px;border:1px solid #eee;border-radius:8px;"><input type="checkbox" class="cakebox-mini-topper"> Mini topper (+3 lei)</label>
       <label for="cakebox-theme" style="display:block;margin-top:14px;font-weight:600;">Tematică *</label>
       <input id="cakebox-theme" type="text" required maxlength="250" placeholder="Ex.: animăluțe, flori, personaje..." style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
       <label for="cakebox-name" style="display:block;margin-top:14px;font-weight:600;">Nume *</label>
@@ -3769,6 +3770,7 @@ function openCakeBoxCustomizer(productId, quantity = 1) {
   const radios = [...modal.querySelectorAll('input[name="cakebox-variant"]')];
   const support = modal.querySelector(".cakebox-support");
   const lights = modal.querySelector(".cakebox-lights");
+  const miniTopper = modal.querySelector(".cakebox-mini-topper");
   const extras = modal.querySelector(".cakebox-extras");
   const livePrice = modal.querySelector(".cakebox-live-price");
   const selectedVariant = () => modal.querySelector('input[name="cakebox-variant"]:checked')?.value || "simple";
@@ -3777,12 +3779,13 @@ function openCakeBoxCustomizer(productId, quantity = 1) {
     support.disabled = sweets;
     lights.disabled = sweets;
     extras.style.opacity = sweets ? "0.5" : "1";
-    const unitPrice = sweets ? 19 : 7 + (support.checked ? 25 : 0) + (lights.checked ? 25 : 0);
+    const unitPrice = (sweets ? 19 : 7 + (support.checked ? 25 : 0) + (lights.checked ? 25 : 0)) + (miniTopper.checked ? 3 : 0);
     livePrice.textContent = `Total: ${money(unitPrice * qty)} · ${qty} cutiuță/cutiuțe · ${money(unitPrice)} / bucată`;
   };
   radios.forEach(radio => radio.addEventListener("change", updatePrice));
   support.addEventListener("change", updatePrice);
   lights.addEventListener("change", updatePrice);
+  miniTopper.addEventListener("change", updatePrice);
   modal.querySelector(".cakebox-close").addEventListener("click", () => modal.remove());
   modal.addEventListener("click", event => { if (event.target === modal) modal.remove(); });
   updatePrice();
@@ -3797,7 +3800,7 @@ function openCakeBoxCustomizer(productId, quantity = 1) {
       return;
     }
     const variant = selectedVariant();
-    const unitPrice = variant === "sweets" ? 19 : 7 + (support.checked ? 25 : 0) + (lights.checked ? 25 : 0);
+    const unitPrice = (variant === "sweets" ? 19 : 7 + (support.checked ? 25 : 0) + (lights.checked ? 25 : 0)) + (miniTopper.checked ? 3 : 0);
     const personalizare = {
       tip: "tortDinCutiute",
       varianta: variant === "sweets" ? "Cutie cu dulciuri (Kinder Chocolate, Barni și acadea)" : "Cutiuță simplă",
@@ -3806,6 +3809,8 @@ function openCakeBoxCustomizer(productId, quantity = 1) {
       pretSuport: variant === "simple" && support.checked ? 25 : 0,
       luminite: variant === "simple" && lights.checked,
       pretLuminite: variant === "simple" && lights.checked ? 25 : 0,
+      miniTopper: miniTopper.checked,
+      pretMiniTopper: miniTopper.checked ? 3 : 0,
       includeToppere: true,
       includeSuportSiLuminite: variant === "sweets",
       toppereIncluse: "9 toppere decorative + topper central",
@@ -4639,7 +4644,7 @@ function renderCart() {
             : item.personalizare?.tip === "martisor"
             ? `<p>Pentru: ${item.personalizare.pentru || "Nespecificat"}<br>De la: ${item.personalizare.deLa || "Nespecificat"}<br>Mesaj: ${item.personalizare.mesaj || "Fără mesaj"}</p>`
             : item.personalizare?.tip === "tortDinCutiute"
-              ? `<p>Variantă: ${item.personalizare.varianta}<br>Tematică: ${item.personalizare.tematica}<br>Nume: ${item.personalizare.nume}<br>Vârstă: ${item.personalizare.varsta || "Nespecificată"}<br>Toppere incluse: 9 decorative + topper central<br>Suport: ${item.personalizare.suport ? "Da (+25 lei)" : item.personalizare.includeSuportSiLuminite ? "Inclus" : "Nu"}<br>Luminițe: ${item.personalizare.luminite ? "Da (+25 lei)" : item.personalizare.includeSuportSiLuminite ? "Incluse" : "Nu"}</p>`
+              ? `<p>Variantă: ${item.personalizare.varianta}<br>Tematică: ${item.personalizare.tematica}<br>Nume: ${item.personalizare.nume}<br>Vârstă: ${item.personalizare.varsta || "Nespecificată"}<br>Toppere incluse: 9 decorative + topper central<br>Mini topper: ${item.personalizare.miniTopper ? "Da (+3 lei)" : "Nu"}<br>Suport: ${item.personalizare.suport ? "Da (+25 lei)" : item.personalizare.includeSuportSiLuminite ? "Inclus" : "Nu"}<br>Luminițe: ${item.personalizare.luminite ? "Da (+25 lei)" : item.personalizare.includeSuportSiLuminite ? "Incluse" : "Nu"}</p>`
             : item.personalizare?.tip === "ghirlanda"
               ? `<p>Nume: ${item.personalizare.nume}<br>Litere selectate: ${item.personalizare.litere.join(", ")}<br>Preț: 10 lei/literă</p>`
             : item.personalizare?.tip === "party"
