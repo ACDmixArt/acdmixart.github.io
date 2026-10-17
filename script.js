@@ -3706,6 +3706,19 @@ const products = [
       "images/products/nrmasabotez2.jpg"
     ]
   },
+  {
+    id: 329,
+    nume: "Număr pentru masă – Botez 3",
+    categorie: "Numere pentru mese",
+    pret: 6,
+    descriere: "Număr pentru masă personalizat pentru botez. Prețul este per bucată. Alege tematica, intervalul numerelor, numele copilului și data evenimentului.",
+    poze: [
+      "images/products/nrmasazana.jpg",
+      "images/products/nrmasazana1.jpg",
+      "images/products/nrmasazana2.jpg",
+      "images/products/nrmasazana3.jpg"
+    ]
+  },
 
 ];
 
