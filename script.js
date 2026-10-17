@@ -1439,8 +1439,7 @@ const products = [
       categorie: "Plicuri dar botez",
       pret: 2.5,
       poze: [
-        "images/products/bea.jpg",
-        "images/products/bea1.jpg"
+        "images/products/bea.jpg"
       ]
     },
   {
@@ -1459,8 +1458,7 @@ const products = [
       categorie: "Plicuri dar botez",
       pret: 2.5,
       poze: [
-        "images/products/mi.jpg",
-        "images/products/mi1.jpg"
+        "images/products/mi.jpg"
       ]
     },
   {
@@ -1489,8 +1487,7 @@ const products = [
       categorie: "Plicuri dar botez",
       pret: 2.5,
       poze: [
-        "images/products/ehe.jpg",
-        "images/products/ehe1.jpg"
+        "images/products/ehe.jpg"
       ]
     },
   {
@@ -2548,8 +2545,7 @@ const products = [
     pret: 7,
     poze: [
       "images/products/fri.jpg",
-      "images/products/fri1.jpg",
-      "images/products/fri2.jpg"
+      "images/products/fri1.jpg"
     ]
   },
   {
