@@ -3642,6 +3642,8 @@ function renderProducts() {
           ${
             product.categorie === "Toppere"
               ? `<button type="button" class="add-cart" onclick="openTopperCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Alege topperul</button>`
+              : product.categorie === "Torturi din cutiuțe"
+              ? `<button type="button" class="add-cart" onclick="openCakeBoxCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
               : product.categorie === "Martisoare"
               ? `<button type="button" class="add-cart" onclick="openMartisorCustomizer(${product.id}, document.getElementById(&quot;qty-${product.id}&quot;).textContent)">Personalizează</button>`
               : product.categorie === "Party"
@@ -4583,6 +4585,8 @@ function renderCart() {
             ? `<p>Variantă: ${item.personalizare.varianta}<br>Tematică: ${item.personalizare.tematica}<br>Nume: ${item.personalizare.nume}<br>Vârstă: ${item.personalizare.varsta || "Nespecificată"}<br>Caricatură: ${item.personalizare.personaje} ${item.personalizare.personaje === 1 ? "personaj" : "personaje"} (+${money(item.personalizare.pretCaricatura)})<br>Alte detalii: ${item.personalizare.detalii || "Nespecificate"}</p>`
             : item.personalizare?.tip === "martisor"
             ? `<p>Pentru: ${item.personalizare.pentru || "Nespecificat"}<br>De la: ${item.personalizare.deLa || "Nespecificat"}<br>Mesaj: ${item.personalizare.mesaj || "Fără mesaj"}</p>`
+            : item.personalizare?.tip === "tortDinCutiute"
+              ? `<p>Variantă: ${item.personalizare.varianta}<br>Tematică: ${item.personalizare.tematica}<br>Nume: ${item.personalizare.nume}<br>Vârstă: ${item.personalizare.varsta || "Nespecificată"}<br>Toppere incluse: 9 decorative + topper central<br>Suport: ${item.personalizare.suport ? "Da (+25 lei)" : item.personalizare.includeSuportSiLuminite ? "Inclus" : "Nu"}<br>Luminițe: ${item.personalizare.luminite ? "Da (+25 lei)" : item.personalizare.includeSuportSiLuminite ? "Incluse" : "Nu"}</p>`
             : item.personalizare?.tip === "ghirlanda"
               ? `<p>Nume: ${item.personalizare.nume}<br>Litere selectate: ${item.personalizare.litere.join(", ")}<br>Preț: 10 lei/literă</p>`
             : item.personalizare?.tip === "party"
