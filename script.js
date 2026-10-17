@@ -5401,18 +5401,26 @@ function renderDynamicFields() {
     addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Alte cerințe pentru set" });
   } else if (["Căni", "Pahare", "Mărturii"].includes(category)) {
     const selectedProductName = document.getElementById("formProduct")?.selectedOptions?.[0]?.textContent || "";
-    if (category === "Căni" && !selectedProductName.includes("Sticlă de vin cu text auriu") && (selectedProductName.includes("Cană cu personaj și nume") || selectedProductName.includes("Termos personalizat") || selectedProductName.includes("Bidon pentru apă personalizabil") || selectedProductName.includes("Sticlă de bere personalizabilă"))) {
+    const isWineProduct = category === "Căni" && (
+      selectedProductName.includes("Sticlă de vin cu text auriu") ||
+      selectedProductName.includes("Sticlă de vin cu caricatură") ||
+      selectedProductName.includes("Sticlă de vin cu tematică de Crăciun")
+    );
+    if (category === "Căni" && !isWineProduct && (selectedProductName.includes("Cană cu personaj și nume") || selectedProductName.includes("Termos personalizat") || selectedProductName.includes("Bidon pentru apă personalizabil") || selectedProductName.includes("Sticlă de bere personalizabilă"))) {
       addFormField({ id: "formCharacter", label: "Personajul dorit", placeholder: "Scrie personajul pe care îl dorești", required: true });
     }
-    if (category === "Căni" && selectedProductName.includes("Sticlă de vin cu text auriu")) {
-      addFormField({ id: "formNames", label: "Textul auriu dorit", placeholder: "Scrie exact textul care va apărea pe sticlă", required: true });
-      addFormField({ id: "formDetails", label: "Fotografii / model de referință", type: "textarea", placeholder: "După finalizarea comenzii, trimite fotografiile de referință pe WhatsApp." });
+    if (isWineProduct) {
+      const wineLabel = selectedProductName.includes("text auriu") ? "Textul auriu dorit" : "Textul dorit pe sticlă";
+      addFormField({ id: "formNames", label: wineLabel, placeholder: "Scrie exact textul care va apărea pe sticlă", required: true });
+      addFormField({ id: "formDetails", label: "Fotografii / model de referință", type: "textarea", placeholder: "După finalizarea comenzii, trimite fotografiile sau modelul de referință pe WhatsApp." });
     } else {
       addFormField({ id: "formNames", label: "Nume / text pentru personalizare", placeholder: "Scrie exact numele sau mesajul dorit" });
     }
     addFormField({ id: "formColors", label: "Culori", placeholder: "Culorile dorite (dacă este cazul)" });
     addFormField({ id: "formDate", label: "Data evenimentului", type: "date" });
-    addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: category === "Căni" ? "Descrie personalizarea dorită. Pentru cana cu poză, atașează fotografia în conversația WhatsApp când trimiți comanda." : "Tematică și cerințe speciale" });
+    if (!isWineProduct) {
+      addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: category === "Căni" ? "Descrie personalizarea dorită. Pentru cana cu poză, atașează fotografia în conversația WhatsApp când trimiți comanda." : "Tematică și cerințe speciale" });
+    }
   } else if (category === "Agende") {
     addFormField({ id: "formAgendaCharacters", label: "Caricatură", type: "select", options: ["Fără caricatură — 0 lei", "1 personaj — 20 lei", "2 personaje — 35 lei", "3 personaje — 50 lei"] });
     addFormField({ id: "formNames", label: "Nume / detalii pentru agendă", placeholder: "Numele sau textul dorit pe agendă" });
@@ -5549,7 +5557,10 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
   });
 
   formCategory.addEventListener("change", updateFormProducts);
-  formProduct.addEventListener("change", updateOrderSummary);
+  formProduct.addEventListener("change", () => {
+    renderDynamicFields();
+    updateOrderSummary();
+  });
   // Afișează câmpurile comune imediat, chiar înainte de selectarea categoriei.
   renderDynamicFields();
   dynamicFormFields.addEventListener("input", updateOrderSummary);
