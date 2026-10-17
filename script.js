@@ -3685,10 +3685,10 @@ const products = [
   },
   {
     id: 314,
-    nume: "Cană cu poză 1",
+    nume: "Cană personalizată cu fotografie",
     categorie: "Căni",
     pret: 30,
-    descriere: "Cană personalizată cu fotografia și textul dorit. Poți adăuga un nume sau un mesaj. Fotografia se atașează direct în WhatsApp când trimiți comanda.",
+    descriere: "Creează o cană unică, personalizată cu fotografia și detaliile dorite. Imaginea prezentată este un exemplu de personalizare; designul se poate adapta în funcție de preferințele tale. Atașează fotografia în conversația WhatsApp când trimiți comanda.",
     poze: [
       "images/products/canapoza.jpg"
     ]
