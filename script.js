@@ -3716,6 +3716,7 @@ function categories() {
     "Botez",
     "Nuntă",
     "Save the Date",
+    "Numere pentru mese",
     "Mărturii",
     "Martisoare",
     "Plicuri dar botez",
@@ -5388,7 +5389,14 @@ function renderDynamicFields() {
     required: true
   });
 
-  if (["Botez", "Nuntă"].includes(category)) {
+  if (category === "Numere pentru mese") {
+    addFormField({ id: "formTheme", label: "Tematica dorită", placeholder: "Ex.: floral, elegant, rustic, personaje", required: true });
+    addFormField({ id: "formTableStart", label: "Numerotare — de la numărul", type: "number", min: 1, placeholder: "Ex.: 1", required: true });
+    addFormField({ id: "formTableEnd", label: "Numerotare — până la numărul", type: "number", min: 1, placeholder: "Ex.: 15", required: true });
+    addFormField({ id: "formNames", label: "Numele mirilor / copilului", placeholder: "Ex.: numele mirilor sau al copilului", required: true });
+    addFormField({ id: "formDate", label: "Data evenimentului", type: "date", required: true });
+    addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Culori, stil, dimensiuni sau alte cerințe" });
+  } else if (["Botez", "Nuntă"].includes(category)) {
     document.getElementById("formQuantity").min = "25";
     addFormField({ id: "formDate", label: "Data evenimentului", type: "date" });
     addFormField({ id: "formNames", label: "Numele persoanelor / copilului", placeholder: "Ex.: nume copil, părinți, miri" });
@@ -5466,7 +5474,7 @@ function updateFormProducts() {
   const filtered = products.filter(product => product.categorie === category);
 
   formProduct.innerHTML = `<option value="">${category ? "Nu aleg un model existent (model propriu)" : "Alege mai întâi categoria"}</option>`;
-  formProduct.disabled = !category || filtered.length === 0;
+  formProduct.disabled = !category;
 
   filtered.forEach(product => {
     const option = document.createElement("option");
@@ -5495,6 +5503,8 @@ function updateOrderSummary() {
   const fieldLabels = {
     formQuantity: "Cantitate",
     formDate: "Data evenimentului",
+    formTableStart: "Număr de la",
+    formTableEnd: "Număr până la",
     formNames: "Nume / text",
     formText: "Text invitație",
     formColors: "Culori",
@@ -5590,6 +5600,19 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
       return;
     }
 
+    if (category === "Numere pentru mese") {
+      const start = Number(document.getElementById("formTableStart")?.value);
+      const end = Number(document.getElementById("formTableEnd")?.value);
+      if (!document.getElementById("formTheme")?.value.trim() ||
+          !document.getElementById("formNames")?.value.trim() ||
+          !document.getElementById("formDate")?.value ||
+          !Number.isInteger(start) || start < 1 ||
+          !Number.isInteger(end) || end < start) {
+        alert("Completează tematica, numerotarea corectă, numele și data evenimentului.");
+        return;
+      }
+    }
+
     const childName = document.getElementById("formChildName")?.value.trim() || "";
     const themeSelect = document.getElementById("formTheme")?.value || "";
     const themeOther = document.getElementById("formThemeOther")?.value.trim() || "";
@@ -5610,6 +5633,8 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
 
     const fields = [
       ["Nume / text", "formNames"],
+      ["Număr de la", "formTableStart"],
+      ["Număr până la", "formTableEnd"],
       ["Caricatură pentru agendă", "formAgendaCharacters"],
       ["Tip topper", "formTopperType"],
       ["Număr personaje pentru caricatură", "formTopperCharacters"],
