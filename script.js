@@ -3568,6 +3568,17 @@ const products = [
     ]
   },
   {
+    id: 345,
+    nume: "Save the Date – Model 4",
+    categorie: "Save the Date",
+    pret: 80,
+    descriere: "Model față-verso, cu design pe ambele părți.",
+    poze: [
+      "images/products/Denisaziar.jpg",
+      "images/products/Denisaziar1.jpg"
+    ]
+  },
+  {
     id: 339,
     nume: "Caricatura A4",
     categorie: "Caricaturi",
