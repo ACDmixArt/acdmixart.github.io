@@ -3547,6 +3547,27 @@ const products = [
     ]
   },
   {
+    id: 339,
+    nume: "Caricatură A4 (21 × 30 cm) cu ramă",
+    categorie: "Caricaturi",
+    pret: 140,
+    descriere: "Caricatură A4 cu ramă, pentru 1–2 personaje incluse. Personajele suplimentare, ținutele profesionale și accesoriile se pot adăuga contra cost."
+  },
+  {
+    id: 340,
+    nume: "Caricatură A3 (30 × 42 cm) cu ramă",
+    categorie: "Caricaturi",
+    pret: 190,
+    descriere: "Caricatură A3 cu ramă, pentru 1–2 personaje incluse. Personajele suplimentare, ținutele profesionale și accesoriile se pot adăuga contra cost."
+  },
+  {
+    id: 341,
+    nume: "Caricatură online",
+    categorie: "Caricaturi",
+    pret: 120,
+    descriere: "Caricatură în format digital, pentru 1–2 personaje incluse. Personajele suplimentare, ținutele profesionale și accesoriile se pot adăuga contra cost."
+  },
+  {
     id: 313,
     nume: "Insigne nuntă",
     categorie: "Mărturii",
@@ -3874,6 +3895,7 @@ function categories() {
     "Pahare",
     "Toppere",
     "Cărți",
+    "Caricaturi",
     "Cărți de vizită",
     "Jurnale",
     "Agende",
@@ -4108,6 +4130,8 @@ function renderProducts() {
               ? `<button type="button" class="add-cart" onclick="openMartisorCustomizer(${product.id}, document.getElementById(&quot;qty-${product.id}&quot;).textContent)">Personalizează</button>`
               : product.categorie === "Party"
               ? `<button type="button" class="add-cart" onclick="${product.id === 266 ? "openGarlandCustomizer" : "openPartyCustomizer"}(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
+              : product.categorie === "Caricaturi"
+              ? `<button type="button" class="add-cart" onclick="openCaricatureCustomizer(${product.id}, document.getElementById(&quot;qty-${product.id}&quot;).textContent)">Alege caricatura</button>`
               : ["Numere pentru mese", "Meniuri", "Căni", "Cărți", "Botez", "Nuntă", "Mărturii", "Pahare", "Plicuri dar botez", "Plicuri dar nuntă", "Save the Date", "Jurnale", "Cărți de vizită"].includes(product.categorie)
               ? `<button type="button" class="add-cart" onclick="openProductPersonalization(${product.id})">Personalizează</button>`
               : product.categorie === "Set Moț"
