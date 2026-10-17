@@ -3659,6 +3659,16 @@ const products = [
       "images/products/vin3.jpg"
     ]
   },
+  {
+    id: 325,
+    nume: "Sticlă de vin cu caricatură",
+    categorie: "Căni",
+    pret: 170,
+    descriere: "Sticlă de vin personalizată cu caricatură, ideală pentru un cadou original și elegant. Completează textul dorit în formular, apoi trimite fotografiile necesare realizării caricaturii pe WhatsApp după finalizarea comenzii.",
+    poze: [
+      "images/products/vincaricatura.jpg"
+    ]
+  },
 
 ];
 
