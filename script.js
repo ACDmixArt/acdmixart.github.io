@@ -3225,6 +3225,19 @@ const products = [
       "images/products/ju1.jpg"
     ]
   },
+  {
+    id: 289,
+    nume: "Set mini toppere 2",
+    categorie: "Toppere",
+    pret: 30,
+    descriere: "Set mini toppere personalizabile cu nume, vârstă și tematica dorită. Se pot adăuga toppere mici suplimentare la 3 lei/bucată.",
+    poze: [
+      "images/products/er.jpg",
+      "images/products/er1.jpg",
+      "images/products/er2.jpg",
+      "images/products/er3.jpg"
+    ]
+  },
 
 ];
 
@@ -3486,7 +3499,7 @@ function openTopperCustomizer(productId, quantity = 1) {
   const qty = Math.max(1, Number(quantity) || 1);
 
   // Set mini toppere 1: base price plus optional extra mini toppers.
-  if (Number(product.id) === 288) {
+  if ([288, 289].includes(Number(product.id))) {
     document.querySelector(".topper-customizer-modal")?.remove();
     const modal = document.createElement("div");
     modal.className = "topper-customizer-modal";
@@ -3494,7 +3507,7 @@ function openTopperCustomizer(productId, quantity = 1) {
     modal.innerHTML = `
       <div style="background:white;width:100%;max-width:560px;max-height:92vh;overflow:auto;border-radius:16px;padding:24px;box-sizing:border-box;position:relative;">
         <button type="button" aria-label="Închide" class="topper-close" style="position:absolute;top:8px;right:12px;border:0;background:none;font-size:30px;cursor:pointer;">×</button>
-        <h2 style="margin:0 35px 8px 0;color:#66745F;">Personalizează Set mini toppere 1</h2>
+        <h2 style="margin:0 35px 8px 0;color:#66745F;">Personalizează ${product.nume}</h2>
         <p>Preț de bază: <strong>30 lei</strong>. Poți adăuga toppere mici suplimentare la <strong>3 lei/bucată</strong>.</p>
         <label for="mini1-name" style="display:block;margin-top:14px;font-weight:600;">Nume *</label>
         <input id="mini1-name" type="text" required maxlength="120" placeholder="Numele dorit" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
@@ -3542,8 +3555,8 @@ function openTopperCustomizer(productId, quantity = 1) {
         return;
       }
       const unitPrice = 30 + extra * 3;
-      const personalizare = { tip: "miniToppere", varianta: "Set mini toppere 1", pretBaza: 30, toppereSuplimentare: extra, pretSuplimente: extra * 3, nume: name, varsta: age, tematica: theme, detalii };
-      cart.push({ ...product, nume: "Set mini toppere 1 personalizat", pret: unitPrice, quantity: qty, personalizare });
+      const personalizare = { tip: "miniToppere", varianta: product.nume, pretBaza: 30, toppereSuplimentare: extra, pretSuplimente: extra * 3, nume: name, varsta: age, tematica: theme, detalii };
+      cart.push({ ...product, nume: product.nume + " personalizat", pret: unitPrice, quantity: qty, personalizare });
       renderCart();
       modal.remove();
       openCart();
