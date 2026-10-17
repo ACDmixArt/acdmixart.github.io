@@ -2988,6 +2988,23 @@ const products = [
       "images/products/Martisor/martisor6.jpg",
       "images/products/Martisor/martisor7.jpg"
     ]
+  },
+
+  {
+    id: 271,
+    nume: "Mărțișor mare din săpun",
+    categorie: "Martisoare",
+    pret: 30,
+    poze: [
+      "images/products/Martisor/marmare.jpg",
+      "images/products/Martisor/marmare1.jpg",
+      "images/products/Martisor/marmare2.jpg",
+      "images/products/Martisor/marmare3.jpg",
+      "images/products/Martisor/marmare4.jpg",
+      "images/products/Martisor/marmare5.jpg",
+      "images/products/Martisor/marmare6.jpg",
+      "images/products/Martisor/marmare7.jpg"
+    ]
   }
 ];
 
