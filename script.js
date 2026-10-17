@@ -3763,8 +3763,10 @@ function renderCart() {
         <strong>${item.nume}</strong>
         <span>${money(item.pret)} / buc.</span>
         ${
-          item.personalizare?.tip === "ghirlanda"
-            ? `<p>Nume: ${item.personalizare.nume}<br>Litere selectate: ${item.personalizare.litere.join(", ")}<br>Preț: 10 lei/literă</p>`
+          item.personalizare?.tip === "martisor"
+            ? `<p>Pentru: ${item.personalizare.pentru || "Nespecificat"}<br>De la: ${item.personalizare.deLa || "Nespecificat"}<br>Mesaj: ${item.personalizare.mesaj || "Fără mesaj"}</p>`
+            : item.personalizare?.tip === "ghirlanda"
+              ? `<p>Nume: ${item.personalizare.nume}<br>Litere selectate: ${item.personalizare.litere.join(", ")}<br>Preț: 10 lei/literă</p>`
             : item.personalizare?.tip === "party"
             ? `<p>Text: ${item.personalizare.nume || "Nespecificat"}<br>Vârstă: ${item.personalizare.varsta || "Nespecificată"}<br>Tematică: ${item.personalizare.tematica}<br>Culori: ${item.personalizare.culori || "Nespecificate"}<br>Data evenimentului: ${item.personalizare.data || "Nespecificată"}<br>Alte detalii: ${item.personalizare.detalii || "Nespecificate"}</p>`
             : item.personalizare?.tip === "agendă"
@@ -3831,7 +3833,9 @@ if (cartWhatsapp) {
     let message = getACDMixArtGreeting() + " Doresc să plasez o comandă ACDmixArt:\n\n";
     cart.forEach((item, index) => {
       message += `${index + 1}. ${item.nume}\nCantitate: ${item.quantity || 1}\nPreț/buc.: ${money(item.pret)}\nSubtotal: ${money(item.pret * (item.quantity || 1))}\n`;
-      if (item.personalizare?.tip === "agendă") {
+      if (item.personalizare?.tip === "martisor") {
+        message += `Pentru: ${item.personalizare.pentru || "Nespecificat"}\nDe la: ${item.personalizare.deLa || "Nespecificat"}\nMesaj: ${item.personalizare.mesaj || "Fără mesaj"}\n`;
+      } else if (item.personalizare?.tip === "agendă") {
         message += `Caricatură: ${item.personalizare.personaje === 0 ? "Fără caricatură" : item.personalizare.personaje + (item.personalizare.personaje === 1 ? " personaj" : " personaje")}\nCost caricatură: ${money(item.personalizare.pretCaricatura)}\n`;
       } else if (item.personalizare?.tip === "ghirlanda") {
         message += `Nume pentru ghirlandă: ${item.personalizare.nume}\nLitere bifate: ${item.personalizare.litere.join(", ")}\nPreț: 10 lei/literă\n`;
