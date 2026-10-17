@@ -3304,7 +3304,7 @@ const products = [
   },
   {
     id: 296,
-    nume: "Tort din cutiuțe",
+    nume: "Tort din cutiuțe 1",
     categorie: "Torturi din cutiuțe",
     pret: 7,
     descriere: "Cutiuță de 7 lei cu 9 toppere decorative și topper central incluse. Opțional: suport +25 lei și luminițe +25 lei. Varianta cu dulciuri este 19 lei și include toppere, suport și luminițe.",
@@ -3317,7 +3317,7 @@ const products = [
   },
   {
     id: 297,
-    nume: "Tort din cutiuțe – Superbi",
+    nume: "Tort din cutiuțe 2",
     categorie: "Torturi din cutiuțe",
     pret: 7,
     descriere: "Cutiuță de 7 lei cu 9 toppere decorative și topper central incluse. Opțional: suport +25 lei și luminițe +25 lei. Varianta cu dulciuri este 19 lei și include toppere, suport și luminițe.",
@@ -3327,6 +3327,19 @@ const products = [
       "images/products/superbi2.jpg",
       "images/products/superbi3.jpg",
       "images/products/superbi4.jpg"
+    ]
+  },
+  {
+    id: 298,
+    nume: "Tort din cutiuțe 3",
+    categorie: "Torturi din cutiuțe",
+    pret: 7,
+    descriere: "Cutiuță de 7 lei cu 9 toppere decorative și topper central incluse. Opțional: suport +25 lei și luminițe +25 lei. Varianta cu dulciuri este 19 lei și include toppere, suport și luminițe.",
+    poze: [
+      "images/products/davidd.jpg",
+      "images/products/davidd1.jpg",
+      "images/products/davidd2.jpg",
+      "images/products/davidd3.jpg"
     ]
   },
   {
