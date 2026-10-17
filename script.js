@@ -5840,6 +5840,7 @@ function closePersonalizeModal() {
   const modal = document.getElementById("personalizeModal");
   if (modal) modal.hidden = true;
   document.body.style.overflow = "";
+  document.body.classList.remove("personalize-modal-open");
 }
 
 function updateFormProducts() {
