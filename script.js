@@ -3534,6 +3534,16 @@ const products = [
       "images/products/save4.jpg"
     ]
   },
+  {
+    id: 313,
+    nume: "Insigne nuntă",
+    categorie: "Mărturii",
+    pret: 20,
+    poze: [
+      "images/products/bridee.jpg",
+      "images/products/bridee1.jpg"
+    ]
+  },
 
 ];
 
