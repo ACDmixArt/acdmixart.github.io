@@ -3553,6 +3553,7 @@ function categories() {
     "Toate",
     "Botez",
     "Nuntă",
+    "Save the Date",
     "Mărturii",
     "Martisoare",
     "Plicuri dar botez",
@@ -3685,7 +3686,7 @@ function updateMinimumOrderNotice() {
 function getFolderCategories() {
   const normalize = value => String(value || "").toLocaleLowerCase("ro").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   const available = [...new Set(products.map(product => product.categorie).filter(Boolean))];
-  const preferred = categories().filter(category => category !== "Toate" && available.some(value => normalize(value) === normalize(category)));
+  const preferred = categories().filter(category => category !== "Toate");
   const extra = available.filter(category => !preferred.some(value => normalize(value) === normalize(category)));
   return [...preferred, ...extra];
 }
