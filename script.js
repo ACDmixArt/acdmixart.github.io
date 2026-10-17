@@ -3037,6 +3037,37 @@ const products = [
       "images/products/Martisor/inc12.jpg",
       "images/products/Martisor/inc13.jpg"
     ]
+  },
+
+  {
+    id: 274,
+    nume: "Insigne pentru firme",
+    categorie: "Insigne",
+    pret: 20,
+    poze: [
+      "images/products/donas.jpg",
+      "images/products/donas1.jpg",
+      "images/products/ocol.jpg",
+      "images/products/ocol1.jpg",
+      "images/products/ocol2.jpg",
+      "images/products/ocol3.jpg",
+      "images/products/hotel.jpg",
+      "images/products/hotel1.jpg",
+      "images/products/hotel2.jpg",
+      "images/products/hotel3.jpg",
+      "images/products/hotel4.jpg",
+      "images/products/hotel5.jpg",
+      "images/products/hotel6.jpg",
+      "images/products/hotel7.jpg",
+      "images/products/kruk.jpg",
+      "images/products/kruk1.jpg",
+      "images/products/kruk2.jpg",
+      "images/products/kruk3.jpg",
+      "images/products/kruk4.jpg",
+      "images/products/kruk5.jpg",
+      "images/products/sorinas.jpg",
+      "images/products/sorinas1.jpg"
+    ]
   }
 ];
 
@@ -3080,6 +3111,7 @@ function categories() {
     "Cărți de vizită",
     "Jurnale",
     "Agende",
+    "Insigne",
     "Party",
     "Set Moț",
     "Set Gătit"
