@@ -3683,6 +3683,17 @@ const products = [
       "images/products/vincraciun2.jpg"
     ]
   },
+  {
+    id: 327,
+    nume: "Numere pentru mese",
+    categorie: "Numere pentru mese",
+    pret: 6,
+    descriere: "Numere pentru mese personalizate, potrivite pentru nuntă sau botez. Prețul este per bucată. Alege tematica, intervalul numerelor, numele mirilor sau al copilului și data evenimentului.",
+    poze: [
+      "images/products/nrmasanunta.jpg",
+      "images/products/nrmasanunta1.jpg"
+    ]
+  },
 
 ];
 
