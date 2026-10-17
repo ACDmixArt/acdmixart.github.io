@@ -2107,8 +2107,7 @@ const products = [
       "images/products/jurnalfata6.jpg",
       "images/products/jurnalfata8.jpg",
       "images/products/jurnalfata9.jpg",
-      "images/products/jurnalfata10.jpg",
-      "images/products/jurnal11.jpg"
+      "images/products/jurnalfata10.jpg"
     ]
   },
   {
