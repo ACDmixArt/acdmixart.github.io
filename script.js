@@ -2979,14 +2979,14 @@ const products = [
     categorie: "Martisoare",
     pret: 12,
     poze: [
-      "images/products/Martisor/martisor.jpg",
-      "images/products/Martisor/martisor1.jpg",
-      "images/products/Martisor/martisor2.jpg",
-      "images/products/Martisor/martisor3.jpg",
-      "images/products/Martisor/martisor4.jpg",
-      "images/products/Martisor/martisor5.jpg",
-      "images/products/Martisor/martisor6.jpg",
-      "images/products/Martisor/martisor7.jpg"
+      "images/products/martisor.jpg",
+      "images/products/martisor1.jpg",
+      "images/products/martisor2.jpg",
+      "images/products/martisor3.jpg",
+      "images/products/martisor4.jpg",
+      "images/products/martisor5.jpg",
+      "images/products/martisor6.jpg",
+      "images/products/martisor7.jpg"
     ]
   },
 
@@ -2996,14 +2996,14 @@ const products = [
     categorie: "Martisoare",
     pret: 30,
     poze: [
-      "images/products/Martisor/marmare.jpg",
-      "images/products/Martisor/marmare1.jpg",
-      "images/products/Martisor/marmare2.jpg",
-      "images/products/Martisor/marmare3.jpg",
-      "images/products/Martisor/marmare4.jpg",
-      "images/products/Martisor/marmare5.jpg",
-      "images/products/Martisor/marmare6.jpg",
-      "images/products/Martisor/marmare7.jpg"
+      "images/products/marmare.jpg",
+      "images/products/marmare1.jpg",
+      "images/products/marmare2.jpg",
+      "images/products/marmare3.jpg",
+      "images/products/marmare4.jpg",
+      "images/products/marmare5.jpg",
+      "images/products/marmare6.jpg",
+      "images/products/marmare7.jpg"
     ]
   },
 
@@ -3013,15 +3013,15 @@ const products = [
     categorie: "Martisoare",
     pret: 20,
     poze: [
-      "images/products/Martisor/inc.jpg",
-      "images/products/Martisor/inc1.jpg",
-      "images/products/Martisor/inc2.jpg",
-      "images/products/Martisor/inc3.jpg",
-      "images/products/Martisor/inc4.jpg",
-      "images/products/Martisor/inc5.jpg",
-      "images/products/Martisor/inc6.jpg",
-      "images/products/Martisor/inc7.jpg",
-      "images/products/Martisor/inc8.jpg"
+      "images/products/inc.jpg",
+      "images/products/inc1.jpg",
+      "images/products/inc2.jpg",
+      "images/products/inc3.jpg",
+      "images/products/inc4.jpg",
+      "images/products/inc5.jpg",
+      "images/products/inc6.jpg",
+      "images/products/inc7.jpg",
+      "images/products/inc8.jpg"
     ]
   },
 
@@ -3031,11 +3031,11 @@ const products = [
     categorie: "Martisoare",
     pret: 20,
     poze: [
-      "images/products/Martisor/inc9.jpg",
-      "images/products/Martisor/inc10.jpg",
-      "images/products/Martisor/inc11.jpg",
-      "images/products/Martisor/inc12.jpg",
-      "images/products/Martisor/inc13.jpg"
+      "images/products/inc9.jpg",
+      "images/products/inc10.jpg",
+      "images/products/inc11.jpg",
+      "images/products/inc12.jpg",
+      "images/products/inc13.jpg"
     ]
   },
 
