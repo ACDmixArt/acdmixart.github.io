@@ -3068,10 +3068,25 @@ const products = [
   },
   {
     id: 276,
-    nume: "Topper personalizat",
+    nume: "Topper 3D",
     categorie: "Toppere",
     pret: 75,
-    poze: []
+    poze: [
+      "images/products/mathy.jpg",
+      "images/products/mathy1.jpg",
+      "images/products/mathy2.jpg",
+      "images/products/mathy3.jpg",
+      "images/products/mathy4.jpg",
+      "images/products/mathy5.jpg",
+      "images/products/mathy6.jpg",
+      "images/products/mathy7.jpg",
+      "images/products/mathy8.jpg",
+      "images/products/mathy9.jpg",
+      "images/products/mathy10.jpg",
+      "images/products/mathy11.jpg",
+      "images/products/mathy12.jpg",
+      "images/products/mathy13.jpg"
+    ]
   },
 
 ];
