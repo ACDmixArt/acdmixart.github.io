@@ -3049,6 +3049,27 @@ const products = [
       "images/products/cicol10.jpg"
     ]
   },
+  {
+    id: 275,
+    nume: "Mărțișor magnet",
+    categorie: "Martisoare",
+    pret: 7,
+    poze: [
+      "images/products/magnetmartisor.jpg",
+      "images/products/magnetmartisor1.jpg",
+      "images/products/magnetmartisor2.jpg",
+      "images/products/magnetmartisor3.jpg",
+      "images/products/magnetmartisor4.jpg",
+      "images/products/magnetmartisor5.jpg",
+      "images/products/magnetmartisor6.jpg",
+      "images/products/magnetmartisor7.jpg",
+      "images/products/magnetmartisor8.jpg",
+      "images/products/magnetmartisor9.jpg",
+      "images/products/magnetmartisor10.jpg",
+      "images/products/magnetmartisor11.jpg",
+      "images/products/magnetmartisor12.jpg"
+    ]
+  },
 
 ];
 
