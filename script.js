@@ -3101,6 +3101,16 @@ const products = [
       "images/products/yop4.jpg"
     ]
   },
+  {
+    id: 278,
+    nume: "Topper Gabby",
+    categorie: "Toppere",
+    pret: 75,
+    poze: [
+      "images/products/avs.jpg",
+      "images/products/avs1.jpg"
+    ]
+  },
 
 ];
 
