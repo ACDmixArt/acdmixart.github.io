@@ -2946,7 +2946,6 @@ const products = [
       "images/products/tricouadult.jpg",
       "images/products/tricouadult1.jpg",
       "images/products/tricouadult2.jpg",
-      "images/products/tricouadult3.jpg",
       "images/products/tricouadult4.jpg"
     ]
   },
