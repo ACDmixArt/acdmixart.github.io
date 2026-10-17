@@ -3575,6 +3575,18 @@ const products = [
       "images/products/canacaricatura1.jpg"
     ]
   },
+  {
+    id: 317,
+    nume: "Cană cu model de Crăciun și text",
+    categorie: "Căni",
+    pret: 30,
+    descriere: "Cană cu model de Crăciun, personalizată cu textul sau numele dorit. Scrie în formular mesajul exact pe care vrei să îl imprimăm.",
+    poze: [
+      "images/products/canacraciun.jpg",
+      "images/products/canacraciun1.jpg",
+      "images/products/canacraciun2.jpg"
+    ]
+  },
 
 ];
 
