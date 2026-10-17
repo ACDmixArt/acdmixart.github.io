@@ -3385,6 +3385,54 @@ function openTopperCustomizer(productId, quantity = 1) {
   const product = products.find(item => item.id === Number(productId));
   if (!product || product.categorie !== "Toppere") return;
   const qty = Math.max(1, Number(quantity) || 1);
+
+  // Topper Winnie is a separate fixed-price design, not one of the 75/140/180 lei variants.
+  if (Number(product.id) === 280) {
+    document.querySelector(".topper-customizer-modal")?.remove();
+    const modal = document.createElement("div");
+    modal.className = "topper-customizer-modal";
+    modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.68);display:flex;align-items:center;justify-content:center;z-index:9999;padding:16px;";
+    modal.innerHTML = `
+      <div style="background:white;width:100%;max-width:560px;max-height:92vh;overflow:auto;border-radius:16px;padding:24px;box-sizing:border-box;position:relative;">
+        <button type="button" aria-label="Închide" class="topper-close" style="position:absolute;top:8px;right:12px;border:0;background:none;font-size:30px;cursor:pointer;">×</button>
+        <h2 style="margin:0 35px 8px 0;color:#66745F;">Personalizează Topper Winnie</h2>
+        <p>Completează detaliile pentru designul topperului. Preț fix: <strong>160 lei/bucată</strong>.</p>
+        <label for="winnie-name" style="display:block;margin-top:14px;font-weight:600;">Nume *</label>
+        <input id="winnie-name" type="text" required maxlength="120" placeholder="Numele care va apărea pe topper" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+        <label for="winnie-theme" style="display:block;margin-top:14px;font-weight:600;">Tematica dorită *</label>
+        <input id="winnie-theme" type="text" required maxlength="250" placeholder="Ex.: Winnie și prietenii, culori dorite..." style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+        <label for="winnie-age" style="display:block;margin-top:14px;font-weight:600;">Vârsta *</label>
+        <input id="winnie-age" type="number" min="1" max="120" required placeholder="Ex.: 3" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+        <label for="winnie-details" style="display:block;margin-top:14px;font-weight:600;">Alte detalii (opțional)</label>
+        <textarea id="winnie-details" rows="3" maxlength="600" placeholder="Culori sau alte preferințe" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;resize:vertical;"></textarea>
+        <p style="font-size:22px;font-weight:700;margin:18px 0;color:#66745F;">Total: ${money(160 * qty)} · Cantitate: ${qty}</p>
+        <p class="winnie-error" role="alert" style="color:#b00020;display:none;"></p>
+        <button type="button" class="winnie-add add-cart" style="width:100%;padding:14px;border:0;border-radius:9px;background:#B77E88;color:white;font-weight:700;cursor:pointer;font-size:16px;">Adaugă în coș</button>
+      </div>
+    `;
+    document.body.appendChild(modal);
+    modal.querySelector(".topper-close").addEventListener("click", () => modal.remove());
+    modal.addEventListener("click", event => { if (event.target === modal) modal.remove(); });
+    modal.querySelector(".winnie-add").addEventListener("click", () => {
+      const name = modal.querySelector("#winnie-name").value.trim();
+      const theme = modal.querySelector("#winnie-theme").value.trim();
+      const age = modal.querySelector("#winnie-age").value.trim();
+      const details = modal.querySelector("#winnie-details").value.trim();
+      const error = modal.querySelector(".winnie-error");
+      if (!name || !theme || !age || Number(age) < 1 || Number(age) > 120) {
+        error.textContent = "Completează numele, tematica și o vârstă validă.";
+        error.style.display = "block";
+        return;
+      }
+      const personalizare = { tip: "topper", varianta: "Topper Winnie", pretBaza: 160, personaje: 0, pretCaricatura: 0, tematica: theme, nume: name, varsta: age, detalii };
+      cart.push({ ...product, nume: "Topper Winnie personalizat", pret: 160, quantity: qty, personalizare });
+      renderCart();
+      modal.remove();
+      openCart();
+    });
+    return;
+  }
+
   document.querySelector(".topper-customizer-modal")?.remove();
 
   const modal = document.createElement("div");
