@@ -3262,3 +3262,55 @@ body.personalize-modal-open{overflow:hidden}
   .category-folder-card::before,
   .category-folder-card::after { width: 35px; height: 35px; opacity: .7; }
 }
+
+
+/* Mai mult farmec floral: hârtie crem cu motiv botanic discret și flori peste fotografii */
+.category-folder-card {
+  background-color: #FFFAF6 !important;
+  background-image:
+    radial-gradient(ellipse at 8% 84%, rgba(232,191,198,.15) 0 2px, transparent 3px),
+    radial-gradient(ellipse at 92% 17%, rgba(150,165,139,.12) 0 2px, transparent 3px),
+    repeating-linear-gradient(135deg, rgba(216,166,173,.035) 0 1px, transparent 1px 8px),
+    linear-gradient(155deg, #FFFCF9 0%, #FBF3F0 100%) !important;
+  border-color: #E7D5D6 !important;
+}
+.category-folder-info {
+  background:
+    radial-gradient(ellipse at 0% 100%, rgba(232,191,198,.19), transparent 48%),
+    linear-gradient(180deg, rgba(255,252,249,.93), rgba(251,243,240,.98)) !important;
+  border-radius: 0 0 15px 15px;
+}
+.category-folder-cover {
+  isolation: isolate;
+}
+.category-folder-cover::before,
+.category-folder-cover::after {
+  content: "";
+  position: absolute;
+  z-index: 4;
+  display: block;
+  width: 61px;
+  height: 61px;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  filter: drop-shadow(0 1px 2px rgba(90,70,70,.08));
+}
+.category-folder-cover::before {
+  top: -4px;
+  left: -4px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%238D9E82' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M3 77Q20 48 29 13M13 62Q4 46 7 36M19 49Q36 47 45 32M28 26Q17 20 17 9M39 39Q53 37 59 24'/%3E%3C/g%3E%3Cg fill='%23E9C1C7' fill-opacity='.88' stroke='%23D6A5AE' stroke-opacity='.4' stroke-width='.6'%3E%3Cellipse cx='17' cy='11' rx='6' ry='10' transform='rotate(-35 17 11)'/%3E%3Cellipse cx='27' cy='13' rx='6' ry='10' transform='rotate(40 27 13)'/%3E%3Cellipse cx='23' cy='22' rx='6' ry='10' transform='rotate(4 23 22)'/%3E%3Cellipse cx='43' cy='29' rx='5' ry='8' transform='rotate(38 43 29)'/%3E%3Cellipse cx='38' cy='23' rx='5' ry='8' transform='rotate(-32 38 23)'/%3E%3Cellipse cx='57' cy='21' rx='4' ry='7' transform='rotate(30 57 21)'/%3E%3C/g%3E%3Cg fill='%23D9B77B'%3E%3Ccircle cx='23' cy='17' r='2.5'/%3E%3Ccircle cx='41' cy='26' r='2'/%3E%3Ccircle cx='55' cy='19' r='1.8'/%3E%3C/g%3E%3C/svg%3E");
+}
+.category-folder-cover::after {
+  right: -5px;
+  bottom: -5px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%238D9E82' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M77 3Q52 23 43 66M66 18Q49 14 42 4M57 37Q72 39 76 51M46 56Q31 54 24 69'/%3E%3C/g%3E%3Cg fill='%23E9C1C7' fill-opacity='.88' stroke='%23D6A5AE' stroke-opacity='.4' stroke-width='.6'%3E%3Cellipse cx='43' cy='8' rx='5' ry='8' transform='rotate(-35 43 8)'/%3E%3Cellipse cx='53' cy='12' rx='5' ry='8' transform='rotate(40 53 12)'/%3E%3Cellipse cx='49' cy='21' rx='5' ry='8' transform='rotate(4 49 21)'/%3E%3Cellipse cx='74' cy='48' rx='5' ry='8' transform='rotate(-35 74 48)'/%3E%3Cellipse cx='64' cy='43' rx='5' ry='8' transform='rotate(40 64 43)'/%3E%3C/g%3E%3Cg fill='%23D9B77B'%3E%3Ccircle cx='49' cy='15' r='2.2'/%3E%3Ccircle cx='69' cy='45' r='2'/%3E%3C/g%3E%3C/svg%3E");
+}
+.category-folder-shade { z-index: 2 !important; }
+.category-folder-open { z-index: 5 !important; }
+@media (max-width: 900px) {
+  .category-folder-cover::before,
+  .category-folder-cover::after { width: 47px; height: 47px; }
+  .category-folder-info { padding-top: 13px !important; }
+}
