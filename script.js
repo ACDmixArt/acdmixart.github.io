@@ -4108,7 +4108,7 @@ function renderProducts() {
               ? `<button type="button" class="add-cart" onclick="openMartisorCustomizer(${product.id}, document.getElementById(&quot;qty-${product.id}&quot;).textContent)">Personalizează</button>`
               : product.categorie === "Party"
               ? `<button type="button" class="add-cart" onclick="${product.id === 266 ? "openGarlandCustomizer" : "openPartyCustomizer"}(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
-              : ["Numere pentru mese", "Meniuri", "Căni", "Cărți", "Botez", "Nuntă", "Mărturii", "Pahare", "Plicuri dar botez", "Plicuri dar nuntă", "Save the Date", "Jurnale", "Cărți de vizită"].includes(product.categorie) && product.id !== 227
+              : ["Numere pentru mese", "Meniuri", "Căni", "Cărți", "Botez", "Nuntă", "Mărturii", "Pahare", "Plicuri dar botez", "Plicuri dar nuntă", "Save the Date", "Jurnale", "Cărți de vizită"].includes(product.categorie)
               ? `<button type="button" class="add-cart" onclick="openProductPersonalization(${product.id})">Personalizează</button>`
               : product.categorie === "Set Moț"
                 ? `<button type="button" class="add-cart" onclick="openSetMotCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
@@ -5668,6 +5668,9 @@ function renderDynamicFields() {
     if (!isWineProduct) {
       addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: category === "Căni" ? "Descrie personalizarea dorită. Pentru cana cu poză, atașează fotografia în conversația WhatsApp când trimiți comanda." : "Tematică și cerințe speciale" });
     }
+    if (category === "Mărturii" && /Mărturie din ciocolată/i.test(selectedProductName)) {
+      addFormField({ id: "formInsigna", label: "Adaugă insignă (+20 lei)", type: "checkbox" });
+    }
   } else if (category === "Agende") {
     addFormField({ id: "formAgendaCharacters", label: "Caricatură", type: "select", options: ["Fără caricatură — 0 lei", "1 personaj — 20 lei", "2 personaje — 35 lei", "3 personaje — 50 lei"] });
     addFormField({ id: "formNames", label: "Nume / detalii pentru agendă", placeholder: "Numele sau textul dorit pe agendă" });
@@ -5800,6 +5803,7 @@ function updateOrderSummary() {
     const qty = qtyInput ? Math.max(1, Number(qtyInput.value) || 1) : 1;
     let unitPrice = unitPriceForQuantity(product, qty);
     if (product && product.categorie === "Set Moț" && frame && frame.checked) unitPrice += 60;
+    if (product && product.id === 227 && document.getElementById("formInsigna")?.checked) unitPrice += 20;
     const agendaCharacters = document.getElementById("formAgendaCharacters");
     if (product && product.categorie === "Agende" && agendaCharacters) {
       const optionCosts = { "Fără caricatură — 0 lei": 0, "1 personaj — 20 lei": 20, "2 personaje — 35 lei": 35, "3 personaje — 50 lei": 50 };
@@ -5942,11 +5946,13 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
     }
     if (childName) message += `Numele copilului: ${childName}\n`;
     if (theme) message += `Tematică: ${theme}\n`;
+    if (document.getElementById("formInsigna")?.checked) message += "Insignă suplimentară: Da (+20 lei)\n";
     const frame = document.getElementById("formFrame");
     if (frame && frame.checked) message += "Ramă foto: Da (+60 lei)\n";
 
     let unitPrice = product ? unitPriceForQuantity(product, quantity) : null;
     if (product && product.categorie === "Set Moț" && frame && frame.checked) unitPrice += 60;
+    if (product && product.id === 227 && document.getElementById("formInsigna")?.checked) unitPrice += 20;
     const agendaCharacters = document.getElementById("formAgendaCharacters");
     if (product && product.categorie === "Agende" && agendaCharacters) {
       const optionCosts = { "Fără caricatură — 0 lei": 0, "1 personaj — 20 lei": 20, "2 personaje — 35 lei": 35, "3 personaje — 50 lei": 50 };
