@@ -3088,6 +3088,19 @@ const products = [
       "images/products/mathy13.jpg"
     ]
   },
+  {
+    id: 277,
+    nume: "Topper 3D Batman",
+    categorie: "Toppere",
+    pret: 75,
+    poze: [
+      "images/products/yop.jpg",
+      "images/products/yop1.jpg",
+      "images/products/yop2.jpg",
+      "images/products/yop3.jpg",
+      "images/products/yop4.jpg"
+    ]
+  },
 
 ];
 
