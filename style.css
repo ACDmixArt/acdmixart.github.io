@@ -3314,3 +3314,54 @@ body.personalize-modal-open{overflow:hidden}
   .category-folder-cover::after { width: 47px; height: 47px; }
   .category-folder-info { padding-top: 13px !important; }
 }
+
+
+/* Full floral botanical wallpaper for the collection cards */
+.category-folder-card {
+  position: relative !important;
+  background-color: #FBF3EF !important;
+  background-image:
+    radial-gradient(ellipse at 12% 14%, rgba(232,191,198,.25), transparent 35%),
+    radial-gradient(ellipse at 88% 83%, rgba(174,190,161,.24), transparent 38%),
+    linear-gradient(135deg,#FFF9F4 0%,#F8EDE9 52%,#F5E9E5 100%) !important;
+  border: 1px solid rgba(194,151,151,.42) !important;
+  box-shadow: 0 8px 26px rgba(115,82,82,.08), inset 0 0 0 1px rgba(255,255,255,.72) !important;
+}
+.category-folder-card::before {
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: .95 !important;
+  background-size: 100% 100% !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 420' preserveAspectRatio='none'%3E%3Cg fill='none' stroke='%23899B7F' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M-12 145Q38 108 54 28M7 125Q-3 98 2 78M21 103Q50 104 65 83M34 75Q15 56 18 37M45 51Q68 48 76 27M320 294Q278 250 282 190M302 268Q315 243 313 223M294 246Q266 247 252 228M287 218Q305 199 301 181M-7 376Q40 345 48 289M13 354Q1 332 6 312M30 334Q52 335 65 317M327 65Q290 87 280 128M308 80Q316 102 308 118M294 98Q271 96 260 111'/%3E%3C/g%3E%3Cg fill='%23E7B9C2' fill-opacity='.94' stroke='%23D59DA9' stroke-opacity='.6' stroke-width='.8'%3E%3Cellipse cx='18' cy='38' rx='9' ry='18' transform='rotate(-38 18 38)'/%3E%3Cellipse cx='38' cy='39' rx='9' ry='18' transform='rotate(42 38 39)'/%3E%3Cellipse cx='28' cy='57' rx='9' ry='18' transform='rotate(5 28 57)'/%3E%3Cellipse cx='63' cy='79' rx='7' ry='14' transform='rotate(38 63 79)'/%3E%3Cellipse cx='53' cy='68' rx='7' ry='14' transform='rotate(-30 53 68)'/%3E%3Cellipse cx='279' cy='191' rx='9' ry='18' transform='rotate(-35 279 191)'/%3E%3Cellipse cx='299' cy='194' rx='9' ry='18' transform='rotate(40 299 194)'/%3E%3Cellipse cx='290' cy='212' rx='9' ry='18' transform='rotate(5 290 212)'/%3E%3Cellipse cx='48' cy='290' rx='8' ry='15' transform='rotate(-35 48 290)'/%3E%3Cellipse cx='65' cy='294' rx='8' ry='15' transform='rotate(40 65 294)'/%3E%3Cellipse cx='57' cy='309' rx='8' ry='15' transform='rotate(5 57 309)'/%3E%3Cellipse cx='277' cy='128' rx='7' ry='14' transform='rotate(-35 277 128)'/%3E%3Cellipse cx='292' cy='130' rx='7' ry='14' transform='rotate(40 292 130)'/%3E%3C/g%3E%3Cg fill='%23D8B77E'%3E%3Ccircle cx='28' cy='45' r='4'/%3E%3Ccircle cx='290' cy='200' r='4'/%3E%3Ccircle cx='57' cy='300' r='3.5'/%3E%3Ccircle cx='285' cy='124' r='3'/%3E%3C/g%3E%3Cg fill='%23A7B79B' fill-opacity='.82'%3E%3Cellipse cx='7' cy='97' rx='7' ry='18' transform='rotate(-48 7 97)'/%3E%3Cellipse cx='49' cy='96' rx='7' ry='18' transform='rotate(45 49 96)'/%3E%3Cellipse cx='309' cy='244' rx='7' ry='18' transform='rotate(-48 309 244)'/%3E%3Cellipse cx='270' cy='231' rx='7' ry='18' transform='rotate(45 270 231)'/%3E%3Cellipse cx='25' cy='337' rx='7' ry='18' transform='rotate(-48 25 337)'/%3E%3Cellipse cx='56' cy='329' rx='7' ry='18' transform='rotate(45 56 329)'/%3E%3C/g%3E%3C/svg%3E");
+}
+.category-folder-card::after {
+  display: none !important;
+}
+.category-folder-cover::before,
+.category-folder-cover::after {
+  width: 74px !important;
+  height: 74px !important;
+  opacity: 1 !important;
+  background-size: contain !important;
+}
+.category-folder-cover::before {
+  top: -3px !important;
+  left: -3px !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%237F9678' stroke-width='1.7' stroke-linecap='round'%3E%3Cpath d='M3 97Q22 60 35 12M12 77Q1 57 7 42M20 61Q43 61 56 39M29 34Q13 23 18 8M42 48Q62 45 69 25'/%3E%3C/g%3E%3Cg fill='%23E7B2BD' stroke='%23D49AA7' stroke-opacity='.55' stroke-width='.8'%3E%3Cellipse cx='19' cy='12' rx='8' ry='14' transform='rotate(-35 19 12)'/%3E%3Cellipse cx='35' cy='15' rx='8' ry='14' transform='rotate(40 35 15)'/%3E%3Cellipse cx='27' cy='29' rx='8' ry='14' transform='rotate(5 27 29)'/%3E%3Cellipse cx='57' cy='37' rx='7' ry='12' transform='rotate(38 57 37)'/%3E%3Cellipse cx='50' cy='28' rx='7' ry='12' transform='rotate(-30 50 28)'/%3E%3C/g%3E%3Cg fill='%23D6B477'%3E%3Ccircle cx='27' cy='20' r='3'/%3E%3Ccircle cx='53' cy='33' r='2.5'/%3E%3C/g%3E%3C/svg%3E");
+}
+.category-folder-cover::after {
+  right: -4px !important;
+  bottom: -4px !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%237F9678' stroke-width='1.7' stroke-linecap='round'%3E%3Cpath d='M97 3Q60 22 48 75M79 15Q58 11 48 3M63 39Q84 41 92 59M51 63Q32 61 23 82'/%3E%3C/g%3E%3Cg fill='%23E7B2BD' stroke='%23D49AA7' stroke-opacity='.55' stroke-width='.8'%3E%3Cellipse cx='48' cy='9' rx='8' ry='14' transform='rotate(-35 48 9)'/%3E%3Cellipse cx='64' cy='12' rx='8' ry='14' transform='rotate(40 64 12)'/%3E%3Cellipse cx='56' cy='26' rx='8' ry='14' transform='rotate(5 56 26)'/%3E%3Cellipse cx='89' cy='53' rx='7' ry='12' transform='rotate(-35 89 53)'/%3E%3Cellipse cx='76' cy='47' rx='7' ry='12' transform='rotate(40 76 47)'/%3E%3C/g%3E%3Cg fill='%23D6B477'%3E%3Ccircle cx='56' cy='17' r='3'/%3E%3Ccircle cx='83' cy='50' r='2.5'/%3E%3C/g%3E%3C/svg%3E");
+}
+.category-folder-info {
+  background: linear-gradient(180deg,rgba(255,250,246,.94),rgba(249,237,233,.98)) !important;
+  border-top: 1px solid rgba(210,170,171,.28);
+}
+@media (max-width: 900px) {
+  .category-folder-card::before { opacity: .88 !important; }
+  .category-folder-cover::before,
+  .category-folder-cover::after { width: 53px !important; height: 53px !important; }
+}
