@@ -5624,9 +5624,9 @@ if (openSearchButton && productSearchInput) {
 function renderFeaturedProducts() {
   const container = document.getElementById("featuredProducts");
   if (!container) return;
-  const featuredCategories = ["Botez", "Nuntă", "Toppere", "Party"];
-  const featured = featuredCategories
-    .map(category => products.find(product => String(product.categorie || "").toLocaleLowerCase("ro") === category.toLocaleLowerCase("ro")))
+  const featuredIds = [1, 276, 290, 291];
+  const featured = featuredIds
+    .map(id => products.find(product => Number(product.id) === id))
     .filter(Boolean);
 
   const escapeHTML = value => String(value ?? "").replace(/[&<>"']/g, char => ({
