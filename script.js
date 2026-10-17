@@ -3111,6 +3111,17 @@ const products = [
       "images/products/avs1.jpg"
     ]
   },
+  {
+    id: 279,
+    nume: "Topper Spiderman",
+    categorie: "Toppere",
+    pret: 75,
+    poze: [
+      "images/products/spi.jpg",
+      "images/products/spi1.jpg",
+      "images/products/spi2.jpg"
+    ]
+  },
 
 ];
 
