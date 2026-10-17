@@ -3557,7 +3557,6 @@ const products = [
       "images/products/a41.jpg",
       "images/products/a42.jpg",
       "images/products/a43.jpg",
-      "images/products/a44.jpg",
       "images/products/a45.jpg",
       "images/products/a46.jpg",
       "images/products/a47.jpg",
