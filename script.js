@@ -5817,8 +5817,14 @@ function openProductPersonalization(productId) {
   const modal = document.getElementById("personalizeModal");
   if (!product || !modal || !formCategory || !formProduct) return;
 
-  modal.hidden = false;
-  document.body.style.overflow = "hidden";
+  // Mută secțiunea formularului în dialog înainte să îl afișeze.
+  // Fără asta, modalul putea apărea gol, ca o simplă dungă.
+  if (typeof openPersonalizeModal === "function") {
+    openPersonalizeModal();
+  } else {
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
   formCategory.value = product.categorie;
   updateFormProducts();
   formProduct.value = String(product.id);
