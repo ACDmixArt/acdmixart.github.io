@@ -4008,7 +4008,7 @@ zoomButton.addEventListener("click", function (e) {
 
   const personalizeButton = lightbox.querySelector(".lightbox-personalize");
 
-  if (!["Set Moț", "Agende", "Party"].includes(product.categorie)) {
+  if (!["Set Moț", "Agende", "Party", "Martisoare"].includes(product.categorie)) {
     personalizeButton.hidden = true;
   }
 
@@ -4016,6 +4016,7 @@ zoomButton.addEventListener("click", function (e) {
     closeGallery();
     if (product.categorie === "Agende") openAgendaCustomizer(product.id, 1);
     else if (product.categorie === "Party") (product.id === 266 ? openGarlandCustomizer : openPartyCustomizer)(product.id, 1);
+    else if (product.categorie === "Martisoare") openMartisorCustomizer(product.id, 1);
     else openSetMotCustomizer(product.id, 1);
   });
 
@@ -4024,6 +4025,8 @@ zoomButton.addEventListener("click", function (e) {
 
     if (product.categorie === "Set Moț") {
       openSetMotCustomizer(product.id, 1);
+    } else if (product.categorie === "Martisoare") {
+      openMartisorCustomizer(product.id, 1);
     } else if (product.categorie === "Agende") {
       openAgendaCustomizer(product.id, 1);
     } else if (product.categorie === "Party") {
