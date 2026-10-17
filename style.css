@@ -3216,3 +3216,8 @@ body.personalize-modal-open{overflow:hidden}
 @media (prefers-reduced-motion: reduce) {
   .category-folder-card, .category-folder-cover img { transition: none !important; }
 }
+
+
+/* Hidden attribute must override all mobile filter display rules. */
+#filters.filters[hidden] { display: none !important; }
+.category-folder-tab { display: none !important; }
