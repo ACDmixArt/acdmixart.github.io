@@ -3521,6 +3521,19 @@ const products = [
       "images/products/minitop2.jpg"
     ]
   },
+  {
+    id: 312,
+    nume: "Save the Date – Model 1",
+    categorie: "Save the Date",
+    pret: 45,
+    poze: [
+      "images/products/save.jpg",
+      "images/products/save1.jpg",
+      "images/products/save2.jpg",
+      "images/products/save3.jpg",
+      "images/products/save4.jpg"
+    ]
+  },
 
 ];
 
