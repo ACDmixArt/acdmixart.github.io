@@ -5777,7 +5777,6 @@ function renderDynamicFields() {
       addFormField({ id: "formNames", label: "Nume / text pentru personalizare", placeholder: "Scrie exact numele sau mesajul dorit" });
     }
     addFormField({ id: "formColors", label: "Culori", placeholder: "Culorile dorite (dacă este cazul)" });
-    addFormField({ id: "formDate", label: "Data evenimentului", type: "date" });
     if (!isWineProduct) {
       addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: category === "Căni" ? "Descrie personalizarea dorită. Pentru cana cu poză, atașează fotografia în conversația WhatsApp când trimiți comanda." : "Tematică și cerințe speciale" });
     }
@@ -5801,19 +5800,20 @@ function renderDynamicFields() {
     addFormField({ id: "formAge", label: "Vârsta", type: "number", min: 1 });
     addFormField({ id: "formTheme", label: "Tematica dorită", placeholder: "Scrie ce tematică dorești pentru produs", required: true });
     addFormField({ id: "formColors", label: "Culori", placeholder: "Culorile dorite" });
-    addFormField({ id: "formDate", label: "Data evenimentului", type: "date" });
     addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Mesaj, culori sau alte cerințe" });
   } else if (category === "Party") {
     addFormField({ id: "formNames", label: "Nume / text", placeholder: "Textul care trebuie să apară" });
     addFormField({ id: "formAge", label: "Vârsta (dacă este relevantă)", type: "number", min: 1 });
     addFormField({ id: "formTheme", label: "Tematica dorită", placeholder: "Scrie ce tematică dorești pentru produs" });
     addFormField({ id: "formColors", label: "Culori", placeholder: "Culorile dorite" });
-    addFormField({ id: "formDate", label: "Data evenimentului", type: "date" });
     addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Dimensiuni sau alte cerințe" });
   } else {
     addFormField({ id: "formNames", label: "Nume / text", placeholder: "Detalii pentru personalizare" });
     addFormField({ id: "formColors", label: "Nuanțe / culori", placeholder: "Culorile dorite" });
-    addFormField({ id: "formDate", label: "Data evenimentului", type: "date" });
+    const categoriesWithoutEventDate = ["Jurnale", "Jurnal", "Cărți de vizită", "Carti de vizita", "Cărți", "Toppere", "Agende", "Party", "Torturi din cutiuțe", "Pahare", "Căni"];
+    if (!categoriesWithoutEventDate.includes(category)) {
+      addFormField({ id: "formDate", label: "Data evenimentului", type: "date" });
+    }
     addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Scrie aici cerințele tale" });
   }
 
