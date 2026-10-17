@@ -2967,6 +2967,19 @@ const products = [
   },
 
   {
+    id: 343,
+    nume: "Mărțișor breloc",
+    categorie: "Martisoare",
+    pret: 15,
+    descriere: "Mărțișor tip breloc, personalizat cu numele persoanei care îl primește, numele persoanei care îl oferă și mesajul dorit.",
+    poze: [
+      "images/products/tisor1.jpg",
+      "images/products/tisor.jpg",
+      "images/products/tisor2.jpg"
+    ]
+  },
+
+  {
     id: 270,
     nume: "Mărțișor – floare din săpun",
     categorie: "Martisoare",
