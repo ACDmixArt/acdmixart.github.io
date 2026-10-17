@@ -3279,6 +3279,18 @@ const products = [
       "images/products/30lei3.jpg"
     ]
   },
+  {
+    id: 293,
+    nume: "Mini topper",
+    categorie: "Toppere",
+    pret: 3,
+    descriere: "Mini topper personalizat, 3 lei/bucată. Se poate personaliza în tematica dorită.",
+    poze: [
+      "images/products/minitop.jpg",
+      "images/products/minitop1.jpg",
+      "images/products/minitop2.jpg"
+    ]
+  },
 
 ];
 
@@ -3540,6 +3552,67 @@ function openTopperCustomizer(productId, quantity = 1) {
   const qty = Math.max(1, Number(quantity) || 1);
 
   // Set mini toppere 1: base price plus optional extra mini toppers.
+  if (Number(product.id) === 293) {
+    document.querySelector(".topper-customizer-modal")?.remove();
+    const modal = document.createElement("div");
+    modal.className = "topper-customizer-modal";
+    modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.68);display:flex;align-items:center;justify-content:center;z-index:9999;padding:16px;";
+    modal.innerHTML = `
+      <div style="background:white;width:100%;max-width:560px;max-height:92vh;overflow:auto;border-radius:16px;padding:24px;box-sizing:border-box;position:relative;">
+        <button type="button" aria-label="Închide" class="topper-close" style="position:absolute;top:8px;right:12px;border:0;background:none;font-size:30px;cursor:pointer;">×</button>
+        <h2 style="margin:0 35px 8px 0;color:#66745F;">Personalizează mini topper-ele</h2>
+        <p>Preț: <strong>3 lei/bucată</strong>.</p>
+        <label for="minitop-theme" style="display:block;margin-top:14px;font-weight:600;">Tematică *</label>
+        <input id="minitop-theme" type="text" required maxlength="250" placeholder="Ex.: animăluțe, flori, personaje..." style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+        <label for="minitop-count" style="display:block;margin-top:14px;font-weight:600;">Număr de bucăți *</label>
+        <input id="minitop-count" type="number" min="1" max="500" step="1" value="1" required style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+        <label for="minitop-name" style="display:block;margin-top:14px;font-weight:600;">Nume *</label>
+        <input id="minitop-name" type="text" required maxlength="120" placeholder="Numele dorit" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+        <label for="minitop-age" style="display:block;margin-top:14px;font-weight:600;">Vârstă (opțional)</label>
+        <input id="minitop-age" type="text" maxlength="60" placeholder="Ex.: 5 ani" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+        <p class="minitop-live-price" style="font-size:22px;font-weight:700;margin:18px 0;color:#66745F;"></p>
+        <p class="minitop-error" role="alert" style="color:#b00020;display:none;"></p>
+        <button type="button" class="minitop-add add-cart" style="width:100%;padding:14px;border:0;border-radius:9px;background:#B77E88;color:white;font-weight:700;cursor:pointer;font-size:16px;">Adaugă în coș</button>
+      </div>
+    `;
+    document.body.appendChild(modal);
+    const countInput = modal.querySelector("#minitop-count");
+    const livePrice = modal.querySelector(".minitop-live-price");
+    const updateMiniTopperPrice = () => {
+      const raw = Number(countInput.value);
+      const count = Number.isInteger(raw) ? Math.max(1, Math.min(500, raw)) : 1;
+      livePrice.textContent = `Total: ${money(count * 3)} · ${count} bucăți`;
+    };
+    countInput.addEventListener("input", updateMiniTopperPrice);
+    modal.querySelector(".topper-close").addEventListener("click", () => modal.remove());
+    modal.addEventListener("click", event => { if (event.target === modal) modal.remove(); });
+    updateMiniTopperPrice();
+    modal.querySelector(".minitop-add").addEventListener("click", () => {
+      const theme = modal.querySelector("#minitop-theme").value.trim();
+      const countRaw = Number(countInput.value);
+      const count = Number.isInteger(countRaw) ? countRaw : 0;
+      const name = modal.querySelector("#minitop-name").value.trim();
+      const age = modal.querySelector("#minitop-age").value.trim();
+      const error = modal.querySelector(".minitop-error");
+      if (!theme || !name) {
+        error.textContent = "Completează tematica și numele.";
+        error.style.display = "block";
+        return;
+      }
+      if (count < 1 || count > 500) {
+        error.textContent = "Alege un număr de bucăți între 1 și 500.";
+        error.style.display = "block";
+        return;
+      }
+      const personalizare = { tip: "miniTopper", tematica: theme, bucati: count, nume: name, varsta: age };
+      cart.push({ ...product, nume: product.nume + " personalizat", pret: 3, quantity: count, personalizare });
+      renderCart();
+      modal.remove();
+      openCart();
+    });
+    return;
+  }
+
   if ([286, 288, 289, 292].includes(Number(product.id))) {
     document.querySelector(".topper-customizer-modal")?.remove();
     const modal = document.createElement("div");
