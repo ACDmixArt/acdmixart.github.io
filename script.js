@@ -3795,6 +3795,20 @@ const products = [
       "images/products/meniuzana4.jpg"
     ]
   },
+  {
+    id: 336,
+    nume: "Meniu de botez – Model 5",
+    categorie: "Meniuri",
+    pret: 7,
+    descriere: "Meniu personalizat pentru botez. Prețul este per bucată. Completează meniul cu preparatele și băuturile, tematica, numele copilului și data evenimentului.",
+    poze: [
+      "images/products/meniubaiat.jpg",
+      "images/products/meniubaiat1.jpg",
+      "images/products/meniubaiat2.jpg",
+      "images/products/meniubaiat3.jpg",
+      "images/products/meniubaiat4.jpg"
+    ]
+  },
 
 
 ];
