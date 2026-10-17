@@ -3770,6 +3770,17 @@ const products = [
       "images/products/meniusimplu2.jpg"
     ]
   },
+  {
+    id: 334,
+    nume: "Meniu de nuntă – Model 3",
+    categorie: "Meniuri",
+    pret: 7,
+    descriere: "Meniu personalizat pentru nuntă. Prețul este per bucată. Completează meniul cu preparatele și băuturile, tematica, numele mirilor și data evenimentului.",
+    poze: [
+      "images/products/meniu.jpg",
+      "images/products/meniu1.jpg"
+    ]
+  },
 
 
 ];
