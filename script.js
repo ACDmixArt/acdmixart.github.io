@@ -3004,6 +3004,7 @@ function categories() {
     "Botez",
     "Nuntă",
     "Mărturii",
+    "Martisoare",
     "Plicuri dar botez",
     "Plicuri dar nuntă",
     "Căni",
