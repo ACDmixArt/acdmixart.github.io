@@ -3226,10 +3226,10 @@ const products = [
   },
   {
     id: 286,
-    nume: "Set topper 4",
+    nume: "Set mini toppere 4",
     categorie: "Toppere",
-    pret: 65,
-    descriere: "Set topper central + 8 toppere mici în 2 straturi. Se poate adăuga orice număr de toppere mici suplimentare, la 5 lei/bucată.",
+    pret: 30,
+    descriere: "Set mini toppere. Se pot adăuga toppere mici suplimentare la 3 lei/bucată.",
     poze: [
       "images/products/bri.jpg",
       "images/products/bri1.jpg",
@@ -3540,7 +3540,7 @@ function openTopperCustomizer(productId, quantity = 1) {
   const qty = Math.max(1, Number(quantity) || 1);
 
   // Set mini toppere 1: base price plus optional extra mini toppers.
-  if ([288, 289, 292].includes(Number(product.id))) {
+  if ([286, 288, 289, 292].includes(Number(product.id))) {
     document.querySelector(".topper-customizer-modal")?.remove();
     const modal = document.createElement("div");
     modal.className = "topper-customizer-modal";
