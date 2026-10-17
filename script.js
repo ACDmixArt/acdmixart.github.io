@@ -6056,7 +6056,7 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
       return;
     }
 
-    let message = "Bună ziua! Doresc o comandă personalizată ACDmixArt.\n\n";
+    let message = getACDMixArtGreeting() + " Doresc o comandă personalizată ACDmixArt.\n\n";
     message += `Categorie: ${category}\n${product ? "Model / produs ales: " + product.nume : "Model / produs: model propriu — fără model existent"}\nCantitate: ${quantity}\n`;
 
     const fields = [
