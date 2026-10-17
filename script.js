@@ -2948,7 +2948,7 @@ const products = [
   {
     id: 269,
     nume: "Carte de povești cu copilul ca personaj principal",
-    categorie: "Carti",
+    categorie: "Cărți",
     pret: 180,
     poze: [
       "images/products/nat.jpg",
@@ -4108,7 +4108,7 @@ function renderProducts() {
               ? `<button type="button" class="add-cart" onclick="openMartisorCustomizer(${product.id}, document.getElementById(&quot;qty-${product.id}&quot;).textContent)">Personalizează</button>`
               : product.categorie === "Party"
               ? `<button type="button" class="add-cart" onclick="${product.id === 266 ? "openGarlandCustomizer" : "openPartyCustomizer"}(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
-              : ["Numere pentru mese", "Meniuri", "Căni", "Cărți"].includes(product.categorie)
+              : ["Numere pentru mese", "Meniuri", "Căni", "Cărți", "Botez", "Nuntă", "Mărturii", "Pahare", "Plicuri dar botez", "Plicuri dar nuntă", "Save the Date", "Jurnale", "Cărți de vizită"].includes(product.categorie) && product.id !== 227
               ? `<button type="button" class="add-cart" onclick="openProductPersonalization(${product.id})">Personalizează</button>`
               : product.categorie === "Set Moț"
                 ? `<button type="button" class="add-cart" onclick="openSetMotCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
@@ -5607,14 +5607,14 @@ function renderDynamicFields() {
     return;
   }
 
+  const quantityProduct = products.find(item => String(item.id) === (formProduct?.value || ""));
+  const quantityNeedsMinimum = ["Botez", "Nuntă"].includes(category) || isMin25Invitation(quantityProduct);
   addFormField({
     id: "formQuantity",
-    label: category === "Botez" || category === "Nuntă"
-      ? "Cantitate (minimum 25 bucăți)"
-      : "Cantitate",
+    label: quantityNeedsMinimum ? "Cantitate (minimum 25 bucăți)" : "Cantitate",
     type: "number",
-    min: 1,
-    value: "1",
+    min: quantityNeedsMinimum ? 25 : 1,
+    value: quantityNeedsMinimum ? "25" : "1",
     required: true
   });
 
@@ -5857,8 +5857,8 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
       return;
     }
 
-    if (["Botez", "Nuntă"].includes(formCategory.value) && quantity < 25) {
-      alert("Comandă minimă pentru invitații este de 25 de bucăți.");
+    if ((["Botez", "Nuntă"].includes(formCategory.value) || isMin25Invitation(product)) && quantity < 25) {
+      alert("Comanda minimă pentru invitații și plicurile de dar este de 25 de bucăți.");
       quantityInput.focus();
       return;
     }
