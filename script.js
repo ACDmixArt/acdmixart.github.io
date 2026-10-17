@@ -3682,6 +3682,36 @@ function updateMinimumOrderNotice() {
   notice.innerHTML = message ? message.replace("25 de bucăți", "<strong>25 de bucăți</strong>") : "";
 }
 
+function getFolderCategories() {
+  const available = [...new Set(products.map(product => product.categorie).filter(Boolean))];
+  const preferred = categories().filter(category => category !== "Toate" && available.includes(category));
+  const extra = available.filter(category => !preferred.includes(category));
+  return [...preferred, ...extra];
+}
+
+function renderCategoryFolders() {
+  if (!grila) return;
+  const folderCategories = getFolderCategories();
+  grila.classList.add("category-folders-grid");
+  grila.innerHTML = folderCategories.map(category => {
+    const items = products.filter(product => product.categorie === category);
+    const previewProduct = items.find(product => (product.poze || [product.poză]).filter(Boolean).length);
+    const previewImage = previewProduct ? ((previewProduct.poze || [previewProduct.poză]).filter(Boolean)[0] || "") : "";
+    const safeCategory = category.replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+    return '<button type="button" class="category-folder-card" onclick="setCategory(\'' + safeCategory + '\')">' +
+      '<span class="category-folder-tab" aria-hidden="true"></span>' +
+      '<span class="category-folder-cover">' +
+        (previewImage ? '<img src="' + previewImage + '" alt="" loading="lazy" onerror="this.remove();this.parentElement.classList.add(\\'folder-cover-empty\\')">' : '') +
+        '<span class="category-folder-shade" aria-hidden="true"></span>' +
+        '<span class="category-folder-open" aria-hidden="true">↗</span>' +
+      '</span>' +
+      '<span class="category-folder-info">' +
+        '<span class="category-folder-name">' + category + '</span>' +
+        '<span class="category-folder-count">' + items.length + ' ' + (items.length === 1 ? 'produs' : 'produse') + '</span>' +
+      '</span></button>';
+  }).join("");
+}
+
 function renderProducts() {
   if (!grila) return;
 
@@ -3692,6 +3722,18 @@ function renderProducts() {
     .replace(/[^a-z0-9]+/g, " ")
     .trim();
   const query = normalizeSearch(document.getElementById("productSearch")?.value || "");
+  const showFolders = !query && !favoritesOnly && activeCategory === "Toate";
+  const backButton = document.getElementById("backToFolders");
+  const catalogTitle = document.getElementById("catalogTitle");
+  if (backButton) backButton.hidden = showFolders;
+  if (filtre) filtre.style.display = showFolders ? "none" : "";
+  if (catalogTitle) catalogTitle.textContent = showFolders ? "Explorează colecțiile" : "Produsele ACDmixArt";
+  if (showFolders) {
+    updateMinimumOrderNotice();
+    renderCategoryFolders();
+    return;
+  }
+  grila.classList.remove("category-folders-grid");
   // A typed search always searches all products, not only the active category.
   const categoryList = favoritesOnly
     ? products.filter(product => favoriteIds.includes(Number(product.id)))
