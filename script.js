@@ -3546,7 +3546,7 @@ const products = [
   },
   {
     id: 314,
-    nume: "Cană cu poză",
+    nume: "Cană cu poză 1",
     categorie: "Căni",
     pret: 30,
     descriere: "Cană personalizată cu fotografia și textul dorit. Poți adăuga un nume sau un mesaj. Fotografia se atașează direct în WhatsApp când trimiți comanda.",
@@ -3556,7 +3556,7 @@ const products = [
   },
   {
     id: 315,
-    nume: "Cană albă personalizată",
+    nume: "Cană albă personalizată 2",
     categorie: "Căni",
     pret: 30,
     descriere: "Cană albă personalizată cu nume, text sau mesaj la alegere. Dacă dorești personalizare cu fotografie, atașează poza în conversația WhatsApp când trimiți comanda.",
@@ -3566,7 +3566,7 @@ const products = [
   },
   {
     id: 316,
-    nume: "Cană albă cu caricatură",
+    nume: "Cană albă cu caricatură 3",
     categorie: "Căni",
     pret: 45,
     descriere: "Cană albă personalizată cu caricatură. Poți adăuga și un nume sau un mesaj. Fotografiile necesare pentru realizarea caricaturii se atașează în conversația WhatsApp când trimiți comanda.",
@@ -3577,7 +3577,7 @@ const products = [
   },
   {
     id: 317,
-    nume: "Cană cu model de Crăciun și text",
+    nume: "Cană cu model de Crăciun și text 4",
     categorie: "Căni",
     pret: 30,
     descriere: "Cană cu model de Crăciun, personalizată cu textul sau numele dorit. Scrie în formular mesajul exact pe care vrei să îl imprimăm.",
@@ -3589,7 +3589,7 @@ const products = [
   },
   {
     id: 318,
-    nume: "Cană cu personaj și nume",
+    nume: "Cană cu personaj și nume 5",
     categorie: "Căni",
     pret: 30,
     descriere: "Cană personalizată cu personajul și numele alese. În formular, scrie personajul dorit și numele exact pentru personalizare.",
@@ -3604,7 +3604,7 @@ const products = [
   },
   {
     id: 319,
-    nume: "Termos personalizat",
+    nume: "Termos personalizat 6",
     categorie: "Căni",
     pret: 90,
     descriere: "Termos personalizat cu personajul preferat, nume și text la alegere. Completează în formular personajul dorit, numele și mesajul exact pentru personalizare.",
@@ -3615,13 +3615,33 @@ const products = [
   },
   {
     id: 320,
-    nume: "Bidon pentru apă personalizabil",
+    nume: "Bidon pentru apă personalizabil 7",
     categorie: "Căni",
     pret: 75,
     descriere: "Bidon pentru apă personalizat după preferințele tale! Alege personajul dorit, adaugă un nume și un text sau mesaj special. Toate detaliile se completează în formularul de comandă.",
     poze: [
       "images/products/bidonapa.jpg",
       "images/products/bidonapa1.jpg"
+    ]
+  },
+  {
+    id: 321,
+    nume: "Bidon pentru apă personalizabil 8",
+    categorie: "Căni",
+    pret: 75,
+    descriere: "Bidon pentru apă personalizat cu personajul preferat, nume și text la alegere. Completează toate detaliile în formularul de comandă.",
+    poze: [
+      "images/products/bidonapa2.jpg"
+    ]
+  },
+  {
+    id: 322,
+    nume: "Bidon pentru apă personalizabil 9",
+    categorie: "Căni",
+    pret: 75,
+    descriere: "Bidon pentru apă personalizat cu personajul preferat, nume și text la alegere. Completează toate detaliile în formularul de comandă.",
+    poze: [
+      "images/products/bidonapa3.jpg"
     ]
   },
 
