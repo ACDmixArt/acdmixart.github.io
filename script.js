@@ -2952,7 +2952,6 @@ const products = [
     pret: 180,
     poze: [
       "images/products/nat.jpg",
-      "images/products/nat1.jpg",
       "images/products/nat2.jpg",
       "images/products/nat3.jpg",
       "images/products/nat4.jpg",
