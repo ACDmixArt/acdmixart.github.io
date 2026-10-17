@@ -3005,6 +3005,24 @@ const products = [
       "images/products/Martisor/marmare6.jpg",
       "images/products/Martisor/marmare7.jpg"
     ]
+  },
+
+  {
+    id: 272,
+    nume: "Insignă mărțișor",
+    categorie: "Martisoare",
+    pret: 20,
+    poze: [
+      "images/products/Martisor/inc.jpg",
+      "images/products/Martisor/inc1.jpg",
+      "images/products/Martisor/inc2.jpg",
+      "images/products/Martisor/inc3.jpg",
+      "images/products/Martisor/inc4.jpg",
+      "images/products/Martisor/inc5.jpg",
+      "images/products/Martisor/inc6.jpg",
+      "images/products/Martisor/inc7.jpg",
+      "images/products/Martisor/inc8.jpg"
+    ]
   }
 ];
 
