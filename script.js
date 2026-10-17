@@ -3548,10 +3548,54 @@ const products = [
   },
   {
     id: 339,
-    nume: "Caricatură A4 (21 × 30 cm) cu ramă",
+    nume: "Caricatura A4",
     categorie: "Caricaturi",
     pret: 140,
-    descriere: "Caricatură A4 cu ramă, pentru 1–2 personaje incluse. Personajele suplimentare, ținutele profesionale și accesoriile se pot adăuga contra cost."
+    descriere: "Caricatură A4 (21 × 30 cm) cu ramă. Prețul include 1–2 personaje; personajele suplimentare, ținutele profesionale și elementele extra se pot adăuga contra cost.",
+    poze: [
+      "images/products/a4.jpg",
+      "images/products/a41.jpg",
+      "images/products/a42.jpg",
+      "images/products/a43.jpg",
+      "images/products/a44.jpg",
+      "images/products/a45.jpg",
+      "images/products/a46.jpg",
+      "images/products/a47.jpg",
+      "images/products/a48.jpg",
+      "images/products/a49.jpg",
+      "images/products/a410.jpg",
+      "images/products/a411.jpg",
+      "images/products/a412.jpg",
+      "images/products/a413.jpg",
+      "images/products/a414.jpg",
+      "images/products/a415.jpg",
+      "images/products/a416.jpg",
+      "images/products/a417.jpg",
+      "images/products/a418.jpg",
+      "images/products/a419.jpg",
+      "images/products/a420.jpg",
+      "images/products/a421.jpg",
+      "images/products/a422.jpg",
+      "images/products/a423.jpg",
+      "images/products/a424.jpg",
+      "images/products/a425.jpg",
+      "images/products/a426.jpg",
+      "images/products/a427.jpg",
+      "images/products/a428.jpg",
+      "images/products/a429.jpg",
+      "images/products/a430.jpg",
+      "images/products/a431.jpg",
+      "images/products/a432.jpg",
+      "images/products/a433.jpg",
+      "images/products/a434.jpg",
+      "images/products/a435.jpg",
+      "images/products/a436.jpg",
+      "images/products/a437.jpg",
+      "images/products/a438.jpg",
+      "images/products/a439.jpg",
+      "images/products/a440.jpg",
+      "images/products/a441.jpg"
+    ]
   },
   {
     id: 340,
@@ -6040,7 +6084,7 @@ function openCaricatureCustomizer(productId, quantity = 1) {
     '<option value="A3 cu ramă" data-base="190">A3 — 30 × 42 cm, cu ramă — 190 lei</option>' +
     '<option value="Online" data-base="120">Online — 120 lei</option></select>' +
     '<label for="caricature-people" style="display:block;font-weight:600;margin:14px 0 6px;">Număr de personaje (1–2 incluse)</label>' +
-    '<input id="caricature-people" type="number" min="1" max="30" step="1" value="1" style="width:100%;padding:11px;border:1px solid #ccc;border-radius:8px;box-sizing:border-box;">' +
+    '<input id="caricature-people" type="number" min="1" max="30" step="1" value="2" style="width:100%;padding:11px;border:1px solid #ccc;border-radius:8px;box-sizing:border-box;">' +
     '<label style="display:flex;gap:10px;align-items:flex-start;margin:14px 0;"><input id="caricature-profession" type="checkbox" style="margin-top:4px;"> <span>Personaje îmbrăcate în ținute specifice meseriei <strong>(+30 lei)</strong></span></label>' +
     '<div style="font-weight:600;margin:12px 0 6px;">Elemente suplimentare (+15 lei fiecare)</div>' +
     '<label style="display:flex;gap:10px;align-items:center;margin:8px 0;"><input id="caricature-car" type="checkbox"> Mașină (+15 lei)</label>' +
