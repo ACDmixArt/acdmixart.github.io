@@ -3683,7 +3683,7 @@ function updateMinimumOrderNotice() {
 }
 
 function getFolderCategories() {
-  const normalize = value => String(value || "").toLocaleLowerCase("ro").normalize("NFD").replace(/[\\u0300-\\u036f]/g, "");
+  const normalize = value => String(value || "").toLocaleLowerCase("ro").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   const available = [...new Set(products.map(product => product.categorie).filter(Boolean))];
   const preferred = categories().filter(category => category !== "Toate" && available.some(value => normalize(value) === normalize(category)));
   const extra = available.filter(category => !preferred.some(value => normalize(value) === normalize(category)));
@@ -3695,7 +3695,7 @@ function renderCategoryFolders() {
   const folderCategories = getFolderCategories();
   grila.classList.add("category-folders-grid");
   grila.innerHTML = folderCategories.map(category => {
-    const normalizeCategory = value => String(value || "").toLocaleLowerCase("ro").normalize("NFD").replace(/[\\u0300-\\u036f]/g, "");
+    const normalizeCategory = value => String(value || "").toLocaleLowerCase("ro").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     const items = products.filter(product => normalizeCategory(product.categorie) === normalizeCategory(category));
     const previewProduct = items.find(product => (product.poze || [product.poză]).filter(Boolean).length);
     const previewImage = previewProduct ? ((previewProduct.poze || [previewProduct.poză]).filter(Boolean)[0] || "") : "";
