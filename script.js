@@ -3134,7 +3134,7 @@ const products = [
   },
   {
     id: 281,
-    nume: "Topper Gabby",
+    nume: "Topper Gabby 2",
     categorie: "Toppere",
     pret: 160,
     poze: [
