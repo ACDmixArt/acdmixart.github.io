@@ -3701,7 +3701,7 @@ function renderCategoryFolders() {
     return '<button type="button" class="category-folder-card" onclick="setCategory(\'' + safeCategory + '\')">' +
       '<span class="category-folder-tab" aria-hidden="true"></span>' +
       '<span class="category-folder-cover">' +
-        (previewImage ? '<img src="' + previewImage + '" alt="" loading="lazy" onerror="this.remove();this.parentElement.classList.add(\\'folder-cover-empty\\')">' : '') +
+        (previewImage ? '<img src="' + previewImage + '" alt="" loading="lazy" onerror="this.remove();this.parentElement.classList.add(&quot;folder-cover-empty&quot;)">' : '') +
         '<span class="category-folder-shade" aria-hidden="true"></span>' +
         '<span class="category-folder-open" aria-hidden="true">↗</span>' +
       '</span>' +
