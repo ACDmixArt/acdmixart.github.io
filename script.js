@@ -3155,6 +3155,19 @@ const products = [
       "images/products/mic2.jpg"
     ]
   },
+  {
+    id: 283,
+    nume: "Set topper 1",
+    categorie: "Toppere",
+    pret: 65,
+    descriere: "Set topper central + 8 toppere mici în 2 straturi. Se poate adăuga orice număr de toppere mici suplimentare, la 5 lei/bucată.",
+    poze: [
+      "images/products/gabt.jpg",
+      "images/products/gabt1.jpg",
+      "images/products/gabt2.jpg",
+      "images/products/gabt3.jpg"
+    ]
+  },
 
 ];
 
@@ -3408,6 +3421,73 @@ function openTopperCustomizer(productId, quantity = 1) {
   const product = products.find(item => item.id === Number(productId));
   if (!product || product.categorie !== "Toppere") return;
   const qty = Math.max(1, Number(quantity) || 1);
+
+  // Set topper 1: central topper + 8 small toppers, with optional extras.
+  if (Number(product.id) === 283) {
+    document.querySelector(".topper-customizer-modal")?.remove();
+    const modal = document.createElement("div");
+    modal.className = "topper-customizer-modal";
+    modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.68);display:flex;align-items:center;justify-content:center;z-index:9999;padding:16px;";
+    modal.innerHTML = `
+      <div style="background:white;width:100%;max-width:560px;max-height:92vh;overflow:auto;border-radius:16px;padding:24px;box-sizing:border-box;position:relative;">
+        <button type="button" aria-label="Închide" class="topper-close" style="position:absolute;top:8px;right:12px;border:0;background:none;font-size:30px;cursor:pointer;">×</button>
+        <h2 style="margin:0 35px 8px 0;color:#66745F;">Personalizează Set topper 1</h2>
+        <p>Set topper central + 8 toppere mici în 2 straturi.</p>
+        <p>Preț set: <strong>65 lei</strong>. Fiecare topper mic suplimentar costă <strong>5 lei</strong>.</p>
+        <label for="set1-name" style="display:block;margin-top:14px;font-weight:600;">Nume *</label>
+        <input id="set1-name" type="text" required maxlength="120" placeholder="Numele pentru topperul central" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+        <label for="set1-age" style="display:block;margin-top:14px;font-weight:600;">Vârstă *</label>
+        <input id="set1-age" type="number" min="1" max="120" required placeholder="Ex.: 5" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+        <label for="set1-theme" style="display:block;margin-top:14px;font-weight:600;">Tematică *</label>
+        <input id="set1-theme" type="text" required maxlength="250" placeholder="Ex.: fluturi, prințese, fotbal..." style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+        <label for="set1-extra" style="display:block;margin-top:14px;font-weight:600;">Toppere mici suplimentare (opțional)</label>
+        <input id="set1-extra" type="number" min="0" max="100" step="1" value="0" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;">
+        <p style="font-size:13px;color:#555;margin:6px 0 0;">Setul include deja 8 toppere mici. Alege aici câte bucăți în plus dorești.</p>
+        <label for="set1-details" style="display:block;margin-top:14px;font-weight:600;">Alte detalii (opțional)</label>
+        <textarea id="set1-details" rows="3" maxlength="600" placeholder="Culori sau alte preferințe" style="width:100%;padding:12px;margin-top:6px;box-sizing:border-box;border:1px solid #ccc;border-radius:8px;resize:vertical;"></textarea>
+        <p class="set1-live-price" style="font-size:22px;font-weight:700;margin:18px 0;color:#66745F;"></p>
+        <p class="set1-error" role="alert" style="color:#b00020;display:none;"></p>
+        <button type="button" class="set1-add add-cart" style="width:100%;padding:14px;border:0;border-radius:9px;background:#B77E88;color:white;font-weight:700;cursor:pointer;font-size:16px;">Adaugă în coș</button>
+      </div>
+    `;
+    document.body.appendChild(modal);
+    const extraInput = modal.querySelector("#set1-extra");
+    const livePrice = modal.querySelector(".set1-live-price");
+    const updateSetPrice = () => {
+      const extra = Math.max(0, Math.min(100, Number(extraInput.value) || 0));
+      livePrice.textContent = `Total: ${money((65 + extra * 5) * qty)} · ${qty} set(uri) · ${extra} toppere mici în plus/set`;
+    };
+    extraInput.addEventListener("input", updateSetPrice);
+    modal.querySelector(".topper-close").addEventListener("click", () => modal.remove());
+    modal.addEventListener("click", event => { if (event.target === modal) modal.remove(); });
+    updateSetPrice();
+    modal.querySelector(".set1-add").addEventListener("click", () => {
+      const name = modal.querySelector("#set1-name").value.trim();
+      const age = modal.querySelector("#set1-age").value.trim();
+      const theme = modal.querySelector("#set1-theme").value.trim();
+      const details = modal.querySelector("#set1-details").value.trim();
+      const rawExtra = Number(extraInput.value);
+      const extra = Number.isInteger(rawExtra) ? rawExtra : -1;
+      const error = modal.querySelector(".set1-error");
+      if (!name || !theme || !age || Number(age) < 1 || Number(age) > 120) {
+        error.textContent = "Completează numele, tematica și o vârstă validă.";
+        error.style.display = "block";
+        return;
+      }
+      if (extra < 0 || extra > 100) {
+        error.textContent = "Numărul de toppere mici suplimentare trebuie să fie între 0 și 100.";
+        error.style.display = "block";
+        return;
+      }
+      const unitPrice = 65 + extra * 5;
+      const personalizare = { tip: "setTopper", varianta: "Set topper 1 — topper central + 8 toppere mici în 2 straturi", pretBaza: 65, toppereMiciIncluse: 8, toppereMiciSuplimentare: extra, pretSuplimente: extra * 5, nume: name, varsta: age, tematica: theme, detalii };
+      cart.push({ ...product, nume: "Set topper 1 personalizat", pret: unitPrice, quantity: qty, personalizare });
+      renderCart();
+      modal.remove();
+      openCart();
+    });
+    return;
+  }
 
   // Topper Winnie is a separate fixed-price design, not one of the 75/140/180 lei variants.
   if ([280, 281, 282].includes(Number(product.id))) {
