@@ -3119,3 +3119,100 @@ body.personalize-modal-open{overflow:hidden}
   .featured-grid { gap: 9px; }
   .featured-card-copy { padding-left: 10px; padding-right: 10px; }
 }
+
+
+/* Colecții premium: carduri editoriale, nu dosare desenate */
+.products-grid.category-folders-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 22px !important;
+  align-items: stretch;
+}
+.category-folder-card {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 8px !important;
+  border: 1px solid #E9DADD !important;
+  border-radius: 22px !important;
+  background: rgba(255,255,255,.94) !important;
+  overflow: hidden !important;
+  box-shadow: 0 5px 18px rgba(78,73,69,.035) !important;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease !important;
+}
+.category-folder-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(183,126,136,.55) !important;
+  box-shadow: 0 15px 32px rgba(78,73,69,.09) !important;
+}
+.category-folder-tab { display: none !important; }
+.category-folder-cover {
+  position: relative !important;
+  display: block !important;
+  aspect-ratio: 1.18 / 1 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  border-radius: 15px !important;
+  background: linear-gradient(135deg,#F8ECEE,#EDF0E9) !important;
+}
+.category-folder-cover img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform .5s cubic-bezier(.2,.7,.2,1) !important;
+}
+.category-folder-card:hover .category-folder-cover img { transform: scale(1.045) !important; }
+.category-folder-shade {
+  inset: 58% 0 0 !important;
+  background: linear-gradient(transparent,rgba(45,39,39,.16)) !important;
+}
+.category-folder-open {
+  right: 10px !important;
+  bottom: 10px !important;
+  width: 32px !important;
+  height: 32px !important;
+  border: 1px solid rgba(255,255,255,.8) !important;
+  background: rgba(255,255,255,.92) !important;
+  color: #8F626B !important;
+  font-size: 17px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,.045) !important;
+}
+.category-folder-info {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 6px !important;
+  padding: 16px 10px 13px !important;
+}
+.category-folder-name {
+  font: 600 clamp(19px,1.8vw,24px)/1.08 'Cormorant Garamond',serif !important;
+  color: #4E4945 !important;
+  letter-spacing: .005em;
+}
+.category-folder-count {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  color: #8A8580 !important;
+  font: 500 10px/1.3 'DM Sans',sans-serif !important;
+  letter-spacing: .1em !important;
+  text-transform: uppercase !important;
+}
+.category-folder-count::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 1px;
+  background: #D8A6AD;
+}
+@media (max-width: 900px) {
+  .products-grid.category-folders-grid { grid-template-columns: repeat(2,minmax(0,1fr)) !important; gap: 14px !important; }
+  .category-folder-card { padding: 6px !important; border-radius: 18px !important; }
+  .category-folder-cover { aspect-ratio: .98 / 1 !important; border-radius: 12px !important; }
+  .category-folder-info { padding: 12px 8px 10px !important; gap: 5px !important; }
+  .category-folder-name { font-size: clamp(18px,4.7vw,22px) !important; }
+  .category-folder-count { font-size: 9px !important; letter-spacing: .07em !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .category-folder-card, .category-folder-cover img { transition: none !important; }
+}
