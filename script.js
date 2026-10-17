@@ -3032,6 +3032,22 @@ const products = [
     ]
   },
 
+  {
+    id: 274,
+    nume: "Mărțișor ciocolată personalizabil",
+    categorie: "Martisoare",
+    pret: 8,
+    poze: [
+      "images/products/ciocol.jpg",
+      "images/products/ciocol1.jpg",
+      "images/products/ciocol2.jpg",
+      "images/products/ciocol3.jpg",
+      "images/products/ciocol4.jpg",
+      "images/products/ciocol5.jpg",
+      "images/products/ciocol6.jpg"
+    ]
+  },
+
 ];
 
 
@@ -3125,6 +3141,9 @@ function descrierePersonalizare(product) {
   }
   if (categorie.includes("nuntă") || categorie.includes("nunta") || categorie.includes("plicuri dar")) {
     return "Alege culorile, numele, data și mesajul dorit. Adaptăm modelul pentru a se potrivi tematicii evenimentului.";
+  }
+  if (categorie.includes("martisoare") || categorie.includes("mărțișoare")) {
+    return "Personalizabil cu numele persoanei care îl primește, numele expeditorului și mesajul dorit.";
   }
   if (categorie.includes("mărtur") || categorie.includes("martur")) {
     return "Poate fi personalizat cu nume, dată, text, culori și tematica evenimentului, în funcție de model.";
