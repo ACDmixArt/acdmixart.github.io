@@ -5758,7 +5758,7 @@ function updateOrderSummary() {
     formTableStart: "Număr de la",
     formTableEnd: "Număr până la",
     formNames: "Nume / text",
-    formText: "Text invitație",
+    formText: "Text / mesaj dorit",
     formMenuText: "Meniul — preparate și băuturi",
     formColors: "Culori",
     formDetails: "Alte detalii",
@@ -5853,6 +5853,16 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
       return;
     }
 
+    if (category === "Cărți") {
+      if (!document.getElementById("formTheme")?.value.trim() ||
+          !document.getElementById("formNames")?.value.trim() ||
+          !document.getElementById("formAge")?.value ||
+          Number(document.getElementById("formAge")?.value) < 1) {
+        alert("Completează tematica, numele copilului și vârsta pentru personalizarea cărții.");
+        return;
+      }
+    }
+
     if (category === "Meniuri") {
       if (!document.getElementById("formMenuText")?.value.trim() ||
           !document.getElementById("formTheme")?.value.trim() ||
@@ -5901,7 +5911,7 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
       ["Caricatură pentru agendă", "formAgendaCharacters"],
       ["Tip topper", "formTopperType"],
       ["Număr personaje pentru caricatură", "formTopperCharacters"],
-      ["Text invitație", "formText"],
+      ["Text / mesaj dorit", "formText"],
       ["Meniul — preparate și băuturi", "formMenuText"],
       ["Data evenimentului", "formDate"],
       ["Culori", "formColors"],
