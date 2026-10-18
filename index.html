@@ -20,10 +20,16 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="style.css?v=20261018-politica-comenzi">
+  <link rel="stylesheet" href="style.css?v=20261018-conditii-vizibile">
 </head>
 
 <body>
+
+  <div class="order-notice-bar" role="note" aria-label="Condiții importante pentru comenzi">
+    <span class="order-notice-label">IMPORTANT — ÎNAINTE DE A COMANDA</span>
+    <span>Avans obligatoriu 50% · Nu expediem cu plata ramburs</span>
+    <a href="#order-policy-details">Citește detaliile</a>
+  </div>
 
   <header class="site-header">
 
@@ -102,7 +108,7 @@
     </div>
 
     <!-- INFORMAȚII IMPORTANTE DESPRE COMENZI -->
-    <section class="order-policy" aria-label="Condiții pentru comenzi">
+    <section class="order-policy" id="order-policy-details" aria-label="Condiții pentru comenzi">
       <article class="order-policy-card">
         <span class="order-policy-icon" aria-hidden="true">♡</span>
         <div>
@@ -449,7 +455,7 @@ function closePersonalizeModal(){const m=document.getElementById("personalizeMod
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closePersonalizeModal();});
 closePersonalizeModal();
 </script>
-<script src="script.js?v=20261018-reparatii-formular-whatsapp"></script>
+<script src="script.js?v=20261018-conditii-vizibile"></script>
 
 </body>
 </html>
