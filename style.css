@@ -3560,3 +3560,71 @@ body.personalize-modal-open{overflow:hidden}
   .order-notice-label { width: 100%; font-size: 10px; }
   .order-policy-acknowledgement { padding: 14px 12px; font-size: 12px; }
 }
+
+
+/* Politica de comandă: două carduri alăturate și accente florale discrete */
+.order-policy-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.order-policy-card::after {
+  content: "";
+  position: absolute;
+  right: 7px;
+  bottom: 5px;
+  width: 62px;
+  height: 62px;
+  opacity: .72;
+  pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%238D9E82' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M61 61Q43 39 39 12M50 47Q61 34 57 24M44 35Q28 35 21 21M39 17Q48 9 46 4'/%3E%3C/g%3E%3Cg fill='%23E8BFC6' fill-opacity='.9'%3E%3Cellipse cx='46' cy='8' rx='5' ry='8' transform='rotate(-35 46 8)'/%3E%3Cellipse cx='55' cy='11' rx='5' ry='8' transform='rotate(40 55 11)'/%3E%3Cellipse cx='51' cy='19' rx='5' ry='8'/%3E%3Cellipse cx='22' cy='21' rx='4' ry='7' transform='rotate(-35 22 21)'/%3E%3Cellipse cx='29' cy='24' rx='4' ry='7' transform='rotate(40 29 24)'/%3E%3C/g%3E%3Cg fill='%23D8B77E'%3E%3Ccircle cx='51' cy='13' r='2'/%3E%3Ccircle cx='26' cy='23' r='1.6'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;
+}
+.order-policy-card > * { position: relative; z-index: 1; }
+.order-policy-acknowledgement {
+  position: relative;
+  overflow: hidden;
+  background-image:
+    radial-gradient(circle at 100% 0%, rgba(232,191,198,.25), transparent 35%),
+    linear-gradient(135deg,#FFF9F7,#FFF3F2);
+}
+.order-policy-acknowledgement::after {
+  content: "✿";
+  position: absolute;
+  right: 10px;
+  bottom: 0;
+  color: #D8A6AD;
+  opacity: .45;
+  font-size: 30px;
+  pointer-events: none;
+}
+@media (max-width: 680px) {
+  .order-policy {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 4px 5% 38px;
+  }
+  .order-policy-card {
+    display: block;
+    min-width: 0;
+    padding: 15px 12px 24px;
+    border-radius: 16px;
+  }
+  .order-policy-icon {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    margin-bottom: 10px;
+    font-size: 19px;
+  }
+  .order-policy-card h2 {
+    font-size: 18px;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+  .order-policy-card p {
+    font-size: 11px;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+  }
+  .order-policy-card::after { width: 38px; height: 38px; opacity: .58; }
+}
