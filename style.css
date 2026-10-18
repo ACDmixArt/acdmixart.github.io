@@ -3397,3 +3397,56 @@ body.personalize-modal-open{overflow:hidden}
     background-size: 100% 100%, 100% 100%, 100% 100% !important;
   }
 }
+
+
+/* Politica de comandă — avans și livrare fără ramburs */
+.order-policy {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 8px 7% 54px;
+}
+.order-policy-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 23px 24px;
+  border: 1px solid rgba(183,126,136,.24);
+  border-radius: 20px;
+  background: linear-gradient(135deg, #fffdfb 0%, #FAF1F0 100%);
+  box-shadow: 0 9px 26px rgba(78,73,69,.045);
+}
+.order-policy-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #F3DFE2;
+  color: #A86F7A;
+  font-size: 23px;
+}
+.order-policy-card h2 {
+  margin: 0 0 8px;
+  color: #66745F;
+  font: 600 23px/1.2 'Cormorant Garamond', serif;
+}
+.order-policy-card p {
+  margin: 0;
+  color: #716A65;
+  font-size: 13px;
+  line-height: 1.75;
+}
+@media (max-width: 680px) {
+  .order-policy {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 4px 5% 38px;
+  }
+  .order-policy-card { padding: 19px 17px; border-radius: 16px; gap: 12px; }
+  .order-policy-card h2 { font-size: 21px; }
+  .order-policy-card p { font-size: 12px; line-height: 1.7; }
+}
