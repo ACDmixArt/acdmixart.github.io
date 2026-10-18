@@ -3859,3 +3859,39 @@ body.personalize-modal-open{overflow:hidden}
  .order-policy-intro .order-policy-thanks { font-size:24px !important; line-height:1.3 !important; }
  .order-policy-floral { width:132px !important; right:-4px !important; top:0 !important; bottom:0 !important; height:100% !important; }
 }
+
+
+/* Ajustare fina: card translucid, florile subtile sub text si fara decorul de jos */
+.order-policy {
+  background: rgba(255, 249, 247, .78) !important;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  padding-right: clamp(22px, 5vw, 58px) !important;
+}
+.order-policy-intro {
+  position: relative !important;
+  z-index: 2 !important;
+  max-width: 850px !important;
+}
+.order-policy-floral {
+  z-index: 1 !important;
+  opacity: .22 !important;
+  width: clamp(165px, 25%, 245px) !important;
+  right: -8px !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  height: 100% !important;
+  mix-blend-mode: multiply;
+}
+@media (max-width: 680px) {
+  .order-policy {
+    padding: 23px 18px 32px !important;
+    background: rgba(255, 249, 247, .76) !important;
+  }
+  .order-policy-floral {
+    width: 145px !important;
+    right: -10px !important;
+    opacity: .20 !important;
+  }
+  .order-policy-intro p { position: relative; z-index: 2; }
+}
