@@ -3915,3 +3915,43 @@ body.personalize-modal-open{overflow:hidden}
   .order-policy-intro p { color: #667568 !important; }
   .order-policy-intro .order-policy-thanks { color: #D18DA2 !important; }
 }
+
+
+/* Personalizare: fundal crem-roz foarte deschis, mai odihnitor pentru ochi */
+.personalize-section {
+  background: linear-gradient(135deg, #F5E9E5 0%, #F0E6DF 52%, #E8EDE4 100%) !important;
+  color: #5D665B !important;
+}
+.personalize-section h2,
+.personalize-section p,
+.personalize-section label,
+.personalize-section .eyebrow {
+  color: #5D665B !important;
+}
+.personalize-section .eyebrow {
+  color: #9C7880 !important;
+}
+.personalize-section .order-form input,
+.personalize-section .order-form select,
+.personalize-section .order-form textarea,
+.personalize-modal-dialog .order-form input,
+.personalize-modal-dialog .order-form select,
+.personalize-modal-dialog .order-form textarea {
+  background: rgba(255, 253, 250, .96) !important;
+  color: #50594F !important;
+  border-color: #D8D9CD !important;
+}
+.personalize-section .button,
+.personalize-modal-dialog .order-form button[type="submit"] {
+  background: #B7C4AE !important;
+  border-color: #B7C4AE !important;
+  color: #39473B !important;
+}
+.personalize-modal-dialog {
+  background: #F5E9E5 !important;
+}
+@media (max-width: 700px) {
+  .personalize-section {
+    background: linear-gradient(150deg, #F5E9E5 0%, #F0E6DF 58%, #E8EDE4 100%) !important;
+  }
+}
