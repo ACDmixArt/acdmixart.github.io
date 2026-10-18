@@ -3984,3 +3984,34 @@ body.personalize-modal-open{overflow:hidden}
   .order-policy-intro .order-policy-thanks { color: #D39BAA !important; }
   .order-policy-floral { opacity: .13 !important; }
 }
+
+
+/* Card politica: alb translucid, lasa fundalul site-ului sa se vada dedesubt */
+.order-policy {
+  background: rgba(255, 255, 255, .48) !important;
+  border: 1px solid rgba(255, 255, 255, .82) !important;
+  box-shadow: 0 10px 32px rgba(116, 94, 88, .07) !important;
+  -webkit-backdrop-filter: blur(1.5px) !important;
+  backdrop-filter: blur(1.5px) !important;
+}
+.order-policy-intro h2,
+.order-policy-intro .order-policy-thanks {
+  color: #D77991 !important;
+  text-shadow: none !important;
+}
+.order-policy-intro p {
+  color: #667765 !important;
+}
+.order-policy-floral {
+  opacity: .19 !important;
+  mix-blend-mode: multiply !important;
+}
+@media (max-width: 680px) {
+  .order-policy {
+    background: rgba(255, 255, 255, .46) !important;
+    border-color: rgba(255, 255, 255, .82) !important;
+  }
+  .order-policy-intro h2,
+  .order-policy-intro .order-policy-thanks { color: #D77991 !important; }
+  .order-policy-intro p { color: #667765 !important; }
+}
