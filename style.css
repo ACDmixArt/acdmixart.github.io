@@ -3450,3 +3450,58 @@ body.personalize-modal-open{overflow:hidden}
   .order-policy-card h2 { font-size: 21px; }
   .order-policy-card p { font-size: 12px; line-height: 1.7; }
 }
+
+
+/* Condițiile de comandă sunt vizibile imediat și trebuie confirmate la trimitere */
+.order-notice-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  padding: 12px 5%;
+  background: #66745F;
+  color: #fff;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.order-notice-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .09em;
+}
+.order-notice-bar a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.order-policy-acknowledgement {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 8px 0 18px;
+  padding: 17px 18px;
+  border: 1px solid #B77E88;
+  border-left: 5px solid #B77E88;
+  border-radius: 13px;
+  background: #FFF6F5;
+  color: #4E4945;
+  font-size: 13px;
+  line-height: 1.65;
+  cursor: pointer;
+}
+.order-policy-acknowledgement input {
+  flex: 0 0 19px;
+  width: 19px;
+  height: 19px;
+  margin: 2px 0 0;
+  accent-color: #66745F;
+}
+.order-policy-acknowledgement strong { color: #66745F; }
+@media (max-width: 680px) {
+  .order-notice-bar { gap: 5px 8px; padding: 11px 12px; font-size: 12px; }
+  .order-notice-label { width: 100%; font-size: 10px; }
+  .order-policy-acknowledgement { padding: 14px 12px; font-size: 12px; }
+}
