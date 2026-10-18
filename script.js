@@ -5880,7 +5880,13 @@ function openProductPersonalization(productId) {
 
 function closePersonalizeModal() {
   const modal = document.getElementById("personalizeModal");
+  const placeholder = document.getElementById("personalizeInlinePlaceholder");
+  const section = document.getElementById("personalizare");
   if (modal) modal.hidden = true;
+  // Păstrează formularul accesibil și în zona inline după închiderea ferestrei.
+  if (placeholder && section && !placeholder.contains(section)) {
+    placeholder.appendChild(section);
+  }
   document.body.style.overflow = "";
   document.body.classList.remove("personalize-modal-open");
 }
@@ -6006,6 +6012,18 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
       return;
     }
     const category = formCategory.value;
+
+    // Formularul are novalidate pentru validări personalizate; verificăm aici toate
+    // câmpurile dinamice marcate required, nu doar câteva categorii speciale.
+    const missingRequiredField = Array.from(dynamicFormFields.querySelectorAll("[required]"))
+      .find(field => !String(field.value || "").trim());
+    if (missingRequiredField) {
+      const fieldLabel = missingRequiredField.closest("label")?.childNodes?.[0]?.textContent?.trim() || "câmpul obligatoriu";
+      alert("Te rog să completezi: " + fieldLabel + ".");
+      missingRequiredField.focus();
+      return;
+    }
+
     const quantityInput = document.getElementById("formQuantity");
     const quantity = quantityInput ? Number(quantityInput.value) : 1;
     if (!Number.isInteger(quantity) || quantity < 1) {
