@@ -3806,3 +3806,42 @@ body.personalize-modal-open{overflow:hidden}
     opacity: .76 !important;
   }
 }
+
+
+/* Varianta 2 aleasa: titlu si multumire caligrafice, text Montserrat */
+.order-policy-intro h2 {
+  font-family: 'Great Vibes', cursive !important;
+  font-size: clamp(36px, 5vw, 49px) !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0 !important;
+  color: #80545A !important;
+}
+.order-policy-intro p {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: clamp(14px, 1.4vw, 16px) !important;
+  font-weight: 400 !important;
+  line-height: 1.8 !important;
+  letter-spacing: 0 !important;
+}
+.order-policy-intro .order-policy-thanks {
+  font-family: 'Great Vibes', cursive !important;
+  font-size: clamp(25px, 3vw, 31px) !important;
+  font-weight: 400 !important;
+  line-height: 1.35 !important;
+  color: #80545A !important;
+}
+@media (max-width: 680px) {
+  .order-policy-intro h2 {
+    font-size: 36px !important;
+    line-height: 1.25 !important;
+  }
+  .order-policy-intro p {
+    font-size: 14px !important;
+    line-height: 1.72 !important;
+  }
+  .order-policy-intro .order-policy-thanks {
+    font-size: 26px !important;
+    line-height: 1.4 !important;
+  }
+}
