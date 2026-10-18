@@ -4015,3 +4015,10 @@ body.personalize-modal-open{overflow:hidden}
   .order-policy-intro .order-policy-thanks { color: #D77991 !important; }
   .order-policy-intro p { color: #667765 !important; }
 }
+
+
+/* Mesajul de multumire ramane caligrafic, dar fara ingrosare */
+.order-policy-intro .order-policy-thanks,
+.order-policy-intro .order-policy-thanks strong {
+  font-weight: 400 !important;
+}
