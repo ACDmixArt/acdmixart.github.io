@@ -3955,3 +3955,32 @@ body.personalize-modal-open{overflow:hidden}
     background: linear-gradient(150deg, #F5E9E5 0%, #F0E6DF 58%, #E8EDE4 100%) !important;
   }
 }
+
+
+/* Culori finale pentru politica de comanda: roz pastel si verde salvie */
+.order-policy-intro h2 {
+  color: #D39BAA !important;
+  text-shadow: none !important;
+}
+.order-policy-intro p {
+  color: #68766A !important;
+}
+.order-policy-intro .order-policy-thanks {
+  color: #D39BAA !important;
+  font-weight: 400 !important;
+  text-shadow: none !important;
+}
+.order-policy-floral {
+  opacity: .13 !important;
+  mix-blend-mode: multiply !important;
+}
+.order-policy-floral::after {
+  content: none !important;
+  display: none !important;
+}
+@media (max-width: 680px) {
+  .order-policy-intro h2 { color: #D39BAA !important; }
+  .order-policy-intro p { color: #68766A !important; }
+  .order-policy-intro .order-policy-thanks { color: #D39BAA !important; }
+  .order-policy-floral { opacity: .13 !important; }
+}
