@@ -3778,3 +3778,31 @@ body.personalize-modal-open{overflow:hidden}
   .order-policy-intro p { font-size: 15px !important; line-height: 1.78 !important; }
   .order-policy-intro .order-policy-thanks { font-size: 17px !important; }
 }
+
+
+/* Ilustratie botanica roz pudrat pentru sectiunea de avans */
+.order-policy { padding-right: clamp(22px, 5vw, 58px) !important; }
+.order-policy-intro { max-width: 850px; }
+.order-policy-floral {
+  position: absolute !important;
+  z-index: 0 !important;
+  right: -8px !important;
+  bottom: -16px !important;
+  width: 190px !important;
+  height: 205px !important;
+  color: transparent !important;
+  opacity: .78 !important;
+  pointer-events: none !important;
+}
+.order-policy-floral svg { display:block; width:100%; height:100%; }
+.order-policy-intro { z-index: 1 !important; }
+@media (max-width: 680px) {
+  .order-policy { padding-bottom: 125px !important; }
+  .order-policy-floral {
+    width: 125px !important;
+    height: 135px !important;
+    right: -2px !important;
+    bottom: -8px !important;
+    opacity: .76 !important;
+  }
+}
