@@ -3676,3 +3676,36 @@ body.personalize-modal-open{overflow:hidden}
     font-size: 12px !important;
   }
 }
+
+
+/* Flori vizibile garantat pe cardurile de condiții, fără să acopere textul */
+.order-policy-card { padding-right: 62px !important; }
+.order-policy-card .policy-floral {
+  position: absolute !important;
+  z-index: 0 !important;
+  right: 12px !important;
+  bottom: 7px !important;
+  display: block !important;
+  color: #D8A6AD !important;
+  font-family: Georgia, serif !important;
+  font-size: 45px !important;
+  line-height: 1 !important;
+  opacity: .78 !important;
+  pointer-events: none !important;
+  text-shadow: 10px -8px 0 rgba(216,166,173,.35), -7px -2px 0 rgba(150,165,139,.55) !important;
+}
+.order-policy-card .policy-floral::after {
+  content: "❀";
+  position: absolute;
+  left: -17px;
+  top: -16px;
+  color: #96A58B;
+  font-size: 24px;
+}
+.order-policy-card > div { position: relative; z-index: 1; }
+.order-notice-bar > span:not(.order-notice-label) { max-width: 760px; }
+@media (max-width: 680px) {
+  .order-policy-card { padding-right: 42px !important; }
+  .order-policy-card .policy-floral { right: 5px !important; bottom: 5px !important; font-size: 31px !important; }
+  .order-policy-card .policy-floral::after { font-size: 17px; left: -10px; top: -10px; }
+}
