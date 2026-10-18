@@ -3895,3 +3895,23 @@ body.personalize-modal-open{overflow:hidden}
   }
   .order-policy-intro p { position: relative; z-index: 2; }
 }
+
+
+/* Paleta mai luminoasa pentru politica de comanda: roz pudrat si verde salvie */
+.order-policy-intro h2 {
+  color: #C78398 !important;
+}
+.order-policy-intro p {
+  color: #667568 !important;
+}
+.order-policy-intro .order-policy-thanks {
+  color: #D18DA2 !important;
+}
+.hand-drawn-heart {
+  color: #D995AA !important;
+}
+@media (max-width: 680px) {
+  .order-policy-intro h2 { color: #C78398 !important; }
+  .order-policy-intro p { color: #667568 !important; }
+  .order-policy-intro .order-policy-thanks { color: #D18DA2 !important; }
+}
