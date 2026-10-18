@@ -3458,23 +3458,21 @@ body.personalize-modal-open{overflow:hidden}
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 6px 13px;
-  padding: 10px 5%;
-  background: #F7ECEC;
-  color: #665B59;
-  border-bottom: 1px solid #EAD8D9;
+  gap: 8px 16px;
+  padding: 12px 5%;
+  background: #66745F;
+  color: #fff;
   text-align: center;
-  font-size: 12px;
-  line-height: 1.5;
+  font-size: 13px;
+  line-height: 1.45;
 }
 .order-notice-label {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .07em;
-  color: #9B6E76;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .09em;
 }
 .order-notice-bar a {
-  color: #8F626B;
+  color: #fff;
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 3px;
