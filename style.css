@@ -3737,3 +3737,44 @@ body.personalize-modal-open{overflow:hidden}
   .order-policy-floral { right: 8px; bottom: 4px; font-size: 48px; }
   .order-policy-floral::after { right: 32px; bottom: 23px; font-size: 25px; }
 }
+
+
+/* Upgrade vizual pentru sectiunea de politica: tipografie editoriala si inima desenata */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+.order-policy-intro h2 {
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif !important;
+  font-weight: 600 !important;
+  font-size: clamp(29px, 4.2vw, 42px) !important;
+  line-height: 1.17 !important;
+  letter-spacing: -0.8px !important;
+  color: #59664F !important;
+  text-wrap: balance;
+}
+.order-policy-intro p {
+  font-family: 'DM Sans', 'Montserrat', sans-serif !important;
+  font-size: clamp(15px, 1.5vw, 17px) !important;
+  line-height: 1.85 !important;
+  letter-spacing: .05px;
+}
+.order-policy-intro .order-policy-thanks {
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif !important;
+  font-size: clamp(17px, 1.8vw, 20px) !important;
+  line-height: 1.65 !important;
+  letter-spacing: 0 !important;
+  color: #986875 !important;
+}
+.hand-drawn-heart {
+  display: inline-flex;
+  width: .95em;
+  height: .9em;
+  vertical-align: -0.06em;
+  margin-left: .08em;
+  color: #C98798;
+  transform: rotate(-7deg);
+}
+.hand-drawn-heart svg { display:block; width:100%; height:100%; overflow:visible; }
+@media (max-width: 680px) {
+  .order-policy-intro h2 { font-size: clamp(27px, 7.1vw, 34px) !important; letter-spacing: -.55px !important; }
+  .order-policy-intro p { font-size: 15px !important; line-height: 1.78 !important; }
+  .order-policy-intro .order-policy-thanks { font-size: 17px !important; }
+}
