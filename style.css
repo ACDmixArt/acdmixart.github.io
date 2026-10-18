@@ -3845,3 +3845,17 @@ body.personalize-modal-open{overflow:hidden}
     line-height: 1.4 !important;
   }
 }
+
+
+/* Ilustratie florala detaliata pe toata laterala, nu in coltul de jos */
+.order-policy { position: relative !important; overflow: hidden !important; padding-right: clamp(150px, 24%, 235px) !important; }
+.order-policy-intro { max-width: none !important; position: relative !important; z-index: 2 !important; }
+.order-policy-floral { position:absolute !important; top:0 !important; right:0 !important; bottom:0 !important; width:clamp(150px, 25%, 245px) !important; height:100% !important; z-index:1 !important; opacity:1 !important; pointer-events:none !important; }
+.order-policy-floral svg { display:block !important; width:100% !important; height:100% !important; }
+@media (max-width:680px) {
+ .order-policy { padding:24px 118px 28px 18px !important; }
+ .order-policy-intro h2 { font-size:clamp(27px, 7vw, 35px) !important; }
+ .order-policy-intro p { font-size:14px !important; line-height:1.72 !important; }
+ .order-policy-intro .order-policy-thanks { font-size:24px !important; line-height:1.3 !important; }
+ .order-policy-floral { width:132px !important; right:-4px !important; top:0 !important; bottom:0 !important; height:100% !important; }
+}
