@@ -3628,3 +3628,51 @@ body.personalize-modal-open{overflow:hidden}
   }
   .order-policy-card::after { width: 38px; height: 38px; opacity: .58; }
 }
+
+
+/* Fix: checkboxul de acord trebuie să rămână vizibil ca rând separat în formular */
+.order-form label.order-policy-acknowledgement {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  grid-column: 1 / -1 !important;
+  width: 100%;
+  padding: 16px 42px 16px 16px !important;
+  margin: 8px 0 18px !important;
+  border: 1px solid #D8A6AD !important;
+  border-left: 4px solid #66745F !important;
+  border-radius: 14px !important;
+  background-color: #FFF8F6 !important;
+  color: #4E4945 !important;
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+  cursor: pointer;
+}
+.order-form label.order-policy-acknowledgement input[type="checkbox"] {
+  display: block !important;
+  appearance: auto !important;
+  -webkit-appearance: checkbox !important;
+  flex: 0 0 20px !important;
+  width: 20px !important;
+  min-width: 20px !important;
+  height: 20px !important;
+  padding: 0 !important;
+  margin: 2px 0 0 !important;
+  border: initial !important;
+  border-radius: 4px !important;
+  accent-color: #66745F !important;
+}
+.order-form label.order-policy-acknowledgement span {
+  display: block;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.order-form label.order-policy-acknowledgement strong { color: #66745F !important; }
+@media (max-width: 680px) {
+  .order-form label.order-policy-acknowledgement {
+    padding: 13px 35px 13px 12px !important;
+    font-size: 12px !important;
+  }
+}
