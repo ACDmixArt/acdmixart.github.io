@@ -6013,6 +6013,13 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
     }
     const category = formCategory.value;
 
+    const policyAcknowledgement = document.getElementById("orderPolicyAcknowledged");
+    if (!policyAcknowledgement?.checked) {
+      alert("Te rog să confirmi că ai citit și ești de acord cu avansul de 50% și livrarea fără ramburs.");
+      policyAcknowledgement?.focus();
+      return;
+    }
+
     // Formularul are novalidate pentru validări personalizate; verificăm aici toate
     // câmpurile dinamice marcate required, nu doar câteva categorii speciale.
     const missingRequiredField = Array.from(dynamicFormFields.querySelectorAll("[required]"))
@@ -6085,7 +6092,8 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
       return;
     }
 
-    let message = getACDMixArtGreeting() + " Doresc o comandă personalizată ACDmixArt.\n\n";
+    let message = getACDMixArtGreeting() + " Doresc o comandă personalizată ACDmixArt.\n";
+    message += "Confirm că am citit și sunt de acord cu avansul de 50% și faptul că nu se expediază cu plata ramburs.\n\n";
     message += `Categorie: ${category}\n${product ? "Model / produs ales: " + product.nume : "Model / produs: model propriu — fără model existent"}\nCantitate: ${quantity}\n`;
 
     const fields = [
