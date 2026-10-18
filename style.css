@@ -3709,3 +3709,31 @@ body.personalize-modal-open{overflow:hidden}
   .order-policy-card .policy-floral { right: 5px !important; bottom: 5px !important; font-size: 31px !important; }
   .order-policy-card .policy-floral::after { font-size: 17px; left: -10px; top: -10px; }
 }
+
+
+/* Textul complet despre condițiile comenzilor — aspect premium, floral și aerisit */
+.order-policy {
+  display: block !important;
+  position: relative;
+  overflow: hidden;
+  max-width: 1080px !important;
+  margin: 0 auto 44px !important;
+  padding: 34px clamp(22px,5vw,58px) 36px !important;
+  border: 1px solid rgba(183,126,136,.3);
+  border-radius: 24px;
+  background: linear-gradient(135deg,#FFFCFA 0%,#FBF1EF 55%,#F8EEEA 100%);
+  box-shadow: 0 10px 30px rgba(78,73,69,.05);
+}
+.order-policy-intro { position: relative; z-index: 1; max-width: 850px; }
+.order-policy-intro h2 { margin: 0 0 18px; color: #66745F; font: 600 clamp(25px,3vw,34px)/1.18 'Cormorant Garamond',serif; }
+.order-policy-intro p { margin: 0 0 14px; color: #625B57; font-size: 14px; line-height: 1.85; }
+.order-policy-intro .order-policy-thanks { margin: 20px 0 0; color: #8F626B; }
+.order-policy-floral { position: absolute; right: 18px; bottom: 8px; color: #D8A6AD; font-family: Georgia,serif; font-size: 74px; line-height: 1; opacity: .5; pointer-events: none; text-shadow: 16px -14px 0 rgba(216,166,173,.28), -14px -5px 0 rgba(150,165,139,.45); }
+.order-policy-floral::after { content: "❀"; position: absolute; right: 48px; bottom: 36px; color: #96A58B; font-size: 37px; }
+@media (max-width: 680px) {
+  .order-policy { margin: 0 5% 32px !important; padding: 23px 18px 42px !important; border-radius: 18px; }
+  .order-policy-intro h2 { font-size: 25px; }
+  .order-policy-intro p { font-size: 13px; line-height: 1.75; }
+  .order-policy-floral { right: 8px; bottom: 4px; font-size: 48px; }
+  .order-policy-floral::after { right: 32px; bottom: 23px; font-size: 25px; }
+}
