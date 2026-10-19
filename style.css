@@ -4948,3 +4948,55 @@ body.personalize-modal-open{overflow:hidden}
   #concurs-lansare .launch-prize-select { font-size: .75rem !important; padding: 7px 3px !important; }
   #concurs-lansare .launch-contest-footer { flex-direction: column !important; gap: 5px !important; }
 }
+
+
+/* ACDmixArt contest — elegant blush and sage reference styling */
+#concurs-lansare {
+  position:relative!important; isolation:isolate!important;
+  width:min(1080px,calc(100% - 28px))!important; box-sizing:border-box!important;
+  margin:18px auto 30px!important; padding:clamp(18px,3vw,32px) clamp(14px,2.5vw,28px) 22px!important;
+  border:1px solid #e8dfd4!important; border-radius:30px!important;
+  background:radial-gradient(ellipse at 5% 7%,rgba(247,225,217,.25),transparent 25%),radial-gradient(ellipse at 96% 95%,rgba(221,229,211,.25),transparent 25%),#fffdf9!important;
+  box-shadow:0 8px 28px rgba(100,88,68,.07)!important; overflow:hidden!important;
+}
+#concurs-lansare::before {content:"✿"!important;display:block!important;position:absolute!important;inset:56px auto auto 12px!important;border:0!important;border-radius:0!important;color:rgba(143,163,125,.38)!important;font-size:42px!important;line-height:1!important;pointer-events:none!important;z-index:-1!important}
+#concurs-lansare::after {content:"✿"!important;display:block!important;position:absolute!important;inset:56px 12px auto auto!important;color:rgba(214,164,157,.4)!important;font-size:42px!important;line-height:1!important;pointer-events:none!important;z-index:-1!important}
+#concurs-lansare .launch-contest-heading{max-width:780px!important;margin:0 auto 20px!important;text-align:center!important}
+#concurs-lansare .launch-contest-eyebrow{margin:0 0 8px!important;color:#69795e!important;font-family:Montserrat,sans-serif!important;font-size:.68rem!important;font-weight:700!important;letter-spacing:.13em!important;text-transform:uppercase!important}
+#concurs-lansare .launch-contest-heading h2{margin:0 0 12px!important;color:#68795b!important;font-family:'Cormorant Garamond',Georgia,serif!important;font-size:clamp(2rem,4vw,3.25rem)!important;font-style:italic!important;font-weight:600!important;line-height:1.04!important}
+#concurs-lansare .launch-contest-intro{margin:0 auto 8px!important;color:#59564f!important;font-size:clamp(.88rem,1.55vw,1.08rem)!important;line-height:1.45!important}
+#concurs-lansare .launch-contest-intro strong{color:#536b49!important}
+#concurs-lansare .launch-contest-note{margin:0 auto!important;color:#817971!important;font-size:.8rem!important;line-height:1.45!important}
+#concurs-lansare .launch-prizes-grid{display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:13px!important;align-items:stretch!important;margin:18px 0 0!important}
+#concurs-lansare .launch-prize-card,#concurs-lansare .launch-prize-card:nth-child(4),#concurs-lansare .launch-prize-card:nth-child(5){grid-column:span 2!important;width:auto!important;min-width:0!important;box-sizing:border-box!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;padding:8px!important;border:1px solid #f0e8e1!important;border-radius:17px!important;background:rgba(255,255,255,.95)!important;box-shadow:0 5px 18px rgba(111,91,73,.08)!important;color:#4e4a43!important;transform:none!important}
+#concurs-lansare .launch-prize-card:nth-child(4){grid-column:2/span 2!important} #concurs-lansare .launch-prize-card:nth-child(5){grid-column:4/span 2!important}
+#concurs-lansare .launch-prize-card:hover{border-color:#e6c8c5!important;box-shadow:0 8px 22px rgba(161,117,111,.12)!important}
+#concurs-lansare .launch-prize-card[aria-pressed="true"]{border:2px solid #d7aaa8!important;background:#fffafa!important;box-shadow:0 0 0 3px rgba(246,225,223,.55)!important}
+#concurs-lansare .launch-prize-image-wrap{display:block!important;width:100%!important;height:auto!important;aspect-ratio:1.35/1!important;margin:0!important;overflow:hidden!important;border:0!important;border-radius:10px!important;background:#faf7f1!important}
+#concurs-lansare .launch-prize-image-wrap img{display:block!important;width:100%!important;height:100%!important;object-fit:contain!important;border-radius:0!important}
+#concurs-lansare .launch-prize-title{margin:9px 0 4px!important;color:#4f6547!important;font-family:'Cormorant Garamond',Georgia,serif!important;font-size:clamp(.95rem,1.5vw,1.2rem)!important;font-weight:700!important;line-height:1.15!important}
+#concurs-lansare .launch-prize-desc{min-height:2.2em!important;margin:0 0 9px!important;color:#817971!important;font-size:.73rem!important;line-height:1.35!important}
+#concurs-lansare .launch-prize-select{display:block!important;margin-top:auto!important;padding:8px 5px!important;border-radius:999px!important;background:#fbe9e8!important;color:#b47780!important;font-family:'Cormorant Garamond',Georgia,serif!important;font-size:.9rem!important;font-weight:700!important;line-height:1.15!important}
+#concurs-lansare .launch-prize-card:hover .launch-prize-select{background:#f7dddc!important;color:#a36570!important}
+#concurs-lansare .launch-prize-check{background:#829273!important}
+#concurs-lansare .launch-prize-feedback{margin:14px 0 0!important;color:#647456!important;font-size:.8rem!important}
+#concurs-lansare .launch-contest-footer{display:flex!important;justify-content:center!important;flex-wrap:wrap!important;gap:8px 20px!important;margin-top:17px!important;padding-top:13px!important;border-top:1px solid #eadbd6!important;color:#817971!important;font-size:.72rem!important}
+#concurs-lansare .launch-contest-footer strong{color:#657957!important}
+#concurs-lansare .launch-contest-terms{margin:8px auto 0!important;color:#8b847b!important;font-size:.66rem!important;line-height:1.4!important;text-align:center!important}
+@media(max-width:650px){
+#concurs-lansare{width:calc(100% - 22px)!important;margin:12px auto 20px!important;padding:16px 10px!important;border-radius:22px!important}
+#concurs-lansare::before,#concurs-lansare::after{top:68px!important;font-size:25px!important}
+#concurs-lansare .launch-contest-heading{margin-bottom:13px!important}
+#concurs-lansare .launch-contest-eyebrow{font-size:.58rem!important;letter-spacing:.09em!important}
+#concurs-lansare .launch-contest-heading h2{font-size:1.9rem!important}
+#concurs-lansare .launch-contest-intro{font-size:.8rem!important}
+#concurs-lansare .launch-contest-note{font-size:.68rem!important}
+#concurs-lansare .launch-prizes-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important;margin-top:13px!important}
+#concurs-lansare .launch-prize-card,#concurs-lansare .launch-prize-card:nth-child(4){grid-column:auto!important;padding:6px!important;border-radius:12px!important}
+#concurs-lansare .launch-prize-card:nth-child(5){grid-column:1/-1!important;width:calc(50% - 4.5px)!important;justify-self:center!important}
+#concurs-lansare .launch-prize-image-wrap{aspect-ratio:1.2/1!important;border-radius:7px!important}
+#concurs-lansare .launch-prize-title{font-size:.9rem!important}
+#concurs-lansare .launch-prize-desc{font-size:.63rem!important}
+#concurs-lansare .launch-prize-select{font-size:.8rem!important;padding:7px 3px!important}
+#concurs-lansare .launch-contest-footer{flex-direction:column!important;gap:5px!important}
+}
