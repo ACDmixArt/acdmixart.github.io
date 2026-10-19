@@ -1,0 +1,6 @@
+Încarcă aici cele 5 imagini ale concursului și păstrează exact numele:
+- premiu-1-cana.png
+- premiu-2-carte-colorat.png
+- premiu-3-4-magneti.png
+- premiu-4-9-magneti.png
+- premiu-5-reducere.png
