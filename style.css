@@ -4046,8 +4046,8 @@ body.personalize-modal-open{overflow:hidden}
 .launch-prize-card { display:flex; flex-direction:column; min-width:0; padding:9px; border:1px solid #ead0d8; border-radius:17px; background:rgba(255,255,255,.87); color:#754153; text-align:center; font:inherit; cursor:pointer; transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,background .18s ease; }
 .launch-prize-card:hover { transform:translateY(-3px); box-shadow:0 8px 22px rgba(142,79,100,.12); }
 .launch-prize-card[aria-pressed="true"] { border:2px solid #b55275; padding:8px; background:#fff2f6; box-shadow:0 0 0 3px rgba(181,82,117,.12); }
-.launch-prize-image-wrap { position:relative; display:block; overflow:hidden; border-radius:11px; background:#f9e8ed; aspect-ratio:1/1; }
-.launch-prize-image-wrap img { display:block; width:100%; height:100%; object-fit:cover; }
+.launch-prize-image-wrap { position:relative; display:block; overflow:hidden; border-radius:11px; background:#fff8fa; aspect-ratio:4/3; }
+.launch-prize-image-wrap img { display:block; width:100%; height:100%; object-fit:contain; }
 .launch-prize-check { position:absolute; top:8px; right:8px; display:grid; place-items:center; width:30px; height:30px; border-radius:50%; color:white; background:#a84d6c; font-weight:800; box-shadow:0 2px 8px rgba(0,0,0,.16); opacity:0; transform:scale(.75); transition:.18s ease; }
 .launch-prize-card[aria-pressed="true"] .launch-prize-check { opacity:1; transform:scale(1); }
 .launch-prize-title { display:block; margin:11px 0 5px; font-weight:700; font-size:.96rem; line-height:1.25; }
