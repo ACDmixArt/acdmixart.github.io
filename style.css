@@ -5429,3 +5429,46 @@ body.personalize-modal-open{overflow:hidden}
     margin: 7px auto 8px !important;
   }
 }
+
+
+/* Pe mobil, concursul păstrează grila 3 premii sus + 2 centrate jos */
+@media (max-width: 650px) {
+  #concurs-lansare .launch-prizes-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+  #concurs-lansare .launch-prize-card {
+    grid-column: span 2 !important;
+    width: auto !important;
+    min-width: 0 !important;
+    padding: 5px !important;
+    border-radius: 12px !important;
+  }
+  #concurs-lansare .launch-prize-card:nth-child(4) {
+    grid-column: 2 / span 2 !important;
+  }
+  #concurs-lansare .launch-prize-card:nth-child(5) {
+    grid-column: 4 / span 2 !important;
+    width: auto !important;
+    justify-self: stretch !important;
+  }
+  #concurs-lansare .launch-prize-image-wrap {
+    aspect-ratio: 1 / 1 !important;
+  }
+  #concurs-lansare .launch-prize-title {
+    font-size: .82rem !important;
+    line-height: 1.15 !important;
+    overflow-wrap: anywhere !important;
+  }
+  #concurs-lansare .launch-prize-desc {
+    font-size: .68rem !important;
+    line-height: 1.25 !important;
+    min-height: 2.5em !important;
+  }
+  #concurs-lansare .launch-prize-select {
+    font-size: .7rem !important;
+    line-height: 1.2 !important;
+    padding: 8px 3px !important;
+    white-space: normal !important;
+  }
+}
