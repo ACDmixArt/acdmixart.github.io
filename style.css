@@ -5388,3 +5388,44 @@ body.personalize-modal-open{overflow:hidden}
     line-height: 1.12 !important;
   }
 }
+
+
+/* Ierarhie vizuală: eticheta de lansare evidențiată, inimă între titlu și text */
+#concurs-lansare .launch-contest-eyebrow {
+  color: #b66e7e !important;
+  font-weight: 700 !important;
+  letter-spacing: .15em !important;
+  text-transform: uppercase !important;
+}
+#concurs-lansare .launch-contest-heading h2::after {
+  content: "♥" !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: min(460px, 82%) !important;
+  height: 22px !important;
+  margin: 9px auto 10px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: linear-gradient(to bottom, transparent 49%, #e6c7c7 49%, #e6c7c7 52%, transparent 52%) center / 100% 100% no-repeat !important;
+  color: #c77f8d !important;
+  font-family: Georgia, serif !important;
+  font-size: 17px !important;
+  font-style: normal !important;
+  line-height: 22px !important;
+  text-shadow: 0 0 0 #c77f8d !important;
+}
+#concurs-lansare .launch-contest-intro {
+  margin-top: 0 !important;
+}
+@media(max-width:650px) {
+  #concurs-lansare .launch-contest-eyebrow {
+    color: #b66e7e !important;
+    letter-spacing: .1em !important;
+    font-size: .68rem !important;
+  }
+  #concurs-lansare .launch-contest-heading h2::after {
+    width: 78% !important;
+    margin: 7px auto 8px !important;
+  }
+}
