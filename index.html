@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Allura&family=Italianno&family=Great+Vibes&family=Parisienne&family=Alex+Brush&family=Sacramento&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261018-multumire-normal">
+  <link rel="stylesheet" href="style.css?v=20261019-concurs-lansare">
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3BRRKP47P1"></script>
@@ -87,6 +87,57 @@
   </header>
 
   <main>
+
+    <!-- CONCURS LANSARE ACDmixArt: prima secțiune de pe pagina principală -->
+    <section class="launch-contest" id="concurs-lansare" aria-labelledby="launchContestTitle">
+      <div class="launch-contest-flower launch-contest-flower-left" aria-hidden="true">✿</div>
+      <div class="launch-contest-flower launch-contest-flower-right" aria-hidden="true">❀</div>
+      <div class="launch-contest-heading">
+        <p class="launch-contest-eyebrow">O surpriză de lansare, pregătită cu drag</p>
+        <h2 id="launchContestTitle">5 comenzi. 5 surprize!</h2>
+        <p class="launch-contest-intro">La o comandă de minimum <strong>100 lei</strong>, alege un singur cadou dintre premiile disponibile.</p>
+        <p class="launch-contest-note">Selectează premiul din fotografie. Alegerea ta va apărea în mesajul trimis pe WhatsApp.</p>
+      </div>
+      <div class="launch-prizes-grid" role="group" aria-label="Alege premiul dorit">
+        <button class="launch-prize-card" type="button" data-prize="Cană personalizată" aria-pressed="false">
+          <span class="launch-prize-image-wrap"><img src="images/concurs/premiu-1-cana.png" alt="Premiul 1: cană personalizată" loading="lazy"><span class="launch-prize-check" aria-hidden="true">✓</span></span>
+          <span class="launch-prize-title">1. Cană personalizată</span>
+          <span class="launch-prize-desc">Cu ilustrația preferată din poza ta.</span>
+          <span class="launch-prize-select">Aleg acest premiu</span>
+        </button>
+        <button class="launch-prize-card" type="button" data-prize="Carte de colorat A5" aria-pressed="false">
+          <span class="launch-prize-image-wrap"><img src="images/concurs/premiu-2-carte-colorat.png" alt="Premiul 2: carte de colorat A5, model personalizat" loading="lazy"><span class="launch-prize-check" aria-hidden="true">✓</span></span>
+          <span class="launch-prize-title">2. Carte de colorat A5</span>
+          <span class="launch-prize-desc">Model personalizat, la alegere.</span>
+          <span class="launch-prize-select">Aleg acest premiu</span>
+        </button>
+        <button class="launch-prize-card" type="button" data-prize="Set de 4 magneți 10 × 15 cm" aria-pressed="false">
+          <span class="launch-prize-image-wrap"><img src="images/concurs/premiu-3-4-magneti.png" alt="Premiul 3: set de 4 magneți, format 10 pe 15 centimetri" loading="lazy"><span class="launch-prize-check" aria-hidden="true">✓</span></span>
+          <span class="launch-prize-title">3. Set de 4 magneți</span>
+          <span class="launch-prize-desc">Format 10 × 15 cm.</span>
+          <span class="launch-prize-select">Aleg acest premiu</span>
+        </button>
+        <button class="launch-prize-card" type="button" data-prize="Set de 9 magneți 7 × 9 cm" aria-pressed="false">
+          <span class="launch-prize-image-wrap"><img src="images/concurs/premiu-4-9-magneti.png" alt="Premiul 4: set de 9 magneți, format 7 pe 9 centimetri" loading="lazy"><span class="launch-prize-check" aria-hidden="true">✓</span></span>
+          <span class="launch-prize-title">4. Set de 9 magneți</span>
+          <span class="launch-prize-desc">Format 7 × 9 cm.</span>
+          <span class="launch-prize-select">Aleg acest premiu</span>
+        </button>
+        <button class="launch-prize-card launch-prize-card-discount" type="button" data-prize="Reducere de 20%" aria-pressed="false">
+          <span class="launch-prize-image-wrap"><img src="images/concurs/premiu-5-reducere.png" alt="Premiul 5: voucher de reducere 20 la sută" loading="lazy"><span class="launch-prize-check" aria-hidden="true">✓</span></span>
+          <span class="launch-prize-title">5. Reducere de 20%</span>
+          <span class="launch-prize-desc">La valoarea comenzii, conform condițiilor promoției.</span>
+          <span class="launch-prize-select">Aleg acest premiu</span>
+        </button>
+      </div>
+      <p class="launch-prize-feedback" id="launchPrizeFeedback" aria-live="polite">Nu ai ales încă un premiu.</p>
+      <div class="launch-contest-footer">
+        <span>Comandă minimă: <strong>100 lei</strong></span>
+        <span>Promoție valabilă 30 de zile de la lansare sau până la revendicarea premiilor.</span>
+      </div>
+      <p class="launch-contest-terms">Alegerea se confirmă de ACDmixArt după verificarea comenzii. Fiecare comandă eligibilă poate primi un singur premiu.</p>
+    </section>
+
 
     <!-- HERO -->
 
@@ -315,7 +366,7 @@ function closePersonalizeModal(){const m=document.getElementById("personalizeMod
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closePersonalizeModal();});
 closePersonalizeModal();
 </script>
-<script src="script.js?v=20261018-politica-finala-2130"></script>
+<script src="script.js?v=20261019-concurs-lansare"></script>
 
 </body>
 </html>
