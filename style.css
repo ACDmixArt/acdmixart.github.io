@@ -5000,3 +5000,38 @@ body.personalize-modal-open{overflow:hidden}
 #concurs-lansare .launch-prize-select{font-size:.8rem!important;padding:7px 3px!important}
 #concurs-lansare .launch-contest-footer{flex-direction:column!important;gap:5px!important}
 }
+
+/* Visibility correction for the decorative accents in the contest */
+#concurs-lansare::before,
+#concurs-lansare::after {
+  z-index: 0 !important;
+  opacity: .7 !important;
+  pointer-events: none !important;
+}
+#concurs-lansare .launch-contest-heading,
+#concurs-lansare .launch-prizes-grid,
+#concurs-lansare .launch-prize-feedback,
+#concurs-lansare .launch-contest-footer,
+#concurs-lansare .launch-contest-terms {
+  position: relative !important;
+  z-index: 1 !important;
+}
+#concurs-lansare::before {
+  content: "❀" !important;
+  color: rgba(139,158,123,.55) !important;
+  font-size: 48px !important;
+  transform: rotate(-15deg) !important;
+}
+#concurs-lansare::after {
+  content: "❀" !important;
+  color: rgba(218,167,163,.5) !important;
+  font-size: 48px !important;
+  transform: rotate(15deg) !important;
+}
+@media(max-width:650px) {
+  #concurs-lansare::before,
+  #concurs-lansare::after {
+    font-size: 25px !important;
+    top: 68px !important;
+  }
+}
