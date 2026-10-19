@@ -4022,3 +4022,48 @@ body.personalize-modal-open{overflow:hidden}
 .order-policy-intro .order-policy-thanks strong {
   font-weight: 400 !important;
 }
+
+
+/* CONCURS DE LANSARE — card floral roz pudrat */
+.launch-contest {
+  position: relative; isolation: isolate; overflow: hidden;
+  margin: clamp(18px, 3vw, 38px) auto; padding: clamp(22px, 4vw, 44px);
+  width: min(1240px, calc(100% - 32px)); box-sizing: border-box;
+  border: 1px solid #edc6d0; border-radius: 28px;
+  background: radial-gradient(circle at 8% 10%, rgba(238,180,196,.28), transparent 22%), radial-gradient(circle at 92% 88%, rgba(238,180,196,.26), transparent 24%), linear-gradient(135deg,#fffaf8 0%,#fff0f4 52%,#fffaf7 100%);
+  box-shadow: 0 16px 42px rgba(142,79,100,.12);
+}
+.launch-contest-flower { position:absolute; z-index:-1; color:#d98da5; opacity:.22; font-size:clamp(80px,14vw,190px); line-height:1; pointer-events:none; }
+.launch-contest-flower-left { top:-28px; left:-20px; transform:rotate(-22deg); }
+.launch-contest-flower-right { bottom:-40px; right:-18px; transform:rotate(18deg); }
+.launch-contest-heading { max-width:850px; margin:0 auto 26px; text-align:center; }
+.launch-contest-eyebrow { margin:0 0 7px; color:#ad627b; text-transform:uppercase; letter-spacing:.16em; font-size:.72rem; font-weight:700; }
+.launch-contest-heading h2 { margin:0; color:#873b56; font-family:"Great Vibes","Cormorant Garamond",serif; font-size:clamp(2.5rem,5vw,4.3rem); font-weight:400; line-height:1.12; }
+.launch-contest-intro { margin:12px auto 6px; color:#674753; font-size:clamp(1rem,2vw,1.18rem); }
+.launch-contest-intro strong { color:#a74667; }
+.launch-contest-note { margin:0; color:#8a6873; font-size:.9rem; }
+.launch-prizes-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:14px; align-items:stretch; }
+.launch-prize-card { display:flex; flex-direction:column; min-width:0; padding:9px; border:1px solid #ead0d8; border-radius:17px; background:rgba(255,255,255,.87); color:#754153; text-align:center; font:inherit; cursor:pointer; transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,background .18s ease; }
+.launch-prize-card:hover { transform:translateY(-3px); box-shadow:0 8px 22px rgba(142,79,100,.12); }
+.launch-prize-card[aria-pressed="true"] { border:2px solid #b55275; padding:8px; background:#fff2f6; box-shadow:0 0 0 3px rgba(181,82,117,.12); }
+.launch-prize-image-wrap { position:relative; display:block; overflow:hidden; border-radius:11px; background:#f9e8ed; aspect-ratio:1/1; }
+.launch-prize-image-wrap img { display:block; width:100%; height:100%; object-fit:cover; }
+.launch-prize-check { position:absolute; top:8px; right:8px; display:grid; place-items:center; width:30px; height:30px; border-radius:50%; color:white; background:#a84d6c; font-weight:800; box-shadow:0 2px 8px rgba(0,0,0,.16); opacity:0; transform:scale(.75); transition:.18s ease; }
+.launch-prize-card[aria-pressed="true"] .launch-prize-check { opacity:1; transform:scale(1); }
+.launch-prize-title { display:block; margin:11px 0 5px; font-weight:700; font-size:.96rem; line-height:1.25; }
+.launch-prize-desc { display:block; min-height:2.6em; color:#876c76; font-size:.79rem; line-height:1.35; }
+.launch-prize-select { display:block; margin-top:auto; padding:9px 5px 2px; color:#a54f6d; font-size:.77rem; font-weight:700; }
+.launch-prize-card[aria-pressed="true"] .launch-prize-select { color:#7d2947; }
+.launch-prize-feedback { margin:18px 0 0; text-align:center; color:#8b5267; font-weight:600; }
+.launch-contest-footer { display:flex; justify-content:center; flex-wrap:wrap; gap:8px 24px; margin-top:18px; padding-top:15px; border-top:1px solid #e8c6d0; color:#76515e; text-align:center; font-size:.88rem; }
+.launch-contest-footer strong { color:#9e3f60; }
+.launch-contest-terms { max-width:850px; margin:12px auto 0; color:#967a84; font-size:.75rem; text-align:center; line-height:1.5; }
+@media(max-width:1050px) { .launch-prizes-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } .launch-prize-card-discount { grid-column:2; } }
+@media(max-width:650px) {
+  .launch-contest { width:calc(100% - 20px); padding:22px 13px; border-radius:21px; }
+  .launch-prizes-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+  .launch-prize-card-discount { grid-column:auto; }
+  .launch-prize-card { padding:7px; border-radius:13px; }
+  .launch-prize-title { font-size:.86rem; } .launch-prize-desc { font-size:.73rem; } .launch-prize-select { font-size:.72rem; }
+  .launch-contest-footer { flex-direction:column; gap:6px; }
+}
