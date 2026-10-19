@@ -5163,3 +5163,80 @@ body.personalize-modal-open{overflow:hidden}
   #concurs-lansare .launch-prize-select { font-size: .82rem !important; padding: 8px 4px !important; }
   #concurs-lansare .launch-contest-footer { flex-direction: column !important; align-items: center !important; text-align: center !important; }
 }
+
+
+/* Finisaj după referința trimisă: titlu în două culori, elemente botanice discrete */
+#concurs-lansare { position:relative!important; isolation:isolate!important; }
+#concurs-lansare .launch-contest-heading h2 {
+  color:#68795b!important;
+  font-family:'Cormorant Garamond',Georgia,serif!important;
+  font-style:italic!important;
+  font-weight:500!important;
+  letter-spacing:-.035em!important;
+}
+#concurs-lansare .launch-title-green { color:#68795b!important; }
+#concurs-lansare .launch-title-pink { color:#c77f8d!important; }
+#concurs-lansare .launch-contest-heading h2::after {
+  content:"♡";
+  display:block;
+  width: min(280px, 60%);
+  margin:7px auto 0;
+  padding-top:3px;
+  border-top:1px solid #e8c9c8;
+  color:#ce8b96;
+  font-size:1.1rem;
+  font-style:normal;
+  line-height:1;
+}
+#concurs-lansare::before,
+#concurs-lansare::after {
+  content:""!important;
+  display:block!important;
+  position:absolute!important;
+  z-index:0!important;
+  top:35px!important;
+  width:clamp(70px,13vw,150px)!important;
+  height:180px!important;
+  border:0!important;
+  border-radius:0!important;
+  background-color:transparent!important;
+  background-repeat:no-repeat!important;
+  background-position:center!important;
+  background-size:contain!important;
+  opacity:.82!important;
+  pointer-events:none!important;
+}
+#concurs-lansare::before {
+  left:0!important;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 190'%3E%3Cg fill='none' stroke='%238b9b7b' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M12 180Q54 123 67 20M34 145Q13 118 12 96M45 119Q81 105 91 77M56 88Q29 68 34 44M64 55Q91 47 105 25'/%3E%3C/g%3E%3Cg fill='%23c5d0b7' stroke='%238b9b7b' stroke-width='1'%3E%3Cellipse cx='21' cy='109' rx='8' ry='23' transform='rotate(-35 21 109)'/%3E%3Cellipse cx='77' cy='105' rx='8' ry='22' transform='rotate(48 77 105)'/%3E%3Cellipse cx='39' cy='59' rx='7' ry='20' transform='rotate(-38 39 59)'/%3E%3Cellipse cx='96' cy='38' rx='7' ry='19' transform='rotate(38 96 38)'/%3E%3C/g%3E%3Cg fill='%23f1d6d1' stroke='%23d8a5a3' stroke-width='1'%3E%3Ccircle cx='107' cy='83' r='5'/%3E%3Ccircle cx='115' cy='91' r='3'/%3E%3Cpath d='M104 73c-15-15-3-25 5-13 8-12 20-2 5 13l-5 5z'/%3E%3C/g%3E%3C/svg%3E")!important;
+}
+#concurs-lansare::after {
+  right:0!important;
+  transform:scaleX(-1)!important;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 190'%3E%3Cg fill='none' stroke='%238b9b7b' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M12 180Q54 123 67 20M34 145Q13 118 12 96M45 119Q81 105 91 77M56 88Q29 68 34 44M64 55Q91 47 105 25'/%3E%3C/g%3E%3Cg fill='%23c5d0b7' stroke='%238b9b7b' stroke-width='1'%3E%3Cellipse cx='21' cy='109' rx='8' ry='23' transform='rotate(-35 21 109)'/%3E%3Cellipse cx='77' cy='105' rx='8' ry='22' transform='rotate(48 77 105)'/%3E%3Cellipse cx='39' cy='59' rx='7' ry='20' transform='rotate(-38 39 59)'/%3E%3Cellipse cx='96' cy='38' rx='7' ry='19' transform='rotate(38 96 38)'/%3E%3C/g%3E%3Cg fill='%23f1d6d1' stroke='%23d8a5a3' stroke-width='1'%3E%3Ccircle cx='107' cy='83' r='5'/%3E%3Ccircle cx='115' cy='91' r='3'/%3E%3Cpath d='M104 73c-15-15-3-25 5-13 8-12 20-2 5 13l-5 5z'/%3E%3C/g%3E%3C/svg%3E")!important;
+}
+#concurs-lansare .launch-contest-heading,
+#concurs-lansare .launch-prizes-grid,
+#concurs-lansare .launch-prize-feedback,
+#concurs-lansare .launch-contest-footer,
+#concurs-lansare .launch-contest-terms { position:relative!important; z-index:1!important; }
+#concurs-lansare .launch-contest-footer {
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  justify-content:initial!important;
+  gap:18px!important;
+  text-align:left!important;
+}
+#concurs-lansare .launch-contest-footer span {
+  display:block!important;
+  padding:4px 12px!important;
+  border-right:1px solid #eee2dc!important;
+  line-height:1.5!important;
+}
+#concurs-lansare .launch-contest-footer span:last-child { border-right:0!important; }
+@media(max-width:650px) {
+ #concurs-lansare::before,#concurs-lansare::after { top:44px!important;width:52px!important;height:100px!important;opacity:.55!important; }
+ #concurs-lansare .launch-contest-heading h2::after { margin-top:5px; }
+ #concurs-lansare .launch-contest-footer { grid-template-columns:1fr!important; gap:4px!important; }
+ #concurs-lansare .launch-contest-footer span { border-right:0!important;border-bottom:1px solid #eee2dc!important;padding:7px 4px!important; }
+}
