@@ -5240,3 +5240,30 @@ body.personalize-modal-open{overflow:hidden}
  #concurs-lansare .launch-contest-footer { grid-template-columns:1fr!important; gap:4px!important; }
  #concurs-lansare .launch-contest-footer span { border-right:0!important;border-bottom:1px solid #eee2dc!important;padding:7px 4px!important; }
 }
+
+
+/* Corecție pentru mobil: fotografiile premiilor nu se mai taie la bază */
+#concurs-lansare .launch-prize-image-wrap {
+  overflow: hidden !important;
+  background: #fffaf7 !important;
+}
+#concurs-lansare .launch-prize-image-wrap img {
+  object-fit: contain !important;
+  object-position: center !important;
+}
+@media (max-width: 650px) {
+  #concurs-lansare .launch-prize-image-wrap {
+    aspect-ratio: 1 / 1 !important;
+  }
+  #concurs-lansare .launch-prize-image-wrap img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+  #concurs-lansare .launch-prize-title {
+    margin-top: 9px !important;
+  }
+  #concurs-lansare .launch-prize-card {
+    overflow: hidden !important;
+  }
+}
