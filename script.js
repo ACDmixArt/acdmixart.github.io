@@ -5363,6 +5363,15 @@ if (cartWhatsapp) {
       message += "\n";
     });
     message += `Total: ${cartTotal ? cartTotal.textContent : ""}`;
+    const launchPrize = window.acdmixartSelectedLaunchPrize || "";
+    const cartNumericTotal = cart.reduce((sum, item) => sum + (Number(item.pret) || 0) * (Number(item.quantity) || 1), 0);
+    if (launchPrize && cartNumericTotal < 100) {
+      alert("Pentru a revendica un premiu din concurs, comanda trebuie să fie de minimum 100 lei. Poți completa coșul sau poți trimite comanda fără premiu.");
+      return;
+    }
+    if (launchPrize && cartNumericTotal >= 100) {
+      message += `\\n\\nPREMIU CONCURS ACDmixArt: ${launchPrize}\\n(Se confirmă după verificarea disponibilității.)`;
+    }
 
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     // Deschide WhatsApp dintr-un gest direct al utilizatorului; dacă browserul blochează
@@ -6154,6 +6163,19 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
     if (suggestedPrice && suggestedPrice.value.trim()) message += `Buget propus de client: ${suggestedPrice.value.trim()} lei\n`;
     if (product) message += `Preț/bucată: ${money(unitPrice)}\nPreț estimativ: ${money(unitPrice * quantity)}\n`;
     else message += "Prețul va fi stabilit în funcție de modelul propus și materiale.\n";
+    const launchPrize = window.acdmixartSelectedLaunchPrize || "";
+    const estimatedPromoTotal = product && Number.isFinite(Number(unitPrice)) ? Number(unitPrice) * quantity : null;
+    if (launchPrize && estimatedPromoTotal === null) {
+      alert("Pentru a revendica un premiu, selectează un produs din catalog cu valoare estimată de minimum 100 lei. Pentru un model propriu, premiul se poate confirma după stabilirea prețului.");
+      return;
+    }
+    if (launchPrize && estimatedPromoTotal < 100) {
+      alert("Pentru a revendica un premiu din concurs, valoarea estimată a comenzii trebuie să fie de minimum 100 lei.");
+      return;
+    }
+    if (launchPrize && estimatedPromoTotal >= 100) {
+      message += `\\nPremiu ales pentru concurs: ${launchPrize}\\n(Se confirmă după verificarea disponibilității.)\\n`;
+    }
     message += "\nVă mulțumesc!";
 
     window.location.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
@@ -6499,3 +6521,33 @@ window.toggleFavoritesView = function() { favoritesOnly=!favoritesOnly; const b=
 
 window.updateFavoriteCount = function(){const b=document.getElementById('openFavorites');if(!b)return;let n=document.getElementById('favoriteCount');if(!n){n=document.createElement('span');n.id='favoriteCount';n.className='favorite-count';b.appendChild(n);}n.textContent=String(favoriteIds.length);n.hidden=favoriteIds.length===0;};
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',updateFavoriteCount);else updateFavoriteCount();
+
+
+/* Alegerea premiului pentru concursul de lansare */
+window.acdmixartSelectedLaunchPrize = "";
+(function initLaunchContest() {
+  const cards = Array.from(document.querySelectorAll(".launch-prize-card"));
+  const feedback = document.getElementById("launchPrizeFeedback");
+  if (!cards.length) return;
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      const prize = card.dataset.prize || "";
+      const alreadySelected = card.getAttribute("aria-pressed") === "true";
+      cards.forEach(other => {
+        other.setAttribute("aria-pressed", "false");
+        const label = other.querySelector(".launch-prize-select");
+        if (label) label.textContent = "Aleg acest premiu";
+      });
+      if (alreadySelected) {
+        window.acdmixartSelectedLaunchPrize = "";
+        if (feedback) feedback.textContent = "Nu ai ales încă un premiu.";
+      } else {
+        card.setAttribute("aria-pressed", "true");
+        const label = card.querySelector(".launch-prize-select");
+        if (label) label.textContent = "✓ Premiu selectat";
+        window.acdmixartSelectedLaunchPrize = prize;
+        if (feedback) feedback.textContent = "Ai ales: " + prize + ". Alegerea va fi inclusă în mesajul WhatsApp dacă totalul comenzii este de minimum 100 lei.";
+      }
+    });
+  });
+})();
