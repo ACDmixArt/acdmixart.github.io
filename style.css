@@ -4513,3 +4513,47 @@ body.personalize-modal-open{overflow:hidden}
   .launch-prize-card:nth-child(5) { grid-column: 2 / span 2 !important; }
   .launch-prize-image-wrap { width: 78% !important; }
 }
+
+
+/* Concurs: crem aproape alb, semi-transparent, contur verde salvie si valuri */
+.launch-contest {
+  background: rgba(255, 254, 250, .78) !important;
+  border: 2px solid #8b9b76 !important;
+  border-radius: 7% 9% 6% 8% / 5% 7% 6% 8% !important;
+  box-shadow: inset 0 0 0 5px rgba(255,255,255,.48) !important;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  position: relative;
+}
+.launch-contest::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border: 1px solid rgba(139,155,118,.5);
+  border-radius: 8% 7% 9% 6% / 7% 5% 8% 6%;
+  pointer-events: none;
+}
+.launch-contest-heading h2 { color: #344532 !important; }
+.launch-contest-eyebrow,
+.launch-contest-intro,
+.launch-contest-intro strong,
+.launch-contest-note,
+.launch-prize-title,
+.launch-prize-desc,
+.launch-prize-select,
+.launch-prize-feedback,
+.launch-contest-footer,
+.launch-contest-footer strong,
+.launch-contest-terms { color: #4b5147 !important; }
+.launch-prize-card,
+.launch-prize-card[aria-pressed="true"] {
+  background: rgba(255,255,255,.72) !important;
+  border-color: rgba(139,155,118,.45) !important;
+}
+.launch-prize-card[aria-pressed="true"] { border-color: #71855e !important; }
+.launch-prize-image-wrap { background: rgba(255,255,255,.62) !important; }
+.launch-contest-footer { border-top-color: rgba(139,155,118,.4) !important; }
+@media(max-width:650px) {
+  .launch-contest { border-radius: 28px 34px 25px 32px !important; }
+  .launch-contest::before { border-radius: 30px 36px 27px 34px !important; }
+}
