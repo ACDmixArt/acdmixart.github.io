@@ -4067,3 +4067,109 @@ body.personalize-modal-open{overflow:hidden}
   .launch-prize-title { font-size:.86rem; } .launch-prize-desc { font-size:.73rem; } .launch-prize-select { font-size:.72rem; }
   .launch-contest-footer { flex-direction:column; gap:6px; }
 }
+
+
+/* CONCURS ACDmixArt — aliniat vizual cu folderele din catalog */
+.launch-contest {
+  width: min(1240px, calc(100% - 32px));
+  margin: 26px auto 42px;
+  padding: clamp(20px, 3vw, 34px);
+  border: 1px solid #E9DADD;
+  border-radius: 22px;
+  background: rgba(255,255,255,.96);
+  box-shadow: 0 5px 18px rgba(78,73,69,.045);
+}
+.launch-contest-flower { display: none !important; }
+.launch-contest-heading { margin-bottom: 24px; }
+.launch-contest-eyebrow {
+  color: #8A8580;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .1em;
+  font-size: .72rem;
+}
+.launch-contest-heading h2 {
+  color: #4E4945;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+.launch-contest-intro {
+  color: #66745F;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(.92rem, 1.6vw, 1.05rem);
+  line-height: 1.65;
+}
+.launch-contest-intro strong { color: #8F626B; }
+.launch-contest-note {
+  color: #8A8580;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .84rem;
+  line-height: 1.6;
+}
+.launch-prizes-grid { gap: 16px; }
+.launch-prize-card {
+  padding: 8px;
+  border-color: #E9DADD;
+  border-radius: 18px;
+  background: #fff;
+  color: #4E4945;
+  box-shadow: 0 5px 18px rgba(78,73,69,.035);
+}
+.launch-prize-card:hover {
+  border-color: rgba(183,126,136,.55);
+  box-shadow: 0 12px 28px rgba(78,73,69,.08);
+}
+.launch-prize-card[aria-pressed="true"] {
+  border-color: #B77E88;
+  background: #FFF8F8;
+}
+.launch-prize-image-wrap {
+  border-radius: 12px;
+  background: linear-gradient(135deg,#F8ECEE,#EDF0E9);
+}
+.launch-prize-title {
+  color: #4E4945;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.18rem;
+  line-height: 1.15;
+}
+.launch-prize-desc {
+  color: #8A8580;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .75rem;
+  line-height: 1.5;
+}
+.launch-prize-select {
+  color: #8F626B;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .72rem;
+}
+.launch-prize-feedback {
+  color: #66745F;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .88rem;
+}
+.launch-contest-footer {
+  border-top-color: #E9DADD;
+  color: #66745F;
+  font-family: 'Montserrat', sans-serif;
+}
+.launch-contest-footer strong { color: #8F626B; }
+.launch-contest-terms {
+  color: #8A8580;
+  font-family: 'Montserrat', sans-serif;
+}
+@media(max-width:650px) {
+  .launch-contest {
+    width: calc(100% - 20px);
+    margin: 20px auto 32px;
+    padding: 19px 12px;
+    border-radius: 18px;
+  }
+  .launch-contest-heading h2 { font-size: clamp(2rem, 8vw, 2.7rem); }
+  .launch-prizes-grid { gap: 10px; }
+  .launch-prize-card { padding: 6px; border-radius: 13px; }
+  .launch-prize-title { font-size: 1.05rem; }
+}
