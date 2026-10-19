@@ -5370,7 +5370,7 @@ if (cartWhatsapp) {
       return;
     }
     if (launchPrize && cartNumericTotal >= 100) {
-      message += `\\n\\nPREMIU CONCURS ACDmixArt: ${launchPrize}\\n(Se confirmă după verificarea disponibilității.)`;
+      message += `\n\nPREMIU CONCURS ACDmixArt: ${launchPrize}\n(Se confirmă după verificarea disponibilității.)`;
     }
 
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
@@ -6174,7 +6174,7 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
       return;
     }
     if (launchPrize && estimatedPromoTotal >= 100) {
-      message += `\\nPremiu ales pentru concurs: ${launchPrize}\\n(Se confirmă după verificarea disponibilității.)\\n`;
+      message += `\nPremiu ales pentru concurs: ${launchPrize}\n(Se confirmă după verificarea disponibilității.)\n`;
     }
     message += "\nVă mulțumesc!";
 
