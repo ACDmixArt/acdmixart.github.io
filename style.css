@@ -5366,3 +5366,25 @@ body.personalize-modal-open{overflow:hidden}
   #concurs-lansare .launch-contest-footer .launch-footer-item:last-child { border-bottom:0!important; }
   #concurs-lansare .launch-footer-icon { width:34px!important;height:34px!important; }
 }
+
+
+/* Titlu concurs: serif elegant, mai lizibil și mai puțin exagerat */
+#concurs-lansare .launch-contest-heading h2,
+#concurs-lansare .launch-title-green,
+#concurs-lansare .launch-title-pink {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  letter-spacing: -.035em !important;
+}
+#concurs-lansare .launch-contest-heading h2 {
+  font-size: clamp(2.8rem, 5.4vw, 4.55rem) !important;
+  line-height: 1.08 !important;
+}
+@media(max-width:650px) {
+  #concurs-lansare .launch-contest-heading h2 {
+    font-size: clamp(2.35rem, 8.7vw, 3.1rem) !important;
+    letter-spacing: -.04em !important;
+    line-height: 1.12 !important;
+  }
+}
