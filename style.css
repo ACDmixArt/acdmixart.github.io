@@ -4300,3 +4300,53 @@ body.personalize-modal-open{overflow:hidden}
   .launch-prize-select { font-size: .64rem !important; }
   .launch-contest-footer { font-size: .7rem !important; }
 }
+
+
+/* Concurs — corectie finala: fara roz si fara font decorativ */
+.launch-contest,
+.launch-contest * {
+  font-family: 'Montserrat', sans-serif !important;
+}
+.launch-contest {
+  background: #fff !important;
+  border-color: #e5e5e5 !important;
+  color: #333 !important;
+}
+.launch-contest-heading h2,
+.launch-contest-intro,
+.launch-contest-intro strong,
+.launch-contest-note,
+.launch-prize-title,
+.launch-prize-desc,
+.launch-prize-select,
+.launch-prize-feedback,
+.launch-contest-footer,
+.launch-contest-footer strong,
+.launch-contest-terms,
+.launch-contest-eyebrow {
+  color: #333 !important;
+}
+.launch-prize-card,
+.launch-prize-card[aria-pressed="true"] {
+  background: #fff !important;
+  border-color: #e1e1e1 !important;
+  color: #333 !important;
+  box-shadow: none !important;
+}
+.launch-prize-card:hover {
+  border-color: #999 !important;
+  box-shadow: 0 3px 10px rgba(0,0,0,.06) !important;
+}
+.launch-prize-card[aria-pressed="true"] {
+  border: 2px solid #555 !important;
+  background: #fafafa !important;
+}
+.launch-prize-image-wrap {
+  background: #fff !important;
+}
+.launch-prize-check {
+  background: #444 !important;
+}
+.launch-contest-footer {
+  border-top-color: #e5e5e5 !important;
+}
