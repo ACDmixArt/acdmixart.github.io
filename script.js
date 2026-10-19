@@ -5531,9 +5531,11 @@ zoomButton.addEventListener("click", function (e) {
 
   const personalizeButton = lightbox.querySelector(".lightbox-personalize");
 
-  if (!["Set Moț", "Agende", "Party", "Martisoare", "Toppere", "Torturi din cutiuțe"].includes(product.categorie)) {
-    personalizeButton.hidden = true;
-  }
+  // Produsele cu un configurator dedicat păstrează butonul lor actual.
+  // Pentru celelalte categorii, butonul deschide formularul general de personalizare
+  // cu produsul și categoria deja selectate.
+  personalizeButton.hidden = false;
+  personalizeButton.textContent = "Personalizează";
 
   personalizeButton.addEventListener("click", () => {
     closeGallery();
@@ -5542,7 +5544,8 @@ zoomButton.addEventListener("click", function (e) {
     else if (product.categorie === "Agende") openAgendaCustomizer(product.id, 1);
     else if (product.categorie === "Party") (product.id === 266 ? openGarlandCustomizer : openPartyCustomizer)(product.id, 1);
     else if (product.categorie === "Martisoare") openMartisorCustomizer(product.id, 1);
-    else openSetMotCustomizer(product.id, 1);
+    else if (product.categorie === "Set Moț") openSetMotCustomizer(product.id, 1);
+    else openProductPersonalization(product.id);
   });
 
   lightbox.querySelector(".lightbox-add-cart").addEventListener("click", () => {
