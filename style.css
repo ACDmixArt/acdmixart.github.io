@@ -5472,3 +5472,30 @@ body.personalize-modal-open{overflow:hidden}
     white-space: normal !important;
   }
 }
+
+
+/* Formular personalizare: două acțiuni clare, WhatsApp sau coș */
+.order-form-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, .85fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+.order-form-actions .button {
+  width: 100%;
+  min-width: 0;
+  white-space: normal;
+}
+.order-form-actions .order-add-to-cart {
+  background: #68795b;
+  color: #fff;
+  border: 1px solid #68795b;
+}
+.order-form-actions .order-add-to-cart:hover {
+  background: #56664b;
+}
+@media(max-width:520px) {
+  .order-form-actions {
+    grid-template-columns: 1fr;
+  }
+}
