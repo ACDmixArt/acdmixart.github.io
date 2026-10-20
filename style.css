@@ -5763,3 +5763,28 @@ section.personalize-modal-dialog .order-form .order-form-actions .order-add-to-c
 #personalizeModal #orderForm > label.order-policy-acknowledgement strong {
   color: #c77d91 !important;
 }
+
+
+/* Titlul mare si textul de introducere din sectiunea de personalizare */
+#personalizeInlinePlaceholder h1,
+#personalizeInlinePlaceholder h2,
+#personalizeInlinePlaceholder h3,
+#personalizeInlinePlaceholder h1 *,
+#personalizeInlinePlaceholder h2 *,
+#personalizeInlinePlaceholder h3 *,
+.personalize-section h1,
+.personalize-section h2,
+.personalize-section h3,
+.personalize-section h1 *,
+.personalize-section h2 *,
+.personalize-section h3 *,
+#personalizeModal h1,
+#personalizeModal h2,
+#personalizeModal h3 {
+  color: #c77d91 !important;
+}
+#personalizeInlinePlaceholder .eyebrow,
+.personalize-section > .eyebrow,
+.personalize-modal-dialog .eyebrow {
+  color: #c77d91 !important;
+}
