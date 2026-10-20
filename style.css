@@ -5551,3 +5551,42 @@ body.personalize-modal-open{overflow:hidden}
   background: #fff !important;
   border: 1px solid #e6ded5 !important;
 }
+
+
+/* Override explicit pentru modalul de personalizare — ultima regulă câștigă */
+section.personalize-modal-dialog .order-form label.order-policy-acknowledgement {
+  background: rgba(133, 154, 119, .10) !important;
+  background-image: none !important;
+  border: 1px solid rgba(119, 145, 105, .32) !important;
+  border-left: 5px solid #8b9b7d !important;
+  color: #5f6258 !important;
+}
+section.personalize-modal-dialog .order-form label.order-policy-acknowledgement::after {
+  display: none !important;
+  content: none !important;
+}
+section.personalize-modal-dialog .order-form label.order-policy-acknowledgement strong {
+  color: #68795b !important;
+}
+section.personalize-modal-dialog .order-form label.order-policy-acknowledgement input[type="checkbox"] {
+  accent-color: #829574 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+section.personalize-modal-dialog .order-form .order-form-actions .button,
+section.personalize-modal-dialog .order-form .order-form-actions button[type="submit"] {
+  background: #f6dfe2 !important;
+  background-image: none !important;
+  color: #925767 !important;
+  border: 1px solid #efcbd2 !important;
+  box-shadow: 0 5px 14px rgba(166, 111, 126, .10) !important;
+}
+section.personalize-modal-dialog .order-form .order-form-actions .button:hover,
+section.personalize-modal-dialog .order-form .order-form-actions button[type="submit"]:hover {
+  background: #f2d2d8 !important;
+}
+section.personalize-modal-dialog .order-form .order-form-actions .order-add-to-cart {
+  background: #f6dfe2 !important;
+  color: #925767 !important;
+  border-color: #efcbd2 !important;
+}
