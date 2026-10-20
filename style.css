@@ -5788,3 +5788,21 @@ section.personalize-modal-dialog .order-form .order-form-actions .order-add-to-c
 .personalize-modal-dialog .eyebrow {
   color: #c77d91 !important;
 }
+
+
+/* Premiu deja revendicat în concursul de lansare */
+#concurs-lansare .launch-prize-card-taken,
+#concurs-lansare .launch-prize-card-taken:hover {
+  cursor: not-allowed !important;
+  opacity: .78 !important;
+  filter: saturate(.62) !important;
+  transform: none !important;
+  box-shadow: none !important;
+  border: 2px dashed #b7b0a7 !important;
+  background: #f5f2ed !important;
+}
+#concurs-lansare .launch-prize-card-taken .launch-prize-select,
+#concurs-lansare .launch-prize-card-taken:hover .launch-prize-select {
+  background: #e8e3dc !important;
+  color: #655d55 !important;
+}
