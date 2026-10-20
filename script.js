@@ -6199,7 +6199,7 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
         personalizare: {
           tip: "formularPersonalizare",
           categorie: category,
-          detalii: message.substring(message.indexOf("\\n\\n") + 2)
+          detalii: message.substring(message.indexOf("\n\n") + 2)
         }
       });
       renderCart();
