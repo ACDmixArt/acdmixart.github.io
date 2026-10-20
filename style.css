@@ -5714,3 +5714,52 @@ section.personalize-modal-dialog .order-form .order-form-actions .order-add-to-c
   background-color: #edbac8 !important;
   color: #111111 !important;
 }
+
+
+/* Corectie completa formular personalizare: toate textele bold roz; acord verde fara dunga sau floare */
+.personalize-section .order-form label,
+.personalize-section .order-form label strong,
+.personalize-section .order-form label b,
+.personalize-section .order-form .eyebrow,
+.personalize-section .order-form strong,
+.personalize-section .order-form b,
+.personalize-modal-dialog .order-form label,
+.personalize-modal-dialog .order-form label strong,
+.personalize-modal-dialog .order-form label b,
+.personalize-modal-dialog .order-form strong,
+.personalize-modal-dialog .order-form b,
+#personalizeModal #orderForm label,
+#personalizeModal #orderForm label strong,
+#personalizeModal #orderForm label b {
+  color: #c77d91 !important;
+}
+.order-form label.order-policy-acknowledgement,
+.personalize-modal-dialog .order-form label.order-policy-acknowledgement,
+#personalizeModal #orderForm > label.order-policy-acknowledgement {
+  background: rgba(125, 151, 111, .09) !important;
+  background-color: rgba(125, 151, 111, .09) !important;
+  background-image: none !important;
+  border: 1px solid rgba(112, 139, 98, .24) !important;
+  border-left: 1px solid rgba(112, 139, 98, .24) !important;
+  box-shadow: none !important;
+}
+.order-form label.order-policy-acknowledgement::before,
+.order-form label.order-policy-acknowledgement::after,
+.personalize-modal-dialog .order-form label.order-policy-acknowledgement::before,
+.personalize-modal-dialog .order-form label.order-policy-acknowledgement::after,
+#personalizeModal #orderForm > label.order-policy-acknowledgement::before,
+#personalizeModal #orderForm > label.order-policy-acknowledgement::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+.order-form label.order-policy-acknowledgement,
+.order-form label.order-policy-acknowledgement strong,
+.order-form label.order-policy-acknowledgement b,
+.personalize-modal-dialog .order-form label.order-policy-acknowledgement,
+.personalize-modal-dialog .order-form label.order-policy-acknowledgement strong,
+.personalize-modal-dialog .order-form label.order-policy-acknowledgement b,
+#personalizeModal #orderForm > label.order-policy-acknowledgement,
+#personalizeModal #orderForm > label.order-policy-acknowledgement strong {
+  color: #c77d91 !important;
+}
