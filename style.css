@@ -5680,3 +5680,37 @@ section.personalize-modal-dialog .order-form .order-form-actions .order-add-to-c
   background: #f1cfd6 !important;
   background-color: #f1cfd6 !important;
 }
+
+
+/* Ajustare finala formular personalizare: text ingrosat roz, butoane roz cu text negru */
+.personalize-section .order-form strong,
+.personalize-section .order-form b,
+.personalize-section .order-form label strong,
+.personalize-section .order-form label b,
+.personalize-modal-dialog .order-form strong,
+.personalize-modal-dialog .order-form b {
+  color: #c77d91 !important;
+}
+.order-form .order-form-actions button.button,
+.order-form .order-form-actions button.button.order-add-to-cart,
+.personalize-modal-dialog .order-form .order-form-actions button.button,
+.personalize-modal-dialog .order-form .order-form-actions button.button.order-add-to-cart,
+#personalizeModal #orderForm .order-form-actions button.button,
+#personalizeModal #orderForm .order-form-actions button.button.order-add-to-cart {
+  background: #f3cbd5 !important;
+  background-color: #f3cbd5 !important;
+  background-image: none !important;
+  color: #111111 !important;
+  border: 1px solid #e7adbd !important;
+  box-shadow: 0 5px 14px rgba(166, 111, 126, .12) !important;
+}
+.order-form .order-form-actions button.button:hover,
+.order-form .order-form-actions button.button.order-add-to-cart:hover,
+.personalize-modal-dialog .order-form .order-form-actions button.button:hover,
+.personalize-modal-dialog .order-form .order-form-actions button.button.order-add-to-cart:hover,
+#personalizeModal #orderForm .order-form-actions button.button:hover,
+#personalizeModal #orderForm .order-form-actions button.button.order-add-to-cart:hover {
+  background: #edbac8 !important;
+  background-color: #edbac8 !important;
+  color: #111111 !important;
+}
