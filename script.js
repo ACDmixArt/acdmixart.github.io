@@ -4250,7 +4250,7 @@ function renderProducts() {
               : product.categorie === "Caricaturi"
               ? `<button type="button" class="add-cart" onclick="openCaricatureCustomizer(${product.id}, document.getElementById(&quot;qty-${product.id}&quot;).textContent)">Alege caricatura</button>`
               : ["Numere pentru mese", "Meniuri", "Căni", "Cărți", "Botez", "Nuntă", "Mărturii", "Pahare", "Plicuri dar botez", "Plicuri dar nuntă", "Save the Date", "Jurnale", "Cărți de vizită"].includes(product.categorie)
-              ? `<button type="button" class="add-cart" onclick="openProductPersonalization(${product.id})">Personalizează</button>`
+              ? `<button type="button" class="add-cart" onclick="openProductPersonalization(${product.id}, document.getElementById(&quot;qty-${product.id}&quot;).textContent)">Personalizează</button>`
               : product.categorie === "Set Moț"
                 ? `<button type="button" class="add-cart" onclick="openSetMotCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
                 : product.categorie === "Set Gătit"
@@ -5870,7 +5870,7 @@ function renderDynamicFields() {
   updateOrderSummary();
 }
 
-function openProductPersonalization(productId) {
+function openProductPersonalization(productId, quantity = 1) {
   const product = products.find(item => Number(item.id) === Number(productId));
   const modal = document.getElementById("personalizeModal");
   if (!product || !modal || !formCategory || !formProduct) return;
@@ -5887,6 +5887,11 @@ function openProductPersonalization(productId) {
   updateFormProducts();
   formProduct.value = String(product.id);
   renderDynamicFields();
+  const quantityInput = document.getElementById("formQuantity");
+  if (quantityInput) {
+    const minimum = isMin25Invitation(product) ? INVITATION_MINIMUM : 1;
+    quantityInput.value = String(Math.max(minimum, Number(quantity) || minimum));
+  }
   updateOrderSummary();
 
   const title = document.getElementById("personalizeModalTitle");
