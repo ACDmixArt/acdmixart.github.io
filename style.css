@@ -5632,3 +5632,51 @@ section.personalize-modal-dialog .order-form .order-form-actions .order-add-to-c
   background: #f1cfd6 !important;
   background-color: #f1cfd6 !important;
 }
+
+
+/* Final palette fix: works both inside the modal and when the form is moved inline */
+.personalize-section {
+  background: #fffdf8 !important;
+  background-color: #fffdf8 !important;
+  color: #5f6258 !important;
+}
+.personalize-section .eyebrow {
+  color: #78856c !important;
+}
+.order-form label.order-policy-acknowledgement {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  background: rgba(125, 151, 111, .09) !important;
+  background-color: rgba(125, 151, 111, .09) !important;
+  background-image: none !important;
+  border: 1px solid rgba(112, 139, 98, .30) !important;
+  border-left: 5px solid #879979 !important;
+  border-radius: 12px !important;
+  padding: 15px !important;
+  box-shadow: none !important;
+  color: #5f6258 !important;
+}
+.order-form label.order-policy-acknowledgement strong {
+  color: #68795b !important;
+}
+.order-form label.order-policy-acknowledgement input[type="checkbox"] {
+  flex: 0 0 auto !important;
+  margin-top: 3px !important;
+  accent-color: #879979 !important;
+}
+.order-form .order-form-actions button.button,
+.order-form .order-form-actions button.button.order-add-to-cart {
+  background: #f6dce1 !important;
+  background-color: #f6dce1 !important;
+  background-image: none !important;
+  color: #915566 !important;
+  border: 1px solid #edc5ce !important;
+  box-shadow: 0 5px 14px rgba(166, 111, 126, .12) !important;
+}
+.order-form .order-form-actions button.button:hover,
+.order-form .order-form-actions button.button.order-add-to-cart:hover {
+  background: #f1cfd6 !important;
+  background-color: #f1cfd6 !important;
+}
