@@ -5499,3 +5499,55 @@ body.personalize-modal-open{overflow:hidden}
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Formular personalizare: acord verde discret, fundal crem luminos, butoane roz pudrat */
+.personalize-modal-dialog {
+  background: #fffdf8 !important;
+}
+.personalize-modal-dialog .personalize-section {
+  background: #fffdf8 !important;
+  color: #5e6258 !important;
+}
+.personalize-modal-dialog .personalize-section .eyebrow {
+  color: #78856c !important;
+}
+.personalize-modal-dialog .order-policy-acknowledgement {
+  background: rgba(124, 148, 112, .10) !important;
+  border: 1px solid rgba(124, 148, 112, .30) !important;
+  border-left: 5px solid #8b9b7d !important;
+  color: #5f6258 !important;
+  box-shadow: none !important;
+}
+.personalize-modal-dialog .order-policy-acknowledgement strong {
+  color: #68795b !important;
+}
+.personalize-modal-dialog .order-policy-acknowledgement input[type="checkbox"] {
+  accent-color: #829574 !important;
+}
+.personalize-modal-dialog .order-summary {
+  background: #fff !important;
+  border: 1px solid #eee4dc !important;
+}
+.personalize-modal-dialog .order-form-actions .button,
+.personalize-modal-dialog .order-form .button {
+  background: #f6dfe2 !important;
+  color: #925767 !important;
+  border: 1px solid #efcbd2 !important;
+  box-shadow: 0 5px 14px rgba(166, 111, 126, .10) !important;
+}
+.personalize-modal-dialog .order-form-actions .button:hover,
+.personalize-modal-dialog .order-form .button:hover {
+  background: #f2d2d8 !important;
+}
+.personalize-modal-dialog .order-form-actions .order-add-to-cart {
+  background: #f6dfe2 !important;
+  color: #925767 !important;
+  border-color: #efcbd2 !important;
+}
+.personalize-modal-dialog .order-form input:not([type="checkbox"]),
+.personalize-modal-dialog .order-form select,
+.personalize-modal-dialog .order-form textarea {
+  background: #fff !important;
+  border: 1px solid #e6ded5 !important;
+}
