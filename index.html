@@ -268,7 +268,10 @@
             <div id="dynamicFormFields" class="dynamic-form-fields"></div>
             <label class="order-policy-acknowledgement"><input type="checkbox" id="orderPolicyAcknowledged" required><span><strong>Am citit și sunt de acord</strong> cu condițiile ACDmixArt: achitarea unui avans de 50% înainte de începerea realizării comenzii și faptul că produsele nu se expediază cu plata ramburs.</span></label>
             <div id="orderSummary" class="order-summary" hidden></div>
-            <button class="button" type="submit">Trimite cererea pe WhatsApp</button>
+            <div class="order-form-actions">
+              <button class="button" type="submit" name="orderAction" value="whatsapp">Trimite cererea pe WhatsApp</button>
+              <button class="button order-add-to-cart" type="submit" name="orderAction" value="cart">Adaugă în coș</button>
+            </div>
           </form>
         </section>
       </section>
@@ -375,7 +378,7 @@ function closePersonalizeModal(){const m=document.getElementById("personalizeMod
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closePersonalizeModal();});
 closePersonalizeModal();
 </script>
-<script src="script.js?v=20261020-lightbox-personalizare"></script>
+<script src="script.js?v=20261020-form-cart-actions"></script>
 
 </body>
 </html>
