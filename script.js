@@ -5271,6 +5271,8 @@ function renderCart() {
             ? `<p>Format: ${item.personalizare.format}<br>Personaje: ${item.personalizare.personaje} (incluse 1–2, suplimentare: ${item.personalizare.personajeSuplimentare})<br>Ținute de meserie: ${item.personalizare.tinuteProfesie ? "Da (+30 lei)" : "Nu"}<br>Mașină: ${item.personalizare.masina ? "Da (+15 lei)" : "Nu"}<br>Motocicletă: ${item.personalizare.motocicleta ? "Da (+15 lei)" : "Nu"}<br>Animal de companie: ${item.personalizare.animalCompanie ? "Da (+15 lei)" : "Nu"}<br>Detalii: ${item.personalizare.detalii || "Nespecificate"}</p>`
             : item.personalizare?.tip === "topper"
             ? `<p>Variantă: ${item.personalizare.varianta}<br>Tematică: ${item.personalizare.tematica}<br>Nume: ${item.personalizare.nume}<br>Vârstă: ${item.personalizare.varsta || "Nespecificată"}<br>Caricatură: ${item.personalizare.personaje} ${item.personalizare.personaje === 1 ? "personaj" : "personaje"} (+${money(item.personalizare.pretCaricatura)})<br>Alte detalii: ${item.personalizare.detalii || "Nespecificate"}</p>`
+            : item.personalizare?.tip === "formularPersonalizare"
+            ? `<p><strong>Personalizare:</strong> detaliile completate vor fi incluse în mesajul de comandă WhatsApp.</p>`
             : item.personalizare?.tip === "martisor"
             ? `<p>Pentru: ${item.personalizare.pentru || "Nespecificat"}<br>De la: ${item.personalizare.deLa || "Nespecificat"}<br>Mesaj: ${item.personalizare.mesaj || "Fără mesaj"}</p>`
             : item.personalizare?.tip === "tortDinCutiute"
@@ -5343,7 +5345,9 @@ if (cartWhatsapp) {
     let message = getACDMixArtGreeting() + " Doresc să plasez o comandă ACDmixArt:\n\n";
     cart.forEach((item, index) => {
       message += `${index + 1}. ${item.nume}\nCantitate: ${item.quantity || 1}\nPreț/buc.: ${money(item.pret)}\nSubtotal: ${money(item.pret * (item.quantity || 1))}\n`;
-      if (item.personalizare?.tip === "caricatura") {
+      if (item.personalizare?.tip === "formularPersonalizare") {
+        message += `Detalii personalizare (categorie: ${item.personalizare.categorie}):\\n${item.personalizare.detalii}\\n`;
+      } else if (item.personalizare?.tip === "caricatura") {
         message += `Format: ${item.personalizare.format}\nPersonaje: ${item.personalizare.personaje} (suplimentare: ${item.personalizare.personajeSuplimentare}, +${money(item.personalizare.pretPersonajeSuplimentare)})\nȚinute de meserie: ${item.personalizare.tinuteProfesie ? "Da (+30 lei)" : "Nu"}\nMașină: ${item.personalizare.masina ? "Da (+15 lei)" : "Nu"}\nMotocicletă: ${item.personalizare.motocicleta ? "Da (+15 lei)" : "Nu"}\nAnimal de companie: ${item.personalizare.animalCompanie ? "Da (+15 lei)" : "Nu"}\nAlte detalii: ${item.personalizare.detalii || "Nespecificate"}\n`;
       } else if (item.personalizare?.tip === "topper") {
         message += `Variantă: ${item.personalizare.varianta}\nTematică: ${item.personalizare.tematica}\nNume: ${item.personalizare.nume}\nVârstă: ${item.personalizare.varsta || "Nespecificată"}\nCaricatură: ${item.personalizare.personaje} ${item.personalizare.personaje === 1 ? "personaj" : "personaje"} (+${money(item.personalizare.pretCaricatura)})\nAlte detalii: ${item.personalizare.detalii || "Nespecificate"}\n`;
@@ -6016,6 +6020,7 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
   dynamicFormFields.addEventListener("change", updateOrderSummary);
 
   orderForm.addEventListener("submit", async event => {
+    const orderAction = event.submitter?.value || "whatsapp";
     event.preventDefault();
 
     const product = products.find(item => String(item.id) === formProduct.value);
@@ -6179,7 +6184,29 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
     if (launchPrize && estimatedPromoTotal >= 100) {
       message += `\nPremiu ales pentru concurs: ${launchPrize}\n(Se confirmă după verificarea disponibilității.)\n`;
     }
-    message += "\nVă mulțumesc!";
+    message += "\\nVă mulțumesc!";
+
+    if (orderAction === "cart") {
+      if (!product) {
+        alert("Pentru a adăuga în coș, te rog să alegi mai întâi un produs din catalog.");
+        formProduct?.focus();
+        return;
+      }
+      cart.push({
+        ...product,
+        pret: Number(unitPrice),
+        quantity,
+        personalizare: {
+          tip: "formularPersonalizare",
+          categorie: category,
+          detalii: message.substring(message.indexOf("\\n\\n") + 2)
+        }
+      });
+      renderCart();
+      closePersonalizeModal();
+      openCart();
+      return;
+    }
 
     window.location.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
   });
