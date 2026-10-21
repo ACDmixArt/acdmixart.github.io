@@ -3999,7 +3999,19 @@ const products = [
       "images/products/jurnalbebesafari2_8.jpg",
       "images/products/jurnalbebesafari2_9.jpg"
     ]
-  }
+  },
+  {
+    id: 348,
+    nume: "Magnet cu fotografie personalizată",
+    categorie: "Magneți foto",
+    pret: 7,
+    descriere: "Magnet personalizat cu fotografia ta. Comanda minimă este de 9 bucăți.",
+    poze: [
+      "images/products/magneti-foto-personalizati-1.jpg",
+      "images/products/magneti-foto-personalizati-2.jpg",
+      "images/products/magneti-foto-personalizati-3.jpg"
+    ]
+  },
 ];
 
 
@@ -4049,7 +4061,8 @@ function categories() {
     "Party",
     "Set Moț",
     "Set Gătit",
-    "Torturi din cutiuțe"
+    "Torturi din cutiuțe",
+    "Magneți foto"
   ];
 }
 
@@ -4084,7 +4097,7 @@ function changeProductQuantity(productId, change) {
   const el = document.getElementById(`qty-${productId}`);
   if (!el) return;
   const product = products.find(item => item.id === Number(productId));
-  const minimum = isMin25Invitation(product) ? INVITATION_MINIMUM : 1;
+  const minimum = minimumQuantityForProduct(product);
   const next = Math.max(minimum, (Number(el.textContent) || minimum) + change);
   el.textContent = next;
   const priceEl = document.getElementById(`price-${productId}`);
@@ -4093,6 +4106,9 @@ function changeProductQuantity(productId, change) {
 
 function descrierePersonalizareBaza(product) {
   const categorie = (product.categorie || "").toLocaleLowerCase("ro");
+  if (categorie.includes("magneți foto") || categorie.includes("magneti foto")) {
+    return "Magnet personalizat cu fotografia aleasă de tine. Comanda minimă este de 9 bucăți; fotografiile se trimit pe WhatsApp după plasarea comenzii.";
+  }
   if (categorie.includes("botez")) {
     return "Personalizăm culorile, numele, data și textul, iar tema poate fi adaptată în funcție de preferințe.";
   }
@@ -4149,6 +4165,23 @@ function isMin25Invitation(product) {
   return isInvitation || isGiftEnvelope;
 }
 const INVITATION_MINIMUM = 25;
+const PHOTO_MAGNET_MINIMUM = 9;
+
+function isPhotoMagnet(product) {
+  return Boolean(product && (product.categorie === "Magneți foto" || /magnet cu fotografie personalizată/i.test(product.nume || "")));
+}
+
+function minimumQuantityForProduct(product) {
+  if (isMin25Invitation(product)) return INVITATION_MINIMUM;
+  if (isPhotoMagnet(product)) return PHOTO_MAGNET_MINIMUM;
+  return 1;
+}
+
+function minimumQuantityMessage(product) {
+  if (isPhotoMagnet(product)) return "Comanda minimă pentru magneții cu fotografie este de 9 bucăți.";
+  if (isMin25Invitation(product)) return "Comanda minimă pentru acest produs este de 25 de bucăți.";
+  return "Cantitatea minimă este 1.";
+}
 
 function updateMinimumOrderNotice() {
   const notice = document.getElementById("siteMinimumOrder");
@@ -4157,7 +4190,8 @@ function updateMinimumOrderNotice() {
     "Botez": "Pentru invitațiile de botez, comanda minimă este de 25 de bucăți.",
     "Nuntă": "Pentru invitațiile de nuntă, comanda minimă este de 25 de bucăți.",
     "Plicuri dar botez": "Pentru plicurile de dar pentru botez, comanda minimă este de 25 de bucăți.",
-    "Plicuri dar nuntă": "Pentru plicurile de dar pentru nuntă, comanda minimă este de 25 de bucăți."
+    "Plicuri dar nuntă": "Pentru plicurile de dar pentru nuntă, comanda minimă este de 25 de bucăți.",
+    "Magneți foto": "Pentru magneții cu fotografie, comanda minimă este de 9 bucăți."
   };
   const message = messages[activeCategory];
   notice.hidden = !message;
@@ -4265,7 +4299,7 @@ function renderProducts() {
           ${Array.isArray(product.tarifeCantitate) ? `<p class="product-tier-prices" style="font-size:13px;line-height:1.5;margin:4px 0 10px;">1–49 buc.: 2,50 lei/buc.<br>50–100 buc.: 2 lei/buc.<br>Peste 100 buc.: 1,70 lei/buc.</p>` : ""}
           <div class="product-quantity">
             <button type="button" aria-label="Scade cantitatea" onclick="changeProductQuantity(${product.id}, -1)">−</button>
-            <span id="qty-${product.id}">${isMin25Invitation(product) ? INVITATION_MINIMUM : 1}</span>
+            <span id="qty-${product.id}">${minimumQuantityForProduct(product)}</span>
             <button type="button" aria-label="Crește cantitatea" onclick="changeProductQuantity(${product.id}, 1)">+</button>
           </div>
           ${
@@ -4279,7 +4313,7 @@ function renderProducts() {
               ? `<button type="button" class="add-cart" onclick="${product.id === 266 ? "openGarlandCustomizer" : "openPartyCustomizer"}(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
               : product.categorie === "Caricaturi"
               ? `<button type="button" class="add-cart" onclick="openCaricatureCustomizer(${product.id}, document.getElementById(&quot;qty-${product.id}&quot;).textContent)">Alege caricatura</button>`
-              : ["Numere pentru mese", "Meniuri", "Căni", "Cărți", "Botez", "Nuntă", "Mărturii", "Pahare", "Plicuri dar botez", "Plicuri dar nuntă", "Save the Date", "Jurnale", "Cărți de vizită"].includes(product.categorie)
+              : ["Numere pentru mese", "Meniuri", "Căni", "Cărți", "Botez", "Nuntă", "Mărturii", "Pahare", "Plicuri dar botez", "Plicuri dar nuntă", "Save the Date", "Jurnale", "Cărți de vizită", "Magneți foto"].includes(product.categorie)
               ? `<button type="button" class="add-cart" onclick="openProductPersonalization(${product.id}, document.getElementById(&quot;qty-${product.id}&quot;).textContent)">Personalizează</button>`
               : product.categorie === "Set Moț"
                 ? `<button type="button" class="add-cart" onclick="openSetMotCustomizer(${product.id}, document.getElementById('qty-${product.id}').textContent)">Personalizează</button>`
@@ -5243,9 +5277,9 @@ function addToCart(productId, quantity = 1, personalizare = null) {
   let qty = Number(quantity);
 
   if (!product) return;
-  const minimum = isMin25Invitation(product) ? INVITATION_MINIMUM : 1;
-  if (isMin25Invitation(product) && qty < minimum) {
-    alert("Comanda minimă pentru acest produs este de 25 de bucăți.");
+  const minimum = minimumQuantityForProduct(product);
+  if (qty < minimum) {
+    alert(minimumQuantityMessage(product));
     const quantityEl = document.getElementById(`qty-${productId}`);
     if (quantityEl) quantityEl.textContent = String(minimum);
     return;
@@ -5268,9 +5302,9 @@ function removeFromCart(index) {
 function changeCartQuantity(index, quantity) {
   const qty = Number(quantity);
   if (!cart[index]) return;
-  const minimum = isMin25Invitation(cart[index]) ? INVITATION_MINIMUM : 1;
+  const minimum = minimumQuantityForProduct(cart[index]);
   if (!Number.isInteger(qty) || qty < minimum) {
-    alert(isMin25Invitation(cart[index]) ? "Comanda minimă pentru acest produs este de 25 de bucăți." : "Cantitatea minimă este 1.");
+    alert(minimumQuantityMessage(cart[index]));
     renderCart();
     return;
   }
@@ -5322,7 +5356,7 @@ function renderCart() {
                   : ""
         }
         <div class="cart-quantity">
-          <button type="button" aria-label="Scade cantitatea" onclick="changeCartQuantity(${index}, ${Math.max(isMin25Invitation(item) ? INVITATION_MINIMUM : 1, (Number(item.quantity) || 1) - 1)})">−</button>
+          <button type="button" aria-label="Scade cantitatea" onclick="changeCartQuantity(${index}, ${Math.max(minimumQuantityForProduct(item), (Number(item.quantity) || 1) - 1)})">−</button>
           <span>${item.quantity || 1}</span>
           <button type="button" aria-label="Crește cantitatea" onclick="changeCartQuantity(${index}, ${(Number(item.quantity) || 1) + 1})">+</button>
         </div>
@@ -5800,16 +5834,21 @@ function renderDynamicFields() {
 
   const quantityProduct = products.find(item => String(item.id) === (formProduct?.value || ""));
   const quantityNeedsMinimum = ["Botez", "Nuntă"].includes(category) || isMin25Invitation(quantityProduct);
+  const photoMagnetCategory = category === "Magneți foto";
+  const quantityMinimum = photoMagnetCategory ? PHOTO_MAGNET_MINIMUM : (quantityNeedsMinimum ? 25 : 1);
   addFormField({
     id: "formQuantity",
-    label: quantityNeedsMinimum ? "Cantitate (minimum 25 bucăți)" : "Cantitate",
+    label: photoMagnetCategory ? "Cantitate (minimum 9 bucăți)" : (quantityNeedsMinimum ? "Cantitate (minimum 25 bucăți)" : "Cantitate"),
     type: "number",
-    min: quantityNeedsMinimum ? 25 : 1,
-    value: quantityNeedsMinimum ? "25" : "1",
+    min: quantityMinimum,
+    value: String(quantityMinimum),
     required: true
   });
 
-  if (category === "Meniuri") {
+  if (category === "Magneți foto") {
+    addFormField({ id: "formNames", label: "Detalii pentru personalizare", placeholder: "Ex.: orientare, text mic sau cerințe speciale" });
+    addFormField({ id: "formDetails", label: "Fotografiile și alte detalii", type: "textarea", placeholder: "Trimite fotografiile pe WhatsApp după trimiterea comenzii. Poți scrie aici și alte cerințe." });
+  } else if (category === "Meniuri") {
     const selectedMenuName = document.getElementById("formProduct")?.selectedOptions?.[0]?.textContent || "";
     const isBaptismMenu = /botez/i.test(selectedMenuName);
     addFormField({ id: "formMenuText", label: "Meniul — preparate și băuturi", type: "textarea", placeholder: "Scrie meniul complet, în ordinea dorită", required: true });
@@ -5919,7 +5958,8 @@ function openProductPersonalization(productId, quantity = 1) {
   renderDynamicFields();
   const quantityInput = document.getElementById("formQuantity");
   if (quantityInput) {
-    const minimum = isMin25Invitation(product) ? INVITATION_MINIMUM : 1;
+    const minimum = minimumQuantityForProduct(product);
+    quantityInput.min = String(minimum);
     quantityInput.value = String(Math.max(minimum, Number(quantity) || minimum));
   }
   updateOrderSummary();
@@ -6092,6 +6132,11 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
 
     if ((["Botez", "Nuntă"].includes(formCategory.value) || isMin25Invitation(product)) && quantity < 25) {
       alert("Comanda minimă pentru invitații și plicurile de dar este de 25 de bucăți.");
+      quantityInput.focus();
+      return;
+    }
+    if (isPhotoMagnet(product) && quantity < PHOTO_MAGNET_MINIMUM) {
+      alert(minimumQuantityMessage(product));
       quantityInput.focus();
       return;
     }
