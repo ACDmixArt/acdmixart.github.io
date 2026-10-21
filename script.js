@@ -3969,7 +3969,25 @@ const products = [
     ]
   },
 
-
+,
+  {
+    id: 346,
+    nume: "Jurnalul bebelușului Safari 2",
+    categorie: "Jurnale",
+    pret: 110,
+    poze: [
+      "images/products/jurnalbebesafari2.jpg",
+      "images/products/jurnalbebesafari2_1.jpg",
+      "images/products/jurnalbebesafari2_2.jpg",
+      "images/products/jurnalbebesafari2_3.jpg",
+      "images/products/jurnalbebesafari2_4.jpg",
+      "images/products/jurnalbebesafari2_5.jpg",
+      "images/products/jurnalbebesafari2_6.jpg",
+      "images/products/jurnalbebesafari2_7.jpg",
+      "images/products/jurnalbebesafari2_8.jpg",
+      "images/products/jurnalbebesafari2_9.jpg"
+    ]
+  }
 ];
 
 
