@@ -4125,11 +4125,16 @@ function renderCategories() {
 }
 
 function setCategory(category) {
+  // If the personalization panel is open, close it before navigating back to the catalog.
+  if (typeof closePersonalizeModal === "function") closePersonalizeModal();
   activeCategory = category;
+  favoritesOnly = false;
   renderCategories();
   renderProducts();
-  // Bring the selected collection into view instead of leaving the visitor below the products.
-  document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  // Wait until the selected products have rendered, then bring the catalog into view.
+  requestAnimationFrame(() => {
+    document.getElementById("catalogTitle")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 }
 
 function changeProductQuantity(productId, change) {
