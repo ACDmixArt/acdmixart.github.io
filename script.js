@@ -3968,8 +3968,6 @@ const products = [
       "images/products/pungipersonalizate1.jpg"
     ]
   },
-
-,
   {
     id: 346,
     nume: "Jurnalul bebelușului Safari 2",
