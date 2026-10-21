@@ -4005,6 +4005,7 @@ const products = [
     nume: "Magnet cu fotografie personalizată",
     categorie: "Magneți foto",
     pret: 7,
+    minimComanda: 9,
     descriere: "Magnet personalizat cu fotografia ta. Comanda minimă este de 9 bucăți.",
     poze: [
       "images/products/magneti-foto-personalizati-1.jpg",
@@ -4017,6 +4018,7 @@ const products = [
     nume: "Magnet foto de Crăciun personalizat",
     categorie: "Magneți foto",
     pret: 7,
+    minimComanda: 9,
     descriere: "Magnet foto cu ramă festivă de Crăciun, personalizat cu fotografia copilului sau a familiei. Comanda minimă este de 9 bucăți.",
     poze: [
       "images/products/magneti-craciun-foto-1.jpg",
@@ -4029,6 +4031,7 @@ const products = [
     nume: "Magneți rotunzi personalizați cu fotografie",
     categorie: "Magneți foto",
     pret: 10,
+    minimComanda: 6,
     descriere: "Magneți rotunzi personalizați cu fotografia ta, perfecți pentru amintiri și cadouri. Comanda minimă este de 6 bucăți.",
     poze: [
       "images/products/magneti-rotunzi-personalizati.jpg"
@@ -4039,6 +4042,7 @@ const products = [
     nume: "Magnet pe formă personalizat cu fotografii",
     categorie: "Magneți foto",
     pret: 9,
+    minimComanda: 6,
     descriere: "Magnet personalizat pe formă, decupat după contur și imprimat cu fotografiile alese de tine. Comanda minimă este de 6 bucăți.",
     poze: [
       "images/products/magnet-pe-forma-personalizat.jpg"
@@ -4205,12 +4209,12 @@ function isPhotoMagnet(product) {
 
 function minimumQuantityForProduct(product) {
   if (isMin25Invitation(product)) return INVITATION_MINIMUM;
-  if (isPhotoMagnet(product)) return PHOTO_MAGNET_MINIMUM;
+  if (isPhotoMagnet(product)) return Number(product.minimComanda) || PHOTO_MAGNET_MINIMUM;
   return 1;
 }
 
 function minimumQuantityMessage(product) {
-  if (isPhotoMagnet(product)) return "Comanda minimă pentru magneții cu fotografie este de 9 bucăți.";
+  if (isPhotoMagnet(product)) return `Comanda minimă pentru acest magnet este de ${minimumQuantityForProduct(product)} bucăți.`;
   if (isMin25Invitation(product)) return "Comanda minimă pentru acest produs este de 25 de bucăți.";
   return "Cantitatea minimă este 1.";
 }
@@ -4223,7 +4227,6 @@ function updateMinimumOrderNotice() {
     "Nuntă": "Pentru invitațiile de nuntă, comanda minimă este de 25 de bucăți.",
     "Plicuri dar botez": "Pentru plicurile de dar pentru botez, comanda minimă este de 25 de bucăți.",
     "Plicuri dar nuntă": "Pentru plicurile de dar pentru nuntă, comanda minimă este de 25 de bucăți.",
-    "Magneți foto": "Pentru magneții cu fotografie, comanda minimă este de 9 bucăți."
   };
   const message = messages[activeCategory];
   notice.hidden = !message;
@@ -4328,6 +4331,7 @@ function renderProducts() {
           </p>
           ${descrierePersonalizare(product).trim().split(/\s+/).length > 3 ? `<button type="button" class="description-toggle" aria-expanded="false" onclick="toggleProductDescription(${product.id}, this)">Vezi mai mult</button>` : ""}
           <p class="product-price" id="price-${product.id}">${money(unitPriceForQuantity(product, 1))} / buc.</p>
+          ${isPhotoMagnet(product) ? '<p class="product-minimum-order">' + minimumQuantityMessage(product) + '</p>' : ""}
           ${Array.isArray(product.tarifeCantitate) ? `<p class="product-tier-prices" style="font-size:13px;line-height:1.5;margin:4px 0 10px;">1–49 buc.: 2,50 lei/buc.<br>50–100 buc.: 2 lei/buc.<br>Peste 100 buc.: 1,70 lei/buc.</p>` : ""}
           <div class="product-quantity">
             <button type="button" aria-label="Scade cantitatea" onclick="changeProductQuantity(${product.id}, -1)">−</button>
