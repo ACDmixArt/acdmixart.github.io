@@ -2946,6 +2946,20 @@ const products = [
   },
 
   {
+    id: 347,
+    nume: "Tricou personalizat pentru moț",
+    categorie: "Party",
+    pret: 45,
+    descriere: "Personalizat cu nume, vârstă și mesaj la alegere. Potrivit pentru sărbătorit, părinți și nași. Preț pe bucată.",
+    poze: [
+      "images/products/tricou_pentru_mot.jpg",
+      "images/products/tricou_pentru_mot_1.jpg",
+      "images/products/tricou_pentru_mot_2.jpg",
+      "images/products/tricou_pentru_mot_3.jpg"
+    ]
+  },
+
+  {
     id: 269,
     nume: "Carte de povești cu copilul ca personaj principal",
     categorie: "Cărți",
