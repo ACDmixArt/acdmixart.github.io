@@ -4034,6 +4034,16 @@ const products = [
       "images/products/magneti-rotunzi-personalizati.jpg"
     ]
   },
+  {
+    id: 351,
+    nume: "Magnet pe formă personalizat cu fotografii",
+    categorie: "Magneți foto",
+    pret: 9,
+    descriere: "Magnet personalizat pe formă, decupat după contur și imprimat cu fotografiile alese de tine. Comanda minimă este de 6 bucăți.",
+    poze: [
+      "images/products/magnet-pe-forma-personalizat.jpg"
+    ]
+  },
 ];
 
 
