@@ -4043,6 +4043,7 @@ const products = [
     categorie: "Magneți foto",
     pret: 9,
     minimComanda: 6,
+    faraDescriere: true,
     
     poze: [
       "images/products/magnet-pe-forma-personalizat.jpg"
@@ -4185,6 +4186,7 @@ function descrierePersonalizareBaza(product) {
 }
 
 function descrierePersonalizare(product) {
+  if (product?.faraDescriere) return "";
   const base = String(product?.descriere || descrierePersonalizareBaza(product)).trim();
   const themeNote = "Se poate personaliza în tematica dorită.";
   return base.toLocaleLowerCase("ro").includes(themeNote.toLocaleLowerCase("ro")) ? base : `${base} ${themeNote}`;
