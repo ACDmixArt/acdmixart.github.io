@@ -4024,6 +4024,16 @@ const products = [
       "images/products/magneti-craciun-foto-3.jpg"
     ]
   },
+  {
+    id: 350,
+    nume: "Magneți rotunzi personalizați cu fotografie",
+    categorie: "Magneți foto",
+    pret: 10,
+    descriere: "Magneți rotunzi personalizați cu fotografia ta, perfecți pentru amintiri și cadouri. Comanda minimă este de 6 bucăți.",
+    poze: [
+      "images/products/magneti-rotunzi-personalizati.jpg"
+    ]
+  },
 ];
 
 
