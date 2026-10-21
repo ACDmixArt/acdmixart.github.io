@@ -4128,6 +4128,8 @@ function setCategory(category) {
   activeCategory = category;
   renderCategories();
   renderProducts();
+  // Bring the selected collection into view instead of leaving the visitor below the products.
+  document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function changeProductQuantity(productId, change) {
