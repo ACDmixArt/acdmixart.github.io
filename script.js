@@ -4125,15 +4125,19 @@ function renderCategories() {
 }
 
 function setCategory(category) {
-  // If the personalization panel is open, close it before navigating back to the catalog.
+  // Selecting any collection should show its products, not leave the visitor at the personalization form.
   if (typeof closePersonalizeModal === "function") closePersonalizeModal();
   activeCategory = category;
   favoritesOnly = false;
   renderCategories();
   renderProducts();
-  // Wait until the selected products have rendered, then bring the catalog into view.
+  // Account for the sticky mobile header and position the page at the start of the catalog.
   requestAnimationFrame(() => {
-    document.getElementById("catalogTitle")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const target = document.getElementById("catalogTitle") || document.getElementById("productsGrid") || document.getElementById("catalog");
+    if (target) {
+      target.style.scrollMarginTop = "190px";
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   });
 }
 
