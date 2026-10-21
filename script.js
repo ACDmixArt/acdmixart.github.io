@@ -4006,7 +4006,7 @@ const products = [
     categorie: "Magneți foto",
     pret: 7,
     minimComanda: 9,
-    descriere: "Magnet personalizat cu fotografia ta. Comanda minimă este de 9 bucăți.",
+    descriere: "Magnet cu fotografie personalizată, dimensiune 9 × 7 cm. Comanda minimă este de 9 bucăți.",
     poze: [
       "images/products/magneti-foto-personalizati-1.jpg",
       "images/products/magneti-foto-personalizati-2.jpg",
@@ -4019,7 +4019,7 @@ const products = [
     categorie: "Magneți foto",
     pret: 7,
     minimComanda: 9,
-    descriere: "Magnet foto cu ramă festivă de Crăciun, personalizat cu fotografia copilului sau a familiei. Comanda minimă este de 9 bucăți.",
+    descriere: "Magnet foto de Crăciun personalizat, dimensiune 9 × 7 cm. Comanda minimă este de 9 bucăți.",
     poze: [
       "images/products/magneti-craciun-foto-1.jpg",
       "images/products/magneti-craciun-foto-2.jpg",
@@ -4032,7 +4032,7 @@ const products = [
     categorie: "Magneți foto",
     pret: 10,
     minimComanda: 6,
-    descriere: "Magneți rotunzi personalizați cu fotografia ta, perfecți pentru amintiri și cadouri. Comanda minimă este de 6 bucăți.",
+    descriere: "Magnet rotund personalizat cu fotografie, diametru 5 cm. Comanda minimă este de 6 bucăți.",
     poze: [
       "images/products/magneti-rotunzi-personalizati.jpg"
     ]
@@ -4043,7 +4043,7 @@ const products = [
     categorie: "Magneți foto",
     pret: 9,
     minimComanda: 6,
-    descriere: "Magnet personalizat pe formă, decupat după contur și imprimat cu fotografiile alese de tine. Comanda minimă este de 6 bucăți.",
+    
     poze: [
       "images/products/magnet-pe-forma-personalizat.jpg"
     ]
