@@ -4012,6 +4012,18 @@ const products = [
       "images/products/magneti-foto-personalizati-3.jpg"
     ]
   },
+  {
+    id: 349,
+    nume: "Magnet foto de Crăciun personalizat",
+    categorie: "Magneți foto",
+    pret: 7,
+    descriere: "Magnet foto cu ramă festivă de Crăciun, personalizat cu fotografia copilului sau a familiei. Comanda minimă este de 9 bucăți.",
+    poze: [
+      "images/products/magneti-craciun-foto-1.jpg",
+      "images/products/magneti-craciun-foto-2.jpg",
+      "images/products/magneti-craciun-foto-3.jpg"
+    ]
+  },
 ];
 
 
