@@ -5842,26 +5842,20 @@ function addFormField({ id, label, type = "text", placeholder = "", required = f
   return input;
 }
 
-function renderCustomModelFields() {
-      // Secțiune comună pentru ideile proprii ale clientului
-      const customSection = document.createElement("div");
-      customSection.className = "custom-model-fields";
-      customSection.innerHTML = '<h3>Modelul tău</h3><p>Descrie modelul pe care ți-l imaginezi. Poți indica textul, culorile și atașa o fotografie de inspirație.</p>';
-      dynamicFormFields.appendChild(customSection);
-    
-      addFormField({ id: "formCustomText", label: "Text / idee pentru modelul tău", type: "textarea", placeholder: "Ce text vrei să apară? Cum ai vrea să arate?" });
-      addFormField({ id: "formCustomColors", label: "Culori preferate", placeholder: "Ex.: roz pudrat, crem, verde salvie" });
-      const referenceNote = document.createElement("div");
-      referenceNote.className = "reference-photo-note";
-      referenceNote.innerHTML = "<strong>Ai un model de referință?</strong><p>După ce se deschide WhatsApp cu cererea ta, atașează în conversație fotografia modelului pe care vrei să ni-l trimiți.</p>";
-      customSection.appendChild(referenceNote);
+const CUSTOM_MODEL_CATEGORIES = new Set(["Botez", "Nuntă", "Save the Date", "Mărturii"]);
 
-      const priceSection = document.createElement("div");
-      priceSection.className = "custom-model-fields custom-price-fields";
-      priceSection.innerHTML = '<h3>Propune și un preț</h3><p>Spune-mi ce buget ai în minte. Prețul final îl stabilim împreună, în funcție de model și materiale.</p>';
-      dynamicFormFields.appendChild(priceSection);
-      addFormField({ id: "formSuggestedPrice", label: "Bugetul tău propus (lei)", type: "number", min: 0, placeholder: "Ex.: 50" });
-  
+function renderCustomModelFields() {
+  const customSection = document.createElement("div");
+  customSection.className = "custom-model-fields";
+  customSection.innerHTML = '<h3>Model propriu</h3><p>Descrie modelul pe care ți-l dorești. Poți indica textul, culorile și trimite o fotografie de inspirație pe WhatsApp.</p>';
+  dynamicFormFields.appendChild(customSection);
+
+  addFormField({ id: "formCustomText", label: "Descrierea modelului / text dorit", type: "textarea", placeholder: "Cum ai vrea să arate invitația sau mărturia? Ce text să apară?" });
+  addFormField({ id: "formCustomColors", label: "Culori preferate", placeholder: "Ex.: roz pudrat, crem, verde salvie" });
+  const referenceNote = document.createElement("div");
+  referenceNote.className = "reference-photo-note";
+  referenceNote.innerHTML = "<strong>Ai un model de referință?</strong><p>După trimiterea cererii, atașează fotografia în conversația WhatsApp.</p>";
+  customSection.appendChild(referenceNote);
 }
 
 function renderDynamicFields() {
@@ -5876,7 +5870,6 @@ function renderDynamicFields() {
 
 
   if (!category) {
-    renderCustomModelFields();
     updateOrderSummary();
     return;
   }
@@ -5983,8 +5976,10 @@ function renderDynamicFields() {
     addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Scrie aici cerințele tale" });
   }
 
-  // Secțiunile proprii sunt la finalul formularului, după câmpurile categoriei.
-  renderCustomModelFields();
+  // Modelul propriu este disponibil doar pentru invitații și mărturii.
+  if (CUSTOM_MODEL_CATEGORIES.has(category) && !formProduct?.value) {
+    renderCustomModelFields();
+  }
   updateOrderSummary();
 }
 
@@ -6036,7 +6031,11 @@ function updateFormProducts() {
   const category = formCategory.value;
   const filtered = products.filter(product => product.categorie === category);
 
-  formProduct.innerHTML = `<option value="">${category ? "Nu aleg un model existent (model propriu)" : "Alege mai întâi categoria"}</option>`;
+  const allowsCustomModel = CUSTOM_MODEL_CATEGORIES.has(category);
+  const emptyOptionText = !category
+    ? "Alege mai întâi categoria"
+    : (allowsCustomModel ? "Nu aleg un model existent (model propriu)" : "Alege un produs");
+  formProduct.innerHTML = `<option value="">${emptyOptionText}</option>`;
   formProduct.disabled = !category;
 
   filtered.forEach(product => {
@@ -6080,9 +6079,8 @@ function updateOrderSummary() {
     formAgendaCharacters: "Caricatură pentru agendă",
     formTopperType: "Tip topper",
     formTopperCharacters: "Număr personaje pentru caricatură",
-    formCustomText: "Modelul tău — text / idee",
-    formCustomColors: "Modelul tău — culori",
-    formSuggestedPrice: "Buget propus (lei)"
+    formCustomText: "Model propriu — descriere / text",
+    formCustomColors: "Model propriu — culori"
   };
 
   Object.entries(fieldLabels).forEach(([id, label]) => {
@@ -6153,6 +6151,12 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
       return;
     }
     const category = formCategory.value;
+
+    if (!product && !CUSTOM_MODEL_CATEGORIES.has(category)) {
+      alert("Pentru această categorie, te rog să alegi un produs din catalog. Opțiunea de model propriu este disponibilă doar pentru invitații și mărturii.");
+      formProduct?.focus();
+      return;
+    }
 
     const policyAcknowledgement = document.getElementById("orderPolicyAcknowledged");
     if (!policyAcknowledgement?.checked) {
@@ -6255,9 +6259,8 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
       ["Culori", "formColors"],
       ["Vârstă", "formAge"],
       ["Alte detalii", "formDetails"],
-      ["Modelul tău — text / idee", "formCustomText"],
-      ["Modelul tău — culori", "formCustomColors"],
-      ["Buget propus", "formSuggestedPrice"]
+      ["Model propriu — descriere / text", "formCustomText"],
+      ["Model propriu — culori", "formCustomColors"]
     ];
     fields.forEach(([label, id]) => {
       const input = document.getElementById(id);
@@ -6296,10 +6299,8 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
       }
       unitPrice = topperOptionPrice(topperType.value) + characters * 20;
     }
-    const suggestedPrice = document.getElementById("formSuggestedPrice");
-    if (suggestedPrice && suggestedPrice.value.trim()) message += `Buget propus de client: ${suggestedPrice.value.trim()} lei\n`;
     if (product) message += `Preț/bucată: ${money(unitPrice)}\nPreț estimativ: ${money(unitPrice * quantity)}\n`;
-    else message += "Prețul va fi stabilit în funcție de modelul propus și materiale.\n";
+    else message += "Prețul se stabilește după discutarea modelului și a materialelor.\n";
     const launchPrize = window.acdmixartSelectedLaunchPrize || "";
     const estimatedPromoTotal = product && Number.isFinite(Number(unitPrice)) ? Number(unitPrice) * quantity : null;
     if (launchPrize && estimatedPromoTotal === null) {
