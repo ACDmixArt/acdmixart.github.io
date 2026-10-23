@@ -4049,6 +4049,17 @@ const products = [
       "images/products/magnet-pe-forma-personalizat.jpg"
     ]
   },
+  {
+    id: 352,
+    nume: "Cană personalizată cu 2 poze – albastră",
+    categorie: "Cani",
+    pret: 45,
+    descriere: "Cană cu mâner și interior albastru, personalizată cu două fotografii, câte una pe fiecare parte.",
+    poze: [
+      "images/products/cana-personalizata-albastra-1.jpg",
+      "images/products/cana-personalizata-albastra-2.jpg"
+    ]
+  },
 ];
 
 
