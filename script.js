@@ -4052,7 +4052,7 @@ const products = [
   {
     id: 352,
     nume: "Cană personalizată cu 2 poze – albastră",
-    categorie: "Cani",
+    categorie: "Căni",
     pret: 45,
     descriere: "Cană cu mâner și interior albastru, personalizată cu două fotografii, câte una pe fiecare parte.",
     poze: [
