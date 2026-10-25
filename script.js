@@ -4108,6 +4108,17 @@ const products = [
       "images/products/marturie-coconut-minis-fetita-2.jpg"
     ]
   },
+  {
+    id: 357,
+    nume: "Mărturie magnetică personalizată – Bebe și familie",
+    categorie: "Mărturii",
+    pret: 4.5,
+    descriere: "Mărturie magnetică personalizată cu fotografia bebelușului și un design delicat cu familia. Se personalizează cu numele copilului, data evenimentului și mesajul dorit.",
+    poze: [
+      "images/products/marturie-magnetica-bebe-familie-1.jpg",
+      "images/products/marturie-magnetica-bebe-familie-2.jpg"
+    ]
+  },
 ];
 
 // Preț de bază și opțiuni pentru mărturiile magnetice standard.
