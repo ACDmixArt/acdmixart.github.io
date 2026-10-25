@@ -4074,6 +4074,17 @@ const products = [
       "images/products/cana-personalizata-albastra-2.jpg"
     ]
   },
+  {
+    id: 354,
+    nume: "Cană personalizată – Luni vs. Vineri",
+    categorie: "Căni",
+    pret: 45,
+    descriere: "Cană cu interior și mâner roz, decorată cu două caricaturi amuzante: energia de luni și oboseala de vineri. Un cadou original pentru iubitorii de lucruri personalizate.",
+    poze: [
+      "images/products/cana-luni-vineri-1.jpg",
+      "images/products/cana-luni-vineri-2.jpg"
+    ]
+  },
 ];
 
 // Preț de bază și opțiuni pentru mărturiile magnetice standard.
