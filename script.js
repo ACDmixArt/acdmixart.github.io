@@ -5894,10 +5894,10 @@ const CUSTOM_MODEL_CATEGORIES = new Set(["Nuntă", "Botez", "Mărturii"]);
 function renderCustomModelFields() {
   const customSection = document.createElement("div");
   customSection.className = "custom-model-fields";
-  customSection.innerHTML = '<h3>Model propriu</h3><p>Descrie modelul pe care ți-l dorești. Poți indica textul, culorile și trimite o fotografie de inspirație pe WhatsApp.</p>';
+  customSection.innerHTML = '<h3>Modelul tău</h3><p>Descrie modelul pe care ți-l imaginezi. Poți indica textul, culorile și atașa o fotografie de inspirație.</p>';
   dynamicFormFields.appendChild(customSection);
 
-  addFormField({ id: "formCustomText", label: "Descrierea modelului / text dorit", type: "textarea", placeholder: "Cum ai vrea să arate invitația sau mărturia? Ce text să apară?" });
+  addFormField({ id: "formCustomText", label: "Text / idee pentru modelul tău", type: "textarea", placeholder: "Ce text vrei să apară? Cum ai vrea să arate?" });
   addFormField({ id: "formCustomColors", label: "Culori preferate", placeholder: "Ex.: roz pudrat, crem, verde salvie" });
   const referenceNote = document.createElement("div");
   referenceNote.className = "reference-photo-note";
