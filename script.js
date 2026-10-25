@@ -4060,6 +4060,19 @@ const products = [
       "images/products/cana-personalizata-albastra-2.jpg"
     ]
   },
+  {
+    id: 353,
+    nume: "Invitație nuntă și botez – Bleu elegant",
+    categorie: "Nuntă",
+    pret: 3.5,
+    poze: [
+      "images/products/invitatie-nunta-bleu-1.jpg",
+      "images/products/invitatie-nunta-bleu-2.jpg",
+      "images/products/invitatie-nunta-bleu-3.jpg",
+      "images/products/invitatie-nunta-bleu-4.jpg",
+      "images/products/invitatie-nunta-bleu-5.jpg"
+    ]
+  },
 ];
 
 
