@@ -5806,3 +5806,83 @@ section.personalize-modal-dialog .order-form .order-form-actions .order-add-to-c
   background: #e8e3dc !important;
   color: #655d55 !important;
 }
+
+
+/* PREZENTARE DIUȘ — ACDmixArt */
+.dius-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 72px);
+  padding: clamp(48px, 7vw, 92px) 8%;
+  background: linear-gradient(135deg, #fffaf7 0%, #f8e9eb 52%, #fdf7f2 100%);
+  border-top: 1px solid rgba(183,126,136,.16);
+  border-bottom: 1px solid rgba(183,126,136,.16);
+}
+.dius-intro-image-wrap {
+  position: relative;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid rgba(183,126,136,.35);
+  border-radius: 26px;
+  background: rgba(255,255,255,.8);
+  box-shadow: 0 18px 48px rgba(93,65,69,.12);
+}
+.dius-intro-image-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 650px;
+  object-fit: contain;
+  border-radius: 17px;
+}
+.dius-intro-image-caption {
+  position: absolute;
+  right: 22px;
+  bottom: 22px;
+  padding: 9px 15px;
+  border: 1px solid rgba(255,255,255,.8);
+  border-radius: 999px;
+  background: rgba(255,250,247,.94);
+  color: #9d6672;
+  font: italic 15px 'Cormorant Garamond', serif;
+  box-shadow: 0 4px 16px rgba(78,73,69,.08);
+}
+.dius-intro-copy { max-width: 590px; }
+.dius-intro-copy .eyebrow { margin-bottom: 16px; color: #ad7882; }
+.dius-intro-copy h2 {
+  margin: 0 0 22px;
+  color: #51464a;
+  font-size: clamp(38px, 4.4vw, 62px);
+  line-height: 1.06;
+}
+.dius-intro-copy h2 span {
+  color: #b77e88;
+  font-style: italic;
+}
+.dius-intro-copy > p:not(.eyebrow):not(.dius-intro-signature) {
+  color: #766b6b;
+  font-size: 15px;
+  line-height: 1.9;
+  margin: 0 0 15px;
+}
+.dius-intro-signature {
+  margin: 23px 0 25px;
+  color: #a76d79;
+  font: italic 29px 'Cormorant Garamond', serif;
+}
+.dius-intro-signature span { color: #cf8d99; }
+.dius-intro-button { box-shadow: 0 7px 18px rgba(183,126,136,.2); }
+@media (max-width: 800px) {
+  .dius-intro { grid-template-columns: 1fr; gap: 30px; padding: 48px 6%; }
+  .dius-intro-image-wrap { width: min(100%, 560px); margin: 0 auto; }
+  .dius-intro-copy { max-width: 650px; margin: 0 auto; text-align: center; }
+  .dius-intro-copy h2 { font-size: clamp(38px, 9vw, 54px); }
+  .dius-intro-image-caption { right: 18px; bottom: 18px; }
+}
+@media (max-width: 480px) {
+  .dius-intro-image-wrap { padding: 7px; border-radius: 18px; }
+  .dius-intro-image-wrap img { border-radius: 12px; }
+  .dius-intro-image-caption { right: 12px; bottom: 12px; padding: 7px 10px; font-size: 13px; }
+  .dius-intro-copy > p:not(.eyebrow):not(.dius-intro-signature) { font-size: 14px; }
+}
