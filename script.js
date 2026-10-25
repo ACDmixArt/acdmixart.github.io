@@ -4050,6 +4050,20 @@ const products = [
     ]
   },
   {
+    id: 353,
+    nume: "Invitație nuntă și botez – Bleu elegant",
+    categorie: "Nuntă",
+    pret: 3.5,
+    descriere: "Invitație personalizată pentru nuntă și botez, în nuanțe delicate de bleu și alb, cu detalii florale elegante. Prețul este per bucată. Comanda minimă este de 25 de bucăți.",
+    poze: [
+      "images/products/invitatie-nunta-bleu-1.jpg",
+      "images/products/invitatie-nunta-bleu-2.jpg",
+      "images/products/invitatie-nunta-bleu-3.jpg",
+      "images/products/invitatie-nunta-bleu-4.jpg",
+      "images/products/invitatie-nunta-bleu-5.jpg"
+    ]
+  },
+  {
     id: 352,
     nume: "Cană personalizată cu 2 poze – albastră",
     categorie: "Căni",
