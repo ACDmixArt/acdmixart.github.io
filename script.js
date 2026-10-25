@@ -3677,7 +3677,10 @@ const products = [
       "images/products/a325.jpg",
       "images/products/a326.jpg",
       "images/products/a327.jpg",
-      "images/products/a328.jpg"
+      "images/products/a328.jpg",
+      "images/products/caricatura-a3-cuplu-nunta-1.jpg",
+      "images/products/caricatura-a3-cuplu-nunta-2.jpg",
+      "images/products/caricatura-a3-cuplu-nunta-3.jpg"
     ]
   },
   {
