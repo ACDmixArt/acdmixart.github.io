@@ -4087,7 +4087,7 @@ function isStandardMagneticTestimony(product) {
   const name = String((product && product.nume) || "").trim().toLocaleLowerCase("ro");
   if (MAGNETIC_TESTIMONY_EXCLUSIONS.has(name)) return false;
   if (/săpun|ciocolat|ciocolăț|mini ciocol/i.test(name)) return false;
-  return /^mărtur(?:ie|ii) magnetic(?:ă|e)\b/i.test(name);
+  return /^mărtur(?:ie|ii) magnetic(?:ă|e)/i.test(name);
 }
 products.forEach(product => { if (isStandardMagneticTestimony(product)) product.pret = 4.5; });
 const MAGNETIC_TESTIMONY_OPTIONS = [
