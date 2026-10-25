@@ -4085,6 +4085,18 @@ const products = [
       "images/products/cana-luni-vineri-2.jpg"
     ]
   },
+  {
+    id: 355,
+    nume: "Mărturie personalizată cu ciocolată Coconut Minis",
+    categorie: "Mărturii",
+    pret: 7.5,
+    descriere: "Mărturie cu ciocolată Coconut Minis, personalizată cu numele, data evenimentului și orice tematică dorită. Ideală pentru botez, nuntă sau alte evenimente speciale.",
+    poze: [
+      "images/products/marturie-coconut-minis-1.jpg",
+      "images/products/marturie-coconut-minis-2.jpg",
+      "images/products/marturie-coconut-minis-3.jpg"
+    ]
+  },
 ];
 
 // Preț de bază și opțiuni pentru mărturiile magnetice standard.
