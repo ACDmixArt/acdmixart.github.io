@@ -5889,7 +5889,7 @@ function addFormField({ id, label, type = "text", placeholder = "", required = f
   return input;
 }
 
-const CUSTOM_MODEL_CATEGORIES = new Set(["Botez", "Nuntă", "Save the Date", "Mărturii"]);
+const CUSTOM_MODEL_CATEGORIES = new Set(["Nuntă", "Botez", "Mărturii"]);
 
 function renderCustomModelFields() {
   const customSection = document.createElement("div");
@@ -5903,6 +5903,12 @@ function renderCustomModelFields() {
   referenceNote.className = "reference-photo-note";
   referenceNote.innerHTML = "<strong>Ai un model de referință?</strong><p>După trimiterea cererii, atașează fotografia în conversația WhatsApp.</p>";
   customSection.appendChild(referenceNote);
+
+  const priceSection = document.createElement("div");
+  priceSection.className = "custom-model-fields custom-price-fields";
+  priceSection.innerHTML = '<h3>Propune și un preț</h3><p>Spune-ne ce buget ai în minte. Prețul final îl stabilim împreună, în funcție de model și materiale.</p>';
+  dynamicFormFields.appendChild(priceSection);
+  addFormField({ id: "formSuggestedPrice", label: "Bugetul tău propus (lei)", type: "number", min: 0, placeholder: "Ex.: 50" });
 }
 
 function renderDynamicFields() {
@@ -6031,8 +6037,9 @@ function renderDynamicFields() {
     addFormField({ id: "formDetails", label: "Alte detalii", type: "textarea", placeholder: "Scrie aici cerințele tale" });
   }
 
-  // Modelul propriu este disponibil doar pentru invitații și mărturii.
-  if (CUSTOM_MODEL_CATEGORIES.has(category) && !formProduct?.value) {
+  // Păstrăm modelul propriu și propunerea de buget pentru Nuntă, Botez și Mărturii,
+  // indiferent dacă persoana a ales deja un produs din catalog.
+  if (CUSTOM_MODEL_CATEGORIES.has(category)) {
     renderCustomModelFields();
   }
   updateOrderSummary();
@@ -6135,7 +6142,8 @@ function updateOrderSummary() {
     formTopperType: "Tip topper",
     formTopperCharacters: "Număr personaje pentru caricatură",
     formCustomText: "Model propriu — descriere / text",
-    formCustomColors: "Model propriu — culori"
+    formCustomColors: "Model propriu — culori",
+    formSuggestedPrice: "Buget propus (lei)"
   };
 
   Object.entries(fieldLabels).forEach(([id, label]) => {
@@ -6213,7 +6221,7 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
     const category = formCategory.value;
 
     if (!product && !CUSTOM_MODEL_CATEGORIES.has(category)) {
-      alert("Pentru această categorie, te rog să alegi un produs din catalog. Opțiunea de model propriu este disponibilă doar pentru invitații și mărturii.");
+      alert("Pentru această categorie, te rog să alegi un produs din catalog.");
       formProduct?.focus();
       return;
     }
@@ -6320,7 +6328,8 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
       ["Vârstă", "formAge"],
       ["Alte detalii", "formDetails"],
       ["Model propriu — descriere / text", "formCustomText"],
-      ["Model propriu — culori", "formCustomColors"]
+      ["Model propriu — culori", "formCustomColors"],
+      ["Buget propus (lei)", "formSuggestedPrice"]
     ];
     fields.forEach(([label, id]) => {
       const input = document.getElementById(id);
