@@ -4076,6 +4076,28 @@ const products = [
   },
 ];
 
+// Preț de bază și opțiuni pentru mărturiile magnetice standard.
+const MAGNETIC_TESTIMONY_EXCLUSIONS = new Set([
+  "mărturie magnetică nuntă și botez",
+  "mărturie magnetică pe formă + mini ciocolățică",
+  "mărturie magnetică balon",
+  "mărturie curcubeu cu săculeț și etichetă personalizată"
+]);
+function isStandardMagneticTestimony(product) {
+  const name = String((product && product.nume) || "").trim().toLocaleLowerCase("ro");
+  if (MAGNETIC_TESTIMONY_EXCLUSIONS.has(name)) return false;
+  if (/săpun|ciocolat|ciocolăț|mini ciocol/i.test(name)) return false;
+  return /^mărtur(?:ie|ii) magnetic(?:ă|e)\b/i.test(name);
+}
+products.forEach(product => { if (isStandardMagneticTestimony(product)) product.pret = 4.5; });
+const MAGNETIC_TESTIMONY_OPTIONS = [
+  { id: "formMagneticRounded", label: "Colțuri rotunjite", price: 1 },
+  { id: "formMagneticRibbon", label: "Ambalaj cu panglică și bănuț", price: 1.5 },
+  { id: "formMagneticOrganza", label: "Săculeț organza", price: 2 },
+  { id: "formMagneticMiniEnvelope", label: "Mini plic", price: 2 },
+  { id: "formMagneticBagLabel", label: "Etichetă pentru săculeț", price: 1 },
+  { id: "formMagnetic3DLabel", label: "Etichetă 3D", price: 1.5 }
+];
 
 /* =========================
    ELEMENTE ȘI STARE
@@ -5966,6 +5988,14 @@ function renderDynamicFields() {
     }
     if (category === "Mărturii" && /Mărturie din ciocolată/i.test(selectedProductName)) {
       addFormField({ id: "formInsigna", label: "Adaugă insignă (+20 lei)", type: "checkbox" });
+    }    if (category === "Mărturii" && isStandardMagneticTestimony(quantityProduct)) {
+      const optionsTitle = document.createElement("p");
+      optionsTitle.style.cssText = "font-weight:700;margin:12px 0 4px;";
+      optionsTitle.textContent = "Opțiuni suplimentare (opțional)";
+      dynamicFormFields.appendChild(optionsTitle);
+      MAGNETIC_TESTIMONY_OPTIONS.forEach(option => {
+        addFormField({ id: option.id, label: option.label + " (+" + money(option.price) + ")", type: "checkbox" });
+      });
     }
   } else if (category === "Agende") {
     addFormField({ id: "formAgendaCharacters", label: "Caricatură", type: "select", options: ["Fără caricatură — 0 lei", "1 personaj — 20 lei", "2 personaje — 35 lei", "3 personaje — 50 lei"] });
@@ -6137,6 +6167,11 @@ function updateOrderSummary() {
     } else {
       unitPrice = product.categorie === "Set Moț" || product.categorie === "Agende" ? unitPrice : unitPriceForQuantity(product, qty);
     }
+    if (isStandardMagneticTestimony(product)) {
+      MAGNETIC_TESTIMONY_OPTIONS.forEach(option => {
+        if (document.getElementById(option.id)?.checked) unitPrice += option.price;
+      });
+    }
     rows.push(["Preț/bucată", money(unitPrice)]);
     rows.push(["Preț estimativ", money(unitPrice * qty)]);
   }
@@ -6299,6 +6334,15 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
     if (childName) message += `Numele copilului: ${childName}\n`;
     if (theme) message += `Tematică: ${theme}\n`;
     if (document.getElementById("formInsigna")?.checked) message += "Insignă suplimentară: Da (+20 lei)\n";
+    const magneticOptionsSelected = [];
+    if (product && isStandardMagneticTestimony(product)) {
+      MAGNETIC_TESTIMONY_OPTIONS.forEach(option => {
+        if (document.getElementById(option.id)?.checked) {
+          magneticOptionsSelected.push(option);
+          message += option.label + ": Da (+" + money(option.price) + ")\n";
+        }
+      });
+    }
     const frame = document.getElementById("formFrame");
     if (frame && frame.checked) message += "Ramă foto: Da (+60 lei)\n";
 
@@ -6323,6 +6367,9 @@ if (orderForm && formCategory && formProduct && dynamicFormFields) {
         return;
       }
       unitPrice = topperOptionPrice(topperType.value) + characters * 20;
+    }
+    if (product && isStandardMagneticTestimony(product)) {
+      magneticOptionsSelected.forEach(option => { unitPrice += option.price; });
     }
     if (product) message += `Preț/bucată: ${money(unitPrice)}\nPreț estimativ: ${money(unitPrice * quantity)}\n`;
     else message += "Prețul se stabilește după discutarea modelului și a materialelor.\n";
