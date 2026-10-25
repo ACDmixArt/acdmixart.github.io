@@ -4122,6 +4122,20 @@ const products = [
       "images/products/marturie-magnetica-bebe-familie-2.jpg"
     ]
   },
+  {
+    id: 358,
+    nume: "Mărturie magnetică personalizată – Bebe bleu cu panglică",
+    categorie: "Mărturii",
+    pret: 4.5,
+    descriere: "Mărturie magnetică personalizată pentru botez, în nuanțe delicate de bleu, cu fotografia bebelușului, nume, dată și mesaj la alegere. Se poate prezenta simplu sau cu panglică și bănuț personalizat.",
+    poze: [
+      "images/products/marturie-magnetica-bebe-bleu-1.jpg",
+      "images/products/marturie-magnetica-bebe-bleu-2.jpg",
+      "images/products/marturie-magnetica-bebe-bleu-3.jpg",
+      "images/products/marturie-magnetica-bebe-bleu-4.jpg",
+      "images/products/marturie-magnetica-bebe-bleu-5.jpg"
+    ]
+  },
 ];
 
 // Preț de bază și opțiuni pentru mărturiile magnetice standard.
