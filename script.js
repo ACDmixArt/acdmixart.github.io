@@ -4097,6 +4097,17 @@ const products = [
       "images/products/marturie-coconut-minis-3.jpg"
     ]
   },
+  {
+    id: 356,
+    nume: "Mărturie personalizată cu ciocolată Coconut Minis – fetiță",
+    categorie: "Mărturii",
+    pret: 7.5,
+    descriere: "Mărturie cu ciocolată Coconut Minis, în model delicat pentru fetiță, personalizată cu numele, data evenimentului și tematica dorită. Ideală pentru botez și alte evenimente speciale.",
+    poze: [
+      "images/products/marturie-coconut-minis-fetita-1.jpg",
+      "images/products/marturie-coconut-minis-fetita-2.jpg"
+    ]
+  },
 ];
 
 // Preț de bază și opțiuni pentru mărturiile magnetice standard.
