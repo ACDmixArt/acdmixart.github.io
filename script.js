@@ -4162,6 +4162,19 @@ const products = [
       "images/products/invitatie-botez-ferma-roz-detaliu-text.jpg"
     ]
   }
+
+  {
+    id: 361,
+    nume: "Invitație de botez Circus cu iepurași",
+    categorie: "Botez",
+    pret: 7,
+    descriere: "Invitație de botez cu tematică de circ, iepurași simpatici și detalii în nuanțe de roz, bleu și auriu. Se personalizează cu numele copilului, data botezului și informațiile evenimentului.",
+    poze: [
+      "images/products/Invitatie-botez-circus-Samuel-principal.jpg",
+      "images/products/Invitatie-botez-circus-Samuel-fata.jpg",
+      "images/products/Invitatie-botez-circus-Samuel-interior.jpg"
+    ]
+  },
 ];
 
 // Preț de bază și opțiuni pentru mărturiile magnetice standard.
