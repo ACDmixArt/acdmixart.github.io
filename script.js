@@ -4135,7 +4135,20 @@ const products = [
       "images/products/marturie-magnetica-bebe-bleu-4.jpg",
       "images/products/marturie-magnetica-bebe-bleu-5.jpg"
     ]
-  },
+  },,
+  {
+    id: 359,
+    nume: "Invitație de botez – Ferma veselă",
+    categorie: "Botez",
+    pret: 4,
+    descriere: "Invitație de botez cu tematică rustică de fermă, animăluțe simpatice și detalii delicate. Personalizată cu numele bebelușului, data evenimentului, locațiile și orele ceremoniei și petrecerii, precum și textul dorit.",
+    poze: [
+      "images/products/invitatie-botez-ferma-lucas-ioan-coperta-1.jpg",
+      "images/products/invitatie-botez-ferma-lucas-ioan-interior-1.jpg",
+      "images/products/invitatie-botez-ferma-lucas-ioan-interior-detaliu-1.jpg",
+      "images/products/invitatie-botez-ferma-lucas-ioan-interior-detaliu-2.jpg"
+    ]
+  }
 ];
 
 // Preț de bază și opțiuni pentru mărturiile magnetice standard.
