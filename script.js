@@ -4174,6 +4174,19 @@ const products = [
       "images/products/Invitatie-botez-circus-Samuel-interior.jpg"
     ]
   },
+
+  {
+    id: 362,
+    nume: "Invitație de nuntă rotundă cu floare 3D bordo",
+    categorie: "Nuntă",
+    pret: 7,
+    descriere: "Invitație de nuntă rotundă, cu o floare 3D spectaculoasă în nuanțe de bordo și detalii elegante aurii. Se personalizează cu numele mirilor, părinții, nașii, data evenimentului și informațiile despre ceremonie și petrecere. Prețul este per bucată.",
+    poze: [
+      "images/products/invitatie-nunta-floare-3d-bordo-1.jpg",
+      "images/products/invitatie-nunta-floare-3d-bordo-2.jpg",
+      "images/products/invitatie-nunta-floare-3d-bordo-3.jpg"
+    ]
+  },
 ];
 
 // Preț de bază și opțiuni pentru mărturiile magnetice standard.
