@@ -4161,8 +4161,7 @@ const products = [
       "images/products/invitatie-botez-ferma-roz-detaliu-foto-bebe.jpg",
       "images/products/invitatie-botez-ferma-roz-detaliu-text.jpg"
     ]
-  }
-
+  },
   {
     id: 361,
     nume: "Invitație de botez Circus cu iepurași",
