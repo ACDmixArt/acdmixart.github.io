@@ -4135,7 +4135,7 @@ const products = [
       "images/products/marturie-magnetica-bebe-bleu-4.jpg",
       "images/products/marturie-magnetica-bebe-bleu-5.jpg"
     ]
-  },,
+  },
   {
     id: 359,
     nume: "Invitație de botez – Ferma veselă",
