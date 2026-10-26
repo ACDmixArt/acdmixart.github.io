@@ -4148,6 +4148,19 @@ const products = [
       "images/products/invitatie-botez-ferma-lucas-ioan-interior-detaliu-1.jpg",
       "images/products/invitatie-botez-ferma-lucas-ioan-interior-detaliu-2.jpg"
     ]
+  },
+  {
+    id: 360,
+    nume: "Invitație de botez – Ferma roz",
+    categorie: "Botez",
+    pret: 4,
+    descriere: "Invitație de botez cu tematică de fermă în nuanțe delicate de roz, animăluțe simpatice și ilustrații jucăușe. Se personalizează cu numele copilului, fotografia, data botezului, locațiile, orele și textul dorit.",
+    poze: [
+      "images/products/invitatie-botez-ferma-roz-coperta.jpg",
+      "images/products/invitatie-botez-ferma-roz-interior.jpg",
+      "images/products/invitatie-botez-ferma-roz-detaliu-foto-bebe.jpg",
+      "images/products/invitatie-botez-ferma-roz-detaliu-text.jpg"
+    ]
   }
 ];
 
