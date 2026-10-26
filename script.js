@@ -4167,7 +4167,7 @@ const products = [
     nume: "Invitație de botez Circus cu iepurași",
     categorie: "Botez",
     pret: 7,
-    descriere: "Invitație de botez cu tematică de circ, iepurași simpatici și detalii în nuanțe de roșu, bleu și auriu. Se personalizează cu numele copilului, data botezului și informațiile evenimentului. Designul poate fi adaptat și în tematica dorită.",
+    descriere: "O invitație de botez veselă, cu personaje simpatice și detalii jucăușe, perfectă pentru a anunța un eveniment special. Se personalizează cu numele copilului, data botezului și informațiile evenimentului, iar modelul poate fi adaptat în funcție de preferințele voastre.",
     poze: [
       "images/products/Invitatie-botez-circus-Samuel-principal.jpg",
       "images/products/Invitatie-botez-circus-Samuel-fata.jpg",
