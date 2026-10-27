@@ -4192,7 +4192,9 @@ const products = [
     nume: "Invitație cununie civilă – fundă neagră",
     categorie: "Nuntă",
     pret: 6.5,
-    descriere: "Invitație elegantă pentru cununia civilă, cu ramă neagră, hârtie texturată și fundă decorativă personalizată. Se personalizează cu numele mirilor, data și detaliile evenimentului. Prețul este per bucată.",
+    pretVechi: 7.5,
+    promotiePanaLa: "30 noiembrie 2026",
+    descriere: "PROMOȚIE până la 30 noiembrie 2026: 6,50 lei/bucată, redus de la 7,50 lei. Invitație elegantă pentru cununia civilă, cu ramă neagră, hârtie texturată și fundă decorativă personalizată. Se personalizează cu numele mirilor, data și detaliile evenimentului. Prețul promoțional este per bucată.",
     poze: [
       "images/products/invitatie-cununie-civila-1.jpg",
       "images/products/invitatie-cununie-civila-2.jpg",
@@ -4515,7 +4517,7 @@ function renderProducts() {
             <span id="desc-full-${product.id}" hidden>${descrierePersonalizare(product)}</span>
           </p>
           ${descrierePersonalizare(product).trim().split(/\s+/).length > 3 ? `<button type="button" class="description-toggle" aria-expanded="false" onclick="toggleProductDescription(${product.id}, this)">Vezi mai mult</button>` : ""}
-          <p class="product-price" id="price-${product.id}">${money(unitPriceForQuantity(product, 1))} / buc.</p>
+          ${product.pretVechi ? `<p class="product-promotion" style="display:inline-block;margin:0 0 5px;padding:4px 9px;border-radius:12px;background:#fce7eb;color:#9b334c;font-size:12px;font-weight:700;">PROMOȚIE până la ${product.promotiePanaLa}</p><p class="product-price" id="price-${product.id}"><span style="color:#777;text-decoration:line-through;font-size:.9em;margin-right:7px;">${money(product.pretVechi)}</span><strong style="color:#b33a55;">${money(unitPriceForQuantity(product, 1))} / buc.</strong></p>` : `<p class="product-price" id="price-${product.id}">${money(unitPriceForQuantity(product, 1))} / buc.</p>`}
           ${isPhotoMagnet(product) ? '<p class="product-minimum-order">' + minimumQuantityMessage(product) + '</p>' : ""}
           ${Array.isArray(product.tarifeCantitate) ? `<p class="product-tier-prices" style="font-size:13px;line-height:1.5;margin:4px 0 10px;">1–49 buc.: 2,50 lei/buc.<br>50–100 buc.: 2 lei/buc.<br>Peste 100 buc.: 1,70 lei/buc.</p>` : ""}
           <div class="product-quantity">
