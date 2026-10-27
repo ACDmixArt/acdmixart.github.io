@@ -4187,6 +4187,18 @@ const products = [
       "images/products/invitatie-nunta-floare-3d-bordo-3.jpg"
     ]
   },
+  {
+    id: 363,
+    nume: "Invitație cununie civilă – fundă neagră",
+    categorie: "Nuntă",
+    pret: 6.5,
+    descriere: "Invitație elegantă pentru cununia civilă, cu ramă neagră, hârtie texturată și fundă decorativă personalizată. Se personalizează cu numele mirilor, data și detaliile evenimentului. Prețul este per bucată.",
+    poze: [
+      "images/products/invitatie-cununie-civila-1.jpg",
+      "images/products/invitatie-cununie-civila-2.jpg",
+      "images/products/invitatie-cununie-civila-3.jpg"
+    ]
+  },
 ];
 
 // Preț de bază și opțiuni pentru mărturiile magnetice standard.
