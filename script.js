@@ -4211,6 +4211,17 @@ const products = [
       "images/products/cana-maner-inima-personalizata-1.jpg",
       "images/products/cana-maner-inima-personalizata-2.jpg"
     ]
+  },
+  {
+    id: 365,
+    nume: "Cană personalizată pentru firme – cu sau fără caricatură",
+    categorie: "Căni",
+    pret: 40,
+    descriere: "Cană personalizată pentru companii, angajați sau cadouri corporate. Designul poate include caricatura unei persoane sau poate fi realizat fără caricatură, cu nume, logo și elemente grafice reprezentative pentru firmă. Personalizarea se stabilește la comandă.",
+    poze: [
+      "images/products/cana-personalizata-firme-caricatura.jpg",
+      "images/products/cana-personalizata-firme-model-2.jpg"
+    ]
   }
 ];
 
