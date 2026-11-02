@@ -4201,6 +4201,18 @@ const products = [
       "images/products/invitatie-cununie-civila-3.jpg"
     ]
   },
+  ,
+  {
+    id: 364,
+    nume: "Cană personalizată cu mâner în formă de inimă",
+    categorie: "Căni",
+    pret: 45,
+    descriere: "Cană albă cu mâner în formă de inimă, personalizată cu text și caricatură. Un cadou amuzant și special pentru familie sau persoana iubită.",
+    poze: [
+      "images/products/cana-maner-inima-personalizata-1.jpg",
+      "images/products/cana-maner-inima-personalizata-2.jpg"
+    ]
+  }
 ];
 
 // Preț de bază și opțiuni pentru mărturiile magnetice standard.
