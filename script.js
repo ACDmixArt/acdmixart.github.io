@@ -4201,7 +4201,6 @@ const products = [
       "images/products/invitatie-cununie-civila-3.jpg"
     ]
   },
-  ,
   {
     id: 364,
     nume: "Cană personalizată cu mâner în formă de inimă",
