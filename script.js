@@ -4223,6 +4223,18 @@ const products = [
       "images/products/cana-personalizata-firme-model-2.jpg"
     ]
   }
+  ,
+  {
+    id: 366,
+    nume: "Agendă personalizată cu fotografie pe copertă",
+    categorie: "Agende",
+    pret: 120,
+    descriere: "Agendă personalizată cu fotografia preferată pe copertă. Coperta poate include una sau mai multe fotografii, într-un design elegant, realizat la cerere. Un cadou special și practic, personalizat exact pe gustul tău.",
+    poze: [
+      "images/products/agenda-personalizata-fotografie-coperta.jpg",
+      "images/products/agenda-personalizata-fotografie-detaliu.jpg"
+    ]
+  }
 ];
 
 // Preț de bază și opțiuni pentru mărturiile magnetice standard.
