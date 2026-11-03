@@ -4222,8 +4222,7 @@ const products = [
       "images/products/cana-personalizata-firme-caricatura.jpg",
       "images/products/cana-personalizata-firme-model-2.jpg"
     ]
-  }
-  ,
+  },
   {
     id: 366,
     nume: "Agendă personalizată cu fotografie pe copertă",
