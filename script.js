@@ -5597,7 +5597,7 @@ function renderCart() {
               : item.personalizare?.tip === "marturieCiocolata"
                 ? `<p>Insignă: ${item.personalizare.insigna ? "Da (+" + money(20) + " / buc.)" : "Nu"}</p>`
                 : item.personalizare
-                  ? `<p>Nume: ${item.personalizare.numeCopil}<br>Tematică: ${item.personalizare.tematica}<br>Ramă foto: ${item.personalizare.ramaFoto ? "Da" : "Nu"}</p>`
+                  ? `<p>Nume: ${item.personalizare.numeCopil}<br>Tematică: ${item.personalizare.tematica}${item.personalizare.ramaFoto !== undefined ? `<br>Ramă foto: ${item.personalizare.ramaFoto ? "Da" : "Nu"}` : ""}</p>`
                   : ""
         }
         <div class="cart-quantity">
@@ -5671,7 +5671,7 @@ if (cartWhatsapp) {
       } else if (item.personalizare?.tip === "setGatit") {
         message += `Accesorii: ${item.personalizare.accesorii.length ? item.personalizare.accesorii.map(option => option.nume + " (+" + money(option.pret) + ")").join(", ") : "Fără accesorii suplimentare"}\nSupliment accesorii: ${money(item.personalizare.pretAccesorii)}\n`;
       } else if (item.personalizare) {
-        message += `Numele copilului: ${item.personalizare.numeCopil}\nTematică: ${item.personalizare.tematica}\nRamă foto: ${item.personalizare.ramaFoto ? "Da" : "Nu"}\n`;
+        message += `Numele copilului: ${item.personalizare.numeCopil}\nTematică: ${item.personalizare.tematica}\n${item.personalizare.ramaFoto !== undefined ? `Ramă foto: ${item.personalizare.ramaFoto ? "Da" : "Nu"}\n` : ""}`;
       }
       message += "\n";
     });
