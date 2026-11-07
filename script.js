@@ -4302,6 +4302,7 @@ function categories() {
     "Cărți de vizită",
     "Jurnale",
     "Agende",
+    "Calendar 2027",
     "Party",
     "Set Moț",
     "Set Gătit",
