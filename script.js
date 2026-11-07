@@ -4254,6 +4254,18 @@ const products = [
       "images/products/calendar-2027-a5-magnetic-elegance-florala-02.jpg"
     ]
   }
+  ,
+  {
+    id: 371,
+    nume: "Breloc metalic – Inserție foto",
+    categorie: "Brelocuri",
+    pret: 25,
+    descriere: "Breloc metalic personalizat cu fotografie, cu inserție foto rotundă și ambalaj tip cutie.",
+    poze: [
+      "images/products/breloc-metalic-insertie-foto-01.jpg",
+      "images/products/breloc-metalic-insertie-foto-02.jpg"
+    ]
+  }
 ];
 
 // Preț de bază și opțiuni pentru mărturiile magnetice standard.
