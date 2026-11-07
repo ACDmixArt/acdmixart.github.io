@@ -4323,6 +4323,7 @@ function categories() {
     "Jurnale",
     "Agende",
     "Calendar 2027",
+    "Brelocuri",
     "Party",
     "Set Moț",
     "Set Gătit",
