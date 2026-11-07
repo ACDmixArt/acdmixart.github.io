@@ -4234,6 +4234,23 @@ const products = [
       "images/products/agenda-personalizata-fotografie-detaliu.jpg"
     ]
   }
+  ,
+  {
+    id: 367,
+    nume: "Calendar 2027 – Pink Memories",
+    categorie: "Calendar 2027",
+    pret: 25,
+    descriere: "Calendar magnetic personalizat A5 pentru anul 2027, cu fotografiile preferate și un design floral roz.",
+    poze: ["images/products/calendar-2027-a5-magnetic-pink-memories.jpg"]
+  },
+  {
+    id: 368,
+    nume: "Calendar 2027 – Pink Butterfly",
+    categorie: "Calendar 2027",
+    pret: 25,
+    descriere: "Calendar magnetic personalizat A5 pentru anul 2027, cu fotografiile preferate și un design delicat roz, cu fluture.",
+    poze: ["images/products/calendar-2027-a5-magnetic-pink-butterfly.jpg"]
+  }
 ];
 
 // Preț de bază și opțiuni pentru mărturiile magnetice standard.
