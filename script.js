@@ -4243,7 +4243,7 @@ const products = [
     descriere: "Calendar magnetic personalizat A5 pentru anul 2027, cu fotografiile preferate și un design floral roz.",
     poze: ["images/products/calendar-2027-a5-magnetic-pink-memories.jpg"]
   },
-  ,{
+  {
     id: 368,
     nume: "Calendar 2027 – Pink Butterfly",
     categorie: "Calendar 2027",
@@ -4263,7 +4263,8 @@ const products = [
       "images/products/calendar-2027-a5-magnetic-blue-royal-03.jpg"
     ]
   },
-      id: 370,
+  {
+    id: 370,
     nume: "Calendar 2027 – Eleganță Florală",
     categorie: "Calendar 2027",
     pret: 25,
@@ -4272,8 +4273,7 @@ const products = [
       "images/products/calendar-2027-a5-magnetic-elegance-florala-01.jpg",
       "images/products/calendar-2027-a5-magnetic-elegance-florala-02.jpg"
     ]
-  }
-  ,
+  },
   {
     id: 371,
     nume: "Breloc metalic – Inserție foto",
