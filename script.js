@@ -4251,6 +4251,18 @@ const products = [
     descriere: "Calendar magnetic personalizat A5 pentru anul 2027, cu fotografiile preferate și un design delicat roz, cu fluture.",
     poze: ["images/products/calendar-2027-a5-magnetic-pink-butterfly.jpg"]
   }
+,  {
+    id: 369,
+    nume: "Calendar 2027 – Blue Royal",
+    categorie: "Calendar 2027",
+    pret: 25,
+    descriere: "Calendar magnetic personalizat A5 pentru anul 2027, cu fotografiile familiei și un design elegant în nuanțe de albastru și auriu.",
+    poze: [
+      "images/products/calendar-2027-a5-magnetic-blue-royal-01.jpg",
+      "images/products/calendar-2027-a5-magnetic-blue-royal-02.jpg",
+      "images/products/calendar-2027-a5-magnetic-blue-royal-03.jpg"
+    ]
+  }
 ];
 
 // Preț de bază și opțiuni pentru mărturiile magnetice standard.
