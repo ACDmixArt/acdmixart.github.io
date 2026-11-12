@@ -4315,9 +4315,13 @@ const products = [
     pret: 7,
     descriere: "Model personalizat cu tematica Stitch & Angel. Cutiuță simplă: 7 lei/bucată, cu 9 toppere decorative și topper central. Varianta cu dulciuri: 19 lei/bucată, cu toppere, suport și luminițe incluse. Opțional pentru cutiuța simplă: suport +25 lei, luminițe +25 lei și mini-topper +3 lei.",
     poze: [
-      "images/products/cutiuta-gabby-dollhouse-model-1.jpg",
-      "images/products/cutiuta-gabby-dollhouse-model-2.jpg",
-      "images/products/cutiuta-gabby-dollhouse-model-3.jpg"
+      "images/products/tort-cutiute-stitch-angel-01.jpg",
+      "images/products/tort-cutiute-stitch-angel-02.jpg",
+      "images/products/tort-cutiute-stitch-angel-03.jpg",
+      "images/products/tort-cutiute-stitch-angel-04.jpg",
+      "images/products/tort-cutiute-stitch-angel-05.jpg",
+      "images/products/tort-cutiute-stitch-angel-06.jpg",
+      "images/products/tort-cutiute-stitch-angel-07.jpg"
     ]
   },
   {
