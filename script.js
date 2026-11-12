@@ -4298,6 +4298,18 @@ const products = [
       "images/products/magnet-foto-momente-speciale.jpg",
       "images/products/magnet-foto-amintiri-din-calatorii.jpg"
     ]
+  },
+  {
+    id: 376,
+    nume: "Agendă personalizată „Amintiri pentru totdeauna”",
+    categorie: "Agende",
+    pret: 200,
+    descriere: "Agendă personalizată cu fotografii și mesaje speciale. 100 de pagini. Preț: 200 lei.",
+    poze: [
+      "images/products/agenda-amintiri-pentru-totdeauna-1.jpg",
+      "images/products/agenda-amintiri-pentru-totdeauna-2.jpg",
+      "images/products/agenda-amintiri-pentru-totdeauna-3.jpg"
+    ]
   }
 ];
 
