@@ -4306,9 +4306,9 @@ const products = [
     pret: 200,
     descriere: "Agendă personalizată cu fotografii și mesaje speciale. 100 de pagini. Preț: 200 lei.",
     poze: [
-      "images/products/agenda-amintiri-pentru-totdeauna-1.jpg",
-      "images/products/agenda-amintiri-pentru-totdeauna-2.jpg",
-      "images/products/agenda-amintiri-pentru-totdeauna-3.jpg"
+      "images/products/agenda-amintiri-pentru-totdeauna-1-1.jpg",
+      "images/products/agenda-amintiri-pentru-totdeauna-2-1.jpg",
+      "images/products/agenda-amintiri-pentru-totdeauna-3-1.jpg"
     ]
   },
   {
