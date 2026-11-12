@@ -3736,6 +3736,17 @@ const products = [
     ]
   },
   {
+    id: 382,
+    nume: "Cană personalizată cu sclipici",
+    categorie: "Căni",
+    pret: 45,
+    descriere: "Cană ceramică personalizată cu fotografie, decorată cu un design elegant cu flori și accente strălucitoare. Un cadou special pentru mamă, bunică sau o persoană dragă. Mesajul și fotografia se personalizează la comandă.",
+    poze: [
+      "images/products/cana-cu-sclipici-01.jpg",
+      "images/products/cana-cu-sclipici-02.jpg"
+    ]
+  },
+  {
     id: 315,
     nume: "Cană albă personalizată",
     categorie: "Căni",
