@@ -4353,6 +4353,23 @@ const products = [
       "images/products/calendar-2027-kpop-demon-hunters-02.jpg",
       "images/products/calendar-2027-kpop-demon-hunters-03.jpg"
     ]
+  },
+  {
+    id: 380,
+    nume: "Carte de colorat personalizată – K-Pop Demon Hunters",
+    categorie: "Cărți",
+    pret: 140,
+    descriere: "Carte de colorat personalizată, cu fotografia copilului și tematica K-Pop Demon Hunters. Include pagini cu fotografii personalizate, stickere și planșe de colorat.",
+    poze: [
+      "images/products/carte-colorat-kpop-demon-hunters-01.jpg",
+      "images/products/carte-colorat-kpop-demon-hunters-02.jpg",
+      "images/products/carte-colorat-kpop-demon-hunters-03.jpg",
+      "images/products/carte-colorat-kpop-demon-hunters-04.jpg",
+      "images/products/carte-colorat-kpop-demon-hunters-05.jpg",
+      "images/products/carte-colorat-kpop-demon-hunters-06.jpg",
+      "images/products/carte-colorat-kpop-demon-hunters-07.jpg",
+      "images/products/carte-colorat-kpop-demon-hunters-08.jpg"
+    ]
   }
 ];
 
