@@ -4285,30 +4285,7 @@ const products = [
       "images/products/breloc-metalic-insertie-foto-02.jpg"
     ]
   }
-];
 
-// Preț de bază și opțiuni pentru mărturiile magnetice standard.
-const MAGNETIC_TESTIMONY_EXCLUSIONS = new Set([
-  "mărturie magnetică nuntă și botez",
-  "mărturie magnetică pe formă + mini ciocolățică",
-  "mărturie magnetică balon",
-  "mărturie curcubeu cu săculeț și etichetă personalizată"
-]);
-function isStandardMagneticTestimony(product) {
-  const name = String((product && product.nume) || "").trim().toLocaleLowerCase("ro");
-  if (MAGNETIC_TESTIMONY_EXCLUSIONS.has(name)) return false;
-  if (/săpun|ciocolat|ciocolăț|mini ciocol/i.test(name)) return false;
-  return /^mărtur(?:ie|ii) magnetic(?:ă|e)/i.test(name);
-}
-products.forEach(product => { if (isStandardMagneticTestimony(product)) product.pret = 4.5; });
-const MAGNETIC_TESTIMONY_OPTIONS = [
-  { id: "formMagneticRounded", label: "Colțuri rotunjite", price: 1 },
-  { id: "formMagneticRibbon", label: "Ambalaj cu panglică și bănuț", price: 1.5 },
-  { id: "formMagneticOrganza", label: "Săculeț organza", price: 2 },
-  { id: "formMagneticMiniEnvelope", label: "Mini plic", price: 2 },
-  { id: "formMagneticBagLabel", label: "Etichetă pentru săculeț", price: 1 },
-  { id: "formMagnetic3DLabel", label: "Etichetă 3D", price: 1.5 }
-  ,
   {
     id: 372,
     nume: "Magnet foto 10 × 15 cm – Model 1",
@@ -4345,6 +4322,29 @@ const MAGNETIC_TESTIMONY_OPTIONS = [
     descriere: "Magnet foto personalizat în format 10 × 15 cm. Preț: 15 lei/bucată. Comandă minimă: 4 bucăți. Fotografia dorită se trimite pe WhatsApp după plasarea comenzii.",
     poze: ["images/products/magnet-foto-amintiri-din-calatorii.jpg"]
   }
+];
+
+// Preț de bază și opțiuni pentru mărturiile magnetice standard.
+const MAGNETIC_TESTIMONY_EXCLUSIONS = new Set([
+  "mărturie magnetică nuntă și botez",
+  "mărturie magnetică pe formă + mini ciocolățică",
+  "mărturie magnetică balon",
+  "mărturie curcubeu cu săculeț și etichetă personalizată"
+]);
+function isStandardMagneticTestimony(product) {
+  const name = String((product && product.nume) || "").trim().toLocaleLowerCase("ro");
+  if (MAGNETIC_TESTIMONY_EXCLUSIONS.has(name)) return false;
+  if (/săpun|ciocolat|ciocolăț|mini ciocol/i.test(name)) return false;
+  return /^mărtur(?:ie|ii) magnetic(?:ă|e)/i.test(name);
+}
+products.forEach(product => { if (isStandardMagneticTestimony(product)) product.pret = 4.5; });
+const MAGNETIC_TESTIMONY_OPTIONS = [
+  { id: "formMagneticRounded", label: "Colțuri rotunjite", price: 1 },
+  { id: "formMagneticRibbon", label: "Ambalaj cu panglică și bănuț", price: 1.5 },
+  { id: "formMagneticOrganza", label: "Săculeț organza", price: 2 },
+  { id: "formMagneticMiniEnvelope", label: "Mini plic", price: 2 },
+  { id: "formMagneticBagLabel", label: "Etichetă pentru săculeț", price: 1 },
+  { id: "formMagnetic3DLabel", label: "Etichetă 3D", price: 1.5 }
 ];
 
 /* =========================
