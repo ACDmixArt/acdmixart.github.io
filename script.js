@@ -4308,6 +4308,43 @@ const MAGNETIC_TESTIMONY_OPTIONS = [
   { id: "formMagneticMiniEnvelope", label: "Mini plic", price: 2 },
   { id: "formMagneticBagLabel", label: "Etichetă pentru săculeț", price: 1 },
   { id: "formMagnetic3DLabel", label: "Etichetă 3D", price: 1.5 }
+  ,
+  {
+    id: 372,
+    nume: "Magnet foto 10 × 15 cm – Model 1",
+    categorie: "Magneți foto",
+    pret: 15,
+    minimComanda: 4,
+    descriere: "Magnet foto personalizat în format 10 × 15 cm. Preț: 15 lei/bucată. Comandă minimă: 4 bucăți. Fotografia dorită se trimite pe WhatsApp după plasarea comenzii.",
+    poze: ["images/products/magnet-foto-colaj-de-amintiri.jpg"]
+  },
+  {
+    id: 373,
+    nume: "Magnet foto 10 × 15 cm – Model 2",
+    categorie: "Magneți foto",
+    pret: 15,
+    minimComanda: 4,
+    descriere: "Magnet foto personalizat în format 10 × 15 cm. Preț: 15 lei/bucată. Comandă minimă: 4 bucăți. Fotografia dorită se trimite pe WhatsApp după plasarea comenzii.",
+    poze: ["images/products/magnet-foto-absolvire.jpg"]
+  },
+  {
+    id: 374,
+    nume: "Magnet foto 10 × 15 cm – Model 3",
+    categorie: "Magneți foto",
+    pret: 15,
+    minimComanda: 4,
+    descriere: "Magnet foto personalizat în format 10 × 15 cm. Preț: 15 lei/bucată. Comandă minimă: 4 bucăți. Fotografia dorită se trimite pe WhatsApp după plasarea comenzii.",
+    poze: ["images/products/magnet-foto-momente-speciale.jpg"]
+  },
+  {
+    id: 375,
+    nume: "Magnet foto 10 × 15 cm – Model 4",
+    categorie: "Magneți foto",
+    pret: 15,
+    minimComanda: 4,
+    descriere: "Magnet foto personalizat în format 10 × 15 cm. Preț: 15 lei/bucată. Comandă minimă: 4 bucăți. Fotografia dorită se trimite pe WhatsApp după plasarea comenzii.",
+    poze: ["images/products/magnet-foto-amintiri-din-calatorii.jpg"]
+  }
 ];
 
 /* =========================
