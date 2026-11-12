@@ -3747,6 +3747,18 @@ const products = [
     ]
   },
   {
+    id: 383,
+    nume: "Cană personalizată cu sclipici – K-Pop Demon Hunters",
+    categorie: "Căni",
+    pret: 45,
+    descriere: "Cană ceramică personalizată cu fotografia copilului, personaje K-Pop Demon Hunters și efect strălucitor cu sclipici. Un cadou special, personalizat la comandă.",
+    poze: [
+      "images/products/cana-cu-sclipici-kpop-demon-hunters-01.jpg",
+      "images/products/cana-cu-sclipici-kpop-demon-hunters-02.jpg",
+      "images/products/cana-cu-sclipici-kpop-demon-hunters-03.jpg"
+    ]
+  },
+  {
     id: 315,
     nume: "Cană albă personalizată",
     categorie: "Căni",
