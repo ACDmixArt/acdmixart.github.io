@@ -4315,15 +4315,11 @@ const products = [
     pret: 7,
     descriere: "Model personalizat cu tematica Stitch & Angel. Cutiuță simplă: 7 lei/bucată, cu 9 toppere decorative și topper central. Varianta cu dulciuri: 19 lei/bucată, cu toppere, suport și luminițe incluse. Opțional pentru cutiuța simplă: suport +25 lei, luminițe +25 lei și mini-topper +3 lei.",
     poze: [
-      "images/products/gabby.jpg",
-      "images/products/gabby1.jpg",
-      "images/products/gabby2.jpg",
-      "images/products/gabby3.jpg",
       "images/products/cutiuta-gabby-dollhouse-model-1.jpg",
       "images/products/cutiuta-gabby-dollhouse-model-2.jpg",
       "images/products/cutiuta-gabby-dollhouse-model-3.jpg"
     ]
-  }  ,
+  },
   {
     id: 378,
     nume: "Flyere personalizate 18 × 9 cm",
