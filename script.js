@@ -4313,18 +4313,18 @@ const products = [
   },
   {
     id: 377,
-    nume: "Tort din cutiuțe – Gabby's Dollhouse",
+    nume: "Tort din cutiuțe – Stitch & Angel",
     categorie: "Torturi din cutiuțe",
     pret: 7,
-    descriere: "Model personalizat Gabby's Dollhouse. Cutiuță simplă: 7 lei/bucată, cu 9 toppere decorative și topper central. Varianta cu dulciuri: 19 lei/bucată, cu toppere, suport și luminițe incluse. Opțional pentru cutiuța simplă: suport +25 lei, luminițe +25 lei și mini-topper +3 lei.",
+    descriere: "Model personalizat cu tematica Stitch & Angel. Cutiuță simplă: 7 lei/bucată, cu 9 toppere decorative și topper central. Varianta cu dulciuri: 19 lei/bucată, cu toppere, suport și luminițe incluse. Opțional pentru cutiuța simplă: suport +25 lei, luminițe +25 lei și mini-topper +3 lei.",
     poze: [
-      "images/products/tort-cutiute-gabby-dollhouse-1.jpg",
-      "images/products/tort-cutiute-gabby-dollhouse-2.jpg",
-      "images/products/tort-cutiute-gabby-dollhouse-topper-central.jpg",
-      "images/products/tort-cutiute-gabby-dollhouse-detalii-decor.jpg",
-      "images/products/cutiuta-gabby-dollhouse-model-1.jpg",
-      "images/products/cutiuta-gabby-dollhouse-model-2.jpg",
-      "images/products/cutiuta-gabby-dollhouse-model-3.jpg"
+      "images/products/tort-cutiute-stitch-and-angel-1.jpg",
+      "images/products/tort-cutiute-stitch-and-angel-2.jpg",
+      "images/products/tort-cutiute-stitch-and-angel-topper-central.jpg",
+      "images/products/tort-cutiute-stitch-and-angel-detalii-decor.jpg",
+      "images/products/cutiuta-stitch-and-angel-model-1.jpg",
+      "images/products/cutiuta-stitch-and-angel-model-2.jpg",
+      "images/products/cutiuta-stitch-and-angel-model-3.jpg"
     ]
   }
 ];
