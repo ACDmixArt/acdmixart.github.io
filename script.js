@@ -4323,8 +4323,24 @@ const products = [
       "images/products/cutiuta-gabby-dollhouse-model-2.jpg",
       "images/products/cutiuta-gabby-dollhouse-model-3.jpg"
     ]
-  }
-];
+  }  ,
+  {
+    id: 378,
+    nume: "Flyere personalizate 18 × 9 cm",
+    categorie: "Cărți de vizită",
+    pret: 1.6,
+    tarifeCantitate: [
+      { min: 25, max: 49, pret: 1.6 },
+      { min: 50, max: 99, pret: 1.3 },
+      { min: 100, max: 199, pret: 1 },
+      { min: 200, max: null, pret: 0.8 }
+    ],
+    descriere: "Flyere personalizate în format 18 × 9 cm. Prețurile sunt calculate în funcție de cantitate.",
+    poze: [
+      "images/products/flyere-18x9-phyts-black-friday-1.jpg",
+      "images/products/flyere-18x9-phyts-black-friday-2.jpg"
+    ]
+  };
 
 // Preț de bază și opțiuni pentru mărturiile magnetice standard.
 const MAGNETIC_TESTIMONY_EXCLUSIONS = new Set([
