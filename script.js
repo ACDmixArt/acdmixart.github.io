@@ -3720,6 +3720,16 @@ const products = [
     pret: 30,
     descriere: "Creează o cană unică, personalizată cu fotografia și detaliile dorite. Imaginea prezentată este un exemplu de personalizare; designul se poate adapta în funcție de preferințele tale. Atașează fotografia în conversația WhatsApp când trimiți comanda.",
     poze: [
+      "images/products/canapoza.jpg"
+    ]
+  },
+  {
+    id: 381,
+    nume: "Cană cu fotografie – model floral",
+    categorie: "Căni",
+    pret: 30,
+    descriere: "Cană ceramică personalizată cu fotografiile celor dragi, într-un colaj elegant cu flori delicate și accente aurii. Un cadou special pentru familie sau pentru o persoană dragă. Designul se personalizează la comandă.",
+    poze: [
       "images/products/cana-cu-fotografie-01.jpg",
       "images/products/cana-cu-fotografie-02.jpg",
       "images/products/cana-cu-fotografie-03.jpg"
