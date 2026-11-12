@@ -4240,16 +4240,11 @@ const products = [
     nume: "Calendar 2027 – Pink Memories",
     categorie: "Calendar 2027",
     pret: 25,
-    descriere: "Calendar magnetic personalizat A5 pentru anul 2027, cu fotografiile preferate și un design floral roz.",
-    poze: ["images/products/calendar-2027-a5-magnetic-pink-memories.jpg"]
-  },
-  {
-    id: 368,
-    nume: "Calendar 2027 – Pink Butterfly",
-    categorie: "Calendar 2027",
-    pret: 25,
-    descriere: "Calendar magnetic personalizat A5 pentru anul 2027, cu fotografiile preferate și un design delicat roz, cu fluture.",
-    poze: ["images/products/calendar-2027-a5-magnetic-pink-butterfly.jpg"]
+    descriere: "Calendar magnetic personalizat A5 pentru anul 2027, cu fotografiile preferate. Disponibil în două modele roz: Pink Memories și Pink Butterfly.",
+    poze: [
+      "images/products/calendar-2027-a5-magnetic-pink-memories.jpg",
+      "images/products/calendar-2027-a5-magnetic-pink-butterfly.jpg"
+    ]
   },
   {
     id: 369,
