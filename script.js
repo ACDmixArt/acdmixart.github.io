@@ -4284,8 +4284,7 @@ const products = [
       "images/products/breloc-metalic-insertie-foto-01.jpg",
       "images/products/breloc-metalic-insertie-foto-02.jpg"
     ]
-  }
-
+  },
   {
     id: 372,
     nume: "Magnet foto 10 × 15 cm – Model 1",
