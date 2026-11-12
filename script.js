@@ -4406,6 +4406,21 @@ const products = [
       "images/products/carte-colorat-kpop-demon-hunters-08.jpg"
     ]
   }
+  ,
+  {
+    id: 384,
+    nume: "Breloc laminat personalizat",
+    categorie: "Brelocuri",
+    pret: 6,
+    descriere: "Breloc laminat personalizat cu nume, fotografie sau tematică la alegere. Un accesoriu simpatic și un mic cadou potrivit pentru copii, petreceri și evenimente. Prețuri în funcție de cantitate: 6 lei/bucată; 5,50 lei/bucată pentru 30 de bucăți; 5 lei/bucată pentru 50 de bucăți.",
+    poze: [
+      "images/products/brelocuri-laminate-personalizate-01.jpg",
+      "images/products/brelocuri-laminate-personalizate-02.jpg",
+      "images/products/brelocuri-laminate-personalizate-03.jpg",
+      "images/products/brelocuri-laminate-personalizate-04.jpg",
+      "images/products/brelocuri-laminate-personalizate-05.jpg"
+    ]
+  }
 ];
 
 // Preț de bază și opțiuni pentru mărturiile magnetice standard.
