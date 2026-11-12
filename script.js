@@ -3720,7 +3720,9 @@ const products = [
     pret: 30,
     descriere: "Creează o cană unică, personalizată cu fotografia și detaliile dorite. Imaginea prezentată este un exemplu de personalizare; designul se poate adapta în funcție de preferințele tale. Atașează fotografia în conversația WhatsApp când trimiți comanda.",
     poze: [
-      "images/products/canapoza.jpg"
+      "images/products/cana-cu-fotografie-01.jpg",
+      "images/products/cana-cu-fotografie-02.jpg",
+      "images/products/cana-cu-fotografie-03.jpg"
     ]
   },
   {
