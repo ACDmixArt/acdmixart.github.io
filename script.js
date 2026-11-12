@@ -4340,7 +4340,8 @@ const products = [
       "images/products/flyere-18x9-phyts-black-friday-1.jpg",
       "images/products/flyere-18x9-phyts-black-friday-2.jpg"
     ]
-  };
+  }
+];
 
 // Preț de bază și opțiuni pentru mărturiile magnetice standard.
 const MAGNETIC_TESTIMONY_EXCLUSIONS = new Set([
