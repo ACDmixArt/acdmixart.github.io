@@ -4341,6 +4341,19 @@ const products = [
       "images/products/flyere-18x9-phyts-black-friday-2.jpg"
     ]
   }
+,
+  {
+    id: 379,
+    nume: "Calendar 2027 – K-Pop Demon Hunters",
+    categorie: "Calendar 2027",
+    pret: 25,
+    descriere: "Calendar personalizat pentru anul 2027, cu tematica K-Pop Demon Hunters și fotografia copilului.",
+    poze: [
+      "images/products/calendar-2027-kpop-demon-hunters-01.jpg",
+      "images/products/calendar-2027-kpop-demon-hunters-02.jpg",
+      "images/products/calendar-2027-kpop-demon-hunters-03.jpg"
+    ]
+  }
 ];
 
 // Preț de bază și opțiuni pentru mărturiile magnetice standard.
