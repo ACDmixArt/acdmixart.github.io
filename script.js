@@ -2792,7 +2792,9 @@ const products = [
       { min: 200, max: null, pret: 0.7 }
     ],
     poze: [
-      "images/products/flier.jpg"
+      "images/products/flier.jpg",
+      "images/products/flyere-10x15-phyts-beauty-days-1.jpg",
+      "images/products/flyere-10x15-phyts-beauty-days-2.jpg"
     ]
   },
   {
